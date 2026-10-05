@@ -3,6 +3,9 @@ import { useState, Suspense } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { safeRedirectPath } from '@/lib/safe-redirect';
+
+const TOO_MANY_ATTEMPTS = 'TooManyAttempts';
 
 function LoginContent() {
   const [email, setEmail] = useState('');
@@ -12,7 +15,8 @@ function LoginContent() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') || '/colleges';
+  // Only same-site relative paths are allowed (prevents open redirects to phishing sites).
+  const callbackUrl = safeRedirectPath(searchParams.get('callbackUrl'));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +25,8 @@ function LoginContent() {
     setLoading(true);
     const result = await signIn('credentials', { email, password, redirect: false });
     setLoading(false);
-    if (result?.error) setError('Invalid credentials');
+    if (result?.error === TOO_MANY_ATTEMPTS) setError('Too many sign-in attempts. Please wait 15 minutes and try again.');
+    else if (result?.error) setError('Incorrect email or password');
     else router.push(callbackUrl);
   };
 

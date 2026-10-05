@@ -1,27 +1,14 @@
 import { NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
+import { assertSameOrigin, withErrorHandling } from '@/lib/http';
+import { requireUser } from '@/lib/session';
+import { idSchema } from '@/lib/validation';
 
-export async function DELETE(request: Request, { params }: { params: Promise<{ collegeId: string }> }) {
-  const session = await getServerSession(authOptions);
-  if (!session?.user?.id) {
-    return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
-  }
-
-  try {
-    const { collegeId } = await params;
-    const saved = await prisma.savedCollege.findUnique({
-      where: { userId_collegeId: { userId: session.user.id, collegeId } },
-    });
-    if (!saved) {
-      return NextResponse.json({ error: 'Not found' }, { status: 404 });
-    }
-
-    await prisma.savedCollege.delete({ where: { id: saved.id } });
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Delete saved error:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
-  }
-}
+/** Idempotent delete scoped to the signed-in user (no IDOR). */
+export const DELETE = withErrorHandling(async (request: Request, ctx: { params: Promise<{ collegeId: string }> }) => {
+  const user = await requireUser();
+  assertSameOrigin(request);
+  const collegeId = idSchema.parse((await ctx.params).collegeId);
+  const { count } = await prisma.savedCollege.deleteMany({ where: { userId: user.id, collegeId } });
+  return NextResponse.json({ success: true, removed: count });
+});

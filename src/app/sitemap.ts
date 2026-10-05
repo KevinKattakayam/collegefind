@@ -1,67 +1,26 @@
 import type { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/site';
+import { prisma } from '@/lib/prisma';
+import { COURSE_SLUGS } from '@/content/courses';
+import { EXAMS } from '@/content/exams';
+import { logger, errorFields } from '@/lib/logger';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://collegefind.in';
+export const revalidate = 86400;
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: BASE_URL,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1.0,
-    },
-    {
-      url: `${BASE_URL}/colleges`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/exams`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/courses`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/rankings`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/compare`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${BASE_URL}/predictor`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/articles`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.7,
-    },
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const now = new Date();
+  const staticPaths = ['', '/colleges', '/compare', '/predictor', '/rankings', '/exams', '/courses', '/articles'];
+  const entries: MetadataRoute.Sitemap = [
+    ...staticPaths.map((p) => ({ url: `${SITE_URL}${p}`, lastModified: now })),
+    ...COURSE_SLUGS.map((s) => ({ url: `${SITE_URL}/courses/${s}`, lastModified: now })),
+    ...EXAMS.map((e) => ({ url: `${SITE_URL}/exams/${e.id}`, lastModified: now })),
   ];
-
-  // Course detail pages
-  const courses = ['btech', 'mbbs', 'mba', 'llb', 'bsc', 'bcom', 'ba', 'mtech', 'phd'];
-  const coursePages: MetadataRoute.Sitemap = courses.map(slug => ({
-    url: `${BASE_URL}/courses/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.6,
-  }));
-
-  return [...staticPages, ...coursePages];
+  try {
+    const colleges = await prisma.college.findMany({ select: { slug: true, updatedAt: true }, take: 50000 });
+    entries.push(...colleges.map((c) => ({ url: `${SITE_URL}/colleges/${c.slug}`, lastModified: c.updatedAt })));
+  } catch (err) {
+    // Sitemap must not break the build if the DB is unreachable.
+    logger.warn('sitemap_db_unavailable', errorFields(err));
+  }
+  return entries;
 }

@@ -9,9 +9,10 @@ import EmptyState from '@/components/EmptyState';
 import { College, SavedComparison } from '@/types';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import { apiJson } from '@/lib/api';
 
 export default function SavedPage() {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
   const [saved, setSaved] = useState<College[]>([]);
   const [comparisons, setComparisons] = useState<SavedComparison[]>([]);
@@ -20,18 +21,16 @@ export default function SavedPage() {
   useEffect(() => {
     if (status === 'unauthenticated') { router.push('/login?callbackUrl=/saved'); return; }
     if (status === 'authenticated') {
-      (async () => {
-        try {
-          const api = await import('@/lib/api');
-          const [savedData, comparisonData] = await Promise.all([
-            api.apiJson('/api/saved'),
-            api.apiJson('/api/comparisons'),
-          ]);
-          setSaved(savedData.saved || []);
-          setComparisons(comparisonData.comparisons || []);
-        } catch {
-        } finally { setLoading(false); }
-      })();
+      Promise.all([
+        apiJson<{ saved: College[] }>('/api/saved'),
+        apiJson<{ comparisons: SavedComparison[] }>('/api/comparisons'),
+      ])
+        .then(([savedData, comparisonData]) => {
+          setSaved(savedData.saved);
+          setComparisons(comparisonData.comparisons);
+        })
+        .catch(() => toast.error('Could not load your saved items'))
+        .finally(() => setLoading(false));
     }
   }, [status, router]);
 
@@ -41,11 +40,9 @@ export default function SavedPage() {
 
   const handleDeleteComparison = async (id: string) => {
     try {
-      const res = await fetch(`/api/comparisons/${id}`, { method: 'DELETE' });
-      if (res.ok) {
-        setComparisons(prev => prev.filter(c => c.id !== id));
-        toast.success('Comparison removed');
-      }
+      await apiJson(`/api/comparisons/${encodeURIComponent(id)}`, { method: 'DELETE' });
+      setComparisons(prev => prev.filter(c => c.id !== id));
+      toast.success('Comparison removed');
     } catch {
       toast.error('Failed to delete comparison');
     }

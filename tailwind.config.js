@@ -104,8 +104,8 @@ module.exports = {
         offwhite: '#FAFBFD',
       },
       fontFamily: {
-        sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
-        display: ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Noto Sans', 'Helvetica', 'Arial', 'sans-serif'],
+        display: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Noto Sans', 'Helvetica', 'Arial', 'sans-serif'],
       },
       fontSize: {
         'xs':      ['12px', { lineHeight: '1.5', letterSpacing: '0.01em' }],

@@ -1,15 +1,17 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { CACHE_PUBLIC_SHORT, withErrorHandling } from '@/lib/http';
+import { collegeListSelect } from '@/server/colleges';
 
-export async function GET() {
-  try {
-    const colleges = await prisma.college.findMany({
-      orderBy: { rating: 'desc' },
-      take: 6,
-    });
-    return NextResponse.json({ colleges });
-  } catch (error) {
-    console.error('Featured colleges error:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
-  }
-}
+/**
+ * A neutral starting set: verified colleges first, then alphabetical.
+ * There is no paid placement and no ranking by the (formerly fake) rating.
+ */
+export const GET = withErrorHandling(async () => {
+  const colleges = await prisma.college.findMany({
+    select: collegeListSelect,
+    orderBy: [{ dataStatus: 'desc' }, { name: 'asc' }],
+    take: 6,
+  });
+  return NextResponse.json({ colleges }, { headers: { 'Cache-Control': CACHE_PUBLIC_SHORT } });
+});

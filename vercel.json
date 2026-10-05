@@ -1,12 +1,6 @@
 {
-  "buildCommand": "npx prisma generate && next build",
-  "installCommand": "npm install",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "regions": ["bom1"],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "https://college-discovery-m25t.onrender.com/api/$1"
-    }
-  ]
+  "buildCommand": "npm run vercel-build"
 }

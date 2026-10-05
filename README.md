@@ -1,219 +1,156 @@
-# CollegeFind — College Discovery & Decision Platform
+# CollegeFind
 
-A full-stack college discovery and comparison platform for Indian students. Search, compare, predict admission chances, and save your favorite colleges across 60+ institutions in India.
+A college discovery and decision tool for Indian students: search colleges, compare them
+side by side, and estimate admission chances from **official published cutoff data**.
 
-## Live Application
+> **Data status:** the catalogue currently ships with **demo** college rows (names, cities and
+> states are real; fees, placement and package figures are sample values). They are labelled
+> "Demo data" everywhere they appear. The admission estimator only works once real cutoff data
+> has been imported — it says so rather than inventing numbers.
+> See [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
 
-**Frontend**: https://college-finder-henna.vercel.app  
-**Backend API**: https://college-finder-z9dq.onrender.com
+## What it does
 
-## Tech Stack
+- **Search and filter** colleges by state, type, fees, NAAC grade, courses and whether sourced
+  cutoff data exists.
+- **Compare** two or three colleges. Highlights only compare values that are known for all of them.
+- **Estimate admission chances** from historical closing ranks, broken into Safe / Target / Reach
+  with a probability, a confidence level, a plain-language explanation and a link to the source.
+- **Ask and answer questions** per college, with moderation and audit logging.
 
-**Frontend**
-- Next.js 16 (App Router) with TypeScript
-- Tailwind CSS v3 for styling
-- NextAuth.js for authentication (Credentials Provider)
-- React Hot Toast for notifications
+## Tech stack
 
-**Backend**
-- Next.js API routes (serverless)
-- Prisma ORM with PostgreSQL
-- NextAuth integration
+| Layer | Choice |
+| --- | --- |
+| Framework | Next.js 16 (App Router), React 19, TypeScript (strict) |
+| Styling | Tailwind CSS v3, system font stack (no web-font request) |
+| Database | PostgreSQL via Prisma 7 (`@prisma/adapter-pg`) |
+| Auth | NextAuth v4, Credentials provider, JWT sessions, bcrypt (cost 12) |
+| Validation | Zod on every request body and query string |
+| Rate limiting | Upstash Redis when configured, in-memory otherwise |
+| Tests | Vitest (unit + integration against real PostgreSQL), Playwright (E2E) |
+| Hosting | Vercel, single deployment (frontend and API together) |
 
-**Database**
-- Neon PostgreSQL (serverless)
-- 60 pre-seeded colleges with realistic data
+## Architecture
 
-**Deployment**
-- Frontend: Vercel (with API proxy to backend)
-- Backend: Render (free tier with cold start spindown)
-- Database: Neon Postgres
+```
+Browser ──► Next.js on Vercel (pages + /api routes) ──► PostgreSQL (Neon)
+                        │
+                        └─ Upstash Redis (rate limits, optional)
 
-## Features
+Offline: scripts/ingest-josaa.ts ──► Source + CutoffRecord rows
+```
 
-### 1. Smart College Discovery
-- Browse 60+ colleges with live debounced search
-- Filter by state, college type, fees range, NAAC grade, rating, and courses
-- URL-based state management for shareable links
-- Pagination with skeleton loaders for fast perceived performance
+There is **one** deployment. (An earlier version proxied `/api/*` from Vercel to a separate
+Render service, which added a ~30s cold start for no benefit; API routes now run on Vercel.)
 
-### 2. Detailed College Profiles
-- Four-tab interface: Overview, Courses, Placements, Contact
-- Quick stats bar (fees, placement %, avg/highest package, student count)
-- Top recruiters and course offerings
-- Similar colleges recommendation engine
-- Breadcrumb navigation
+Request flow for every mutating API route:
 
-### 3. College Comparison
-- Compare 2–3 colleges side-by-side
-- 11+ metrics: location, fees, placements, ratings, establishment year
-- Best-value highlighting for standout metrics
-- Persistent floating compare bar
-- Smart search modal for adding colleges
+```
+withErrorHandling → requireUser/requireAdmin → assertSameOrigin → rate limit → Zod → Prisma
+```
 
-### 4. Authentication & Saved Items
-- Secure email/password registration and login
-- Session persistence with NextAuth
-- Bookmark individual colleges to personal "Saved Colleges" list
-- Save and reuse multi-college comparisons
-- Protected pages (requires login)
+### Data model
 
-### 5. Admission Predictor
-- Enter exam type (JEE Main/Advanced, NEET, CAT, GATE) and rank
-- Instant chance prediction: High/Moderate/Low badges
-- Filtered college recommendations based on cutoff data
+`College` holds identity plus denormalised summary columns (nullable: null means *unknown*).
+Anything a student might act on is a dated record tied to a `Source`:
 
-### 6. Community Q&A
-- Ask questions on any college detail page
-- Answer community questions (authenticated users)
-- Expandable answer threads
-- Real-time updates with optimistic UI
+- `Program` — one course at one college, named exactly as the counselling authority publishes it.
+- `CutoffRecord` — closing value by exam, **year, round, quota, category, PwD flag and gender pool**.
+- `FeesRecord`, `PlacementRecord`, `NirfRanking` — dated, sourced figures.
+- `Source` — publisher, URL, licence and retrieval date for every imported number.
+- `Review` — schema exists; the submission UI is deliberately not shipped yet.
+- `AuditLog` — who changed or hid what, and when.
 
-## Local Development
+`College.dataStatus` is `DEMO`, `UNVERIFIED` or `VERIFIED`, and the UI shows it.
 
-### Prerequisites
-- Node.js 18+
-- npm/yarn
-- PostgreSQL (or Docker)
+## Local development
 
-### Setup
+Requirements: **Node 22+** and PostgreSQL 14+.
 
 ```bash
-git clone https://github.com/Kevinbastin/college_finder.git
-cd college_discovery
-
+git clone https://github.com/KevinKattakayam/collegefind.git
+cd collegefind
 npm install
 
-cp .env.example .env.local
+cp .env.example .env
+# edit .env: set DATABASE_URL and a NEXTAUTH_SECRET (openssl rand -hex 32)
 
-npx prisma generate
-
-npx prisma migrate dev
-
-npx prisma db seed
+npm run db:deploy          # apply migrations
+npm run db:seed            # demo colleges only (non-destructive)
+npm run db:seed:synthetic  # optional: fictional institutes so the predictor has data
 
 npm run dev
 ```
 
-Open http://localhost:3000 after the development server starts.
+`db:seed:synthetic` creates **fictional** institutes ("Synthetic Institute of Technology Alpha")
+with invented cutoffs, so the estimator can be demonstrated without attaching made-up numbers to
+real colleges. It refuses to run with `NODE_ENV=production`.
 
-## Environment Variables
-
-### Development (`.env.local`)
-```
-DATABASE_URL=postgresql://user:password@localhost:5432/college_finder
-NEXTAUTH_SECRET=<random-32-char-string>
-NEXTAUTH_URL=http://localhost:3000
-```
-
-### Production (Vercel)
-```
-NEXTAUTH_URL=https://college-finder-henna.vercel.app
-NEXTAUTH_SECRET=<same-as-render>
-```
-
-**Note**: Do not set `NEXT_PUBLIC_API_URL` in production; the Vercel rewrite handles API proxying to Render.
-
-### Production (Render Backend)
-```
-DATABASE_URL=<your-neon-connection-string>
-NEXTAUTH_SECRET=<same-as-vercel>
-NEXTAUTH_URL=https://college-finder-henna.vercel.app
-NODE_ENV=production
-```
-
-## Deployment
-
-### Architecture
-- **Frontend** runs on Vercel (build + deployment)
-- **Backend** runs on Render (Next.js app with API routes)
-- **Database** runs on Neon (PostgreSQL)
-- **Proxy**: Vercel rewrites `/api/*` requests to Render (preserves cookies for auth)
-
-### Step-by-Step Deployment
-
-#### 1. Deploy Backend to Render
-1. Push code to GitHub
-2. Go to [render.com](https://render.com) → New Web Service
-3. Connect GitHub repo (`Kevinbastin/college_finder`)
-4. Configure:
-   - **Name**: `college-finder-backend`
-   - **Branch**: `main`
-   - **Runtime**: Node
-   - **Build Command**: `npx prisma migrate deploy && npx prisma generate && npm run build`
-   - **Start Command**: `npm run start`
-5. Add Environment Variables:
-   - `DATABASE_URL` = your Neon connection string
-   - `NEXTAUTH_SECRET` = random 32+ char secret
-   - `NEXTAUTH_URL` = your Vercel frontend URL (once deployed)
-   - `NODE_ENV` = `production`
-6. Deploy (green ✓ when ready)
-
-#### 2. Seed Production Database
-After Render deployment succeeds:
-```bash
-curl https://college-finder-z9dq.onrender.com/api/seed
-```
-Expected response: `{"success":true,"message":"Seeded 60 colleges!"}`
-
-#### 3. Deploy Frontend to Vercel
-1. Go to [vercel.com](https://vercel.com) → Add New → Project
-2. Import your GitHub repo
-3. Configure:
-   - **Framework**: Next.js
-   - **Build Command**: `npx prisma generate && next build` (migrations run on Render)
-4. Add Environment Variables:
-   - `NEXTAUTH_URL` = `https://college-finder-henna.vercel.app` (or your domain)
-   - `NEXTAUTH_SECRET` = same value as Render
-5. Deploy (auto-deploys on git push afterward)
-
-#### 4. Enable API Proxy (optional but recommended)
-Vercel automatically rewrites `/api/*` to Render (via `vercel.json`). No additional config needed.
-
-## Database Schema
-
-### Tables
-- **College**: 60 institutions with full metadata (fees, placements, rankings)
-- **User**: Registered users (email, hashed password)
-- **SavedCollege**: User bookmarks (many-to-many with College)
-- **SavedComparison**: User comparison sets (multiple colleges per comparison)
-- **Question**: Per-college community questions
-- **Answer**: Answers to questions (many-to-one with Question)
-
-### Sample College Data
-- **60 colleges** across 12 states
-- Distribution: 8 IITs, 6 NITs, 4 IIMs, 6 Private Engineering, 4 Private Management, 6 State Universities, 8 Private Deemed, 6 Medical, 6 Law/Arts, 6 Newer Private
-- Data includes: fees, placement rates, avg/highest packages, cutoff ranks by exam, courses, contacts, NAAC grades
-
----
-
-## Testing Features
+### Importing real cutoff data
 
 ```bash
-npm run dev
+npx tsx scripts/ingest-josaa.ts \
+  --file data/josaa-2025-round6.csv --year 2025 --round 6 \
+  --source-url "<the exact page you downloaded from>" \
+  --institutes data/institutes.csv --dry-run
 ```
 
----
+Run with `--dry-run` first and read the rejected-row and unmatched-institute report. The importer
+is idempotent: re-running the same file updates rows in place. See
+[docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) for sources, licences and the full workflow.
+
+## Scripts
+
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Development server |
+| `npm run build` / `npm start` | Production build / serve |
+| `npm run lint` | ESLint, warnings treated as errors |
+| `npm run typecheck` | `tsc --noEmit` |
+| `npm test` | Unit tests (no database needed) |
+| `npm run test:integration` | Integration tests (needs `TEST_DATABASE_URL`) |
+| `npm run test:e2e` | Playwright E2E against a built app |
+| `npm run db:migrate` / `db:deploy` / `db:seed` | Prisma migrations and seeding |
+| `npm run ingest:josaa` | Import a JoSAA cutoff CSV |
+
+## Environment variables
+
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `DATABASE_URL` | yes | PostgreSQL connection (pooled on Neon) |
+| `DIRECT_URL` | migrations | Non-pooled connection for `prisma migrate` |
+| `NEXTAUTH_SECRET` | yes | Session signing key, ≥32 chars |
+| `NEXTAUTH_URL` | production | Canonical site URL for NextAuth |
+| `NEXT_PUBLIC_SITE_URL` | yes | Base URL for canonical links and sitemap |
+| `UPSTASH_REDIS_REST_URL` / `_TOKEN` | recommended | Shared rate limiting across serverless instances |
+| `SEED_ENABLED`, `SEED_ALLOW_PRODUCTION`, `ADMIN_SEED_TOKEN` | no | HTTP seeding, off by default |
+| `NEXT_PUBLIC_DATA_NOTICE` | no | Set to `off` to hide the demo-data banner |
+
+Never commit real values. `.env` is git-ignored and CI fails if a credential-shaped string appears.
+
+## Security
+
+Summarised in [docs/SECURITY.md](docs/SECURITY.md). Highlights:
+
+- No public destructive endpoints; seeding requires a bearer token and is disabled by default.
+- Ownership is enforced inside the database query on every saved/comparison route.
+- Origin checks on all mutations, plus SameSite cookies.
+- Rate limits on registration, login, questions, answers, saves and the predictor.
+- CSP, HSTS, `X-Frame-Options: DENY`, `nosniff` and a referrer policy on every response.
+- Database TLS certificates are verified.
 
 ## Documentation
 
-- [Deployment Guide](./DEPLOY_RENDER.md) — Detailed Render + Vercel setup
-- API Routes documented in `src/app/api/`
+- [docs/AUDIT.md](docs/AUDIT.md) — what was wrong before, and what fixed it
+- [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) — sources, licences, ingestion
+- [docs/PREDICTOR.md](docs/PREDICTOR.md) — the model, its API contract and its limits
+- [docs/SECURITY.md](docs/SECURITY.md) — threat model and controls
+- [docs/TESTING.md](docs/TESTING.md) — how to run every test layer
+- [docs/ROADMAP.md](docs/ROADMAP.md) — 30/60/90-day plan and what is deliberately missing
 
----
+## Licence and disclaimer
 
-## Contributing
-
-Feel free to fork, modify, and use this as a template for your college discovery projects.
-
----
-
-## Performance Notes
-
-- **Cold starts**: Render free tier spins down after 15 min inactivity (first request ~30s). Upgrade to Starter ($7/mo) for always-on.
-- **Neon free tier**: Suitable for small projects. Upgrade if you exceed limits.
-- **Vercel**: Unlimited builds on free tier; auto-deployments on git push.
-
----
-
-This project provides a structured way to compare colleges, evaluate admission options, and manage saved selections.
+Code is MIT licensed. Imported data belongs to its publishers and carries their terms.
+**CollegeFind is not affiliated with JoSAA, MCC, NTA, NIRF or any institution.** Estimates are
+not guarantees — always confirm with the official counselling authority before making decisions.

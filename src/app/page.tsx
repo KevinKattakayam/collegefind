@@ -5,9 +5,10 @@ import { useRouter } from 'next/navigation';
 import CollegeCard from '@/components/CollegeCard';
 import CollegeCardSkeleton from '@/components/CollegeCardSkeleton';
 import StatsCounter from '@/components/StatsCounter';
-import TestimonialCard from '@/components/TestimonialCard';
 import SearchAutocomplete from '@/components/SearchAutocomplete';
-import { College, Testimonial, CategoryCard, TrendingExam } from '@/types';
+import type { College } from '@/types';
+import { apiJson } from '@/lib/api';
+import { EXAMS } from '@/content/exams';
 
 const quickFilters = [
   { label: 'Engineering', icon: '⚙️', color: 'from-indigo-500 to-blue-600', bg: 'bg-indigo-50', text: 'text-indigo-700', border: 'border-indigo-200' },
@@ -17,67 +18,38 @@ const quickFilters = [
   { label: 'Government', icon: '🏛️', color: 'from-sky-500 to-cyan-600', bg: 'bg-sky-50', text: 'text-sky-700', border: 'border-sky-200' },
   { label: 'Science', icon: '🔬', color: 'from-lime-500 to-green-600', bg: 'bg-lime-50', text: 'text-lime-700', border: 'border-lime-200' },
   { label: 'Private', icon: '🏢', color: 'from-rose-500 to-pink-600', bg: 'bg-rose-50', text: 'text-rose-700', border: 'border-rose-200' },
-  { label: 'Top Rated', icon: '⭐', color: 'from-yellow-500 to-amber-600', bg: 'bg-yellow-50', text: 'text-yellow-700', border: 'border-yellow-200' },
 ];
 
-const statsData = [
-  { number: 208, suffix: '+', label: 'Verified Colleges', icon: '🏛️' },
-  { number: 32, suffix: '', label: 'States & UTs', icon: '📍' },
-  { number: 9, suffix: '', label: 'Course Streams', icon: '📚' },
-  { number: 5, suffix: '', label: 'Entrance Exams', icon: '🎓' },
-];
+interface SiteStats {
+  colleges: number;
+  verifiedColleges: number;
+  demoColleges: number;
+  states: number;
+  cutoffRecords: number;
+}
 
-const categories: CategoryCard[] = [
-  { name: 'Engineering', icon: '⚙️', count: 128, href: '/colleges?courses=B.Tech', color: '#EEF2FF' },
-  { name: 'Medical', icon: '🩺', count: 22, href: '/colleges?courses=MBBS', color: '#ECFDF5' },
-  { name: 'Management', icon: '📊', count: 84, href: '/colleges?courses=MBA', color: '#FFFBEB' },
-  { name: 'Law', icon: '⚖️', count: 18, href: '/colleges?courses=LLB', color: '#F5F3FF' },
-  { name: 'Science', icon: '🔬', count: 45, href: '/colleges?courses=B.Sc', color: '#F0FDF4' },
-  { name: 'Commerce', icon: '💼', count: 30, href: '/colleges?courses=B.Com', color: '#FFF7ED' },
-  { name: 'Arts', icon: '🎨', count: 30, href: '/colleges?courses=B.A', color: '#FFF1F2' },
-  { name: 'Research', icon: '🧬', count: 52, href: '/colleges?courses=PhD', color: '#F0F9FF' },
-];
-
-const trendingExams: TrendingExam[] = [
-  { name: 'JEE Main 2026', date: 'Jan & Apr 2026', status: 'completed', registrationOpen: false },
-  { name: 'JEE Advanced 2026', date: 'Jun 2026', status: 'upcoming', registrationOpen: true },
-  { name: 'NEET UG 2026', date: 'May 2026', status: 'completed', registrationOpen: false },
-  { name: 'CAT 2026', date: 'Nov 2026', status: 'upcoming', registrationOpen: false },
-  { name: 'GATE 2027', date: 'Feb 2027', status: 'upcoming', registrationOpen: false },
-];
-
-const testimonials: Testimonial[] = [
-  {
-    quote: 'CollegeFind helped me compare IITs side by side. The predictor tool was spot-on — I got into my dream college!',
-    name: 'Priya Sharma',
-    college: 'IIT Delhi, B.Tech CSE',
-    rating: 5,
-  },
-  {
-    quote: 'Finally a platform without annoying ads and popups. Clean, fast, and the compare feature saved me hours of research.',
-    name: 'Arjun Patel',
-    college: 'NIT Trichy, B.Tech ECE',
-    rating: 5,
-  },
-  {
-    quote: 'The saved colleges feature let me shortlist my top picks. Much better than the cluttered alternatives out there.',
-    name: 'Sneha Reddy',
-    college: 'IIM Bangalore, MBA',
-    rating: 4,
-  },
+const categories: { name: string; icon: string; href: string; color: string }[] = [
+  { name: 'Engineering', icon: '⚙️', href: '/colleges?courses=B.Tech', color: '#EEF2FF' },
+  { name: 'Medical', icon: '🩺', href: '/colleges?courses=MBBS', color: '#ECFDF5' },
+  { name: 'Management', icon: '📊', href: '/colleges?courses=MBA', color: '#FFFBEB' },
+  { name: 'Law', icon: '⚖️', href: '/colleges?courses=LLB', color: '#F5F3FF' },
+  { name: 'Science', icon: '🔬', href: '/colleges?courses=B.Sc', color: '#F0FDF4' },
+  { name: 'Commerce', icon: '💼', href: '/colleges?courses=B.Com', color: '#FFF7ED' },
+  { name: 'Arts', icon: '🎨', href: '/colleges?courses=B.A', color: '#FFF1F2' },
+  { name: 'Research', icon: '🧬', href: '/colleges?courses=PhD', color: '#F0F9FF' },
 ];
 
 const steps = [
-  { icon: '🔍', title: 'Search & Filter', desc: 'Browse 208+ verified colleges with 10+ advanced filters — fees, NAAC grade, location, courses, exams, and more.', color: 'from-indigo-50 to-blue-50', accent: '#4F46E5', iconBg: 'from-indigo-500 to-blue-600' },
+  { icon: '🔍', title: 'Search & Filter', desc: 'Filter by state, fees, NAAC grade, courses and college type. Every college shows whether its numbers are verified or demo values.', color: 'from-indigo-50 to-blue-50', accent: '#4F46E5', iconBg: 'from-indigo-500 to-blue-600' },
   { icon: '⚖️', title: 'Compare & Analyze', desc: 'Compare up to 3 colleges side-by-side. See fees, placements, packages, and rankings at a glance.', color: 'from-emerald-50 to-teal-50', accent: '#059669', iconBg: 'from-emerald-500 to-teal-600' },
-  { icon: '🎯', title: 'Predict & Decide', desc: 'Enter your exam rank to see matching colleges with High, Moderate, or Low chance indicators instantly.', color: 'from-amber-50 to-orange-50', accent: '#D97706', iconBg: 'from-amber-500 to-orange-600' },
+  { icon: '🎯', title: 'Predict & Decide', desc: 'Enter your rank, category and home state. We estimate Safe, Target and Reach options from past official closing ranks and show the data behind each one.', color: 'from-amber-50 to-orange-50', accent: '#D97706', iconBg: 'from-amber-500 to-orange-600' },
 ];
 
 const whyFeatures = [
-  { icon: '✨', title: 'Ad-Free Experience', desc: 'Zero popups, zero banners, zero sponsored results. Pure information.' },
-  { icon: '⚡', title: 'Blazing Fast', desc: 'Sub-50ms API responses. Instant search, filter, and sort across 208 colleges.' },
-  { icon: '📱', title: 'Mobile First', desc: 'Designed for phones first with bottom-sheet filters and swipe-friendly cards.' },
-  { icon: '🔒', title: 'Verified Data', desc: 'Every college detail cross-verified. NAAC grades, fees, placements — all accurate.' },
+  { icon: '🧾', title: 'Sources, not slogans', desc: 'Every cutoff we use links to the official counselling publication it came from, with the year and round.' },
+  { icon: '🏷️', title: 'Honest labels', desc: 'Numbers we have not verified are labelled as demo or unverified, right where you see them.' },
+  { icon: '🚫', title: 'No sponsored listings', desc: 'Colleges cannot pay to appear higher. There are no ads and we do not sell your details.' },
+  { icon: '📶', title: 'Light on data', desc: 'No web fonts or heavy media, so pages load on slow mobile connections.' },
 ];
 
 /* Scroll reveal hook */
@@ -103,25 +75,24 @@ function RevealSection({ children, className = '' }: { children: React.ReactNode
 
 export default function HomePage() {
   const [featured, setFeatured] = useState<College[]>([]);
+  const [stats, setStats] = useState<SiteStats | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
-    (async () => {
-      try {
-        const api = await import('@/lib/api');
-        const d = await api.apiJson('/api/colleges/featured');
-        setFeatured(d.colleges || []);
-      } catch {}
-      setLoading(false);
-    })();
+    apiJson<{ colleges: College[] }>('/api/colleges/featured')
+      .then((d) => setFeatured(d.colleges))
+      .catch(() => setFeatured([]))
+      .finally(() => setLoading(false));
+    apiJson<SiteStats>('/api/stats')
+      .then(setStats)
+      .catch(() => setStats(null));
   }, []);
 
   const handleQuickFilter = (filter: string) => {
     if (filter === 'Government') router.push('/colleges?type=GOVERNMENT');
     else if (filter === 'Private') router.push('/colleges?type=PRIVATE');
-    else if (filter === 'Top Rated') router.push('/colleges?minRating=4.5');
-    else if (filter === 'Engineering') router.push('/colleges?courses=B.Tech');
+        else if (filter === 'Engineering') router.push('/colleges?courses=B.Tech');
     else if (filter === 'Medical') router.push('/colleges?courses=MBBS');
     else if (filter === 'Management') router.push('/colleges?courses=MBA');
     else if (filter === 'Law') router.push('/colleges?courses=LLB');
@@ -146,7 +117,7 @@ export default function HomePage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
             </span>
-            <span className="text-xs font-bold text-indigo-700 tracking-wide uppercase">Trusted by 10,000+ students</span>
+            <span className="text-xs font-bold text-indigo-700 tracking-wide">Free · No sponsored listings · Sources shown</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 mb-6 leading-[0.95] tracking-tight">
@@ -154,7 +125,7 @@ export default function HomePage() {
             <span className="hero-text-gradient">Perfect College</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
-            Search <span className="text-indigo-600 font-bold">208+ verified colleges</span> across 32 states. Compare fees, placements, and rankings — zero ads, zero clutter.
+            Search colleges across India, compare them side by side, and check your admission chances against official past cutoffs.
           </p>
 
           <SearchAutocomplete className="max-w-2xl mx-auto mb-12" />
@@ -177,7 +148,16 @@ export default function HomePage() {
 
       {/* ===== ANIMATED STATS ===== */}
       <RevealSection>
-        <StatsCounter stats={statsData} />
+        {stats && (
+          <StatsCounter
+            stats={[
+              { number: stats.colleges, suffix: '', label: 'Colleges listed', icon: '🏛️' },
+              { number: stats.states, suffix: '', label: 'States & UTs', icon: '📍' },
+              { number: stats.verifiedColleges, suffix: '', label: 'Colleges with verified data', icon: '✅' },
+              { number: stats.cutoffRecords, suffix: '', label: 'Official cutoff records', icon: '📊' },
+            ]}
+          />
+        )}
       </RevealSection>
 
       {/* ===== TOP CATEGORIES ===== */}
@@ -185,7 +165,6 @@ export default function HomePage() {
         <section className="py-16 md:py-20">
           <div className="container-main">
             <div className="text-center mb-12">
-              <span className="text-label text-indigo-600 mb-2 block">Explore</span>
               <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-3 tracking-tight">Browse by Category</h2>
               <p className="text-base text-slate-500 max-w-lg mx-auto">Discover colleges across India&apos;s most popular academic streams</p>
             </div>
@@ -195,7 +174,6 @@ export default function HomePage() {
                   className="category-card-v2 group no-underline" style={{ backgroundColor: cat.color }}>
                   <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300 ease-out">{cat.icon}</div>
                   <div className="text-sm font-bold text-slate-800 mb-0.5">{cat.name}</div>
-                  <div className="text-[11px] text-slate-500 font-semibold">{cat.count}+ colleges</div>
                 </Link>
               ))}
             </div>
@@ -203,44 +181,23 @@ export default function HomePage() {
         </section>
       </RevealSection>
 
-      {/* ===== TRENDING EXAMS ===== */}
+      {/* ===== EXAMS ===== */}
       <RevealSection>
         <section className="py-16 md:py-20 bg-white">
           <div className="container-main">
             <div className="flex items-end justify-between mb-10">
               <div>
-                <span className="text-label text-indigo-600 mb-2 block">Exams</span>
-                <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Trending Entrance Exams</h2>
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Entrance exams</h2>
+                <p className="text-sm text-slate-600 mt-2">Dates change every year, so we link to the official sites instead of copying them.</p>
               </div>
-              <Link href="/exams" className="text-sm text-indigo-600 font-bold hover:underline no-underline hidden md:block">View All Exams →</Link>
+              <Link href="/exams" className="text-sm text-indigo-700 font-bold hover:underline no-underline hidden md:block">All exams</Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-              {trendingExams.map(exam => (
-                <div key={exam.name} className="exam-card group">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className={`exam-status ${
-                      exam.status === 'upcoming' ? 'exam-status-upcoming' :
-                      exam.status === 'ongoing' ? 'exam-status-ongoing' :
-                      'exam-status-completed'
-                    }`}>
-                      {exam.status === 'upcoming' ? 'Upcoming' : exam.status === 'ongoing' ? 'Live' : 'Completed'}
-                    </span>
-                    {exam.registrationOpen && (
-                      <span className="relative flex h-2.5 w-2.5">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-                      </span>
-                    )}
-                  </div>
-                  <h3 className="text-base font-bold text-slate-800 mb-1.5 group-hover:text-indigo-600 transition-colors">{exam.name}</h3>
-                  <p className="text-sm text-slate-500 font-medium">{exam.date}</p>
-                  {exam.registrationOpen && (
-                    <div className="mt-3 inline-flex items-center gap-1.5 text-xs text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-full">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                      Registration Open
-                    </div>
-                  )}
-                </div>
+              {EXAMS.map(exam => (
+                <Link key={exam.id} href={`/exams/${exam.id}`} className="exam-card group no-underline">
+                  <h3 className="text-base font-bold text-slate-800 mb-1.5 group-hover:text-indigo-700">{exam.name}</h3>
+                  <p className="text-sm text-slate-600">{exam.conductingBody}</p>
+                </Link>
               ))}
             </div>
           </div>
@@ -253,9 +210,8 @@ export default function HomePage() {
           <div className="container-main">
             <div className="flex items-end justify-between mb-10">
               <div>
-                <span className="text-label text-indigo-600 mb-2 block">Featured</span>
-                <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Top Rated Colleges</h2>
-                <p className="text-sm text-slate-500 mt-2">Highest-rated institutions across placements, faculty, and infrastructure</p>
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Start exploring</h2>
+                <p className="text-sm text-slate-600 mt-2">Colleges with verified data appear first. Nobody pays to be here.</p>
               </div>
               <Link href="/colleges" className="text-sm font-bold text-indigo-600 hover:underline no-underline hidden md:block">View All →</Link>
             </div>
@@ -265,7 +221,7 @@ export default function HomePage() {
             </div>
             <div className="text-center mt-12">
               <Link href="/colleges" className="btn-primary-lg inline-flex items-center gap-2 no-underline group">
-                Browse All 208+ Colleges
+                Browse all colleges
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
               </Link>
             </div>
@@ -278,9 +234,8 @@ export default function HomePage() {
         <section className="py-16 md:py-20 bg-white">
           <div className="container-main">
             <div className="text-center mb-14">
-              <span className="text-label text-indigo-600 mb-2 block">How It Works</span>
-              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-3 tracking-tight">Three Steps to Your Dream College</h2>
-              <p className="text-base text-slate-500 max-w-lg mx-auto">Our data-driven approach simplifies the most important decision of your career</p>
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-3 tracking-tight">How it works</h2>
+              <p className="text-base text-slate-600 max-w-lg mx-auto">A simple process for a big decision</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {steps.map((s, i) => (
@@ -319,9 +274,8 @@ export default function HomePage() {
           <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="container-main relative z-10">
             <div className="text-center mb-14">
-              <span className="text-label text-indigo-400 mb-2 block">Why Choose Us</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-3 tracking-tight">Built Different from Day One</h2>
-              <p className="text-base text-slate-400 max-w-lg mx-auto">Not just another college listing — a decision engine designed for India&apos;s students</p>
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-3 tracking-tight">What we promise</h2>
+              <p className="text-base text-slate-300 max-w-lg mx-auto">Commitments you can check for yourself</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {whyFeatures.map((f, i) => (
@@ -336,24 +290,6 @@ export default function HomePage() {
         </section>
       </RevealSection>
 
-      {/* ===== TESTIMONIALS ===== */}
-      <RevealSection>
-        <section className="py-16 md:py-20 bg-white">
-          <div className="container-main">
-            <div className="text-center mb-14">
-              <span className="text-label text-indigo-600 mb-2 block">Testimonials</span>
-              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-3 tracking-tight">What Students Say</h2>
-              <p className="text-base text-slate-500 max-w-lg mx-auto">Join thousands who found their dream college with CollegeFind</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((t, i) => (
-                <TestimonialCard key={i} testimonial={t} index={i} />
-              ))}
-            </div>
-          </div>
-        </section>
-      </RevealSection>
-
       {/* ===== CTA ===== */}
       <section className="cta-ultra relative overflow-hidden py-20 md:py-24">
         <div className="cta-blob cta-blob-1" />
@@ -361,14 +297,14 @@ export default function HomePage() {
         <div className="container-main text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-5 tracking-tight">Ready to find your<br /><span className="cta-text-accent">perfect college?</span></h2>
           <p className="text-base text-indigo-200 mb-10 max-w-lg mx-auto leading-relaxed">
-            Join 10,000+ students already using CollegeFind to make smarter decisions
+            Shortlist colleges, compare them side by side, and check your chances with sourced cutoff data.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link href="/colleges" className="cta-btn-primary no-underline">
               Browse All Colleges
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m9 18 6-6-6-6"/></svg>
             </Link>
-            <Link href="/predictor" className="cta-btn-secondary no-underline">Try College Predictor</Link>
+            <Link href="/predictor" className="cta-btn-secondary no-underline">Check my chances</Link>
           </div>
         </div>
       </section>

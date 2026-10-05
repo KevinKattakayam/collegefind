@@ -6,8 +6,8 @@ interface Props {
   colleges: College[];
 }
 
-const METRICS = [
-  { key: 'rating', label: 'Rating', max: 5 },
+type MetricKey = 'placementPct' | 'avgPackage' | 'totalStudents' | 'annualFees';
+const METRICS: { key: MetricKey; label: string; max: number; invert?: boolean }[] = [
   { key: 'placementPct', label: 'Placement %', max: 100 },
   { key: 'avgPackage', label: 'Avg Package', max: 30 },
   { key: 'totalStudents', label: 'Students', max: 50000 },
@@ -93,9 +93,9 @@ export default function RadarChart({ colleges }: Props) {
 
       for (let i = 0; i < count; i++) {
         const metric = METRICS[i];
-        let rawValue = (college as any)[metric.key] || 0;
+        const rawValue = college[metric.key] ?? 0;
         let normalized = Math.min(rawValue / metric.max, 1);
-        if ((metric as any).invert) normalized = 1 - normalized;
+        if (metric.invert) normalized = 1 - normalized;
 
         const angle = i * angleStep - Math.PI / 2;
         const r = radius * Math.max(normalized, 0.05);
@@ -116,9 +116,9 @@ export default function RadarChart({ colleges }: Props) {
       // Draw data points
       for (let i = 0; i < count; i++) {
         const metric = METRICS[i];
-        let rawValue = (college as any)[metric.key] || 0;
+        const rawValue = college[metric.key] ?? 0;
         let normalized = Math.min(rawValue / metric.max, 1);
-        if ((metric as any).invert) normalized = 1 - normalized;
+        if (metric.invert) normalized = 1 - normalized;
 
         const angle = i * angleStep - Math.PI / 2;
         const r = radius * Math.max(normalized, 0.05);

@@ -18,7 +18,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => { setMobileOpen(false); }, [pathname]);
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -128,7 +127,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col gap-1">
               {navLinks.map(link => (
-                <Link key={link.href} href={link.href}
+                <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
                   className={`text-base font-medium py-2.5 px-3 rounded-lg no-underline transition-colors ${isActive(link.href) ? 'text-indigo-600 bg-indigo-50' : 'text-slate-700 hover:bg-slate-50'}`}>
                   {link.label}
                 </Link>
@@ -136,8 +135,8 @@ export default function Navbar() {
               <div className="border-t border-slate-100 my-3" />
               {status === 'unauthenticated' && (
                 <div className="flex flex-col gap-2.5">
-                  <Link href="/login" className="btn-outlined w-full text-center no-underline">Login</Link>
-                  <Link href="/register" className="btn-primary w-full text-center no-underline">Register</Link>
+                  <Link href="/login" onClick={() => setMobileOpen(false)} className="btn-outlined w-full text-center no-underline">Login</Link>
+                  <Link href="/register" onClick={() => setMobileOpen(false)} className="btn-primary w-full text-center no-underline">Register</Link>
                 </div>
               )}
               {status === 'authenticated' && (

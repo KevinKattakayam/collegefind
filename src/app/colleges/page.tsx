@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useCallback, Suspense } from 'react';
+import { useState, useEffect, useCallback, useMemo, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import CollegeCard from '@/components/CollegeCard';
 import CollegeCardHorizontal from '@/components/CollegeCardHorizontal';
@@ -9,108 +9,123 @@ import Pagination from '@/components/Pagination';
 import CompareBar from '@/components/CompareBar';
 import Breadcrumb from '@/components/Breadcrumb';
 import EmptyState from '@/components/EmptyState';
-import { College, ViewMode } from '@/types';
+import type { College, CollegesResponse, ViewMode } from '@/types';
+import { apiJson } from '@/lib/api';
 import { useSession } from 'next-auth/react';
+
+interface Filters {
+  search: string;
+  state: string;
+  type: string;
+  minFees: string;
+  maxFees: string;
+  naac: string[];
+  minRating: string;
+  courses: string[];
+  exams: string[];
+  established: string;
+  page: number;
+  sort: string;
+}
+
+function parseFilters(sp: URLSearchParams): Filters {
+  const list = (k: string) => (sp.get(k) ? sp.get(k)!.split(',').filter(Boolean) : []);
+  const page = Number.parseInt(sp.get('page') ?? '1', 10);
+  return {
+    search: sp.get('search') ?? '',
+    state: sp.get('state') ?? '',
+    type: sp.get('type') ?? '',
+    minFees: sp.get('minFees') ?? '',
+    maxFees: sp.get('maxFees') ?? '',
+    naac: list('naac'),
+    minRating: sp.get('minRating') ?? '',
+    courses: list('courses'),
+    exams: list('exams'),
+    established: sp.get('established') ?? '',
+    page: Number.isFinite(page) && page > 0 ? page : 1,
+    sort: sp.get('sort') ?? 'name',
+  };
+}
+
+function toApiQuery(f: Filters): string {
+  const p = new URLSearchParams();
+  (['search', 'state', 'type', 'minFees', 'maxFees', 'minRating', 'established'] as const).forEach((k) => {
+    if (f[k]) p.set(k, f[k]);
+  });
+  (['naac', 'courses', 'exams'] as const).forEach((k) => {
+    if (f[k].length) p.set(k, f[k].join(','));
+  });
+  p.set('page', String(f.page));
+  p.set('sort', f.sort);
+  return p.toString();
+}
 
 function CollegesContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { data: session } = useSession();
 
-  const [colleges, setColleges] = useState<College[]>([]);
-  const [total, setTotal] = useState(0);
-  const [totalPages, setTotalPages] = useState(0);
-  const [loading, setLoading] = useState(true);
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [states, setStates] = useState<string[]>([]);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
 
-  const filters = {
-    search: searchParams.get('search') || '',
-    state: searchParams.get('state') || '',
-    type: searchParams.get('type') || '',
-    minFees: searchParams.get('minFees') || '',
-    maxFees: searchParams.get('maxFees') || '',
-    naac: searchParams.get('naac') ? searchParams.get('naac')!.split(',') : [],
-    minRating: searchParams.get('minRating') || '',
-    courses: searchParams.get('courses') ? searchParams.get('courses')!.split(',') : [],
-    exams: searchParams.get('exams') ? searchParams.get('exams')!.split(',') : [],
-    established: searchParams.get('established') || '',
-    page: parseInt(searchParams.get('page') || '1'),
-    sort: searchParams.get('sort') || 'rating',
-  };
-
+  const queryKey = searchParams.toString();
+  const filters = useMemo(() => parseFilters(searchParams), [searchParams]);
   const [searchInput, setSearchInput] = useState(filters.search);
+  const [result, setResult] = useState<{ key: string | null; data: CollegesResponse | null }>({ key: null, data: null });
+  const loading = result.key !== queryKey;
+  const colleges = result.data?.colleges ?? [];
+  const total = result.data?.total ?? 0;
+  const totalPages = result.data?.totalPages ?? 0;
 
-  const updateURL = useCallback((newFilters: Record<string, any>) => {
+  const updateURL = useCallback((patch: Partial<Filters>) => {
+    const next = { ...filters, ...patch };
     const params = new URLSearchParams();
-    Object.entries({ ...filters, ...newFilters }).forEach(([key, value]) => {
-      if (Array.isArray(value) && value.length > 0) params.set(key, value.join(','));
-      else if (value && value !== '1' && key !== 'page') params.set(key, String(value));
-      else if (key === 'page' && Number(value) > 1) params.set(key, String(value));
+    Object.entries(next).forEach(([key, value]) => {
+      if (Array.isArray(value)) {
+        if (value.length) params.set(key, value.join(','));
+      } else if (key === 'page') {
+        if (Number(value) > 1) params.set(key, String(value));
+      } else if (key === 'sort') {
+        if (value && value !== 'name') params.set(key, String(value));
+      } else if (value) {
+        params.set(key, String(value));
+      }
     });
     router.push(`/colleges?${params.toString()}`, { scroll: false });
   }, [filters, router]);
 
-  const fetchColleges = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (filters.search) params.set('search', filters.search);
-    if (filters.state) params.set('state', filters.state);
-    if (filters.type) params.set('type', filters.type);
-    if (filters.minFees) params.set('minFees', filters.minFees);
-    if (filters.maxFees) params.set('maxFees', filters.maxFees);
-    if (filters.naac.length) params.set('naac', filters.naac.join(','));
-    if (filters.minRating) params.set('minRating', filters.minRating);
-    if (filters.courses.length) params.set('courses', filters.courses.join(','));
-    if (filters.exams.length) params.set('exams', filters.exams.join(','));
-    if (filters.established) params.set('established', filters.established);
-    params.set('page', String(filters.page));
-    params.set('sort', filters.sort);
-
-    try {
-      const api = await import('@/lib/api');
-      const data = await api.apiJson(`/api/colleges?${params.toString()}`);
-      setColleges(data.colleges || []);
-      setTotal(data.total || 0);
-      setTotalPages(data.totalPages || 0);
-    } catch { setColleges([]); }
-    setLoading(false);
-  }, [searchParams]);
-
-  useEffect(() => { fetchColleges(); }, [fetchColleges]);
+  useEffect(() => {
+    const controller = new AbortController();
+    apiJson<CollegesResponse>(`/api/colleges?${toApiQuery(filters)}`, { signal: controller.signal })
+      .then((data) => setResult({ key: queryKey, data }))
+      .catch(() => {
+        if (!controller.signal.aborted) setResult({ key: queryKey, data: null });
+      });
+    return () => controller.abort();
+  }, [filters, queryKey]);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const api = await import('@/lib/api');
-        const d = await api.apiJson('/api/colleges?distinct=states');
-        setStates(d.states || []);
-      } catch {}
-    })();
+    apiJson<{ states: string[] }>('/api/colleges?distinct=states')
+      .then((d) => setStates(d.states))
+      .catch(() => setStates([]));
   }, []);
 
   useEffect(() => {
-    if (session) {
-      (async () => {
-        try {
-          const api = await import('@/lib/api');
-          const d = await api.apiJson('/api/saved');
-          setSavedIds((d.saved || []).map((c: College) => c.id));
-        } catch {}
-      })();
-    }
+    if (!session) return;
+    apiJson<{ saved: College[] }>('/api/saved')
+      .then((d) => setSavedIds(d.saved.map((c) => c.id)))
+      .catch(() => setSavedIds([]));
   }, [session]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (searchInput !== filters.search) updateURL({ search: searchInput, page: 1 });
-    }, 300);
+    if (searchInput === filters.search) return;
+    const timer = setTimeout(() => updateURL({ search: searchInput, page: 1 }), 300);
     return () => clearTimeout(timer);
-  }, [searchInput]);
+  }, [searchInput, filters.search, updateURL]);
 
-  const handleFilterChange = (newValues: any) => {
+  const handleFilterChange = (newValues: Partial<Filters>) => {
     updateURL({ ...newValues, page: 1 });
   };
 
@@ -126,7 +141,7 @@ function CollegesContent() {
       {/* Search bar */}
       <div className="search-premium relative mb-6">
         <svg className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input type="text" value={searchInput} onChange={e => setSearchInput(e.target.value)}
+        <input type="search" aria-label="Search colleges, cities, or states" value={searchInput} onChange={e => setSearchInput(e.target.value)}
           placeholder="Search colleges, cities, or states..."
           className="w-full h-[52px] pl-14 pr-5 text-base bg-transparent rounded-xl border-0 focus:outline-none text-slate-800 placeholder:text-slate-400" />
       </div>
@@ -190,12 +205,11 @@ function CollegesContent() {
                 </button>
               </div>
 
-              <select value={filters.sort} onChange={e => updateURL({ sort: e.target.value, page: 1 })}
+              <select aria-label="Sort colleges" value={filters.sort} onChange={e => updateURL({ sort: e.target.value, page: 1 })}
                 className="input-field !w-auto !h-[36px] text-sm !rounded-lg">
-                <option value="rating">Rating</option>
+                <option value="name">Name A–Z</option>
                 <option value="fees_asc">Fees Low→High</option>
                 <option value="fees_desc">Fees High→Low</option>
-                <option value="name">Name A-Z</option>
                 <option value="newest">Newest</option>
               </select>
             </div>
@@ -211,11 +225,11 @@ function CollegesContent() {
             <>
               {viewMode === 'grid' ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {colleges.map(c => <CollegeCard key={c.id} college={c} savedIds={savedIds} />)}
+                  {colleges.map(c => <CollegeCard key={`${c.id}-${savedIds.includes(c.id)}`} college={c} savedIds={savedIds} />)}
                 </div>
               ) : (
                 <div className="flex flex-col gap-4">
-                  {colleges.map(c => <CollegeCardHorizontal key={c.id} college={c} savedIds={savedIds} />)}
+                  {colleges.map(c => <CollegeCardHorizontal key={`${c.id}-${savedIds.includes(c.id)}`} college={c} savedIds={savedIds} />)}
                 </div>
               )}
               <Pagination currentPage={filters.page} totalPages={totalPages} totalItems={total} itemsPerPage={12}

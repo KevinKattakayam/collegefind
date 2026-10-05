@@ -39,3 +39,12 @@ next-env.d.ts
 
 # prisma
 /src/generated/
+
+# test & e2e artifacts
+/test-results/
+/playwright-report/
+/coverage/
+
+# raw ingestion inputs (check source terms before committing any data file)
+/data/*.csv
+!/data/institutes.example.csv
