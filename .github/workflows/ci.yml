@@ -1,0 +1,119 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  NEXT_TELEMETRY_DISABLED: '1'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: collegefind_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/collegefind_test
+      DIRECT_URL: postgresql://postgres:postgres@localhost:5432/collegefind_test
+      TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/collegefind_test
+      NEXTAUTH_SECRET: ci-secret-value-that-is-at-least-32-chars
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check formatting of the Prisma schema
+        run: npx prisma format && git diff --exit-code prisma/schema.prisma
+
+      - name: Verify migrations match the schema
+        # Fails if someone edited schema.prisma without adding a migration.
+        run: |
+          npx prisma migrate deploy
+          npx prisma migrate diff \
+            --from-migrations prisma/migrations \
+            --to-schema prisma/schema.prisma \
+            --shadow-database-url "$DATABASE_URL" \
+            --exit-code && echo "Schema and migrations agree"
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Integration tests
+        run: npm run test:integration
+
+      - name: Build
+        run: npx next build
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Scan for committed secrets
+        # A real database URL and NEXTAUTH_SECRET were committed once before
+        # (render-new.yaml). This job fails the build if that happens again.
+        run: |
+          set -e
+          # Ignore documented placeholders (.env.example) and CI's own throwaway
+          # local-Postgres URLs; flag anything else that looks like a real credential.
+          if git grep -nIE '(postgres(ql)?://[^ "'"'"']*:[^ "'"'"'@/]+@)|(npg_[A-Za-z0-9]{10,})' \
+               -- . ':!*.md' ':!package-lock.json' ':!.env.example' ':!.github/workflows/ci.yml' \
+             | grep -vE '://(user|postgres|cf):(password|postgres|cf)@(localhost|127\.0\.0\.1|host)'; then
+            echo "::error::A database URL with a password appears to be committed."
+            exit 1
+          fi
+          echo "No obvious committed credentials found."
+
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm audit --audit-level=high

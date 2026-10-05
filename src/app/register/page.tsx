@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
+import { ApiClientError, postJson } from '@/lib/api';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -19,7 +20,8 @@ export default function RegisterPage() {
     const e: Record<string, string> = {};
     if (!name.trim()) e.name = 'Name is required';
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) e.email = 'Valid email is required';
-    if (!password || password.length < 8) e.password = 'Password must be at least 8 characters';
+    if (!password || password.length < 10) e.password = 'Password must be at least 10 characters';
+    else if (new TextEncoder().encode(password).length > 72) e.password = 'Password must be at most 72 bytes';
     if (password !== confirmPwd) e.confirmPwd = 'Passwords do not match';
     setErrors(e);
     return Object.keys(e).length === 0;
@@ -31,17 +33,18 @@ export default function RegisterPage() {
     setLoading(true);
     setServerError('');
     try {
-      const api = await import('@/lib/api');
-      const res = await api.apiFetch('/api/auth/register', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password }),
-      });
-      const data = await res.json();
-      if (!res.ok) { setServerError(data.error || 'Registration failed'); setLoading(false); return; }
-      // Auto-login
-      await signIn('credentials', { email, password, redirect: false });
+      await postJson('/api/auth/register', { name, email, password });
+      const result = await signIn('credentials', { email, password, redirect: false });
+      if (result?.error) {
+        router.push('/login');
+        return;
+      }
       router.push('/colleges');
-    } catch { setServerError('Something went wrong'); setLoading(false); }
+    } catch (err) {
+      if (err instanceof ApiClientError && err.details) setErrors(err.details);
+      setServerError(err instanceof Error ? err.message : 'Something went wrong');
+      setLoading(false);
+    }
   };
 
   return (

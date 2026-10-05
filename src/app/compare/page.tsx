@@ -4,75 +4,71 @@ import { useSession } from 'next-auth/react';
 import { useCompare } from '@/context/CompareContext';
 import SearchModal from '@/components/SearchModal';
 import RadarChart from '@/components/RadarChart';
-import { College } from '@/types';
-import { formatINR, formatLPA } from '@/lib/utils';
+import type { College } from '@/types';
+import { postJson } from '@/lib/api';
+import { formatCount, formatINR, formatLPA, formatPct } from '@/lib/utils';
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 import toast from 'react-hot-toast';
 
-const METRICS = [
-  { key: 'city', label: 'Location', format: (c: College) => `${c.city}, ${c.state}` },
-  { key: 'type', label: 'Type', format: (c: College) => c.type },
-  { key: 'naacGrade', label: 'NAAC Grade', format: (c: College) => c.naacGrade },
-  { key: 'establishedYear', label: 'Established', format: (c: College) => String(c.establishedYear) },
-  { key: 'totalStudents', label: 'Total Students', format: (c: College) => c.totalStudents.toLocaleString() },
-  { key: 'annualFees', label: 'Annual Fees', format: (c: College) => formatINR(c.annualFees), best: 'min' },
-  { key: 'placementPct', label: 'Placement %', format: (c: College) => `${c.placementPct}%`, best: 'max' },
-  { key: 'avgPackage', label: 'Avg Package', format: (c: College) => formatLPA(c.avgPackage), best: 'max' },
-  { key: 'highestPackage', label: 'Highest Package', format: (c: College) => formatLPA(c.highestPackage), best: 'max' },
-  { key: 'rating', label: 'Overall Rating', format: (c: College) => `★ ${c.rating}`, best: 'max' },
-  { key: 'courses', label: 'Courses Count', format: (c: College) => String(c.courses.length) },
-  { key: 'topRecruiters', label: 'Top Recruiters', format: (c: College) => c.topRecruiters.slice(0, 3).join(', ') },
-  { key: 'coursesList', label: 'Courses Offered', format: (c: College) => c.courses.slice(0, 4).join(', ') },
+type Best = 'min' | 'max';
+interface Metric {
+  key: string;
+  label: string;
+  format: (c: College) => string;
+  value?: (c: College) => number | null;
+  best?: Best;
+}
+
+const METRICS: Metric[] = [
+  { key: 'dataStatus', label: 'Data status', format: (c) => (c.dataStatus === 'DEMO' ? 'Demo values' : c.dataStatus === 'VERIFIED' ? 'Verified' : 'Unverified') },
+  { key: 'city', label: 'Location', format: (c) => `${c.city}, ${c.state}` },
+  { key: 'type', label: 'Type', format: (c) => (c.type === 'GOVERNMENT' ? 'Government' : 'Private') },
+  { key: 'naacGrade', label: 'NAAC grade', format: (c) => c.naacGrade ?? 'Not available' },
+  { key: 'establishedYear', label: 'Established', format: (c) => (c.establishedYear ? String(c.establishedYear) : 'Not available') },
+  { key: 'totalStudents', label: 'Students', format: (c) => formatCount(c.totalStudents) },
+  { key: 'annualFees', label: 'Annual fees', format: (c) => formatINR(c.annualFees), value: (c) => c.annualFees, best: 'min' },
+  { key: 'placementPct', label: 'Placement %', format: (c) => formatPct(c.placementPct), value: (c) => c.placementPct, best: 'max' },
+  { key: 'avgPackage', label: 'Average package', format: (c) => formatLPA(c.avgPackage), value: (c) => c.avgPackage, best: 'max' },
+  { key: 'highestPackage', label: 'Highest package', format: (c) => formatLPA(c.highestPackage), value: (c) => c.highestPackage, best: 'max' },
+  { key: 'topRecruiters', label: 'Recruiters', format: (c) => c.topRecruiters.slice(0, 3).join(', ') || 'Not available' },
+  { key: 'coursesList', label: 'Courses listed', format: (c) => c.courses.slice(0, 4).join(', ') || 'Not available' },
 ];
+
+/** Index of the best known value, or -1 if fewer than two colleges have a value. */
+function bestIndex(list: College[], m: Metric): number {
+  if (!m.value || !m.best) return -1;
+  const known = list.map((c, i) => ({ i, v: m.value!(c) })).filter((x): x is { i: number; v: number } => x.v !== null);
+  if (known.length < 2) return -1;
+  return known.reduce((best, x) => ((m.best === 'min' ? x.v < best.v : x.v > best.v) ? x : best)).i;
+}
 
 export default function ComparePage() {
   const { compareList, addToCompare, removeFromCompare, clearCompare } = useCompare();
   const [modalSlot, setModalSlot] = useState<number | null>(null);
   const { data: session } = useSession();
   const [saving, setSaving] = useState(false);
+  const hasDemo = compareList.some((c) => c.dataStatus === 'DEMO');
 
-  const getBestIndex = (key: string, type: string) => {
-    if (compareList.length < 2) return -1;
-    const vals = compareList.map(c => {
-      if (key === 'annualFees') return c.annualFees;
-      if (key === 'placementPct') return c.placementPct;
-      if (key === 'avgPackage') return c.avgPackage;
-      if (key === 'highestPackage') return c.highestPackage;
-      if (key === 'rating') return c.rating;
-      return 0;
-    });
-    if (type === 'min') return vals.indexOf(Math.min(...vals));
-    return vals.indexOf(Math.max(...vals));
+  const getBestIndex = (key: string) => {
+    const m = METRICS.find((x) => x.key === key);
+    return m ? bestIndex(compareList, m) : -1;
   };
 
-  // Generate verdict
+  // Plain factual statements only where every compared college has a value.
   const generateVerdict = () => {
     if (compareList.length < 2) return [];
-    const verdicts: string[] = [];
-    const names = compareList.map(c => c.shortName);
-
-    // Best value (lowest fees)
-    const feesArr = compareList.map(c => c.annualFees);
-    const cheapest = compareList[feesArr.indexOf(Math.min(...feesArr))];
-    verdicts.push(`💰 **Best Value:** ${cheapest.shortName} has the lowest fees at ${formatINR(cheapest.annualFees)}/yr`);
-
-    // Best placements
-    const placementArr = compareList.map(c => c.placementPct);
-    const bestPlacement = compareList[placementArr.indexOf(Math.max(...placementArr))];
-    verdicts.push(`📈 **Best Placements:** ${bestPlacement.shortName} leads with ${bestPlacement.placementPct}% placement rate`);
-
-    // Highest package
-    const pkgArr = compareList.map(c => c.avgPackage);
-    const bestPkg = compareList[pkgArr.indexOf(Math.max(...pkgArr))];
-    verdicts.push(`💼 **Highest Avg Package:** ${bestPkg.shortName} at ${formatLPA(bestPkg.avgPackage)}`);
-
-    // Best rated
-    const ratingArr = compareList.map(c => c.rating);
-    const bestRated = compareList[ratingArr.indexOf(Math.max(...ratingArr))];
-    verdicts.push(`⭐ **Highest Rated:** ${bestRated.shortName} with ${bestRated.rating}/5 rating`);
-
-    return verdicts;
+    const out: string[] = [];
+    const fees = METRICS.find((m) => m.key === 'annualFees')!;
+    const i = bestIndex(compareList, fees);
+    if (i >= 0) out.push(`Lowest listed annual fees: ${compareList[i].shortName} (${formatINR(compareList[i].annualFees)})`);
+    const placement = METRICS.find((m) => m.key === 'placementPct')!;
+    const j = bestIndex(compareList, placement);
+    if (j >= 0) out.push(`Highest listed placement rate: ${compareList[j].shortName} (${formatPct(compareList[j].placementPct)})`);
+    const pkg = METRICS.find((m) => m.key === 'avgPackage')!;
+    const k = bestIndex(compareList, pkg);
+    if (k >= 0) out.push(`Highest listed average package: ${compareList[k].shortName} (${formatLPA(compareList[k].avgPackage)})`);
+    return out;
   };
 
   const handleShareComparison = () => {
@@ -100,21 +96,10 @@ export default function ComparePage() {
 
     setSaving(true);
     try {
-      const api = await import('@/lib/api');
-      const res = await api.apiFetch('/api/comparisons', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ collegeIds: compareList.map(c => c.id) }),
-      });
-
-      const data = await res.json();
-      if (!res.ok) {
-        toast.error(data.error || 'Failed to save comparison');
-      } else {
-        toast.success('Comparison saved');
-      }
-    } catch {
-      toast.error('Failed to save comparison');
+      await postJson('/api/comparisons', { collegeIds: compareList.map((c) => c.id) });
+      toast.success('Comparison saved');
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Failed to save comparison');
     } finally {
       setSaving(false);
     }
@@ -126,7 +111,7 @@ export default function ComparePage() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-3xl font-bold text-[#1E293B]">Compare Colleges</h1>
-          <p className="text-sm text-[#64748B] mt-1">Side-by-side comparison with best-value highlighting</p>
+          <p className="text-sm text-slate-600 mt-1">Side by side. Highlights only compare values that are known for every college.</p>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
           {compareList.length >= 2 && (
@@ -196,12 +181,17 @@ export default function ComparePage() {
       {compareList.length >= 2 && (
         <div className="card-premium p-6 mb-8">
           <h3 className="font-bold text-lg text-[#1E293B] mb-4 flex items-center gap-2">
-            <span className="text-xl">🏆</span> Quick Verdict
+            At a glance
           </h3>
+          {hasDemo && (
+            <p role="note" className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded-lg p-3 mb-3">
+              At least one college here has demo values. These comparisons are illustrative only.
+            </p>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {generateVerdict().map((v, i) => (
               <div key={i} className="bg-[#F8FAFC] rounded-lg p-3 text-sm text-[#475569]">
-                {v.replace(/\*\*(.*?)\*\*/g, '$1')}
+                {v}
               </div>
             ))}
           </div>
@@ -222,7 +212,7 @@ export default function ComparePage() {
             </thead>
             <tbody>
               {METRICS.map((m, rowIdx) => {
-                const bestIdx = m.best ? getBestIndex(m.key, m.best) : -1;
+                const bestIdx = getBestIndex(m.key);
                 return (
                   <tr key={m.key} className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-[#F8FAFC]'}>
                     <td className="p-3 font-medium text-[#475569] sticky left-0 bg-inherit z-10 border-r border-[#E2E8F0]">{m.label}</td>

@@ -2,9 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import pg from 'pg';
 
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
-};
+const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
 
 function createPrismaClient() {
   const connectionString = process.env.DATABASE_URL;
@@ -12,13 +10,17 @@ function createPrismaClient() {
     throw new Error('DATABASE_URL environment variable is not set');
   }
 
-  const useSsl = !connectionString.includes('localhost') && !connectionString.includes('127.0.0.1');
+  // TLS is controlled by the connection string (e.g. `sslmode=require` for Neon).
+  // Certificate verification is left ON. The previous code set
+  // `rejectUnauthorized: false`, which accepted any certificate and allowed
+  // man-in-the-middle attacks on database traffic.
   const pool = new pg.Pool({
     connectionString,
-    ssl: useSsl ? { rejectUnauthorized: false } : false,
+    max: Number(process.env.DB_POOL_MAX ?? 5),
+    connectionTimeoutMillis: 10_000,
+    idleTimeoutMillis: 30_000,
   });
-  const adapter = new PrismaPg(pool);
-  return new PrismaClient({ adapter });
+  return new PrismaClient({ adapter: new PrismaPg(pool) });
 }
 
 export const prisma = globalForPrisma.prisma ?? createPrismaClient();

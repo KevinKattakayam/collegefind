@@ -1,86 +1,58 @@
 import { NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
+import { ApiError, CACHE_NONE, assertSameOrigin, readJson, withErrorHandling } from '@/lib/http';
+import { requireUser } from '@/lib/session';
+import { enforceRateLimit } from '@/lib/rate-limit';
+import { comparisonCreateSchema } from '@/lib/validation';
+import { collegeListSelect } from '@/server/colleges';
+
+const MAX_COMPARISONS = 50;
 
 function signatureFromIds(ids: string[]) {
   return [...new Set(ids)].sort().join('|');
 }
 
-export async function GET() {
-  const session = await getServerSession(authOptions);
-  if (!session?.user?.id) {
-    return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
-  }
-
-  try {
-    const comparisons = await prisma.savedComparison.findMany({
-      where: { userId: session.user.id },
-      orderBy: { createdAt: 'desc' },
-    });
-
-    const collegeIds = [...new Set(comparisons.flatMap(c => c.collegeIds))];
-    const colleges = collegeIds.length
-      ? await prisma.college.findMany({ where: { id: { in: collegeIds } } })
-      : [];
-
-    const collegeMap = new Map(colleges.map(c => [c.id, c]));
-
-    return NextResponse.json({
-      comparisons: comparisons.map(c => ({
+export const GET = withErrorHandling(async () => {
+  const user = await requireUser();
+  const comparisons = await prisma.savedComparison.findMany({
+    where: { userId: user.id },
+    orderBy: { createdAt: 'desc' },
+    select: { id: true, collegeIds: true, createdAt: true },
+  });
+  const ids = [...new Set(comparisons.flatMap((c) => c.collegeIds))];
+  const colleges = ids.length
+    ? await prisma.college.findMany({ where: { id: { in: ids } }, select: collegeListSelect })
+    : [];
+  const byId = new Map(colleges.map((c) => [c.id, c]));
+  return NextResponse.json(
+    {
+      comparisons: comparisons.map((c) => ({
         ...c,
-        colleges: c.collegeIds.map(id => collegeMap.get(id)).filter(Boolean),
+        colleges: c.collegeIds.map((id) => byId.get(id)).filter(Boolean),
       })),
-    });
-  } catch (error) {
-    console.error('Get comparisons error:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    },
+    { headers: { 'Cache-Control': CACHE_NONE } },
+  );
+});
+
+export const POST = withErrorHandling(async (request: Request) => {
+  const user = await requireUser();
+  assertSameOrigin(request);
+  await enforceRateLimit('save', user.id);
+  const { collegeIds } = await readJson(request, comparisonCreateSchema);
+
+  const found = await prisma.college.count({ where: { id: { in: collegeIds } } });
+  if (found !== collegeIds.length) throw new ApiError(404, 'NOT_FOUND', 'One or more colleges not found');
+
+  const count = await prisma.savedComparison.count({ where: { userId: user.id } });
+  if (count >= MAX_COMPARISONS) {
+    throw new ApiError(409, 'LIMIT_REACHED', `You can save up to ${MAX_COMPARISONS} comparisons`);
   }
-}
 
-export async function POST(request: Request) {
-  const session = await getServerSession(authOptions);
-  if (!session?.user?.id) {
-    return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
-  }
-
-  try {
-    const body = await request.json();
-    const collegeIds = Array.isArray(body.collegeIds) ? body.collegeIds.filter(Boolean) : [];
-
-    if (collegeIds.length < 2 || collegeIds.length > 3) {
-      return NextResponse.json({ error: 'Validation failed', details: { collegeIds: 'Select 2 to 3 colleges' } }, { status: 400 });
-    }
-
-    const signature = signatureFromIds(collegeIds);
-    const existing = await prisma.savedComparison.findUnique({
-      where: { userId_signature: { userId: session.user.id, signature } },
-    });
-
-    if (existing) {
-      return NextResponse.json({ error: 'Already saved' }, { status: 409 });
-    }
-
-    const colleges = await prisma.college.findMany({
-      where: { id: { in: collegeIds } },
-      select: { id: true },
-    });
-
-    if (colleges.length !== collegeIds.length) {
-      return NextResponse.json({ error: 'One or more colleges not found' }, { status: 404 });
-    }
-
-    const saved = await prisma.savedComparison.create({
-      data: {
-        userId: session.user.id,
-        signature,
-        collegeIds,
-      },
-    });
-
-    return NextResponse.json({ comparison: saved }, { status: 201 });
-  } catch (error) {
-    console.error('Save comparison error:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
-  }
-}
+  // Unique (userId, signature) makes concurrent duplicate saves a clean 409, not a 500.
+  const comparison = await prisma.savedComparison.create({
+    data: { userId: user.id, signature: signatureFromIds(collegeIds), collegeIds },
+    select: { id: true, collegeIds: true, createdAt: true },
+  });
+  return NextResponse.json({ comparison }, { status: 201 });
+});

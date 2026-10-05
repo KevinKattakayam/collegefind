@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { College } from '@/types';
+import type { College, CollegesResponse } from '@/types';
+import { apiJson } from '@/lib/api';
 
 interface Props {
   isOpen: boolean;
@@ -22,9 +23,8 @@ export default function SearchModal({ isOpen, onClose, onSelect }: Props) {
     const t = setTimeout(async () => {
       setLoading(true);
       try {
-        const api = await import('@/lib/api');
-        const data = await api.apiJson(`/api/colleges?search=${encodeURIComponent(value)}&page=1`);
-        setResults(data.colleges || []);
+        const data = await apiJson<CollegesResponse>(`/api/colleges?search=${encodeURIComponent(value)}&page=1&limit=10`);
+        setResults(data.colleges);
       } catch { setResults([]); }
       setLoading(false);
     }, 300);
@@ -53,7 +53,6 @@ export default function SearchModal({ isOpen, onClose, onSelect }: Props) {
                 <div className="font-semibold text-sm text-[#1E293B]">{c.name}</div>
                 <div className="text-xs text-[#64748B]">{c.city}, {c.state} · {c.type}</div>
               </div>
-              <span className="text-xs text-[#F97316] font-bold">★ {c.rating}</span>
             </button>
           ))}
           {!query && <div className="text-center py-4 text-[#94A3B8] text-sm">Type to search colleges</div>}

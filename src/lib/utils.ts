@@ -1,9 +1,23 @@
-export function formatINR(amount: number): string {
+export const NOT_AVAILABLE = 'Not available';
+
+export function formatINR(amount: number | null | undefined): string {
+  if (amount === null || amount === undefined) return NOT_AVAILABLE;
   return '₹' + amount.toLocaleString('en-IN');
 }
 
-export function formatLPA(amount: number): string {
+export function formatLPA(amount: number | null | undefined): string {
+  if (amount === null || amount === undefined) return NOT_AVAILABLE;
   return '₹' + amount.toFixed(2) + ' LPA';
+}
+
+export function formatPct(value: number | null | undefined): string {
+  if (value === null || value === undefined) return NOT_AVAILABLE;
+  return `${value}%`;
+}
+
+export function formatCount(value: number | null | undefined): string {
+  if (value === null || value === undefined) return NOT_AVAILABLE;
+  return value.toLocaleString('en-IN');
 }
 
 export function cn(...classes: (string | boolean | undefined | null)[]): string {
@@ -19,14 +33,11 @@ export function getInitials(name: string): string {
     .slice(0, 2);
 }
 
-export function timeAgo(date: string): string {
-  const now = new Date();
+export function timeAgo(date: string, now: Date = new Date()): string {
   const d = new Date(date);
-  const diffMs = now.getTime() - d.getTime();
-  const diffMins = Math.floor(diffMs / 60000);
+  const diffMins = Math.floor((now.getTime() - d.getTime()) / 60000);
   const diffHours = Math.floor(diffMins / 60);
   const diffDays = Math.floor(diffHours / 24);
-
   if (diffMins < 1) return 'just now';
   if (diffMins < 60) return `${diffMins}m ago`;
   if (diffHours < 24) return `${diffHours}h ago`;
@@ -34,20 +45,11 @@ export function timeAgo(date: string): string {
   return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 }
 
-// --- Advanced Utilities ---
-
-export function formatNumber(num: number): string {
-  if (num >= 10000000) return (num / 10000000).toFixed(1).replace(/\.0$/, '') + ' Cr';
-  if (num >= 100000) return (num / 100000).toFixed(1).replace(/\.0$/, '') + ' L';
-  if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
-  return num.toString();
-}
-
 export function getExamLabel(exam: string): string {
   const labels: Record<string, string> = {
     JEE_MAIN: 'JEE Main',
     JEE_ADVANCED: 'JEE Advanced',
-    NEET: 'NEET',
+    NEET: 'NEET UG',
     CAT: 'CAT',
     GATE: 'GATE',
   };
@@ -56,11 +58,11 @@ export function getExamLabel(exam: string): string {
 
 export function getCategoryLabel(cat: string): string {
   const labels: Record<string, string> = {
-    General: 'General',
-    OBC: 'OBC (Non-Creamy Layer)',
-    SC: 'Scheduled Caste',
-    ST: 'Scheduled Tribe',
-    EWS: 'Economically Weaker Section',
+    OPEN: 'General (OPEN)',
+    EWS: 'EWS',
+    OBC_NCL: 'OBC (Non-Creamy Layer)',
+    SC: 'SC',
+    ST: 'ST',
   };
   return labels[cat] || cat;
 }
@@ -68,14 +70,4 @@ export function getCategoryLabel(cat: string): string {
 export function truncateText(text: string, maxLen: number): string {
   if (text.length <= maxLen) return text;
   return text.slice(0, maxLen).trimEnd() + '…';
-}
-
-export function generateStarArray(rating: number): ('full' | 'half' | 'empty')[] {
-  const stars: ('full' | 'half' | 'empty')[] = [];
-  for (let i = 1; i <= 5; i++) {
-    if (rating >= i) stars.push('full');
-    else if (rating >= i - 0.5) stars.push('half');
-    else stars.push('empty');
-  }
-  return stars;
 }

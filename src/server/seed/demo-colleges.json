@@ -1,0 +1,5231 @@
+[
+ {
+  "slug": "indian-institute-of-technology-bombay",
+  "name": "Indian Institute of Technology Bombay",
+  "shortName": "IIT Bombay",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 1958,
+  "totalStudents": 12000,
+  "naacGrade": "A++",
+  "annualFees": 250000,
+  "placementPct": 95,
+  "avgPackage": 16.5,
+  "highestPackage": 80,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "Goldman Sachs"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "indian-institute-of-technology-delhi",
+  "name": "Indian Institute of Technology Delhi",
+  "shortName": "IIT Delhi",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 1961,
+  "totalStudents": 11500,
+  "naacGrade": "A++",
+  "annualFees": 240000,
+  "placementPct": 94,
+  "avgPackage": 15.8,
+  "highestPackage": 75,
+  "topRecruiters": [
+   "Google",
+   "Apple",
+   "Microsoft",
+   "McKinsey"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "indian-institute-of-technology-madras",
+  "name": "Indian Institute of Technology Madras",
+  "shortName": "IIT Madras",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "GOVERNMENT",
+  "establishedYear": 1959,
+  "totalStudents": 11000,
+  "naacGrade": "A++",
+  "annualFees": 230000,
+  "placementPct": 93,
+  "avgPackage": 14.5,
+  "highestPackage": 70,
+  "topRecruiters": [
+   "Microsoft",
+   "Intel",
+   "Samsung",
+   "TCS"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MS",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "indian-institute-of-technology-kanpur",
+  "name": "Indian Institute of Technology Kanpur",
+  "shortName": "IIT Kanpur",
+  "city": "Kanpur",
+  "state": "Uttar Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1959,
+  "totalStudents": 10000,
+  "naacGrade": "A++",
+  "annualFees": 225000,
+  "placementPct": 91,
+  "avgPackage": 13.2,
+  "highestPackage": 65,
+  "topRecruiters": [
+   "Google",
+   "Qualcomm",
+   "Samsung",
+   "Adobe"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "indian-institute-of-technology-kharagpur",
+  "name": "Indian Institute of Technology Kharagpur",
+  "shortName": "IIT Kharagpur",
+  "city": "Kharagpur",
+  "state": "West Bengal",
+  "type": "GOVERNMENT",
+  "establishedYear": 1951,
+  "totalStudents": 12500,
+  "naacGrade": "A++",
+  "annualFees": 220000,
+  "placementPct": 90,
+  "avgPackage": 12.8,
+  "highestPackage": 60,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Microsoft",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "indian-institute-of-technology-roorkee",
+  "name": "Indian Institute of Technology Roorkee",
+  "shortName": "IIT Roorkee",
+  "city": "Roorkee",
+  "state": "Uttarakhand",
+  "type": "GOVERNMENT",
+  "establishedYear": 1847,
+  "totalStudents": 10500,
+  "naacGrade": "A++",
+  "annualFees": 215000,
+  "placementPct": 89,
+  "avgPackage": 12,
+  "highestPackage": 55,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Uber",
+   "Flipkart"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "indian-institute-of-technology-guwahati",
+  "name": "Indian Institute of Technology Guwahati",
+  "shortName": "IIT Guwahati",
+  "city": "Guwahati",
+  "state": "Assam",
+  "type": "GOVERNMENT",
+  "establishedYear": 1994,
+  "totalStudents": 7500,
+  "naacGrade": "A+",
+  "annualFees": 210000,
+  "placementPct": 88,
+  "avgPackage": 11.5,
+  "highestPackage": 50,
+  "topRecruiters": [
+   "Amazon",
+   "TCS",
+   "Flipkart",
+   "Oracle"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "indian-institute-of-technology-hyderabad",
+  "name": "Indian Institute of Technology Hyderabad",
+  "shortName": "IIT Hyderabad",
+  "city": "Hyderabad",
+  "state": "Telangana",
+  "type": "GOVERNMENT",
+  "establishedYear": 2008,
+  "totalStudents": 4500,
+  "naacGrade": "A++",
+  "annualFees": 220000,
+  "placementPct": 87,
+  "avgPackage": 11,
+  "highestPackage": 48,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "Qualcomm"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "national-institute-of-technology-tiruchirappalli",
+  "name": "National Institute of Technology Tiruchirappalli",
+  "shortName": "NIT Trichy",
+  "city": "Tiruchirappalli",
+  "state": "Tamil Nadu",
+  "type": "GOVERNMENT",
+  "establishedYear": 1964,
+  "totalStudents": 8000,
+  "naacGrade": "A+",
+  "annualFees": 175000,
+  "placementPct": 88,
+  "avgPackage": 9.5,
+  "highestPackage": 42,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Cognizant",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "national-institute-of-technology-karnataka",
+  "name": "National Institute of Technology Karnataka",
+  "shortName": "NIT Surathkal",
+  "city": "Surathkal",
+  "state": "Karnataka",
+  "type": "GOVERNMENT",
+  "establishedYear": 1960,
+  "totalStudents": 7000,
+  "naacGrade": "A+",
+  "annualFees": 170000,
+  "placementPct": 86,
+  "avgPackage": 9,
+  "highestPackage": 38,
+  "topRecruiters": [
+   "Infosys",
+   "TCS",
+   "Intel",
+   "Samsung"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "national-institute-of-technology-warangal",
+  "name": "National Institute of Technology Warangal",
+  "shortName": "NIT Warangal",
+  "city": "Warangal",
+  "state": "Telangana",
+  "type": "GOVERNMENT",
+  "establishedYear": 1959,
+  "totalStudents": 7500,
+  "naacGrade": "A+",
+  "annualFees": 165000,
+  "placementPct": 85,
+  "avgPackage": 8.8,
+  "highestPackage": 36,
+  "topRecruiters": [
+   "TCS",
+   "Wipro",
+   "HCL",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "national-institute-of-technology-calicut",
+  "name": "National Institute of Technology Calicut",
+  "shortName": "NIT Calicut",
+  "city": "Kozhikode",
+  "state": "Kerala",
+  "type": "GOVERNMENT",
+  "establishedYear": 1961,
+  "totalStudents": 6500,
+  "naacGrade": "A",
+  "annualFees": 160000,
+  "placementPct": 83,
+  "avgPackage": 8.2,
+  "highestPackage": 32,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "UST Global",
+   "Oracle"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "motilal-nehru-national-institute-of-technology",
+  "name": "Motilal Nehru National Institute of Technology",
+  "shortName": "MNNIT Allahabad",
+  "city": "Prayagraj",
+  "state": "Uttar Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1961,
+  "totalStudents": 6000,
+  "naacGrade": "A",
+  "annualFees": 155000,
+  "placementPct": 82,
+  "avgPackage": 7.8,
+  "highestPackage": 30,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Cognizant",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "malaviya-national-institute-of-technology",
+  "name": "Malaviya National Institute of Technology",
+  "shortName": "MNIT Jaipur",
+  "city": "Jaipur",
+  "state": "Rajasthan",
+  "type": "GOVERNMENT",
+  "establishedYear": 1963,
+  "totalStudents": 6500,
+  "naacGrade": "A",
+  "annualFees": 158000,
+  "placementPct": 81,
+  "avgPackage": 7.5,
+  "highestPackage": 28,
+  "topRecruiters": [
+   "Infosys",
+   "TCS",
+   "HCL",
+   "L&T"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "indian-institute-of-management-ahmedabad",
+  "name": "Indian Institute of Management Ahmedabad",
+  "shortName": "IIM Ahmedabad",
+  "city": "Ahmedabad",
+  "state": "Gujarat",
+  "type": "GOVERNMENT",
+  "establishedYear": 1961,
+  "totalStudents": 1200,
+  "naacGrade": "A++",
+  "annualFees": 2300000,
+  "placementPct": 99,
+  "avgPackage": 28,
+  "highestPackage": 120,
+  "topRecruiters": [
+   "McKinsey",
+   "BCG",
+   "Bain",
+   "Goldman Sachs"
+  ],
+  "courses": [
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "indian-institute-of-management-bangalore",
+  "name": "Indian Institute of Management Bangalore",
+  "shortName": "IIM Bangalore",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "GOVERNMENT",
+  "establishedYear": 1973,
+  "totalStudents": 1400,
+  "naacGrade": "A++",
+  "annualFees": 2350000,
+  "placementPct": 98,
+  "avgPackage": 27.5,
+  "highestPackage": 110,
+  "topRecruiters": [
+   "Amazon",
+   "Google",
+   "McKinsey",
+   "Deloitte"
+  ],
+  "courses": [
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "indian-institute-of-management-calcutta",
+  "name": "Indian Institute of Management Calcutta",
+  "shortName": "IIM Calcutta",
+  "city": "Kolkata",
+  "state": "West Bengal",
+  "type": "GOVERNMENT",
+  "establishedYear": 1961,
+  "totalStudents": 1100,
+  "naacGrade": "A++",
+  "annualFees": 2200000,
+  "placementPct": 97,
+  "avgPackage": 26,
+  "highestPackage": 100,
+  "topRecruiters": [
+   "BCG",
+   "JP Morgan",
+   "Goldman Sachs",
+   "Accenture"
+  ],
+  "courses": [
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "indian-institute-of-management-lucknow",
+  "name": "Indian Institute of Management Lucknow",
+  "shortName": "IIM Lucknow",
+  "city": "Lucknow",
+  "state": "Uttar Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1984,
+  "totalStudents": 900,
+  "naacGrade": "A+",
+  "annualFees": 1950000,
+  "placementPct": 96,
+  "avgPackage": 24,
+  "highestPackage": 90,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "KPMG",
+   "Amazon"
+  ],
+  "courses": [
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "vellore-institute-of-technology",
+  "name": "Vellore Institute of Technology",
+  "shortName": "VIT Vellore",
+  "city": "Vellore",
+  "state": "Tamil Nadu",
+  "type": "PRIVATE",
+  "establishedYear": 1984,
+  "totalStudents": 35000,
+  "naacGrade": "A++",
+  "annualFees": 195000,
+  "placementPct": 80,
+  "avgPackage": 7,
+  "highestPackage": 42,
+  "topRecruiters": [
+   "TCS",
+   "Cognizant",
+   "Wipro",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "srm-institute-of-science-and-technology",
+  "name": "SRM Institute of Science and Technology",
+  "shortName": "SRM Chennai",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "PRIVATE",
+  "establishedYear": 1985,
+  "totalStudents": 30000,
+  "naacGrade": "A++",
+  "annualFees": 250000,
+  "placementPct": 78,
+  "avgPackage": 6.5,
+  "highestPackage": 35,
+  "topRecruiters": [
+   "Cognizant",
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA",
+   "MBBS"
+  ]
+ },
+ {
+  "slug": "manipal-institute-of-technology",
+  "name": "Manipal Institute of Technology",
+  "shortName": "MIT Manipal",
+  "city": "Manipal",
+  "state": "Karnataka",
+  "type": "PRIVATE",
+  "establishedYear": 1957,
+  "totalStudents": 12000,
+  "naacGrade": "A++",
+  "annualFees": 400000,
+  "placementPct": 82,
+  "avgPackage": 7.5,
+  "highestPackage": 38,
+  "topRecruiters": [
+   "Goldman Sachs",
+   "JP Morgan",
+   "Amazon",
+   "TCS"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "bits-pilani",
+  "name": "BITS Pilani",
+  "shortName": "BITS Pilani",
+  "city": "Pilani",
+  "state": "Rajasthan",
+  "type": "PRIVATE",
+  "establishedYear": 1964,
+  "totalStudents": 5000,
+  "naacGrade": "A",
+  "annualFees": 380000,
+  "placementPct": 90,
+  "avgPackage": 11,
+  "highestPackage": 55,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Goldman Sachs",
+   "Uber"
+  ],
+  "courses": [
+   "B.E",
+   "M.E",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "amity-university",
+  "name": "Amity University",
+  "shortName": "Amity Noida",
+  "city": "Noida",
+  "state": "Uttar Pradesh",
+  "type": "PRIVATE",
+  "establishedYear": 2005,
+  "totalStudents": 25000,
+  "naacGrade": "A+",
+  "annualFees": 300000,
+  "placementPct": 65,
+  "avgPackage": 5,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "TCS",
+   "Wipro",
+   "Infosys",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "lovely-professional-university",
+  "name": "Lovely Professional University",
+  "shortName": "LPU Jalandhar",
+  "city": "Jalandhar",
+  "state": "Punjab",
+  "type": "PRIVATE",
+  "establishedYear": 2005,
+  "totalStudents": 40000,
+  "naacGrade": "A+",
+  "annualFees": 180000,
+  "placementPct": 60,
+  "avgPackage": 4.5,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA",
+   "B.Sc"
+  ]
+ },
+ {
+  "slug": "indian-school-of-business",
+  "name": "Indian School of Business",
+  "shortName": "ISB Hyderabad",
+  "city": "Hyderabad",
+  "state": "Telangana",
+  "type": "PRIVATE",
+  "establishedYear": 2001,
+  "totalStudents": 900,
+  "naacGrade": "A++",
+  "annualFees": 3500000,
+  "placementPct": 98,
+  "avgPackage": 28,
+  "highestPackage": 100,
+  "topRecruiters": [
+   "McKinsey",
+   "BCG",
+   "Amazon",
+   "Google"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "xlri-jamshedpur",
+  "name": "XLRI Jamshedpur",
+  "shortName": "XLRI",
+  "city": "Jamshedpur",
+  "state": "Jharkhand",
+  "type": "PRIVATE",
+  "establishedYear": 1949,
+  "totalStudents": 800,
+  "naacGrade": "A+",
+  "annualFees": 2500000,
+  "placementPct": 95,
+  "avgPackage": 24,
+  "highestPackage": 80,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "KPMG",
+   "Accenture"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "management-development-institute",
+  "name": "Management Development Institute",
+  "shortName": "MDI Gurgaon",
+  "city": "Gurgaon",
+  "state": "Haryana",
+  "type": "PRIVATE",
+  "establishedYear": 1973,
+  "totalStudents": 700,
+  "naacGrade": "A",
+  "annualFees": 2000000,
+  "placementPct": 92,
+  "avgPackage": 20,
+  "highestPackage": 60,
+  "topRecruiters": [
+   "Deloitte",
+   "Cognizant",
+   "Wipro",
+   "Amazon"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "mica-ahmedabad",
+  "name": "MICA Ahmedabad",
+  "shortName": "MICA",
+  "city": "Ahmedabad",
+  "state": "Gujarat",
+  "type": "PRIVATE",
+  "establishedYear": 1991,
+  "totalStudents": 500,
+  "naacGrade": "A",
+  "annualFees": 1800000,
+  "placementPct": 90,
+  "avgPackage": 18,
+  "highestPackage": 50,
+  "topRecruiters": [
+   "Ogilvy",
+   "JWT",
+   "Google",
+   "Amazon"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "anna-university",
+  "name": "Anna University",
+  "shortName": "Anna Univ",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "GOVERNMENT",
+  "establishedYear": 1978,
+  "totalStudents": 8000,
+  "naacGrade": "A+",
+  "annualFees": 50000,
+  "placementPct": 75,
+  "avgPackage": 5.5,
+  "highestPackage": 25,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Cognizant",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "university-of-mumbai",
+  "name": "University of Mumbai",
+  "shortName": "Mumbai Univ",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 1857,
+  "totalStudents": 5000,
+  "naacGrade": "A+",
+  "annualFees": 35000,
+  "placementPct": 70,
+  "avgPackage": 5,
+  "highestPackage": 22,
+  "topRecruiters": [
+   "TCS",
+   "Reliance",
+   "L&T",
+   "Infosys"
+  ],
+  "courses": [
+   "B.Sc",
+   "M.Sc",
+   "MBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "university-of-delhi",
+  "name": "University of Delhi",
+  "shortName": "DU",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 1922,
+  "totalStudents": 6000,
+  "naacGrade": "A+",
+  "annualFees": 25000,
+  "placementPct": 72,
+  "avgPackage": 5.2,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "KPMG",
+   "HUL"
+  ],
+  "courses": [
+   "B.A",
+   "B.Com",
+   "B.Sc",
+   "MBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "savitribai-phule-pune-university",
+  "name": "Savitribai Phule Pune University",
+  "shortName": "SPPU",
+  "city": "Pune",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 1949,
+  "totalStudents": 5500,
+  "naacGrade": "A+",
+  "annualFees": 40000,
+  "placementPct": 68,
+  "avgPackage": 4.8,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Persistent"
+  ],
+  "courses": [
+   "B.Tech",
+   "B.Sc",
+   "MBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "jadavpur-university",
+  "name": "Jadavpur University",
+  "shortName": "JU Kolkata",
+  "city": "Kolkata",
+  "state": "West Bengal",
+  "type": "GOVERNMENT",
+  "establishedYear": 1955,
+  "totalStudents": 7000,
+  "naacGrade": "A",
+  "annualFees": 30000,
+  "placementPct": 78,
+  "avgPackage": 6.5,
+  "highestPackage": 28,
+  "topRecruiters": [
+   "TCS",
+   "Cognizant",
+   "Wipro",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "B.Sc",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "osmania-university",
+  "name": "Osmania University",
+  "shortName": "OU",
+  "city": "Hyderabad",
+  "state": "Telangana",
+  "type": "GOVERNMENT",
+  "establishedYear": 1918,
+  "totalStudents": 4500,
+  "naacGrade": "A",
+  "annualFees": 28000,
+  "placementPct": 65,
+  "avgPackage": 4.5,
+  "highestPackage": 15,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Tech Mahindra"
+  ],
+  "courses": [
+   "B.Tech",
+   "B.Sc",
+   "MBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "birla-institute-of-technology-mesra",
+  "name": "Birla Institute of Technology Mesra",
+  "shortName": "BIT Mesra",
+  "city": "Ranchi",
+  "state": "Jharkhand",
+  "type": "PRIVATE",
+  "establishedYear": 1955,
+  "totalStudents": 6000,
+  "naacGrade": "A",
+  "annualFees": 250000,
+  "placementPct": 80,
+  "avgPackage": 7,
+  "highestPackage": 30,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "thapar-institute-of-engineering",
+  "name": "Thapar Institute of Engineering",
+  "shortName": "Thapar",
+  "city": "Patiala",
+  "state": "Punjab",
+  "type": "PRIVATE",
+  "establishedYear": 1956,
+  "totalStudents": 7000,
+  "naacGrade": "A",
+  "annualFees": 320000,
+  "placementPct": 82,
+  "avgPackage": 7.5,
+  "highestPackage": 32,
+  "topRecruiters": [
+   "Microsoft",
+   "Amazon",
+   "TCS",
+   "Flipkart"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "psg-college-of-technology",
+  "name": "PSG College of Technology",
+  "shortName": "PSG Tech",
+  "city": "Coimbatore",
+  "state": "Tamil Nadu",
+  "type": "PRIVATE",
+  "establishedYear": 1951,
+  "totalStudents": 5000,
+  "naacGrade": "A+",
+  "annualFees": 120000,
+  "placementPct": 85,
+  "avgPackage": 6.8,
+  "highestPackage": 28,
+  "topRecruiters": [
+   "Zoho",
+   "TCS",
+   "Infosys",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "symbiosis-international-university",
+  "name": "Symbiosis International University",
+  "shortName": "SIU Pune",
+  "city": "Pune",
+  "state": "Maharashtra",
+  "type": "PRIVATE",
+  "establishedYear": 2002,
+  "totalStudents": 8000,
+  "naacGrade": "A+",
+  "annualFees": 350000,
+  "placementPct": 78,
+  "avgPackage": 8.5,
+  "highestPackage": 35,
+  "topRecruiters": [
+   "Deloitte",
+   "KPMG",
+   "EY",
+   "Amazon"
+  ],
+  "courses": [
+   "BBA",
+   "MBA",
+   "LLB",
+   "B.Sc"
+  ]
+ },
+ {
+  "slug": "kiit-university",
+  "name": "KIIT University",
+  "shortName": "KIIT",
+  "city": "Bhubaneswar",
+  "state": "Odisha",
+  "type": "PRIVATE",
+  "establishedYear": 1997,
+  "totalStudents": 27000,
+  "naacGrade": "A++",
+  "annualFees": 250000,
+  "placementPct": 75,
+  "avgPackage": 6,
+  "highestPackage": 25,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "shiv-nadar-university",
+  "name": "Shiv Nadar University",
+  "shortName": "SNU",
+  "city": "Greater Noida",
+  "state": "Uttar Pradesh",
+  "type": "PRIVATE",
+  "establishedYear": 2011,
+  "totalStudents": 4000,
+  "naacGrade": "A",
+  "annualFees": 450000,
+  "placementPct": 80,
+  "avgPackage": 8,
+  "highestPackage": 35,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Goldman Sachs",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "B.Sc",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "chandigarh-university",
+  "name": "Chandigarh University",
+  "shortName": "CU",
+  "city": "Mohali",
+  "state": "Punjab",
+  "type": "PRIVATE",
+  "establishedYear": 2012,
+  "totalStudents": 30000,
+  "naacGrade": "A+",
+  "annualFees": 200000,
+  "placementPct": 72,
+  "avgPackage": 5.5,
+  "highestPackage": 22,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA",
+   "B.Sc"
+  ]
+ },
+ {
+  "slug": "all-india-institute-of-medical-sciences",
+  "name": "All India Institute of Medical Sciences",
+  "shortName": "AIIMS Delhi",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 1956,
+  "totalStudents": 3000,
+  "naacGrade": "A++",
+  "annualFees": 8000,
+  "placementPct": 98,
+  "avgPackage": 12,
+  "highestPackage": 25,
+  "topRecruiters": [
+   "AIIMS",
+   "Apollo",
+   "Fortis",
+   "Max Healthcare"
+  ],
+  "courses": [
+   "MBBS",
+   "MD",
+   "MS",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "christian-medical-college",
+  "name": "Christian Medical College",
+  "shortName": "CMC Vellore",
+  "city": "Vellore",
+  "state": "Tamil Nadu",
+  "type": "GOVERNMENT",
+  "establishedYear": 1900,
+  "totalStudents": 2500,
+  "naacGrade": "A++",
+  "annualFees": 30000,
+  "placementPct": 96,
+  "avgPackage": 10,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "CMC Hospital",
+   "Apollo",
+   "Fortis"
+  ],
+  "courses": [
+   "MBBS",
+   "MD",
+   "MS"
+  ]
+ },
+ {
+  "slug": "armed-forces-medical-college",
+  "name": "Armed Forces Medical College",
+  "shortName": "AFMC Pune",
+  "city": "Pune",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 1948,
+  "totalStudents": 1500,
+  "naacGrade": "A+",
+  "annualFees": 50000,
+  "placementPct": 95,
+  "avgPackage": 10,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "Military Hospitals",
+   "AIIMS",
+   "Apollo"
+  ],
+  "courses": [
+   "MBBS",
+   "MD"
+  ]
+ },
+ {
+  "slug": "kasturba-medical-college",
+  "name": "Kasturba Medical College",
+  "shortName": "KMC Manipal",
+  "city": "Manipal",
+  "state": "Karnataka",
+  "type": "PRIVATE",
+  "establishedYear": 1953,
+  "totalStudents": 3000,
+  "naacGrade": "A+",
+  "annualFees": 900000,
+  "placementPct": 90,
+  "avgPackage": 8,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "Manipal Hospitals",
+   "Apollo",
+   "Fortis"
+  ],
+  "courses": [
+   "MBBS",
+   "MD",
+   "MS"
+  ]
+ },
+ {
+  "slug": "maulana-azad-medical-college",
+  "name": "Maulana Azad Medical College",
+  "shortName": "MAMC Delhi",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 1958,
+  "totalStudents": 2000,
+  "naacGrade": "A+",
+  "annualFees": 15000,
+  "placementPct": 94,
+  "avgPackage": 10,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "AIIMS",
+   "Safdarjung",
+   "RML Hospital"
+  ],
+  "courses": [
+   "MBBS",
+   "MD",
+   "MS"
+  ]
+ },
+ {
+  "slug": "st-johns-medical-college",
+  "name": "St Johns Medical College",
+  "shortName": "SJMC Bangalore",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "PRIVATE",
+  "establishedYear": 1963,
+  "totalStudents": 1800,
+  "naacGrade": "A",
+  "annualFees": 650000,
+  "placementPct": 88,
+  "avgPackage": 7.5,
+  "highestPackage": 15,
+  "topRecruiters": [
+   "St Johns Hospital",
+   "Apollo",
+   "Manipal"
+  ],
+  "courses": [
+   "MBBS",
+   "MD"
+  ]
+ },
+ {
+  "slug": "national-law-school-of-india-university",
+  "name": "National Law School of India University",
+  "shortName": "NLSIU",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "GOVERNMENT",
+  "establishedYear": 1987,
+  "totalStudents": 800,
+  "naacGrade": "A++",
+  "annualFees": 250000,
+  "placementPct": 95,
+  "avgPackage": 15,
+  "highestPackage": 45,
+  "topRecruiters": [
+   "AZB",
+   "Trilegal",
+   "Cyril Amarchand",
+   "Khaitan"
+  ],
+  "courses": [
+   "LLB",
+   "LLM"
+  ]
+ },
+ {
+  "slug": "symbiosis-law-school",
+  "name": "Symbiosis Law School",
+  "shortName": "SLS Pune",
+  "city": "Pune",
+  "state": "Maharashtra",
+  "type": "PRIVATE",
+  "establishedYear": 1977,
+  "totalStudents": 2000,
+  "naacGrade": "A+",
+  "annualFees": 350000,
+  "placementPct": 82,
+  "avgPackage": 8,
+  "highestPackage": 25,
+  "topRecruiters": [
+   "AZB",
+   "Trilegal",
+   "Shardul",
+   "EY"
+  ],
+  "courses": [
+   "LLB",
+   "LLM"
+  ]
+ },
+ {
+  "slug": "shri-ram-college-of-commerce",
+  "name": "Shri Ram College of Commerce",
+  "shortName": "SRCC Delhi",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 1926,
+  "totalStudents": 3000,
+  "naacGrade": "A++",
+  "annualFees": 20000,
+  "placementPct": 88,
+  "avgPackage": 10,
+  "highestPackage": 35,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "KPMG",
+   "Goldman Sachs"
+  ],
+  "courses": [
+   "B.Com",
+   "M.Com"
+  ]
+ },
+ {
+  "slug": "loyola-college",
+  "name": "Loyola College",
+  "shortName": "Loyola Chennai",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "PRIVATE",
+  "establishedYear": 1925,
+  "totalStudents": 6000,
+  "naacGrade": "A++",
+  "annualFees": 35000,
+  "placementPct": 75,
+  "avgPackage": 5,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Deloitte",
+   "HDFC"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "B.Com",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "st-xaviers-college",
+  "name": "St Xaviers College",
+  "shortName": "St Xaviers",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "type": "PRIVATE",
+  "establishedYear": 1869,
+  "totalStudents": 4000,
+  "naacGrade": "A++",
+  "annualFees": 30000,
+  "placementPct": 78,
+  "avgPackage": 5.5,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "JP Morgan",
+   "Deloitte",
+   "EY",
+   "HDFC"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "B.Com",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "fergusson-college",
+  "name": "Fergusson College",
+  "shortName": "Fergusson",
+  "city": "Pune",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 1885,
+  "totalStudents": 5000,
+  "naacGrade": "A",
+  "annualFees": 15000,
+  "placementPct": 65,
+  "avgPackage": 4,
+  "highestPackage": 12,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Persistent"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.Sc"
+  ]
+ },
+ {
+  "slug": "bennett-university",
+  "name": "Bennett University",
+  "shortName": "Bennett",
+  "city": "Greater Noida",
+  "state": "Uttar Pradesh",
+  "type": "PRIVATE",
+  "establishedYear": 2016,
+  "totalStudents": 3000,
+  "naacGrade": "B++",
+  "annualFees": 350000,
+  "placementPct": 70,
+  "avgPackage": 5.5,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "Times Group",
+   "TCS",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "BBA",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "ashoka-university",
+  "name": "Ashoka University",
+  "shortName": "Ashoka",
+  "city": "Sonipat",
+  "state": "Haryana",
+  "type": "PRIVATE",
+  "establishedYear": 2014,
+  "totalStudents": 2500,
+  "naacGrade": "A",
+  "annualFees": 500000,
+  "placementPct": 75,
+  "avgPackage": 7,
+  "highestPackage": 25,
+  "topRecruiters": [
+   "McKinsey",
+   "BCG",
+   "Goldman Sachs",
+   "Google"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.A",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "plaksha-university",
+  "name": "Plaksha University",
+  "shortName": "Plaksha",
+  "city": "Mohali",
+  "state": "Punjab",
+  "type": "PRIVATE",
+  "establishedYear": 2021,
+  "totalStudents": 500,
+  "naacGrade": "B+",
+  "annualFees": 600000,
+  "placementPct": 72,
+  "avgPackage": 8,
+  "highestPackage": 30,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "Flipkart"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "flame-university",
+  "name": "Flame University",
+  "shortName": "FLAME",
+  "city": "Pune",
+  "state": "Maharashtra",
+  "type": "PRIVATE",
+  "establishedYear": 2015,
+  "totalStudents": 2000,
+  "naacGrade": "A",
+  "annualFees": 400000,
+  "placementPct": 68,
+  "avgPackage": 5,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "KPMG",
+   "Wipro"
+  ],
+  "courses": [
+   "BBA",
+   "MBA",
+   "B.A"
+  ]
+ },
+ {
+  "slug": "woxsen-university",
+  "name": "Woxsen University",
+  "shortName": "Woxsen",
+  "city": "Hyderabad",
+  "state": "Telangana",
+  "type": "PRIVATE",
+  "establishedYear": 2014,
+  "totalStudents": 3000,
+  "naacGrade": "A",
+  "annualFees": 450000,
+  "placementPct": 70,
+  "avgPackage": 6,
+  "highestPackage": 22,
+  "topRecruiters": [
+   "Deloitte",
+   "Amazon",
+   "EY",
+   "Accenture"
+  ],
+  "courses": [
+   "BBA",
+   "MBA",
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "sai-university",
+  "name": "Sai University",
+  "shortName": "Sai Univ",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "PRIVATE",
+  "establishedYear": 2020,
+  "totalStudents": 800,
+  "naacGrade": "B++",
+  "annualFees": 300000,
+  "placementPct": 60,
+  "avgPackage": 4.5,
+  "highestPackage": 15,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Zoho",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "B.Sc"
+  ]
+ },
+ {
+  "slug": "iit-bhu-varanasi",
+  "name": "IIT BHU Varanasi",
+  "shortName": "IIT BHU",
+  "city": "Varanasi",
+  "state": "Uttar Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1919,
+  "totalStudents": 8500,
+  "naacGrade": "A++",
+  "annualFees": 220000,
+  "placementPct": 91,
+  "avgPackage": 12.5,
+  "highestPackage": 58,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Samsung",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iit-indore",
+  "name": "IIT Indore",
+  "shortName": "IIT Indore",
+  "city": "Indore",
+  "state": "Madhya Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 2009,
+  "totalStudents": 3500,
+  "naacGrade": "A+",
+  "annualFees": 210000,
+  "placementPct": 86,
+  "avgPackage": 10.5,
+  "highestPackage": 45,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "TCS"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iit-tirupati",
+  "name": "IIT Tirupati",
+  "shortName": "IIT Tirupati",
+  "city": "Tirupati",
+  "state": "Andhra Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 2015,
+  "totalStudents": 2000,
+  "naacGrade": "A",
+  "annualFees": 200000,
+  "placementPct": 80,
+  "avgPackage": 9,
+  "highestPackage": 38,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Amazon",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iit-palakkad",
+  "name": "IIT Palakkad",
+  "shortName": "IIT Palakkad",
+  "city": "Palakkad",
+  "state": "Kerala",
+  "type": "GOVERNMENT",
+  "establishedYear": 2015,
+  "totalStudents": 1500,
+  "naacGrade": "A",
+  "annualFees": 195000,
+  "placementPct": 78,
+  "avgPackage": 8.5,
+  "highestPackage": 35,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Google",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iit-dharwad",
+  "name": "IIT Dharwad",
+  "shortName": "IIT Dharwad",
+  "city": "Dharwad",
+  "state": "Karnataka",
+  "type": "GOVERNMENT",
+  "establishedYear": 2016,
+  "totalStudents": 1200,
+  "naacGrade": "B++",
+  "annualFees": 190000,
+  "placementPct": 75,
+  "avgPackage": 8,
+  "highestPackage": 32,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iit-bhilai",
+  "name": "IIT Bhilai",
+  "shortName": "IIT Bhilai",
+  "city": "Bhilai",
+  "state": "Chhattisgarh",
+  "type": "GOVERNMENT",
+  "establishedYear": 2016,
+  "totalStudents": 1000,
+  "naacGrade": "B++",
+  "annualFees": 185000,
+  "placementPct": 74,
+  "avgPackage": 7.8,
+  "highestPackage": 30,
+  "topRecruiters": [
+   "TCS",
+   "Amazon",
+   "Flipkart",
+   "Google"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iit-jammu",
+  "name": "IIT Jammu",
+  "shortName": "IIT Jammu",
+  "city": "Jammu",
+  "state": "Jammu & Kashmir",
+  "type": "GOVERNMENT",
+  "establishedYear": 2016,
+  "totalStudents": 900,
+  "naacGrade": "B+",
+  "annualFees": 180000,
+  "placementPct": 72,
+  "avgPackage": 7.5,
+  "highestPackage": 28,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "nit-rourkela",
+  "name": "NIT Rourkela",
+  "shortName": "NIT Rourkela",
+  "city": "Rourkela",
+  "state": "Odisha",
+  "type": "GOVERNMENT",
+  "establishedYear": 1961,
+  "totalStudents": 7500,
+  "naacGrade": "A+",
+  "annualFees": 170000,
+  "placementPct": 85,
+  "avgPackage": 8.5,
+  "highestPackage": 35,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "TATA Steel",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "nit-durgapur",
+  "name": "NIT Durgapur",
+  "shortName": "NIT Durgapur",
+  "city": "Durgapur",
+  "state": "West Bengal",
+  "type": "GOVERNMENT",
+  "establishedYear": 1960,
+  "totalStudents": 6000,
+  "naacGrade": "A",
+  "annualFees": 160000,
+  "placementPct": 82,
+  "avgPackage": 7.8,
+  "highestPackage": 30,
+  "topRecruiters": [
+   "TCS",
+   "Wipro",
+   "Cognizant",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "nit-silchar",
+  "name": "NIT Silchar",
+  "shortName": "NIT Silchar",
+  "city": "Silchar",
+  "state": "Assam",
+  "type": "GOVERNMENT",
+  "establishedYear": 1967,
+  "totalStudents": 4500,
+  "naacGrade": "A",
+  "annualFees": 145000,
+  "placementPct": 78,
+  "avgPackage": 7,
+  "highestPackage": 26,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "nit-hamirpur",
+  "name": "NIT Hamirpur",
+  "shortName": "NIT Hamirpur",
+  "city": "Hamirpur",
+  "state": "Himachal Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1986,
+  "totalStudents": 4000,
+  "naacGrade": "A",
+  "annualFees": 140000,
+  "placementPct": 76,
+  "avgPackage": 6.5,
+  "highestPackage": 24,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "nit-agartala",
+  "name": "NIT Agartala",
+  "shortName": "NIT Agartala",
+  "city": "Agartala",
+  "state": "Tripura",
+  "type": "GOVERNMENT",
+  "establishedYear": 1965,
+  "totalStudents": 3500,
+  "naacGrade": "B++",
+  "annualFees": 130000,
+  "placementPct": 70,
+  "avgPackage": 5.8,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "nit-meghalaya",
+  "name": "NIT Meghalaya",
+  "shortName": "NIT Meghalaya",
+  "city": "Shillong",
+  "state": "Meghalaya",
+  "type": "GOVERNMENT",
+  "establishedYear": 2010,
+  "totalStudents": 2000,
+  "naacGrade": "B+",
+  "annualFees": 120000,
+  "placementPct": 65,
+  "avgPackage": 5,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "iiit-hyderabad",
+  "name": "IIIT Hyderabad",
+  "shortName": "IIIT Hyderabad",
+  "city": "Hyderabad",
+  "state": "Telangana",
+  "type": "GOVERNMENT",
+  "establishedYear": 1998,
+  "totalStudents": 3000,
+  "naacGrade": "A++",
+  "annualFees": 300000,
+  "placementPct": 92,
+  "avgPackage": 14,
+  "highestPackage": 65,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "Facebook"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iiit-bangalore",
+  "name": "IIIT Bangalore",
+  "shortName": "IIIT Bangalore",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "GOVERNMENT",
+  "establishedYear": 1999,
+  "totalStudents": 2500,
+  "naacGrade": "A+",
+  "annualFees": 350000,
+  "placementPct": 90,
+  "avgPackage": 13,
+  "highestPackage": 55,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Samsung",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iiit-allahabad",
+  "name": "IIIT Allahabad",
+  "shortName": "IIIT Allahabad",
+  "city": "Prayagraj",
+  "state": "Uttar Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1999,
+  "totalStudents": 3500,
+  "naacGrade": "A",
+  "annualFees": 180000,
+  "placementPct": 85,
+  "avgPackage": 9,
+  "highestPackage": 40,
+  "topRecruiters": [
+   "TCS",
+   "Microsoft",
+   "Amazon",
+   "Google"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iiit-delhi",
+  "name": "IIIT Delhi",
+  "shortName": "IIIT Delhi",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 2008,
+  "totalStudents": 2800,
+  "naacGrade": "A+",
+  "annualFees": 310000,
+  "placementPct": 91,
+  "avgPackage": 13.5,
+  "highestPackage": 60,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "Adobe"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "delhi-technological-university",
+  "name": "Delhi Technological University",
+  "shortName": "DTU",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 1941,
+  "totalStudents": 8000,
+  "naacGrade": "A+",
+  "annualFees": 165000,
+  "placementPct": 87,
+  "avgPackage": 9.5,
+  "highestPackage": 42,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "Samsung"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "netaji-subhas-university-of-technology",
+  "name": "Netaji Subhas University of Technology",
+  "shortName": "NSUT",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 1983,
+  "totalStudents": 6000,
+  "naacGrade": "A+",
+  "annualFees": 160000,
+  "placementPct": 86,
+  "avgPackage": 9,
+  "highestPackage": 40,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "Flipkart"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "pec-chandigarh",
+  "name": "PEC Chandigarh",
+  "shortName": "PEC",
+  "city": "Chandigarh",
+  "state": "Chandigarh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1921,
+  "totalStudents": 5500,
+  "naacGrade": "A",
+  "annualFees": 120000,
+  "placementPct": 82,
+  "avgPackage": 7.5,
+  "highestPackage": 30,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Amazon",
+   "Microsoft"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iim-indore",
+  "name": "IIM Indore",
+  "shortName": "IIM Indore",
+  "city": "Indore",
+  "state": "Madhya Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1996,
+  "totalStudents": 1000,
+  "naacGrade": "A+",
+  "annualFees": 2000000,
+  "placementPct": 96,
+  "avgPackage": 23,
+  "highestPackage": 85,
+  "topRecruiters": [
+   "McKinsey",
+   "BCG",
+   "Amazon",
+   "Deloitte"
+  ],
+  "courses": [
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iim-kozhikode",
+  "name": "IIM Kozhikode",
+  "shortName": "IIM Kozhikode",
+  "city": "Kozhikode",
+  "state": "Kerala",
+  "type": "GOVERNMENT",
+  "establishedYear": 1996,
+  "totalStudents": 1100,
+  "naacGrade": "A+",
+  "annualFees": 1950000,
+  "placementPct": 95,
+  "avgPackage": 22,
+  "highestPackage": 80,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "KPMG",
+   "Amazon"
+  ],
+  "courses": [
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iim-shillong",
+  "name": "IIM Shillong",
+  "shortName": "IIM Shillong",
+  "city": "Shillong",
+  "state": "Meghalaya",
+  "type": "GOVERNMENT",
+  "establishedYear": 2007,
+  "totalStudents": 600,
+  "naacGrade": "A",
+  "annualFees": 1500000,
+  "placementPct": 90,
+  "avgPackage": 16,
+  "highestPackage": 50,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "TCS",
+   "Wipro"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "iim-ranchi",
+  "name": "IIM Ranchi",
+  "shortName": "IIM Ranchi",
+  "city": "Ranchi",
+  "state": "Jharkhand",
+  "type": "GOVERNMENT",
+  "establishedYear": 2010,
+  "totalStudents": 550,
+  "naacGrade": "A",
+  "annualFees": 1600000,
+  "placementPct": 91,
+  "avgPackage": 17,
+  "highestPackage": 55,
+  "topRecruiters": [
+   "EY",
+   "Deloitte",
+   "Amazon",
+   "Accenture"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "fms-delhi",
+  "name": "FMS Delhi",
+  "shortName": "FMS Delhi",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 1954,
+  "totalStudents": 800,
+  "naacGrade": "A++",
+  "annualFees": 25000,
+  "placementPct": 96,
+  "avgPackage": 25,
+  "highestPackage": 90,
+  "topRecruiters": [
+   "McKinsey",
+   "BCG",
+   "Goldman Sachs",
+   "JP Morgan"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "jipmer-puducherry",
+  "name": "JIPMER Puducherry",
+  "shortName": "JIPMER",
+  "city": "Puducherry",
+  "state": "Puducherry",
+  "type": "GOVERNMENT",
+  "establishedYear": 1823,
+  "totalStudents": 3500,
+  "naacGrade": "A++",
+  "annualFees": 12000,
+  "placementPct": 96,
+  "avgPackage": 10,
+  "highestPackage": 22,
+  "topRecruiters": [
+   "JIPMER Hospital",
+   "AIIMS",
+   "Apollo"
+  ],
+  "courses": [
+   "MBBS",
+   "MD",
+   "MS",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "king-georges-medical-university",
+  "name": "King Georges Medical University",
+  "shortName": "KGMU",
+  "city": "Lucknow",
+  "state": "Uttar Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1911,
+  "totalStudents": 3000,
+  "naacGrade": "A+",
+  "annualFees": 25000,
+  "placementPct": 92,
+  "avgPackage": 9,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "KGMU Hospital",
+   "AIIMS",
+   "Fortis"
+  ],
+  "courses": [
+   "MBBS",
+   "MD",
+   "MS"
+  ]
+ },
+ {
+  "slug": "grant-medical-college",
+  "name": "Grant Medical College",
+  "shortName": "GMC Mumbai",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 1845,
+  "totalStudents": 2500,
+  "naacGrade": "A+",
+  "annualFees": 20000,
+  "placementPct": 90,
+  "avgPackage": 8.5,
+  "highestPackage": 16,
+  "topRecruiters": [
+   "JJ Hospital",
+   "KEM",
+   "Hinduja"
+  ],
+  "courses": [
+   "MBBS",
+   "MD"
+  ]
+ },
+ {
+  "slug": "bj-medical-college",
+  "name": "BJ Medical College",
+  "shortName": "BJMC",
+  "city": "Ahmedabad",
+  "state": "Gujarat",
+  "type": "GOVERNMENT",
+  "establishedYear": 1946,
+  "totalStudents": 2000,
+  "naacGrade": "A",
+  "annualFees": 22000,
+  "placementPct": 89,
+  "avgPackage": 8,
+  "highestPackage": 16,
+  "topRecruiters": [
+   "Civil Hospital",
+   "Apollo",
+   "Sterling"
+  ],
+  "courses": [
+   "MBBS",
+   "MD",
+   "MS"
+  ]
+ },
+ {
+  "slug": "manipal-academy-of-higher-education",
+  "name": "Manipal Academy of Higher Education",
+  "shortName": "MAHE",
+  "city": "Manipal",
+  "state": "Karnataka",
+  "type": "PRIVATE",
+  "establishedYear": 1953,
+  "totalStudents": 15000,
+  "naacGrade": "A++",
+  "annualFees": 500000,
+  "placementPct": 85,
+  "avgPackage": 8.5,
+  "highestPackage": 40,
+  "topRecruiters": [
+   "Manipal Hospitals",
+   "TCS",
+   "Wipro",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBBS",
+   "MBA",
+   "BBA"
+  ]
+ },
+ {
+  "slug": "amrita-vishwa-vidyapeetham",
+  "name": "Amrita Vishwa Vidyapeetham",
+  "shortName": "Amrita",
+  "city": "Coimbatore",
+  "state": "Tamil Nadu",
+  "type": "PRIVATE",
+  "establishedYear": 2003,
+  "totalStudents": 12000,
+  "naacGrade": "A++",
+  "annualFees": 250000,
+  "placementPct": 80,
+  "avgPackage": 7,
+  "highestPackage": 30,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBBS",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "jamia-millia-islamia",
+  "name": "Jamia Millia Islamia",
+  "shortName": "JMI",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 1920,
+  "totalStudents": 7000,
+  "naacGrade": "A++",
+  "annualFees": 35000,
+  "placementPct": 75,
+  "avgPackage": 5.5,
+  "highestPackage": 22,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "HCL",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "B.A",
+   "MBA",
+   "LLB",
+   "B.Com"
+  ]
+ },
+ {
+  "slug": "banaras-hindu-university",
+  "name": "Banaras Hindu University",
+  "shortName": "BHU",
+  "city": "Varanasi",
+  "state": "Uttar Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1916,
+  "totalStudents": 20000,
+  "naacGrade": "A++",
+  "annualFees": 15000,
+  "placementPct": 78,
+  "avgPackage": 5.8,
+  "highestPackage": 24,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "BHEL",
+   "NTPC"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBBS",
+   "B.A",
+   "B.Sc",
+   "MBA",
+   "LLB",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "aligarh-muslim-university",
+  "name": "Aligarh Muslim University",
+  "shortName": "AMU",
+  "city": "Aligarh",
+  "state": "Uttar Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1920,
+  "totalStudents": 18000,
+  "naacGrade": "A",
+  "annualFees": 12000,
+  "placementPct": 72,
+  "avgPackage": 4.8,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBBS",
+   "B.A",
+   "B.Sc",
+   "MBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "presidency-university",
+  "name": "Presidency University",
+  "shortName": "Presidency",
+  "city": "Kolkata",
+  "state": "West Bengal",
+  "type": "GOVERNMENT",
+  "establishedYear": 1817,
+  "totalStudents": 3000,
+  "naacGrade": "A+",
+  "annualFees": 8000,
+  "placementPct": 70,
+  "avgPackage": 4.5,
+  "highestPackage": 15,
+  "topRecruiters": [
+   "TCS",
+   "Deloitte",
+   "Cognizant",
+   "EY"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.A",
+   "M.Sc",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "christ-university",
+  "name": "Christ University",
+  "shortName": "Christ",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "PRIVATE",
+  "establishedYear": 1969,
+  "totalStudents": 15000,
+  "naacGrade": "A++",
+  "annualFees": 200000,
+  "placementPct": 78,
+  "avgPackage": 6,
+  "highestPackage": 25,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "KPMG",
+   "TCS",
+   "Amazon"
+  ],
+  "courses": [
+   "BBA",
+   "MBA",
+   "B.Com",
+   "B.A",
+   "B.Sc",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "nmims-mumbai",
+  "name": "NMIMS Mumbai",
+  "shortName": "NMIMS",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "type": "PRIVATE",
+  "establishedYear": 1981,
+  "totalStudents": 8000,
+  "naacGrade": "A+",
+  "annualFees": 500000,
+  "placementPct": 88,
+  "avgPackage": 12,
+  "highestPackage": 45,
+  "topRecruiters": [
+   "JP Morgan",
+   "Goldman Sachs",
+   "Deloitte",
+   "Amazon"
+  ],
+  "courses": [
+   "MBA",
+   "B.Tech",
+   "BBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "sp-jain-institute",
+  "name": "SP Jain Institute",
+  "shortName": "SPJIMR",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "type": "PRIVATE",
+  "establishedYear": 1981,
+  "totalStudents": 600,
+  "naacGrade": "A++",
+  "annualFees": 2100000,
+  "placementPct": 97,
+  "avgPackage": 26,
+  "highestPackage": 95,
+  "topRecruiters": [
+   "McKinsey",
+   "BCG",
+   "Amazon",
+   "Google"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "nalsar-university-of-law",
+  "name": "NALSAR University of Law",
+  "shortName": "NALSAR",
+  "city": "Hyderabad",
+  "state": "Telangana",
+  "type": "GOVERNMENT",
+  "establishedYear": 1998,
+  "totalStudents": 700,
+  "naacGrade": "A+",
+  "annualFees": 200000,
+  "placementPct": 90,
+  "avgPackage": 12,
+  "highestPackage": 40,
+  "topRecruiters": [
+   "AZB",
+   "Trilegal",
+   "Cyril Amarchand",
+   "S&R"
+  ],
+  "courses": [
+   "LLB",
+   "LLM"
+  ]
+ },
+ {
+  "slug": "nliu-bhopal",
+  "name": "NLIU Bhopal",
+  "shortName": "NLIU",
+  "city": "Bhopal",
+  "state": "Madhya Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1997,
+  "totalStudents": 600,
+  "naacGrade": "A",
+  "annualFees": 180000,
+  "placementPct": 85,
+  "avgPackage": 10,
+  "highestPackage": 32,
+  "topRecruiters": [
+   "AZB",
+   "Trilegal",
+   "Khaitan",
+   "HSA"
+  ],
+  "courses": [
+   "LLB",
+   "LLM"
+  ]
+ },
+ {
+  "slug": "iit-mandi",
+  "name": "IIT Mandi",
+  "shortName": "IIT Mandi",
+  "city": "Mandi",
+  "state": "Himachal Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 2009,
+  "totalStudents": 2500,
+  "naacGrade": "A",
+  "annualFees": 200000,
+  "placementPct": 82,
+  "avgPackage": 9.5,
+  "highestPackage": 40,
+  "topRecruiters": [
+   "Google",
+   "Amazon",
+   "Samsung",
+   "TCS"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iit-ropar",
+  "name": "IIT Ropar",
+  "shortName": "IIT Ropar",
+  "city": "Rupnagar",
+  "state": "Punjab",
+  "type": "GOVERNMENT",
+  "establishedYear": 2008,
+  "totalStudents": 2200,
+  "naacGrade": "A",
+  "annualFees": 195000,
+  "placementPct": 80,
+  "avgPackage": 9,
+  "highestPackage": 38,
+  "topRecruiters": [
+   "Microsoft",
+   "Amazon",
+   "TCS",
+   "Samsung"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iit-patna",
+  "name": "IIT Patna",
+  "shortName": "IIT Patna",
+  "city": "Patna",
+  "state": "Bihar",
+  "type": "GOVERNMENT",
+  "establishedYear": 2008,
+  "totalStudents": 2000,
+  "naacGrade": "A",
+  "annualFees": 190000,
+  "placementPct": 79,
+  "avgPackage": 8.8,
+  "highestPackage": 36,
+  "topRecruiters": [
+   "TCS",
+   "Amazon",
+   "Flipkart",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iit-bhubaneswar",
+  "name": "IIT Bhubaneswar",
+  "shortName": "IIT Bhubaneswar",
+  "city": "Bhubaneswar",
+  "state": "Odisha",
+  "type": "GOVERNMENT",
+  "establishedYear": 2008,
+  "totalStudents": 2300,
+  "naacGrade": "A+",
+  "annualFees": 205000,
+  "placementPct": 83,
+  "avgPackage": 10,
+  "highestPackage": 42,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "TCS"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iit-gandhinagar",
+  "name": "IIT Gandhinagar",
+  "shortName": "IIT Gandhinagar",
+  "city": "Gandhinagar",
+  "state": "Gujarat",
+  "type": "GOVERNMENT",
+  "establishedYear": 2008,
+  "totalStudents": 2500,
+  "naacGrade": "A+",
+  "annualFees": 210000,
+  "placementPct": 84,
+  "avgPackage": 10.5,
+  "highestPackage": 45,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Adobe",
+   "TCS"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iit-jodhpur",
+  "name": "IIT Jodhpur",
+  "shortName": "IIT Jodhpur",
+  "city": "Jodhpur",
+  "state": "Rajasthan",
+  "type": "GOVERNMENT",
+  "establishedYear": 2008,
+  "totalStudents": 2000,
+  "naacGrade": "A",
+  "annualFees": 195000,
+  "placementPct": 80,
+  "avgPackage": 9,
+  "highestPackage": 38,
+  "topRecruiters": [
+   "Amazon",
+   "TCS",
+   "Flipkart",
+   "Samsung"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "nit-jamshedpur",
+  "name": "NIT Jamshedpur",
+  "shortName": "NIT Jamshedpur",
+  "city": "Jamshedpur",
+  "state": "Jharkhand",
+  "type": "GOVERNMENT",
+  "establishedYear": 1960,
+  "totalStudents": 5500,
+  "naacGrade": "A",
+  "annualFees": 155000,
+  "placementPct": 81,
+  "avgPackage": 7.5,
+  "highestPackage": 28,
+  "topRecruiters": [
+   "TATA Steel",
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "nit-kurukshetra",
+  "name": "NIT Kurukshetra",
+  "shortName": "NIT Kurukshetra",
+  "city": "Kurukshetra",
+  "state": "Haryana",
+  "type": "GOVERNMENT",
+  "establishedYear": 1963,
+  "totalStudents": 5000,
+  "naacGrade": "A",
+  "annualFees": 150000,
+  "placementPct": 80,
+  "avgPackage": 7.2,
+  "highestPackage": 26,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "nit-patna",
+  "name": "NIT Patna",
+  "shortName": "NIT Patna",
+  "city": "Patna",
+  "state": "Bihar",
+  "type": "GOVERNMENT",
+  "establishedYear": 1886,
+  "totalStudents": 4500,
+  "naacGrade": "A",
+  "annualFees": 145000,
+  "placementPct": 78,
+  "avgPackage": 6.8,
+  "highestPackage": 24,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "nit-raipur",
+  "name": "NIT Raipur",
+  "shortName": "NIT Raipur",
+  "city": "Raipur",
+  "state": "Chhattisgarh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1956,
+  "totalStudents": 4000,
+  "naacGrade": "B++",
+  "annualFees": 135000,
+  "placementPct": 75,
+  "avgPackage": 6.2,
+  "highestPackage": 22,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "nit-srinagar",
+  "name": "NIT Srinagar",
+  "shortName": "NIT Srinagar",
+  "city": "Srinagar",
+  "state": "Jammu & Kashmir",
+  "type": "GOVERNMENT",
+  "establishedYear": 1960,
+  "totalStudents": 3500,
+  "naacGrade": "B++",
+  "annualFees": 130000,
+  "placementPct": 72,
+  "avgPackage": 5.8,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "nit-goa",
+  "name": "NIT Goa",
+  "shortName": "NIT Goa",
+  "city": "Goa",
+  "state": "Goa",
+  "type": "GOVERNMENT",
+  "establishedYear": 2010,
+  "totalStudents": 1800,
+  "naacGrade": "B+",
+  "annualFees": 125000,
+  "placementPct": 70,
+  "avgPackage": 5.5,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "nit-uttarakhand",
+  "name": "NIT Uttarakhand",
+  "shortName": "NIT Uttarakhand",
+  "city": "Srinagar",
+  "state": "Uttarakhand",
+  "type": "GOVERNMENT",
+  "establishedYear": 2009,
+  "totalStudents": 2000,
+  "naacGrade": "B+",
+  "annualFees": 120000,
+  "placementPct": 68,
+  "avgPackage": 5.2,
+  "highestPackage": 17,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "nit-arunachal-pradesh",
+  "name": "NIT Arunachal Pradesh",
+  "shortName": "NIT Arunachal",
+  "city": "Yupia",
+  "state": "Arunachal Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 2010,
+  "totalStudents": 1500,
+  "naacGrade": "B+",
+  "annualFees": 115000,
+  "placementPct": 62,
+  "avgPackage": 4.5,
+  "highestPackage": 14,
+  "topRecruiters": [
+   "TCS",
+   "Infosys"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "nit-sikkim",
+  "name": "NIT Sikkim",
+  "shortName": "NIT Sikkim",
+  "city": "Ravangla",
+  "state": "Sikkim",
+  "type": "GOVERNMENT",
+  "establishedYear": 2010,
+  "totalStudents": 1200,
+  "naacGrade": "B+",
+  "annualFees": 110000,
+  "placementPct": 60,
+  "avgPackage": 4.2,
+  "highestPackage": 13,
+  "topRecruiters": [
+   "TCS",
+   "Infosys"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "nit-manipur",
+  "name": "NIT Manipur",
+  "shortName": "NIT Manipur",
+  "city": "Imphal",
+  "state": "Manipur",
+  "type": "GOVERNMENT",
+  "establishedYear": 2010,
+  "totalStudents": 1300,
+  "naacGrade": "B+",
+  "annualFees": 112000,
+  "placementPct": 61,
+  "avgPackage": 4.3,
+  "highestPackage": 13.5,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "nit-mizoram",
+  "name": "NIT Mizoram",
+  "shortName": "NIT Mizoram",
+  "city": "Aizawl",
+  "state": "Mizoram",
+  "type": "GOVERNMENT",
+  "establishedYear": 2010,
+  "totalStudents": 1100,
+  "naacGrade": "B+",
+  "annualFees": 108000,
+  "placementPct": 58,
+  "avgPackage": 4,
+  "highestPackage": 12,
+  "topRecruiters": [
+   "TCS",
+   "Infosys"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "nit-nagaland",
+  "name": "NIT Nagaland",
+  "shortName": "NIT Nagaland",
+  "city": "Dimapur",
+  "state": "Nagaland",
+  "type": "GOVERNMENT",
+  "establishedYear": 2010,
+  "totalStudents": 1000,
+  "naacGrade": "B+",
+  "annualFees": 105000,
+  "placementPct": 57,
+  "avgPackage": 3.8,
+  "highestPackage": 11.5,
+  "topRecruiters": [
+   "TCS",
+   "Infosys"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "vjti-mumbai",
+  "name": "VJTI Mumbai",
+  "shortName": "VJTI",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 1887,
+  "totalStudents": 4000,
+  "naacGrade": "A+",
+  "annualFees": 90000,
+  "placementPct": 85,
+  "avgPackage": 8,
+  "highestPackage": 32,
+  "topRecruiters": [
+   "TCS",
+   "L&T",
+   "Siemens",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "college-of-engineering-pune",
+  "name": "College of Engineering Pune",
+  "shortName": "COEP",
+  "city": "Pune",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 1854,
+  "totalStudents": 4500,
+  "naacGrade": "A+",
+  "annualFees": 95000,
+  "placementPct": 84,
+  "avgPackage": 7.8,
+  "highestPackage": 30,
+  "topRecruiters": [
+   "TCS",
+   "Persistent",
+   "Wipro",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iisc-bangalore",
+  "name": "IISc Bangalore",
+  "shortName": "IISc",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "GOVERNMENT",
+  "establishedYear": 1909,
+  "totalStudents": 4000,
+  "naacGrade": "A++",
+  "annualFees": 35000,
+  "placementPct": 92,
+  "avgPackage": 14,
+  "highestPackage": 60,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Intel",
+   "Samsung"
+  ],
+  "courses": [
+   "B.Sc",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "indian-statistical-institute",
+  "name": "Indian Statistical Institute",
+  "shortName": "ISI Kolkata",
+  "city": "Kolkata",
+  "state": "West Bengal",
+  "type": "GOVERNMENT",
+  "establishedYear": 1931,
+  "totalStudents": 1500,
+  "naacGrade": "A++",
+  "annualFees": 10000,
+  "placementPct": 88,
+  "avgPackage": 12,
+  "highestPackage": 50,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Goldman Sachs",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Sc",
+   "M.Sc",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "cmi-chennai",
+  "name": "CMI Chennai",
+  "shortName": "CMI",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "GOVERNMENT",
+  "establishedYear": 1989,
+  "totalStudents": 500,
+  "naacGrade": "A",
+  "annualFees": 15000,
+  "placementPct": 85,
+  "avgPackage": 11,
+  "highestPackage": 45,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Goldman Sachs"
+  ],
+  "courses": [
+   "B.Sc",
+   "M.Sc",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iim-nagpur",
+  "name": "IIM Nagpur",
+  "shortName": "IIM Nagpur",
+  "city": "Nagpur",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 2015,
+  "totalStudents": 400,
+  "naacGrade": "B++",
+  "annualFees": 1400000,
+  "placementPct": 85,
+  "avgPackage": 15,
+  "highestPackage": 45,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "Amazon",
+   "TCS"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "iim-amritsar",
+  "name": "IIM Amritsar",
+  "shortName": "IIM Amritsar",
+  "city": "Amritsar",
+  "state": "Punjab",
+  "type": "GOVERNMENT",
+  "establishedYear": 2015,
+  "totalStudents": 350,
+  "naacGrade": "B++",
+  "annualFees": 1350000,
+  "placementPct": 84,
+  "avgPackage": 14.5,
+  "highestPackage": 42,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "Wipro",
+   "TCS"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "iim-bodh-gaya",
+  "name": "IIM Bodh Gaya",
+  "shortName": "IIM Bodh Gaya",
+  "city": "Bodh Gaya",
+  "state": "Bihar",
+  "type": "GOVERNMENT",
+  "establishedYear": 2015,
+  "totalStudents": 300,
+  "naacGrade": "B+",
+  "annualFees": 1300000,
+  "placementPct": 82,
+  "avgPackage": 13,
+  "highestPackage": 38,
+  "topRecruiters": [
+   "Deloitte",
+   "TCS",
+   "Wipro"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "iim-jammu",
+  "name": "IIM Jammu",
+  "shortName": "IIM Jammu",
+  "city": "Jammu",
+  "state": "Jammu & Kashmir",
+  "type": "GOVERNMENT",
+  "establishedYear": 2016,
+  "totalStudents": 280,
+  "naacGrade": "B+",
+  "annualFees": 1250000,
+  "placementPct": 81,
+  "avgPackage": 12.5,
+  "highestPackage": 36,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "TCS"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "iim-sambalpur",
+  "name": "IIM Sambalpur",
+  "shortName": "IIM Sambalpur",
+  "city": "Sambalpur",
+  "state": "Odisha",
+  "type": "GOVERNMENT",
+  "establishedYear": 2015,
+  "totalStudents": 300,
+  "naacGrade": "B+",
+  "annualFees": 1280000,
+  "placementPct": 80,
+  "avgPackage": 12,
+  "highestPackage": 35,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "TCS",
+   "Wipro"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "iim-sirmaur",
+  "name": "IIM Sirmaur",
+  "shortName": "IIM Sirmaur",
+  "city": "Sirmaur",
+  "state": "Himachal Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 2015,
+  "totalStudents": 250,
+  "naacGrade": "B+",
+  "annualFees": 1200000,
+  "placementPct": 78,
+  "avgPackage": 11,
+  "highestPackage": 32,
+  "topRecruiters": [
+   "Deloitte",
+   "TCS",
+   "Wipro"
+  ],
+  "courses": [
+   "MBA"
+  ]
+ },
+ {
+  "slug": "madras-medical-college",
+  "name": "Madras Medical College",
+  "shortName": "MMC",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "GOVERNMENT",
+  "establishedYear": 1835,
+  "totalStudents": 2000,
+  "naacGrade": "A++",
+  "annualFees": 18000,
+  "placementPct": 94,
+  "avgPackage": 9.5,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "Rajiv Gandhi Hospital",
+   "Apollo",
+   "Fortis"
+  ],
+  "courses": [
+   "MBBS",
+   "MD",
+   "MS"
+  ]
+ },
+ {
+  "slug": "seth-gs-medical-college",
+  "name": "Seth GS Medical College",
+  "shortName": "GSMC",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 1926,
+  "totalStudents": 1800,
+  "naacGrade": "A+",
+  "annualFees": 22000,
+  "placementPct": 93,
+  "avgPackage": 9,
+  "highestPackage": 19,
+  "topRecruiters": [
+   "KEM Hospital",
+   "Hinduja",
+   "Lilavati"
+  ],
+  "courses": [
+   "MBBS",
+   "MD",
+   "MS"
+  ]
+ },
+ {
+  "slug": "lady-hardinge-medical-college",
+  "name": "Lady Hardinge Medical College",
+  "shortName": "LHMC",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 1916,
+  "totalStudents": 1200,
+  "naacGrade": "A+",
+  "annualFees": 15000,
+  "placementPct": 92,
+  "avgPackage": 8.5,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "LHMC Hospital",
+   "AIIMS",
+   "Safdarjung"
+  ],
+  "courses": [
+   "MBBS",
+   "MD"
+  ]
+ },
+ {
+  "slug": "stanley-medical-college",
+  "name": "Stanley Medical College",
+  "shortName": "Stanley",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "GOVERNMENT",
+  "establishedYear": 1838,
+  "totalStudents": 1500,
+  "naacGrade": "A",
+  "annualFees": 16000,
+  "placementPct": 88,
+  "avgPackage": 8,
+  "highestPackage": 16,
+  "topRecruiters": [
+   "Stanley Hospital",
+   "Apollo",
+   "MIOT"
+  ],
+  "courses": [
+   "MBBS",
+   "MD"
+  ]
+ },
+ {
+  "slug": "bangalore-medical-college",
+  "name": "Bangalore Medical College",
+  "shortName": "BMC",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "GOVERNMENT",
+  "establishedYear": 1955,
+  "totalStudents": 1800,
+  "naacGrade": "A+",
+  "annualFees": 25000,
+  "placementPct": 90,
+  "avgPackage": 8.5,
+  "highestPackage": 17,
+  "topRecruiters": [
+   "Victoria Hospital",
+   "Apollo",
+   "Manipal"
+  ],
+  "courses": [
+   "MBBS",
+   "MD",
+   "MS"
+  ]
+ },
+ {
+  "slug": "nlu-delhi",
+  "name": "NLU Delhi",
+  "shortName": "NLU Delhi",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 2008,
+  "totalStudents": 800,
+  "naacGrade": "A+",
+  "annualFees": 280000,
+  "placementPct": 92,
+  "avgPackage": 14,
+  "highestPackage": 42,
+  "topRecruiters": [
+   "AZB",
+   "Trilegal",
+   "Cyril Amarchand",
+   "Shardul"
+  ],
+  "courses": [
+   "LLB",
+   "LLM"
+  ]
+ },
+ {
+  "slug": "nlu-jodhpur",
+  "name": "NLU Jodhpur",
+  "shortName": "NLUJ",
+  "city": "Jodhpur",
+  "state": "Rajasthan",
+  "type": "GOVERNMENT",
+  "establishedYear": 1999,
+  "totalStudents": 700,
+  "naacGrade": "A",
+  "annualFees": 220000,
+  "placementPct": 85,
+  "avgPackage": 10,
+  "highestPackage": 35,
+  "topRecruiters": [
+   "AZB",
+   "Trilegal",
+   "Khaitan",
+   "L&L"
+  ],
+  "courses": [
+   "LLB",
+   "LLM"
+  ]
+ },
+ {
+  "slug": "gnlu-gandhinagar",
+  "name": "GNLU Gandhinagar",
+  "shortName": "GNLU",
+  "city": "Gandhinagar",
+  "state": "Gujarat",
+  "type": "GOVERNMENT",
+  "establishedYear": 2003,
+  "totalStudents": 650,
+  "naacGrade": "A",
+  "annualFees": 200000,
+  "placementPct": 82,
+  "avgPackage": 9,
+  "highestPackage": 30,
+  "topRecruiters": [
+   "AZB",
+   "Trilegal",
+   "Cyril Amarchand"
+  ],
+  "courses": [
+   "LLB",
+   "LLM"
+  ]
+ },
+ {
+  "slug": "nujs-kolkata",
+  "name": "NUJS Kolkata",
+  "shortName": "NUJS",
+  "city": "Kolkata",
+  "state": "West Bengal",
+  "type": "GOVERNMENT",
+  "establishedYear": 1999,
+  "totalStudents": 750,
+  "naacGrade": "A+",
+  "annualFees": 240000,
+  "placementPct": 88,
+  "avgPackage": 11,
+  "highestPackage": 38,
+  "topRecruiters": [
+   "AZB",
+   "Trilegal",
+   "S&R",
+   "Khaitan"
+  ],
+  "courses": [
+   "LLB",
+   "LLM"
+  ]
+ },
+ {
+  "slug": "rgnul-patiala",
+  "name": "RGNUL Patiala",
+  "shortName": "RGNUL",
+  "city": "Patiala",
+  "state": "Punjab",
+  "type": "GOVERNMENT",
+  "establishedYear": 2006,
+  "totalStudents": 500,
+  "naacGrade": "B++",
+  "annualFees": 160000,
+  "placementPct": 75,
+  "avgPackage": 7,
+  "highestPackage": 22,
+  "topRecruiters": [
+   "Trilegal",
+   "HSA",
+   "Luthra"
+  ],
+  "courses": [
+   "LLB",
+   "LLM"
+  ]
+ },
+ {
+  "slug": "srm-ap",
+  "name": "SRM AP",
+  "shortName": "SRM AP",
+  "city": "Amaravati",
+  "state": "Andhra Pradesh",
+  "type": "PRIVATE",
+  "establishedYear": 2017,
+  "totalStudents": 5000,
+  "naacGrade": "A",
+  "annualFees": 280000,
+  "placementPct": 72,
+  "avgPackage": 5.5,
+  "highestPackage": 22,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Amazon",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "BBA"
+  ]
+ },
+ {
+  "slug": "jain-university",
+  "name": "Jain University",
+  "shortName": "Jain",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "PRIVATE",
+  "establishedYear": 1990,
+  "totalStudents": 12000,
+  "naacGrade": "A+",
+  "annualFees": 180000,
+  "placementPct": 74,
+  "avgPackage": 5.5,
+  "highestPackage": 22,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "BBA",
+   "MBA",
+   "B.Com",
+   "B.Sc"
+  ]
+ },
+ {
+  "slug": "upes-dehradun",
+  "name": "UPES Dehradun",
+  "shortName": "UPES",
+  "city": "Dehradun",
+  "state": "Uttarakhand",
+  "type": "PRIVATE",
+  "establishedYear": 2003,
+  "totalStudents": 10000,
+  "naacGrade": "A",
+  "annualFees": 280000,
+  "placementPct": 75,
+  "avgPackage": 6,
+  "highestPackage": 25,
+  "topRecruiters": [
+   "Shell",
+   "ONGC",
+   "TCS",
+   "Infosys"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "kle-technological-university",
+  "name": "KLE Technological University",
+  "shortName": "KLE Tech",
+  "city": "Hubballi",
+  "state": "Karnataka",
+  "type": "PRIVATE",
+  "establishedYear": 1947,
+  "totalStudents": 5000,
+  "naacGrade": "A",
+  "annualFees": 150000,
+  "placementPct": 78,
+  "avgPackage": 6.5,
+  "highestPackage": 26,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Bosch"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "dhirubhai-ambani-institute",
+  "name": "Dhirubhai Ambani Institute",
+  "shortName": "DAIICT",
+  "city": "Gandhinagar",
+  "state": "Gujarat",
+  "type": "PRIVATE",
+  "establishedYear": 2001,
+  "totalStudents": 3000,
+  "naacGrade": "A",
+  "annualFees": 250000,
+  "placementPct": 85,
+  "avgPackage": 9.5,
+  "highestPackage": 40,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "TCS"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "rvce-bangalore",
+  "name": "RVCE Bangalore",
+  "shortName": "RVCE",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "PRIVATE",
+  "establishedYear": 1963,
+  "totalStudents": 4500,
+  "naacGrade": "A+",
+  "annualFees": 200000,
+  "placementPct": 82,
+  "avgPackage": 7.5,
+  "highestPackage": 30,
+  "topRecruiters": [
+   "Infosys",
+   "TCS",
+   "Bosch",
+   "Samsung"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "bms-college-of-engineering",
+  "name": "BMS College of Engineering",
+  "shortName": "BMSCE",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "PRIVATE",
+  "establishedYear": 1946,
+  "totalStudents": 4000,
+  "naacGrade": "A",
+  "annualFees": 180000,
+  "placementPct": 80,
+  "avgPackage": 7,
+  "highestPackage": 28,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Bosch"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "ms-ramaiah-institute",
+  "name": "MS Ramaiah Institute",
+  "shortName": "MSRIT",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "PRIVATE",
+  "establishedYear": 1962,
+  "totalStudents": 4200,
+  "naacGrade": "A",
+  "annualFees": 190000,
+  "placementPct": 79,
+  "avgPackage": 6.8,
+  "highestPackage": 27,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Samsung"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "pes-university",
+  "name": "PES University",
+  "shortName": "PES",
+  "city": "Bangalore",
+  "state": "Karnataka",
+  "type": "PRIVATE",
+  "establishedYear": 1972,
+  "totalStudents": 8000,
+  "naacGrade": "A+",
+  "annualFees": 300000,
+  "placementPct": 82,
+  "avgPackage": 8,
+  "highestPackage": 35,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "SAP"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "iiitdm-kancheepuram",
+  "name": "IIITDM Kancheepuram",
+  "shortName": "IIITDM",
+  "city": "Kancheepuram",
+  "state": "Tamil Nadu",
+  "type": "GOVERNMENT",
+  "establishedYear": 2007,
+  "totalStudents": 2000,
+  "naacGrade": "A",
+  "annualFees": 180000,
+  "placementPct": 82,
+  "avgPackage": 8,
+  "highestPackage": 32,
+  "topRecruiters": [
+   "TCS",
+   "Amazon",
+   "Samsung",
+   "Google"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "nit-puducherry",
+  "name": "NIT Puducherry",
+  "shortName": "NIT Puducherry",
+  "city": "Karaikal",
+  "state": "Puducherry",
+  "type": "GOVERNMENT",
+  "establishedYear": 2010,
+  "totalStudents": 1500,
+  "naacGrade": "B+",
+  "annualFees": 118000,
+  "placementPct": 65,
+  "avgPackage": 5,
+  "highestPackage": 16,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "nit-andhra-pradesh",
+  "name": "NIT Andhra Pradesh",
+  "shortName": "NIT Andhra",
+  "city": "Tadepalligudem",
+  "state": "Andhra Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 2015,
+  "totalStudents": 1200,
+  "naacGrade": "B+",
+  "annualFees": 115000,
+  "placementPct": 63,
+  "avgPackage": 4.8,
+  "highestPackage": 15,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "nit-delhi",
+  "name": "NIT Delhi",
+  "shortName": "NIT Delhi",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "type": "GOVERNMENT",
+  "establishedYear": 2010,
+  "totalStudents": 1800,
+  "naacGrade": "A",
+  "annualFees": 155000,
+  "placementPct": 80,
+  "avgPackage": 7.5,
+  "highestPackage": 28,
+  "topRecruiters": [
+   "TCS",
+   "Amazon",
+   "Microsoft",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "cochin-university",
+  "name": "Cochin University",
+  "shortName": "CUSAT",
+  "city": "Kochi",
+  "state": "Kerala",
+  "type": "GOVERNMENT",
+  "establishedYear": 1971,
+  "totalStudents": 6000,
+  "naacGrade": "A+",
+  "annualFees": 45000,
+  "placementPct": 78,
+  "avgPackage": 6,
+  "highestPackage": 24,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "UST Global",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "visvesvaraya-technological-university",
+  "name": "Visvesvaraya Technological University",
+  "shortName": "VTU",
+  "city": "Belgaum",
+  "state": "Karnataka",
+  "type": "GOVERNMENT",
+  "establishedYear": 1998,
+  "totalStudents": 15000,
+  "naacGrade": "A+",
+  "annualFees": 40000,
+  "placementPct": 72,
+  "avgPackage": 5,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "gujarat-technological-university",
+  "name": "Gujarat Technological University",
+  "shortName": "GTU",
+  "city": "Ahmedabad",
+  "state": "Gujarat",
+  "type": "GOVERNMENT",
+  "establishedYear": 2007,
+  "totalStudents": 20000,
+  "naacGrade": "A",
+  "annualFees": 35000,
+  "placementPct": 68,
+  "avgPackage": 4.5,
+  "highestPackage": 16,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Adani"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA"
+  ]
+ },
+ {
+  "slug": "jntu-hyderabad",
+  "name": "JNTU Hyderabad",
+  "shortName": "JNTU",
+  "city": "Hyderabad",
+  "state": "Telangana",
+  "type": "GOVERNMENT",
+  "establishedYear": 1972,
+  "totalStudents": 12000,
+  "naacGrade": "A",
+  "annualFees": 30000,
+  "placementPct": 70,
+  "avgPackage": 5,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Tech Mahindra"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "rajasthan-technical-university",
+  "name": "Rajasthan Technical University",
+  "shortName": "RTU",
+  "city": "Kota",
+  "state": "Rajasthan",
+  "type": "GOVERNMENT",
+  "establishedYear": 2006,
+  "totalStudents": 8000,
+  "naacGrade": "B++",
+  "annualFees": 35000,
+  "placementPct": 65,
+  "avgPackage": 4.2,
+  "highestPackage": 14,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "punjab-technical-university",
+  "name": "Punjab Technical University",
+  "shortName": "PTU",
+  "city": "Jalandhar",
+  "state": "Punjab",
+  "type": "GOVERNMENT",
+  "establishedYear": 1997,
+  "totalStudents": 10000,
+  "naacGrade": "B++",
+  "annualFees": 40000,
+  "placementPct": 62,
+  "avgPackage": 4,
+  "highestPackage": 13,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "siksha-o-anusandhan",
+  "name": "Siksha O Anusandhan",
+  "shortName": "SOA",
+  "city": "Bhubaneswar",
+  "state": "Odisha",
+  "type": "PRIVATE",
+  "establishedYear": 1996,
+  "totalStudents": 10000,
+  "naacGrade": "A+",
+  "annualFees": 250000,
+  "placementPct": 78,
+  "avgPackage": 6.5,
+  "highestPackage": 26,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBBS",
+   "MBA",
+   "BBA"
+  ]
+ },
+ {
+  "slug": "kalasalingam-university",
+  "name": "Kalasalingam University",
+  "shortName": "KARE",
+  "city": "Virudhunagar",
+  "state": "Tamil Nadu",
+  "type": "PRIVATE",
+  "establishedYear": 1984,
+  "totalStudents": 5000,
+  "naacGrade": "A",
+  "annualFees": 150000,
+  "placementPct": 72,
+  "avgPackage": 5,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "vel-tech-university",
+  "name": "Vel Tech University",
+  "shortName": "Vel Tech",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "PRIVATE",
+  "establishedYear": 1997,
+  "totalStudents": 8000,
+  "naacGrade": "A+",
+  "annualFees": 180000,
+  "placementPct": 70,
+  "avgPackage": 5,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "sathyabama-institute",
+  "name": "Sathyabama Institute",
+  "shortName": "Sathyabama",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "PRIVATE",
+  "establishedYear": 1987,
+  "totalStudents": 12000,
+  "naacGrade": "A+",
+  "annualFees": 200000,
+  "placementPct": 75,
+  "avgPackage": 5.5,
+  "highestPackage": 22,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "hindustan-university",
+  "name": "Hindustan University",
+  "shortName": "HITS",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "PRIVATE",
+  "establishedYear": 1985,
+  "totalStudents": 10000,
+  "naacGrade": "A",
+  "annualFees": 220000,
+  "placementPct": 72,
+  "avgPackage": 5.2,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "saveetha-university",
+  "name": "Saveetha University",
+  "shortName": "Saveetha",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "PRIVATE",
+  "establishedYear": 1988,
+  "totalStudents": 8000,
+  "naacGrade": "A+",
+  "annualFees": 800000,
+  "placementPct": 82,
+  "avgPackage": 7,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "Saveetha Hospital",
+   "Apollo",
+   "Fortis"
+  ],
+  "courses": [
+   "MBBS",
+   "MD",
+   "BBA",
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "st-johns-college",
+  "name": "St Johns College",
+  "shortName": "St Johns",
+  "city": "Agra",
+  "state": "Uttar Pradesh",
+  "type": "PRIVATE",
+  "establishedYear": 1850,
+  "totalStudents": 4000,
+  "naacGrade": "B++",
+  "annualFees": 25000,
+  "placementPct": 60,
+  "avgPackage": 3.5,
+  "highestPackage": 10,
+  "topRecruiters": [
+   "TCS",
+   "Wipro",
+   "Local firms"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "B.Com"
+  ]
+ },
+ {
+  "slug": "banasthali-vidyapith",
+  "name": "Banasthali Vidyapith",
+  "shortName": "Banasthali",
+  "city": "Tonk",
+  "state": "Rajasthan",
+  "type": "PRIVATE",
+  "establishedYear": 1935,
+  "totalStudents": 6000,
+  "naacGrade": "A++",
+  "annualFees": 120000,
+  "placementPct": 72,
+  "avgPackage": 5,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Adobe"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "B.Sc",
+   "B.A",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "lnmiit-jaipur",
+  "name": "LNMIIT Jaipur",
+  "shortName": "LNMIIT",
+  "city": "Jaipur",
+  "state": "Rajasthan",
+  "type": "PRIVATE",
+  "establishedYear": 2003,
+  "totalStudents": 2500,
+  "naacGrade": "A",
+  "annualFees": 350000,
+  "placementPct": 82,
+  "avgPackage": 8,
+  "highestPackage": 32,
+  "topRecruiters": [
+   "Google",
+   "Amazon",
+   "Microsoft",
+   "TCS"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iiit-kottayam",
+  "name": "IIIT Kottayam",
+  "shortName": "IIIT Kottayam",
+  "city": "Kottayam",
+  "state": "Kerala",
+  "type": "GOVERNMENT",
+  "establishedYear": 2000,
+  "totalStudents": 1500,
+  "naacGrade": "A",
+  "annualFees": 160000,
+  "placementPct": 78,
+  "avgPackage": 7,
+  "highestPackage": 28,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "UST Global",
+   "Oracle"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iiit-gwalior",
+  "name": "IIIT Gwalior",
+  "shortName": "ABV-IIITM",
+  "city": "Gwalior",
+  "state": "Madhya Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1997,
+  "totalStudents": 2500,
+  "naacGrade": "A+",
+  "annualFees": 200000,
+  "placementPct": 84,
+  "avgPackage": 9,
+  "highestPackage": 38,
+  "topRecruiters": [
+   "Google",
+   "Microsoft",
+   "Amazon",
+   "TCS"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iiit-jabalpur",
+  "name": "IIIT Jabalpur",
+  "shortName": "IIIT Jabalpur",
+  "city": "Jabalpur",
+  "state": "Madhya Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 2005,
+  "totalStudents": 1800,
+  "naacGrade": "A",
+  "annualFees": 170000,
+  "placementPct": 78,
+  "avgPackage": 7,
+  "highestPackage": 26,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Amazon",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "iiit-sri-city",
+  "name": "IIIT Sri City",
+  "shortName": "IIIT Sri City",
+  "city": "Sri City",
+  "state": "Andhra Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 2013,
+  "totalStudents": 1200,
+  "naacGrade": "B++",
+  "annualFees": 200000,
+  "placementPct": 75,
+  "avgPackage": 7.5,
+  "highestPackage": 28,
+  "topRecruiters": [
+   "Google",
+   "Amazon",
+   "TCS",
+   "Microsoft"
+  ],
+  "courses": [
+   "B.Tech"
+  ]
+ },
+ {
+  "slug": "calcutta-university",
+  "name": "Calcutta University",
+  "shortName": "CU Kolkata",
+  "city": "Kolkata",
+  "state": "West Bengal",
+  "type": "GOVERNMENT",
+  "establishedYear": 1857,
+  "totalStudents": 8000,
+  "naacGrade": "A",
+  "annualFees": 10000,
+  "placementPct": 68,
+  "avgPackage": 4,
+  "highestPackage": 12,
+  "topRecruiters": [
+   "TCS",
+   "Cognizant",
+   "Wipro",
+   "Deloitte"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "B.Com",
+   "M.A",
+   "M.Sc",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "madras-university",
+  "name": "Madras University",
+  "shortName": "Madras Univ",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "type": "GOVERNMENT",
+  "establishedYear": 1857,
+  "totalStudents": 6000,
+  "naacGrade": "A+",
+  "annualFees": 12000,
+  "placementPct": 70,
+  "avgPackage": 4.2,
+  "highestPackage": 14,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "B.Com",
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "mysore-university",
+  "name": "Mysore University",
+  "shortName": "Mysore Univ",
+  "city": "Mysore",
+  "state": "Karnataka",
+  "type": "GOVERNMENT",
+  "establishedYear": 1916,
+  "totalStudents": 5000,
+  "naacGrade": "A+",
+  "annualFees": 10000,
+  "placementPct": 68,
+  "avgPackage": 4,
+  "highestPackage": 12,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "B.Com",
+   "M.Sc",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "andhra-university",
+  "name": "Andhra University",
+  "shortName": "AU",
+  "city": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1926,
+  "totalStudents": 7000,
+  "naacGrade": "A",
+  "annualFees": 15000,
+  "placementPct": 70,
+  "avgPackage": 4.5,
+  "highestPackage": 15,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Tech Mahindra"
+  ],
+  "courses": [
+   "B.Tech",
+   "B.Sc",
+   "MBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "patna-university",
+  "name": "Patna University",
+  "shortName": "Patna Univ",
+  "city": "Patna",
+  "state": "Bihar",
+  "type": "GOVERNMENT",
+  "establishedYear": 1917,
+  "totalStudents": 5000,
+  "naacGrade": "B++",
+  "annualFees": 8000,
+  "placementPct": 60,
+  "avgPackage": 3.5,
+  "highestPackage": 10,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Local firms"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "B.Com",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "gauhati-university",
+  "name": "Gauhati University",
+  "shortName": "GU",
+  "city": "Guwahati",
+  "state": "Assam",
+  "type": "GOVERNMENT",
+  "establishedYear": 1948,
+  "totalStudents": 5500,
+  "naacGrade": "A",
+  "annualFees": 12000,
+  "placementPct": 65,
+  "avgPackage": 4,
+  "highestPackage": 12,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Oil India"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "B.Com",
+   "MBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "dibrugarh-university",
+  "name": "Dibrugarh University",
+  "shortName": "DU Dibrugarh",
+  "city": "Dibrugarh",
+  "state": "Assam",
+  "type": "GOVERNMENT",
+  "establishedYear": 1965,
+  "totalStudents": 4000,
+  "naacGrade": "B++",
+  "annualFees": 10000,
+  "placementPct": 62,
+  "avgPackage": 3.8,
+  "highestPackage": 11,
+  "topRecruiters": [
+   "TCS",
+   "Oil India",
+   "ONGC"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "B.Tech",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "tezpur-university",
+  "name": "Tezpur University",
+  "shortName": "Tezpur",
+  "city": "Tezpur",
+  "state": "Assam",
+  "type": "GOVERNMENT",
+  "establishedYear": 1994,
+  "totalStudents": 3500,
+  "naacGrade": "A",
+  "annualFees": 25000,
+  "placementPct": 72,
+  "avgPackage": 5,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "ONGC",
+   "Oil India"
+  ],
+  "courses": [
+   "B.Tech",
+   "B.Sc",
+   "MBA",
+   "M.Tech"
+  ]
+ },
+ {
+  "slug": "central-university-of-kerala",
+  "name": "Central University of Kerala",
+  "shortName": "CU Kerala",
+  "city": "Kasaragod",
+  "state": "Kerala",
+  "type": "GOVERNMENT",
+  "establishedYear": 2009,
+  "totalStudents": 2000,
+  "naacGrade": "A",
+  "annualFees": 15000,
+  "placementPct": 68,
+  "avgPackage": 4.5,
+  "highestPackage": 14,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "UST Global"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.A",
+   "M.Sc"
+  ]
+ },
+ {
+  "slug": "central-university-of-rajasthan",
+  "name": "Central University of Rajasthan",
+  "shortName": "CURAJ",
+  "city": "Ajmer",
+  "state": "Rajasthan",
+  "type": "GOVERNMENT",
+  "establishedYear": 2009,
+  "totalStudents": 2500,
+  "naacGrade": "A",
+  "annualFees": 18000,
+  "placementPct": 65,
+  "avgPackage": 4.2,
+  "highestPackage": 13,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "B.Sc",
+   "MBA",
+   "M.Sc"
+  ]
+ },
+ {
+  "slug": "central-university-of-haryana",
+  "name": "Central University of Haryana",
+  "shortName": "CUH",
+  "city": "Mahendragarh",
+  "state": "Haryana",
+  "type": "GOVERNMENT",
+  "establishedYear": 2009,
+  "totalStudents": 2000,
+  "naacGrade": "B++",
+  "annualFees": 15000,
+  "placementPct": 62,
+  "avgPackage": 3.8,
+  "highestPackage": 11,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "HCL"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "B.Tech",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "central-university-of-punjab",
+  "name": "Central University of Punjab",
+  "shortName": "CUP",
+  "city": "Bathinda",
+  "state": "Punjab",
+  "type": "GOVERNMENT",
+  "establishedYear": 2009,
+  "totalStudents": 1800,
+  "naacGrade": "A",
+  "annualFees": 16000,
+  "placementPct": 64,
+  "avgPackage": 4,
+  "highestPackage": 12,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Sc",
+   "M.Sc",
+   "MBA",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "central-university-of-tamil-nadu",
+  "name": "Central University of Tamil Nadu",
+  "shortName": "CUTN",
+  "city": "Thiruvarur",
+  "state": "Tamil Nadu",
+  "type": "GOVERNMENT",
+  "establishedYear": 2009,
+  "totalStudents": 1500,
+  "naacGrade": "B++",
+  "annualFees": 12000,
+  "placementPct": 60,
+  "avgPackage": 3.5,
+  "highestPackage": 10,
+  "topRecruiters": [
+   "TCS",
+   "Infosys"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.A",
+   "M.Sc"
+  ]
+ },
+ {
+  "slug": "pondicherry-university",
+  "name": "Pondicherry University",
+  "shortName": "PU",
+  "city": "Puducherry",
+  "state": "Puducherry",
+  "type": "GOVERNMENT",
+  "establishedYear": 1985,
+  "totalStudents": 4000,
+  "naacGrade": "A+",
+  "annualFees": 20000,
+  "placementPct": 72,
+  "avgPackage": 5,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Cognizant"
+  ],
+  "courses": [
+   "B.Tech",
+   "B.Sc",
+   "MBA",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "north-eastern-hill-university",
+  "name": "North Eastern Hill University",
+  "shortName": "NEHU",
+  "city": "Shillong",
+  "state": "Meghalaya",
+  "type": "GOVERNMENT",
+  "establishedYear": 1973,
+  "totalStudents": 3000,
+  "naacGrade": "A",
+  "annualFees": 12000,
+  "placementPct": 62,
+  "avgPackage": 3.8,
+  "highestPackage": 11,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Government jobs"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.Sc",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "tripura-university",
+  "name": "Tripura University",
+  "shortName": "TU",
+  "city": "Agartala",
+  "state": "Tripura",
+  "type": "GOVERNMENT",
+  "establishedYear": 1987,
+  "totalStudents": 2500,
+  "naacGrade": "B++",
+  "annualFees": 8000,
+  "placementPct": 58,
+  "avgPackage": 3.2,
+  "highestPackage": 9,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Government jobs"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.Sc"
+  ]
+ },
+ {
+  "slug": "mizoram-university",
+  "name": "Mizoram University",
+  "shortName": "MZU",
+  "city": "Aizawl",
+  "state": "Mizoram",
+  "type": "GOVERNMENT",
+  "establishedYear": 2001,
+  "totalStudents": 2000,
+  "naacGrade": "A",
+  "annualFees": 10000,
+  "placementPct": 60,
+  "avgPackage": 3.5,
+  "highestPackage": 10,
+  "topRecruiters": [
+   "Government sector",
+   "TCS"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.Sc",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "nagaland-university",
+  "name": "Nagaland University",
+  "shortName": "NU",
+  "city": "Lumami",
+  "state": "Nagaland",
+  "type": "GOVERNMENT",
+  "establishedYear": 1994,
+  "totalStudents": 1800,
+  "naacGrade": "B+",
+  "annualFees": 8000,
+  "placementPct": 55,
+  "avgPackage": 3,
+  "highestPackage": 8,
+  "topRecruiters": [
+   "Government sector"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.A"
+  ]
+ },
+ {
+  "slug": "sikkim-university",
+  "name": "Sikkim University",
+  "shortName": "SU",
+  "city": "Gangtok",
+  "state": "Sikkim",
+  "type": "GOVERNMENT",
+  "establishedYear": 2007,
+  "totalStudents": 1500,
+  "naacGrade": "B+",
+  "annualFees": 10000,
+  "placementPct": 58,
+  "avgPackage": 3.2,
+  "highestPackage": 9,
+  "topRecruiters": [
+   "Government sector",
+   "TCS"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.Sc",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "rajiv-gandhi-university",
+  "name": "Rajiv Gandhi University",
+  "shortName": "RGU",
+  "city": "Itanagar",
+  "state": "Arunachal Pradesh",
+  "type": "GOVERNMENT",
+  "establishedYear": 1984,
+  "totalStudents": 2000,
+  "naacGrade": "B++",
+  "annualFees": 8000,
+  "placementPct": 55,
+  "avgPackage": 3,
+  "highestPackage": 8.5,
+  "topRecruiters": [
+   "Government sector"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.A",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "manipur-university",
+  "name": "Manipur University",
+  "shortName": "MU",
+  "city": "Imphal",
+  "state": "Manipur",
+  "type": "GOVERNMENT",
+  "establishedYear": 1980,
+  "totalStudents": 2500,
+  "naacGrade": "B++",
+  "annualFees": 10000,
+  "placementPct": 58,
+  "avgPackage": 3.2,
+  "highestPackage": 9,
+  "topRecruiters": [
+   "Government sector",
+   "TCS"
+  ],
+  "courses": [
+   "B.A",
+   "B.Sc",
+   "M.Sc",
+   "MBA"
+  ]
+ },
+ {
+  "slug": "gitam-university",
+  "name": "GITAM University",
+  "shortName": "GITAM",
+  "city": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "type": "PRIVATE",
+  "establishedYear": 1980,
+  "totalStudents": 10000,
+  "naacGrade": "A+",
+  "annualFees": 250000,
+  "placementPct": 78,
+  "avgPackage": 6,
+  "highestPackage": 25,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA",
+   "B.Sc"
+  ]
+ },
+ {
+  "slug": "centurion-university",
+  "name": "Centurion University",
+  "shortName": "Centurion",
+  "city": "Bhubaneswar",
+  "state": "Odisha",
+  "type": "PRIVATE",
+  "establishedYear": 2005,
+  "totalStudents": 6000,
+  "naacGrade": "A",
+  "annualFees": 180000,
+  "placementPct": 68,
+  "avgPackage": 4.5,
+  "highestPackage": 16,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA"
+  ]
+ },
+ {
+  "slug": "gd-goenka-university",
+  "name": "GD Goenka University",
+  "shortName": "GD Goenka",
+  "city": "Gurgaon",
+  "state": "Haryana",
+  "type": "PRIVATE",
+  "establishedYear": 2013,
+  "totalStudents": 4000,
+  "naacGrade": "B++",
+  "annualFees": 350000,
+  "placementPct": 65,
+  "avgPackage": 5,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "Deloitte",
+   "EY",
+   "TCS",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "BBA",
+   "MBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "op-jindal-university",
+  "name": "OP Jindal University",
+  "shortName": "JGU",
+  "city": "Sonipat",
+  "state": "Haryana",
+  "type": "PRIVATE",
+  "establishedYear": 2009,
+  "totalStudents": 5000,
+  "naacGrade": "A+",
+  "annualFees": 500000,
+  "placementPct": 80,
+  "avgPackage": 8,
+  "highestPackage": 32,
+  "topRecruiters": [
+   "McKinsey",
+   "Deloitte",
+   "EY",
+   "Goldman Sachs"
+  ],
+  "courses": [
+   "BBA",
+   "MBA",
+   "LLB",
+   "B.A"
+  ]
+ },
+ {
+  "slug": "chitkara-university",
+  "name": "Chitkara University",
+  "shortName": "Chitkara",
+  "city": "Rajpura",
+  "state": "Punjab",
+  "type": "PRIVATE",
+  "establishedYear": 2002,
+  "totalStudents": 8000,
+  "naacGrade": "A+",
+  "annualFees": 250000,
+  "placementPct": 76,
+  "avgPackage": 6,
+  "highestPackage": 24,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "Amazon"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA"
+  ]
+ },
+ {
+  "slug": "graphic-era-university",
+  "name": "Graphic Era University",
+  "shortName": "GEU",
+  "city": "Dehradun",
+  "state": "Uttarakhand",
+  "type": "PRIVATE",
+  "establishedYear": 1993,
+  "totalStudents": 7000,
+  "naacGrade": "A",
+  "annualFees": 200000,
+  "placementPct": 72,
+  "avgPackage": 5,
+  "highestPackage": 20,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA",
+   "B.Sc"
+  ]
+ },
+ {
+  "slug": "dit-university",
+  "name": "DIT University",
+  "shortName": "DIT",
+  "city": "Dehradun",
+  "state": "Uttarakhand",
+  "type": "PRIVATE",
+  "establishedYear": 1998,
+  "totalStudents": 5000,
+  "naacGrade": "A",
+  "annualFees": 180000,
+  "placementPct": 70,
+  "avgPackage": 4.8,
+  "highestPackage": 18,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA"
+  ]
+ },
+ {
+  "slug": "galgotias-university",
+  "name": "Galgotias University",
+  "shortName": "Galgotias",
+  "city": "Greater Noida",
+  "state": "Uttar Pradesh",
+  "type": "PRIVATE",
+  "establishedYear": 2011,
+  "totalStudents": 15000,
+  "naacGrade": "A",
+  "annualFees": 200000,
+  "placementPct": 68,
+  "avgPackage": 4.5,
+  "highestPackage": 16,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Wipro",
+   "HCL"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "BBA",
+   "LLB"
+  ]
+ },
+ {
+  "slug": "nirma-university",
+  "name": "Nirma University",
+  "shortName": "Nirma",
+  "city": "Ahmedabad",
+  "state": "Gujarat",
+  "type": "PRIVATE",
+  "establishedYear": 2003,
+  "totalStudents": 8000,
+  "naacGrade": "A+",
+  "annualFees": 250000,
+  "placementPct": 82,
+  "avgPackage": 7.5,
+  "highestPackage": 30,
+  "topRecruiters": [
+   "TCS",
+   "Infosys",
+   "Amazon",
+   "L&T"
+  ],
+  "courses": [
+   "B.Tech",
+   "MBA",
+   "LLB",
+   "B.Sc"
+  ]
+ },
+ {
+  "slug": "ict-mumbai",
+  "name": "ICT Mumbai",
+  "shortName": "ICT",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 1933,
+  "totalStudents": 3000,
+  "naacGrade": "A++",
+  "annualFees": 60000,
+  "placementPct": 90,
+  "avgPackage": 10,
+  "highestPackage": 45,
+  "topRecruiters": [
+   "Reliance",
+   "BASF",
+   "TATA Chemicals",
+   "UPL"
+  ],
+  "courses": [
+   "B.Tech",
+   "M.Tech",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iiser-pune",
+  "name": "IISER Pune",
+  "shortName": "IISER Pune",
+  "city": "Pune",
+  "state": "Maharashtra",
+  "type": "GOVERNMENT",
+  "establishedYear": 2006,
+  "totalStudents": 2000,
+  "naacGrade": "A++",
+  "annualFees": 40000,
+  "placementPct": 85,
+  "avgPackage": 10,
+  "highestPackage": 40,
+  "topRecruiters": [
+   "Research labs",
+   "Google",
+   "Microsoft",
+   "Academia"
+  ],
+  "courses": [
+   "B.Sc",
+   "M.Sc",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iiser-kolkata",
+  "name": "IISER Kolkata",
+  "shortName": "IISER Kolkata",
+  "city": "Kolkata",
+  "state": "West Bengal",
+  "type": "GOVERNMENT",
+  "establishedYear": 2006,
+  "totalStudents": 1800,
+  "naacGrade": "A+",
+  "annualFees": 35000,
+  "placementPct": 82,
+  "avgPackage": 9,
+  "highestPackage": 35,
+  "topRecruiters": [
+   "Research labs",
+   "Google",
+   "Academia"
+  ],
+  "courses": [
+   "B.Sc",
+   "M.Sc",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "iiser-mohali",
+  "name": "IISER Mohali",
+  "shortName": "IISER Mohali",
+  "city": "Mohali",
+  "state": "Punjab",
+  "type": "GOVERNMENT",
+  "establishedYear": 2007,
+  "totalStudents": 1500,
+  "naacGrade": "A+",
+  "annualFees": 38000,
+  "placementPct": 80,
+  "avgPackage": 8.5,
+  "highestPackage": 32,
+  "topRecruiters": [
+   "Research labs",
+   "Microsoft",
+   "Academia"
+  ],
+  "courses": [
+   "B.Sc",
+   "M.Sc",
+   "PhD"
+  ]
+ },
+ {
+  "slug": "niser-bhubaneswar",
+  "name": "NISER Bhubaneswar",
+  "shortName": "NISER",
+  "city": "Bhubaneswar",
+  "state": "Odisha",
+  "type": "GOVERNMENT",
+  "establishedYear": 2007,
+  "totalStudents": 1200,
+  "naacGrade": "A+",
+  "annualFees": 30000,
+  "placementPct": 82,
+  "avgPackage": 9,
+  "highestPackage": 35,
+  "topRecruiters": [
+   "Research labs",
+   "BARC",
+   "ISRO",
+   "Google"
+  ],
+  "courses": [
+   "B.Sc",
+   "M.Sc",
+   "PhD"
+  ]
+ }
+]

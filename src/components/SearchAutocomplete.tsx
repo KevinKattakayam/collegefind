@@ -1,7 +1,8 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { College } from '@/types';
+import type { College, CollegesResponse } from '@/types';
+import { apiJson } from '@/lib/api';
 
 export default function SearchAutocomplete({ className }: { className?: string }) {
   const [query, setQuery] = useState('');
@@ -22,26 +23,34 @@ export default function SearchAutocomplete({ className }: { className?: string }
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  // Debounced search
+  // Debounced search. State is only set inside the timer callback (not
+  // synchronously in the effect body) to avoid cascading renders.
   useEffect(() => {
-    if (query.length < 2) { setResults([]); setOpen(false); return; }
-    setLoading(true);
+    const term = query.trim();
+    if (term.length < 2) return;
+    const controller = new AbortController();
     const timer = setTimeout(async () => {
+      setLoading(true);
       try {
-        const api = await import('@/lib/api');
-        const d = await api.apiJson(`/api/colleges?search=${encodeURIComponent(query)}&page=1&sort=rating`);
-        setResults((d.colleges || []).slice(0, 6));
+        const d = await apiJson<CollegesResponse>(`/api/colleges?search=${encodeURIComponent(term)}&page=1&limit=6`, { signal: controller.signal });
+        setResults(d.colleges);
         setOpen(true);
-      } catch { setResults([]); }
-      setLoading(false);
+      } catch {
+        if (!controller.signal.aborted) setResults([]);
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
     }, 250);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
   }, [query]);
 
   const handleSelect = (college: College) => {
     setOpen(false);
     setQuery('');
-    router.push(`/colleges/${college.id}`);
+    router.push(`/colleges/${college.slug ?? college.id}`);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -59,7 +68,8 @@ export default function SearchAutocomplete({ className }: { className?: string }
     <div ref={ref} className={`relative ${className || ''}`}>
       <div className="search-premium relative">
         <svg className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input ref={inputRef} type="text" value={query} onChange={e => { setQuery(e.target.value); setSelectedIdx(-1); }}
+        <input ref={inputRef} type="text" value={query} onChange={e => { const v = e.target.value; setQuery(v); setSelectedIdx(-1); if (v.trim().length < 2) { setResults([]); setOpen(false); } }}
+          aria-label="Search colleges by name, city or state" role="combobox" aria-expanded={open && results.length > 0} aria-controls="college-search-results" aria-autocomplete="list"
           onKeyDown={handleKeyDown} onFocus={() => results.length > 0 && setOpen(true)}
           placeholder="Search colleges, cities, or states..."
           className="w-full h-[56px] pl-14 pr-14 text-base bg-transparent rounded-xl border-0 focus:outline-none text-slate-800 placeholder:text-slate-400" />
@@ -73,7 +83,7 @@ export default function SearchAutocomplete({ className }: { className?: string }
       </div>
 
       {open && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-modal border border-slate-200 overflow-hidden z-50 animate-scale-in">
+        <div id="college-search-results" role="listbox" className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-modal border border-slate-200 overflow-hidden z-50 animate-scale-in">
           {results.map((c, i) => (
             <button key={c.id} onClick={() => handleSelect(c)}
               className={`w-full flex items-center gap-3.5 px-5 py-3.5 text-left transition-colors ${
@@ -84,7 +94,7 @@ export default function SearchAutocomplete({ className }: { className?: string }
               </div>
               <div className="flex-1 min-w-0">
                 <div className="text-sm font-semibold text-slate-800 truncate">{c.name}</div>
-                <div className="text-xs text-slate-500">{c.city}, {c.state} · ★ {c.rating}</div>
+                <div className="text-xs text-slate-500">{c.city}, {c.state}</div>
               </div>
               <div className="text-right shrink-0">
                 {c.type === 'GOVERNMENT' ? <span className="badge-green text-[10px]">Govt</span> : <span className="badge-gray text-[10px]">Pvt</span>}

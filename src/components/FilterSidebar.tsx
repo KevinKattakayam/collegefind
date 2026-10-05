@@ -20,7 +20,7 @@ interface Props {
   states: string[];
 }
 
-const NAAC_GRADES = ['A++', 'A+', 'A', 'B++', 'B+'];
+const NAAC_GRADES = ['A++', 'A+', 'A', 'B++', 'B+', 'B'];
 const COURSE_OPTIONS = ['B.Tech', 'MBA', 'MBBS', 'BBA', 'B.Sc', 'LLB', 'B.Com', 'B.A', 'M.Tech', 'PhD'];
 const EXAM_OPTIONS = [
   { value: 'JEE_MAIN', label: 'JEE Main' },
@@ -29,11 +29,6 @@ const EXAM_OPTIONS = [
   { value: 'CAT', label: 'CAT' },
   { value: 'GATE', label: 'GATE' },
 ];
-const RATING_OPTIONS = [
-  { label: '4+ Stars', value: '4' },
-  { label: '3.5+ Stars', value: '3.5' },
-  { label: '3+ Stars', value: '3' },
-];
 const ESTABLISHED_OPTIONS = [
   { label: 'Before 1960', value: 'before_1960' },
   { label: '1960–1990', value: '1960_1990' },
@@ -41,9 +36,45 @@ const ESTABLISHED_OPTIONS = [
   { label: 'After 2010', value: 'after_2010' },
 ];
 
+
+interface SectionProps {
+  id: string;
+  title: string;
+  children: React.ReactNode;
+  count?: number;
+  open: boolean;
+  onToggle: (id: string) => void;
+}
+
+// Defined at module scope: a component declared inside another component's
+// body is a new type on every render, which remounts it and drops input focus.
+function Section({ id, title, children, count, open, onToggle }: SectionProps) {
+  const panelId = `filter-section-${id}`;
+  return (
+    <div className="border-b border-slate-100 py-3.5">
+      <button type="button" onClick={() => onToggle(id)} aria-expanded={open} aria-controls={panelId}
+        className="flex items-center justify-between w-full text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors">
+        <span className="flex items-center gap-2">
+          {title}
+          {count !== undefined && count > 0 && (
+            <span className="bg-indigo-600 text-white text-[10px] font-bold w-[18px] h-[18px] rounded-full flex items-center justify-center">{count}</span>
+          )}
+        </span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"
+          className={`transition-transform duration-200 text-slate-400 ${open ? 'rotate-180' : ''}`}>
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
+      </button>
+      <div id={panelId} hidden={!open} className="mt-3">
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export default function FilterSidebar({ values, onChange, onClear, states }: Props) {
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
-    state: true, type: true, fees: true, naac: true, rating: true, courses: true, exams: false, established: false,
+    state: true, type: true, fees: true, naac: true, courses: true, exams: false, established: false,
   });
 
   const activeFilters: { label: string; key: string; value: string }[] = [];
@@ -52,7 +83,6 @@ export default function FilterSidebar({ values, onChange, onClear, states }: Pro
   if (values.minFees) activeFilters.push({ label: `Min ₹${Number(values.minFees).toLocaleString('en-IN')}`, key: 'minFees', value: '' });
   if (values.maxFees) activeFilters.push({ label: `Max ₹${Number(values.maxFees).toLocaleString('en-IN')}`, key: 'maxFees', value: '' });
   values.naac.forEach(g => activeFilters.push({ label: `NAAC ${g}`, key: 'naac', value: g }));
-  if (values.minRating) activeFilters.push({ label: `${values.minRating}+ Stars`, key: 'minRating', value: '' });
   values.courses.forEach(c => activeFilters.push({ label: c, key: 'courses', value: c }));
   values.exams.forEach(e => activeFilters.push({ label: EXAM_OPTIONS.find(o => o.value === e)?.label || e, key: 'exams', value: e }));
   if (values.established) activeFilters.push({ label: ESTABLISHED_OPTIONS.find(o => o.value === values.established)?.label || values.established, key: 'established', value: '' });
@@ -74,28 +104,9 @@ export default function FilterSidebar({ values, onChange, onClear, states }: Pro
     if (key === 'naac') update({ naac: values.naac.filter(v => v !== value) });
     else if (key === 'courses') update({ courses: values.courses.filter(v => v !== value) });
     else if (key === 'exams') update({ exams: values.exams.filter(v => v !== value) });
-    else update({ [key]: key === 'naac' || key === 'courses' || key === 'exams' ? [] : '' } as any);
+    else update({ [key]: '' } as Partial<FilterValues>);
   };
 
-  const Section = ({ id, title, children, count }: { id: string; title: string; children: React.ReactNode; count?: number }) => (
-    <div className="border-b border-slate-100 py-3.5">
-      <button onClick={() => toggleSection(id)} className="flex items-center justify-between w-full text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors">
-        <span className="flex items-center gap-2">
-          {title}
-          {count !== undefined && count > 0 && (
-            <span className="bg-indigo-600 text-white text-[10px] font-bold w-[18px] h-[18px] rounded-full flex items-center justify-center">{count}</span>
-          )}
-        </span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
-          className={`transition-transform duration-200 text-slate-400 ${openSections[id] ? 'rotate-180' : ''}`}>
-          <path d="m6 9 6 6 6-6"/>
-        </svg>
-      </button>
-      <div className={`overflow-hidden transition-all duration-300 ${openSections[id] ? 'mt-3 max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-        {children}
-      </div>
-    </div>
-  );
 
   return (
     <div className="filter-panel">
@@ -122,15 +133,15 @@ export default function FilterSidebar({ values, onChange, onClear, states }: Pro
         </div>
       )}
 
-      <Section id="state" title="State / Location" count={values.state ? 1 : 0}>
-        <select value={values.state} onChange={e => update({ state: e.target.value })}
+      <Section id="state" open={!!openSections.state} onToggle={toggleSection} title="State / Location" count={values.state ? 1 : 0}>
+        <select aria-label="State" value={values.state} onChange={e => update({ state: e.target.value })}
           className="input-field !h-[36px] text-sm !rounded-lg">
           <option value="">All States</option>
           {states.map(s => <option key={s} value={s}>{s}</option>)}
         </select>
       </Section>
 
-      <Section id="type" title="College Type" count={values.type ? 1 : 0}>
+      <Section id="type" open={!!openSections.type} onToggle={toggleSection} title="College Type" count={values.type ? 1 : 0}>
         {['GOVERNMENT', 'PRIVATE'].map(t => (
           <label key={t} className="flex items-center gap-2.5 text-sm text-slate-600 mb-1.5 cursor-pointer hover:text-slate-800 transition-colors">
             <input type="checkbox" checked={values.type === t} onChange={() => update({ type: values.type === t ? '' : t })}
@@ -140,16 +151,16 @@ export default function FilterSidebar({ values, onChange, onClear, states }: Pro
         ))}
       </Section>
 
-      <Section id="fees" title="Fees Range" count={(values.minFees || values.maxFees) ? 1 : 0}>
+      <Section id="fees" open={!!openSections.fees} onToggle={toggleSection} title="Fees Range" count={(values.minFees || values.maxFees) ? 1 : 0}>
         <div className="flex gap-2">
-          <input type="number" placeholder="Min ₹" value={values.minFees} onChange={e => update({ minFees: e.target.value })}
+          <input type="number" inputMode="numeric" min={0} aria-label="Minimum annual fees in rupees" placeholder="Min ₹" value={values.minFees} onChange={e => update({ minFees: e.target.value })}
             className="input-field !h-[36px] text-sm flex-1 !rounded-lg" />
-          <input type="number" placeholder="Max ₹" value={values.maxFees} onChange={e => update({ maxFees: e.target.value })}
+          <input type="number" inputMode="numeric" min={0} aria-label="Maximum annual fees in rupees" placeholder="Max ₹" value={values.maxFees} onChange={e => update({ maxFees: e.target.value })}
             className="input-field !h-[36px] text-sm flex-1 !rounded-lg" />
         </div>
       </Section>
 
-      <Section id="exams" title="Exams Accepted" count={values.exams.length}>
+      <Section id="exams" open={!!openSections.exams} onToggle={toggleSection} title="Has sourced cutoffs for" count={values.exams.length}>
         {EXAM_OPTIONS.map(e => (
           <label key={e.value} className="flex items-center gap-2.5 text-sm text-slate-600 mb-1.5 cursor-pointer hover:text-slate-800 transition-colors">
             <input type="checkbox" checked={values.exams.includes(e.value)} onChange={() => update({ exams: toggleArray(values.exams, e.value) })}
@@ -159,7 +170,7 @@ export default function FilterSidebar({ values, onChange, onClear, states }: Pro
         ))}
       </Section>
 
-      <Section id="naac" title="NAAC Grade" count={values.naac.length}>
+      <Section id="naac" open={!!openSections.naac} onToggle={toggleSection} title="NAAC Grade" count={values.naac.length}>
         {NAAC_GRADES.map(g => (
           <label key={g} className="flex items-center gap-2.5 text-sm text-slate-600 mb-1.5 cursor-pointer hover:text-slate-800 transition-colors">
             <input type="checkbox" checked={values.naac.includes(g)} onChange={() => update({ naac: toggleArray(values.naac, g) })}
@@ -169,18 +180,8 @@ export default function FilterSidebar({ values, onChange, onClear, states }: Pro
         ))}
       </Section>
 
-      <Section id="rating" title="Rating" count={values.minRating ? 1 : 0}>
-        {RATING_OPTIONS.map(r => (
-          <label key={r.value} className="flex items-center gap-2.5 text-sm text-slate-600 mb-1.5 cursor-pointer hover:text-slate-800 transition-colors">
-            <input type="radio" name="rating" checked={values.minRating === r.value}
-              onChange={() => update({ minRating: values.minRating === r.value ? '' : r.value })}
-              className="w-4 h-4" />
-            {r.label}
-          </label>
-        ))}
-      </Section>
 
-      <Section id="courses" title="Courses Offered" count={values.courses.length}>
+      <Section id="courses" open={!!openSections.courses} onToggle={toggleSection} title="Courses Offered" count={values.courses.length}>
         {COURSE_OPTIONS.map(c => (
           <label key={c} className="flex items-center gap-2.5 text-sm text-slate-600 mb-1.5 cursor-pointer hover:text-slate-800 transition-colors">
             <input type="checkbox" checked={values.courses.includes(c)} onChange={() => update({ courses: toggleArray(values.courses, c) })}
@@ -190,7 +191,7 @@ export default function FilterSidebar({ values, onChange, onClear, states }: Pro
         ))}
       </Section>
 
-      <Section id="established" title="Established Year" count={values.established ? 1 : 0}>
+      <Section id="established" open={!!openSections.established} onToggle={toggleSection} title="Established Year" count={values.established ? 1 : 0}>
         {ESTABLISHED_OPTIONS.map(e => (
           <label key={e.value} className="flex items-center gap-2.5 text-sm text-slate-600 mb-1.5 cursor-pointer hover:text-slate-800 transition-colors">
             <input type="radio" name="established" checked={values.established === e.value}
@@ -201,7 +202,7 @@ export default function FilterSidebar({ values, onChange, onClear, states }: Pro
         ))}
       </Section>
 
-      <button onClick={onClear} className="text-error-600 hover:text-error-700 font-semibold text-sm mt-4 w-full text-center py-2 rounded-lg hover:bg-error-50 transition-colors">
+      <button type="button" onClick={onClear} className="text-error-600 hover:text-error-700 font-semibold text-sm mt-4 w-full text-center py-2 rounded-lg hover:bg-error-50 transition-colors">
         Clear All Filters
       </button>
     </div>
