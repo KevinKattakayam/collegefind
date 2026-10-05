@@ -18,10 +18,10 @@ export default function Footer() {
               </div>
               CollegeFind
             </Link>
-            <p className="text-sm text-slate-400 mb-4 leading-relaxed">India&apos;s cleanest college discovery platform. Zero ads, zero clutter — just decisions.</p>
+            <p className="text-sm text-slate-400 mb-4 leading-relaxed">Compare Indian colleges using official, cited data.</p>
             <div className="flex items-center gap-2 text-xs text-slate-500">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              210+ colleges · 28+ states
+              Sources cited on every page
             </div>
           </div>
 

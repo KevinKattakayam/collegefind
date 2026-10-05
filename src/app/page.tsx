@@ -41,7 +41,7 @@ const categories: { name: string; icon: string; href: string; color: string }[] 
 
 const steps = [
   { icon: '🔍', title: 'Search & Filter', desc: 'Filter by state, fees, NAAC grade, courses and college type. Every college shows whether its numbers are verified or demo values.', color: 'from-indigo-50 to-blue-50', accent: '#4F46E5', iconBg: 'from-indigo-500 to-blue-600' },
-  { icon: '⚖️', title: 'Compare & Analyze', desc: 'Compare up to 3 colleges side-by-side. See fees, placements, packages, and rankings at a glance.', color: 'from-emerald-50 to-teal-50', accent: '#059669', iconBg: 'from-emerald-500 to-teal-600' },
+  { icon: '⚖️', title: 'Compare & Analyze', desc: 'Compare up to 3 colleges side-by-side. See fees, placements and packages side by side. Values we have not verified are labelled.', color: 'from-emerald-50 to-teal-50', accent: '#059669', iconBg: 'from-emerald-500 to-teal-600' },
   { icon: '🎯', title: 'Predict & Decide', desc: 'Enter your rank, category and home state. We estimate Safe, Target and Reach options from past official closing ranks and show the data behind each one.', color: 'from-amber-50 to-orange-50', accent: '#D97706', iconBg: 'from-amber-500 to-orange-600' },
 ];
 
