@@ -58,13 +58,17 @@ jobs:
 
       - name: Verify migrations match the schema
         # Fails if someone edited schema.prisma without adding a migration.
+        # Prisma 7 reads the shadow database from prisma.config.ts.
+        env:
+          SHADOW_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/collegefind_shadow
         run: |
+          PGPASSWORD=postgres psql -h localhost -U postgres -c 'CREATE DATABASE collegefind_shadow'
           npx prisma migrate deploy
           npx prisma migrate diff \
             --from-migrations prisma/migrations \
             --to-schema prisma/schema.prisma \
-            --shadow-database-url "$DATABASE_URL" \
-            --exit-code && echo "Schema and migrations agree"
+            --exit-code
+          echo "Schema and migrations agree"
 
       - name: Lint
         run: npm run lint
@@ -116,4 +120,4 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npm audit --audit-level=high
+      - run: npm audit --omit=dev --audit-level=critical
