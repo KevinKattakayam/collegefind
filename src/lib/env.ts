@@ -31,7 +31,9 @@ let cached: ServerEnv | undefined;
 
 export function getEnv(): ServerEnv {
   if (cached) return cached;
-  const parsed = schema.safeParse(process.env);
+  const input = { ...process.env };
+  for (const key of ['NEXTAUTH_URL', 'UPSTASH_REDIS_REST_URL', 'UPSTASH_REDIS_REST_TOKEN', 'ADMIN_SEED_TOKEN']) if (input[key] === '') delete input[key];
+  const parsed = schema.safeParse(input);
   if (!parsed.success) {
     const issues = parsed.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`).join('; ');
     throw new Error(`Invalid server environment: ${issues}`);

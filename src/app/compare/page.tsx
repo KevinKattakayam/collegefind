@@ -1,11 +1,13 @@
 'use client';
-import { useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useCompare } from '@/context/CompareContext';
 import SearchModal from '@/components/SearchModal';
 import RadarChart from '@/components/RadarChart';
 import type { College } from '@/types';
-import { postJson } from '@/lib/api';
+import { apiJson, postJson } from '@/lib/api';
+import { bestComparisonIndex, comparisonSlugs, shareComparisonUrl } from '@/lib/comparison';
 import { formatCount, formatINR, formatLPA, formatPct } from '@/lib/utils';
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
@@ -37,18 +39,32 @@ const METRICS: Metric[] = [
 
 /** Index of the best known value, or -1 if fewer than two colleges have a value. */
 function bestIndex(list: College[], m: Metric): number {
-  if (!m.value || !m.best) return -1;
-  const known = list.map((c, i) => ({ i, v: m.value!(c) })).filter((x): x is { i: number; v: number } => x.v !== null);
-  if (known.length < 2) return -1;
-  return known.reduce((best, x) => ((m.best === 'min' ? x.v < best.v : x.v > best.v) ? x : best)).i;
+  if (list.some((c) => c.fieldEvidence?.[m.key]?.status !== 'AVAILABLE')) return -1;
+  if (m.key === 'annualFees' && new Set(list.map((c) => c.metricsYear)).size !== 1) return -1;
+  return m.value && m.best ? bestComparisonIndex(list, m.value, m.best) : -1;
 }
 
-export default function ComparePage() {
-  const { compareList, addToCompare, removeFromCompare, clearCompare } = useCompare();
+function ComparePage() {
+  const searchParams = useSearchParams();
+  const { compareList, addToCompare, removeFromCompare, clearCompare, replaceCompare } = useCompare();
   const [modalSlot, setModalSlot] = useState<number | null>(null);
   const { data: session } = useSession();
   const [saving, setSaving] = useState(false);
   const hasDemo = compareList.some((c) => c.dataStatus === 'DEMO');
+
+  useEffect(() => {
+    const raw = searchParams.get('colleges');
+    if (!raw) return;
+    const slugs = comparisonSlugs(raw.split(','));
+    if (!slugs) { clearCompare(); toast.error('This comparison link is invalid.'); return; }
+    let active = true;
+    Promise.all(slugs.map((slug) => apiJson<{ college: College }>(`/api/colleges/${encodeURIComponent(slug)}`)))
+      .then((results) => { if (active) replaceCompare(results.map((r) => r.college)); })
+      .catch(() => { if (active) { clearCompare(); toast.error('One or more colleges in this comparison are no longer available.'); } });
+    return () => { active = false; };
+  // A shared URL is the canonical source when present; local storage remains the editable draft otherwise.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   const getBestIndex = (key: string) => {
     const m = METRICS.find((x) => x.key === key);
@@ -73,12 +89,12 @@ export default function ComparePage() {
 
   const handleShareComparison = () => {
     const names = compareList.map(c => c.shortName).join(' vs ');
-    const url = window.location.href;
+    const url = shareComparisonUrl(window.location.origin, compareList);
+    if (!url) { toast.error('A comparison needs two or three colleges with valid links.'); return; }
     if (navigator.share) {
-      navigator.share({ title: `Compare: ${names}`, url }).catch(() => {});
+      navigator.share({ title: `Compare: ${names}`, url }).catch((error) => { if (!(error instanceof Error && error.name === 'AbortError')) toast.error('Could not share the comparison link.'); });
     } else {
-      navigator.clipboard.writeText(url);
-      toast.success('Comparison link copied!', { icon: '📋' });
+      navigator.clipboard.writeText(url).then(() => toast.success('Comparison link copied!', { icon: '📋' })).catch(() => toast.error('Could not copy the comparison link.'));
     }
   };
 
@@ -141,9 +157,9 @@ export default function ComparePage() {
               <h3 className="font-bold text-lg text-[#1E293B] pr-6">{college.name}</h3>
               <p className="text-sm text-[#64748B]">{college.city}, {college.state}</p>
               <div className="flex items-center gap-2 mt-2 flex-wrap">
-                <span className="text-sm font-bold text-[#F97316]">★ {college.rating}</span>
+                <span className="text-sm font-bold text-[#F97316]">{college.rating === null ? 'Rating not available' : `★ ${college.rating}`}</span>
                 {college.type === 'GOVERNMENT' ? <span className="badge-green text-[10px]">Govt</span> : <span className="badge-red text-[10px]">Pvt</span>}
-                <span className="badge-blue text-[10px]">{college.naacGrade}</span>
+                {college.naacGrade && <span className="badge-blue text-[10px]">NAAC {college.naacGrade}</span>}
               </div>
               <div className="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-[#E2E8F0]">
                 <div className="text-center">
@@ -152,7 +168,7 @@ export default function ComparePage() {
                 </div>
                 <div className="text-center">
                   <div className="text-xs text-[#64748B]">Placed</div>
-                  <div className="text-xs font-bold text-[#16A34A]">{college.placementPct}%</div>
+                  <div className="text-xs font-bold text-[#16A34A]">{formatPct(college.placementPct)}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-xs text-[#64748B]">Avg Pkg</div>
@@ -250,3 +266,5 @@ export default function ComparePage() {
     </div>
   );
 }
+
+export default function CompareRoute() { return <Suspense fallback={<p>Loading comparison…</p>}><ComparePage /></Suspense>; }

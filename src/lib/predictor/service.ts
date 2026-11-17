@@ -1,3 +1,4 @@
+import { publicEvidenceSelect } from '@/server/public-evidence';
 import type { Prisma, PrismaClient, SeatCategory, SeatPool } from '@prisma/client';
 import type { PredictQuery } from '../validation';
 import {
@@ -90,13 +91,9 @@ function programWhere(q: PredictQuery): Prisma.ProgramWhereInput {
     });
   }
   const college: Prisma.CollegeWhereInput[] = [];
+  if (process.env.NODE_ENV === 'production') college.push({ dataStatus: { not: 'DEMO' } });
   if (q.states?.length) {
     college.push({ OR: q.states.map((s) => ({ state: { equals: s, mode: 'insensitive' as const } })) });
-  }
-  if (q.maxFees !== undefined) {
-    college.push({
-      OR: [{ annualFees: { lte: q.maxFees } }, ...(q.includeUnknownFees ? [{ annualFees: null }] : [])],
-    });
   }
   if (college.length) and.push({ college: { AND: college } });
   return and.length ? { AND: and } : {};
@@ -186,11 +183,8 @@ export async function predict(q: PredictQuery, db: PrismaClient): Promise<Predic
     disclaimer: PREDICTOR_DISCLAIMER,
   };
 
-  const agg = await db.cutoffRecord.aggregate({
-    where: { exam: q.exam, metric, isPreparatory: false },
-    _max: { year: true },
-  });
-  const latest = agg._max.year;
+  const reviewedYears = await db.cutoffRecord.findMany({ where: { exam: q.exam, metric, isPreparatory: false }, select: { year: true } });
+  const latest = reviewedYears.length ? Math.max(...reviewedYears.map((r) => r.year)) : null;
   if (latest === null) {
     return {
       meta: { ...emptyMeta, hasData: false, latestDataYear: null, targetYear: null, assumptions },
@@ -266,6 +260,7 @@ export async function predict(q: PredictQuery, db: PrismaClient): Promise<Predic
               city: true,
               state: true,
               type: true,
+              ...publicEvidenceSelect,
               annualFees: true,
               dataStatus: true,
             },
@@ -330,6 +325,7 @@ export async function predict(q: PredictQuery, db: PrismaClient): Promise<Predic
   const lowerIsBetter = metric === 'RANK';
   const all = [...bestByProgram.values()]
     .filter((r) => q.includeUnlikely || r.band !== 'UNLIKELY')
+    .filter((r) => q.maxFees === undefined || (r.college.annualFees === null ? q.includeUnknownFees : r.college.annualFees <= q.maxFees))
     .sort(
       (a, b) =>
         b.probability - a.probability ||

@@ -211,7 +211,7 @@ export default function HomePage() {
             <div className="flex items-end justify-between mb-10">
               <div>
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Start exploring</h2>
-                <p className="text-sm text-slate-600 mt-2">Colleges with verified data appear first. Nobody pays to be here.</p>
+                <p className="text-sm text-slate-600 mt-2">Browse the catalogue. Individual facts appear after source review; nobody pays to be here.</p>
               </div>
               <Link href="/colleges" className="text-sm font-bold text-indigo-600 hover:underline no-underline hidden md:block">View All →</Link>
             </div>

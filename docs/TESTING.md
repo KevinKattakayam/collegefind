@@ -12,16 +12,21 @@
 ```bash
 createdb collegefind_test
 export TEST_DATABASE_URL="postgresql://localhost:5432/collegefind_test"
+export COLLEGEFIND_TEST_DATABASE_CONFIRMED=true # only after independently confirming this DB is disposable
 DATABASE_URL="$TEST_DATABASE_URL" npx prisma migrate deploy
 npm run test:integration
 ```
 
-> The suite **truncates every table** between tests. Never point `TEST_DATABASE_URL` at a
-> database you care about.
+> The suite **truncates every table** between tests. Integration tests now require both
+> `TEST_DATABASE_URL` and explicit `COLLEGEFIND_TEST_DATABASE_CONFIRMED=true`. The test URL has
+> no fallback to `DATABASE_URL`; test-client construction and every reset validate it. The
+> confirmation flag is an operator assertion, not proof by itself: verify the database was
+> freshly created for this test run and contains no valuable data. Never use a production or
+> shared database. Do not print connection URLs in reports.
 
 ## What is covered
 
-**Unit (41 tests)** — the predictor model (monotonicity, recency weighting, trend clamping,
+**Unit (64 tests)** — the predictor model (monotonicity, recency weighting, trend clamping,
 interval coverage, percentile handling, the no-certainty clamp), seat-eligibility rules
 (CRL vs category rank, PwD, female-only pools), explanation text, and every validation schema
 (NaN rejection, password policy, CSV parsing, link-spam limits).

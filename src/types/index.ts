@@ -6,6 +6,7 @@ export type ViewMode = 'grid' | 'list';
 
 /** Matches `collegeListSelect` in src/server/colleges.ts. Null means "unknown". */
 export interface College {
+  fieldEvidence?: Record<string, {status: string; year?: number | null; sources?: { url: string; publisher: string; retrievedAt: Date | string }[]}>;
   id: string;
   slug: string;
   name: string;

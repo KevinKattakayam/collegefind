@@ -91,9 +91,11 @@ export default function RadarChart({ colleges }: Props) {
       const color = COLORS[colIdx] || COLORS[0];
       ctx.beginPath();
 
+      const complete = METRICS.every((m) => college.fieldEvidence?.[m.key]?.status === 'AVAILABLE' && college[m.key] !== null);
       for (let i = 0; i < count; i++) {
         const metric = METRICS[i];
-        const rawValue = college[metric.key] ?? 0;
+        const rawValue = college.fieldEvidence?.[metric.key]?.status === 'AVAILABLE' ? college[metric.key] : null;
+        if (rawValue === null) continue;
         let normalized = Math.min(rawValue / metric.max, 1);
         if (metric.invert) normalized = 1 - normalized;
 
@@ -106,17 +108,20 @@ export default function RadarChart({ colleges }: Props) {
         else ctx.lineTo(x, y);
       }
 
-      ctx.closePath();
-      ctx.fillStyle = color.fill;
-      ctx.fill();
-      ctx.strokeStyle = color.stroke;
-      ctx.lineWidth = 2;
-      ctx.stroke();
+      if (complete) {
+        ctx.closePath();
+        ctx.fillStyle = color.fill;
+        ctx.fill();
+        ctx.strokeStyle = color.stroke;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
 
       // Draw data points
       for (let i = 0; i < count; i++) {
         const metric = METRICS[i];
-        const rawValue = college[metric.key] ?? 0;
+        const rawValue = college.fieldEvidence?.[metric.key]?.status === 'AVAILABLE' ? college[metric.key] : null;
+        if (rawValue === null) continue;
         let normalized = Math.min(rawValue / metric.max, 1);
         if (metric.invert) normalized = 1 - normalized;
 
@@ -139,8 +144,9 @@ export default function RadarChart({ colleges }: Props) {
     <div className="bg-white rounded-lg border border-[#E2E8F0] p-6">
       <h3 className="font-bold text-lg text-[#1E293B] mb-4">Visual Comparison</h3>
       <div className="flex justify-center">
-        <canvas ref={canvasRef} />
+        <canvas ref={canvasRef} role="img" aria-label="Radar comparison chart; demo, unverified and unavailable metrics are omitted" />
       </div>
+      <p className="text-xs text-slate-600 text-center mt-2">Only verified, available metrics are plotted. Missing, demo and unverified values are omitted.</p>
       {/* Legend */}
       <div className="flex items-center justify-center gap-4 mt-4 flex-wrap">
         {colleges.map((c, i) => (

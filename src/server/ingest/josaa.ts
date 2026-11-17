@@ -1,3 +1,5 @@
+import { checksum, sourceIdentity } from './identity';
+import type { Prisma } from '@prisma/client';
 import { parse } from 'csv-parse/sync';
 import type { CollegeType, PrismaClient, SeatCategory, SeatPool } from '@prisma/client';
 
@@ -189,6 +191,8 @@ export interface ImportOptions {
   institutes: Map<string, InstituteMapping>;
   examOverride?: 'JEE_MAIN' | 'JEE_ADVANCED';
   dryRun?: boolean;
+  rejected?: Rejected[];
+  artifactChecksum?: string;
 }
 
 export interface ImportSummary {
@@ -204,7 +208,7 @@ export interface ImportSummary {
  * Institutes are matched by the mapping file first, then by exact College.name.
  * Unmatched institutes are reported and skipped, never guessed.
  */
-export async function importJosaaRows(db: PrismaClient, rows: JosaaRow[], opts: ImportOptions): Promise<ImportSummary> {
+async function applyRows(db: Prisma.TransactionClient, rows: JosaaRow[], opts: ImportOptions, source: { id: string }): Promise<ImportSummary> {
   const byInstitute = new Map<string, JosaaRow[]>();
   for (const r of rows) byInstitute.set(r.institute, [...(byInstitute.get(r.institute) ?? []), r]);
 
@@ -218,7 +222,7 @@ export async function importJosaaRows(db: PrismaClient, rows: JosaaRow[], opts: 
     return summary;
   }
 
-  const source = await db.source.create({ data: opts.source });
+
 
   for (const [institute, instRows] of byInstitute) {
     const mapping = opts.institutes.get(institute);
@@ -249,7 +253,8 @@ export async function importJosaaRows(db: PrismaClient, rows: JosaaRow[], opts: 
     summary.colleges++;
     const exam = opts.examOverride ?? examForInstitute(institute);
 
-    await db.$transaction(async (tx) => {
+    {
+      const tx = db;
       const programIds = new Map<string, string>();
       for (const r of instRows) {
         if (!programIds.has(r.program)) {
@@ -271,6 +276,13 @@ export async function importJosaaRows(db: PrismaClient, rows: JosaaRow[], opts: 
           sourceId: source.id,
           metric: 'RANK' as const,
         };
+        const previous = await tx.cutoffRecord.findUnique({ where: { naturalKey: {
+          programId, exam, year: opts.year, round: opts.round, quota: r.quota,
+          category: r.category, isPwd: r.isPwd, seatPool: r.seatPool,
+        } } });
+        if (previous && (previous.closingValue !== values.closingValue || previous.openingValue !== values.openingValue || previous.isPreparatory !== values.isPreparatory)) {
+          throw new Error('Conflicting cutoff values: existing history preserved; review source before retry');
+        }
         await tx.cutoffRecord.upsert({
           where: {
             naturalKey: {
@@ -284,7 +296,7 @@ export async function importJosaaRows(db: PrismaClient, rows: JosaaRow[], opts: 
               seatPool: r.seatPool,
             },
           },
-          update: values,
+          update: {},
           create: {
             programId,
             exam,
@@ -299,7 +311,39 @@ export async function importJosaaRows(db: PrismaClient, rows: JosaaRow[], opts: 
         });
         summary.upserted++;
       }
-    });
+    }
   }
   return summary;
+}
+
+/** One transaction publishes an entire file; failed files leave a durable run, never partial records. */
+export async function importJosaaRows(db: PrismaClient, rows: JosaaRow[], opts: ImportOptions): Promise<ImportSummary> {
+  if (!Number.isInteger(opts.year) || opts.year < 2000 || opts.year > 2100 || !Number.isInteger(opts.round) || opts.round < 1) throw new Error('Invalid import year/round');
+  if (!Number.isFinite(opts.source.retrievedAt.getTime())) throw new Error('Invalid source retrieval date');
+  const content = opts.artifactChecksum ?? checksum(rows);
+  const identityKey = sourceIdentity(opts.source, content);
+  if (opts.dryRun) return applyRows(db, rows, opts, { id: '' });
+  const source = await db.source.upsert({ where: { identityKey }, update: {}, create: { ...opts.source, identityKey } });
+  const runKey = checksum([identityKey, opts.year, opts.round, opts.examOverride ?? '', [...opts.institutes.entries()].sort()]);
+  const run = await db.importRun.upsert({ where: { identityKey: runKey }, update: {}, create: { identityKey: runKey, checksum: content, sourceId: source.id } });
+  try {
+    return await db.$transaction(async (tx) => {
+      // Updating this row serializes concurrent attempts; Serializable rejects stale snapshots.
+      const current = await tx.importRun.update({ where: { id: run.id }, data: { identityKey: runKey } });
+      if (current.status === 'PUBLISHED') return current.summary as unknown as ImportSummary;
+      const summary = await applyRows(tx, rows, opts, source);
+      await tx.importRun.update({ where: { id: run.id }, data: {
+        status: summary.unmatchedInstitutes.length || opts.rejected?.length ? 'PARTIAL' : 'PUBLISHED',
+        finishedAt: new Date(), summary: summary as unknown as Prisma.InputJsonValue,
+        issues: { rejected: opts.rejected ?? [], unmatchedInstitutes: summary.unmatchedInstitutes } as unknown as Prisma.InputJsonValue,
+      } });
+      return summary;
+    }, { isolationLevel: 'Serializable', timeout: 120000 });
+  } catch (error) {
+    // Do not expose source rows or connection strings. Retrying the same run is safe.
+    await db.importRun.updateMany({ where: { id: run.id, status: { not: 'PUBLISHED' } }, data: {
+      status: 'FAILED', finishedAt: new Date(), issues: { reason: 'Import transaction failed; inspect inputs/conflicts and retry', rejected: opts.rejected ?? [] } as unknown as Prisma.InputJsonValue,
+    } });
+    throw error;
+  }
 }

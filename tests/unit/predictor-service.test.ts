@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { eligibleSeatTypes, explain, metricForExam } from '@/lib/predictor/service';
 import { predictQuerySchema } from '@/lib/validation';
 
@@ -44,6 +44,13 @@ describe('eligibleSeatTypes', () => {
     const s = eligibleSeatTypes(q({ exam: 'CAT', score: '97.5', category: 'SC' }), 'PERCENTILE');
     expect(new Set(s.map((x) => x.value))).toEqual(new Set([97.5]));
     expect(s.map((x) => x.category).sort()).toEqual(['OPEN', 'SC']);
+  });
+
+  it('score-based PwD candidates can use both eligible pools and retain score labels', () => {
+    const seats = eligibleSeatTypes(q({ exam: 'GATE', score: '650', category: 'SC', isPwd: 'true', gender: 'FEMALE' }), 'SCORE');
+    expect(seats).toHaveLength(6);
+    expect(seats.every((seat) => seat.value === 650 && seat.valueLabel === 'score')).toBe(true);
+    expect(seats.some((seat) => seat.category === 'SC' && seat.isPwd && seat.seatPool === 'FEMALE_ONLY')).toBe(true);
   });
 });
 
@@ -99,5 +106,30 @@ describe('probability presentation', () => {
     const r = await predict(predictQuerySchema.parse({ exam: 'JEE_MAIN', rank: '1' }), db as never);
     expect(r.results[0].probability).toBeLessThanOrEqual(0.97);
     expect(r.results[0].explanation).not.toContain('100%');
+  });
+
+  it('reports plausible-data absence, requested round and production demo exclusion', async () => {
+    const { predict } = await import('@/lib/predictor/service');
+    const findMany = vi.fn(async (args: { select?: Record<string, unknown> }) => {
+      if (args.select && 'year' in args.select) return [{ year: 2025 }];
+      if (args.select && 'programId' in args.select) return [];
+      throw new Error('Unexpected prediction query');
+    });
+    const oldNodeEnv = process.env.NODE_ENV;
+    try {
+      Reflect.set(process.env, 'NODE_ENV', 'production');
+      const query = predictQuerySchema.parse({ exam: 'JEE_MAIN', rank: '1000', category: 'SC', homeState: 'Goa', round: '2' });
+      const result = await predict(query, { cutoffRecord: { findMany } } as never);
+      expect(result.meta.hasData).toBe(true);
+      expect(result.results).toEqual([]);
+      expect(result.meta.assumptions).toContain('Using round 2 closing values only.');
+      expect(result.meta.assumptions.some((line) => line.includes('No category rank given'))).toBe(true);
+      const candidateQuery = findMany.mock.calls[1][0] as { where: { AND: unknown[] } };
+      expect(JSON.stringify(candidateQuery.where)).toContain('DEMO');
+      expect(JSON.stringify(candidateQuery.where)).toContain('GO');
+    } finally {
+      if (oldNodeEnv === undefined) Reflect.deleteProperty(process.env, 'NODE_ENV');
+      else Reflect.set(process.env, 'NODE_ENV', oldNodeEnv);
+    }
   });
 });

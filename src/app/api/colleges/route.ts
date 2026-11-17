@@ -1,3 +1,4 @@
+import { filterPublicColleges } from '@/server/public-search';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { CACHE_PUBLIC_SHORT, readQuery, withErrorHandling } from '@/lib/http';
@@ -19,17 +20,12 @@ export const GET = withErrorHandling(async (request: Request) => {
     );
   }
 
-  const where = buildCollegeWhere(q);
-  const [colleges, total] = await Promise.all([
-    prisma.college.findMany({
-      where,
-      select: collegeListSelect,
-      orderBy: buildCollegeOrderBy(q.sort),
-      skip: (q.page - 1) * q.limit,
-      take: q.limit,
-    }),
-    prisma.college.count({ where }),
-  ]);
+  // Filter source-reviewed projections, never denormalised legacy measurements.
+  const where = buildCollegeWhere({ ...q, minFees: undefined, maxFees: undefined, naac: undefined, courses: undefined, established: undefined, minRating: undefined, sort: 'name' });
+  const candidates = await prisma.college.findMany({ where, select: collegeListSelect, orderBy: buildCollegeOrderBy(q.sort === 'fees_asc' || q.sort === 'fees_desc' || q.sort === 'rating' ? 'name' : q.sort) });
+  const filtered = filterPublicColleges(candidates, q);
+  const total = filtered.length;
+  const colleges = filtered.slice((q.page - 1) * q.limit, q.page * q.limit);
 
   return NextResponse.json(
     { colleges, total, page: q.page, limit: q.limit, totalPages: Math.ceil(total / q.limit) },

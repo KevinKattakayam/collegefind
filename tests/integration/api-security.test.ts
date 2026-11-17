@@ -30,6 +30,12 @@ const questionsRoute = await import('@/app/api/questions/route');
 const collegesRoute = await import('@/app/api/colleges/route');
 const moderationRoute = await import('@/app/api/admin/moderation/route');
 const questionsByCollege = await import('@/app/api/questions/[collegeId]/route');
+const collegeDetailRoute = await import('@/app/api/colleges/[id]/route');
+const cutoffsRoute = await import('@/app/api/colleges/[id]/cutoffs/route');
+const featuredRoute = await import('@/app/api/colleges/featured/route');
+const similarRoute = await import('@/app/api/colleges/similar/[id]/route');
+const rankingsRoute = await import('@/app/api/rankings/route');
+const statsRoute = await import('@/app/api/stats/route');
 
 const ORIGIN = 'https://collegefind.test';
 const req = (path: string, init: RequestInit & { origin?: string | null } = {}) => {
@@ -89,6 +95,27 @@ describe('seed endpoint (was: public and destructive)', () => {
 
     expect(await db.savedCollege.count()).toBe(1);
     expect(await db.college.count()).toBe(1);
+  });
+
+  it('fails closed for missing seed credentials and refuses synthetic data in production', async () => {
+    process.env.SEED_ENABLED = 'true';
+    delete process.env.ADMIN_SEED_TOKEN;
+    expect((await json(await seedRoute.POST(req('/api/seed', { method: 'POST' })))).status).toBe(404);
+
+    const oldNodeEnv = process.env.NODE_ENV;
+    try {
+      Reflect.set(process.env, 'NODE_ENV', 'production');
+      process.env.SEED_ALLOW_PRODUCTION = 'true';
+      process.env.ADMIN_SEED_TOKEN = 'z'.repeat(40);
+      const response = await json(await seedRoute.POST(req('/api/seed?synthetic=true', {
+        method: 'POST', headers: { authorization: `Bearer ${process.env.ADMIN_SEED_TOKEN}` },
+      })));
+      expect(response.status).toBe(400);
+      expect(await db.auditLog.count({ where: { action: 'seed.run' } })).toBe(0);
+    } finally {
+      if (oldNodeEnv === undefined) Reflect.deleteProperty(process.env, 'NODE_ENV');
+      else Reflect.set(process.env, 'NODE_ENV', oldNodeEnv);
+    }
   });
 
   it('with the correct token it only adds colleges and never deletes', async () => {
@@ -177,6 +204,16 @@ describe('saved colleges and comparisons (authorization)', () => {
     expect(await db.savedComparison.count()).toBe(1);
   });
 
+  it('deletes only the owner comparison and validates identifiers and origin', async () => {
+    const user = await makeUser('comparison-owner@example.com');
+    const owned = await db.savedComparison.create({ data: { userId: user.id, signature: 'owned', collegeIds: ['a', 'b'] } });
+    session.current = { id: user.id, role: 'USER' };
+    expect((await json(await comparisonIdRoute.DELETE(req('/api/comparisons/bad/id', { method: 'DELETE' }), { params: Promise.resolve({ id: 'bad/id' }) }))).status).toBe(400);
+    expect((await json(await comparisonIdRoute.DELETE(req(`/api/comparisons/${owned.id}`, { method: 'DELETE', origin: 'https://attacker.test' }), { params: Promise.resolve({ id: owned.id }) }))).status).toBe(403);
+    expect((await json(await comparisonIdRoute.DELETE(req(`/api/comparisons/${owned.id}`, { method: 'DELETE' }), { params: Promise.resolve({ id: owned.id }) }))).status).toBe(200);
+    expect((await json(await comparisonIdRoute.DELETE(req(`/api/comparisons/${owned.id}`, { method: 'DELETE' }), { params: Promise.resolve({ id: owned.id }) }))).status).toBe(404);
+  });
+
   it('saving the same college twice is idempotent, not a 500', async () => {
     const user = await makeUser('saver@example.com');
     const college = await makeCollege('save-twice');
@@ -216,9 +253,54 @@ describe('saved colleges and comparisons (authorization)', () => {
     const missing = await json(await comparisonsRoute.POST(req('/api/comparisons', { method: 'POST', body: JSON.stringify({ collegeIds: [a.id, 'nope'] }) })));
     expect(missing.status).toBe(404);
   });
+
+  it('creates canonical saved comparisons and restores current server records while omitting deleted IDs', async () => {
+    const user = await makeUser('comparison-restore@example.com');
+    const [a, b] = await Promise.all([makeCollege('restore-a'), makeCollege('restore-b')]);
+    session.current = { id: user.id, role: 'USER' };
+
+    const stale = await db.savedComparison.create({
+      data: { userId: user.id, signature: 'deleted|restore-a', collegeIds: [a.id, 'deleted-college-id'] },
+    });
+    const saved = await json(await comparisonsRoute.POST(req('/api/comparisons', {
+      method: 'POST', body: JSON.stringify({ collegeIds: [b.id, a.id] }),
+    })));
+    expect(saved.status).toBe(201);
+    expect(await db.savedComparison.findUniqueOrThrow({ where: { id: saved.body.comparison.id }, select: { signature: true } }))
+      .toEqual({ signature: [a.id, b.id].sort().join('|') });
+
+    const restored = await json(await comparisonsRoute.GET());
+    const restoredStale = restored.body.comparisons.find((entry: { id: string }) => entry.id === stale.id);
+    const restoredNew = restored.body.comparisons.find((entry: { id: string }) => entry.id === saved.body.comparison.id);
+    expect(restoredStale.colleges.map((college: { id: string }) => college.id)).toEqual([a.id]);
+    expect(restoredNew.colleges.map((college: { id: string }) => college.id)).toEqual([b.id, a.id]);
+    expect(restoredNew.colleges.map((college: { name: string }) => college.name)).toEqual([`College restore-b`, `College restore-a`]);
+  });
+
+  it('rejects duplicate saved comparison signatures and enforces the per-user cap', async () => {
+    const user = await makeUser('comparison-limit@example.com');
+    const [a, b] = await Promise.all([makeCollege('limit-a'), makeCollege('limit-b')]);
+    session.current = { id: user.id, role: 'USER' };
+    const body = { method: 'POST', body: JSON.stringify({ collegeIds: [a.id, b.id] }) };
+    expect((await comparisonsRoute.POST(req('/api/comparisons', body))).status).toBe(201);
+    expect((await comparisonsRoute.POST(req('/api/comparisons', body))).status).toBe(409);
+
+    await db.savedComparison.createMany({ data: Array.from({ length: 49 }, (_, i) => ({
+      userId: user.id, signature: `limit-${i}`, collegeIds: [a.id, b.id],
+    })) });
+    expect((await json(await comparisonsRoute.POST(req('/api/comparisons', body)))).status).toBe(409);
+  });
 });
 
 describe('colleges listing', () => {
+  it('returns distinct states without applying list pagination', async () => {
+    await makeCollege('state-kerala');
+    await db.college.create({ data: { slug: 'state-tamil-nadu', name: 'Tamil Nadu Fixture', shortName: 'TN', city: 'Chennai', state: 'Tamil Nadu', type: 'GOVERNMENT' } });
+    const response = await json(await collegesRoute.GET(req('/api/colleges?distinct=states&limit=1')));
+    expect(response.status).toBe(200);
+    expect(response.body.states).toEqual(['Kerala', 'Tamil Nadu']);
+  });
+
   it('handles malformed query parameters with 400, not 500', async () => {
     for (const qs of ['minFees=abc', 'page=abc', 'limit=99999', 'exams=DROP', 'naac=Z', 'minFees=900&maxFees=100']) {
       const res = await json(await collegesRoute.GET(req(`/api/colleges?${qs}`)));
@@ -242,6 +324,65 @@ describe('colleges listing', () => {
     expect(p1.body.totalPages).toBe(3);
     const ids = [...p1.body.colleges, ...p2.body.colleges].map((c: { id: string }) => c.id);
     expect(new Set(ids).size).toBe(6);
+  });
+});
+
+describe('public college endpoints', () => {
+  it('loads a detail record by slug and ID and distinguishes invalid and missing identifiers', async () => {
+    const college = await makeCollege('detail-fixture');
+    expect((await json(await collegeDetailRoute.GET(req('/api/colleges/detail-fixture'), { params: Promise.resolve({ id: 'detail-fixture' }) }))).body.college.id).toBe(college.id);
+    expect((await json(await collegeDetailRoute.GET(req(`/api/colleges/${college.id}`), { params: Promise.resolve({ id: college.id }) }))).body.college.slug).toBe('detail-fixture');
+    expect((await json(await collegeDetailRoute.GET(req('/api/colleges/nope'), { params: Promise.resolve({ id: 'nope' }) }))).status).toBe(404);
+    expect((await json(await collegeDetailRoute.GET(req('/api/colleges/bad%2Fkey'), { params: Promise.resolve({ id: 'bad/key' }) }))).status).toBe(400);
+  });
+
+  it('returns only the final cutoff round for each pool and excludes PwD rows', async () => {
+    const college = await makeCollege('cutoff-fixture');
+    const source = await db.source.create({ data: { name: 'Fixture source', publisher: 'Authority', url: 'https://example.gov.in/data', retrievedAt: new Date('2026-01-01') } });
+    const program = await db.program.create({ data: { collegeId: college.id, name: 'Course', branch: 'Course' } });
+    const common = { programId: program.id, exam: 'JEE_MAIN' as const, year: 2025, quota: 'AI', category: 'OPEN' as const, seatPool: 'GENDER_NEUTRAL' as const, sourceId: source.id, metric: 'RANK' as const };
+    await db.cutoffRecord.createMany({ data: [
+      { ...common, round: 1, openingValue: 1, closingValue: 100 },
+      { ...common, round: 2, openingValue: 2, closingValue: 90 },
+      { ...common, round: 3, isPwd: true, openingValue: 3, closingValue: 80 },
+    ] });
+    const result = await json(await cutoffsRoute.GET(req('/api/colleges/cutoff-fixture/cutoffs'), { params: Promise.resolve({ id: college.id }) }));
+    expect(result.status).toBe(200);
+    expect(result.body.cutoffs).toHaveLength(1);
+    expect(result.body.cutoffs[0]).toMatchObject({ round: 2, closingValue: 90 });
+    expect((await json(await cutoffsRoute.GET(req('/api/colleges/missing/cutoffs'), { params: Promise.resolve({ id: 'missing' }) }))).status).toBe(404);
+  });
+
+  it('serves neutral featured and similar lists and returns empty/current ranking and stats responses', async () => {
+    const primary = await makeCollege('primary-similar');
+    await makeCollege('same-state-similar');
+    await db.college.create({ data: { slug: 'other-state-similar', name: 'Other State Fixture', shortName: 'OS', city: 'Chennai', state: 'Tamil Nadu', type: 'GOVERNMENT' } });
+    const featured = await json(await featuredRoute.GET());
+    expect(featured.status).toBe(200);
+    expect(featured.body.colleges.length).toBeGreaterThan(0);
+    const similar = await json(await similarRoute.GET(req(`/api/colleges/similar/${primary.id}`), { params: Promise.resolve({ id: primary.id }) }));
+    expect(similar.status).toBe(200);
+    expect(similar.body.colleges.map((college: { id: string }) => college.id)).not.toContain(primary.id);
+    expect((await json(await similarRoute.GET(req('/api/colleges/similar/missing'), { params: Promise.resolve({ id: 'missing' }) }))).status).toBe(404);
+    const rankings = await json(await rankingsRoute.GET(req('/api/rankings?category=Unpublished')));
+    expect(rankings).toMatchObject({ status: 200, body: { year: null, rankings: [], available: [] } });
+    const stats = await json(await statsRoute.GET());
+    expect(stats).toMatchObject({ status: 200, body: { colleges: 3, demoColleges: 0, verifiedColleges: 0 } });
+  });
+
+  it('selects the newest available ranking year or an explicitly requested year', async () => {
+    const college = await makeCollege('nirf-fixture');
+    const source = await db.source.create({ data: { name: 'NIRF fixture', publisher: 'NIRF', url: 'https://nirfindia.org/fixture', retrievedAt: new Date('2026-01-01') } });
+    await db.nirfRanking.createMany({ data: [
+      { collegeId: college.id, sourceId: source.id, category: 'Overall', year: 2025, rank: 10, score: 50 },
+      { collegeId: college.id, sourceId: source.id, category: 'Overall', year: 2026, rank: 8, score: 55 },
+      { collegeId: college.id, sourceId: source.id, category: 'Engineering', year: 2024, rank: 3, score: 60 },
+    ] });
+    const latest = await json(await rankingsRoute.GET(req('/api/rankings')));
+    expect(latest).toMatchObject({ status: 200, body: { category: 'Overall', year: 2026, rankings: [{ year: 2026, rank: 8 }] } });
+    const explicit = await json(await rankingsRoute.GET(req('/api/rankings?category=Engineering&year=2024')));
+    expect(explicit).toMatchObject({ status: 200, body: { category: 'Engineering', year: 2024, rankings: [{ year: 2024, rank: 3 }] } });
+    expect((await json(await rankingsRoute.GET(req('/api/rankings?year=2010')))).status).toBe(400);
   });
 });
 
@@ -283,4 +424,40 @@ describe('community content', () => {
     expect(list.body.questions).toHaveLength(0);
     expect(await db.auditLog.count({ where: { action: 'question.hide' } })).toBe(1);
   });
+
+  it('moderates answers through hide and restore with transactional audit records', async () => {
+    const [user, admin] = [await makeUser('answer-author@example.com'), await makeUser('answer-admin@example.com', 'ADMIN')];
+    const college = await makeCollege('answer-moderation');
+    const question = await db.question.create({ data: { text: 'Question for moderation?', userId: user.id, collegeId: college.id } });
+    const answer = await db.answer.create({ data: { text: 'Answer for moderation.', userId: user.id, questionId: question.id } });
+    session.current = { id: admin.id, role: 'ADMIN' };
+
+    const badOrigin = await json(await moderationRoute.POST(req('/api/admin/moderation', {
+      method: 'POST', origin: 'https://attacker.test', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'HIDDEN' }),
+    })));
+    expect(badOrigin.status).toBe(403);
+    const invalid = await json(await moderationRoute.POST(req('/api/admin/moderation', {
+      method: 'POST', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'DELETED' }),
+    })));
+    expect(invalid.status).toBe(400);
+
+    expect((await moderationRoute.POST(req('/api/admin/moderation', {
+      method: 'POST', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'HIDDEN' }),
+    }))).status).toBe(200);
+    expect((await db.answer.findUniqueOrThrow({ where: { id: answer.id } })).status).toBe('HIDDEN');
+    expect((await moderationRoute.POST(req('/api/admin/moderation', {
+      method: 'POST', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'VISIBLE', reason: 'Review completed' }),
+    }))).status).toBe(200);
+    expect((await db.answer.findUniqueOrThrow({ where: { id: answer.id } })).status).toBe('VISIBLE');
+    expect(await db.auditLog.count({ where: { action: { in: ['answer.hide', 'answer.restore'] } } })).toBe(2);
+  });
+});
+
+it('denies a demoted admin even when the session still carries ADMIN', async () => {
+ const admin=await makeUser('demoted@example.com','ADMIN');
+ session.current={id:admin.id,role:'ADMIN'};
+ await db.user.update({where:{id:admin.id},data:{role:'USER'}});
+ const response=await moderationRoute.POST(req('/api/admin/moderation',{method:'POST',body:JSON.stringify({type:'question',id:'not-used',status:'HIDDEN'})}));
+ expect(response.status).toBe(403);
+ expect(await db.auditLog.count()).toBe(0);
 });

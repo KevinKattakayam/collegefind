@@ -1,0 +1,24 @@
+import { afterAll, beforeEach, expect, it } from 'vitest';
+import { resetDb, testDb } from './db';
+import { stageFieldEvidence, reviewFieldEvidence } from '@/server/ingest/field-evidence';
+const db = testDb();
+beforeEach(resetDb);
+afterAll(() => db.$disconnect());
+it('preserves existing college/saved relationships through reviewed supersession', async () => {
+ const college = await db.college.create({data:{slug:'preserved',name:'Fixture',shortName:'F',city:'C',state:'Kerala',type:'GOVERNMENT'}});
+ const user = await db.user.create({data:{name:'Fixture',email:'fixture@example.test',password:'unused',role:'USER'}});
+ const admin = await db.user.create({data:{name:'Admin',email:'admin@example.test',password:'unused',role:'ADMIN'}});
+ await db.savedCollege.create({data:{userId:user.id,collegeId:college.id}});
+ const retrievedAt = new Date('2026-01-01');
+ const source = await db.source.create({data:{name:'Fixture',publisher:'Institution',url:'https://example.edu/report',retrievedAt}});
+ const draft = {field:'description',value:'Original',publisher:source.publisher,sourceUrl:source.url,retrievedAt:retrievedAt.toISOString(),reviewState:'UNREVIEWED' as const};
+ const original = await stageFieldEvidence(db,{collegeId:college.id,sourceId:source.id,draft});
+ await expect(reviewFieldEvidence(db,{evidenceId:original.id,reviewerId:user.id,status:'APPROVED',reason:'Fixture checked'})).rejects.toThrow(/Reviewer access/);
+ await reviewFieldEvidence(db,{evidenceId:original.id,reviewerId:admin.id,status:'APPROVED',reason:'Fixture checked'});
+ const replacement = await stageFieldEvidence(db,{collegeId:college.id,sourceId:source.id,draft:{...draft,value:'Updated'},supersedesId:original.id});
+ await reviewFieldEvidence(db,{evidenceId:replacement.id,reviewerId:admin.id,status:'APPROVED',reason:'Updated publication'});
+ expect(await db.fieldEvidence.count()).toBe(2);
+ expect(await db.auditLog.count({where:{action:'evidence.review'}})).toBe(2);
+ expect(await db.savedCollege.count()).toBe(1);
+ expect((await db.college.findUniqueOrThrow({where:{id:college.id}})).slug).toBe('preserved');
+});

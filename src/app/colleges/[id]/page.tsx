@@ -58,7 +58,7 @@ async function getCutoffs(collegeId: string): Promise<CutoffRow[]> {
 
 async function getSimilar(college: { id: string; state: string; type: 'GOVERNMENT' | 'PRIVATE' }) {
   return prisma.college.findMany({
-    where: { state: college.state, type: college.type, id: { not: college.id } },
+    where: { state: college.state, type: college.type, id: { not: college.id }, dataStatus: { not: 'DEMO' } },
     select: collegeListSelect,
     orderBy: { name: 'asc' },
     take: 3,
@@ -111,6 +111,19 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             <DataStatusBadge status={college.dataStatus} />
           </div>
           <CollegeActions college={listCollege} />
+          <details className="mt-4 text-sm">
+            <summary className="cursor-pointer font-semibold">Sources and verification</summary>
+            <p className="mt-2">Fields are reviewed individually. Missing, conflicting or outdated values are withheld.</p>
+            <ul className="mt-2 space-y-2">
+              {Object.entries(listCollege.fieldEvidence ?? {}).map(([field, evidence]) => (
+                <li key={field}>
+                  <span className="font-medium">{({ annualFees: 'Annual fees', naacGrade: 'NAAC grade', establishedYear: 'Established', totalStudents: 'Students', topRecruiters: 'Recruiters', description: 'Description', about: 'About', website: 'Website', phone: 'Phone', email: 'Email', courses: 'Courses' } as Record<string,string>)[field] ?? field}</span>
+                  {': '}{evidence.status === 'AVAILABLE' ? 'Reviewed' : evidence.status === 'CONFLICT' ? 'Conflicting sources' : evidence.status === 'OUTDATED' ? 'Outdated' : 'Not yet verified'}
+                  {(evidence.sources ?? []).map((source, index) => <a key={index} href={source.url} target="_blank" rel="noopener noreferrer" className="ml-2 underline">{source.publisher}</a>)}
+                </li>
+              ))}
+            </ul>
+          </details>
         </div>
       </section>
 

@@ -1,8 +1,10 @@
+import { publicEvidenceSelect } from './public-evidence';
 import type { Prisma } from '@prisma/client';
 import type { CollegesQuery } from '@/lib/validation';
 
 /** Fields safe and useful for listing cards. */
 export const collegeListSelect = {
+  ...publicEvidenceSelect,
   id: true,
   slug: true,
   name: true,
@@ -40,6 +42,7 @@ const insensitive = 'insensitive' as const;
 
 export function buildCollegeWhere(q: CollegesQuery): Prisma.CollegeWhereInput {
   const and: Prisma.CollegeWhereInput[] = [];
+  if (q.naac?.length || q.established || q.sort === 'fees_asc' || q.sort === 'fees_desc' || q.minRating !== undefined || q.sort === 'rating') and.push({ dataStatus: { not: 'DEMO' } });
   if (q.search) {
     and.push({
       OR: [
@@ -53,6 +56,8 @@ export function buildCollegeWhere(q: CollegesQuery): Prisma.CollegeWhereInput {
   if (q.state) and.push({ state: { equals: q.state, mode: insensitive } });
   if (q.type) and.push({ type: q.type });
   if (q.minFees !== undefined || q.maxFees !== undefined) {
+    // Demo summaries are useful for catalogue layout, never for budget decisions.
+    and.push({ dataStatus: { not: 'DEMO' } });
     and.push({
       annualFees: {
         ...(q.minFees !== undefined ? { gte: q.minFees } : {}),

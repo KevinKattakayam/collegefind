@@ -9,6 +9,7 @@
  * Always run with --dry-run first and read the rejected/unmatched report.
  */
 import 'dotenv/config';
+import { checksum } from '../src/server/ingest/identity';
 import { readFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { PrismaClient } from '@prisma/client';
@@ -39,7 +40,8 @@ async function main() {
     throw new Error('--exam must be JEE_MAIN or JEE_ADVANCED');
   }
 
-  const { rows, rejected, duplicates } = parseJosaaCsv(readFileSync(values.file, 'utf8'));
+  const rawFile = readFileSync(values.file, 'utf8');
+  const { rows, rejected, duplicates } = parseJosaaCsv(rawFile);
   console.log(`Parsed ${rows.length} rows, rejected ${rejected.length}, duplicate keys ${duplicates}`);
   for (const r of rejected.slice(0, 50)) console.log(`  line ${r.line}: ${r.reason}`);
 
@@ -51,6 +53,8 @@ async function main() {
     const summary = await importJosaaRows(db, rows, {
       year,
       round,
+      rejected,
+      artifactChecksum: checksum(rawFile),
       institutes,
       examOverride: values.exam as 'JEE_MAIN' | 'JEE_ADVANCED' | undefined,
       dryRun: values['dry-run'],

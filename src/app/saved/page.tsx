@@ -16,6 +16,7 @@ export default function SavedPage() {
   const router = useRouter();
   const [saved, setSaved] = useState<College[]>([]);
   const [comparisons, setComparisons] = useState<SavedComparison[]>([]);
+  const [loadError, setLoadError] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export default function SavedPage() {
           setSaved(savedData.saved);
           setComparisons(comparisonData.comparisons);
         })
-        .catch(() => toast.error('Could not load your saved items'))
+        .catch(() => { setLoadError(true); toast.error('Could not load your saved items'); })
         .finally(() => setLoading(false));
     }
   }, [status, router]);
@@ -60,7 +61,7 @@ export default function SavedPage() {
       </div>
       <p className="text-sm text-[#64748B] mb-6">You have saved {saved.length} colleges</p>
 
-      {loading ? (
+      {loadError ? <div role="alert" className="rounded-lg border border-red-200 p-4">Saved items are temporarily unavailable. <button type="button" className="underline" onClick={() => window.location.reload()}>Retry</button></div> : loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Array(6).fill(0).map((_, i) => <CollegeCardSkeleton key={i} />)}
         </div>
@@ -99,7 +100,7 @@ export default function SavedPage() {
                       <div className="text-sm text-[#64748B] mb-2">
                         {(comp.colleges || []).map(c => c.name).join(' • ')}
                       </div>
-                      <Link href="/compare" className="text-sm text-[#2563EB] hover:underline no-underline">Open compare page</Link>
+                      {comp.colleges?.length === comp.collegeIds.length && comp.colleges.length >= 2 ? (<Link href={`/compare?colleges=${(comp.colleges ?? []).map((c) => encodeURIComponent(c.slug)).join(',')}`} className="text-sm text-[#2563EB] hover:underline no-underline">Open compare page</Link>) : <p role="status" className="text-sm text-slate-600">One or more colleges are no longer available. Create a new comparison.</p>}
                     </div>
                     <button onClick={() => handleDeleteComparison(comp.id)} className="text-sm text-[#DC2626] hover:underline">Delete</button>
                   </div>

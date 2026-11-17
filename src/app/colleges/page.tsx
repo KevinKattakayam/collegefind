@@ -74,6 +74,8 @@ function CollegesContent() {
   const filters = useMemo(() => parseFilters(searchParams), [searchParams]);
   const [searchInput, setSearchInput] = useState(filters.search);
   const [result, setResult] = useState<{ key: string | null; data: CollegesResponse | null }>({ key: null, data: null });
+  const [retry, setRetry] = useState(0);
+  const [loadError, setLoadError] = useState(false);
   const loading = result.key !== queryKey;
   const colleges = result.data?.colleges ?? [];
   const total = result.data?.total ?? 0;
@@ -99,12 +101,12 @@ function CollegesContent() {
   useEffect(() => {
     const controller = new AbortController();
     apiJson<CollegesResponse>(`/api/colleges?${toApiQuery(filters)}`, { signal: controller.signal })
-      .then((data) => setResult({ key: queryKey, data }))
+      .then((data) => { setLoadError(false); setResult({ key: queryKey, data }); })
       .catch(() => {
-        if (!controller.signal.aborted) setResult({ key: queryKey, data: null });
+        if (!controller.signal.aborted) { setLoadError(true); setResult({ key: queryKey, data: null }); }
       });
     return () => controller.abort();
-  }, [filters, queryKey]);
+  }, [filters, queryKey, retry]);
 
   useEffect(() => {
     apiJson<{ states: string[] }>('/api/colleges?distinct=states')
@@ -218,6 +220,11 @@ function CollegesContent() {
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {Array(12).fill(0).map((_, i) => <CollegeCardSkeleton key={i} />)}
+            </div>
+          ) : loadError ? (
+            <div role="alert" className="rounded-lg border border-red-200 bg-red-50 p-5 text-red-900">
+              <p>We could not load colleges. Check your connection and try again.</p>
+              <button type="button" className="mt-3 underline" onClick={() => setRetry((v) => v + 1)}>Retry</button>
             </div>
           ) : colleges.length === 0 ? (
             <EmptyState icon="🔍" title="No colleges found" description="Try adjusting your filters or search query" actionLabel="Clear Filters" onAction={clearFilters} />

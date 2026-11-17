@@ -16,7 +16,8 @@ export const revalidate = 3600;
  */
 async function load(category: string) {
   try {
-    const available = await prisma.nirfRanking.groupBy({ by: ['category', 'year'], orderBy: [{ year: 'desc' }] });
+    const reviewed = await prisma.nirfRanking.findMany({ select: { category: true, year: true }, orderBy: { year: 'desc' } });
+    const available = [...new Map(reviewed.map((row) => [JSON.stringify([row.category, row.year]), row])).values()];
     const year = available.find((a) => a.category === category)?.year;
     const rows = year
       ? await prisma.nirfRanking.findMany({
@@ -31,16 +32,16 @@ async function load(category: string) {
           },
         })
       : [];
-    return { available, year: year ?? null, rows };
+    return { available, year: year ?? null, rows, failed: false };
   } catch {
-    return { available: [], year: null, rows: [] };
+    return { available: [], year: null, rows: [], failed: true };
   }
 }
 
 export default async function RankingsPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
   const requested = (await searchParams).category;
   const category = typeof requested === 'string' && requested.length <= 60 ? requested : 'Overall';
-  const { available, year, rows } = await load(category);
+  const { available, year, rows, failed } = await load(category);
   const categories = [...new Set(available.map((a) => a.category))];
 
   return (
@@ -65,7 +66,7 @@ export default async function RankingsPage({ searchParams }: { searchParams: Pro
 
       {rows.length === 0 ? (
         <div className="card-premium p-6">
-          <h2 className="text-lg font-bold text-slate-900 mb-2">NIRF data has not been imported yet</h2>
+          <h2 className="text-lg font-bold text-slate-900 mb-2">{failed ? 'Rankings are temporarily unavailable' : 'No reviewed NIRF records are available for this category and year'}</h2>
           <p className="text-slate-700">
             See the official lists on{' '}
             <a href="https://www.nirfindia.org" target="_blank" rel="noopener noreferrer" className="text-indigo-700 font-semibold">nirfindia.org</a>.

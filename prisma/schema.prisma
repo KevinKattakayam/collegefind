@@ -112,6 +112,7 @@ model College {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  evidence         FieldEvidence[]
   savedBy          SavedCollege[]
   questions        Question[]
   programs         Program[]
@@ -149,6 +150,11 @@ model Program {
 }
 
 model Source {
+  identityKey String?         @unique
+  publishedAt DateTime?
+  evidence    FieldEvidence[]
+  importRuns  ImportRun[]
+
   id          String   @id @default(cuid())
   name        String // e.g. "JoSAA 2025 Opening & Closing Ranks, Round 6"
   publisher   String // e.g. "Joint Seat Allocation Authority"
@@ -167,21 +173,22 @@ model Source {
 }
 
 model CutoffRecord {
-  id            String       @id @default(cuid())
+  decisions     EvidenceDecision[]
+  id            String             @id @default(cuid())
   programId     String
   exam          Exam
   year          Int
   round         Int
   quota         String // JoSAA: AI, HS, OS, GO, JK, LA. MCC: published quota name.
   category      SeatCategory
-  isPwd         Boolean      @default(false)
+  isPwd         Boolean            @default(false)
   seatPool      SeatPool
-  metric        CutoffMetric @default(RANK)
+  metric        CutoffMetric       @default(RANK)
   openingValue  Float?
   closingValue  Float
-  isPreparatory Boolean      @default(false) // JoSAA 'P' suffix
+  isPreparatory Boolean            @default(false) // JoSAA 'P' suffix
   sourceId      String
-  createdAt     DateTime     @default(now())
+  createdAt     DateTime           @default(now())
 
   program Program @relation(fields: [programId], references: [id], onDelete: Cascade)
   source  Source  @relation(fields: [sourceId], references: [id], onDelete: Restrict)
@@ -193,7 +200,8 @@ model CutoffRecord {
 }
 
 model FeesRecord {
-  id        String   @id @default(cuid())
+  decisions EvidenceDecision[]
+  id        String             @id @default(cuid())
   collegeId String
   programId String?
   year      Int
@@ -201,7 +209,7 @@ model FeesRecord {
   feeType   String // e.g. "TUITION_PER_YEAR", "TOTAL_FIRST_YEAR"
   notes     String?
   sourceId  String
-  createdAt DateTime @default(now())
+  createdAt DateTime           @default(now())
 
   college College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
   program Program? @relation(fields: [programId], references: [id], onDelete: Cascade)
@@ -213,7 +221,8 @@ model FeesRecord {
 }
 
 model PlacementRecord {
-  id              String   @id @default(cuid())
+  decisions       EvidenceDecision[]
+  id              String             @id @default(cuid())
   collegeId       String
   programId       String?
   year            Int
@@ -221,7 +230,7 @@ model PlacementRecord {
   placed          Int?
   medianSalaryInr Int?
   sourceId        String
-  createdAt       DateTime @default(now())
+  createdAt       DateTime           @default(now())
 
   college College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
   program Program? @relation(fields: [programId], references: [id], onDelete: Cascade)
@@ -233,14 +242,15 @@ model PlacementRecord {
 }
 
 model NirfRanking {
-  id        String   @id @default(cuid())
+  decisions EvidenceDecision[]
+  id        String             @id @default(cuid())
   collegeId String
   year      Int
   category  String // NIRF category name, e.g. "Overall", "Engineering"
   rank      Int
   score     Float?
   sourceId  String
-  createdAt DateTime @default(now())
+  createdAt DateTime           @default(now())
 
   college College @relation(fields: [collegeId], references: [id], onDelete: Cascade)
   source  Source  @relation(fields: [sourceId], references: [id], onDelete: Restrict)
@@ -260,12 +270,13 @@ model User {
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @default(now()) @updatedAt
 
-  saved       SavedCollege[]
-  comparisons SavedComparison[]
-  questions   Question[]
-  answers     Answer[]
-  reviews     Review[]
-  auditLogs   AuditLog[]
+  evidenceDecisions EvidenceDecision[]
+  saved             SavedCollege[]
+  comparisons       SavedComparison[]
+  questions         Question[]
+  answers           Answer[]
+  reviews           Review[]
+  auditLogs         AuditLog[]
 }
 
 model SavedCollege {
@@ -353,4 +364,66 @@ model AuditLog {
 
   @@index([createdAt])
   @@index([actorId])
+}
+
+// Profile claims only; financial/admission values stay in their existing typed tables.
+model FieldEvidence {
+  publishedAt  DateTime?
+  id           String             @id @default(cuid())
+  collegeId    String
+  field        String
+  value        Json
+  unit         String?
+  programScope String?
+  academicYear Int?
+  validFrom    DateTime?
+  validUntil   DateTime?
+  sourceId     String
+  identityKey  String             @unique
+  supersedesId String?
+  createdAt    DateTime           @default(now())
+  college      College            @relation(fields: [collegeId], references: [id], onDelete: Restrict)
+  source       Source             @relation(fields: [sourceId], references: [id], onDelete: Restrict)
+  supersedes   FieldEvidence?     @relation("EvidenceHistory", fields: [supersedesId], references: [id], onDelete: Restrict)
+  successors   FieldEvidence[]    @relation("EvidenceHistory")
+  decisions    EvidenceDecision[]
+
+  @@index([collegeId, field])
+}
+
+// Append-only decisions; no college-wide status promotion on import.
+model EvidenceDecision {
+  cutoffId    String?
+  feesId      String?
+  placementId String?
+  rankingId   String?
+  cutoff      CutoffRecord?    @relation(fields: [cutoffId], references: [id], onDelete: Restrict)
+  fees        FeesRecord?      @relation(fields: [feesId], references: [id], onDelete: Restrict)
+  placement   PlacementRecord? @relation(fields: [placementId], references: [id], onDelete: Restrict)
+  ranking     NirfRanking?     @relation(fields: [rankingId], references: [id], onDelete: Restrict)
+  id          String           @id @default(cuid())
+  evidenceId  String?
+  reviewerId  String
+  status      ReviewStatus
+  reason      String
+  createdAt   DateTime         @default(now())
+  evidence    FieldEvidence?   @relation(fields: [evidenceId], references: [id], onDelete: Restrict)
+  reviewer    User             @relation(fields: [reviewerId], references: [id], onDelete: Restrict)
+
+  @@index([evidenceId, createdAt])
+}
+
+model ImportRun {
+  id          String    @id @default(cuid())
+  identityKey String    @unique
+  checksum    String
+  sourceId    String
+  status      String    @default("STAGED")
+  startedAt   DateTime  @default(now())
+  finishedAt  DateTime?
+  summary     Json?
+  issues      Json?
+  source      Source    @relation(fields: [sourceId], references: [id], onDelete: Restrict)
+
+  @@index([status, startedAt])
 }
