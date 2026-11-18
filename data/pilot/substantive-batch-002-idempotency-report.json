@@ -1,0 +1,53 @@
+{
+  "status": "STAGED",
+  "facts": 5,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 5,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "indian-institute-of-technology-guwahati",
+      "field": "courses",
+      "evidenceId": "cmwl1l7lq000376tv961jfery",
+      "sourceId": "cmwl1l7l0000076tv2yqmv493",
+      "sourceUrl": "https://www.iitg.ac.in/acad/programmes/bachelors.php/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "field": "courses",
+      "evidenceId": "cmwl1l7m7000676tv54qwbm8l",
+      "sourceId": "cmwl1l7l6000176tvfqm72hij",
+      "sourceUrl": "https://www.nitk.ac.in/btech",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "field": "admissions",
+      "evidenceId": "cmwl1l7mg000876tvnmoqfoar",
+      "sourceId": "cmwl1l7l6000176tvfqm72hij",
+      "sourceUrl": "https://www.nitk.ac.in/btech",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "field": "phone",
+      "evidenceId": "cmwl1l7mn000a76tv79l5zzhp",
+      "sourceId": "cmwl1l7l6000176tvfqm72hij",
+      "sourceUrl": "https://www.nitk.ac.in/btech",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "field": "email",
+      "evidenceId": "cmwl1l7mu000c76tva2ywozd6",
+      "sourceId": "cmwl1l7l6000176tvfqm72hij",
+      "sourceUrl": "https://www.nitk.ac.in/btech",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

@@ -1,0 +1,85 @@
+{
+  "status": "STAGED",
+  "facts": 9,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 9,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "national-institute-of-technology-warangal",
+      "field": "structured.programme",
+      "evidenceId": "cmwm68lal00073gtv7eclwtqe",
+      "sourceId": "cmwm68l9l00003gtvrpjnpdzi",
+      "sourceUrl": "https://nitw.ac.in/api/static/files/cd_profile_2026-10-22-10-56-18.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "bits-pilani",
+      "field": "structured.fee",
+      "evidenceId": "cmwm68lb1000a3gtvjqdocyvn",
+      "sourceId": "cmwm68l9v00013gtv6onmitib",
+      "sourceUrl": "https://www.bitsadmission.com/FD/FD_fee.html",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "bits-pilani",
+      "field": "structured.fee",
+      "evidenceId": "cmwm68lb7000c3gtvdx9j9lfg",
+      "sourceId": "cmwm68l9v00013gtv6onmitib",
+      "sourceUrl": "https://www.bitsadmission.com/FD/FD_fee.html",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "xlri-jamshedpur",
+      "field": "structured.programme",
+      "evidenceId": "cmwm68lbg000f3gtvurssgrm4",
+      "sourceId": "cmwm68l9y00023gtvjd9agk3f",
+      "sourceUrl": "https://cloud-server.xlri.ac.in/file/6ae1febe65cd3e58180bb565",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "xlri-jamshedpur",
+      "field": "structured.admission",
+      "evidenceId": "cmwm68lbo000h3gtvxo5nj7m3",
+      "sourceId": "cmwm68l9y00023gtvjd9agk3f",
+      "sourceUrl": "https://cloud-server.xlri.ac.in/file/6ae1febe65cd3e58180bb565",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "savitribai-phule-pune-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwm68lc2000k3gtvuwkps3df",
+      "sourceId": "cmwm68la000033gtvtg2o9e4d",
+      "sourceUrl": "https://unipune.ac.in/pucsd/pages/admissions.html",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "savitribai-phule-pune-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwm68lc8000m3gtv9s6w4aed",
+      "sourceId": "cmwm68la000033gtvtg2o9e4d",
+      "sourceUrl": "https://unipune.ac.in/pucsd/pages/admissions.html",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "loyola-college",
+      "field": "structured.programme",
+      "evidenceId": "cmwm68lcl000p3gtvprxir53e",
+      "sourceId": "cmwm68la200043gtvu321cyiy",
+      "sourceUrl": "https://www.loyolacollege.edu/admission/courses-offered",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "pec-chandigarh",
+      "field": "structured.fee",
+      "evidenceId": "cmwm68lcv000s3gtvsjv5oh4v",
+      "sourceId": "cmwm68la500053gtvswa97r9w",
+      "sourceUrl": "https://pec.ac.in/sites/default/files/2026-06/Admission-Brochure-UG-2026.pdf",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

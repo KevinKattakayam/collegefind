@@ -13,6 +13,7 @@ import { collegeDetailSelect, collegeListSelect } from '@/server/colleges';
 import { formatCount, formatINR, formatLPA, formatPct } from '@/lib/utils';
 import { SITE_URL } from '@/lib/site';
 import type { College, CutoffRow } from '@/types';
+import { structuredLabels } from '@/server/ingest/structured-facts';
 
 export const dynamic = 'force-dynamic';
 
@@ -111,13 +112,14 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             <DataStatusBadge status={college.dataStatus} />
           </div>
           <CollegeActions college={listCollege} />
+          {listCollege.admissions && <p><a href={listCollege.admissions} target="_blank" rel="noopener noreferrer">Official admissions information</a></p>}
           <details className="mt-4 text-sm">
             <summary className="cursor-pointer font-semibold">Sources and verification</summary>
             <p className="mt-2">Fields are reviewed individually. Missing, conflicting or outdated values are withheld.</p>
             <ul className="mt-2 space-y-2">
               {Object.entries(listCollege.fieldEvidence ?? {}).map(([field, evidence]) => (
                 <li key={field}>
-                  <span className="font-medium">{({ annualFees: 'Annual fees', naacGrade: 'NAAC grade', establishedYear: 'Established', totalStudents: 'Students', topRecruiters: 'Recruiters', description: 'Description', about: 'About', website: 'Website', phone: 'Phone', email: 'Email', courses: 'Courses' } as Record<string,string>)[field] ?? field}</span>
+                  <span className="font-medium">{({ annualFees: 'Annual fees', naacGrade: 'NAAC grade', establishedYear: 'Established', totalStudents: 'Students', topRecruiters: 'Recruiters', description: 'Description', about: 'About', admissions: 'Admissions link', website: 'Website', phone: 'Phone', email: 'Email', courses: 'Courses' } as Record<string,string>)[field] ?? field}</span>
                   {': '}{evidence.status === 'AVAILABLE' ? 'Reviewed' : evidence.status === 'CONFLICT' ? 'Conflicting sources' : evidence.status === 'OUTDATED' ? 'Outdated' : 'Not yet verified'}
                   {(evidence.sources ?? []).map((source, index) => <a key={index} href={source.url} target="_blank" rel="noopener noreferrer" className="ml-2 underline">{source.publisher}</a>)}
                 </li>
@@ -129,6 +131,27 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
 
       <section className="container-main py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
+          {!!listCollege.structuredFacts?.length && (
+            <section className="card-enterprise p-6">
+              <h2 className="text-xl font-black text-slate-800">Reviewed official facts</h2>
+              <ul className="mt-3 space-y-4">
+                {listCollege.structuredFacts.map(({ key, value, academicYear, validUntil, source }) => (
+                  <li key={key} className="break-words">
+                    <h3 className="font-semibold">{structuredLabels[value.kind]}{academicYear !== null && ` · ${academicYear}`}</h3>
+                    <dl className="text-sm">
+                      {Object.entries(value).filter(([label]) => label !== 'kind').map(([label, item]) => (
+                        <div key={label}><dt className="inline font-medium capitalize">{label.replace(/([A-Z])/g, ' $1')}: </dt>
+                          <dd className="inline">{label === 'url' || label === 'applicationUrl'
+                            ? <a href={String(item)} className="underline">{String(item)}</a> : String(item)}</dd></div>
+                      ))}
+                      {validUntil && <div><dt className="inline font-medium">Valid through: </dt><dd className="inline">{new Date(validUntil).toISOString().slice(0, 10)}</dd></div>}
+                    </dl>
+                    <a href={source.url} className="text-sm underline" rel="noopener noreferrer">{source.publisher}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
           <div className="card-enterprise p-6">
             <h2 className="text-xl font-black text-slate-800 mb-1">Key numbers</h2>
             {isDemo ? (

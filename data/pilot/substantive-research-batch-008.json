@@ -1,0 +1,109 @@
+{
+  "batch": 8,
+  "scope": "FOLLOW_UP_FIELD_RESEARCH_CANDIDATES_NOT_STAGED",
+  "researchedAt": "2026-11-18T04:01:25Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "policy": {
+    "access": "Pages were opened individually through public HTTPS, with no login, automation, CAPTCHA bypass or access-control bypass.",
+    "reuse": "Official source pages and relevant institutional policies were reviewed. IIT Indore's available policy material requires copyright/license compliance but does not expressly grant reuse of these public page facts. IIT Bhubaneswar's library e-resource guidance permits linking and prohibits systematic/bulk collection of licensed resources; it does not establish a grant for republishing facts from the general public admissions page. IIT (BHU)'s e-resource guidance similarly addresses licensed materials, not the public academic table. Exact links to source pages are appropriate; no source-specific permission for storing and republishing derived factual records was established. No copied prose, PDF, table, or bulk dataset is included.",
+    "review": "All entries are research candidates only. They are not imported, staged, verified, or public. A reviewer must check campus and scope, current applicability, and the permitted use basis before any claim is staged."
+  },
+  "sources": [
+    {
+      "id": "iit-indore-ug-guidelines-2026-11",
+      "institutionSlug": "iit-indore",
+      "publisher": "Indian Institute of Technology Indore",
+      "url": "https://www.iiti.ac.in/admissions/ug_info/btech/guidelines",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:01:25Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official page read directly. No page-level reuse licence located. IIT Indore policy references compliance with copyright and licences but does not expressly authorize rehosting this page's extracted facts. Link-only use is recorded; public fact storage awaits owner policy review.",
+      "evidenceLocations": ["Lines 162-176: undergraduate programme labels and B.Tech duration stated as four years.", "Lines 177-195: special admission routes and their specific criteria; these are not generalized as the ordinary admission eligibility.", "Lines 205-215: institutional address, administrative email and phone numbers; not extracted in this batch."]
+    },
+    {
+      "id": "iit-bhubaneswar-btech-admission-2026-11",
+      "institutionSlug": "iit-bhubaneswar",
+      "publisher": "Indian Institute of Technology Bhubaneswar",
+      "url": "https://www.iitbbs.ac.in/index.php/home/academics/admission-b-tech/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:01:25Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official public page read directly. The institute library's fair-use guidance concerns licensed e-resources, says links should be used instead of uploading full-text PDFs and prohibits systematic/bulk downloads. It does not establish a specific licence for republishing extracted facts from this admissions page. Only concise research notes and a source link are retained.",
+      "evidenceLocations": ["Lines 520-529: eight named B.Tech disciplines and programme duration of four years/eight semesters.", "Lines 531-534: page states admission is through JEE and links applicants to jeeadv.ac.in for application details; the manifest preserves the page's wording without broadening it.", "Lines 535-539: institution and campus contact block; not extracted in this batch."]
+    },
+    {
+      "id": "iit-bhu-tpc-academics-2026-11",
+      "institutionSlug": "iit-bhu-varanasi",
+      "publisher": "Indian Institute of Technology (BHU) Varanasi, Training & Placement Cell",
+      "url": "https://iitbhu.ac.in/cf/tpc/academics",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:01:25Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official public page read directly. The institute's e-resource guidance applies to licensed library resources and discourages automated/systematic access; it does not expressly establish reuse terms for this public academic summary. No automated retrieval or content copying was performed. Link-only use is recorded; public fact storage awaits policy review.",
+      "evidenceLocations": ["Lines 31-38: programme labels, durations and admission-route labels (B.Tech 4 years/JEE; IDD 5 years/JEE).", "Lines 39-66: B.Tech and IDD discipline names; the page is maintained by the Training & Placement Cell and needs academic-office corroboration before publication."]
+    }
+  ],
+  "candidateFacts": [
+    {
+      "institutionSlug": "iit-indore",
+      "field": "programmeSummary",
+      "candidateValue": "The official undergraduate page lists B.Tech, B.Des and B.S. programmes and states B.Tech duration as four years.",
+      "sourceId": "iit-indore-ug-guidelines-2026-11",
+      "academicYear": null,
+      "evidenceLocation": "Page lines 162-176; page footer identifies IIT Indore and a 2026 beta release.",
+      "publicationDate": null,
+      "status": "RESEARCHED_NOT_STAGED_REUSE_REVIEW_REQUIRED",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "blocker": "Existing importer can stage course lists, but the intended public republication permission has not been established for this page."
+    },
+    {
+      "institutionSlug": "iit-bhubaneswar",
+      "field": "programmeSummary",
+      "candidateValue": "The official B.Tech admission page lists Civil Engineering, Computer Science and Engineering, Electrical Engineering, Electronics and Communication Engineering, Engineering Physics, Mathematics and Computing, Mechanical Engineering, and Metallurgical and Materials Engineering; it states four years/eight semesters.",
+      "sourceId": "iit-bhubaneswar-btech-admission-2026-11",
+      "academicYear": null,
+      "evidenceLocation": "Page lines 520-529.",
+      "publicationDate": null,
+      "status": "RESEARCHED_NOT_STAGED_REUSE_REVIEW_REQUIRED",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "blocker": "No page-specific permission for storing and republishing derived facts was found; page has no stated applicable academic year."
+    },
+    {
+      "institutionSlug": "iit-bhubaneswar",
+      "field": "admissions",
+      "candidateValue": "The page states admission to its B.Tech programmes is through JEE and directs applicants to jeeadv.ac.in for application details. The source does not itself specify a year or current eligibility thresholds.",
+      "sourceId": "iit-bhubaneswar-btech-admission-2026-11",
+      "academicYear": null,
+      "evidenceLocation": "Page lines 531-534.",
+      "publicationDate": null,
+      "status": "RESEARCHED_NOT_STAGED_REUSE_REVIEW_REQUIRED",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "blocker": "No page-specific permission for storing and republishing derived facts was found; source wording is retained without interpreting JEE as a specific year or eligibility rule."
+    },
+    {
+      "institutionSlug": "iit-bhu-varanasi",
+      "field": "programmeSummary",
+      "candidateValue": "The official IIT (BHU) Training & Placement Cell academic summary lists B.Tech as four years and IDD as five years; both admission-route labels say JEE. It lists B.Tech and IDD disciplines in the cited section.",
+      "sourceId": "iit-bhu-tpc-academics-2026-11",
+      "academicYear": null,
+      "evidenceLocation": "Page lines 31-66.",
+      "publicationDate": null,
+      "status": "RESEARCHED_NOT_STAGED_REUSE_AND_ACADEMIC_CORROBORATION_REQUIRED",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "blocker": "The page is an official TPC summary rather than the academic office's programme catalogue. Reuse basis and corroboration by the academic office are needed before staging."
+    }
+  ],
+  "counts": {
+    "institutionsFollowedUp": 3,
+    "candidateFacts": 4,
+    "staged": 0,
+    "verified": 0
+  }
+}

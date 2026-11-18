@@ -1,0 +1,465 @@
+{
+  "batch": 10,
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchedAt": "2026-11-18T05:16:44Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sources": [
+    {
+      "institutionSlug": "university-of-delhi",
+      "publisher": "University of Delhi",
+      "url": "https://admission.uod.ac.in/userfiles/downloads/2026/31052026_BTech-BOI.pdf",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "id": "university-of-delhi-batch010",
+      "academicYear": "2026",
+      "publicationDate": null,
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Manually examined public first-party material. Single independently reportable factual observation with attribution and locator. No source prose, tables, or files retained. Bulk and automated reuse are outside this scope.",
+      "evidenceLocations": [
+        "Bulletin of Information, PDF page 8, General Instructions points 1–4. JEE Main 2026 and a separate university application are required. This is a record of the 2026 cycle."
+      ]
+    },
+    {
+      "institutionSlug": "kiit-university",
+      "publisher": "KIIT University",
+      "url": "https://kiitee.kiit.ac.in/courses-available/",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "id": "kiit-university-batch010",
+      "academicYear": null,
+      "publicationDate": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined public first-party material. Single independently reportable factual observation with attribution and locator. No source prose, tables, or files retained. Bulk and automated reuse are outside this scope.",
+      "evidenceLocations": [
+        "KIITEE programme catalogue, School of Electrical Engineering, lines 458–464"
+      ]
+    },
+    {
+      "institutionSlug": "armed-forces-medical-college",
+      "publisher": "Armed Forces Medical College",
+      "url": "https://afmc.nic.in/mbbs-courses",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "id": "armed-forces-medical-college-batch010",
+      "academicYear": null,
+      "publicationDate": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined public first-party material. Single independently reportable factual observation with attribution and locator. No source prose, tables, or files retained. Bulk and automated reuse are outside this scope.",
+      "evidenceLocations": [
+        "MBBS Courses, line 84. The academic course is 54 months followed by a 12-month compulsory internship."
+      ]
+    },
+    {
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "publisher": "Shri Ram College of Commerce",
+      "url": "https://srcc.edu/academics/time-table/room-wise-time-table",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "id": "shri-ram-college-of-commerce-batch010",
+      "academicYear": null,
+      "publicationDate": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined public first-party material. Single independently reportable factual observation with attribution and locator. No source prose, tables, or files retained. Bulk and automated reuse are outside this scope.",
+      "evidenceLocations": [
+        "Course Wise Time Table, line 192, programme column heading. This establishes programme presence only."
+      ]
+    },
+    {
+      "institutionSlug": "fergusson-college",
+      "publisher": "Fergusson College",
+      "url": "https://fergusson.edu/under-graduate-programmes",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "id": "fergusson-college-batch010",
+      "academicYear": null,
+      "publicationDate": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined public first-party material. Single independently reportable factual observation with attribution and locator. No source prose, tables, or files retained. Bulk and automated reuse are outside this scope.",
+      "evidenceLocations": [
+        "Undergraduate Programmes, line 140"
+      ]
+    },
+    {
+      "institutionSlug": "presidency-university",
+      "publisher": "Presidency University",
+      "url": "https://presiuniv.ac.in/web/ugprogramme.php",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "id": "presidency-university-batch010",
+      "academicYear": null,
+      "publicationDate": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined public first-party material. Single independently reportable factual observation with attribution and locator. No source prose, tables, or files retained. Bulk and automated reuse are outside this scope.",
+      "evidenceLocations": [
+        "Presidency University Kolkata undergraduate programme table, line 21"
+      ]
+    },
+    {
+      "institutionSlug": "st-xaviers-college",
+      "publisher": "St Xaviers College",
+      "url": "https://xaviers.ac/files/Handbook%202025-2026.pdf",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "id": "st-xaviers-college-batch010",
+      "academicYear": "2025-26",
+      "publicationDate": null,
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Manually examined public first-party material. Single independently reportable factual observation with attribution and locator. No source prose, tables, or files retained. Bulk and automated reuse are outside this scope.",
+      "evidenceLocations": [
+        "St. Xavier’s College Mumbai handbook for 2025–26, PDF page 57, section 7.2"
+      ]
+    },
+    {
+      "institutionSlug": "iiit-allahabad",
+      "publisher": "IIIT Allahabad",
+      "url": "https://www.iiita.ac.in/department-information-technology/program",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "id": "iiit-allahabad-batch010",
+      "academicYear": null,
+      "publicationDate": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined public first-party material. Single independently reportable factual observation with attribution and locator. No source prose, tables, or files retained. Bulk and automated reuse are outside this scope.",
+      "evidenceLocations": [
+        "Department of Information Technology programme page, lines 31–39"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "university-of-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech programmes covered by the 2026 information bulletin",
+        "category": "Applicants using the University of Delhi B.Tech portal",
+        "route": "JEE Main and university application",
+        "exam": "JEE Main 2026",
+        "applicationUrl": "https://engineering.uod.ac.in"
+      },
+      "sourceIds": [
+        "university-of-delhi-batch010"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Bulletin of Information, PDF page 8, General Instructions points 1–4. JEE Main 2026 and a separate university application are required. This is a record of the 2026 cycle.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "kiit-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Electrical Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "kiit-university-batch010"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "KIITEE programme catalogue, School of Electrical Engineering, lines 458–464",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "armed-forces-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS (including compulsory rotating internship)",
+        "level": "UG",
+        "durationMonths": 66
+      },
+      "sourceIds": [
+        "armed-forces-medical-college-batch010"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "MBBS Courses, line 84. The academic course is 54 months followed by a 12-month compulsory internship.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Com. (Hons.)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "shri-ram-college-of-commerce-batch010"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Course Wise Time Table, line 192, programme column heading. This establishes programme presence only.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "fergusson-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. Computer Science",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "fergusson-college-batch010"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Undergraduate Programmes, line 140",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "presidency-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. (Hons.) in Physics",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "presidency-university-batch010"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Presidency University Kolkata undergraduate programme table, line 21",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "st-xaviers-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Science",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "st-xaviers-college-batch010"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "St. Xavier’s College Mumbai handbook for 2025–26, PDF page 57, section 7.2",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iiit-allahabad",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Information Technology",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "iiit-allahabad-batch010"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department of Information Technology programme page, lines 31–39",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "dispositions": [
+    {
+      "institutionSlug": "university-of-mumbai",
+      "publisher": "University of Mumbai",
+      "url": "https://admi.mu.ac.in/programmes/bms-mms-integrated/",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Institute page found for the integrated programme. Confirm provision for the Thane sub-campus and actual duration before staging."
+    },
+    {
+      "institutionSlug": "university-of-delhi",
+      "publisher": "University of Delhi",
+      "url": "https://admission.uod.ac.in/userfiles/downloads/2026/31052026_BTech-BOI.pdf",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "savitribai-phule-pune-university",
+      "publisher": "Savitribai Phule Pune University",
+      "url": "https://www.unipune.ac.in/administration_files/eligibility.htm",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "General eligibility page found. A dated programme prospectus with exact scope is still needed."
+    },
+    {
+      "institutionSlug": "symbiosis-international-university",
+      "publisher": "Symbiosis International University",
+      "url": "https://www.sitpune.edu.in/",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "SIT Pune page found. Confirm programme and campus applicability with the university or a dated intake notice."
+    },
+    {
+      "institutionSlug": "kiit-university",
+      "publisher": "KIIT University",
+      "url": "https://kiitee.kiit.ac.in/courses-available/",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "shiv-nadar-university",
+      "publisher": "Shiv Nadar University",
+      "url": "https://snu.edu.in/blogs/b-tech-computer-science-a-journey-from-algorithms-to-artificial-intelligence/",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Institutional blog describes a generic degree. Prefer the campus-specific formal programme catalogue."
+    },
+    {
+      "institutionSlug": "chandigarh-university",
+      "publisher": "Chandigarh University",
+      "url": "https://www.cuchd.in/uie/computer-science-and-engg/be-cse-course-curriculum.php",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Curriculum located. Need an exact programme and intake-specific verification before extracting duration or admission details."
+    },
+    {
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "publisher": "All India Institute of Medical Sciences",
+      "url": "https://docs.aiimsexams.ac.in/sites/Prospectus%20of%20MBBS%202025_0001.pdf",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Official 2025 prospectus located. The checked section did not establish duration. Use the formal New Delhi course or current intake publication."
+    },
+    {
+      "institutionSlug": "christian-medical-college",
+      "publisher": "Christian Medical College",
+      "url": "https://www.cmch-vellore.edu/wp-content/uploads/sites/14/2026/11/college-prospectus-2026-2027-revised.pdf",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Current college prospectus located. Check MBBS-specific eligibility and fee pages before extracting any figures."
+    },
+    {
+      "institutionSlug": "armed-forces-medical-college",
+      "publisher": "Armed Forces Medical College",
+      "url": "https://afmc.nic.in/mbbs-courses",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "publisher": "Shri Ram College of Commerce",
+      "url": "https://srcc.edu/academics/time-table/room-wise-time-table",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "loyola-college",
+      "publisher": "Loyola College",
+      "url": "https://www.loyolacollege.edu/BComHons/home",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Programme page returned 403."
+    },
+    {
+      "institutionSlug": "fergusson-college",
+      "publisher": "Fergusson College",
+      "url": "https://fergusson.edu/under-graduate-programmes",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "publisher": "Amrita Vishwa Vidyapeetham",
+      "url": "https://intranet.cb.amrita.edu/2026/academics/BTech-2023-Regulations-School_of_Computing.pdf",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Coimbatore intranet publication timed out. Confirm programme from a public campus-specific source."
+    },
+    {
+      "institutionSlug": "pec-chandigarh",
+      "publisher": "PEC Chandigarh",
+      "url": "https://pec.ac.in/programmes/ug",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Programme listing responded. Checked text did not establish duration or applicable intake."
+    },
+    {
+      "institutionSlug": "jipmer-puducherry",
+      "publisher": "JIPMER Puducherry",
+      "url": "https://karaikal.jipmer.edu.in/uploads/media/med_20261020_130002_e27225.pdf",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Stray round notice timed out and is on the Karaikal host. Puducherry applicability requires confirmation."
+    },
+    {
+      "institutionSlug": "sai-university",
+      "publisher": "Sai University",
+      "url": "https://www.saiuniversity.edu.in/program/btech-computer-science",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Page responded without matching evidence for duration."
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "publisher": "Woxsen University",
+      "url": "https://woxsen.edu.in/dps/b.techbrochure-2.pdf",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Official brochure URL returned 404."
+    },
+    {
+      "institutionSlug": "iit-gandhinagar",
+      "publisher": "IIT Gandhinagar",
+      "url": "https://iitgn.ac.in/academics/btech",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Programme page returned limited text. No exact claim extracted from this check."
+    },
+    {
+      "institutionSlug": "iim-shillong",
+      "publisher": "IIM Shillong",
+      "url": "https://www.iimshillong.ac.in/pgp/faq",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "FAQ search returned unrelated text. A dated PGP prospectus or programme structure is needed."
+    },
+    {
+      "institutionSlug": "presidency-university",
+      "publisher": "Presidency University",
+      "url": "https://presiuniv.ac.in/web/ugprogramme.php",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "st-xaviers-college",
+      "publisher": "St Xaviers College",
+      "url": "https://xaviers.ac/files/Handbook%202025-2026.pdf",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "nit-agartala",
+      "publisher": "NIT Agartala",
+      "url": "https://www.nita.ac.in/Department/Civil%20Engineering/UG_Syllabus_New_122.pdf",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Civil engineering syllabus found. Current applicability and duration were not established from the checked text."
+    },
+    {
+      "institutionSlug": "iiit-allahabad",
+      "publisher": "IIIT Allahabad",
+      "url": "https://www.iiita.ac.in/department-information-technology/program",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "psg-college-of-technology",
+      "publisher": "PSG College of Technology",
+      "url": "https://www.psgtech.edu/",
+      "retrievedAt": "2026-11-18T05:16:44Z",
+      "status": "NOT_STAGED",
+      "reason": "Targeted official-domain search did not establish the mechanical programme from a checked first-party page."
+    }
+  ]
+}

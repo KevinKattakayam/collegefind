@@ -1,0 +1,61 @@
+{
+  "status": "STAGED",
+  "facts": 6,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 6,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "courses",
+      "evidenceId": "cmwlxr4bf0004rktvmwaknhv0",
+      "sourceId": "cmwlxr4ar0000rktv3th33psa",
+      "sourceUrl": "https://cutn.ac.in/admissions-integrated-ug-4years-programmes/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "structured.programme",
+      "evidenceId": "cmwlxr4br0007rktvbgwyyra1",
+      "sourceId": "cmwlxr4ay0001rktvu9n5gwl8",
+      "sourceUrl": "https://cutn.ac.in/wp-content/uploads/2026/03/Revised_Eligibility_Criteria_Domain_subjects_for_CUET_UG_2026_27032026.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "structured.admission",
+      "evidenceId": "cmwlxr4bx0009rktvrucj9ciu",
+      "sourceId": "cmwlxr4ay0001rktvu9n5gwl8",
+      "sourceUrl": "https://cutn.ac.in/wp-content/uploads/2026/03/Revised_Eligibility_Criteria_Domain_subjects_for_CUET_UG_2026_27032026.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "structured.admission",
+      "evidenceId": "cmwlxr4c2000brktva9t6i4j4",
+      "sourceId": "cmwlxr4ay0001rktvu9n5gwl8",
+      "sourceUrl": "https://cutn.ac.in/wp-content/uploads/2026/03/Revised_Eligibility_Criteria_Domain_subjects_for_CUET_UG_2026_27032026.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "structured.admission",
+      "evidenceId": "cmwlxr4c6000drktv248hacum",
+      "sourceId": "cmwlxr4ay0001rktvu9n5gwl8",
+      "sourceUrl": "https://cutn.ac.in/wp-content/uploads/2026/03/Revised_Eligibility_Criteria_Domain_subjects_for_CUET_UG_2026_27032026.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "admissions",
+      "evidenceId": "cmwlxr4cj000grktvmtfeg05i",
+      "sourceId": "cmwlxr4b20002rktvpzxfaned",
+      "sourceUrl": "https://cutn.ac.in/wp-content/uploads/2026/08/Admission_Closure_AY_2026-2027_27082026.pdf",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

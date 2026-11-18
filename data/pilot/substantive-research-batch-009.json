@@ -1,0 +1,573 @@
+{
+  "batch": 9,
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchedAt": "2026-11-18T04:21:03Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sources": [
+    {
+      "id": "indian-institute-of-technology-kharagpur-batch009",
+      "institutionSlug": "indian-institute-of-technology-kharagpur",
+      "publisher": "Indian Institute of Technology Kharagpur",
+      "url": "https://civil.iitkgp.ac.in/academics_new.html",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "First-party public page opened directly. Independent factual values and an evidence locator retained with attribution. No documents, prose, complete tables or provider arrangement stored. Bulk and automated reuse not assessed.",
+      "evidenceLocations": [
+        "Department academic programmes, lines 10–16"
+      ]
+    },
+    {
+      "id": "indian-institute-of-technology-hyderabad-batch009",
+      "institutionSlug": "indian-institute-of-technology-hyderabad",
+      "publisher": "Indian Institute of Technology Hyderabad",
+      "url": "https://www.iith.ac.in/academics/under-graduate/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "First-party public page opened directly. Independent factual values and an evidence locator retained with attribution. No documents, prose, complete tables or provider arrangement stored. Bulk and automated reuse not assessed.",
+      "evidenceLocations": [
+        "Undergraduate academic page, Bachelor of Design heading and curriculum, lines 64 onward"
+      ]
+    },
+    {
+      "id": "indian-institute-of-management-ahmedabad-batch009",
+      "institutionSlug": "indian-institute-of-management-ahmedabad",
+      "publisher": "Indian Institute of Management Ahmedabad",
+      "url": "https://iima.ac.in/academics/mba",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "First-party public page opened directly. Independent factual values and an evidence locator retained with attribution. No documents, prose, complete tables or provider arrangement stored. Bulk and automated reuse not assessed.",
+      "evidenceLocations": [
+        "PGP introductory paragraph, line 15, and two-year heading at line 100"
+      ]
+    },
+    {
+      "id": "management-development-institute-batch009",
+      "institutionSlug": "management-development-institute",
+      "publisher": "Management Development Institute",
+      "url": "https://mdi.ac.in/programmes/post-graduate-diploma-in-management-banking-financial-services-pgdm-bfs",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "First-party public page opened directly. Independent factual values and an evidence locator retained with attribution. No documents, prose, complete tables or provider arrangement stored. Bulk and automated reuse not assessed.",
+      "evidenceLocations": [
+        "MDI Gurgaon programme structure, lines 63–65"
+      ]
+    },
+    {
+      "id": "mica-ahmedabad-batch009",
+      "institutionSlug": "mica-ahmedabad",
+      "publisher": "MICA Ahmedabad",
+      "url": "https://www.mica.ac.in/admissions/pgdm-c/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "First-party public page opened directly. Independent factual values and an evidence locator retained with attribution. No documents, prose, complete tables or provider arrangement stored. Bulk and automated reuse not assessed.",
+      "evidenceLocations": [
+        "2027 application page programme introduction, lines 185–196"
+      ]
+    },
+    {
+      "id": "national-law-school-of-india-university-batch009",
+      "institutionSlug": "national-law-school-of-india-university",
+      "publisher": "National Law School of India University",
+      "url": "https://www.nls.ac.in/programme/ba-llb-hons/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "First-party public page opened directly. Independent factual values and an evidence locator retained with attribution. No documents, prose, complete tables or provider arrangement stored. Bulk and automated reuse not assessed.",
+      "evidenceLocations": [
+        "Programme overview, line 79",
+        "Programme Fees tab, UG fee schedule lines 552–562"
+      ]
+    },
+    {
+      "id": "iit-patna-batch009",
+      "institutionSlug": "iit-patna",
+      "publisher": "IIT Patna",
+      "url": "https://iitp.ac.in/departments/computer-science-engineering",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "First-party public page opened directly. Independent factual values and an evidence locator retained with attribution. No documents, prose, complete tables or provider arrangement stored. Bulk and automated reuse not assessed.",
+      "evidenceLocations": [
+        "Department programmes, lines 42–44"
+      ]
+    },
+    {
+      "id": "iim-kozhikode-batch009",
+      "institutionSlug": "iim-kozhikode",
+      "publisher": "IIM Kozhikode",
+      "url": "https://iimk.ac.in/ir-programs-offered",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "First-party public page opened directly. Independent factual values and an evidence locator retained with attribution. No documents, prose, complete tables or provider arrangement stored. Bulk and automated reuse not assessed.",
+      "evidenceLocations": [
+        "Programme listing and campus address, lines 219–233"
+      ]
+    },
+    {
+      "id": "nalsar-university-of-law-batch009",
+      "institutionSlug": "nalsar-university-of-law",
+      "publisher": "NALSAR University of Law",
+      "url": "https://nalsar.ac.in/programmes/undergraduate-study-in-law/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "First-party public page opened directly. Independent factual values and an evidence locator retained with attribution. No documents, prose, complete tables or provider arrangement stored. Bulk and automated reuse not assessed.",
+      "evidenceLocations": [
+        "Undergraduate Study in Law overview, line 81",
+        "Eligibility Details section, lines 135–142"
+      ]
+    },
+    {
+      "id": "iim-ranchi-batch009",
+      "institutionSlug": "iim-ranchi",
+      "publisher": "IIM Ranchi",
+      "url": "https://iimranchi.ac.in/media/2026/04/Admission-Criteria-2026.pdf",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "First-party public page opened directly. Independent factual values and an evidence locator retained with attribution. No documents, prose, complete tables or provider arrangement stored. Bulk and automated reuse not assessed.",
+      "evidenceLocations": [
+        "JAP 2026 policy, PDF page 4, lines 135–139, identifies IIM Ranchi as a participant and states the programme duration"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-kharagpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "indian-institute-of-technology-kharagpur-batch009"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department academic programmes, lines 10–16",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-hyderabad",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Design",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "indian-institute-of-technology-hyderabad-batch009"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Undergraduate academic page, Bachelor of Design heading and curriculum, lines 64 onward",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-ahmedabad",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBA (Post Graduate Programme in Management)",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "indian-institute-of-management-ahmedabad-batch009"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "PGP introductory paragraph, line 15, and two-year heading at line 100",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "management-development-institute",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "PGDM in Banking and Financial Services",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "management-development-institute-batch009"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "MDI Gurgaon programme structure, lines 63–65",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "mica-ahmedabad",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Post Graduate Diploma in Management – Communications",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "mica-ahmedabad-batch009"
+      ],
+      "academicYear": "2027",
+      "evidenceLocation": "2027 application page programme introduction, lines 185–196",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-law-school-of-india-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.A., LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "national-law-school-of-india-university-batch009"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programme overview, line 79",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-law-school-of-india-university",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "B.A., LL.B. (Hons.)",
+        "category": "Published UG schedule (separate international schedule)",
+        "component": "Housing with meal plan",
+        "feeType": "HOSTEL",
+        "period": "YEAR",
+        "amountInr": 132800
+      },
+      "sourceIds": [
+        "national-law-school-of-india-university-batch009"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Programme Fees tab, UG fee schedule lines 552–562",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-patna",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Computer Science and Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "iit-patna-batch009"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department programmes, lines 42–44",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iim-kozhikode",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Post Graduate Programme in Finance",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "iim-kozhikode-batch009"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programme listing and campus address, lines 219–233",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nalsar-university-of-law",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.A., LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "nalsar-university-of-law-batch009"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Undergraduate Study in Law overview, line 81",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nalsar-university-of-law",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.A., LL.B. (Hons.)",
+        "route": "CLAT admission route",
+        "category": "Applicants through CLAT",
+        "exam": "CLAT 2026"
+      },
+      "sourceIds": [
+        "nalsar-university-of-law-batch009"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Eligibility Details section, lines 135–142",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iim-ranchi",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBA",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "iim-ranchi-batch009"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "JAP 2026 policy, PDF page 4, lines 135–139, identifies IIM Ranchi as a participant and states the programme duration",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "dispositions": [
+    {
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "publisher": "Indian Institute of Technology Kanpur",
+      "url": "https://www.iitk.ac.in/bsbe/index.php/ug-program",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Department page rendered but duration not established in the checked section."
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-kharagpur",
+      "publisher": "Indian Institute of Technology Kharagpur",
+      "url": "https://civil.iitkgp.ac.in/academics_new.html",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-hyderabad",
+      "publisher": "Indian Institute of Technology Hyderabad",
+      "url": "https://www.iith.ac.in/academics/under-graduate/",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-ahmedabad",
+      "publisher": "Indian Institute of Management Ahmedabad",
+      "url": "https://iima.ac.in/academics/mba",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "publisher": "Indian Institute of Management Bangalore",
+      "url": "https://www.iimb.ac.in/index.php/programmes/pgp",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Direct fetch returned 403."
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "publisher": "Indian Institute of Management Calcutta",
+      "url": "https://application.iimcal.ac.in/programs/mba",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Official-domain page contains unrelated third-party game links. Source integrity needs corroboration from a clean publication."
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-lucknow",
+      "publisher": "Indian Institute of Management Lucknow",
+      "url": "https://www.iiml.ac.in/index.php/master-business-administration",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Direct fetch timed out."
+    },
+    {
+      "institutionSlug": "srm-institute-of-science-and-technology",
+      "publisher": "SRM Institute of Science and Technology",
+      "url": "https://applications.srmist.edu.in/btech",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Direct fetch returned 403. Campus-specific application scope remains unresolved."
+    },
+    {
+      "institutionSlug": "indian-school-of-business",
+      "publisher": "Indian School of Business",
+      "url": "https://www.isb.edu/programmes/post-graduate-programmes/pgp-in-management?campaignname=Campaign-0972",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "12-month programme stated. Hyderabad campus applicability needs independent confirmation on this multi-campus page."
+    },
+    {
+      "institutionSlug": "xlri-jamshedpur",
+      "publisher": "XLRI Jamshedpur",
+      "url": "https://xlri.ac.in/academic-programmes/school-of-business/pgdbm",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Two-year programme stated. Page does not establish Jamshedpur intake scope separately from other campuses."
+    },
+    {
+      "institutionSlug": "management-development-institute",
+      "publisher": "Management Development Institute",
+      "url": "https://mdi.ac.in/programmes/post-graduate-diploma-in-management-banking-financial-services-pgdm-bfs",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "mica-ahmedabad",
+      "publisher": "MICA Ahmedabad",
+      "url": "https://www.mica.ac.in/admissions/pgdm-c/",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "publisher": "Osmania University",
+      "url": "https://www.osmania.ac.in/academics-academicprogs.php",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Direct fetch returned 502."
+    },
+    {
+      "institutionSlug": "national-law-school-of-india-university",
+      "publisher": "National Law School of India University",
+      "url": "https://www.nls.ac.in/programme/ba-llb-hons/",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "CANDIDATE",
+      "claims": 2
+    },
+    {
+      "institutionSlug": "ashoka-university",
+      "publisher": "Ashoka University",
+      "url": "https://www.ashoka.edu.in/academic-programme/undergraduate/",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Four-year Honours overview covers multiple credentials. Confirm programme-specific scope and exit distinctions before staging."
+    },
+    {
+      "institutionSlug": "plaksha-university",
+      "publisher": "Plaksha University",
+      "url": "https://plaksha.edu.in/programs/undergraduate/faqs",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "FAQ describes curriculum; follow up with a named individual degree page to validate duration and scope."
+    },
+    {
+      "institutionSlug": "flame-university",
+      "publisher": "Flame University",
+      "url": "https://2027.flame.edu.in/academics/ug/program-structure/",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Four-year Honours structure observed. Programme-specific degrees and applicability of 2027 subdomain need confirmation."
+    },
+    {
+      "institutionSlug": "iit-tirupati",
+      "publisher": "IIT Tirupati",
+      "url": "https://www.iittp.ac.in/btech",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Page responded but no matching B.Tech text was exposed by this retrieval. Department source follow-up needed."
+    },
+    {
+      "institutionSlug": "iit-patna",
+      "publisher": "IIT Patna",
+      "url": "https://iitp.ac.in/departments/computer-science-engineering",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "iim-kozhikode",
+      "publisher": "IIM Kozhikode",
+      "url": "https://iimk.ac.in/ir-programs-offered",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    },
+    {
+      "institutionSlug": "iim-indore",
+      "publisher": "IIM Indore",
+      "url": "https://iimidr.ac.in/programmes/academic-programmes/five-year-integrated-programme-in-management-ipm/",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Five-year IPM stated, but the current single-level field cannot express a combined undergraduate and postgraduate course accurately."
+    },
+    {
+      "institutionSlug": "iiit-bangalore",
+      "publisher": "IIIT Bangalore",
+      "url": "https://www.iiitb.ac.in/academics/integrated-programmes/integrated-mtech-computer-science-and-engineering",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Five-year integrated programme is described without current intake confirmation. Combined credential scope needs representation."
+    },
+    {
+      "institutionSlug": "lovely-professional-university",
+      "publisher": "Lovely Professional University",
+      "url": "https://www.lpu.in/programmes/engineering/b-tech-computer-science",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "NOT_STAGED",
+      "reason": "Direct fetch returned 502."
+    },
+    {
+      "institutionSlug": "nalsar-university-of-law",
+      "publisher": "NALSAR University of Law",
+      "url": "https://nalsar.ac.in/programmes/undergraduate-study-in-law/",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "CANDIDATE",
+      "claims": 2
+    },
+    {
+      "institutionSlug": "iim-ranchi",
+      "publisher": "IIM Ranchi",
+      "url": "https://iimranchi.ac.in/media/2026/04/Admission-Criteria-2026.pdf",
+      "retrievedAt": "2026-11-18T04:21:03Z",
+      "status": "CANDIDATE",
+      "claims": 1
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchedAt": "2026-11-17T19:12:26Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "access": "Directly opened the public official MAHE admissions page for its Manipal campus. No login, CAPTCHA bypass or automated crawling.",
+    "reuse": "No explicit bulk extraction, document storage or redistribution licence established. The claim is a short, explicitly partial factual summary with publisher and exact URL; no page prose or document is copied.",
+    "review": "STAGED claims are not human-verified; campus attribution and programme currency require reviewer confirmation."
+  },
+  "sources": [
+    {
+      "id": "mahe-manipal-featured-ug-2026",
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "publisher": "Manipal Academy of Higher Education, Manipal Admissions",
+      "url": "https://admissions.manipal.edu/manipal/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-17T19:12:26Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public campus-specific admissions page; no explicit bulk reuse licence identified. Keep the selected programme summary attributed and linked; do not present this partial list as a complete catalogue or republish the page.",
+      "evidenceLocations": ["Heading ‘New-age programmes at MAHE, Manipal’ and undergraduate programme entries; lines 130-264"]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "field": "courses",
+      "value": [
+        "Selected featured undergraduate offerings (not a complete catalogue): BBA and BBA (Hons), listed under Manipal School of Commerce and Economics.",
+        "Selected featured undergraduate offerings (not a complete catalogue): B.Com (Hons) options in Professional, Capital Markets, and Fintech and Data Analytics.",
+        "Selected featured undergraduate offerings (not a complete catalogue): Bachelor of Design in Interior Design and Fashion Design.",
+        "Selected featured undergraduate offerings (not a complete catalogue): B.Sc Physics and B.Sc Applied Sciences (International Transfer Programme in Engineering).",
+        "Selected featured undergraduate offerings (not a complete catalogue): MBBS and BDS.",
+        "Selected featured undergraduate offerings (not a complete catalogue): B.Tech at Manipal Institute of Technology and B.Arch at Manipal School of Architecture and Planning.",
+        "Selected featured undergraduate offerings (not a complete catalogue): B.Sc Biotechnology, BHM, and B.Sc Culinary Science."
+      ],
+      "sourceIds": ["mahe-manipal-featured-ug-2026"],
+      "academicYear": null,
+      "evidenceLocation": "Official MAHE Manipal admissions page section ‘New-age programmes at MAHE, Manipal’, lines 130-264. The listed offerings are summarized from headings; the evidence explicitly limits this to the featured section and not the complete catalogue.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "notStagedFindings": [
+    {
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "field": "academicYear / complete course catalogue",
+      "sourceUrl": "https://admissions.manipal.edu/manipal/",
+      "reason": "The page identifies the MAHE Manipal campus and selected programme offerings but does not state the applicable academic year in the opened section or give a fully structured, exhaustive programme list. No current eligibility, fee or application deadline is inferred."
+    }
+  ]
+}

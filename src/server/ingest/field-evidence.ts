@@ -1,6 +1,8 @@
 import type { PrismaClient } from '@prisma/client';
 import { checksum } from './identity';
 import { validateEvidenceDraft, type EvidenceDraft } from './evidence';
+import { evidenceReviewHold } from '@/server/review-holds';
+import { ApiError } from '@/lib/http';
 
 // Monetary/cutoff/ranking records retain their dedicated typed tables.
 const PROFILE_FIELDS = new Set(['description', 'about', 'website', 'phone', 'email', 'naacGrade', 'establishedYear', 'totalStudents', 'courses', 'topRecruiters', 'scholarships', 'facilities', 'admissions']);
@@ -34,8 +36,38 @@ export async function reviewFieldEvidence(db: PrismaClient, input: {
 }) {
   if (!input.reason.trim() || !['APPROVED', 'REJECTED'].includes(input.status)) throw new Error('Review reason and decision required');
   return db.$transaction(async (tx) => {
+    // Share the importer lock so a review cannot race a same-scope import.
+    await tx.$executeRaw`SELECT pg_advisory_xact_lock(180231, 3)`;
     const reviewer = await tx.user.findUniqueOrThrow({ where: { id: input.reviewerId } });
     if (reviewer.role !== 'ADMIN') throw new Error('Reviewer access required');
+    const claim = await tx.fieldEvidence.findUniqueOrThrow({ where: { id: input.evidenceId } });
+    if (input.status === 'APPROVED') {
+      if (claim.isFixture) throw new ApiError(409, 'FIXTURE_NOT_PUBLISHABLE', 'Fixture evidence cannot be published');
+      const held = evidenceReviewHold(claim.id);
+      if (held) throw new ApiError(409, 'EVIDENCE_ON_HOLD', held);
+      const now = new Date();
+      if (claim.validUntil && claim.validUntil < now) throw new ApiError(409, 'EVIDENCE_EXPIRED', 'Expired evidence cannot be published; obtain a current source or reject it');
+      if (claim.validFrom && claim.validFrom > now) throw new ApiError(409, 'EVIDENCE_NOT_YET_VALID', 'Future-valid evidence cannot be published yet');
+      const conflicts = await tx.$queryRaw<{ id: string }[]>`
+        SELECT other.id FROM "FieldEvidence" other
+        LEFT JOIN LATERAL (
+          SELECT status FROM "EvidenceDecision" d WHERE d."evidenceId"=other.id
+          ORDER BY d."createdAt" DESC,d.id DESC LIMIT 1
+        ) latest ON true
+        WHERE other.id<>${claim.id} AND other."collegeId"=${claim.collegeId} AND other.field=${claim.field}
+          AND other."programScope" IS NOT DISTINCT FROM ${claim.programScope}
+          AND other."academicYear" IS NOT DISTINCT FROM ${claim.academicYear}
+          AND (${claim.supersedesId}::text IS NULL OR other.id<>${claim.supersedesId})
+          AND other.value<>${JSON.stringify(claim.value)}::jsonb
+          AND NOT other."isFixture" AND latest.status IS DISTINCT FROM 'REJECTED'
+          AND (other."validUntil" IS NULL OR other."validUntil">=CURRENT_TIMESTAMP)
+          AND (other."validFrom" IS NULL OR other."validFrom"<=CURRENT_TIMESTAMP)
+          AND NOT EXISTS (SELECT 1 FROM "FieldEvidence" successor
+            JOIN "EvidenceDecision" decision ON decision."evidenceId"=successor.id AND decision.status='APPROVED'
+            WHERE successor."supersedesId"=other.id)
+        LIMIT 1`;
+      if (conflicts.length) throw new ApiError(409, 'EVIDENCE_CONFLICT', 'Conflicting evidence remains unresolved; review the matching claims first');
+    }
     const decision = await tx.evidenceDecision.create({ data: input });
     await tx.auditLog.create({ data: { actorId: reviewer.id, action: 'evidence.review', targetType: 'FieldEvidence', targetId: input.evidenceId, metadata: { status: input.status, reason: input.reason } } });
     return decision;

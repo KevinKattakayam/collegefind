@@ -1,0 +1,7 @@
+{
+  "status": "DRY_RUN",
+  "facts": 9,
+  "reviewState": "UNREVIEWED",
+  "sourceUse": "manual public-source facts only; no source documents stored",
+  "databaseChanged": false
+}

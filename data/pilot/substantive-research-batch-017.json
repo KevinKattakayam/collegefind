@@ -1,0 +1,200 @@
+{
+  "batch": 17,
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchBatchScope": "TARGETED_FOLLOW_UP_OF_PRIOR_NO_STAGEABLE_DISPOSITIONS",
+  "researchedAt": "2026-11-18T09:41:13Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "method": "Manual reading of official Central University of Tamil Nadu pages and PDFs; no authentication, CAPTCHA, access-control or rate-limit bypass and no automated bulk fetch.",
+    "factualUse": "Stage only concise structured facts and exact source links/locators. No document or substantial source wording/table is stored. Public visibility and attribution do not establish bulk reuse permission.",
+    "reuseConditions": "CUTN's IT policy says users need copyright-holder permission to use other publishers' text, graphics or multimedia on personal pages and requires written authorization for third-party content distribution through University IT resources. This is not an express licence for CollegeFind's use and does not specifically determine rights in individual facts. The pilot records isolated factual values, not expressive descriptions, source tables or documents. Keep these claims unreviewed; reviewer/legal owner should decide whether the proposed public factual summary complies with applicable rights and current terms before approval. Do not expand to automated/bulk collection without a separate terms review."
+  },
+  "sources": [
+    {
+      "id": "cutn-ug-programmes-2026-27",
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "publisher": "Central University of Tamil Nadu, Admissions",
+      "url": "https://cutn.ac.in/admissions-integrated-ug-4years-programmes/",
+      "publicationDate": "2026-08-31",
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-18T09:41:13Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official HTML manually inspected. Page shows an update timestamp of 2026-08-31 and links to an admission closure notice. Only concise programme-name facts, exact link and line locator are retained; no page prose or linked document is copied. No bulk extraction or republication permission is asserted.",
+      "evidenceLocations": [
+        "Heading at lines 355-367 identifies four-year UG (Hons./Research) programmes and CUET (UG) 2026 notices; provisional-merit-list programme names at lines 370-393. This is a 2026-27 historical programme list, not a claim that applications remain open."
+      ]
+    },
+    {
+      "id": "cutn-cuet-ug-eligibility-revised-2026",
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "publisher": "Central University of Tamil Nadu",
+      "url": "https://cutn.ac.in/wp-content/uploads/2026/03/Revised_Eligibility_Criteria_Domain_subjects_for_CUET_UG_2026_27032026.pdf",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-18T09:41:13Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official public PDF opened and read manually. Filename indicates a March 2026 revision but the document's publication date was not independently established, so publicationDate remains null. Concise row-level facts only; PDF/table is not stored or reproduced. Automated extraction and bulk redistribution permissions are not established.",
+      "evidenceLocations": [
+        "PDF page 1, row 1: four-year B.Sc. (Hons./Research) Chemistry; required 10+2 pass/equivalent; Chemistry, Physics and Mathematics or Biology mapped subjects; General 60%, OBC (NCL)/EWS 55%, SC/ST/PWD 50%.",
+        "Eligibility applies to CUET (UG) 2026 / AY 2026-27 only. The separate official closure notice URL is https://cutn.ac.in/wp-content/uploads/2026/08/Admission_Closure_AY_2026-2027_27082026.pdf and states the campus admission process closed on 2026-08-21; do not display these as current-cycle eligibility."
+      ]
+    },
+    {
+      "id": "cutn-admission-closure-2026-27",
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "publisher": "Central University of Tamil Nadu, Controller of Examinations",
+      "url": "https://cutn.ac.in/wp-content/uploads/2026/08/Admission_Closure_AY_2026-2027_27082026.pdf",
+      "publicationDate": "2026-08-21",
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-18T09:41:13Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official public one-page notification manually read. Date is printed on the notice. Store only its dated status fact and link; no document copy or substantial wording. No bulk republication permission is asserted.",
+      "evidenceLocations": [
+        "Page 1, notice dated 21 August 2026, subject and body: closure of AY 2026-2027 admissions; body states UG/PG admissions offered at CUTN Campus are closed."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "courses",
+      "value": [
+        "B.Sc. Applied Psychology (Hons./Research)",
+        "B.Sc. Biotechnology (Hons./Research)",
+        "B.Sc. Chemistry (Hons./Research)",
+        "B.Sc. Epidemiology and Public Health (Hons./Research)",
+        "B.Sc. Geography (Hons./Research)",
+        "B.Sc. Geology (Hons./Research)",
+        "B.Sc. Mathematics (Hons./Research)",
+        "B.Sc. Microbiology (Hons./Research)",
+        "B.Sc. Physics (Hons./Research)",
+        "B.Sc. Statistics (Hons./Research)",
+        "B.Tech. Computer Science and Engineering",
+        "B.Tech. Materials Science and Technology",
+        "B.A. Economics (Hons./Research)",
+        "B.A. English (Hons./Research)",
+        "B.A. History (Hons./Research)",
+        "B.A. Mass Communication (Hons./Research)",
+        "B.A. Tamil (Hons./Research)",
+        "B.B.A. (Hons./Research)",
+        "B.B.A. Tourism and Hospitality Management (Hons./Research)",
+        "B.Com. (Hons./Research)",
+        "B.P.A. Music (Hons./Research)",
+        "B.S.W. Social Work (Hons./Research)"
+      ],
+      "sourceIds": ["cutn-ug-programmes-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official UG admissions page, lines 355-367 identifies the four-year UG (Hons./Research) 2026 cycle; lines 370-393 list the programmes with provisional merit lists. The page separately links an admission-closure notice. Scope is the listed cycle/programmes, not a permanent catalogue or seat matrix.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. (Hons./Research) Chemistry",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": ["cutn-cuet-ug-eligibility-revised-2026"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official eligibility PDF page 1, row 1 states Four Year B.Sc. (Hons./Research), Chemistry. Historical 2026-27 programme scope; admission closure is documented at https://cutn.ac.in/wp-content/uploads/2026/08/Admission_Closure_AY_2026-2027_27082026.pdf, page 1 (notice dated 2026-08-21).",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Sc. (Hons./Research) Chemistry",
+        "route": "CUET (UG) 2026 programme subject mapping",
+        "category": "General",
+        "exam": "CUET (UG) 2026",
+        "eligibility": "Pass in 10+2 or equivalent with 60% marks; mapped subjects are Chemistry, Physics and Mathematics or Biology. Historical AY 2026-27 requirement; admission process closed 2026-08-21."
+      },
+      "sourceIds": ["cutn-cuet-ug-eligibility-revised-2026"],
+      "academicYear": "2026-27",
+      "validUntil": "2026-08-21",
+      "evidenceLocation": "Official eligibility PDF page 1, row 1. Historical expiry is corroborated by CUTN's separate closure notice at https://cutn.ac.in/wp-content/uploads/2026/08/Admission_Closure_AY_2026-2027_27082026.pdf, page 1, dated 2026-08-21. Do not show as current admissions advice.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Sc. (Hons./Research) Chemistry",
+        "route": "CUET (UG) 2026 programme subject mapping",
+        "category": "OBC (NCL)/EWS",
+        "exam": "CUET (UG) 2026",
+        "eligibility": "Pass in 10+2 or equivalent with 55% marks; mapped subjects are Chemistry, Physics and Mathematics or Biology. Historical AY 2026-27 requirement; admission process closed 2026-08-21."
+      },
+      "sourceIds": ["cutn-cuet-ug-eligibility-revised-2026"],
+      "academicYear": "2026-27",
+      "validUntil": "2026-08-21",
+      "evidenceLocation": "Official eligibility PDF page 1, row 1. Historical expiry is corroborated by CUTN's separate closure notice at https://cutn.ac.in/wp-content/uploads/2026/08/Admission_Closure_AY_2026-2027_27082026.pdf, page 1, dated 2026-08-21. Category grouping follows the source's exact OBC (NCL)/EWS grouping; do not split further.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Sc. (Hons./Research) Chemistry",
+        "route": "CUET (UG) 2026 programme subject mapping",
+        "category": "SC/ST/PWD",
+        "exam": "CUET (UG) 2026",
+        "eligibility": "Pass in 10+2 or equivalent with 50% marks; mapped subjects are Chemistry, Physics and Mathematics or Biology. Historical AY 2026-27 requirement; admission process closed 2026-08-21."
+      },
+      "sourceIds": ["cutn-cuet-ug-eligibility-revised-2026"],
+      "academicYear": "2026-27",
+      "validUntil": "2026-08-21",
+      "evidenceLocation": "Official eligibility PDF page 1, row 1. Historical expiry is corroborated by CUTN's separate closure notice at https://cutn.ac.in/wp-content/uploads/2026/08/Admission_Closure_AY_2026-2027_27082026.pdf, page 1, dated 2026-08-21. Category grouping follows the source's exact SC/ST/PWD grouping; do not split further.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "field": "admissions",
+      "value": "Historical notice: the University stated that all UG and PG admissions offered at CUTN Campus for AY 2026-2027 were closed by notice dated 21 August 2026. This is not a current open application or next-cycle deadline.",
+      "sourceIds": ["cutn-admission-closure-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official closure notice, page 1, dated 2026-08-21; subject and body identify all UG/PG admissions at CUTN Campus as closed.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchDisposition": [
+    {
+      "institutionSlug": "central-university-of-tamil-nadu",
+      "status": "STAGEABLE_HISTORICAL_2026_27_CYCLE",
+      "sources": [
+        "https://cutn.ac.in/admissions-integrated-ug-4years-programmes/",
+        "https://cutn.ac.in/wp-content/uploads/2026/03/Revised_Eligibility_Criteria_Domain_subjects_for_CUET_UG_2026_27032026.pdf",
+        "https://cutn.ac.in/wp-content/uploads/2026/08/Admission_Closure_AY_2026-2027_27082026.pdf",
+        "https://cutn.ac.in/wp-content/uploads/2021/11/CUTN_IT_Policy_2021.pdf"
+      ],
+      "note": "Official admissions materials identify a 22-program four-year UG list, Chemistry programme duration and category-specific CUET UG 2026 eligibility. The cycle was explicitly closed on 2026-08-21, so all cycle claims are historical and the three eligibility claims carry validUntil. The B.Sc. Materials Science candidate from the eligibility table was not staged because a linked CUTN corrigendum withdraws that programme; the page's distinct B.Tech Materials Science and Technology entry remains in the list. Fee, hostel, scholarship, placement and accreditation facts were not asserted. Keep all claims unreviewed, verify campus scope and assess public factual reuse before approval."
+    }
+  ],
+  "counts": {
+    "institutionsFollowedUp": 1,
+    "previouslyNoStageableInstitutionsRevisited": 1,
+    "claimsEligibleForStaging": 6,
+    "claimsStaged": 6,
+    "claimsReusedOnImmediateRetry": 6,
+    "claimsHeldForConflictOrReuseReview": 0,
+    "institutionsHeld": 0,
+    "genuineVerifiedClaims": 0
+  }
+}

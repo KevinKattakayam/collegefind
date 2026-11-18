@@ -1,0 +1,63 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchedAt": "2026-11-18T03:30:30Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "access": "Manually opened public official HTML pages for NIT Rourkela, IIT Roorkee, MNNIT Allahabad/Prayagraj and Anna University. No login, automation, CAPTCHA bypass or access-control bypass.",
+    "reuse": "NIT Rourkela's official copyright policy permits accurate reproduction with prominent source acknowledgement, except third-party-owned material. The staged candidate uses a concise factual summary from an NIT Rourkela page, with exact URL and line locator; no text/table/document is copied. IIT Roorkee, MNNIT and Anna University reuse permissions for this intended factual extraction were not established, so no claims from those institutions are importable in this batch.",
+    "review": "Candidate remains a machine-researched draft. It must not be shown as verified or public until an authorized reviewer checks the current admissions rule, source scope and evidence, then explicitly approves it."
+  },
+  "sources": [
+    {
+      "id": "nitrkl-ug-admission-route-2026-11",
+      "institutionSlug": "nit-rourkela",
+      "publisher": "National Institute of Technology Rourkela",
+      "url": "https://www.nitrkl.ac.in/Academic/UGProgramme/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T03:30:30Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "The institution's official Copyright Policy (https://www.nitrkl.ac.in/Home/Copyright/) permits accurate reproduction in any format/media with prominent source acknowledgement, except third-party-owned material, and prohibits derogatory or misleading context. This record keeps only a concise fact with attribution/link and line locator; no bulk page/document reproduction. The cited admission page does not display an applicable academic year or publication date, so current-year eligibility details are intentionally omitted and must be checked against JoSAA/MoE.",
+      "evidenceLocations": ["Lines 193-208: JoSAA joint seat allocation, NIT Rourkela undergraduate admission basis (JEE Main), JoSAA criteria reference, and CSAB vacancies counselling"]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "nit-rourkela",
+      "field": "admissions",
+      "value": "The institute's undergraduate admission page says admissions are based on JEE Main, with UG allocation through JoSAA; CSAB conducts common counselling for vacant seats after JoSAA rounds. The page directs applicants to JoSAA and Ministry of Education criteria for detailed eligibility. No current-year eligibility threshold is asserted because the page does not state an applicable year.",
+      "sourceIds": ["nitrkl-ug-admission-route-2026-11"],
+      "academicYear": null,
+      "evidenceLocation": "Official NIT Rourkela Undergraduate Programme page, lines 193-208. Specifically, lines 197-198 state JEE Main and JoSAA/MoE criteria; lines 201-208 give the eligibility reference and CSAB vacancy-round role.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "notStagedFindings": [
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "sourceUrls": ["https://www.iitr.ac.in/Academics/Academic%20Information.html", "https://www.iitr.ac.in/Academics/Admission%20To%20Undergraduate%20Programmes.html"],
+      "finding": "Official academic/admission pages are readable and describe programme counts/routes and 2026-27 UG admissions. The opened general IIT Roorkee pages did not establish reuse permission for this intended storage/publication use; nearby department/club policies are not assumed to govern the institute-wide pages. No claims staged pending policy confirmation. Programme counts also differ between pages and need reviewer reconciliation before a claim is selected.",
+      "reviewState": "NOT_STAGED_REUSE_AND_CONFLICT_REVIEW_REQUIRED"
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "sourceUrls": ["https://mnnit.ac.in/admission"],
+      "finding": "Official admission page is readable and shows undergraduate routes (CSAB/JEE Main links) but refers programme details to an academic portal. An institute-wide reuse policy for the intended factual extraction was not established. No claim staged.",
+      "reviewState": "NOT_STAGED_REUSE_CONDITIONS_UNRESOLVED"
+    },
+    {
+      "institutionSlug": "anna-university",
+      "sourceUrls": ["https://cfa.annauniv.edu/"],
+      "finding": "Official Centre for Admissions page is readable and identifies 2026-27 UG admissions for University Departments and categories. The source/campus scope requires institution alias review, and reuse conditions for this intended extraction were not established. No claim staged.",
+      "reviewState": "NOT_STAGED_REUSE_AND_CAMPUS_SCOPE_REVIEW_REQUIRED"
+    }
+  ],
+  "databaseStage": {
+    "status": "BLOCKED",
+    "reason": "The previously used disposable PostgreSQL container and its temporary confirmation files are absent in the current environment; Docker socket access is denied. No database client was constructed and no claim was written. Reprovision and independently verify a fresh disposable target before applying this candidate.",
+    "candidateCount": 1,
+    "stagedCount": 0
+  }
+}

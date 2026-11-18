@@ -1,0 +1,136 @@
+{
+  "batch": 16,
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchBatchScope": "TARGETED_FOLLOW_UP_OF_PRIOR_NO_STAGEABLE_DISPOSITIONS",
+  "researchedAt": "2026-11-18T09:18:39Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "method": "Manual inspection of official public HTML/PDF pages and official policy pages; no login, CAPTCHA, access-control or rate-limit bypass; no automated bulk fetch.",
+    "factualUse": "Keep concise factual values, source links and exact evidence locations. Do not copy page prose, full tables or documents. Public availability and citation do not by themselves establish permission for bulk redistribution.",
+    "institutionDispositions": {
+      "indian-institute-of-technology-kanpur": "No explicit reuse licence was located for the cited DoAA manual during this bounded check. Candidate contains only concise factual programme/admissions summaries and a source link. Keep staged and require human source/currency review before publication; do not bulk extract or redistribute the PDF.",
+      "indian-institute-of-technology-roorkee": "Official 2025 UG ordinance is accessible, but the previously checked undated Academic Information page differs in programme coverage. Do not stage until an authorized reviewer reconciles the current source of truth.",
+      "national-institute-of-technology-warangal": "Official website policy permits direct links without prior permission but says reproduction requires permission by mail and acknowledgement. Keep factual candidates research-only pending an owner/legal determination or written permission before storing/publishing them as reproduced site material."
+    }
+  },
+  "sources": [
+    {
+      "id": "iitk-doaa-ug-manual-2026-11",
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "publisher": "Indian Institute of Technology Kanpur, Dean of Academic Affairs",
+      "url": "https://iitk.ac.in/doaa/data/UG_Manual.pdf",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T09:18:39Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official public manual read manually. No explicit reuse licence located for the manual in this bounded check. Store concise attributed facts and the link only; do not copy the document, substantial text or full tables. Reviewer must resolve the current programme-list discrepancy with the undated public UG page before approval.",
+      "evidenceLocations": [
+        "UG Manual, printed pp. 5-6, §§2.1.1-2.1.3: B.Tech and B.S. programmes, JEE Advanced, annual July intake, separate Olympiad routes and Bachelor in Cybersecurity test/hackathon route."
+      ]
+    }
+  ],
+  "supportingResearchSources": [
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "publisher": "Indian Institute of Technology Roorkee",
+      "url": "https://iitr.ac.in/Academics/static/Notifications/UG%20Notifications/72.5_UG_Ordinance_BoG.pdf",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T09:18:39Z",
+      "access": "PUBLIC_PDF_READ",
+      "evidenceLocation": "Printed p. 5, Table 1; UG programmes and stated durations. No publication date was established.",
+      "reuseConditions": "Accessible official PDF, read manually. No institute-wide reuse permission was established in this check; no PDF or copied table stored. Hold extracted programme values for conflict review against the older undated Academic Information page."
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-warangal",
+      "publisher": "National Institute of Technology Warangal, Department of Biotechnology",
+      "url": "https://beta.nitw.ac.in/biotech/academic-programmes/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T09:18:39Z",
+      "access": "PUBLIC_HTML_READ",
+      "evidenceLocation": "Biotechnology B.Tech section, lines 24-26: four-year duration, national JEE Main followed by JoSAA/CSAB, and Physics/Chemistry/Mathematics at 10+2.",
+      "reuseConditions": "Official page publicly viewable. Its linked website policy says reproduction of site material requires permission by email and prominent acknowledgement. Direct linking is permitted without prior permission. No fact was staged pending permission/legal review."
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-warangal",
+      "publisher": "National Institute of Technology Warangal, Centre for Digital Infrastructure and Services",
+      "url": "https://nitw.ac.in/cdis/itpolicy",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T09:18:39Z",
+      "access": "PUBLIC_HTML_READ",
+      "evidenceLocation": "Website Policy, Copyright Policy and Links to the NIT Warangal Website by Other Websites sections.",
+      "reuseConditions": "The policy states that material may be reproduced after obtaining permission by mail with source acknowledgement; third-party copyright remains excluded. It allows direct links without prior permission but prohibits framing. Manual reading did not bypass access controls."
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "field": "courses",
+      "value": [
+        "B.Tech — Aerospace Engineering (4 years)",
+        "B.Tech — Biological Sciences and Bioengineering (4 years)",
+        "B.Tech — Chemical Engineering (4 years)",
+        "B.Tech — Civil Engineering (4 years)",
+        "B.Tech — Computer Science and Engineering (4 years)",
+        "B.Tech — Electrical Engineering (4 years)",
+        "B.Tech — Mechanical Engineering (4 years)",
+        "B.Tech — Material Science and Engineering (4 years)",
+        "B.Tech — Intelligent Systems (4 years)",
+        "B.S. — Chemistry (4 years)",
+        "B.S. — Earth Sciences (4 years)",
+        "B.S. — Economic Sciences (4 years)",
+        "B.S. — Mathematics and Scientific Computing (4 years)",
+        "B.S. — Physics (4 years)",
+        "B.S. — Statistics and Data Sciences (4 years)"
+      ],
+      "sourceIds": ["iitk-doaa-ug-manual-2026-11"],
+      "academicYear": null,
+      "evidenceLocation": "UG Manual printed p. 5, §2.1.1, lines 227-230 in the accessible text: current B.Tech/B.S. list and four-year duration. The undated public DoAA UG page omits Intelligent Systems; reviewer must reconcile before approval.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "field": "admissions",
+      "value": "The DoAA UG Manual lists JEE Advanced admission to B.Tech and B.S. programmes with annual July intake; it separately describes Olympiad routes for specified B.Tech/B.S. programmes and a test/hackathon route for Bachelor in Cybersecurity. It directs applicants to annual DoAA notices for eligibility rules; this summary does not state a current-cycle eligibility threshold.",
+      "sourceIds": ["iitk-doaa-ug-manual-2026-11"],
+      "academicYear": null,
+      "evidenceLocation": "UG Manual printed p. 5, §§2.1.1-2.1.3, lines 224-242. No current-cycle eligibility criteria asserted.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchDisposition": [
+    {
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "status": "STAGEABLE_WITH_REVIEW_CAVEAT",
+      "sources": ["https://iitk.ac.in/doaa/data/UG_Manual.pdf", "https://iitk.ac.in/doaa/under-graduate-programme"],
+      "note": "Current official DoAA manual identifies current programmes and admission routes. The public DoAA page is undated and omits Intelligent Systems. Claims are staged unreviewed; reviewer must resolve the list difference and confirm whether the manual remains the current source before approval."
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "status": "RESEARCHED_HELD_CONFLICT_REVIEW_REQUIRED",
+      "sources": ["https://iitr.ac.in/Academics/static/Notifications/UG%20Notifications/72.5_UG_Ordinance_BoG.pdf", "https://www.iitr.ac.in/Academics/Academic%20Information.html"],
+      "note": "The official UG ordinance has a programme/duration table (printed p. 5, Table 1); the previously researched Academic Information page differs. No claim staged until source recency and list differences are resolved. The cited ordinance has no verified publication date in the reviewed material."
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-warangal",
+      "status": "RESEARCHED_HELD_REPRODUCTION_PERMISSION_REQUIRED",
+      "sources": ["https://beta.nitw.ac.in/biotech/academic-programmes/", "https://nitw.ac.in/cdis/itpolicy"],
+      "note": "Official Biotechnology page provides a four-year B.Tech, JEE Main/JoSAA/CSAB route and PCM condition; the official website policy allows direct linking but requires permission by email to reproduce material. No evidence was staged pending written permission or a legal determination that the narrowly factual claims may be stored and published without it."
+    }
+  ],
+  "counts": {
+    "institutionsFollowedUp": 3,
+    "claimsEligibleForStaging": 2,
+    "claimsStaged": 2,
+    "claimsReusedOnImmediateRetry": 2,
+    "claimsHeldForConflictOrReuseReview": 0,
+    "institutionsHeld": 2,
+    "genuineVerifiedClaims": 0
+  }
+}

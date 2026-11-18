@@ -1,4 +1,29 @@
 import { expect, test } from '@playwright/test';
+import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+import pg from 'pg';
+import { assertDisposableTestTarget } from '../integration/target';
+
+let fixtureDb: PrismaClient;
+test.beforeAll(async () => {
+ fixtureDb = new PrismaClient({ adapter: new PrismaPg(new pg.Pool({ connectionString: assertDisposableTestTarget() })) });
+ // The browser suite must not depend on a pre-seeded runtime database. These
+ // explicitly synthetic DEMO rows exercise trusted filters against tempting
+ // non-null sample metrics without making them public facts.
+ await fixtureDb.college.createMany({
+  data: Array.from({ length: 20 }, (_, i) => ({
+   slug: `e2e-demo-filter-fixture-${i + 1}`,
+   name: `E2E Demo Filter Fixture ${i + 1}`,
+   shortName: `E2E Demo ${i + 1}`,
+   city: 'Synthetic', state: 'Synthetic', type: 'GOVERNMENT' as const,
+   dataStatus: 'DEMO' as const, courses: ['Synthetic B.Tech'],
+   annualFees: 125000 + i, placementPct: 90 + (i % 10), avgPackage: 18 + i,
+   highestPackage: 40 + i, naacGrade: 'A++', metricsYear: 2026,
+  })),
+  skipDuplicates: true,
+ });
+});
+test.afterAll(async () => { await fixtureDb?.$disconnect(); });
 
 test('demo college details and recommendations never promote demo peers', async ({ page, request }) => {
  const catalogue = await (await request.get('/api/colleges?limit=1')).json();
@@ -67,7 +92,9 @@ test('a real local session can save and retrieve a college without leaking demo 
  expect(forbidden.status()).toBe(403);
  const first=page.getByRole('article').first();
  await expect(first).toBeVisible();
+ const saveResponse=page.waitForResponse(response=>new URL(response.url()).pathname==='/api/saved'&&response.request().method()==='POST');
  await first.getByRole('button',{name:/^Save /}).click();
+ expect((await saveResponse).status()).toBe(201);
  await page.goto('/saved');
  await expect(page.getByRole('article').first()).toBeVisible();
  const saved=await page.request.get('/api/saved');

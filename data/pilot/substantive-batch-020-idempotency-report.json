@@ -1,0 +1,125 @@
+{
+  "status": "STAGED",
+  "facts": 14,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 14,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "admissions",
+      "evidenceId": "cmwm3rj6a0003hxtvu3e41wts",
+      "sourceId": "cmwm3rj5t0000hxtvrm0mvlbw",
+      "sourceUrl": "https://mnnit.ac.in/images/newstories/2026/notices/Annual_Report_Audit_Report_for_the_year_2024-25_English.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "admissions",
+      "evidenceId": "cmwm3rj6j0005hxtv6pgreyrr",
+      "sourceId": "cmwm3rj5t0000hxtvrm0mvlbw",
+      "sourceUrl": "https://mnnit.ac.in/images/newstories/2026/notices/Annual_Report_Audit_Report_for_the_year_2024-25_English.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "admissions",
+      "evidenceId": "cmwm3rj6p0007hxtv20ylzhdu",
+      "sourceId": "cmwm3rj5t0000hxtvrm0mvlbw",
+      "sourceUrl": "https://mnnit.ac.in/images/newstories/2026/notices/Annual_Report_Audit_Report_for_the_year_2024-25_English.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "admissions",
+      "evidenceId": "cmwm3rj6x0009hxtvbie4s2ya",
+      "sourceId": "cmwm3rj5t0000hxtvrm0mvlbw",
+      "sourceUrl": "https://mnnit.ac.in/images/newstories/2026/notices/Annual_Report_Audit_Report_for_the_year_2024-25_English.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "structured.placement",
+      "evidenceId": "cmwm3rj75000bhxtvbr105oe7",
+      "sourceId": "cmwm3rj5t0000hxtvrm0mvlbw",
+      "sourceUrl": "https://mnnit.ac.in/images/newstories/2026/notices/Annual_Report_Audit_Report_for_the_year_2024-25_English.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "structured.placement",
+      "evidenceId": "cmwm3rj78000dhxtvxa99f78a",
+      "sourceId": "cmwm3rj5t0000hxtvrm0mvlbw",
+      "sourceUrl": "https://mnnit.ac.in/images/newstories/2026/notices/Annual_Report_Audit_Report_for_the_year_2024-25_English.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured.programme",
+      "evidenceId": "cmwm3rj7h000ghxtvd5oug9a1",
+      "sourceId": "cmwm3rj5x0001hxtv709v1scg",
+      "sourceUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured.admission",
+      "evidenceId": "cmwm3rj7m000ihxtvcl5fvgh7",
+      "sourceId": "cmwm3rj5x0001hxtv709v1scg",
+      "sourceUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured.admission",
+      "evidenceId": "cmwm3rj7r000khxtv48tci1x7",
+      "sourceId": "cmwm3rj5x0001hxtv709v1scg",
+      "sourceUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured.admission",
+      "evidenceId": "cmwm3rj7w000mhxtvccnywbon",
+      "sourceId": "cmwm3rj5x0001hxtv709v1scg",
+      "sourceUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured.admission",
+      "evidenceId": "cmwm3rj80000ohxtvy3cxiijo",
+      "sourceId": "cmwm3rj5x0001hxtv709v1scg",
+      "sourceUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured.admission",
+      "evidenceId": "cmwm3rj83000qhxtvl0ix461v",
+      "sourceId": "cmwm3rj5x0001hxtv709v1scg",
+      "sourceUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured.admission",
+      "evidenceId": "cmwm3rj87000shxtvgnaqbzi8",
+      "sourceId": "cmwm3rj5x0001hxtv709v1scg",
+      "sourceUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured.admission",
+      "evidenceId": "cmwm3rj8a000uhxtv2w9yvotv",
+      "sourceId": "cmwm3rj5x0001hxtv709v1scg",
+      "sourceUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

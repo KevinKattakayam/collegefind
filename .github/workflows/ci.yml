@@ -121,6 +121,8 @@ jobs:
       - name: Browser tests
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/collegefind_e2e_test
+          TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/collegefind_e2e_test
+          COLLEGEFIND_TEST_DATABASE_CONFIRMED: 'true'
           NEXTAUTH_URL: http://127.0.0.1:3100
         run: |
           npx playwright install --with-deps chromium

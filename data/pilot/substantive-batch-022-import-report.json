@@ -1,0 +1,77 @@
+{
+  "status": "STAGED",
+  "facts": 8,
+  "reviewState": "UNREVIEWED",
+  "staged": 8,
+  "reused": 0,
+  "createdSources": 2,
+  "createdRuns": 2,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "christian-medical-college",
+      "field": "structured.programme",
+      "evidenceId": "cmwm4trco00033otvuxm011a4",
+      "sourceId": "cmwm4trc100003otvg4yuwlx5",
+      "sourceUrl": "https://www.cmch-vellore.edu/wp-content/uploads/sites/14/2026/11/college-prospectus-2026-2027-revised.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "christian-medical-college",
+      "field": "structured.admission",
+      "evidenceId": "cmwm4trcw00053otvyei1v0kf",
+      "sourceId": "cmwm4trc100003otvg4yuwlx5",
+      "sourceUrl": "https://www.cmch-vellore.edu/wp-content/uploads/sites/14/2026/11/college-prospectus-2026-2027-revised.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "christian-medical-college",
+      "field": "structured.fee",
+      "evidenceId": "cmwm4trd200073otvpjb30qsw",
+      "sourceId": "cmwm4trc100003otvg4yuwlx5",
+      "sourceUrl": "https://www.cmch-vellore.edu/wp-content/uploads/sites/14/2026/11/college-prospectus-2026-2027-revised.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "christian-medical-college",
+      "field": "structured.fee",
+      "evidenceId": "cmwm4trd800093otv75rxgw3y",
+      "sourceId": "cmwm4trc100003otvg4yuwlx5",
+      "sourceUrl": "https://www.cmch-vellore.edu/wp-content/uploads/sites/14/2026/11/college-prospectus-2026-2027-revised.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "christian-medical-college",
+      "field": "structured.fee",
+      "evidenceId": "cmwm4trde000b3otv3mxgmt8z",
+      "sourceId": "cmwm4trc100003otvg4yuwlx5",
+      "sourceUrl": "https://www.cmch-vellore.edu/wp-content/uploads/sites/14/2026/11/college-prospectus-2026-2027-revised.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "field": "structured.programme",
+      "evidenceId": "cmwm4trdq000e3otv3n56x97j",
+      "sourceId": "cmwm4trc700013otv3n8ssbs3",
+      "sourceUrl": "https://www.iimb.ac.in/sites/default/files/inline-files/PGP-2026%20admissions%20process.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "field": "structured.admission",
+      "evidenceId": "cmwm4trdu000g3otvqdlcaeqg",
+      "sourceId": "cmwm4trc700013otv3n8ssbs3",
+      "sourceUrl": "https://www.iimb.ac.in/sites/default/files/inline-files/PGP-2026%20admissions%20process.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "field": "structured.admission",
+      "evidenceId": "cmwm4trdy000i3otv3e8lemjl",
+      "sourceId": "cmwm4trc700013otv3n8ssbs3",
+      "sourceUrl": "https://www.iimb.ac.in/sites/default/files/inline-files/PGP-2026%20admissions%20process.pdf",
+      "status": "STAGED"
+    }
+  ],
+  "databaseChanged": true
+}

@@ -1,5 +1,9 @@
 import { comparisonFixture } from './fixtures';
 import { expect, test } from '@playwright/test';
+import { randomUUID } from 'node:crypto';
+import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+import { assertDisposableTestTarget } from '../integration/target';
 
 /**
  * Smoke tests against a built app with a seeded database.
@@ -13,14 +17,28 @@ test('home page states what the product does without fake social proof', async (
 });
 
 test('a visitor can search and open a college', async ({ page }) => {
-  await page.goto('/colleges');
-  await page.getByLabel('Search colleges, cities, or states').fill('Synthetic');
-  await expect(page).toHaveURL(/search=Synthetic/);
-  const result = page.getByRole('article').filter({ hasText: 'Synthetic' }).first();
-  await expect(result).toBeVisible({ timeout: 10_000 });
-  await result.getByRole('link', { name: 'View details' }).click();
-  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-  await expect(page.getByText('Demo data').first()).toBeVisible();
+  const connectionString = assertDisposableTestTarget();
+  expect(process.env.DATABASE_URL).toBe(connectionString);
+  const db = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+  const slug = `synthetic-search-${randomUUID()}`;
+  const name = `Synthetic Search College ${slug.slice(-12)}`;
+  try {
+    await db.college.create({
+      data: { slug, name, shortName: 'Synthetic Search', city: 'Test City', state: 'Test State', type: 'PRIVATE', dataStatus: 'DEMO' },
+    });
+    await page.goto('/colleges');
+    await page.getByLabel('Search colleges, cities, or states').fill(name);
+    await expect.poll(() => new URL(page.url()).searchParams.get('search')).toBe(name);
+    const result = page.getByRole('article').filter({ hasText: name });
+    await expect(result).toBeVisible({ timeout: 10_000 });
+    await result.getByRole('link', { name: 'View details' }).click();
+    await expect(page).toHaveURL(new RegExp(`/colleges/${slug}$`));
+    await expect(page.getByRole('heading', { level: 1, name })).toBeVisible();
+    await expect(page.getByText('Demo data').first()).toBeVisible();
+  } finally {
+    try { await db.college.deleteMany({ where: { slug } }); }
+    finally { await db.$disconnect(); }
+  }
 });
 
 test('a missing college returns a real 404', async ({ page }) => {

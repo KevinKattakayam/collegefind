@@ -1,0 +1,487 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_TYPED_IMPORT_CANDIDATES",
+  "batch": 7,
+  "researchedAt": "2026-11-18T03:56:21Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "provider": "Ministry of Education, Government of India — National Institutional Ranking Framework (NIRF)",
+    "access": "Official 2025 report PDF opened directly over public HTTPS; manually inspected the Engineering top-100 table. The separate NIRF ranking HTML returned 403 and was not used. No authentication, automated collection, access-control bypass or DCS data was used.",
+    "factualUse": "The repository provider register allows link/citation for public NIRF ranking outputs; this batch records only rank, category, year and exact source row, without copying report prose, charts, scores or institution-submitted DCS information.",
+    "redistribution": "No explicit bulk report/reuse license was identified for the PDF. These are limited internal research candidates, not a bulk re-publication; do not enable public display until the reviewer verifies the source, institution match and intended-use policy. Link and attribution must accompany any approved claim.",
+    "review": "All 25 remain RESEARCHED_UNREVIEWED candidates. No human decision was simulated."
+  },
+  "sources": [
+    {
+      "id": "nirf-india-rankings-2025-engineering-report",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "retrievedAt": "2026-11-18T03:56:21Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Public India Rankings output may be linked and cited under the existing provider register. No explicit bulk reuse license was identified for the report. Only individual rank/category/year facts and source row locators are retained; no DCS submissions, report prose, charts, score values or PDF copy are stored. Review intended-use policy before public display.",
+      "evidenceLocation": "India Rankings 2025 report, section 9.10 “Top 100 in Engineering”, table rows at parser lines 2679–2779; exact row per candidate."
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "iit-indore",
+      "institutionName": "IIT Indore",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 12
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2681; reported institute name: IIT Indore; rank 12.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "iit-bhu-varanasi",
+      "institutionName": "IIT BHU Varanasi",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 10
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2679; reported institute name: IIT BHU Varanasi; rank 10.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "iit-bhubaneswar",
+      "institutionName": "IIT Bhubaneswar",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 39
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2718; reported institute name: IIT Bhubaneswar; rank 39.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "jadavpur-university",
+      "institutionName": "Jadavpur University",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 18
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2687; reported institute name: Jadavpur University; rank 18.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "iit-mandi",
+      "institutionName": "IIT Mandi",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 26
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2695; reported institute name: IIT Mandi; rank 26.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "iit-jodhpur",
+      "institutionName": "IIT Jodhpur",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 27
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2696; reported institute name: IIT Jodhpur; rank 27.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "thapar-institute-of-engineering",
+      "institutionName": "Thapar Institute of Engineering",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 29
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2698; reported institute name: Thapar Institute of Engineering; rank 29.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "iit-ropar",
+      "institutionName": "IIT Ropar",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 32
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2701; reported institute name: IIT Ropar; rank 32.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "malaviya-national-institute-of-technology",
+      "institutionName": "Malaviya National Institute of Technology",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 42
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2721; reported institute name: Malaviya National Institute of Technology; rank 42.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "nit-durgapur",
+      "institutionName": "NIT Durgapur",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 49
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2728; reported institute name: NIT Durgapur; rank 49.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "nit-silchar",
+      "institutionName": "NIT Silchar",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 50
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2729; reported institute name: NIT Silchar; rank 50.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "birla-institute-of-technology-mesra",
+      "institutionName": "Birla Institute of Technology Mesra",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 51
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2730; reported institute name: Birla Institute of Technology Mesra; rank 51.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "nit-patna",
+      "institutionName": "NIT Patna",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 53
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2732; reported institute name: NIT Patna; rank 53.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "iiit-delhi",
+      "institutionName": "IIIT Delhi",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 63
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2742; reported institute name: IIIT Delhi; rank 63.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "iit-palakkad",
+      "institutionName": "IIT Palakkad",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 64
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2743; reported institute name: IIT Palakkad; rank 64.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "nit-delhi",
+      "institutionName": "NIT Delhi",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 65
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2744; reported institute name: NIT Delhi; rank 65.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "institutionName": "NIT Jamshedpur",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 82
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2764; reported institute name: NIT Jamshedpur; rank 82.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "nit-meghalaya",
+      "institutionName": "NIT Meghalaya",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 83
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2765; reported institute name: NIT Meghalaya; rank 83.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "institutionName": "NIT Kurukshetra",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 85
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2767; reported institute name: NIT Kurukshetra; rank 85.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "nit-raipur",
+      "institutionName": "NIT Raipur",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 86
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2768; reported institute name: NIT Raipur; rank 86.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "nit-hamirpur",
+      "institutionName": "NIT Hamirpur",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 97
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2779; reported institute name: NIT Hamirpur; rank 97.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "nit-puducherry",
+      "institutionName": "NIT Puducherry",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 99
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2781; reported institute name: NIT Puducherry; rank 99.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "iit-jammu",
+      "institutionName": "IIT Jammu",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 56
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2735; reported institute name: IIT Jammu; rank 56.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "iit-dharwad",
+      "institutionName": "IIT Dharwad",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 77
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2759; reported institute name: IIT Dharwad; rank 77.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "institutionName": "IIT Bhilai",
+      "field": "nirfRanking",
+      "value": {
+        "year": 2025,
+        "category": "Engineering",
+        "rank": 72
+      },
+      "sourceId": "nirf-india-rankings-2025-engineering-report",
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2751; reported institute name: IIT Bhilai; rank 72.",
+      "status": "RESEARCHED_PENDING_TYPED_IMPORT_AND_HUMAN_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "databaseStatus": "NOT_STAGED",
+      "stageable": false,
+      "blocker": "The existing fact importer only stages profile fields (courses/admissions/phone/email); typed NirfRanking import plus reviewer-queue visibility is not implemented. Do not write this into FieldEvidence or public projections."
+    }
+  ],
+  "dispositions": {
+    "institutionsAttempted": 25,
+    "institutionsMatchedToExistingCanonicalSlug": 25,
+    "ambiguousIdentity": 0,
+    "duplicateOrOutOfCatalogue": 0,
+    "claimsReadyForTypedAdapter": 25,
+    "claimsImported": 0,
+    "claimsVerified": 0
+  }
+}

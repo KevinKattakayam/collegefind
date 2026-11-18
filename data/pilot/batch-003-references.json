@@ -1,0 +1,189 @@
+[
+  {
+    "slug": "plaksha-university",
+    "publisher": "Plaksha University",
+    "url": "https://plaksha.edu.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "flame-university",
+    "publisher": "Flame University",
+    "url": "https://www.flame.edu.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "woxsen-university",
+    "publisher": "Woxsen University",
+    "url": "https://woxsen.edu.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "sai-university",
+    "publisher": "Sai University",
+    "url": "https://www.saiuniversity.edu.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "iit-bhu-varanasi",
+    "publisher": "IIT BHU Varanasi",
+    "url": "https://iitbhu.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "iit-indore",
+    "publisher": "IIT Indore",
+    "url": "https://www.iiti.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "iit-palakkad",
+    "publisher": "IIT Palakkad",
+    "url": "https://iitpkd.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "nit-rourkela",
+    "publisher": "NIT Rourkela",
+    "url": "https://www.nitrkl.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "nit-durgapur",
+    "publisher": "NIT Durgapur",
+    "url": "https://nitdgp.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "nit-silchar",
+    "publisher": "NIT Silchar",
+    "url": "https://www.nits.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "nit-agartala",
+    "publisher": "NIT Agartala",
+    "url": "https://www.nita.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "nit-meghalaya",
+    "publisher": "NIT Meghalaya",
+    "url": "https://nitm.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "iiit-bangalore",
+    "publisher": "IIIT Bangalore",
+    "url": "https://www.iiitb.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "iiit-allahabad",
+    "publisher": "IIIT Allahabad",
+    "url": "https://www.iiita.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "delhi-technological-university",
+    "publisher": "Delhi Technological University",
+    "url": "https://dtu.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "pec-chandigarh",
+    "publisher": "PEC Chandigarh",
+    "url": "https://pec.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "iim-indore",
+    "publisher": "IIM Indore",
+    "url": "https://iimidr.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  }
+]

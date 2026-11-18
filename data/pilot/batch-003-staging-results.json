@@ -1,0 +1,121 @@
+[
+  {
+    "slug": "plaksha-university",
+    "claimId": "cmwkyqnit00029gtvzf40si9i",
+    "sourceId": "cmwkyqnih00009gtv3zs6ylf9",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "flame-university",
+    "claimId": "cmwkyqnjc00069gtvxaxgokez",
+    "sourceId": "cmwkyqnj700049gtvk00cpnp9",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "woxsen-university",
+    "claimId": "cmwkyqnjo000a9gtvrr5naxh8",
+    "sourceId": "cmwkyqnjj00089gtv230qx47f",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "sai-university",
+    "claimId": "cmwkyqnk2000e9gtvx38zt6fh",
+    "sourceId": "cmwkyqnjw000c9gtvt7kvb48c",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iit-bhu-varanasi",
+    "claimId": "cmwkyqnke000i9gtvtk3u0ltg",
+    "sourceId": "cmwkyqnk9000g9gtvrwkp9h4r",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iit-indore",
+    "claimId": "cmwkyqnkr000m9gtv9uog1u8x",
+    "sourceId": "cmwkyqnkk000k9gtv8td3mn5a",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iit-palakkad",
+    "claimId": "cmwkyqnl9000q9gtvjiuk8j5n",
+    "sourceId": "cmwkyqnl0000o9gtvab4svvfo",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-rourkela",
+    "claimId": "cmwkyqnll000u9gtvtfp266ka",
+    "sourceId": "cmwkyqnlf000s9gtv4cwhwlq7",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-durgapur",
+    "claimId": "cmwkyqnly000y9gtv2fdr73j7",
+    "sourceId": "cmwkyqnlt000w9gtvn8yj3qdc",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-silchar",
+    "claimId": "cmwkyqnma00129gtvw6aoo3ga",
+    "sourceId": "cmwkyqnm500109gtvnziuma6p",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-agartala",
+    "claimId": "cmwkyqnml00169gtvf9ubpgmo",
+    "sourceId": "cmwkyqnmh00149gtv1kdzwo7n",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-meghalaya",
+    "claimId": "cmwkyqnmv001a9gtvj7qk5brj",
+    "sourceId": "cmwkyqnmr00189gtvxe4fam0g",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iiit-bangalore",
+    "claimId": "cmwkyqnn2001e9gtv3esbyq7f",
+    "sourceId": "cmwkyqnmz001c9gtv8dnp04y4",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iiit-allahabad",
+    "claimId": "cmwkyqnna001i9gtvb643f5js",
+    "sourceId": "cmwkyqnn7001g9gtvjhtt012e",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "delhi-technological-university",
+    "claimId": "cmwkyqnnk001m9gtvsz3xuttw",
+    "sourceId": "cmwkyqnnf001k9gtvxe4i8rgq",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "pec-chandigarh",
+    "claimId": "cmwkyqnnv001q9gtv5c9gemcn",
+    "sourceId": "cmwkyqnnq001o9gtv7u9lkyzm",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iim-indore",
+    "claimId": "cmwkyqno6001u9gtvwh0o3fyr",
+    "sourceId": "cmwkyqno1001s9gtvdu5yya6d",
+    "status": "STAGED",
+    "field": "website"
+  }
+]

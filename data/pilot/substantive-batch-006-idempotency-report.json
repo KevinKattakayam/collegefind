@@ -1,0 +1,21 @@
+{
+  "status": "STAGED",
+  "facts": 1,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 1,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "nit-rourkela",
+      "field": "admissions",
+      "evidenceId": "cmwlktkg0000260tv5opdrxmg",
+      "sourceId": "cmwlktkff000060tv2fbel19l",
+      "sourceUrl": "https://www.nitrkl.ac.in/Academic/UGProgramme/",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

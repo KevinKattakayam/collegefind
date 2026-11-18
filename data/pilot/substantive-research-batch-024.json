@@ -1,0 +1,208 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 24,
+  "researchedAt": "2026-11-18T13:47:02Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": "Direct manual reading of publicly accessible primary official pages/PDFs only. Store concise factual claims, attribution, exact URL, academic/reporting year where stated and page/section locator; do not store or republish source documents or expressive prose. Public access is not treated as a bulk extraction or redistribution licence. All imported facts remain UNREVIEWED pending a human decision and provider-use review.",
+  "sources": [
+    {
+      "id": "plaksha-ug-faq",
+      "institutionSlug": "plaksha-university",
+      "publisher": "Plaksha University",
+      "url": "https://plaksha.edu.in/programs/undergraduate/faqs",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T13:47:02Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official public FAQ page manually read. No explicit extracted-fact republication or bulk reuse licence identified. Stage concise facts with URL and locator only; do not copy descriptive prose. Human review must confirm source-use basis before publication.",
+      "evidenceLocations": ["FAQ lines 436-442: four-year BTech and four named interdisciplinary majors; lines 446-448: UGC Section 2(f) recognition (not staged in this batch)."]
+    },
+    {
+      "id": "plaksha-domestic-ug-admissions-2027-28",
+      "institutionSlug": "plaksha-university",
+      "publisher": "Plaksha University, Undergraduate Admissions",
+      "url": "https://plaksha.edu.in/admissions/undergraduate/domestic",
+      "publicationDate": null,
+      "academicYear": "2027-28",
+      "retrievedAt": "2026-11-18T13:47:02Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official domestic UG admissions page publicly opened and manually read; current 2027-28 application dates are explicitly shown. No express extraction/republication licence identified. Only concise values, official link and evidence locators are staged. Do not automate/bulk collect or copy page prose; source-use review required before publication.",
+      "evidenceLocations": ["Page lines 446-470: 2027-28 round deadlines; lines 471-497: application stages and merit-scholarship consideration; lines 498-505: Grade 12 eligibility and 2027-28 applicability; line 501: minimum full tuition concession/freeship provision."]
+    },
+    {
+      "id": "iiith-ug-programmes",
+      "institutionSlug": "iiit-hyderabad",
+      "publisher": "International Institute of Information Technology Hyderabad",
+      "url": "https://www.iiit.ac.in/undergraduate/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T13:47:02Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official IIIT Hyderabad undergraduate programme page publicly opened and manually read. Page does not date its programme list. No express fact extraction/republication licence identified; only short programme names and source locators are staged. Do not infer admission status or fees from this page. Human reviewer to confirm current applicability and source-use before publication.",
+      "evidenceLocations": ["Undergraduate in B.Tech Programmes, lines 157-173: B.Tech in CSE and B.Tech in ECE; footer lines 182-184 identifies IIIT Hyderabad."]
+    },
+    {
+      "id": "iitgn-btech-page",
+      "institutionSlug": "iit-gandhinagar",
+      "publisher": "Indian Institute of Technology Gandhinagar",
+      "url": "https://iitgn.ac.in/admissions/btech",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T13:47:02Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official IITGN BTech page publicly opened and manually read. No explicit licence for extracted facts, storage or bulk reuse identified. Store only concise programme information, exact link and locator; no page prose or documents. The page's dated 2026-27 registration notice is not staged as current admissions information.",
+      "evidenceLocations": ["BTech heading and lines 59-60: four-year degree, eight engineering disciplines and JEE route. Dated 2026-27 campus registration notice lines 61-64 was reviewed but not staged as current guidance."]
+    },
+    {
+      "id": "woxsen-bsc-fees-2027-31",
+      "institutionSlug": "woxsen-university",
+      "publisher": "Woxsen University, Hyderabad",
+      "url": "https://woxsen.edu.in/fsd/b.sc%20%28hons.%29fee.pdf",
+      "publicationDate": null,
+      "academicYear": "2027-31",
+      "retrievedAt": "2026-11-18T13:47:02Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official Woxsen B.Sc. (Hons.) Batch 2027-2031 fee PDF publicly opened and manually read. No express extraction/republication or bulk redistribution licence identified. Staged values are narrowly scoped fee components with exact page/line locator; source PDF/table is not stored or reproduced. Human reviewer must confirm the third-party accommodation supplier distinction, programme/category scope and source-use basis before publication.",
+      "evidenceLocations": ["PDF lines 0-16 identify residential B.Sc. (Hons.) Batch 2027-31 and Year 1/Year 2 tuition components; lines 21-39 distinguish standard/premium food and accommodation charges; lines 42-48 and 61 identify terms and scholarship applicability."]
+    },
+    {
+      "id": "gauhati-fyimp-faq",
+      "institutionSlug": "gauhati-university",
+      "publisher": "Gauhati University Admissions Portal",
+      "url": "https://admissions.gauhati.ac.in/faq/",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-18T13:47:02Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official admissions FAQ publicly opened and manually read. It identifies FYIMP as a main-campus Jalukbari programme and warns that specific programme notices govern. No express fact extraction/republication licence identified. Only concise values, year, link and locators are staged. The 2026-27 cycle may have ended; do not present admissions facts as current without cycle revalidation and reviewer decision.",
+      "evidenceLocations": ["FAQ lines 12-17 identify Five-Year Integrated Master's Programme on the GU main campus; lines 28-39 state 10+2 and CUET-UG requirements and Assam Samarth application route; lines 40-42 distinguish main-campus FYIMP from affiliated-college FYUGP; line 108 warns the FAQ is indicative."]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "plaksha-university",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "Four-year B.Tech with majors in Biological Systems Engineering, Computer Science & AI, Data Science/Economics/Business, and Robotics & Autonomous Systems", "level": "UG", "durationMonths": 48 },
+      "sourceIds": ["plaksha-ug-faq"],
+      "academicYear": null,
+      "evidenceLocation": "Official Plaksha UG FAQ lines 436-438 lists four-year B.Tech and four interdisciplinary majors. The programme page is current but does not identify a single intake year; no annual intake claim is made.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "plaksha-university",
+      "field": "structured",
+      "value": { "kind": "admission", "programme": "Undergraduate B.Tech, domestic applicants", "route": "Online application, virtual interview for shortlisted applicants, admission decision, then confirmation and payment", "category": "Indian citizens and NRIs holding an Indian passport", "eligibility": "Currently enrolled in or completed Grade 12 of a 10+2 system from a recognized national or international board or equivalent, with adequate English proficiency.", "applicationUrl": "https://btech-applications.plaksha.edu.in/" },
+      "sourceIds": ["plaksha-domestic-ug-admissions-2027-28"],
+      "academicYear": "2027-28",
+      "evidenceLocation": "Official domestic admissions page lines 471-495 describes the application stages; lines 498-499 states domestic applicant eligibility. Application URL is the portal linked from the same official page. The admissions cycle is 2027-28; this does not guarantee admission or imply a likelihood.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "plaksha-university",
+      "field": "structured",
+      "value": { "kind": "scholarship", "scheme": "Full tuition fee concession/freeship for students from weaker sections", "eligibility": "The admissions page states that full tuition concession/freeship is provided to a minimum of 5% of total student strength from among candidates belonging to weaker sections. Individual eligibility and award decisions require the university's current policy." , "url": "https://plaksha.edu.in/admissions/undergraduate/domestic" },
+      "sourceIds": ["plaksha-domestic-ug-admissions-2027-28"],
+      "academicYear": "2027-28",
+      "evidenceLocation": "Official domestic UG admissions page line 501. The page describes a minimum share of student strength and full tuition concession/freeship; it does not supply detailed household-income criteria. Do not infer individual eligibility or award certainty.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iiit-hyderabad",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "B.Tech in Computer Science and Engineering (CSE)", "level": "UG" },
+      "sourceIds": ["iiith-ug-programmes"],
+      "academicYear": null,
+      "evidenceLocation": "Official IIIT Hyderabad undergraduate programme page lines 157-163 lists the B.Tech in CSE. The page does not state duration or an academic-year start; neither is inferred.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iiit-hyderabad",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "B.Tech in Electronics and Communication Engineering (ECE)", "level": "UG" },
+      "sourceIds": ["iiith-ug-programmes"],
+      "academicYear": null,
+      "evidenceLocation": "Official IIIT Hyderabad undergraduate programme page lines 170-173 lists the B.Tech in ECE. The page does not state duration or an academic-year start; neither is inferred.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-gandhinagar",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "B.Tech programme in eight engineering disciplines", "level": "UG", "durationMonths": 48 },
+      "sourceIds": ["iitgn-btech-page"],
+      "academicYear": null,
+      "evidenceLocation": "Official IITGN BTech page lines 59-60 lists the four-year programme and eight disciplines. The separate 2026-27 registration notice is not being represented as current admissions guidance.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "B.Sc. (Hons.) residential programme, Batch 2027-2031", "category": "Year 1; Batch 2027-2031", "component": "Tuition Fee, Part 2 Academic Fee", "feeType": "TUITION", "period": "YEAR", "amountInr": 185000 },
+      "sourceIds": ["woxsen-bsc-fees-2027-31"],
+      "academicYear": "2027-31",
+      "evidenceLocation": "Official Woxsen PDF lines 10-16: tuition table, Year 1 Part 2 Academic Fee INR 185,000. This is one component, not the total tuition-inclusive fee; admission commitment and learning resources are separately charged.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "B.Sc. (Hons.) residential programme, Batch 2027-2031", "category": "Year 1 standard plan; non-AC, triple sharing", "component": "Accommodation charge (food excluded)", "feeType": "HOSTEL", "period": "YEAR", "amountInr": 160000 },
+      "sourceIds": ["woxsen-bsc-fees-2027-31"],
+      "academicYear": "2027-31",
+      "evidenceLocation": "Official Woxsen PDF lines 21-30: standard food/hostel plan, Year 1 non-AC triple-sharing accommodation INR 160,000. Food and sports facility charges are separate. Charges are payable to INFEZIC LLP, not Woxsen University; reviewer must preserve that distinction.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "B.Sc. (Hons.) residential programme, Batch 2027-2031", "category": "Year 1 premium plan; AC, triple sharing", "component": "Accommodation charge (food excluded)", "feeType": "HOSTEL", "period": "YEAR", "amountInr": 223500 },
+      "sourceIds": ["woxsen-bsc-fees-2027-31"],
+      "academicYear": "2027-31",
+      "evidenceLocation": "Official Woxsen PDF lines 32-39: premium food/hostel plan, Year 1 AC triple-sharing accommodation INR 223,500. Food and sports facility charges are separate. Charges are payable to INFEZIC LLP, not Woxsen University; reviewer must preserve that distinction.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "gauhati-university",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "Five-Year Integrated Master's Programme (FYIMP), Gauhati University main campus, Jalukbari", "level": "UG", "durationMonths": 60 },
+      "sourceIds": ["gauhati-fyimp-faq"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official GU FAQ lines 12-17 states the five-year integrated Master's programme is offered across 38 departments on the main campus in Jalukbari; lines 40-42 explicitly distinguishes it from affiliated-college FYUGP. No affiliated college information is attributed to GU main campus.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchDispositions": [
+    { "institutionSlug": "plaksha-university", "status": "STAGED_CANDIDATE", "note": "Official FAQ and domestic admission page directly support current four-year BTech, 2027-28 admission process/eligibility, and a tuition concession provision. Fees not staged because the cited 2027-28 page did not give an exact current fee component." },
+    { "institutionSlug": "iiit-hyderabad", "status": "STAGED_CANDIDATE", "note": "Official IIIT Hyderabad programme page directly lists CSE and ECE undergraduate B.Tech programmes. It shows 2025-26 fee headings; those old fee values and generic admissions status were not staged." },
+    { "institutionSlug": "iit-gandhinagar", "status": "STAGED_CANDIDATE", "note": "Official IITGN BTech page directly supports a four-year programme and eight branches. Past 2026-27 registration date was not imported as current admissions guidance." },
+    { "institutionSlug": "woxsen-university", "status": "STAGED_CANDIDATE", "note": "Official Woxsen B.Sc. (Hons.) batch 2027-31 PDF supports year-one Academic Fee Part 2 and standard/premium accommodation components. Food, other fees and total cost are not conflated; accommodation provider is third-party INFEZIC LLP." },
+    { "institutionSlug": "gauhati-university", "status": "STAGED_CANDIDATE", "note": "Official GU admissions FAQ directly supports the 5-year main-campus FYIMP and distinguishes it from affiliated-college FYUGP. 2026-27 admission deadlines/status are not staged because the cycle is historical and the FAQ is indicative." },
+    { "institutionSlug": "andhra-university", "status": "RESEARCHED_NO_CURRENT_FACT_STAGED", "sourceUrl": "https://audoa.andhrauniversity.edu.in/documents/AUEET_2026_BROCHURE.PDF", "note": "Official 2026-27 AUEET brochure directly read: it covers self-supported B.Tech courses at University College of Engineering (A), Andhra University, and dates the application window to 13 March–5 May 2026. The cycle is closed as of retrieval; do not present this as current. Recheck for a 2027-28 notice before staging." },
+    { "institutionSlug": "dibrugarh-university", "status": "BLOCKED_READABLE_SOURCE", "sourceUrls": ["https://www.dibru.ac.in/admission-2026", "https://www.dibru.ac.in/programmes-at-a-glance"], "note": "Official pages were directly opened but only a JavaScript loading shell/heading was exposed; detailed programme and admission text was unavailable. No search snippets were imported. Use an accessible official notice/PDF or stop without bypassing controls." },
+    { "institutionSlug": "shiv-nadar-university", "status": "BLOCKED_DIRECT_SOURCE_ACCESS", "sourceUrls": ["https://ugapplications.snu.edu.in/", "https://www.snu.edu.in/site/assets/files/24802/shivnadaruniversity_delhincr_ugbrochure_26_27.pdf"], "note": "Official UG application portal returned HTTP 403 and the official brochure PDF could not be opened by the read-only source viewer. No bypass or snippet-based claim used. Retry only through a normal accessible official page." },
+    { "institutionSlug": "iit-tirupati", "status": "BLOCKED_READABLE_SOURCE", "sourceUrls": ["https://iittp.ac.in/b-tech-admission", "https://www.iittp.ac.in/btech"], "note": "Official B.Tech pages were found, but direct HTML retrieval returned a one-line shell; result snippets were not accepted as fact evidence. No claim staged." },
+    { "institutionSlug": "central-university-of-rajasthan", "status": "BLOCKED_STALE_OR_INACCESSIBLE", "sourceUrl": "https://curaj.ac.in/acts/admission-2026-27", "note": "Official 2026-27 admission page timed out during direct access. Search results indicated a historical cycle; no snippets or stale cycle facts were staged." },
+    { "institutionSlug": "nlu-jodhpur", "status": "NO_CURRENT_FACT_STAGED", "sourceUrl": "https://nlujodhpur.ac.in/public/news/525", "note": "Official result is a CLAT-2026 waiting-list notice for a closed 2026 cycle, not current programme/eligibility/fee guidance. Direct re-open returned a cache miss; no fact staged." },
+    { "institutionSlug": "jipmer-puducherry", "status": "CAMPUS_SCOPE_UNRESOLVED", "sourceUrl": "https://karaikal.jipmer.edu.in/announcement?id=120", "note": "Official result concerns JIPMER Karaikal MBBS admissions, while the catalogue identity is JIPMER Puducherry. Direct page timed out, and the source is campus-specific; do not attach Karaikal facts to Puducherry." },
+    { "institutionSlug": "nmims-mumbai", "status": "CAMPUS_SCOPE_UNRESOLVED", "sourceUrl": "https://www.nmims.edu/ug.php", "note": "Official university programme table lists offerings across multiple named campuses and does not map each row to NMIMS Mumbai. No campus-specific fact staged from this aggregate page." }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "vellore-institute-of-technology",
+    "claimId": "cmwkyniqq0002lvtvycj5jpqg",
+    "sourceId": "cmwkyniqc0000lvtv5g9ntbj6",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "birla-institute-of-technology-mesra",
+    "claimId": "cmwkynir50006lvtvew8exr1p",
+    "sourceId": "cmwkyniqz0004lvtvlr420rq8",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "amrita-vishwa-vidyapeetham",
+    "claimId": "cmwkynirj000alvtv7qzzkmcx",
+    "sourceId": "cmwkynird0008lvtvilt5isj3",
+    "status": "STAGED",
+    "field": "admissions"
+  }
+]

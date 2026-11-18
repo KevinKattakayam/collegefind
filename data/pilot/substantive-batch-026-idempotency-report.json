@@ -1,0 +1,29 @@
+{
+  "status": "STAGED",
+  "facts": 2,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 2,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "tripura-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwm9pfb600030dtvh1u8t0pt",
+      "sourceId": "cmwm9pfa000000dtvgxwpu6ff",
+      "sourceUrl": "https://tripurauniv.ac.in/site/images/pdf/tripura-university-eprospectus-2026-27.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "gujarat-technological-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwm9pfbv00060dtvjuyngcbf",
+      "sourceId": "cmwm9pfaa00010dtvu4ozvn4f",
+      "sourceUrl": "https://gsms.gtu.ac.in/bba/",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

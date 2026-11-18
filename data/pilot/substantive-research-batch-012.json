@@ -1,0 +1,1012 @@
+{
+  "batch": 12,
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchedAt": "2026-11-18T06:17:34Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "researchDisposition": [
+    {
+      "institutionSlug": "nit-sikkim",
+      "outcome": "STAGEABLE",
+      "note": "Current 2026-27 fee PDF, B.Tech admission page and EEE page support course/duration/route and category-scoped tuition/hostel facts."
+    },
+    {
+      "institutionSlug": "cmi-chennai",
+      "outcome": "STAGEABLE",
+      "note": "Official 2027-28 page supports degree list, duration, Class 12 eligibility and common entrance; no fee inferred."
+    },
+    {
+      "institutionSlug": "amity-university",
+      "outcome": "IDENTITY_SCOPE_HELD",
+      "note": "Search surfaced a Noida-specific prospectus and multi-campus scholarship material; catalogue identity is university-wide, so no campus-specific claim staged."
+    },
+    {
+      "institutionSlug": "nit-uttarakhand",
+      "outcome": "STAGEABLE",
+      "note": "Official 2026-27 admissions and fee sources support SII-specific eligibility and category-scoped tuition."
+    },
+    {
+      "institutionSlug": "upes-dehradun",
+      "outcome": "STAGEABLE",
+      "note": "Official B.Sc page supports named honours duration; scholarship rules are dated AY 2026-27. No placement claim due old/undefined metrics."
+    },
+    {
+      "institutionSlug": "nit-andhra-pradesh",
+      "outcome": "STAGEABLE",
+      "note": "Current JoSAA/CSAB 2026 page plus R24 regulations effective 2024-25 support branch list/current route; no fee inferred from link labels."
+    },
+    {
+      "institutionSlug": "gitam-university",
+      "outcome": "IDENTITY_SCOPE_HELD",
+      "note": "Official fee/scholarship pages expose campus selectors and different campuses; no campus-neutral amount or eligibility staged."
+    },
+    {
+      "institutionSlug": "rajiv-gandhi-university",
+      "outcome": "STAGEABLE",
+      "note": "2026-27 bulletin supports a narrow integrated BA-B.Ed/NCET fact; no other bulletin rows generalized."
+    },
+    {
+      "institutionSlug": "gauhati-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "No programme-specific 2026-27 eligibility/fee row sufficiently verified in this bounded pass; revisit current admissions/department material."
+    },
+    {
+      "institutionSlug": "nirma-university",
+      "outcome": "STAGEABLE",
+      "note": "Institute pages support current BBA admission, eligibility and tuition, plus B.Tech JEE route. No duration/hostel claim."
+    },
+    {
+      "institutionSlug": "op-jindal-university",
+      "outcome": "IDENTITY_CONFLICT_HELD",
+      "note": "Raigarh OP Jindal University and Sonipat O.P. Jindal Global University are distinct. Catalogue Sonipat hint does not establish a canonical alias. No facts staged pending identity review."
+    },
+    {
+      "institutionSlug": "nit-srinagar",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official 2026 page confirms JoSAA/CSAB routes; linked B.Tech 2026 fee PDF was not text-readable and no number inferred."
+    },
+    {
+      "institutionSlug": "kasturba-medical-college",
+      "outcome": "STAGEABLE",
+      "note": "Official MAHE KMC Manipal page supports 5.5-year MBBS, campus scope, qualification criteria and counselling caveats. Total programme fee not represented as semester/year fee."
+    },
+    {
+      "institutionSlug": "vjti-mumbai",
+      "outcome": "STAGEABLE",
+      "note": "Official 2026-27 intake page supports programme list and DTE Maharashtra route; fee/placement rows not individually reviewed."
+    },
+    {
+      "institutionSlug": "manipur-university",
+      "outcome": "STAGEABLE",
+      "note": "Official 2026-27 page shows CUET-PG and separate non-CUET notices. Published dates are historical; no department-wide eligibility generalized."
+    },
+    {
+      "institutionSlug": "mizoram-university",
+      "outcome": "STAGEABLE",
+      "note": "Official 2026-27 notice supports separate CUET/MZUET routes and 50/50 allocation; application window has passed."
+    },
+    {
+      "institutionSlug": "nagaland-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official index lists 2026-27 prospectus; programme/campus rows were not individually reviewed."
+    },
+    {
+      "institutionSlug": "centurion-university",
+      "outcome": "IDENTITY_SCOPE_HELD",
+      "note": "Official material indicates multi-campus delivery; catalogue campus identity and scope need reconciliation before programme/fee claims."
+    },
+    {
+      "institutionSlug": "iim-amritsar",
+      "outcome": "STAGEABLE",
+      "note": "Official MBA page supports CAT 2025/2026-28 cycle and final-year requirement; historical cycle, not open admissions."
+    },
+    {
+      "institutionSlug": "chitkara-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official 2026 SAARC brochure is category-specific; no domestic-category fact imported without matching domestic source."
+    },
+    {
+      "institutionSlug": "nlu-jodhpur",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official vacancy notice is a closed category-specific CLAT-2026 special round; retained as historical research only."
+    },
+    {
+      "institutionSlug": "lnmiit-jaipur",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official 2026-27 special-round page has route-specific fee conditions; no general admission or fee condition flattened."
+    },
+    {
+      "institutionSlug": "sikkim-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "No sufficiently scoped current official programme/admission/fee row confirmed; do not conflate with NIT Sikkim."
+    },
+    {
+      "institutionSlug": "madras-medical-college",
+      "outcome": "RESEARCHED_HELD",
+      "note": "No current official fact confirmed in this bounded pass; avoid facts from similarly named Chennai institutions."
+    },
+    {
+      "institutionSlug": "kalasalingam-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "No sufficiently scoped current official programme/admission/fee source confirmed in this bounded pass."
+    }
+  ],
+  "sources": [
+    {
+      "id": "cmi-admissions-2027",
+      "institutionSlug": "cmi-chennai",
+      "publisher": "Chennai Mathematical Institute",
+      "url": "https://www.cmi.ac.in/admissions/",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2027-28",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "Academic programmes and eligibility sections: 4-year BS (Hons) options; common entrance examination; Class 12 or equivalent; 2027 examination date shown."
+      ]
+    },
+    {
+      "id": "nituk-admissions-2026",
+      "institutionSlug": "nit-uttarakhand",
+      "publisher": "National Institute of Technology Uttarakhand",
+      "url": "https://nituk.ac.in/admissions",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "B.Tech Admission 2026-27; JoSAA/CSAB 2026 resources and Study in India eligibility/selection table."
+      ]
+    },
+    {
+      "id": "nituk-btech-fee-2026",
+      "institutionSlug": "nit-uttarakhand",
+      "publisher": "National Institute of Technology Uttarakhand, Office of the Dean Academic Affairs",
+      "url": "https://nituk.ac.in/uploads/topics/Fees%20structure%20-%20B.Tech%202026-27.pdf",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "B.Tech fee schedule AY 2026-27, tuition row and category/income columns; full-fee General/OBC income above ₹5 lakh: ₹62,500 per semester."
+      ]
+    },
+    {
+      "id": "nitsikkim-academics-ece",
+      "institutionSlug": "nit-sikkim",
+      "publisher": "National Institute of Technology Sikkim, Department of Electrical and Electronics Engineering",
+      "url": "https://eee.nitsikkim.ac.in/academics.php",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "B.Tech EEE section states four-year B.Tech and JEE Main admission route."
+      ]
+    },
+    {
+      "id": "nitsikkim-fee-2026",
+      "institutionSlug": "nit-sikkim",
+      "publisher": "National Institute of Technology Sikkim",
+      "url": "https://nitsikkim.ac.in/documents/Fee%20Structure/2026_April/B.Tech.%20Fee%20structure%20for%20Academic%20Year%202026-27.pdf",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "PDF p.1, B.Tech 2026-30 batch table: full-payer tuition ₹62,500 each semester; 2/3 remission tuition ₹20,834 per semester. p.2: hostel rent/electricity/cleaning ₹7,500 per semester."
+      ]
+    },
+    {
+      "id": "nitap-btech-admission-2026",
+      "institutionSlug": "nit-andhra-pradesh",
+      "publisher": "National Institute of Technology Andhra Pradesh",
+      "url": "https://nitandhra.ac.in/main/btech.php?search=2026",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "B.Tech admissions page lists JoSAA/CSAB 2026 and current AY 2026-27 fee links."
+      ]
+    },
+    {
+      "id": "nitap-btech-regulations-2024",
+      "institutionSlug": "nit-andhra-pradesh",
+      "publisher": "National Institute of Technology Andhra Pradesh",
+      "url": "https://nitandhra.ac.in/main/Rules/BT%20R24%20Regulations%20NIT%20ANP%20along%20with%20Annexure.pdf",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2024-25",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "B.Tech R24 Regulations, effective AY 2024-25, branch list and JEE Main admission basis."
+      ]
+    },
+    {
+      "id": "manipur-admission-2026",
+      "institutionSlug": "manipur-university",
+      "publisher": "Manipur University",
+      "url": "https://www.manipuruniv.ac.in/p/admission-2026-27",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "Admission 2026-27: PG CUET-PG notices, separate CUET/non-CUET routes and official Samarth links. Dates shown are historical, not open."
+      ]
+    },
+    {
+      "id": "mzu-admission-2026",
+      "institutionSlug": "mizoram-university",
+      "publisher": "Mizoram University",
+      "url": "https://mzu.edu.in/admission-notice-for-2026-27-session/",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "Admission notice: separate CUET/non-CUET applications; 50% seats via CUET and 50% via MZUET; official portals and dates."
+      ]
+    },
+    {
+      "id": "vjti-ug-admission-2026",
+      "institutionSlug": "vjti-mumbai",
+      "publisher": "Veermata Jijabai Technological Institute, Mumbai",
+      "url": "https://vjti.ac.in/undergraduate-admission/",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "Admissions section: merit through centralized online process under Maharashtra Government guidelines, conducted by DTE; first-year B.Tech programme intake table."
+      ]
+    },
+    {
+      "id": "nirma-bba-admission-2026",
+      "institutionSlug": "nirma-university",
+      "publisher": "Institute of Management, Nirma University",
+      "url": "https://management.nirmauni.ac.in/admission-aid/undergraduate/bba-honours-admissions/",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "BBA (Honours): HSC/10+2 with 60%; appeared in IPMAT; fee table AY 2026-27 shows tuition ₹3,89,000 per annum."
+      ]
+    },
+    {
+      "id": "nirma-btech-admission-2026",
+      "institutionSlug": "nirma-university",
+      "publisher": "Institute of Technology, Nirma University",
+      "url": "https://admissions.nirmauni.ac.in/btech.html",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "B.Tech FAQ: Std XII Science and JEE Main 2026; admission criteria solely JEE Main Paper-I AIR; branch-specific subjects/marks vary."
+      ]
+    },
+    {
+      "id": "upes-bsc-admission",
+      "institutionSlug": "upes-dehradun",
+      "publisher": "UPES",
+      "url": "https://www.upes.ac.in/admissions/bsc",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "B.Sc admissions page: named B.Sc. (Hons) courses and 3+1-year structure; eligibility/selection varies by named programme."
+      ]
+    },
+    {
+      "id": "upes-scholarships-2026",
+      "institutionSlug": "upes-dehradun",
+      "publisher": "UPES",
+      "url": "https://www.upes.ac.in/admissions/scholarships",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "AY 2026-27 scholarship page: entry-level UG merit criteria, excluded programmes, first-year tuition application and timing conditions."
+      ]
+    },
+    {
+      "id": "kmc-manipal-mbbs",
+      "institutionSlug": "kasturba-medical-college",
+      "publisher": "Kasturba Medical College, Manipal, MAHE",
+      "url": "https://www.manipal.edu/academics/programs/mbbs-kmc-manipal",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "MBBS: duration 5.5 years; Indian-board qualification criteria; check NEET 2027 brochure for final eligibility; campus-specific counselling notes."
+      ]
+    },
+    {
+      "id": "rgu-admission-bulletin-2026",
+      "institutionSlug": "rajiv-gandhi-university",
+      "publisher": "Rajiv Gandhi University",
+      "url": "https://rgu.ac.in/uploads/notices/Admission%20Bulletin%202026-2027.pdf",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "Bulletin PDF p.34, four-year integrated BA-B.Ed: NCET-2026 route, any recognised 10+2 discipline."
+      ]
+    },
+    {
+      "id": "iimamritsar-mba-2026",
+      "institutionSlug": "iim-amritsar",
+      "publisher": "Indian Institute of Management Amritsar",
+      "url": "https://www.iimamritsar.ac.in/academics/mba/admission",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-28",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "MBA admission page identifies CAT 2025 for 2026-28 cycle and final-year completion by 30 June 2026."
+      ]
+    },
+    {
+      "id": "nitsri-admission-2026",
+      "institutionSlug": "nit-srinagar",
+      "publisher": "National Institute of Technology Srinagar",
+      "url": "https://admission.nitsri.ac.in/Pages/DisplayPages.aspx?page=caece",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "Admission 2026 page has JoSAA/CSAB 2026 section; linked 2026 fee PDF not text-readable in this session."
+      ]
+    },
+    {
+      "id": "nluj-vacancy-2026",
+      "institutionSlug": "nlu-jodhpur",
+      "publisher": "National Law University, Jodhpur",
+      "url": "https://www.nlujodhpur.ac.in/public/news/482",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "Dated 12 Aug 2026 category-specific BA-LLB vacancy notice; application closed 15 Aug 2026; held, not staged as general/current admission."
+      ]
+    },
+    {
+      "id": "jgu-admissions-2026",
+      "institutionSlug": "op-jindal-university",
+      "publisher": "O.P. Jindal Global University",
+      "url": "https://jgu.edu.in/index.php/admissions?programme=undergraduate",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "Page identifies Sonipat campus and O.P. Jindal Global University; catalogue name/city suggest alias but require explicit reconciliation because OPJU Raigarh is distinct."
+      ]
+    },
+    {
+      "id": "nagaland-prospectus-2026",
+      "institutionSlug": "nagaland-university",
+      "publisher": "Nagaland University",
+      "url": "https://nagalanduniversity.ac.in/documents/prospectus",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "Official prospectus index lists 2026-27 prospectus; content not imported pending campus/program-specific review."
+      ]
+    },
+    {
+      "id": "nitsikkim-admissions-2026",
+      "institutionSlug": "nit-sikkim",
+      "publisher": "National Institute of Technology Sikkim",
+      "url": "https://nitsikkim.ac.in/admissions/btechAdmissions.php",
+      "retrievedAt": "2026-11-18T06:17:34Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page/PDF manually viewed. Only concise factual claims with publisher, exact URL and locator are staged; no substantial copyrighted prose or document is stored. This does not establish automated retrieval, bulk extraction or redistribution rights. Obtain source-specific permission/legal review before expanding automation or copying tables/documents. Claims remain STAGED until human review.",
+      "evidenceLocations": [
+        "Official B.Tech admission page lists JoSAA/CSAB 2026 and physical reporting notices."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "cmi-chennai",
+      "field": "courses",
+      "value": [
+        "B.S. (Hons.) Mathematics",
+        "B.S. (Hons.) Mathematics and Computer Science",
+        "B.S. (Hons.) Mathematics and Physics",
+        "M.Sc. Mathematics",
+        "M.Sc. Computer Science",
+        "M.Sc. Data Science"
+      ],
+      "sourceIds": [
+        "cmi-admissions-2027"
+      ],
+      "academicYear": "2027-28",
+      "evidenceLocation": "Official admissions page, academic programmes list; PhD programmes omitted from the UG/PG list.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "cmi-chennai",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.S. (Hons.) Mathematics, Mathematics and Computer Science, or Mathematics and Physics",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "cmi-admissions-2027"
+      ],
+      "academicYear": "2027-28",
+      "evidenceLocation": "Academic programmes offered 2027-28; page states the three BS Honours courses are four years.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "cmi-chennai",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.S. (Hons.) programmes",
+        "route": "CMI common entrance examination",
+        "category": "2027-28 applicants",
+        "exam": "CMI entrance examination 2027",
+        "eligibility": "12th standard or equivalent.",
+        "applicationUrl": "https://www.cmi.ac.in/admissions/"
+      },
+      "sourceIds": [
+        "cmi-admissions-2027"
+      ],
+      "academicYear": "2027-28",
+      "evidenceLocation": "Eligibility and How to Apply sections; examination date 15 May 2027; applications expected around 1 March 2027, no deadline inferred.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-uttarakhand",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech",
+        "route": "Study in India (SII) 2026-27",
+        "category": "SII applicants",
+        "exam": "Valid SAT score",
+        "eligibility": "10+2 with Physics, Chemistry and Mathematics and at least 65%, or diploma in a relevant branch with at least 65%.",
+        "applicationUrl": "https://nituk.ac.in/admissions"
+      },
+      "sourceIds": [
+        "nituk-admissions-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Admissions page, SII 2026-27 B.Tech eligibility and selection row. This is the SII route, not domestic JoSAA eligibility.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-uttarakhand",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "B.Tech",
+        "category": "General/OBC; family income above INR 5 lakh",
+        "component": "Tuition fee",
+        "feeType": "TUITION",
+        "period": "SEMESTER",
+        "amountInr": 62500
+      },
+      "sourceIds": [
+        "nituk-btech-fee-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "B.Tech AY 2026-27 fee PDF, tuition row, General/OBC income-above-5-lakh column; per semester.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "courses",
+      "value": [
+        "B.Tech Electrical and Electronics Engineering"
+      ],
+      "sourceIds": [
+        "nitsikkim-academics-ece"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department EEE B.Tech section names the programme; broader list not inferred.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech Electrical and Electronics Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "nitsikkim-academics-ece"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department EEE page explicitly states four-year B.Tech; no academic year is specified.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech",
+        "route": "JoSAA/CSAB counselling",
+        "category": "2026-27 applicants",
+        "exam": "JEE Main",
+        "applicationUrl": "https://nitsikkim.ac.in/admissions/btechAdmissions.php"
+      },
+      "sourceIds": [
+        "nitsikkim-admissions-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official admission page lists JoSAA/CSAB 2026; no eligibility thresholds asserted.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "B.Tech",
+        "category": "Full fee payer; admission batch 2026",
+        "component": "Tuition fee",
+        "feeType": "TUITION",
+        "period": "SEMESTER",
+        "amountInr": 62500
+      },
+      "sourceIds": [
+        "nitsikkim-fee-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official fee PDF p.1, B.Tech batch 2026-30, full fee payer tuition row, semester columns 1-8.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "B.Tech",
+        "category": "Hostellers; admission batch 2026",
+        "component": "Hostel rent, electricity and cleaning",
+        "feeType": "HOSTEL",
+        "period": "SEMESTER",
+        "amountInr": 7500
+      },
+      "sourceIds": [
+        "nitsikkim-fee-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official fee PDF p.2, hostel fee per semester (not applicable for day scholars); excludes mess charges.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-andhra-pradesh",
+      "field": "courses",
+      "value": [
+        "B.Tech Biotechnology",
+        "B.Tech Chemical Engineering",
+        "B.Tech Civil Engineering",
+        "B.Tech Computer Science and Engineering",
+        "B.Tech Electrical and Electronics Engineering",
+        "B.Tech Electronics and Communication Engineering",
+        "B.Tech Mechanical Engineering",
+        "B.Tech Metallurgical and Materials Engineering"
+      ],
+      "sourceIds": [
+        "nitap-btech-regulations-2024"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "B.Tech R24 Regulations effective AY 2024-25, branch list; not a seat matrix.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-andhra-pradesh",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech",
+        "route": "JoSAA/CSAB counselling",
+        "category": "2026-27 applicants",
+        "exam": "JEE Main",
+        "applicationUrl": "https://nitandhra.ac.in/main/btech.php?search=2026"
+      },
+      "sourceIds": [
+        "nitap-btech-admission-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official B.Tech admissions page lists admission through JoSAA/CSAB 2026; no rank thresholds inferred.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "manipur-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Postgraduate programmes (programme-specific notices apply)",
+        "route": "CUET-PG or separate non-CUET university admission route",
+        "category": "2026-27 applicants",
+        "exam": "CUET-PG 2026 for CUET route; non-CUET route is notice-specific",
+        "applicationUrl": "https://manipurunivcuet.samarth.edu.in/pg"
+      },
+      "sourceIds": [
+        "manipur-admission-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official page states CUET PG route and separately lists non-CUET programme notices; non-CUET portal: https://manipurunivadm.samarth.edu.in/2026. Dates are historical.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "mizoram-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "UG and PG programmes (programme-specific criteria apply)",
+        "route": "Separate CUET and MZUET routes; 50% seats via CUET score and 50% via MZUET",
+        "category": "2026-27 applicants",
+        "exam": "CUET or MZUET, depending on route",
+        "applicationUrl": "https://mzuadm.samarth.edu.in"
+      },
+      "sourceIds": [
+        "mzu-admission-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official notice allows CUET, MZUET or either; 50% allocation for each route. Dates have passed; not represented as open.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "vjti-mumbai",
+      "field": "courses",
+      "value": [
+        "B.Tech Civil Engineering",
+        "B.Tech Computer Engineering",
+        "B.Tech Electrical Engineering",
+        "B.Tech Electronics Engineering",
+        "B.Tech Electronics and Telecommunication Engineering",
+        "B.Tech Information Technology",
+        "B.Tech Mechanical Engineering",
+        "B.Tech Production Engineering (Sandwich)",
+        "B.Tech Textile Technology"
+      ],
+      "sourceIds": [
+        "vjti-ug-admission-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official first-year B.Tech intake table lists nine programmes; intake numbers intentionally omitted.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "vjti-mumbai",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "First-year B.Tech",
+        "route": "Maharashtra online centralized admission process conducted by Directorate of Technical Education",
+        "category": "2026-27 candidates",
+        "applicationUrl": "https://vjti.ac.in/undergraduate-admission/"
+      },
+      "sourceIds": [
+        "vjti-ug-admission-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Admissions 2026-27 page states merit-only centralized process under Maharashtra Government guidelines, conducted by DTE.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nirma-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "BBA (Honours)",
+        "route": "IPMAT and personal interview",
+        "category": "All India category",
+        "exam": "IPMAT for corresponding academic year",
+        "eligibility": "HSC/10+2 or equivalent from a recognized board with at least 60% aggregate marks.",
+        "applicationUrl": "https://management.nirmauni.ac.in/admission-aid/undergraduate/bba-honours-admissions/"
+      },
+      "sourceIds": [
+        "nirma-bba-admission-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "All India and Eligibility sections; selection weights IPMAT 50%, interview 30%, Class XII 20%.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nirma-university",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "BBA (Honours)",
+        "category": "All India category",
+        "component": "Tuition fee",
+        "feeType": "TUITION",
+        "period": "YEAR",
+        "amountInr": 389000
+      },
+      "sourceIds": [
+        "nirma-bba-admission-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Fee Structure AY 2026-27, tuition ₹3,89,000/year; examination fee excluded.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nirma-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech eligible branches as listed in the official rules",
+        "route": "JEE Main 2026 All India Rank of Paper I",
+        "category": "All India candidates; branch-specific subject/marks rules apply",
+        "exam": "JEE Main 2026",
+        "eligibility": "Std XII science stream; Physics and Mathematics compulsory, with third subject and minimum marks governed by branch-specific and Gujarat admission rules.",
+        "applicationUrl": "https://admissions.nirmauni.ac.in/btech.html"
+      },
+      "sourceIds": [
+        "nirma-btech-admission-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official FAQ says criteria solely JEE Main 2026 Paper-I AIR; branch-specific subject rules are not flattened into one threshold.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "upes-dehradun",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. (Hons.) Mathematics, Chemistry, or Physics",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "upes-bsc-admission"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official B.Sc page describes the named honours programmes as 3+1-year; summary only.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "upes-dehradun",
+      "field": "structured",
+      "value": {
+        "kind": "scholarship",
+        "scheme": "UPES AY 2026-27 UG entry-level merit scholarship",
+        "eligibility": "Regular UG/integrated applicants meeting the published Class XII or national-exam score tiers; programme exclusions, first-year tuition scope, offer-acceptance timing and non-stacking conditions apply.",
+        "url": "https://www.upes.ac.in/admissions/scholarships"
+      },
+      "sourceIds": [
+        "upes-scholarships-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official AY 2026-27 page; detailed score tiers vary by exam/category. Exact terms remain linked rather than flattened into a single entitlement.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "kasturba-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS, Kasturba Medical College Manipal campus",
+        "level": "UG",
+        "durationMonths": 66
+      },
+      "sourceIds": [
+        "kmc-manipal-mbbs"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official KMC Manipal MBBS page states 5.5 years; internship composition not separately asserted.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "kasturba-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBBS, Kasturba Medical College Manipal campus",
+        "route": "NEET followed by applicable medical counselling and seat allotment",
+        "category": "General/Foreign/NRI; counselling route varies by category and jurisdiction",
+        "exam": "NEET; check the cited current information brochure for applicable cycle",
+        "eligibility": "Indian-board applicants: 10+2 or equivalent with Physics, Chemistry, Biology/Biotechnology and English individually, and at least 50% together in PCB/PCB Biotechnology; final criteria must be checked in the NEET brochure.",
+        "applicationUrl": "https://www.manipal.edu/admissions/admission-programs/neet"
+      },
+      "sourceIds": [
+        "kmc-manipal-mbbs"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official page gives qualification requirements, directs candidates to NEET 2027 brochure for final criteria, and lists campus-specific counselling channels. No guarantee stated.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "rajiv-gandhi-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Four Year Integrated Teacher Education Programme (BA-B.Ed.)",
+        "route": "NCET-2026",
+        "category": "Candidates from any recognised 10+2 discipline",
+        "exam": "National Common Entrance Test (NCET) 2026",
+        "eligibility": "Passed Class 12 (10+2) from any recognised board in any discipline.",
+        "applicationUrl": "https://admissions.rgu.ac.in/index.html"
+      },
+      "sourceIds": [
+        "rgu-admission-bulletin-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Admission Bulletin 2026-27 PDF p.34 says NCET-2026 only and Class 12 eligibility; 50 seats omitted, no general RGU rule implied.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iim-amritsar",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA, 2026-28 batch",
+        "route": "CAT 2025 based MBA admission process",
+        "category": "MBA 2026-28 applicants",
+        "exam": "CAT 2025",
+        "eligibility": "Final-year applicants must complete qualifying degree requirements by 30 June 2026 and meet the minimum graduation percentage under CAT 2025 eligibility.",
+        "applicationUrl": "https://www.iimamritsar.ac.in/academics/mba/admission"
+      },
+      "sourceIds": [
+        "iimamritsar-mba-2026"
+      ],
+      "academicYear": "2026-28",
+      "evidenceLocation": "Official page identifies CAT 2025/2026-28 and final-year completion date; this is historical cycle information.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "rejectedOrHeldResearch": [
+    {
+      "institutionSlug": "amity-university",
+      "outcome": "IDENTITY_SCOPE_HELD",
+      "note": "Search surfaced a Noida-specific prospectus and multi-campus scholarship material; catalogue identity is university-wide, so no campus-specific claim staged."
+    },
+    {
+      "institutionSlug": "gitam-university",
+      "outcome": "IDENTITY_SCOPE_HELD",
+      "note": "Official fee/scholarship pages expose campus selectors and different campuses; no campus-neutral amount or eligibility staged."
+    },
+    {
+      "institutionSlug": "gauhati-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "No programme-specific 2026-27 eligibility/fee row sufficiently verified in this bounded pass; revisit current admissions/department material."
+    },
+    {
+      "institutionSlug": "op-jindal-university",
+      "outcome": "IDENTITY_CONFLICT_HELD",
+      "note": "Raigarh OP Jindal University and Sonipat O.P. Jindal Global University are distinct. Catalogue Sonipat hint does not establish a canonical alias. No facts staged pending identity review."
+    },
+    {
+      "institutionSlug": "nit-srinagar",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official 2026 page confirms JoSAA/CSAB routes; linked B.Tech 2026 fee PDF was not text-readable and no number inferred."
+    },
+    {
+      "institutionSlug": "nagaland-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official index lists 2026-27 prospectus; programme/campus rows were not individually reviewed."
+    },
+    {
+      "institutionSlug": "centurion-university",
+      "outcome": "IDENTITY_SCOPE_HELD",
+      "note": "Official material indicates multi-campus delivery; catalogue campus identity and scope need reconciliation before programme/fee claims."
+    },
+    {
+      "institutionSlug": "chitkara-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official 2026 SAARC brochure is category-specific; no domestic-category fact imported without matching domestic source."
+    },
+    {
+      "institutionSlug": "nlu-jodhpur",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official vacancy notice is a closed category-specific CLAT-2026 special round; retained as historical research only."
+    },
+    {
+      "institutionSlug": "lnmiit-jaipur",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official 2026-27 special-round page has route-specific fee conditions; no general admission or fee condition flattened."
+    },
+    {
+      "institutionSlug": "sikkim-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "No sufficiently scoped current official programme/admission/fee row confirmed; do not conflate with NIT Sikkim."
+    },
+    {
+      "institutionSlug": "madras-medical-college",
+      "outcome": "RESEARCHED_HELD",
+      "note": "No current official fact confirmed in this bounded pass; avoid facts from similarly named Chennai institutions."
+    },
+    {
+      "institutionSlug": "kalasalingam-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "No sufficiently scoped current official programme/admission/fee source confirmed in this bounded pass."
+    }
+  ]
+}

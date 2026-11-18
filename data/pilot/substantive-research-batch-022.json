@@ -1,0 +1,172 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 22,
+  "researchedAt": "2026-11-18T12:58:03Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "method": "Manual inspection of two directly opened official institutional PDFs; no crawling, authentication, CAPTCHA or access-control bypass.",
+    "factualUse": "Stage only concise, year-labelled factual values with exact URL and PDF page/line locator. No source files, substantial prose, or copyrighted tables are stored.",
+    "reuseConditions": "Both sources were publicly readable, but no explicit bulk extraction or redistribution licence was established. These individually researched facts remain internal and UNREVIEWED pending reviewer/source-use assessment; public accessibility is not treated as a bulk-reuse grant."
+  },
+  "sources": [
+    {
+      "id": "cmc-vellore-prospectus-2026-27",
+      "institutionSlug": "christian-medical-college",
+      "publisher": "Christian Medical College, Vellore",
+      "url": "https://www.cmch-vellore.edu/wp-content/uploads/sites/14/2026/11/college-prospectus-2026-2027-revised.pdf",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-18T12:58:03Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official 2026-2027 prospectus manually read from the public CMC Vellore domain. No explicit extraction/republication licence established. Retain concise facts, exact link and page/line locators only; do not store or reproduce the PDF. Reviewers must confirm campus, MBBS scope, current-year bulletin details, values and source-use basis before any public approval.",
+      "evidenceLocations": [
+        "PDF printed pp.22-24 (web text lines 807-849): MBBS duration, eligibility and NEET-based admission; current-year admission bulletin controls detailed process.",
+        "PDF printed p.177 (web text lines 6851-6874): MBBS fee structure and hostel deposits/advances by gender."
+      ]
+    },
+    {
+      "id": "iimb-pgp-admission-procedure-2026-28",
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "publisher": "Indian Institute of Management Bangalore",
+      "url": "https://www.iimb.ac.in/sites/default/files/inline-files/PGP-2026%20admissions%20process.pdf",
+      "publicationDate": null,
+      "academicYear": "2026-28",
+      "retrievedAt": "2026-11-18T12:58:03Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official IIMB PGP 2026-28 admission procedure manually read from the public institutional domain. No explicit bulk extraction/republication licence established. Store concise fact summaries with exact PDF page/line locators, not PDF pages or substantial prose. This policy is cycle-specific and cannot be generalized to later batches; reviewer must verify intended historical/current display status.",
+      "evidenceLocations": [
+        "PDF printed p.1 (web text lines 4-18): PGP/MBA duration and cycle-specific minimum qualification/CAT requirement. The document itself states its policy is pertinent only to the 2026-28 cycle."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "christian-medical-college",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "MBBS", "level": "UG", "durationMonths": 66 },
+      "sourceIds": ["cmc-vellore-prospectus-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Prospectus printed p.22, section 2.1: 4.5 academic years followed by 12 months of compulsory rotating medical internship (total 66 months including internship).",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "christian-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBBS (2026-27)",
+        "route": "NEET-UG merit; management and Tamil Nadu government quota processes are separately described in the prospectus, with details subject to the current-year admission bulletin",
+        "category": "MBBS applicants, 2026-27",
+        "exam": "NEET-UG 2026",
+        "eligibility": "12-year 10+2 equivalent with Physics, Chemistry, Biology/Biotechnology and English; pass each subject; minimum 50% together in PCB/Biotechnology, or 40% for SC/ST/OBC as stated in the prospectus; minimum age 17 by 31 December of admission year. State/university rules and current-year bulletin may change details."
+      },
+      "sourceIds": ["cmc-vellore-prospectus-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Prospectus printed pp.23-24, section 2.1: eligibility at p.23; admission basis/NEET merit and quota descriptions at p.24. No deadline or current open status is asserted.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "christian-medical-college",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "MBBS", "category": "All MBBS candidates", "component": "Tuition fee", "feeType": "TUITION", "period": "YEAR", "amountInr": 3000 },
+      "sourceIds": ["cmc-vellore-prospectus-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Prospectus printed p.177, Annexure I MBBS fee table: Tuition fee (per year), INR 3,000. This is tuition only, not total cost.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "christian-medical-college",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "MBBS", "category": "Men", "component": "Hostel charges: deposits and advances", "feeType": "HOSTEL", "period": "ONE_TIME", "amountInr": 10000 },
+      "sourceIds": ["cmc-vellore-prospectus-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Prospectus printed p.177, hostel charges table: deposits and advances, Men, INR 10,000. One-time deposit/advance; not an annual hostel tariff.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "christian-medical-college",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "MBBS", "category": "Women", "component": "Hostel charges: deposits and advances", "feeType": "HOSTEL", "period": "ONE_TIME", "amountInr": 10000 },
+      "sourceIds": ["cmc-vellore-prospectus-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Prospectus printed p.177, hostel charges table: deposits and advances, Women, INR 10,000. One-time deposit/advance; not an annual hostel tariff.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "Post Graduate Programme in Management (MBA), batch 2026-28", "level": "PG", "durationMonths": 24 },
+      "sourceIds": ["iimb-pgp-admission-procedure-2026-28"],
+      "academicYear": "2026-28",
+      "evidenceLocation": "PDF printed p.1: IIMB describes the 2026-28 PGP as a two-year full-time residential programme leading to an MBA degree.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "PGP/MBA (batch 2026-28)",
+        "route": "Application with CAT score valid on application date; cycle-specific selection procedure",
+        "category": "General applicants with a bachelor's degree",
+        "exam": "CAT",
+        "eligibility": "Bachelor's degree in any discipline with at least 50% marks or equivalent CGPA; final-year applicants are separately addressed by the policy. This is a minimum application qualification, not an admission guarantee."
+      },
+      "sourceIds": ["iimb-pgp-admission-procedure-2026-28"],
+      "academicYear": "2026-28",
+      "evidenceLocation": "PDF printed p.1, lines 13-18: basic qualification and CAT-score validity requirements. Policy scope is explicitly limited to the 2026-28 admission cycle.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "PGP/MBA (batch 2026-28)",
+        "route": "Application with CAT score valid on application date; cycle-specific selection procedure",
+        "category": "SC/ST/PwD applicants with a bachelor's degree",
+        "exam": "CAT",
+        "eligibility": "Bachelor's degree in any discipline with at least 45% marks or equivalent CGPA; final-year applicants are separately addressed by the policy. This is a minimum application qualification, not an admission guarantee."
+      },
+      "sourceIds": ["iimb-pgp-admission-procedure-2026-28"],
+      "academicYear": "2026-28",
+      "evidenceLocation": "PDF printed p.1, lines 13-18: SC, ST and PwD minimum qualification and CAT-score validity requirements. Policy scope is explicitly limited to the 2026-28 admission cycle.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchDispositions": [
+    {
+      "institutionSlug": "bits-pilani",
+      "result": "NO_FACT_STAGED_DIRECT_SOURCE_RETRIEVAL_TIMEOUT",
+      "sourceUrls": [
+        "https://admissions.bits-pilani.ac.in/FD/FD_fee.html",
+        "https://admissions.bits-pilani.ac.in/FD/BITSAT_eligibility.html"
+      ],
+      "reason": "Official search results exposed likely current 2026-27 material, but direct browser retrieval timed out for both pages. Search output was not accepted as evidence and no BITS fact was staged. Reattempt only through normal public access or use another accessible official source; do not bypass restrictions."
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-lucknow",
+      "result": "NO_NEW_CURRENT_FACT_STAGED",
+      "sourceUrls": [
+        "https://www.iiml.ac.in/sites/default/files/upload/news/2143004504IIML%20Admission%20Policy%20Batch%202026-2028.pdf"
+      ],
+      "reason": "Directly accessible official policy applies to the completed 2026-28/CAT-2025 admissions cycle. It is useful only as explicitly historical admissions reference material; no current 2027-29 policy fact was staged in this batch."
+    }
+  ]
+}

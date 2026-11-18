@@ -1,0 +1,101 @@
+{
+  "status": "STAGED",
+  "facts": 11,
+  "reviewState": "UNREVIEWED",
+  "staged": 11,
+  "reused": 0,
+  "createdSources": 10,
+  "createdRuns": 10,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "field": "courses",
+      "evidenceId": "cmwl1l6zy000b6utv62j4yhyv",
+      "sourceId": "cmwl1l6yl00006utvulcphv7z",
+      "sourceUrl": "https://acad.iitb.ac.in/admissions/bachelors",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-delhi",
+      "field": "admissions",
+      "evidenceId": "cmwl1l70g000e6utvr418mqg3",
+      "sourceId": "cmwl1l6ys00016utvhaqth1g9",
+      "sourceUrl": "https://academics.iitd.ac.in/ug-admissions/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "field": "courses",
+      "evidenceId": "cmwl1l70s000h6utvrzeubjyi",
+      "sourceId": "cmwl1l6yv00026utv5qqnw4wn",
+      "sourceUrl": "https://www.nitt.edu/home/academics/programmes/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "field": "admissions",
+      "evidenceId": "cmwl1l716000k6utvkm7tc5lm",
+      "sourceId": "cmwl1l6z000036utvlny3n51w",
+      "sourceUrl": "https://www.nitt.edu/home/admissions/btech/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "admissions",
+      "evidenceId": "cmwl1l71l000n6utvwutv5zjk",
+      "sourceId": "cmwl1l6z400046utvgzgljtek",
+      "sourceUrl": "https://www.cuh.ac.in/cucetUG.aspx",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "phone",
+      "evidenceId": "cmwl1l71y000q6utvz3p760cj",
+      "sourceId": "cmwl1l6z700056utvl50bqrzq",
+      "sourceUrl": "https://cuh.ac.in/admission.aspx",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "email",
+      "evidenceId": "cmwl1l727000s6utvm9g1vcug",
+      "sourceId": "cmwl1l6z700056utvl50bqrzq",
+      "sourceUrl": "https://cuh.ac.in/admission.aspx",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "vellore-institute-of-technology",
+      "field": "courses",
+      "evidenceId": "cmwl1l72l000v6utvi3mhjpuz",
+      "sourceId": "cmwl1l6zb00066utv594e162p",
+      "sourceUrl": "https://vit.ac.in/admissions/programmes-offered",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "graphic-era-university",
+      "field": "admissions",
+      "evidenceId": "cmwl1l734000y6utvr2dmqi9t",
+      "sourceId": "cmwl1l6zd00076utvdz62v7fj",
+      "sourceUrl": "https://geu.ac.in/admissions/admissions-overview",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "nit-mizoram",
+      "field": "courses",
+      "evidenceId": "cmwl1l73g00116utvsmg5jn6b",
+      "sourceId": "cmwl1l6zg00086utvxcozocio",
+      "sourceUrl": "https://nitmz.ac.in/academics/programmes/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "nit-mizoram",
+      "field": "admissions",
+      "evidenceId": "cmwl1l73r00146utvhbsxpep2",
+      "sourceId": "cmwl1l6zi00096utvikkzgl5j",
+      "sourceUrl": "https://nitmz.ac.in/admissions/b-tech-admissions/",
+      "status": "STAGED"
+    }
+  ],
+  "databaseChanged": true
+}

@@ -1,0 +1,29 @@
+{
+  "status": "STAGED",
+  "facts": 2,
+  "reviewState": "UNREVIEWED",
+  "staged": 2,
+  "reused": 0,
+  "createdSources": 1,
+  "createdRuns": 1,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "anna-university",
+      "field": "structured.contact",
+      "evidenceId": "cmwly1tfz00023itvbxtlfiem",
+      "sourceId": "cmwly1tfj00003itv30hvycq4",
+      "sourceUrl": "https://cac.annauniv.edu/uddetails/revision_ud_ug_cands_2023.html",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "anna-university",
+      "field": "structured.contact",
+      "evidenceId": "cmwly1tg500043itvmjc7vcrf",
+      "sourceId": "cmwly1tfj00003itv30hvycq4",
+      "sourceUrl": "https://cac.annauniv.edu/uddetails/revision_ud_ug_cands_2023.html",
+      "status": "STAGED"
+    }
+  ],
+  "databaseChanged": true
+}

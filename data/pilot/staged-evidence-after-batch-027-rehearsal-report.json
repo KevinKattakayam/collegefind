@@ -1,0 +1,20 @@
+{
+  "snapshotSha256": "24c039bb7fd13a994e0c0e01ce1059f06dc7c492e118aa3cbfbaefe4b2697fbf",
+  "first": {
+    "colleges": 205,
+    "sources": 269,
+    "claims": 377,
+    "runs": 293,
+    "audits": 377
+  },
+  "retry": {
+    "colleges": 0,
+    "sources": 0,
+    "claims": 0,
+    "runs": 0,
+    "audits": 0
+  },
+  "exactReadback": true,
+  "decisions": 0,
+  "users": 0
+}

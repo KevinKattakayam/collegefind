@@ -1,0 +1,101 @@
+{
+  "status": "STAGED",
+  "facts": 11,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 11,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "iim-bodh-gaya",
+      "field": "structured.admission",
+      "evidenceId": "cmwlrawje0007fhtvqqvjgda6",
+      "sourceId": "cmwlrawip0000fhtvjl2pc78n",
+      "sourceUrl": "https://iimbg.ac.in/wp-content/uploads/2025/12/IIMBG_MBA_Admission-Policy_2026-28.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iim-sirmaur",
+      "field": "structured.admission",
+      "evidenceId": "cmwlrawjq000afhtvue218xes",
+      "sourceId": "cmwlrawiv0001fhtv6fd5lv9c",
+      "sourceUrl": "https://admissions.iimsirmaur.ac.in/mba-admissions-policy-2026",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iim-jammu",
+      "field": "structured.admission",
+      "evidenceId": "cmwlrawjw000dfhtv7eh9z0vu",
+      "sourceId": "cmwlrawix0002fhtv8ix31kjx",
+      "sourceUrl": "https://www.iimj.ac.in/programs/post-graduate-program-pgp/admission-policy.php",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "college-of-engineering-pune",
+      "field": "courses",
+      "evidenceId": "cmwlrawk3000gfhtvm6d608af",
+      "sourceId": "cmwlrawiz0003fhtvavbtkwwq",
+      "sourceUrl": "https://www.coeptech.ac.in/admissions/undergraduate/first-year-admissions/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "college-of-engineering-pune",
+      "field": "structured.admission",
+      "evidenceId": "cmwlrawk7000ifhtvxalkzp89",
+      "sourceId": "cmwlrawiz0003fhtvavbtkwwq",
+      "sourceUrl": "https://www.coeptech.ac.in/admissions/undergraduate/first-year-admissions/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "north-eastern-hill-university",
+      "field": "courses",
+      "evidenceId": "cmwlrawkf000lfhtvodj77eis",
+      "sourceId": "cmwlrawj20004fhtvosfr9dpk",
+      "sourceUrl": "https://nehu.ac.in/public/assets/files/announcements/20260605112329_MA-MBA-MSc-Diploma-Other-Master-Programme-Admission-Notice-2026-27.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "north-eastern-hill-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwlrawkn000nfhtvsc88g38t",
+      "sourceId": "cmwlrawj20004fhtvosfr9dpk",
+      "sourceUrl": "https://nehu.ac.in/public/assets/files/announcements/20260605112329_MA-MBA-MSc-Diploma-Other-Master-Programme-Admission-Notice-2026-27.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "north-eastern-hill-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwlrawkq000pfhtvlx8ikawm",
+      "sourceId": "cmwlrawj20004fhtvosfr9dpk",
+      "sourceUrl": "https://nehu.ac.in/public/assets/files/announcements/20260605112329_MA-MBA-MSc-Diploma-Other-Master-Programme-Admission-Notice-2026-27.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "tezpur-university",
+      "field": "courses",
+      "evidenceId": "cmwlrawl0000sfhtvx26tporr",
+      "sourceId": "cmwlrawj40005fhtvjrdl4u4h",
+      "sourceUrl": "https://www.tezu.ernet.in/adm26/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "tezpur-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwlrawl3000ufhtv95tse9p2",
+      "sourceId": "cmwlrawj40005fhtvjrdl4u4h",
+      "sourceUrl": "https://www.tezu.ernet.in/adm26/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "tezpur-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwlrawl6000wfhtv6hqdxj37",
+      "sourceId": "cmwlrawj40005fhtvjrdl4u4h",
+      "sourceUrl": "https://www.tezu.ernet.in/adm26/",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

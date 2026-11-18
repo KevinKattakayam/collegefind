@@ -1,0 +1,233 @@
+[
+  {
+    "slug": "iim-jammu",
+    "claimId": "cmwkzfd760002mctvd1yzi86d",
+    "sourceId": "cmwkzfd6t0000mctvan63krbk",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iisc-bangalore",
+    "claimId": "cmwkzfd7s0006mctvc92ttr6u",
+    "sourceId": "cmwkzfd7m0004mctvkmoavdt5",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "college-of-engineering-pune",
+    "claimId": "cmwkzfd83000amctvkom358bd",
+    "sourceId": "cmwkzfd7y0008mctvu8r67ki7",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "north-eastern-hill-university",
+    "claimId": "cmwkzfd8f000emctvnh62ruc4",
+    "sourceId": "cmwkzfd8a000cmctvwjlgidxq",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iim-sambalpur",
+    "claimId": "cmwkzfd8v000imctvd0i1de4h",
+    "sourceId": "cmwkzfd8o000gmctv8qtvlr97",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "pondicherry-university",
+    "claimId": "cmwkzfd99000mmctvkib3bt1o",
+    "sourceId": "cmwkzfd93000kmctv6m5dpbio",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "stanley-medical-college",
+    "claimId": "cmwkzfd9m000qmctv2lyms51j",
+    "sourceId": "cmwkzfd9g000omctv6bj2qxug",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "vel-tech-university",
+    "claimId": "cmwkzfd9z000umctvj9n5xflb",
+    "sourceId": "cmwkzfd9t000smctv50snof45",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "jntu-hyderabad",
+    "claimId": "cmwkzfdad000ymctv1pncsvgo",
+    "sourceId": "cmwkzfda7000wmctvq06gajn2",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "dit-university",
+    "claimId": "cmwkzfdar0012mctvrx89pjrg",
+    "sourceId": "cmwkzfdal0010mctvmuk8tn0u",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "indian-statistical-institute",
+    "claimId": "cmwkzfdb20016mctv1ijh4nu0",
+    "sourceId": "cmwkzfday0014mctv5t2htuys",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "tezpur-university",
+    "claimId": "cmwkzfdbc001amctv7s1pjup2",
+    "sourceId": "cmwkzfdb80018mctvjp4nspmz",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iiit-kottayam",
+    "claimId": "cmwkzfdbk001emctvj60xi971",
+    "sourceId": "cmwkzfdbg001cmctvz71jdw8w",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iiit-gwalior",
+    "claimId": "cmwkzfdbs001imctvz0af90ib",
+    "sourceId": "cmwkzfdbo001gmctvvjw1zb9a",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "punjab-technical-university",
+    "claimId": "cmwkzfdc1001mmctvud79g5kf",
+    "sourceId": "cmwkzfdbx001kmctvq9uw39w0",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iiitdm-kancheepuram",
+    "claimId": "cmwkzfdcd001qmctvfbscngmo",
+    "sourceId": "cmwkzfdc8001omctvlyez8r5z",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "sathyabama-institute",
+    "claimId": "cmwkzfdcn001umctvuyb81rpk",
+    "sourceId": "cmwkzfdcj001smctvx3hx83ft",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "galgotias-university",
+    "claimId": "cmwkzfdcv001ymctviijmjfev",
+    "sourceId": "cmwkzfdcs001wmctv5vhzlhz2",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "visvesvaraya-technological-university",
+    "claimId": "cmwkzfdd50022mctvw7z1j3lr",
+    "sourceId": "cmwkzfdd10020mctv2jmtmgma",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "jain-university",
+    "claimId": "cmwkzfddc0026mctvr9tyscc6",
+    "sourceId": "cmwkzfdd90024mctv0p3x2nus",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "central-university-of-kerala",
+    "claimId": "cmwkzfddm002amctvuckkyyxq",
+    "sourceId": "cmwkzfddi0028mctvroee2e22",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iiit-jabalpur",
+    "claimId": "cmwkzfdds002emctvs3kxpn0j",
+    "sourceId": "cmwkzfddp002cmctvb1xeyxhf",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "seth-gs-medical-college",
+    "claimId": "cmwkzfde0002imctvy9vnp1ao",
+    "sourceId": "cmwkzfddx002gmctvveix9y5v",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "central-university-of-punjab",
+    "claimId": "cmwkzfde8002mmctvmwul3ay0",
+    "sourceId": "cmwkzfde4002kmctvvk1nfg5i",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "hindustan-university",
+    "claimId": "cmwkzfdeg002qmctvmatn3841",
+    "sourceId": "cmwkzfded002omctvu84ds7z6",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "calcutta-university",
+    "claimId": "cmwkzflkj0002p2tvoxf936kn",
+    "sourceId": "cmwkzflk40000p2tv6z6v7grm",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "kle-technological-university",
+    "claimId": "cmwkzfll50006p2tvg8x9fi12",
+    "sourceId": "cmwkzflkz0004p2tvfvdyfx5z",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iiser-pune",
+    "claimId": "cmwkzfllg000ap2tvkwbzxu7p",
+    "sourceId": "cmwkzfllb0008p2tvloxk43j7",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nlu-delhi",
+    "claimId": "cmwkzfllr000ep2tv14b9nowq",
+    "sourceId": "cmwkzfllm000cp2tvmtuzbz2z",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "bms-college-of-engineering",
+    "claimId": "cmwkzflm3000ip2tvy0rqmaak",
+    "sourceId": "cmwkzflly000gp2tvstl2e67l",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-delhi",
+    "claimId": "cmwkzflmh000mp2tvzdmgzjl0",
+    "sourceId": "cmwkzflma000kp2tvsbo774nz",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "ms-ramaiah-institute",
+    "claimId": "cmwkzflmv000qp2tvvswhbp27",
+    "sourceId": "cmwkzflmo000op2tv2yefj018",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "pes-university",
+    "claimId": "cmwkzfln7000up2tv32g4rcv3",
+    "sourceId": "cmwkzfln1000sp2tvecsy14db",
+    "status": "STAGED",
+    "field": "website"
+  }
+]

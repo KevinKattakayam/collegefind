@@ -1,0 +1,109 @@
+{
+  "status": "STAGED",
+  "facts": 12,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 12,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "iiit-kottayam",
+      "field": "courses",
+      "evidenceId": "cmwlshl5o0006w7tvvl44feeb",
+      "sourceId": "cmwlshl4q0000w7tvnk9c0cye",
+      "sourceUrl": "https://www.iiitkottayam.ac.in/views/admission.html",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiit-kottayam",
+      "field": "structured.admission",
+      "evidenceId": "cmwlshl5y0008w7tvutzmmfxh",
+      "sourceId": "cmwlshl4q0000w7tvnk9c0cye",
+      "sourceUrl": "https://www.iiitkottayam.ac.in/views/admission.html",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiit-gwalior",
+      "field": "courses",
+      "evidenceId": "cmwlshl6e000bw7tvcqn0oe08",
+      "sourceId": "cmwlshl4z0001w7tv9c7j69ia",
+      "sourceUrl": "https://iiitm.ac.in/public/uploads/media_uploads/1785820353_Instructions-for-IMT-IMG-and-B-Tech-students-2026-F.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiit-gwalior",
+      "field": "structured.admission",
+      "evidenceId": "cmwlshl6m000dw7tvwmnunhk4",
+      "sourceId": "cmwlshl4z0001w7tv9c7j69ia",
+      "sourceUrl": "https://iiitm.ac.in/public/uploads/media_uploads/1785820353_Instructions-for-IMT-IMG-and-B-Tech-students-2026-F.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiit-gwalior",
+      "field": "structured.fee",
+      "evidenceId": "cmwlshl6t000fw7tvw5nqnkpq",
+      "sourceId": "cmwlshl4z0001w7tv9c7j69ia",
+      "sourceUrl": "https://iiitm.ac.in/public/uploads/media_uploads/1785820353_Instructions-for-IMT-IMG-and-B-Tech-students-2026-F.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiit-gwalior",
+      "field": "structured.fee",
+      "evidenceId": "cmwlshl6z000hw7tvb4057hr1",
+      "sourceId": "cmwlshl4z0001w7tv9c7j69ia",
+      "sourceUrl": "https://iiitm.ac.in/public/uploads/media_uploads/1785820353_Instructions-for-IMT-IMG-and-B-Tech-students-2026-F.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiit-gwalior",
+      "field": "structured.fee",
+      "evidenceId": "cmwlshl75000jw7tvsjmjuqay",
+      "sourceId": "cmwlshl4z0001w7tv9c7j69ia",
+      "sourceUrl": "https://iiitm.ac.in/public/uploads/media_uploads/1785820353_Instructions-for-IMT-IMG-and-B-Tech-students-2026-F.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iim-nagpur",
+      "field": "structured.programme",
+      "evidenceId": "cmwlshl7h000mw7tvgs8zsnxx",
+      "sourceId": "cmwlshl530002w7tvk2ill5ns",
+      "sourceUrl": "https://www.iimnagpur.ac.in/admissions/mba/admissions-policy/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iim-nagpur",
+      "field": "structured.admission",
+      "evidenceId": "cmwlshl7l000ow7tvb5hejcu8",
+      "sourceId": "cmwlshl530002w7tvk2ill5ns",
+      "sourceUrl": "https://www.iimnagpur.ac.in/admissions/mba/admissions-policy/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "niser-bhubaneswar",
+      "field": "courses",
+      "evidenceId": "cmwlshl7w000rw7tvt0n5hfar",
+      "sourceId": "cmwlshl570003w7tvccpmz82u",
+      "sourceUrl": "https://niser.ac.in/acad/education",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "niser-bhubaneswar",
+      "field": "structured.admission",
+      "evidenceId": "cmwlshl83000uw7tvk32y53gq",
+      "sourceId": "cmwlshl590004w7tv7u3gytfj",
+      "sourceUrl": "https://niser.ac.in/acad/admission",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "niser-bhubaneswar",
+      "field": "structured.contact",
+      "evidenceId": "cmwlshl88000ww7tvmstah0jn",
+      "sourceId": "cmwlshl590004w7tv7u3gytfj",
+      "sourceUrl": "https://niser.ac.in/acad/admission",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

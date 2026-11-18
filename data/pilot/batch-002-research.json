@@ -1,0 +1,522 @@
+[
+  {
+    "slug": "indian-institute-of-technology-kharagpur",
+    "url": "https://www.iitkgp.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "indian-institute-of-technology-kanpur",
+    "url": "https://www.iitk.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "indian-institute-of-technology-roorkee",
+    "url": "https://www.iitr.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "indian-institute-of-technology-guwahati",
+    "url": "https://www.iitg.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "indian-institute-of-technology-hyderabad",
+    "url": "https://www.iith.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "national-institute-of-technology-karnataka",
+    "url": "https://www.nitk.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "national-institute-of-technology-calicut",
+    "url": "https://nitc.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "motilal-nehru-national-institute-of-technology",
+    "url": "https://www.mnnit.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "malaviya-national-institute-of-technology",
+    "url": "https://mnit.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "indian-institute-of-management-ahmedabad",
+    "url": "https://www.iima.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "indian-institute-of-management-bangalore",
+    "url": "https://www.iimb.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "indian-institute-of-management-calcutta",
+    "url": "https://www.iimcal.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "indian-institute-of-management-lucknow",
+    "url": "https://iiml.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "srm-institute-of-science-and-technology",
+    "url": "https://www.srmist.edu.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "bits-pilani",
+    "url": "https://www.bits-pilani.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "lovely-professional-university",
+    "url": "https://www.lpu.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "indian-school-of-business",
+    "url": "https://www.isb.edu/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "xlri-jamshedpur",
+    "url": "https://www.xlri.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "management-development-institute",
+    "url": "https://mdi.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "mica-ahmedabad",
+    "url": "https://www.mica.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "anna-university",
+    "url": "https://www.annauniv.edu/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "university-of-mumbai",
+    "url": "https://mu.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "savitribai-phule-pune-university",
+    "url": "https://www.unipune.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "jadavpur-university",
+    "url": "https://jadavpuruniversity.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "osmania-university",
+    "url": "https://www.osmania.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "thapar-institute-of-engineering",
+    "url": "https://www.thapar.edu/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "psg-college-of-technology",
+    "url": "https://www.psgtech.edu/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "symbiosis-international-university",
+    "url": "https://www.siu.edu.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "kiit-university",
+    "url": "https://kiit.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "shiv-nadar-university",
+    "url": "https://snu.edu.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "chandigarh-university",
+    "url": "https://www.cuchd.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "all-india-institute-of-medical-sciences",
+    "url": "https://www.aiims.edu/index.php/en",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "christian-medical-college",
+    "url": "https://www.cmch-vellore.edu/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "armed-forces-medical-college",
+    "url": "https://afmc.nic.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "national-law-school-of-india-university",
+    "url": "https://www.nls.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "shri-ram-college-of-commerce",
+    "url": "https://www.srcc.edu/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "loyola-college",
+    "url": "https://www.loyolacollege.edu/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "st-xaviers-college",
+    "url": "https://xaviers.edu/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "fergusson-college",
+    "url": "https://fergusson.edu/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "ashoka-university",
+    "url": "https://www.ashoka.edu.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_OR_403",
+    "scope": "Institution reference only; campus needs human review",
+    "checkedAt": "2026-11-17",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  }
+]

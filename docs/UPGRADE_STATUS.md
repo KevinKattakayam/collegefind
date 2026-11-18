@@ -1,7 +1,6 @@
 # CollegeFind V3 upgrade status and evidence
 
-Audit date: 2026-11-17. Audited local/remote main: `3ddf88d7f0dec224cde1984100e9208ce6285328`.
-Phase 1 documentation delivered. Phase 2 is IN PROGRESS on branch `phase-2-safety-integrity`; Phase 3–9 NOT STARTED. No application feature is marked DONE by this document. Phase 2 remains incomplete.
+Status refreshed: 2026-11-18 16:29 UTC. Current work is local on `phase-3-catalogue-enrichment`; Phase 2 implementation is complete locally, with owner-controlled production security/recovery checks still blocking production release. Phase 3 is in progress: all 205 college research dispositions remain recorded. The latest disposable snapshot has 377 claims (147 source-reference claims and 230 substantive claims) across 205 colleges, with 123 colleges holding staged substantive evidence. All real claims remain unreviewed; there are zero genuine human approvals, zero genuinely VERIFIED claims and zero fully enriched colleges. The original 205 catalogue identities, slugs, seed data, source history and audit history are preserved. Historical audit entries below remain historical; the latest continuation evidence is at the end of this file.
 
 ## Carried-forward engineering evidence (not rerun)
 
@@ -919,3 +918,715 @@ Added behavior tests in `tests/unit/evidence.test.ts` for malformed optional pub
 - With `DATABASE_URL`, `DIRECT_URL`, `TEST_DATABASE_URL` set only to that fixture and `COLLEGEFIND_TEST_DATABASE_CONFIRMED=true`, `npm run test:coverage -- --maxWorkers=2`: **PASS**, 159 tests / 24 files. Overall 88.4% lines, 81.64% branches, 86.21% statements, 86.53% functions. `src/server/ingest/evidence.ts`: **96.42% lines, 88.88% branches**.
 - `npm run lint`: **PASS**; `npm run typecheck`: **PASS**; `git diff --check`: **PASS**.
 - Prior clean Turbopack/webpack builds and 29-pass/1-skip Playwright run remain applicable: this increment changed only unit tests and status documentation. Database fixture was isolated and used only for migration and integration coverage. Production requirements remain owner-blocked: historic DB credential revoke/rotation and NEXTAUTH_SECRET replacement evidence; sanitized production seed-off settings; Upstash presence, health, staging shared-limit/outage exercise and fallback policy acceptance; backup retention/encryption/access and isolated restore-drill evidence with RPO/RTO. No secrets or production systems were accessed.
+
+## Phase 3 fixture enrichment foundation — local increment
+
+Branch `phase-3-catalogue-enrichment` starts from recoverable Phase 2 commit `19d8c91`. Pre-existing `CollegeFind_AGENTS_V3.md` remains untracked and untouched. Real institutions enriched: **0**. No official source material imported. Catalogue remains 205 DEMO/MISSING entries as recorded in `docs/DATA_COVERAGE.json`; fixture imports never count as real coverage. Owner-side Phase 2 credential, production seed/Redis and backup/restore release blockers remain unchanged.
+
+Implemented:
+- Additive InstitutionAlias relation with internal college ID, namespace (AISHE/AICTE/UGC/NIRF/JoSAA/NAME), campus scope, validity dates and source URL; existing college IDs/slugs and relationships preserved. Multiple candidates return AMBIGUOUS instead of automatic merge. Admin alias endpoint audits reconciliation and rejects competing mappings transactionally.
+- Fixture adapter and CLI: strict input envelope, row rejection report, exact slug/alias matching, default dry-run, source checksums, identical-content run/claim deduplication, changed-content versions, staged evidence snippets/locators, audit trail and transaction rollback. No automatic supersession/publication. Fixture CLI requires the explicit disposable DB guard before client construction.
+- Admin-only `/admin/enrichment` recent-runs/claim dashboard with source links, fixture labels, dates, stale flags, decision history and approve/reject controls. Existing origin/rate-limit/current-role/audit controls protect mutations. Server refuses fixture approvals; public projection independently excludes fixture claims.
+- DATA_COVERAGE documents include all 205 original records, explicit status vocabulary, source-policy register, operating commands and prioritized backlog. AISHE permissions and JoSAA/NIRF unresolved reuse/access restrictions remain blocked, without interpreting public access as bulk redistribution permission.
+
+Verification:
+- Fresh PostgreSQL16 container `57f3e5073ba80476810f069867ebb328ac17d6abd5966343e5d75e95d1488d49`, label `phase3`, loopback `127.0.0.1:32773`; independently confirmed database `collegefind_test` had zero public tables before confirmation.
+- `npx prisma generate`: PASS.
+- `npm run db:deploy`: PASS, all four migrations on empty disposable DB including additive identity/fixture fields.
+- `npm run test:all -- --maxWorkers=2`: final PASS, **161 tests / 25 files**. Initial run caught two test-fixture defects (old review mock missing claim lookup; user fixture used wrong password field/name), fixed without weakening application guards.
+- `npx vitest run --project integration tests/integration/catalogue.test.ts`: PASS **2/2**, after expanding assertions for changed-content versions and unauthorized decisions. Tests cover dry-run no writes, rejected rows, ambiguous pure matching, repeated imports, fixture-approval denial, rejection audit and actual transaction rollback when audit persistence fails after staging.
+- `npx tsx scripts/ingest-catalogue.ts --file /tmp/collegefind-phase3-cli-fixture.json` then same with `--apply`: PASS dry-run and stage of one clearly fictional row against the isolated fixture college, zero rejections. No public real-college enrichment.
+- `npm run lint` and `npm run typecheck`: PASS; `npm run build`: PASS clean local Turbopack (compiled 5.7s), including new admin routes. Fixture DB overrides only; no production request.
+- No Playwright execution for new admin workflow yet. Existing UI regression evidence is historical; build success is not an admin UI end-to-end pass.
+
+Remaining limits: alias management has authenticated API but no entry form; the dashboard shows latest100 claims/latest20 runs rather than complete paginated coverage; conflicts are retained as competing claims/issues rather than a dedicated grouped resolution UI. Alias writes have authorization/audit code but no route-level browser/integration test yet. Future provider policy gates must be implemented before enabling any real-source adapter; current adapter accepts only explicit fixtures. Only profile fields are staged here; programme/seat/fees/placement-specific adapters must reuse typed tables with their own validators before supported real imports. Field/year/source changes create immutable versions but no automatic approval or supersession. Name/campus alias history supports storage; historical-date reconciliation is not yet implemented. No real 20–30-college pilot is ready.
+
+Migration/rollback: additive only, no backfill, ID mutation or existing-row deletion. Retain new columns/table when reverting application code; do not drop fixture markers while fixture claims exist. Import rollback tested on disposable DB; production migrations/restore remain unauthorized.
+
+Next safe task: test the new identity endpoint and admin browser flows, add paginated conflict grouping and explicit alias-history date matching, then obtain artifact-specific permission/access evidence and build a provider adapter for the first legitimate official-source pilot. Never approve a fixture claim or count it as an enriched institution.
+
+## Phase 3 review queue follow-up
+
+Latest uncommitted work preserved. Evidence GET now applies status/conflict filtering before slicing, returns total/hasMore and uses createdAt/id stable order. Conflict queue groups distinct values by college and field; identity GET requires admin and resolves aliases only within campus and validity dates. This fix is pending integration/browser verification. The server page currently still loads all evidence before filtering, so large-catalogue database-side pagination remains a performance limitation.
+
+## Phase 3 database review queue — verified latest tree
+
+This entry supersedes the earlier unverified in-memory queue notes. Branch remains `phase-3-catalogue-enrichment`; Phase 2 commit `19d8c91`, all previous uncommitted work and unrelated `CollegeFind_AGENTS_V3.md` are preserved. Real institutions enriched: **0**.
+
+Implemented shared `src/server/evidence-queue.ts` for both the admin API and server page. A parameterized Prisma `$queryRaw` CTE classifies latest decisions, matches search/conflicting values, counts filtered rows and performs ORDER BY/LIMIT/OFFSET in PostgreSQL. Only selected page IDs are hydrated using Prisma `findMany`; the application never downloads the entire evidence table. Page defaults to1, page size25, bounded1–100, maximum page100000; invalid API input returns400. Both readers require current ADMIN access. Unique ordering is createdAt DESC/id DESC, including decision ordering; equal timestamps no longer yield unstable page ordering. Count and ID slicing use a single statement snapshot. Offset navigation is stable for an unchanged queue; concurrent inserts/reviews can move rows between separately requested pages, so this is not an immutable export snapshot.
+
+Conflict definition: differing JSON values within identical college/field/programScope/academicYear, excluding fixture/rejected/stale candidates, with a competing candidate not superseded by approved evidence. This deliberately surfaces pending disagreements for human review. It is an administrative triage signal, not a public verification assertion. Both API/page use the same implementation. New additive indexes support evidence chronological ordering and latest-decision lookup. No existing rows/IDs/slugs were backfilled or deleted. Roll back code while retaining additive indexes; no destructive down migration is required. SQL plan/performance at large evidence volumes is NOT TESTED.
+
+Verified with fresh PostgreSQL16 container `13d75178b9c69cba3cb817ea555398f62826e7ba1a46c79900419f3abcf5ef08`, label `phase3`, only127.0.0.1:32774. Identity `collegefind_test|0` (zero public tables) independently checked before disposable confirmation. Separately created and verified `collegefind_browser_test|0` for browsers. Test credentials were local fixtures; no runtime/production database accessed.
+
+| Exact check | Latest result |
+| --- | --- |
+| `npx prisma generate` | PASS, Prisma7.10.1 |
+| `npm run db:deploy` with fixture overrides | PASS, all5 migrations including review queue indexes, both clean disposable databases |
+| `npm run test:all -- --maxWorkers=2` | PASS, **162 tests /26 files**, final rerun20.32s after all integration assertions |
+| `npm run build` | PASS, final clean Turbopack compile5.0s, TypeScript/static generation completed after mobile layout correction |
+| `npm run test:e2e -- --workers=2` | PASS, **31 passed /1 intentional skip**,18.0s, Desktop Chromium/Pixel7, separate seeded browser DB |
+| `npm run lint` / `npm run typecheck` / `git diff --check` | PASS final run |
+| `sha256sum src/server/seed/demo-colleges.json` | unchanged `a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637` |
+
+New integration coverage: filters before page slicing, conflict peers across page boundaries, tied timestamps with no duplicate IDs on adjacent static pages, zero-result search, out-of-range page, invalid page/size, unauthenticated401/nonadmin403/current-role admin access, historical expired alias exclusion, identity write audit and anonymous identity denial. Existing import tests rerun: dry-run, duplicate import, changed version, rejection report, audit rollback and fixture approval denial. Added public projection assertion proves even a fixture with an injected approval is withheld. Admin browser scenarios run in both projects: real login, anonymous queue denial, search, two-page navigation, conflict queue, successful approve/reject, and disabled fixture approval. Synthetic browser approval data exists only in disposable DB and is never counted as real enrichment.
+
+Failures corrected during verification: first browser run shared integration leftovers and failed a demo recommendation assumption; moved to separately verified browser DB. Initial new select locator included option text in accessible label; used role-based combobox locator. Mobile audit JSON overflow intercepted review controls; wrapped histories/long content and stacked controls. Full browser rerun then passed. No force clicks, security relaxation, test skips beyond existing mobile-only desktop skip, or production operations.
+
+Changed this increment: shared queue service, admin evidence GET/page and responsive review controls, additive queue index migration/schema indexes, queue integration tests, explicit public fixture exclusion assertion in catalogue integration test, admin Playwright tests, status/coverage docs. Earlier identity endpoint work preserved and tested. No new official source access investigation or real pilot. Remaining blockers are artifact-specific source permissions/access, positive real-source pilot and independent human review, production owner credential/seed/Redis/backups evidence, and large-volume queue query performance verification. None prevents local fixture operation; none is claimed verified.
+
+Cleanup: exact container ID/phase3 label/loopback port rechecked; `docker rm -f 13d75178b9c69cba3cb817ea555398f62826e7ba1a46c79900419f3abcf5ef08` removed only this disposable fixture. No test database remains from this run. Final documentation diff check passed.
+
+## First real official-reference pilot
+
+Local-only Phase3 increment, existing branch/Phase2 snapshot preserved. Ten existing institutions selected with regional/public/private variety; manifests/checklists in `data/pilot`. Eight accessible official website references staged, two access-blocked, zero human review/VERIFIED claims. No fees, placements, accreditation or admissions claims imported. `docs/DATA_COVERAGE.json` now reconciles all205 field dispositions and eight local STAGED website fields; ledger records local disposable execution, not production state. Human review credentials/approval unavailable; no real claims approved.
+
+Added narrow `official-reference.ts` adapter plus `ingest-official-references.ts` CLI. Only manually observed public official HTML hyperlinks with explicit LINK_REFERENCE_ONLY use accepted; no crawling, copying documents/prose or inferring reuse permission. Exact URL/publisher/collectedAt/unknown publishedAt/locator stored. Existing source identities, field evidence, import runs and audits reused; default dry run, idempotent upsert, per-source transaction and90-day recheck policy. No schema change. Existing IDs/slugs untouched. Replay manifest/staging IDs retained after disposable cleanup; do not mistake exported staging status for deployed data.
+
+Actual checks after source changes:
+- Fresh PostgreSQL16 container `85288ad05c56bc16ec8e10a0b2f6e512170195dde483480e789a9a9cbf30b98a`, label phase3, loopback32775, `collegefind_test|0` independently checked before confirmation. Separate empty `collegefind_browser_test|0` verified for E2E.
+- `npx prisma generate`, `npm run lint`, `npm run typecheck`: PASS.
+- `npm run db:deploy`: PASS all5 migrations on isolated integration and browser databases.
+- `npm run test:all -- --maxWorkers=2`: PASS163 tests/27files,21.14s. New adapter regression checks no-write dry-run, idempotency/audit, zero decisions, source-use rejection and public withholding; existing provenance/identity/import/queue tests rerun.
+- `npm run build`: PASS clean Turbopack compile6.3s, TypeScript8.6s and static generation.
+- `npm run test:e2e -- --workers=2`: PASS31/1intentional skip,17.7s; synthetic desktop/mobile review/approval/rejection/search/comparison/projection scenarios. No real-review simulation; these tests prove code behavior, not factual verification. Public display of genuinely reviewed real pilot claims remains NOT TESTED because none is approved.
+- `npm run db:seed` only on disposable DB; `npx tsx scripts/ingest-official-references.ts --file data/pilot/official-references.json` dry run PASS8. Same with `--apply --report data/pilot/staging-results.json` PASS8. Repeat `--apply` returned same IDs. Read-back excluding synthetic TEST publisher:8 real-reference claims/8institutions; zero review decisions. Adapter integration fixture adds one synthetic TEST source, not counted as real enrichment.
+
+Sources/terms/access observations and remaining field-level research actions are in DATA_COVERAGE. Public factual linking is treated separately from protected document copying/bulk redistribution; no blanket reuse licence asserted. Two inaccessible sources moved to blocked instead of bypassed. No real source documents or quoted prose persisted. Bulk extraction stays disabled pending artifact-specific conditions. Existing production credential/seed/Redis/backup release blockers remain unchanged. Next safe task: independent human website/domain/campus review of the8 references, then focused programme/fee publication research with explicit scope/rights validation. Do not promote unrelated demo metrics when approving website fields.
+
+Final diff check PASS; original205 seed SHA unchanged (`a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637`). Reconfirmed exact disposable container ID/phase3 label/loopback mapping and removed that container only after tests and staging read-back. The8 STAGED records persist as replayable source manifest plus execution report, not a running database. No production resource, push/merge/deployment or credential changes occurred.
+
+## Phase3 catalogue scale-out and publication handoff — latest
+
+Preserved `phase-3-catalogue-enrichment`, Phase2 `19d8c91`, all earlier uncommitted work, original205 seed and original eight staging-result IDs. Completed100 institution-level source-reference attempts (not multi-domain research),63 cumulative institutions with accessible official references,37 access-limited,105 not researched. Local archived STAGED claims66 =63website URLs +3admissions links; genuine VERIFIED0, real human review0, fully enriched0. Current run staged58 new claims (55new institutional websites plus3admissions on original pilot); original8 retained from earlier execution artifacts, not re-created or silently re-IDed. Original8 full audit database was removed earlier; only original report IDs/manifests remain. No audit history is fabricated. New58 source/claim/run/audit records archived in `data/pilot/local-stage-snapshot.json`, no users/secrets/reviewer decisions.
+
+All205 plan: `data/pilot/catalogue-batch-plan.json`, bounded25 groups/cumulative50/100/150/205 reference research milestones. Actual research groups10+40+25+25 with successful reference counts8+25+17+13; broad institution/region coverage incl newer private universities, engineering, medicine, law and management.150/205 targets remain future. Exact per-college outcomes, source scope/permissions and all205 field totals updated in DATA_COVERAGE JSON/MD; no fabricated fee/placement/eligibility data or claim of full profile enrichment.
+
+Implemented focused changes: optional admissions-link field on manually-observed official-reference adapter, preserving original website manifest/hash behavior; public projection validates HTTPS and only exposes reviewed/unexpired/nonconflicting admissions URL; profile renders approved admissions link and field source attribution. CLI now bounds rows to25, validates offsets, checkpoints success/rejection report and continues after per-source rejection, keeping per-source transactions. No new schema/migration or source crawler. Real source references were read via ordinary public requests, no CAPTCHA/authentication/403 bypass, copyrighted-document storage or bulk reuse licence assumptions.37 source-access limitations recorded. Multicampus identity remains human-review pending; no whole-college VERIFIED promotion.
+
+Publication tests extended existing synthetic browser scenario: STAGED website not visible, reviewer API approval makes URL/source attribution visible, parent retains DEMO badge, later rejection withholds URL and two review audit records exist. Fixture approvals/public withholding and conflict/staleness/rollback remain in rerun regressions. Synthetic actions are not counted as real approvals. Existing real8 domain recheck found IITBombay/BIT-home intermittent timeout, six public headers, and institution-wide VIT/MAHE/Amrita portals requiring campus review; preserve original claims as STAGED, not autoapprove from accessibility. New BIT admissions page accessible despite homepage timeout. No genuine real student-facing publication is claimed.
+
+Latest execution environment: PostgreSQL16 disposable container `ac8828d5bb3eca815870fe4c08f5d34e0d947a7016b17206355df6a8e7a72072`, phase3label,127.0.0.1:32776; independently checked empty `collegefind_test|0`. Separately created/verified `collegefind_browser_test|0` and `collegefind_regression_test|0` to avoid truncating staged real-reference history. Only public local fixture credentials used. No production resources changed.
+
+Commands/results after latest code changes:
+- `npx prisma generate`: PASS.
+- `npm run db:deploy`: PASS all5 additive migrations on isolated databases.
+- `npm run test:all -- --maxWorkers=2`: PASS **163 tests/27 files**, final16.78s including admissions reference staging regression; no automated real approvals.
+- `npm run lint`, `npm run typecheck`, `git diff --check`: PASS after latest adapter/CLI/publication changes.
+- `npm run build`: PASS clean Turbopack5.4s, TypeScript8.8s/static generation; latest app publication/admissions changes included. Subsequent CLI/report-only updates do not alter built app.
+- `npm run test:e2e -- --workers=2`: PASS **31/1intentional skip**,15.2s including new profile-publication actions on desktop/mobile.
+- `npm run db:seed` only on disposable stage/browser DB. `npx tsx scripts/ingest-official-references.ts --file data/pilot/admissions-references.json --apply --report data/pilot/admissions-staging-results.json`: PASS3. Batch00225,00317,00413 imports PASS, reports preserve actual IDs. Batch002 repeat with `--offset 0 --limit 25` returned identical IDs. Latest partial-write/report behavior is per-source; batch-wide atomicity is intentionally not claimed.
+- Read-back from staging DB58 new real claims/58 colleges (3admissions on prior pilot +55new sites), no genuine review decisions; cumulative unique count63 institutions after union with old8. Snapshot asserts58 claims and58 audits, excluding synthetic TEST rows.
+
+Remaining work:105 institution sources unresearched;37 limitations need alternate sources; every college needs deeper programme/fees/hostel/scholarship/accreditation/placement/ranking research. All63 staged institutions require human identity/campus approval. No authorized human reviewer available. Permission for broader extraction/snippets/documents must be checked per source. Large-scale queue performance, original8 full audit restoration and real reviewed publication remain unverified. Owner-side historical credential/seed/Redis/backup release blockers persist. No push/merge/deploy/production/credential changes.
+
+## Phase 3 substantive source research and clean restoration — latest, 2026-11-18
+
+This entry supersedes prior substantive-research counts above and in the coverage ledger. Work remained on `phase-3-catalogue-enrichment`; no commit, push, merge or deployment occurred. Preserved prior Phase 3 work, all 205 seed institutions and slugs, all staged claim IDs already in the local artifacts, and audit history without synthesizing old decisions. `src/server/seed/demo-colleges.json` remains SHA-256 `a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637`.
+
+### Catalogue and evidence results
+
+- 205/205 original catalogue rows and unique slugs preserved.
+- Prior institution-reference research remains 205 attempted, 130 staged website links, 17 admissions links, 75 blocked or conflicted. This pass did not repeat it.
+- Substantive research: 17 institutions attempted across five bounded batches; 13 with supported staged facts, four with no staged facts, 188 still without substantive research.
+- 22 substantive claims staged and unreviewed: 10 course/programme summaries for 10 colleges, 8 admissions process facts for 8 colleges, 2 phones for 2 colleges, and 2 emails for 2 colleges. No fees, placement, accreditation, ranking, hostel or scholarship claims were staged. One IIT Bombay 2026–27 fee notice was researched but deliberately held back because current types cannot preserve its component/category/waiver distinctions safely.
+- Combined local record count after restore and these batches: 169 claims (147 reference claims + 22 substantive claims), 164 sources, 164 import runs, 169 staging audit events, zero reviewer decisions, zero fixture claims, zero orphan sources and zero claims lacking a staging audit. All substantive real claims remain STAGED; genuinely VERIFIED real claims/institutions: 0/0; full profiles: 0/205.
+- Source pages were manually viewed using public HTTPS access. The manifests record publisher, exact URL, collection time, locators and use notes. No full documents or substantial copyrighted text were copied, and no automated bulk collection or access bypass was used. Public readability was not taken as a bulk reuse licence. The selected-campuses and all fact claims still need authorized human identity, scope and correctness review.
+
+### Snapshot recovery and idempotency
+
+On fresh, independently verified, loopback-only disposable PostgreSQL databases, additive migrations and the archived 147-claim restore succeeded twice. Both clean restore runs yielded 205 catalogue rows, 147 sources, 147 claims, 147 import runs and 147 audit events, with no decisions or fixture claims. Replay manifests named 147 old claims; the archive contained full payloads for 139. The eight absent original pilot claims were reintroduced via the normal importer with new IDs and new staging audit events; their old IDs/history beyond retained manifests are not reconstructed. The archive had original College IDs for 125 claim-bearing rows; IDs for the other 80 catalogue rows were not present in the snapshot, so those IDs cannot be claimed as restored from the archive. Original seed checksum and 205 slugs matched. Reports are `data/pilot/restore-report-batch-002.json` and `data/pilot/restore-report-repeatability.json`.
+
+All five fact batches passed dry-run, first staging and immediate retry; retry counts were 11/11, 5/5, 3/3, 2/2 and 1/1 reused. A restore against a disposable database containing unrelated integration-fixture colleges stopped at identity mismatch and transactionally rolled back; it was not reused as a restore target. No production/staging database was accessed.
+
+### Latest verification evidence
+
+After the only application-code change in this continuation (`src/server/ingest/official-facts.ts` result overload typing, fixing test callers incorrectly receiving the dry-run return type), the following latest results were recorded:
+
+| Command/check | Result |
+| --- | --- |
+| `npx prisma generate` | PASS |
+| `npm run lint` | PASS |
+| `npm run typecheck` | PASS |
+| `npm run test:integration -- tests/integration/official-facts.test.ts` | PASS, 2/2 |
+| `npm run test:all -- --maxWorkers=2` | PASS, 165 tests / 28 files |
+| `npm run build -- --webpack` | PASS, production build completed with Next.js 16 webpack |
+| `npm run test:e2e -- tests/e2e/admin.spec.ts` | PASS, 2/2, desktop and mobile synthetic admin review/publication scenarios |
+| Prisma deploy on fresh disposable restore/test DBs | PASS, all five additive migrations |
+| Snapshot restoration repeatability | PASS, two clean restores with identical counts above |
+| Per-batch idempotency | PASS, all five retries reused all staged claim IDs |
+
+The database and browser tests used only newly provisioned, explicitly verified disposable local PostgreSQL containers; test confirmation was set only after independent identity/isolation checks. The production build and test commands used disposable/test database environment overrides. The browser approval/rejection records are synthetic and do not count as genuine human review. Since the final code checks, only source-manifest and documentation/coverage ledger files changed; tests were not rerun for those data/docs-only edits. Final `git diff --check`, JSON/ledger consistency, final DB count read-back and exact worktree file inventory must be recorded before handoff.
+
+### Current blockers and next task
+
+No real institution has genuinely verified information yet. A human reviewer with the authorized ADMIN role must independently review each source URL, campus match, field value, year/scope, freshness and reuse basis, then explicitly approve or reject in the audited workflow. Bulk extraction, evidence-snippet storage and redistribution permissions remain provider/artifact-specific and unresolved; continue manual factual research only within the recorded scope. Fee enrichment requires a typed programme/year/category/component-aware model before any fee amount is staged. Continue substantive source research across the remaining188 institutions in bounded batches; do not declare any profile complete from the presence of one source or a few facts. Phase 2 owner-side production checks remain separate blockers: historical credential revocation/rotation evidence, production seed-route restrictions, Redis rate-limit configuration/outage behavior, and backup retention/restore readiness. No production configuration, credentials or data were changed.
+
+### Follow-up official-source research batch 006 — 2026-11-18
+
+Four previously substantively unresearched institutions were checked on official pages: NIT Rourkela, IIT Roorkee, MNNIT Allahabad/Prayagraj and Anna University. NIT Rourkela's official copyright policy permits accurate reproduction with prominent acknowledgement (excluding third-party-owned content). Its UG page supports one concise JEE Main/JoSAA/CSAB admission-route candidate, with current-year eligibility explicitly deferred to JoSAA/MoE. It was not imported because the prior disposable PostgreSQL container and confirmation files are absent from this environment and Docker API access returned permission denied. IIT Roorkee has unresolved institute-wide reuse terms and visible programme-count differences; MNNIT reuse terms are unresolved; Anna University reuse and multi-campus scope are unresolved. No claims from those sources were staged. URLs, publishers, source dates/academic-year limitations, retrieval timestamps, evidence locations and decisions are recorded in `data/pilot/substantive-research-batch-006.json` and `docs/DATA_COVERAGE.json`.
+
+Exact checks in this increment:
+
+- `node --import tsx ./scripts/ingest-official-facts.ts --file data/pilot/substantive-research-batch-006.json --report data/pilot/substantive-batch-006-dry-run-report.json`: **PASS**, `DRY_RUN`, 1 candidate, no database changes.
+- `npx tsx scripts/ingest-official-facts.ts --file data/pilot/substantive-research-batch-006.json --report data/pilot/substantive-batch-006-dry-run-report.json`: **BLOCKED by sandbox runtime**, Node/tsx listener creation at `/tmp/tsx-1000/16.pipe` returned `EPERM`; this is a runner limitation. The direct Node `--import tsx` invocation succeeded.
+- `docker ps --filter name=collegefind-p3-batch002-20261118 --format '{{.Names}} {{.ID}} {{.Ports}}'`: **BLOCKED**, Docker socket permission denied. The earlier `/tmp/cf-p3-*` database confirmation files and container are no longer present.
+- No DB connection, migration, import apply, or destructive operation was attempted. New batch status is 1 candidate validated, 0 new claims staged.
+- Coverage now records 205 catalogue rows; 21 substantive research attempts; 13 institutions with 22 previously staged claims; 8 attempts with no claim imported; 184 institutions still lacking a substantive attempt; one additional NIT Rourkela candidate pending safe DB stage; 0 genuinely verified claims/institutions. Original seed SHA-256 unchanged.
+- `git diff --check`: **PASS**, no whitespace errors. JSON/manifest check: **PASS** (all JSON parsed; importer dry-run accepted one fact); coverage integrity assertions **PASS** (205 seed rows/unique slugs/ledger entries; 21 attempts + 184 not attempted = 205; 13 staged-claim institutions + 8 no-import attempts + 184 not attempted = 205; batch 006 candidate count/report match). Seed SHA-256 remains `a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637`.
+
+No application code changed in batch 006. New files: `data/pilot/substantive-research-batch-006.json`, `data/pilot/substantive-batch-006-dry-run-report.json`; updated `docs/DATA_COVERAGE.json`, `docs/DATA_COVERAGE.md` and this status file. The earlier full tests/build/browser evidence remains applicable to the unchanged application code but is not evidence that this candidate was database-staged or human-reviewed. Next safe task: provision and independently verify a fresh disposable PostgreSQL database, dry-run then import this candidate with an idempotent retry, and continue source research in bounded batches. Never apply a review decision without an authorized reviewer.
+
+## Phase 3: full-catalogue source-reference pass — latest
+
+This entry supersedes the immediately preceding 100-college scale-out counts. Preserved branch `phase-3-catalogue-enrichment`, all earlier uncommitted code and artifacts, the exact original205 slugs/seed rows, and Phase2 `19d8c91`. `src/server/seed/demo-colleges.json` SHA-256 remains `a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637`. The separate test DB contained an extra synthetic slug `preserved`; all205 original slugs were present, with none missing. No source seed rows were changed.
+
+### Catalogue progress and data quality
+
+Completed a bounded official-site reference attempt for **all205** existing catalogue institutions in nine groups of25 (last group5). Cumulative milestones50/100/150/205 were reached. Exact URL/research result/permission note per college is in `docs/DATA_COVERAGE.json`, with bounded manifests and reports under `data/pilot/`.
+
+| Metric | Actual |
+| --- | ---: |
+| Colleges researched for an institution-level official reference | 205 / 205 |
+| Readable official institution pages | 130 |
+| Access blocked/unreadable | 74 |
+| Conflicting source candidate | 1 |
+| Institutions with STAGED website links | 130 |
+| Additional STAGED official admissions links | 17 |
+| Total local real-source STAGED claims | 147 |
+| Genuinely VERIFIED real claims / institutions | 0 / 0 |
+| Fully enriched institutions | 0 |
+| Colleges with no source attempt | 0 |
+
+Breakdown: groups1–4 attempted100, 63 readable,37 access-limited,63 website links staged and3 pilot admissions links; groups5–6 attempted50,34 readable,16 blocked and34 website links staged; groups7–9 attempted55,33 readable,21 blocked,1 source conflict and33 website links staged; 14 further official admissions links were staged from reviewed page navigation. Total claims are130 website links plus17 admissions links across130 institutions. All147 remain STAGED/UNREVIEWED. The original8 claim IDs remain in the old manifest; their former audit rows are unavailable because the earlier disposable database had already been removed. We did not fabricate or reconstruct those audit events.
+
+Field counts for all205: website **130 STAGED / 75 MISSING**; admissions link **17 STAGED / 188 MISSING**. Identity fields, course summary, annual fees, placement rate/packages/recruiters, and NAAC grade remain **205 DEMO each**. Descriptions/about, contact phone/email, degree/duration/eligibility, programme/year/category fees, hostel, scholarships, facilities, rankings/category/year, recognition/accreditation validity, admission requirements/deadlines, and placement cohort/denominator/metric/reporting year remain **205 MISSING each**. There are no verified counts. A homepage or admissions link does not enrich those other fields; the exact machine-readable field ledger is `docs/DATA_COVERAGE.json`.
+
+Source use was limited to public page viewing and exact hyperlink attribution. We did not run an automated crawler, save full official documents/prose, bypass access controls, or assume a licence for snippets, bulk extraction or redistribution. Access failures are method-specific, not proof of permanent unavailability. `bmcri.org` redirected to unrelated gambling content; recorded as a source conflict and excluded. All campus matches and any substantive claim require human review. Collection times are stored per staged record; source publication dates are null where not established. No fees, rankings, placement values, accreditation, eligibility or course claims were inferred.
+
+### Import records and safety
+
+New source links were staged through the existing importer in bounded slices (maximum25 rows per CLI invocation), retaining deterministic claim/source IDs, one import run and audit record per claim, and per-source transactions. The first attempt for batch7–9 correctly rejected25 rows because a future collection timestamp was supplied; that attempt made no writes. Correcting the timestamp allowed the33 checked rows to stage. The rejection report is preserved in `data/pilot/batch-007-009-initial-rejection-report.json`. Replaying the group5–6, group7–9 and extra admissions manifests returned the same IDs (34,33 and14 rows respectively); no duplicate claims were created.
+
+The exact IDs from the current local disposable execution are archived in `data/pilot/local-stage-snapshot.json`: **139 claims,139 source rows,139 import runs and139 audit rows; zero fixture claims and zero reviewer decisions**. The remaining8 older claim IDs exist only in the unchanged earlier result file and are not represented as audit-backed in the new snapshot. No users or reviewer credentials are exported. The execution database was a `phase3`-labeled PostgreSQL16 container bound only to `127.0.0.1:32776`; after verifying the snapshot it was removed by exact container ID. The integration suite ran against the separate disposable database `collegefind_regression_test`. No production, staging or remote database was accessed.
+
+### Verification after the latest data and documentation changes
+
+- `npm run test:all -- --maxWorkers=2` with `DATABASE_URL` and confirmed `TEST_DATABASE_URL` both targeting `collegefind_regression_test`: **PASS, 163 tests / 27 files**, 20.77s. The database was separately checked first; tests were not run on the database holding the real staged batch.
+- `npx prisma generate`: **PASS**, Prisma Client 7.10.1.
+- `npm run lint`: **PASS**.
+- `npm run typecheck`: **PASS**.
+- `git diff --check`: **PASS**.
+- Bounded staging and replay identity assertions: **PASS**, 34 website refs (group5–6),33 website refs (group7–9),14 admissions refs; repeat IDs identical.
+- Batch research/ledger assertions: **PASS**,205 unique catalogue slugs,205 unique plan entries,205 research outcomes;130 staged institutions;147 claim-history entries; no status was changed to VERIFIED.
+- Build and browser checks were not rerun because this pass changed only JSON/manifests and documentation; the current application-code tree had earlier PASS evidence: clean Turbopack production build and Playwright **31 passed / 1 intentional skip**. No app code changed after those checks.
+
+### Acceptance state and blockers
+
+- PASS: all205 catalogue slugs have a recorded first-pass official-source attempt; batch milestones50/100/150/205 reached; research logs distinguish accessible, blocked and source-conflict outcomes.
+- PASS: observed links staged with publisher, exact URL, collection timestamp, locator, link-only use, unreviewed status and local result IDs; import replays were idempotent; audit/source/run records archived for139 current claims.
+- PASS: the original205 demo seed and all slugs/IDs are preserved; demo fee/package/placement/recognition data was not promoted; no numeric admission claims were fabricated.
+- PASS: suspicious `bmcri.org` redirect was rejected and documented; blocked sources were not bypassed.
+- BLOCKED: no real claim has an authorized human decision. Authorized reviewer access/credentials and campus-by-campus review are required before any public VERIFIED projection.
+- BLOCKED: source-specific permission for automated extraction, evidence-snippet/document storage and bulk redistribution remains unverified. Public availability only supported manually viewed factual links.
+- NOT COMPLETE: field-specific work remains for every college—official contact/location, programmes/duration/eligibility, current admissions rules, category/year tuition and hostel, scholarships, validity-scoped recognition/accreditation, defined-cohort placement measures, dated category rankings and facilities. Thus0/205 profiles are fully enriched despite all205 homepage-reference attempts.
+- BLOCKED: owner-controlled production security checks for historical credential revocation/rotation, production seed route, Redis rate limiting/outage behavior, and database backup/restore remain release blockers as previously recorded.
+
+Next safe work: begin substantive field research in small batches using accessible official publications and source-specific reuse review; prioritize alternatives for74 blocked candidates and resolve the one source conflict; prepare individual campus checklists; keep all staged links pending authorized human review. Do not bulk import or claim public verification based on these references.
+
+## Phase 3 substantive research continuation — latest, 2026-11-18
+
+Preserved branch `phase-3-catalogue-enrichment`, existing application changes, 205 original seed rows/slugs, historical evidence and the earlier disposable-database results. No database, application code, production resource, credential, Git history or remote branch was modified in this continuation. The worktree remains uncommitted as it was at entry; only `data/pilot/substantive-research-batch-008.json`, `docs/DATA_COVERAGE.json`, `docs/DATA_COVERAGE.md` and this status entry were added/updated in this continuation.
+
+### Resumable research results
+
+- Verified the existing batch 007 ledger update: 25 NIRF Engineering 2025 rank candidates are recorded against 25 existing slugs, with exact report table row locators, but **zero were staged** because typed `NirfRanking` ingestion and reviewer-queue visibility are not implemented. A fresh direct report-PDF request returned HTTP 403; no bypass or further extraction was attempted. Prior 25 candidate notes remain as previously collected research, not as new access in this continuation.
+- Followed up three colleges on first-party pages and recorded four facts as research-only candidates: IIT Indore (B.Tech programme labels and four-year duration), IIT Bhubaneswar (B.Tech disciplines/duration and exact page wording for admission route), and IIT (BHU) Varanasi (B.Tech/IDD duration and route labels). Collection time is recorded as `2026-11-18T04:01:25Z`. None is staged or verified because source-specific republication permission is unresolved; the IIT (BHU) page additionally needs academic-office corroboration. Candidate details and caveats are in `data/pilot/substantive-research-batch-008.json`.
+- Official page evidence: [IIT Indore UG guidelines](https://www.iiti.ac.in/admissions/ug_info/btech/guidelines) lines 162–176 (programme labels and B.Tech duration), [IIT Bhubaneswar B.Tech admissions](https://www.iitbbs.ac.in/index.php/home/academics/admission-b-tech/) lines 520–534 (eight branches, four years/eight semesters, and source wording “JEE”), and [IIT (BHU) TPC academic summary](https://iitbhu.ac.in/cf/tpc/academics) lines 31–66 (programme labels, duration and admission-route labels). No publication date or academic year was asserted where the page did not provide one. No fees, eligibility thresholds, placement results or other unsupported fields were inferred.
+- Research coverage remains **46 unique institutions attempted**, of which 14 have 23 substantive claims staged and 32 have no substantive claim staged; 159 colleges remain without substantive field research. Three follow-up research records and four candidate facts do not increase the unique institution count. All 23 staged substantive claims and all 147 reference claims remain unreviewed; genuine verified facts/institutions are 0/0. Batch 007's 25 ranking candidates and batch 008's four programme/admission candidates are not in the database.
+
+### Existing disposable database evidence (reused; no new writes)
+
+The exact CollegeFind disposable PostgreSQL container was confirmed by name/ID and loopback mapping only: `collegefind-phase3-disposable-20261118`, ID `08b37b037a8c`, host `127.0.0.1:35439`. No DevSync container was queried or modified. Previous independent identity/isolation checks, five additive migrations, two repeatable snapshot restores, replay of batches 001–005 and NIT Rourkela batch 006, idempotent retries, and final read-back remain as documented above. The most recent database evidence is 205 colleges/205 unique slugs, 165 sources, 170 claims, 165 import runs, 170 stage-audit events, zero decisions, zero fixture claims, zero orphan sources and zero claims without staging audits. No migration/import/test was run in this continuation because batch 008 was research-only and the NIRF response was unavailable.
+
+### Current verification
+
+- `git diff --check`: **PASS**.
+- Coverage JSON + manifests parse and reconciliation assertions: **PASS** (205 unique original slugs; 46 unique substantive research attempts; 159 not attempted; 14 institutions with 23 staged substantive claims; 25 NIRF candidates un-staged; four batch 008 candidate facts across three follow-ups, all un-staged; no verified claims).
+- Database/application unit, integration, Playwright, lint, typecheck, Prisma generation and build: **NOT RUN in this continuation**. No application/database code changed; prior successful results remain applicable to the unchanged code, not to new research candidates as imported functionality.
+- Disposable database was not changed in this continuation. No human reviewer was impersonated or simulated.
+
+### Remaining blockers and next safe work
+
+1. Build an additive typed `NirfRanking` staging path that emits source/run/audit records and appears in the authorized reviewer queue; add tests for duplicate imports, conflict detection, review decisions, public projection and fixture/staged exclusion. Do not import the batch 007 candidates until source-use policy and reviewer visibility are checked.
+2. Obtain a documented project policy decision for publishing concise facts from these public institutional webpages, or written provider authorization where needed. Keep batch 008 unstaged until that decision; confirm IIT (BHU) academic-office details and campus mapping.
+3. Continue in 25–50 college batches with substantive official source research, but do not count homepage links as substantive or full enrichment. Research fees only through typed year/programme/category/component data; research placements only with cohort, denominator, year and metric definition.
+4. Arrange an authorized human reviewer to decide each real claim. All real claims remain unverified; do not publish them as confirmed.
+5. Phase 2 owner-side production release blockers remain unchanged: historic credential revocation/rotation evidence, production seed-route restrictions, Redis-backed rate-limit configuration/outage behavior, and production backup/restore readiness.
+
+## Phase 3 browser fixture, snapshot rehearsal and batch 010
+
+- Fixed the desktop and mobile college-search smoke tests by creating a unique demo college per test, requiring a confirmed test URL shared by the app and fixture client, and cleaning up that fixture. The test checks the search query, matching card, canonical detail URL, exact college name and demo label. CI now supplies the isolated browser URL to both app and fixture.
+- Ran `npm run test:e2e -- tests/e2e/smoke.spec.ts -g 'a visitor can search and open a college' --workers=2` on the existing production build against the verified `collegefind_phase3_test` database. Desktop and mobile passed in 3.1 seconds. `npm run test:integration -- tests/integration/official-facts.test.ts` passed all three tests on that database after the browser run.
+- Confirmed `collegefind_phase3_snapshot182_test` was empty in the labelled CollegeFind container with loopback port 35439. Applied the five existing migrations to that database. `node --import tsx scripts/rehearse-staging-snapshot.ts` verified the archive digest and references, restored 205 catalogue IDs, 175 sources, 182 claims, 175 import runs and 182 audits, and compared every restored evidence row with its archived counterpart. The immediate retry inserted zero rows. Reviewer decisions and users both numbered zero. The rehearsal read the original ID mapping from the source clone, so the legacy archive alone cannot recover that mapping.
+- Recorded batch 009's 12 staged claims and 12 reused claim IDs. Batch 010 researched 25 additional institutions, held 17 for access or scope gaps, and staged eight claims in the disposable restore database. Dry run accepted eight candidates. The immediate retry reused all eight and reported no writes. Read-back found 205 colleges, 183 sources, 190 claims, 183 runs, 190 staging audits and zero decisions or missing staging audits. The versioned exporter preserved the prior archive and generated the batch 010 archive and digest manifest.
+- Substantive research now covers 96 institutions. Of these, 32 have 43 staged substantive facts and 64 have no staged substantive fact. Another 109 await research. Human approval is pending for all 190 staged claims. Existing NIRF candidate access and publication questions remain open.
+
+## Phase 3 substantive enrichment — batch 011
+
+Preserved the existing branch, all prior working-tree changes, all 205 catalogue rows/slugs and all existing staged evidence. No production or DevSync resource was accessed. No real reviewer decision was created.
+
+### Work completed
+
+- Researched the next 25 colleges still marked substantively `NOT_STARTED`. The resumable manifest records every institution's research outcome, exact official source URLs, publisher, source date/year where available, retrieval timestamp, evidence locator and source-use note. Eleven institutions had supportable facts; fourteen remain held with identity, currentness, conflict or research-depth reasons. No homepage-only findings were counted as substantive data.
+- Dry-run validated 25 candidates. First import staged **25** claims across **11** colleges, **17** sources and **17** import runs. Immediate retry reused all **25** claim IDs, created no sources/runs and reported `databaseChanged=false`. All claims remain `UNREVIEWED`.
+- Batch fact mix: three course-list facts, three structured programme facts, one admissions summary, eight structured admission facts, eight structured fee facts, and two scholarship facts. No placement number was staged where the inspected evidence did not establish a trustworthy cohort/denominator/metric. Held cases include ambiguous campus scope, outdated fee/admission material, conflicting entrance requirements, unconfirmed institutional domains and insufficient source detail.
+- Added a stable 205-row `{id, slug}` identity map and its SHA-256 to new evidence snapshots. Legacy V1 snapshot restore continues to use the prior source-clone lookup only when the map is absent. The new map is self-contained with respect to catalogue IDs; the restore rehearsal still uses the repository's original seed to reconstruct the non-evidence college fields and requires the seed checksum to match.
+- Exported versioned batch 011 snapshot SHA-256 `996b4c127ddf9160efe12c84f464f93008413325e8949d8b54bcae64d9379552`: **205** college identities, **200** sources, **215** claims, **200** import runs and **215** stage audits; **0** decisions, users or fixture claims.
+- Created fresh disposable DB `collegefind_phase3_snapshot011_test` within the already verified loopback-only CollegeFind PostgreSQL container, confirmed it was empty and owned by `cf_phase3_test`, and applied all five existing migrations. Snapshot rehearsal restored 205/200/215/200/215 records, exact read-back passed, and retry inserted zero rows. No existing database was reset or deleted.
+- Updated `docs/DATA_COVERAGE.json` and `docs/DATA_COVERAGE.md`. Coverage is now 121 colleges attempted, 43 with staged substantive facts, 78 with no stageable fact, 84 not yet substantively researched; 68 substantive claims and 215 total local staged claims. Genuine verified claims/colleges remain 0/0, and no institution is fully enriched.
+
+### Changed and added files
+
+- `scripts/export-staging-snapshot.ts` — include stable college identity mapping and checksum in new exports.
+- `scripts/rehearse-staging-snapshot.ts` — support named archives and a safely validated fresh snapshot-test DB; prefer the archived identity map, retaining the legacy source-clone fallback.
+- `data/pilot/substantive-research-batch-011.json` and three dry-run/import/idempotency reports.
+- `data/pilot/staged-evidence-after-batch-011.json`, manifest and exact restoration report.
+- `docs/DATA_COVERAGE.json`, `docs/DATA_COVERAGE.md`, and this status file.
+
+### Exact verification evidence
+
+- `node --import tsx scripts/ingest-official-facts.ts --file data/pilot/substantive-research-batch-011.json --report data/pilot/substantive-batch-011-dry-run-report.json`: **PASS**, 25 candidates, read-only.
+- Same importer with `--apply`: **PASS**, 25 staged, 17 sources/runs created; disposable target independently identified as `127.0.0.1:35439/collegefind_phase3_restore`, owner `cf_phase3_test`.
+- Same importer repeated with `--apply`: **PASS**, 0 staged / 25 reused / 0 sources / 0 runs / `databaseChanged=false`.
+- `node --import tsx scripts/export-staging-snapshot.ts --name staged-evidence-after-batch-011`: **PASS**, digest and counts recorded above. Manifest identity digest is `7de99f1f2a5aa88676dfbfa2161e56a9ce043a4c6f5d1da82b82957a8e297849`.
+- `npx prisma migrate deploy` on the newly created empty `collegefind_phase3_snapshot011_test`: **PASS**, all five existing migrations applied.
+- `node --import tsx scripts/rehearse-staging-snapshot.ts --snapshot staged-evidence-after-batch-011 --target-db collegefind_phase3_snapshot011_test`: **PASS**, exact read-back and zero-write retry. First rehearsal invocation surfaced a CLI option-parsing error; the option spelling was fixed. A subsequent preflight check also initially used the wrong unquoted PostgreSQL table identifier; no state changed, and the corrected quoted-table check confirmed zero rows before the successful rehearsal.
+- `npm run lint`: **PASS**; `npm run typecheck`: **PASS**; `git diff --check`: **PASS**, after the exporter/rehearsal script changes. No product/application modules changed in batch 011. Production build, Playwright and application integration suites were not rerun because only research/manifests, ledger docs and export/rehearsal scripts changed; prior browser/build evidence remains applicable to unchanged app code.
+- Source/research validation: 25 selected colleges all reconcile to original catalogue slugs. No claim is marked verified. No full official document or copyrighted prose was stored; no bulk automated crawl, access-control bypass or source-document redistribution was performed.
+
+### Current data gaps and blockers
+
+Research has not yet established reusable, current programme-level eligibility and seats, category/year tuition for most colleges, hostel charges, scholarships, recognition validity, defensible placement cohorts/denominators or dated category rankings for most of the catalogue. Fourteen batch 011 candidates were held and 84 colleges remain without a substantive research attempt. All 215 local claims remain unreviewed; authorized human review is still required. Provider terms remain use-specific; explicit rights for bulk automation or source-document redistribution have not been established and are not assumed. Owner-side Phase 2 production release gates remain unresolved.
+
+Next scoped task: continue with the next 25 remaining `NOT_STARTED` college records in batch 012, add only individually supported official facts, then idempotently stage and export another identity-complete snapshot. Avoid rechecking batch 011 sources unless a claim conflict or reviewer question requires it.
+
+## Phase 3 substantive research — batch 012
+
+Continued field-level enrichment on `phase-3-catalogue-enrichment`; preserved the original 205 seed records, IDs and slugs and all prior evidence. No production/DevSync resource or human reviewer credentials were accessed. No real claim was approved.
+
+### Research and staged facts
+
+- Researched the next 25 `NOT_STARTED` institutions and recorded a disposition for each in `data/pilot/substantive-research-batch-012.json`. Twelve had supported claims; 13 were held with reasons.
+- Official first-party materials supported 25 claims across 12 catalogue institutions. Facts include programme/course lists and durations, current/historical admission routes and eligibility, 2026-27 tuition and hostel fee components, and a 2026-27 scholarship reference. No placement or ranking number was included without defensible metric/year/cohort scope.
+- Claims are all `STAGED` / `UNREVIEWED`. Import wrote no college summary fields and created no reviewer decisions.
+- The OP Jindal source was explicitly held: O.P. Jindal Global University in Sonipat and OP Jindal University in Raigarh are separate institutions. The catalogue row's demo city is only a reconciliation hint, not proof of canonical identity.
+- Source reuse notes are per-source: public manual viewing and narrow attributable factual staging only; no full source document or substantial prose was stored. Automated bulk extraction and broad redistribution permissions remain unestablished. Closed admission cycles are labelled historical.
+
+### Actual cumulative coverage
+
+| Measure | After batch 011 | After batch 012 |
+| --- | ---: | ---: |
+| Catalogue records | 205 | 205 |
+| Substantive research attempts | 121 | 146 |
+| Institutions with substantive staged claims | 43 | 55 |
+| Attempted but no stageable fact | 78 | 91 |
+| Not yet substantively researched | 84 | 59 |
+| Substantive staged / genuine verified claims | 68 / 0 | 93 / 0 |
+| Total link-reference + substantive claims | 215 | 240 |
+| Total genuine verified institutions | 0 | 0 |
+| Fully enriched profiles | 0 | 0 |
+
+Latest sourced-unreviewed field counts: courses 17 claims / 17 institutions; admissions summaries 10/10; phone 2/2; email 2/2; structured programmes 24/24; structured admissions 22/21; structured fees 13/9; structured scholarships 3/3. Existing raw seed values stay DEMO or MISSING; the evidence overlay does not promote them. Exact per-college statuses, source URLs, values, evidence locators, and history are in `docs/DATA_COVERAGE.json`.
+
+### Import, idempotency and archive evidence
+
+- `node --import tsx scripts/ingest-official-facts.ts --file data/pilot/substantive-research-batch-012.json --report data/pilot/substantive-batch-012-dry-run-report.json`: **PASS**, 25 claims accepted, `DRY_RUN`, no database writes.
+- Same importer with `--apply`, after loading `/tmp/collegefind-phase3-restore.env`: **PASS**, 25 staged / 0 reused, 18 sources and 18 import runs created. The CLI's target guard accepted only the existing verified loopback disposable restore target `127.0.0.1:35439/collegefind_phase3_restore` / `cf_phase3_test`; no production or DevSync connection.
+- Same importer with `--apply` immediately repeated: **PASS**, 0 staged / 25 reused, 0 sources / 0 runs created, `databaseChanged=false`.
+- `node --import tsx scripts/export-staging-snapshot.ts --name staged-evidence-after-batch-012`: **PASS**, exporter verified relationships/audit counts and exported the stable 205-row `{id, slug}` identity map. Snapshot SHA-256 `b248ee7c8a329d9cf713e9b75e46d5ca50d663ce8aa08351cf62178712dadfdf`; identity SHA-256 `7de99f1f2a5aa88676dfbfa2161e56a9ce043a4c6f5d1da82b82957a8e297849`. Counts: 205 colleges, 218 sources, 240 claims, 218 runs, 240 audits; zero decisions, users and fixture claims. A restore rehearsal for this new snapshot has not been run.
+- `git diff --check`: **PASS** in final verification after batch 015; research-only changes did not require lint, typecheck, build, migrations or browser-test reruns.
+
+### Changed files in this increment
+
+- `data/pilot/substantive-research-batch-012.json` and dry-run, import, idempotency reports.
+- `data/pilot/staged-evidence-after-batch-012.json` and its manifest.
+- `docs/DATA_COVERAGE.json`, `docs/DATA_COVERAGE.md`, and this status file.
+
+### Remaining gaps and next scoped work
+
+Fifty-nine catalogue entries have not yet received substantive research. Of the 146 attempted, 91 have no safely stageable claim and retain source/identity/scope or missing-evidence reasons. Every staged real fact awaits genuine authorized review; verified real claims/institutions remain 0/0. Current batch sources do not resolve automated reuse or bulk redistribution rights, so continue manually sourced facts and exact citations without crawling or copying documents. The newest snapshot is exported but requires a future separate verified disposable-database restoration rehearsal if archive-restoration assurance is needed. Phase 2 owner-side production security and backup checks remain release blockers.
+
+Next task: research the next 25 `NOT_STARTED` college identities, beginning from the updated machine-readable ledger, then dry-run, import/retry, update counts, and export a new versioned identity-complete snapshot.
+
+## Phase 3 substantive research — batch 013
+
+Researched the next 25 `NOT_STARTED` colleges without repeating the homepage pass. Six institutions yielded supported facts; 19 were held or had no fact sufficiently inspected. The official IIIT Sri City admission page returned 403 and was not bypassed. Pondicherry University's 2026-27 brochure states that permission is required to use its content; no facts from that brochure were staged. Dibrugarh University's inspected admission view did not render notice details.
+
+Eleven source-backed facts were staged for IIM Bodh Gaya, IIM Sirmaur, IIM Jammu, COEP Technological University, North-Eastern Hill University and Tezpur University. These cover programme lists/summaries and historical 2026-27/2026-28 admission routes. Closed cycles are identified as historical. No unsubstantiated fees, placement outcomes, rankings or accreditation were added. The existing 205 catalogue IDs/slugs and raw demo fields remain unchanged. No real reviewer decision was created; all claims remain `STAGED`/`UNREVIEWED`.
+
+### Verification evidence
+
+- `node --import tsx scripts/ingest-official-facts.ts --file data/pilot/substantive-research-batch-013.json --report data/pilot/substantive-batch-013-dry-run-report.json`: **PASS**, 11 valid candidates, no DB writes.
+- Same command with `--apply` and the already verified disposable CollegeFind environment: **PASS**, 11 claims staged, 6 source records and 6 import runs created.
+- Immediate repeated `--apply`: **PASS**, 0 new claims, 11 reused, 0 source/run writes, `databaseChanged=false`.
+- `node --import tsx scripts/export-staging-snapshot.ts --name staged-evidence-after-batch-013`: **PASS**. Snapshot SHA-256 `d190e7f271ee07198511a34c5e08ad62ddf291446f566e446a9d6d4d6277aaa5`; stable identity SHA-256 `7de99f1f2a5aa88676dfbfa2161e56a9ce043a4c6f5d1da82b82957a8e297849`. Counts: 205 colleges, 224 sources, 251 claims, 224 runs, 251 staging audits; zero users, reviewer decisions and fixture claims. Export integrity checks passed; separate-database restore rehearsal remains unverified for this archive.
+- `git diff --check`: **PASS** in final verification after batch 015; research-only changes did not require lint, typecheck, build, migrations or browser-test reruns.
+
+### Updated catalogue coverage
+
+Substantive research now attempted for 171/205; 61 institutions have staged substantive claims; 110 attempted institutions have no stageable fact; 34 remain unresearched. There are 104 staged substantive claims and zero genuinely verified claims. Across link-reference and substantive claims, the snapshot now contains 251. Unreviewed field counts: courses 20 claims/20 colleges, admissions summaries 10/10, structured admissions 30/27; other domains are in `docs/DATA_COVERAGE.json`. No institution is fully enriched. All claim-bearing institutions require authorized human review; source-specific bulk extraction/republication permission remains unresolved.
+
+Changed for this batch: `data/pilot/substantive-research-batch-013.json`, dry-run/import/idempotency reports, the batch 013 snapshot plus manifest, `docs/DATA_COVERAGE.json`, `docs/DATA_COVERAGE.md`, and this status file. Next task: research the next bounded group of remaining `NOT_STARTED` colleges and repeat dry-run, safe staging, idempotency, coverage update and snapshot export.
+
+## Phase 3 substantive research — batch 014
+
+Researched the next 25 `NOT_STARTED` catalogue records. Four produced source-backed facts (IIIT Kottayam, ABV-IIITM Gwalior, IIM Nagpur and NISER Bhubaneswar); 21 have a recorded hold or bounded-pass disposition. Twelve claims were staged and remain `UNREVIEWED`. Research captured programme/course lists, admissions routes, the MBA programme duration, source-scoped 2026-27 tuition and hostel room/mess components, and an official registrar phone. The IIITM figures are not flattened: ₹95,000 tuition, ₹15,000 hostel room and ₹20,000 hostel mess per semester for the notice's General/General-EWS/OBC-NCL category. All 2026 admission cycles in this batch are historical at retrieval; no current application availability is claimed. No placement, scholarship, ranking or accreditation fact was inferred.
+
+### Verification evidence
+
+- `node --import tsx scripts/ingest-official-facts.ts --file data/pilot/substantive-research-batch-014.json --report data/pilot/substantive-batch-014-dry-run-report.json`: **PASS**, 12 valid claims, no DB writes.
+- Same command with `--apply` against the verified disposable CollegeFind database: **PASS**, 12 staged, 5 sources and 5 import runs created.
+- Immediate `--apply` retry: **PASS**, 0 staged, 12 reused, no new source or import-run records, `databaseChanged=false`.
+- `node --import tsx scripts/export-staging-snapshot.ts --name staged-evidence-after-batch-014`: **PASS**, exporter integrity checks. Snapshot SHA-256 `6b34e4edcde44c4d0620bf49f6e308ae33bae000fb3e17d80b5ee12637ce7d0f`; identity checksum `7de99f1f2a5aa88676dfbfa2161e56a9ce043a4c6f5d1da82b82957a8e297849`. Counts: 205 colleges, 229 sources, 263 claims, 229 runs and 263 audits; zero users, reviewer decisions or fixture claims. Separate-target restore rehearsal remains outstanding.
+- `git diff --check`: **PASS** in final verification after batch 015; research-only changes did not require lint, typecheck, build, migrations or browser-test reruns.
+
+### Updated coverage and files
+
+Substantive research has been attempted for 196/205 colleges; 65 have unreviewed substantive claims; 131 attempts yielded no stageable fact; 9 remain unresearched. There are 116 staged substantive claims and zero genuine approvals/verified institutions. Current field-level overlay counts are in `docs/DATA_COVERAGE.json`: courses 23/23 institutions, admission summaries 10/10, structured admissions 34/31, structured programmes 25/25, structured fees 16/10 and structured contact 1/1. No college is fully enriched; raw seed demo/missing values remain unchanged.
+
+Changed in batches 013–014: their research manifests, dry-run/import/idempotency reports, versioned snapshots/manifests, `docs/DATA_COVERAGE.json`, `docs/DATA_COVERAGE.md` and this status file. All sources were manually accessed via public official pages/PDFs; bulk extraction or redistribution rights are not inferred. No production or DevSync resource was accessed, no human approval was fabricated, and no reviewer decision was created. Continue the final nine not-yet-attempted colleges in a bounded batch, then report remaining research disposition and unresolved human review/source-use gaps.
+
+## Phase 3 substantive research — batch 015 and catalogue research disposition completion
+
+Completed research dispositions for the final nine previously `NOT_STARTED` colleges. Five generated 14 source-backed claims for IISER Pune, IISER Kolkata, BMSCE, PES University and Ramaiah Institute of Technology. Four remained held for reasons in the batch manifest: Saveetha's canonical publisher/name and fee year remain unclear; Lady Hardinge had no sufficiently reviewed current college-specific source; RVCE material was older; and NLU Delhi's official AILET page was under construction while its accessible prospectus is from 2024. No unsupported claims were added. The PES admissions page's JEE Main/KCET fact remains research-only because the page states no academic year, which is required for structured admission ingestion. Direct access to its 2027-28 fee page timed out.
+
+### Verification evidence
+
+- `node --import tsx scripts/ingest-official-facts.ts --file data/pilot/substantive-research-batch-015.json --report data/pilot/substantive-batch-015-dry-run-report.json`: **PASS**, 14 candidates validated, no writes.
+- Same command with `--apply` against the existing independently verified disposable CollegeFind DB: **PASS**, 14 claims staged, 6 sources and 6 import runs. All claims remain STAGED/UNREVIEWED; no reviewer decisions were created.
+- Immediate identical `--apply` retry: **PASS**, 0 staged, 14 reused, 0 sources/runs created, `databaseChanged=false`.
+- `node --import tsx scripts/export-staging-snapshot.ts --name staged-evidence-after-batch-015`: **PASS**, built-in identity/count/source/claim/run/audit validation. Snapshot SHA-256 `0177d295027a32282796b2bb28ff1f31f267adeb5371cef1854bbc44486e4b06`; stable identity SHA-256 `7de99f1f2a5aa88676dfbfa2161e56a9ce043a4c6f5d1da82b82957a8e297849`. Counts: 205 colleges, 235 sources, 277 claims, 235 import runs, 277 staging audits; zero users, reviewer decisions and fixtures. Separate-database restoration rehearsal remains unverified for this latest archive.
+- `git diff --check`: **PASS** in final verification after batch 015; research-only changes did not require lint, typecheck, build, migrations or browser-test reruns.
+
+### Final substantive research counts
+
+All 205/205 institutions now have a substantive research disposition. Seventy colleges have claims staged; 135 researched colleges yielded no stageable claim; zero remain unattempted. There are 130 source-backed substantive claims awaiting human review and 147 link-only reference claims; the disposable snapshot holds 277 total claims. Genuine verified claims/institutions remain 0/0, and no college is fully enriched.
+
+Unreviewed substantive field coverage by unique college: course lists 26 (12.7%); admissions summaries 11 (5.4%); structured programme/duration 27 (13.2%); structured admissions/eligibility 34 (16.6%); fee components 10 (4.9%); scholarships 3 (1.5%); legacy typed phone/email 4 (2.0%); structured contacts 2 (1.0%); typed NIRF ranks 1 (0.5%). These counts are overlapping fields and do not add to college totals. Every category still has zero genuinely verified records. The raw catalogue seed fields remain DEMO/MISSING; the evidence overlay has not promoted or overwritten them. The machine-readable ledger includes exact per-college field claim counts, status, source, URL, date/year, retrieval, evidence locator, and review state.
+
+Changed in batches 013–015: three research manifests, dry-run/import/idempotency reports, three versioned evidence snapshots and manifests, `docs/DATA_COVERAGE.json`, `docs/DATA_COVERAGE.md`, and this file. No production/DevSync resource was accessed. All facts were manually collected from public official sources; no full documents or substantial prose were stored, and bulk automated extraction or redistribution rights are not inferred. The previous 25 NIRF candidates remain unimported due to the source's 403 response; the two MSRIT homepage rank facts are separate claims and remain unreviewed. Next work is field-specific research follow-up and human review/source-use decisions, not more homepage collection.
+
+## Phase 3 review archive, claim audit and targeted follow-up — 2026-11-18
+
+This is the latest Phase 3 status and supersedes prior cumulative counts. Work remains on `phase-3-catalogue-enrichment`; no commit, push, merge, deployment, production operation or DevSync access occurred. Existing changes were preserved. The original seed hash remains `a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637`; all 205 college IDs/slugs and user relationships in the application remain unchanged.
+
+### Snapshot restoration and data integrity
+
+- Verified the existing container `collegefind-phase3-disposable-20261118`: running with `127.0.0.1:35439->5432/tcp`. Connections used only dedicated role `cf_phase3_test` and named CollegeFind disposable databases. No DevSync or production containers/databases were inspected or touched.
+- At task start, the latest archive was batch 015: SHA-256 `0177d295027a32282796b2bb28ff1f31f267adeb5371cef1854bbc44486e4b06`. A fresh `collegefind_phase3_snapshot277_test` database was independently checked as empty, migrated from the five repository migrations, and restored twice. Exact read-back passed: 205 colleges, 235 sources, 277 claims, 235 import runs and 277 audit rows. Retry wrote zero rows. No users, decisions or fixtures were present.
+- After batch 016, exported SHA-256 `1a83eef39e0c96bb7cb0c0f8c19c9d2175926b86cf5f4b6fd8bdb2a23c5b2631`, identity SHA-256 `7de99f1f2a5aa88676dfbfa2161e56a9ce043a4c6f5d1da82b82957a8e297849`. A separate fresh `collegefind_phase3_snapshot016_test` was independently verified, migrated, and restored twice. Exact read-back passed: 205 colleges, 236 sources, 279 claims, 236 runs and 279 staging audits; retry inserted zero records. Both archives include the identity map and exclude user records, reviewer decisions and fixture claims.
+- The existing disposable `collegefind_phase3_restore` database was only read and extended by the idempotent importer. Before import it had 205 colleges, 235 sources, 277 claims/runs/audits, zero users/decisions. It now has 205 colleges, 236 sources, 279 claims, 236 runs and 279 audits. No old records were deleted or overwritten.
+
+### Substantive coverage and claim audit
+
+Current totals: **205/205** colleges have research dispositions; **71** have substantive facts staged (34.6%); **134** have no substantive staged facts; 132 substantive facts plus 147 link references equal 279 archive claims. Genuine VERIFIED claims/institutions are **0/0** and fully enriched institutions remain **0**. Exact field counts and per-college data are in `docs/DATA_COVERAGE.json` and `docs/DATA_COVERAGE.md`.
+
+All 132 substantive facts pass archive-level completeness checks for HTTPS source URL, publisher, retrieval timestamp and evidence locator; all are non-fixture, and none has a review decision. Thirty-nine have neither an academic year nor source publication date. Three have expired validity windows. The queue's same-college/field/programme/year value-conflict grouping found zero conflicts among staged claims. This is metadata validation, **not** human accuracy/campus verification. The 130 earlier facts have not all been re-opened and matched manually against official campus pages. Stable college IDs and slug mapping were preserved; the importer enforces manifest source/institution slug equality.
+
+Prioritized human review checklist:
+
+1. Recollect or reject expired IISER admission claims; do not approve as current: IISER Pune `cmwlti52o000cq2tv8t32n2hv` (valid through 2026-04-30), IISER Pune `cmwlti531000gq2tvv330tpph` (2026-04-20), IISER Kolkata `cmwlti53g000lq2tvjxlh9l14` (2026-06-07).
+2. Resolve IIT Kanpur's DoAA Manual vs undated UG page programme-list discrepancy; both new claims are still unreviewed.
+3. Review year-sensitive fees and admissions next, checking campus, programme, category, year, route, source date and exact evidence location; keep tuition and hostel fee components distinct.
+4. Examine 39 undated claims. Stable facts can remain held or carry a reviewer explanation that year does not apply; time-sensitive fields need current dated evidence.
+5. Review every remaining claim individually for identity/campus, official source, accuracy, source terms, conflict and staleness; record a decision reason. One field approval cannot verify adjacent fields.
+
+The authenticated dashboard was exercised only with synthetic reviewers. The restore database has **zero reviewer accounts** and **zero genuine decisions**. Real approvals require an authorized human account and explicit human decisions; synthetic test approvals do not count.
+
+### Batch 016 official-source follow-up
+
+Three previously no-stage institutions were revisited. IIT Kanpur's official DoAA UG Manual was read at printed pages 5–6, §§2.1.1–2.1.3. Two claims were staged: a concise B.Tech/B.S. programme list/duration and bounded admissions routes. Retrieval time is `2026-11-18T09:18:39Z`; no publication date or academic year was visible, so none is asserted. The official PDF is not copied. No explicit reuse licence for that manual was located in this bounded check; only concise values, source link and locator were stored. The undated IITK UG page omits Intelligent Systems; reviewers must resolve that discrepancy before approval.
+
+Two follow-ups were held, not staged:
+
+- IIT Roorkee's accessible official UG Ordinance programme table conflicts with a previously checked official Academic Information page; controlling recency/list was not resolved.
+- NIT Warangal's Biotechnology page provides a four-year B.Tech and JEE Main/JoSAA/CSAB plus PCM facts, while its [website policy](https://nitw.ac.in/cdis/itpolicy) permits direct linking but requires prior email permission and acknowledgement to reproduce site material. Keep those candidates research-only until written permission or reviewed legal determination.
+
+Source details, access and reuse conditions are in `data/pilot/substantive-research-batch-016.json`. No access restriction was bypassed and no document was redistributed.
+
+### Exact verification results
+
+- Batch 016 dry run: `./node_modules/.bin/tsx scripts/ingest-official-facts.ts --file data/pilot/substantive-research-batch-016.json --report data/pilot/substantive-batch-016-dry-run-report.json` — **PASS**, two candidates, no DB write.
+- Batch 016 apply in verified `collegefind_phase3_restore` — **PASS**, two staged unreviewed claims, one source and one import run created.
+- Same import retry — **PASS**, zero staged, two reused, no extra source/run, `databaseChanged=false`.
+- `npm run test:integration -- --reporter=dot` on fresh `collegefind_phase3_review_test` — **PASS**, 9 files / 63 tests. It was separate from both snapshot targets and the restore DB.
+- Focused `playwright test tests/e2e/admin.spec.ts tests/e2e/comparison.spec.ts --reporter=line` — final **17 passed, 1 intentional skip** on Chromium/mobile. Search, admin authorization/decisions/conflicts/pagination, fixture exclusion, typed publication, comparison restoration, save/retrieval, and demo isolation were exercised. The test now seeds explicit synthetic DEMO rows with tempting sample metrics; assertions were not weakened. The asynchronous save test waits for the save POST before navigation.
+- `playwright test tests/e2e/smoke.spec.ts --reporter=line` — **14 passed** on Chromium/mobile, including college search/detail, predictor invalid input, no official cutoff data for demo records, comparison sharing, keyboard and mobile navigation.
+- `npm run lint` — **PASS**; `npm run typecheck` — **PASS**; `git diff --check` — passed before the final appended status text and must be rerun.
+- The existing `.next/BUILD_ID` came from the prior successful production build. No application or schema code changed in this increment, so build and Prisma generation were not repeated. The disposable runtime logged per-instance rate-limit fallback because Redis is not configured; that does not establish production Redis behavior.
+
+### Files changed in this increment
+
+- `data/pilot/substantive-research-batch-016.json`, its dry-run/import/idempotency reports, batch-016 snapshot/manifest/rehearsal report, and batch-015 rehearsal report.
+- `tests/e2e/comparison.spec.ts` (synthetic demo fixture setup and async save-response synchronization).
+- `docs/DATA_COVERAGE.json`, `docs/DATA_COVERAGE.md`, `docs/UPGRADE_STATUS.md`.
+
+### Remaining blockers and next scoped work
+
+- 134 institutions remain without staged substantive facts. Continue targeted official programme/admissions/fees/scholarship/accreditation/placement/facility follow-up; do not repeat homepage research. Twenty-five NIRF ranking candidates remain unimported.
+- Manually review source/campus accuracy for 132 claims. Resolve three expired claims and the IIT Kanpur/IIT Roorkee conflicts before approval; obtain written permission or legal disposition for NIT Warangal site facts.
+- No authorized reviewer exists in the restore database. Owner must provision an authorized reviewer through approved controls; no synthetic account should be used for genuine review.
+- Placement, recognition/accreditation and facility staged coverage remains zero; no college is fully enriched.
+- Production security and backup/recovery owner checks remain untouched and block production release. No production or DevSync resource was accessed.
+
+## Phase 3 continuation — verified snapshot and targeted batches 017–018 — 2026-11-18
+
+This section is the latest status and supersedes the batch-016 cumulative counts above. Branch remains `phase-3-catalogue-enrichment`. No Phase 2 owner-side production check was attempted; no production/DevSync access, credential change, push, merge or deployment occurred. The 205 original catalogue rows, IDs, slugs, and audit records were preserved. No reviewer decision was inserted.
+
+### Secure archive: latest snapshot restore
+
+- The verified container remained `collegefind-phase3-disposable-20261118`, loopback-bound as `127.0.0.1:35439->5432`. The restore database target was independently checked before import: `collegefind_phase3_restore`, role `cf_phase3_test`, server `172.17.0.2:5432` inside that dedicated container, 205 colleges, zero users, 279 pre-batch claims and zero decisions. The URL was confirmed to use the host loopback binding and the explicit disposable confirmation flag. No other databases/containers were inspected.
+- Batch 017 export: `./node_modules/.bin/tsx scripts/export-staging-snapshot.ts --name staged-evidence-after-batch-017` — **PASS**; SHA-256 `34002e2af3995b3831d07dd922fcf27b7b1cec8b5844bd835d78a7ea3cc13dc3`, identity SHA-256 unchanged at `7de99f1f2a5aa88676dfbba2161e56a9ce043a4c6f5d1da82b82957a8e297849`. Snapshot: 205 colleges, 239 sources, 285 claims, 239 import runs, 285 audit records, zero users/decisions/fixtures.
+- A new empty `collegefind_phase3_snapshot017_test` was created in the same isolated CollegeFind container, independently URL-checked, and migrated with all five repository migrations. Restore rehearsal: **PASS**, exact read-back for all counts, then retry inserted zero colleges/sources/claims/runs/audits. The target had no users or decisions.
+- Batch 018 export: `./node_modules/.bin/tsx scripts/export-staging-snapshot.ts --name staged-evidence-after-batch-018` — **PASS**; SHA-256 `a04c913d25b15cc5d08042d7635098bf7fc4bebec57ce3936edcf87b4b1bbfb5`; same stable identity checksum. Latest counts: 205 colleges, 240 sources, 287 claims, 240 runs, 287 audits, zero users/decisions/fixtures.
+- A separate new `collegefind_phase3_snapshot018_test` was independently created and migrated. Rehearsal: **PASS**, exact read-back of 205/240/287/240/287; retry inserted zero records in each table. Reports: `data/pilot/staged-evidence-after-batch-017-rehearsal-report.json` and `data/pilot/staged-evidence-after-batch-018-rehearsal-report.json`. The restorer checks checksums, all 205 stable ID/slug mappings, source/claim/run/audit references and identity uniqueness. No user content or human approvals are archived.
+
+### Targeted real-source batches 017–018
+
+**Batch 017 — Central University of Tamil Nadu.** Official public primary sources were manually read: the [UG admissions page](https://cutn.ac.in/admissions-integrated-ug-4years-programmes/), the [revised CUET UG 2026 eligibility PDF](https://cutn.ac.in/wp-content/uploads/2026/03/Revised_Eligibility_Criteria_Domain_subjects_for_CUET_UG_2026_27032026.pdf), the [21 August 2026 admission closure notice](https://cutn.ac.in/wp-content/uploads/2026/08/Admission_Closure_AY_2026-2027_27082026.pdf), and the [CUTN IT policy](https://cutn.ac.in/wp-content/uploads/2021/11/CUTN_IT_Policy_2021.pdf). The official page lists 22 four-year UG programmes for the 2026–27 cycle; a Chemistry programme and row-level general/OBC-NCL-EWS/SC-ST-PWD eligibility facts were identified. The closure notice expressly closes all CUTN Campus UG/PG admissions for the cycle on 2026-08-21. Six claims were staged (programme list, programme duration, three category-preserving historical admissions criteria, and dated closure status), all UNREVIEWED. Three eligibility claims carry the expired 2026-08-21 validity boundary. Materials Science B.Sc. was excluded based on the linked withdrawal corrigendum; the distinct B.Tech Materials Science and Technology list entry remains. No fees, placements, scholarships, hostel or accreditation claims were created.
+
+The cutoff on source reuse is explicit: CUTN's policy discusses written authorization for content distribution and copying of text/graphics to personal pages, but does not specifically resolve CollegeFind's narrow use of individual facts. We stored concise factual values, attribution, links and locators only; no PDF/table or source prose. This remains for human/legal review before publication and does not authorize bulk automation. All cycle-specific facts are historical, not current admissions advice.
+
+**Batch 018 — Anna University.** The official [Centre for Academic Courses page](https://cac.annauniv.edu/uddetails/revision_ud_ug_cands_2023.html), lines 186–204, identifies the Anna University, Chennai office and lists `044-2235-7076` and `dac@annauniv.edu`. Two structured office-contact facts were staged, UNREVIEWED. They are not described as admissions contacts. No explicit reuse license was located on the consulted page, so storage is limited to these attributed facts and exact locator; terms for bulk retrieval/republication remain open. University department campus distinctions prevent using this page alone to state programme-specific admissions or fees.
+
+Exact manifests and dry-run/apply/retry reports: `data/pilot/substantive-research-batch-017.json`, `data/pilot/substantive-batch-017-{dry-run,import,idempotency}-report.json`, `data/pilot/substantive-research-batch-018.json`, and `data/pilot/substantive-batch-018-{dry-run,import,idempotency}-report.json`.
+
+### Current catalogue and review state after batch 018
+
+- Research disposition: **205/205** original colleges; 73 have at least one substantive source-backed claim, 132 have no substantive claim staged. This is not fully enriched coverage.
+- **140 substantive claims** are STAGED/UNREVIEWED across 73 colleges; 147 link-only references bring latest snapshot total to **287 claims**. Genuine verified claims/institutions: **0/0**. Fully enriched institutions: **0**.
+- Field overlay counts: course lists 28 claims/28 colleges; scalar admission/status summaries 13/13; structured programmes 28/28; structured eligibility/admissions 41/35; typed fees 16/10; scholarships 3/3; legacy contact values 4/2; structured contacts 5/3; typed NIRF ranks 2/1; placement/accreditation/recognition/facilities 0. Percentages and per-field raw DEMO/MISSING status are in `docs/DATA_COVERAGE.json`. Raw seed columns were not promoted or overwritten.
+- Read-back of the 287-claim database: 240 sources/runs, 287 field evidence audit rows, zero users, zero decisions, zero fixtures, no orphan sources and no claim without a staging audit. Six claims are expired; 41 lack both year and source publication date. No active same-scope value conflict was found by the queue grouping query. These are integrity/metadata checks, not factual/campus confirmation.
+
+### Prioritized authorized review queue
+
+`docs/DATA_COVERAGE.json` now lists 132 claims as ready to **open and inspect**, six expired claims to hold, and two IIT Kanpur claims to hold for source discrepancy. “Ready to open” is not preapproval: no claim is approval-ready until a reviewer verifies identity/campus, source contents, year/category, locator, conflicts, staleness, and source-use terms. Specific expired IDs and source details are in `substantiveResearchSummary.batch018ReviewAudit.expiredClaims`.
+
+1. Hold/reject/replace the six expired 2026-cycle admissions claims (three IISER and three CUTN Chemistry); never show them as current.
+2. Hold both IIT Kanpur facts until the DoAA Manual vs undated programme page discrepancy is reconciled.
+3. For CUTN, verify university/campus and exact category matching, confirm cycle closure, review the withdrawn B.Sc. Materials Science notice, and make an explicit rights determination before publication.
+4. Re-open every remaining claim against its source, with higher priority for admissions, fees, ranking and other time-sensitive facts. Confirm campus and program/category scope, check conflicts/staleness, and record an individual human approval/rejection reason.
+5. Resolve 41 records with no year and no publication date; require current source data for cycle-sensitive claims.
+
+No real authorized reviewer account exists in the restore archive; no genuine approval is available. The review dashboard and synthetic approval/rejection/public-projection browser tests passed in the prior unchanged-code gate, but those synthetic decisions are isolated in a separate test database and do not count as real verification. Existing 132 claims were not individually re-opened in this increment; manual source/campus revalidation remains 0/140.
+
+### Exact checks for this continuation
+
+- Batch 017 dry run: `./node_modules/.bin/tsx scripts/ingest-official-facts.ts --file data/pilot/substantive-research-batch-017.json --report data/pilot/substantive-batch-017-dry-run-report.json` — **PASS**, six facts, no write.
+- Batch 017 apply against the guarded verified disposable target — **PASS**, six staged, three sources and three runs created; immediate identical retry **PASS**, zero staged/six reused, zero sources/runs created and `databaseChanged=false`.
+- Batch 018 dry run: `./node_modules/.bin/tsx scripts/ingest-official-facts.ts --file data/pilot/substantive-research-batch-018.json --report data/pilot/substantive-batch-018-dry-run-report.json` — **PASS**, two facts, no write.
+- Batch 018 apply — **PASS**, two staged, one source/run created; identical retry **PASS**, zero staged/two reused, no added rows.
+- `npm run test:integration -- --reporter=dot` on the fresh separate review database — **PASS, 63/63**; desktop/mobile reviewer/comparison Playwright — **17 passed, 1 intentional skip**; desktop/mobile smoke Playwright — **14 passed**; lint and typecheck — **PASS** in the previous unchanged-code verification. These were not repeated because this increment changed only research JSON and documentation, not code.
+- `git diff --check` — **PASS** after the final documentation/ledger edits. JSON/report reconciliation — **PASS**: 205 unique original slugs match the ledger and snapshot; SHA-256 and identity checksum match; snapshot IDs/references/audits are unique and complete; 240 sources/runs and 287 claims/audits reconcile; no fixtures/users/decisions are in the archive. No production build or Prisma generation was repeated because no code/schema/migration changed; prior passing build and Prisma generation remain applicable to unchanged implementation.
+
+### Changed files in this continuation
+
+- `data/pilot/substantive-research-batch-017.json` and its dry-run/import/idempotency reports, snapshot JSON/manifest and restoration report.
+- `data/pilot/substantive-research-batch-018.json` and its dry-run/import/idempotency reports, snapshot JSON/manifest and restoration report.
+- `docs/DATA_COVERAGE.json`, `docs/DATA_COVERAGE.md`, `docs/UPGRADE_STATUS.md`.
+
+No application code, schema, migration, seed catalogue, user data or auth/security configuration changed. Next safe action: an authorized human reviewer should inspect the 132 non-expired/non-known-conflict claims through `/admin/enrichment` and explicitly record decisions; meanwhile continue bounded official-source follow-up for the 132 institutions without staged substantive facts, starting with specific programme/fee/admissions publications and resolving known provider/campus blockers without retrying identical failed requests.
+
+## Phase 3 continuation — reviewer handoff and substantive batch 022 — 2026-11-18
+
+This section is the latest continuation and supersedes older cumulative totals above. Branch: `phase-3-catalogue-enrichment`, commit remains `19d8c91`. Pre-existing uncommitted code, migration and test work was preserved. No application/schema/seed change, push, merge, deployment, credential operation, production access or DevSync access occurred.
+
+### Reviewer queue and claim status
+
+- Reviewed the current admin queue implementation: server-side status/search/conflict filtering, total count and database-side pagination; stable ordering; filters for status, free-text search, college, campus/city/state, field, academic year and freshness; source-opening links; reviewer decision history; and explicit approve/reject controls. Claim cards include College name, campus aliases/identity warning, field, proposed value, academic/reporting year, validity, publisher, source URL and evidence location. State labels include DEMO fixture, STAGED, VERIFIED, EXPIRED/STALE and CONFLICTED. Substantive facts sort ahead of link-only references. `ALL` plus pagination can inspect the complete archive rather than a capped first page.
+- Approvals require an authorized admin, a reason, and server-side eligibility checks. Fixture, held, expired, future and conflicted claims cannot be approved; rejection remains available. Every real decision is audited. No real reviewer account or decision exists in the archive, so reviewer UI readiness is verified by code inspection and previous synthetic desktop/mobile browser coverage, but authorized real review is **BLOCKED** pending owner-provisioned reviewer access.
+- Current counts: 342 total claims = 195 substantive +147 link references. Of 195 substantive claims, 179 are open for inspection and 16 are held. “Open” is not “approval-ready”: human source/campus/value review remains 0/195. Genuine human approvals: 0; genuine VERIFIED claims/institutions: 0/0; fully enriched institutions: 0.
+- The 16 held claims comprise six expired 2026 admissions claims, two IIT Kanpur source-list disputes, four MNNIT admissions scope collisions (not established factual contradictions), one IIM Amritsar CAT-2025/MBA-2026-28 historical record, and three IIM Bangalore claims (two 2026-28 admissions facts plus the linked programme fact held for source-use review). Their exact IDs and reviewer questions are in the latest `humanReviewManifest` in `docs/DATA_COVERAGE.json` and the latest Markdown handoff section. No historical event or decision was fabricated.
+- Review order: resolve expiry/dispute/scope/source-use holds first; then inspect current/year-sensitive admissions and fees; rankings and placement denominator/cohort; programme facts; contact facts; finally the 147 link references for domain/redirect/campus. Every reviewer decision must be individual and reasoned.
+
+### Batch 022 research and import
+
+- Followed up four colleges from existing no-stage dispositions: Christian Medical College Vellore, IIM Bangalore, BITS Pilani and IIM Lucknow. Directly opened primary evidence supported eight candidates for CMC and IIMB. BITS official fee and eligibility pages timed out on direct access; search output was not used as evidence. IIM Lucknow's accessible 2026-28 CAT-2025 policy covered a completed cycle, so it was not staged as current information.
+- CMC Vellore's 2026-27 prospectus directly supports MBBS 4.5-year study plus 12-month internship, 2026-cycle NEET-based MBBS admission/eligibility, ₹3,000 annual MBBS tuition, and gender-scoped ₹10,000 one-time hostel deposits/advances. These are five staged claims. No total fees, annual hostel tariff, admissions deadline or open-status claim was derived.
+- IIMB's directly opened 2026-28 PGP policy supports a two-year MBA/PGP and two category-specific minimum application qualifications with CAT validity. These three claims are STAGED but held pending source-use review; the admissions claims are also held as 2026-28 cycle only. Its published copyright policy says IIMB website content is protected and partial/full reproduction requires permission; CollegeFind did not copy documents or prose. This task does not conclude that each individual fact needs a licence, and does not infer permission for bulk extraction or public display. A human source-use determination is required before approval.
+- Provider terms: CMC prospectus showed no matching reproduction notice on the consulted publication; its separate intellectual-property page concerns patent/process contacts and does not establish content reuse rights. No bulk permission is inferred. Both provider records and policy URLs are now noted in `docs/DATA_COVERAGE.json`; source facts remain unreviewed.
+- Eight facts passed dry run and first import staged 8 claims, created 2 sources and 2 import runs, and wrote 8 staging audits. The immediate identical retry staged 0, reused all 8, created 0 sources/runs and returned `databaseChanged=false`.
+
+### Safe database and archive evidence
+
+- Before import, an independent read-only SQL identity/count query against the already-confirmed disposable target returned database `collegefind_phase3_restore`, role `cf_phase3_test`, container-side server `172.17.0.2:5432`, 205 colleges, 334 prior claims, zero users and zero evidence decisions. The configured host binding remains the dedicated CollegeFind loopback disposable target `127.0.0.1:35439`; no other database/container was queried.
+- New versioned export: `data/pilot/staged-evidence-after-batch-022.json` and manifest. SHA-256 `d6611b23e0a9aeb42285ab126ef035ae0f1e6caf1ace3406d988fc2c747fac4b`; counts 205 colleges, 247 sources, 342 claims, 271 import runs and 342 staging audits; zero users, decisions and fixture claims. Stable identity checksum is unchanged at `7de99f1f2a5aa88676dfbfa2161e56a9ce043a4c6f5d1da82b82957a8e297849`.
+- Batch 019 converted 25 already-researched NIRF Engineering candidates to typed staged records; batches 020–022 together added 30 claims, 6 new source records and 29 new import runs (including the 25 NIRF run records). Against the stated 287-claim pre-019 snapshot, current total is 342. No existing evidence was deleted/overwritten.
+
+### Catalogue coverage and exact verification
+
+- Substantive research dispositions: 205/205. Colleges with staged substantive claims increased 101→103; researched with no staged substantive claim decreased 104→102. Substantive claims increased 187→195; references remain 147. Field overlays increased: structured programmes 29→31 claims/colleges, structured admissions 50→53 claims and 37→39 colleges, structured fees 19→22 claims and 11→12 colleges. Other overlay counts are in `docs/DATA_COVERAGE.json`. All verified counts remain zero, and seed DEMO/MISSING data remains unpromoted.
+- `npx tsx scripts/ingest-official-facts.ts --file data/pilot/substantive-research-batch-022.json --report data/pilot/substantive-batch-022-dry-run-report.json` — **PASS**, 8 candidates, read-only. First sandbox invocation failed at tsx IPC pipe creation (`EPERM`); the same command passed after host permission escalation.
+- `TEST_DATABASE_URL` was sourced from `/tmp/collegefind-phase3-restore.env` without printing its value; `COLLEGEFIND_TEST_DATABASE_CONFIRMED=true`. The guarded `--apply` command — **PASS**, 8 staged / 2 sources / 2 runs. Immediate guarded retry — **PASS**, 0 staged / 8 reused / 0 sources / 0 runs / no database change.
+- `npx tsx scripts/export-staging-snapshot.ts --name staged-evidence-after-batch-022` — **PASS**, counts and digest above.
+- No source-side approval was created. No code changed, so builds, lint, typecheck, Prisma generation and browser tests were not repeated. Previously passing code checks remain the applicable evidence for unchanged application code. The documentation/ledger consistency checks and `git diff --check` are run after the final edits and recorded below.
+
+### Changed files and remaining work
+
+- Changed/added this continuation: `docs/UPGRADE_STATUS.md`, `docs/DATA_COVERAGE.md`, `docs/DATA_COVERAGE.json`; `data/pilot/substantive-research-batch-022.json`; batch-022 dry-run/import/idempotency reports; `data/pilot/staged-evidence-after-batch-022.json` and manifest.
+- Still blocked: authorized human reviewer account and real decisions; source-use determination/permission for held IIMB facts; resolution of the 16 held claims; manual source/campus/accuracy check across the 179 inspectable claims; useful substantive fields for 102 colleges; provider terms for bulk ingestion; current placement, accreditation/recognition and facility evidence for most colleges; owner-side Phase 2 production security and backup/restore checks.
+- The next safe task is an authorized reviewer-led first pass of the 16 held claims (including written source-use disposition for IIMB), followed by current year-sensitive claims. Research can continue on the 102 no-stage colleges using directly accessible, exact official sources without repeating failed homepage requests.
+
+### Final consistency checks for this continuation
+
+- `git diff --check` — **PASS** after all final documentation edits.
+- Read-only JSON/archive reconciliation — **PASS**: parsed `docs/DATA_COVERAGE.json` and batch-022 snapshot/manifest; matched all 205 original seed slugs to 205 ledger slugs; SHA-256 matched the snapshot manifest; 205 identities, 247 sources, 342 claims, 271 runs and 342 audits reconciled; claim/source/run/audit IDs are unique and all references resolve; 179 open substantive claims +16 held +147 link references =342 total; zero users/decisions/fixtures.
+- The first pass of the review-manifest check caught four held records still duplicated in the open-review index. The index was corrected without changing any archived claim or audit record, and the final reconciliation passed with 179 open /16 held.
+- No unit, integration, Playwright, lint, typecheck, Prisma generation or build command was rerun because this continuation changed only research manifests, snapshot artifacts and documentation, not application/schema/migration code. Previous applicable browser/build evidence remains the latest code verification. No claim is considered verified from these checks.
+
+## Phase 3 continuation — owner review handoff and targeted batches 025–027 — 2026-11-18
+
+Branch remains `phase-3-catalogue-enrichment` at local commit `19d8c91`. Existing uncommitted application/schema/migration/test work was preserved. The original 205 colleges, IDs/slugs, prior claims, provenance, source identity, and audit records remain intact. No production or DevSync access, credential change, push, merge, or deployment occurred.
+
+### Owner access and review readiness
+
+The `/admin/enrichment` dashboard is implemented for ADMIN accounts. It presents college/campus, field/value, year/category, publisher, exact source link and evidence locator; shows conflicts, freshness/expiry and prior decisions; supports search/filter/database pagination; and exposes explicit approve/reject controls. Server authorization and audit logging remain enforced. Registration creates only USER. There are no reviewer accounts in the archive, and no genuine decision has been made. The 25-claim first review packet in `humanReviewManifest.firstHumanReviewBatch.claims` remains unchanged and is ready for inspection. The 16 existing held claims are separate and remain held.
+
+Owner action to use it locally: create a fresh isolated local review DB from the latest snapshot; verify database identity and loopback target before connection/confirmation; set local-only untracked `.env.local` with that `DATABASE_URL`, `NEXTAUTH_URL=http://localhost:3000`, and a locally generated `NEXTAUTH_SECRET`; register the owner at `/register`; re-verify DB identity; then, using only the verified local DB owner, promote the owner-created USER to ADMIN with a parameterized `UPDATE "User" SET role='ADMIN' WHERE lower(email)=lower($1) AND role='USER' RETURNING id,email,role`. Log in again and verify `/admin/enrichment`. Never run that update against production, DevSync or an unverified database. No account was created/promoted here.
+
+### Targeted research, staging, and snapshot
+
+After snapshot `staged-evidence-after-batch-025` (364 claims, 262 sources, 286 runs, 364 staging audits), batch 026 staged two programme claims: Tripura University BBA (no duration inferred) and GTU School of Management Studies four-year BBA Honours, with school scope and historical introduction year. Identical retry reused both claims without creating source/run rows. Snapshot 026: 205 colleges, 264 sources, 366 claims, 288 runs, 366 audits; zero users/decisions/fixtures; SHA-256 `6630fd8fc9b0b8d7a7fceb5402004d788fd815a47bc728bbd747cd51d1af9782`.
+
+Batch 027 researched 20 institutions with documented dispositions and staged 11 facts across five colleges: six Amrita B.Sc. Psychology programme/admission/fee claims (Coimbatore and Nagercoil tuition kept separate; Coimbatore hostel and mess separated), NIT Agartala CSE B.Tech, NIT Srinagar B.Tech branch list/duration, Bennett B.Tech AI 2027 programme/eligibility, and University of Calcutta Chemical Technology B.Tech duration. Claims remain UNREVIEWED. The 2026 Calcutta lateral-entry deadline had passed and was not presented as current. Old Bennett fee/scholarship tables were excluded. Ambiguous or inaccessible material remained research-only. The 11-claim retry reused all claims with `databaseChanged=false`.
+
+Before each apply, the dedicated CollegeFind Docker container was confirmed loopback-bound at `127.0.0.1:35439`; read-only database identity was `collegefind_phase3_restore` / `cf_phase3_test` with counts matching the prior snapshot. No data was overwritten. Latest archive [`staged-evidence-after-batch-027.json`](data/pilot/staged-evidence-after-batch-027.json), SHA-256 `24c039bb7fd13a994e0c0e01ce1059f06dc7c492e118aa3cbfbaefe4b2697fbf`, identity SHA-256 unchanged `7de99f1f2a5aa88676dfbfa2161e56a9ce043a4c6f5d1da82b82957a8e297849`: **205 colleges, 269 sources, 377 claims, 293 import runs, 377 staging audits, zero decisions/users/fixtures**.
+
+### Current coverage after batch 027
+
+- 205/205 first-pass substantive research dispositions remain complete.
+- 123 colleges have at least one staged substantive claim; 82 have no staged substantive facts.
+- 230 claims are substantive STAGED/UNREVIEWED; 147 are link-only reference claims; total 377.
+- 214 substantive claims are open for inspection and 16 remain held. Genuine VERIFIED claims/colleges: **0/0**. Fully enriched colleges: **0**.
+- Field counts (claim / institution): courses 28/28; scalar admissions facts 17/14; phone 2/2; email 2/2; structured programmes 49/48; structured admissions 59/45; fees 32/16; scholarships 7/5; contacts 5/3; NIRF 27/26; placement 2/1. Per-field percent and untouched DEMO/MISSING raw seed state are in `docs/DATA_COVERAGE.json`.
+
+### Publication test and checks
+
+- Verified the separate browser DB `collegefind_phase3_test` before running: loopback-only in the dedicated CollegeFind disposable container; database role `cf_phase3_test`; 29 catalogue rows, of which 28 were marked DEMO and the remaining synthetic row was named “Fixture” with UNVERIFIED status; all 18 user accounts used test-only domains. Existing saved/comparison relationships were preserved. The database is distinct from the staged-evidence restore database.
+- `./node_modules/.bin/playwright test tests/e2e/admin.spec.ts --reporter=list` — **2 passed** (desktop Chromium and mobile) after adding a focused structured-fee publication assertion. Test-only approval verified the fee is hidden while staged, then visible with year, category, amount and source attribution after approval. Existing synthetic programme publish/reject/audit and fixture-denial checks also passed. No decision was written to the restore database or counted as real verification.
+- Prior unchanged-code checks remain applicable: PostgreSQL integration **63/63**, comparison Playwright **15 passed / 1 intentional skip**, smoke Playwright **14 passed**. They were not repeated because application code/schema did not change.
+- Batch 026 dry run **PASS 2**, apply **PASS 2 staged**, retry **PASS 2 reused/0 DB changes**. Batch 027 dry run **PASS 11**, apply **PASS 11 staged**, retry **PASS 11 reused/0 DB changes**. Snapshots exported from the verified restore database.
+- `npm run lint`, `npm run typecheck`, `git diff --check`, machine JSON validation, snapshot checksum/referential reconciliation were run after changes; exact terminal results are recorded in the final status update below.
+
+### Changed files in this continuation
+
+- `tests/e2e/admin.spec.ts` (synthetic structured-fee publication assertion).
+- `data/pilot/substantive-research-batch-025.json` and existing batch-025 reports/snapshot; `data/pilot/substantive-research-batch-026.json` and its dry-run/import/idempotency reports/snapshot; `data/pilot/substantive-research-batch-027.json` and its dry-run/import/idempotency reports/snapshot.
+- `docs/DATA_COVERAGE.json`, `docs/DATA_COVERAGE.md`, `docs/UPGRADE_STATUS.md`.
+
+No code changes were made beyond the focused browser test. Current owners still need local account provisioning and 25 individual human review decisions; 16 existing holds remain unresolved; source-use and campus validation remains claim-specific; there are 82 no-stage colleges; there are zero genuine verified colleges. Continue with another targeted 20–30-college batch after the owner handoff.
+
+### Final exact verification after the current edits
+
+- `./node_modules/.bin/playwright test tests/e2e/admin.spec.ts --reporter=list` — **PASS: 2 passed** (desktop Chromium and mobile; 11.4s). It used the verified separate `collegefind_phase3_test` target in the CollegeFind disposable container. The new structured-fee assertion verified that a synthetic STAGED fee was absent from the public profile before approval and appeared afterward with the 2026 year, campus/category, amount and source attribution. Synthetic decisions are confined to this test DB and do not count as genuine reviews.
+- `npm run lint` — **PASS**, exit code 0.
+- `npm run typecheck` — **PASS**, exit code 0.
+- `git diff --check` — **PASS**, exit code 0.
+- JSON/snapshot/handoff reconciliation — **PASS**: 205 unique ledger slugs and identities; snapshot SHA matches its manifest; 230 substantive claims across 123 institutions plus 147 references; 214 open human-review claims plus 16 held; the 25 first-review IDs are all present and not held; 377 claims and staging audits reconcile; zero snapshot decisions, users or fixture claims.
+- Batch importer checks: batch 026 dry-run 2; apply 2 staged; identical retry 2 reused/0 changed. Batch 027 dry-run 11; apply 11 staged; identical retry 11 reused/0 changed. Latest snapshot has 205/269/377/293/377 college/source/claim/run/audit counts.
+- Integration suite (63 passed), comparison browser suite (15 passed, 1 intentional skip), smoke suite (14 passed), production build and Prisma generation were not repeated: no application, schema, migration, projection or importer code changed in this increment; only one E2E assertion and evidence/ledger/docs changed. The prior database-backed checks used their separate disposable environments and remain applicable to unchanged code.
+
+The only remaining human-review blocker is owner-side access: there is no owner account in the evidence archive and registration alone creates a USER. The owner must restore the latest snapshot into a fresh local review database, create their own account, promote only that account to ADMIN after verifying the local DB target, and then inspect/decide the 25-claim packet. Sixteen existing holds remain untouched. Source-specific rights/campus review is required per claim; no genuine verification was achieved here.
+
+## Owner-review workflow completion — 2026-11-18
+
+Branch remains `phase-3-catalogue-enrichment` at `19d8c91`; existing work and the 205 original identities are preserved. No production or DevSync resources, credentials, account roles or real decisions were changed.
+
+### Review UI and secure local owner environment
+
+- Reviewed `src/lib/auth.ts`, `src/lib/session.ts`, registration, `/admin/enrichment`, and `/api/admin/evidence`. Credentials auth uses the existing user table and role in the JWT; server authorization reloads the current DB role (`getSessionUser`), and admin writes use `requireAdmin`, origin/rate-limit checks, reason validation and audited review services. Registration creates USER only. Unauthenticated dashboard requests redirect to login; a normal USER is denied. No self-elevation endpoint exists.
+- Added an ordered first-review packet panel to the admin dashboard. Its 25 entries expose institution/slug, exact claim ID, field/value, year/scope, publisher/source URL, evidence location and a reviewer question, with links to the official source and exact claim queue filter. Queue free-text search now matches stable claim IDs. All 16 held claims remain excluded from the packet and server-side approval remains blocked for held/expired/future/conflicted/fixture records.
+- Added `data/pilot/first-human-review-batch.json`, generated from the canonical coverage ledger by `scripts/export-owner-review-packet.ts`; unit test asserts exact parity, 25 unheld STAGED items, source/evidence/question presence and no synthetic approvals. The dashboard claims themselves continue to load their authoritative current status/source/audit data from PostgreSQL.
+- Provisioned a fresh owner-review clone `collegefind_phase3_snapshot_owner_review_20261118_test` in the dedicated CollegeFind-only Docker container. Before create/restore, verified loopback-only `127.0.0.1:35439`, existing archive DB identity/role, and that the new DB name did not exist. Applied five migrations and rehearsed the batch-027 archive. Exact read-back passed: 205 colleges, 269 sources, 377 claims, 293 runs and 377 staging audits. Immediate idempotency retry inserted zero rows; decision/user/fixture counts are 0. Snapshot SHA-256: `24c039bb7fd13a994e0c0e01ce1059f06dc7c492e118aa3cbfbaefe4b2697fbf`. Existing restore and browser databases were not overwritten.
+- The local owner setup commands and guarded one-account promotion procedure are in `docs/DATA_COVERAGE.md` under “Owner-local review setup and dashboard handoff”. They use only the fresh clone, require exact identity/count/loopback checks, clear direct/staging DB overrides and Redis variables, generate a local auth secret without displaying it, and update only the owner-entered email if exactly one USER matches. The owner must still register their own account and execute the promotion themselves. No account was created or promoted here.
+
+### Changed files
+
+- `src/server/evidence-queue.ts`: added claim ID matching to the existing parameterized SQL search filter.
+- `src/app/admin/enrichment/page.tsx`: added the ordered review packet and exact claim-ID queue links; clarified the search label.
+- `tests/integration/evidence-queue.test.ts`: verifies claim-ID search in the conflicted state.
+- `tests/e2e/admin.spec.ts`: verifies packet metadata/links and authenticated claim-ID search; updates the accessible search locator.
+- `tests/unit/review-packet.test.ts`, `scripts/export-owner-review-packet.ts`, `data/pilot/first-human-review-batch.json`.
+- `docs/DATA_COVERAGE.md`, `docs/DATA_COVERAGE.json`, `docs/UPGRADE_STATUS.md`.
+
+### Actual verification
+
+- `npx vitest run --project unit tests/unit/review-packet.test.ts` — **PASS, 1 test**.
+- `npx vitest run --project integration tests/integration/evidence-queue.test.ts` — first run exposed an incorrect new assertion using the default STAGED filter against a conflicted record; the test was corrected to request CONFLICTED. Rerun **PASS, 1 integration test** on `collegefind_phase3_test` after safety preflight. No application defect was found in that first test failure.
+- `npx playwright test tests/e2e/admin.spec.ts --workers=1 --reporter=list` with `E2E_PORT=3100` — **PASS, 2 tests** (Chromium desktop and mobile). It verifies unauthenticated denial, USER denial, packet contents/official-source link, exact claim-ID search, conflict and pagination flows, fixture approval denial, reasoned approve/reject with audit, and synthetic STAGED→approved public programme/fee projection with year/category/source. The first post-label-change browser run reached the empty-state assertion but timed out because that test still used the old accessible label; the locator was updated, and the complete rerun passed. Synthetic test approvals remain in the separate `collegefind_phase3_test` only and do not count as real decisions.
+- `npx eslint src/server/evidence-queue.ts src/app/admin/enrichment/page.tsx tests/e2e/admin.spec.ts tests/unit/review-packet.test.ts scripts/export-owner-review-packet.ts tests/integration/evidence-queue.test.ts --max-warnings=0` — **PASS**.
+- `npm run typecheck` — **PASS**. `git diff --check` — **PASS** before the last documentation/ledger update; rerun after final edits.
+- Next.js dev server compiled and served the changed review page successfully for both browser projects. Production build was not rerun; prior production build evidence predates this small page/search change. No other full suites were repeated.
+
+### Current evidence and owner actions
+
+- Latest staged snapshot remains unchanged: 205 colleges, 269 sources, 377 claims, 293 runs, 377 audits; 230 substantive claims, 147 reference claims; 214 substantive claims open for inspection, 16 held; genuine approvals/VERIFIED claims/institutions remain **0/0/0**.
+- Browser E2E proves authorization and synthetic publication behavior, but does not authenticate the project owner. The restored owner clone intentionally has zero users; follow the documented setup, register your own account, confirm exactly one USER match, then promote only that account locally. After log out/in, verify the dashboard and the first packet before deciding any claim.
+- The first 25 claims still require the owner's independent source/campus/scope/year/reuse review. Do not clear the 16 holds automatically. Production access, production security, genuine review and production release are not verified by this local work.
+
+### Final verification after packet-link filter reset — 2026-11-18 16:29 UTC
+
+- Final code clears unrelated active filters from a packet's “Open this claim” link, ensuring the ID selected in the packet remains visible even when the reviewer was previously filtering another college/year/field.
+- `npx next build --webpack` — **PASS** on the final code. The first sandbox attempt failed because Next's TypeScript subprocess was blocked with `EPERM` and returned empty `--showConfig` output; the direct compiler invocation emitted valid config. A host-approved rerun compiled and completed all 44 static pages. One intermediate command omitted exporting the derived local database name and therefore logged the sitemap's guarded database-unavailable warning; the corrected final command used the verified owner-review clone and completed with no sitemap fallback warning.
+- `npx playwright test tests/e2e/admin.spec.ts --workers=1 --reporter=list` with `E2E_PORT=3100` — **PASS, 2 tests** against the built production server (`next start`), desktop Chromium and mobile. Verified packet panel and exact source/year/value/evidence/reviewer question content; packet link opens claim-ID search independent of other filters; unauthorized denial; reviewer reason and audit; synthetic staged→verified publication and rejection; year/category/source rendering; fixture isolation. Rate-limit memory fallback was explicitly selected for this local test environment with Redis variables empty; this is not evidence about production Redis.
+- The owner runbook's actual loopback/DB identity and 205/269/377/293/377/0/0/0 count command, plus its parameterized owner-email match query, were executed read-only against the new clone — **PASS**; the owner account match count is 0 before owner registration.
+- Focused integration queue test remains **PASS, 1 test** on the verified disposable test DB; packet parity unit test **PASS, 1 test**. Changed-file ESLint, `npm run typecheck`, and `git diff --check` all **PASS** after final code/docs edits. The snapshot export/rehearsal report at `data/pilot/staged-evidence-after-batch-027-rehearsal-report.json` confirms exact read-back and zero-write retry.
+- `AGENTS.md` was briefly touched by Next dev's generated guidance block; that tool-generated hunk was removed, restoring the file to its pre-task state. It is not part of this task's changed files.
+- Current real-data result is unchanged: 377 staged claims, 230 substantive, 147 link references, 214 substantive open for inspection, 16 held, zero genuine approvals/VERIFIED claims/verified institutions. The fresh owner-review clone still has zero users and decisions. The test-only browser database contains only synthetic test accounts/claims/decisions; its data is separate and does not enter the snapshot or catalogue counts.
+
+## Phase 3 acceptance decision and Phase 4 gate — 2026-11-18
+
+This is the current acceptance addendum and supersedes earlier cumulative counts. Branch is still `phase-3-catalogue-enrichment`, local HEAD `19d8c91`. Existing dirty Phase 2/3 work was preserved and not staged. No code, schema, migration, credentials, production or DevSync resources were changed in this increment.
+
+### Requirement-by-requirement acceptance
+
+| Phase 3 requirement | Status | Evidence / limitation |
+|---|---|---|
+| Canonical institution/campus identity, stable IDs/slugs, aliases, deterministic matching and ambiguity handling | **PASS** | `prisma/schema.prisma`, `src/server/ingest/catalogue.ts`; integration evidence in `tests/integration/catalogue.test.ts`; latest archive identity checksum and 205 stable ID/slug rows reconcile. |
+| Field-level source provenance and auditable evidence | **PASS (engineering)** | `Source`, `FieldEvidence`, `ImportRun`, `EvidenceDecision`, `AuditLog`; 377 evidence records and staging audits reconcile. Completeness of year/publication metadata remains partial at the data level. |
+| Source-use/access policy and compliant research | **PARTIAL** | Per-source access/reuse notes are retained; some provider terms and bulk-use rights are unresolved. No bypass or blanket reuse assumption. |
+| Typed import validation, duplicate reconciliation, idempotency, rollback and recoverability | **PASS** | Earlier integration checks and batch 026/027 dry-run/apply/retry evidence; retries created no duplicate source/claims. No importer code changed here. |
+| Reproducible snapshot and identity-independent restoration | **PASS** | Latest snapshot manifest/read-back 205/269/377/293/377 and the prior separate-disposable restore/idempotent retry. Archive contains no users, decisions or fixtures. |
+| Authenticated reviewer queue, explicit reasoned decisions and audit | **PASS (implementation/tests)** | `/admin/enrichment`; dashboard E2E: 2 passed (desktop/mobile), including auth denial, reviewer approval/rejection and audit using synthetic test records. Synthetic review is not genuine approval. |
+| Owner's actual local ADMIN setup/access | **BLOCKED on owner interaction** | Read-only preflight reverified the exact loopback owner clone and row counts. It has 0 users and 0 decisions. Owner must register their own account and promote only that matching account in the local clone; steps/URLs are in `docs/DATA_COVERAGE.md`. No account was created/promoted here. |
+| Conflicts, expiry, stale/future evidence and holds | **PARTIAL** | Queue states and holds are implemented/tested; 16 claims remain held pending source/campus/year/rights resolution. No hold was cleared. |
+| Verified-only student-facing projection and DEMO/fixture isolation | **PASS (automated workflow)** | Synthetic publication E2E verifies unreviewed/fixture exclusion and staged→verified profile rendering with year/category/source. No genuine claim is currently approved, so real approved-fact profile rendering remains unobserved. |
+| Coverage reporting across all 205 original colleges | **PASS (disposition reporting)** | All 205 have dispositions and stable identities. JSON now derives the exact 82 without substantive staged facts from snapshot claims; see `substantiveResearchSummary.substantiveBacklog`. |
+| Useful, genuinely reviewed catalogue facts / fully enriched profiles | **PARTIAL** | 230 substantive claims across 123 colleges are staged/unreviewed; 82 have no substantive staged facts. Genuine VERIFIED claims/colleges: **0/0**. Fully enriched colleges: **0**. |
+| Production security and recovery readiness | **BLOCKED / owner evidence required** | Historical credential revocation/rotation, production seed-route protection, Redis-backed limit/outage behavior, backup retention and successful restore are not verified. Production was not accessed. |
+
+### Owner review and database evidence
+
+The local owner-review clone was checked read-only with host permission on 2026-11-18: Docker binding `127.0.0.1:35439`; database `collegefind_phase3_snapshot_owner_review_20261118_test`; role `cf_phase3_test`; exact counts `205|269|377|293|377|0|0|0` for College/Source/FieldEvidence/ImportRun/AuditLog/EvidenceDecision/User/fixture evidence. The check passed. The clone remains at 0 users and 0 decisions. The archived baseline is 205 colleges, 269 sources, 377 claims, 293 import runs, 377 staging audits; 230 substantive + 147 reference claims; 214 substantive open for inspection, 16 held. The 25-item packet is available on the dashboard and at `data/pilot/first-human-review-batch.json`; every item is STAGED_UNREVIEWED and none is held.
+
+Owner must personally follow the local setup in `docs/DATA_COVERAGE.md`, register at `http://127.0.0.1:3317/register`, use the guarded parameterized promotion for only the account they just created in the verified local database, log in again, and visit `http://127.0.0.1:3317/admin/enrichment`. Then inspect each claim's source, campus, scope, year/freshness, evidence location and permitted use; submit an explicit approve/reject reason. This audit has not logged in as the owner or made a decision. Synthetic tests do not count as human review. All 16 held records remain held.
+
+### 82-college actionable backlog
+
+Added an 82-entry machine-readable backlog under `substantiveResearchSummary.substantiveBacklog.entries` in `docs/DATA_COVERAGE.json`, and a human-readable per-college table to `docs/DATA_COVERAGE.md`. Rows are derived by joining the archived snapshot claim college IDs to the stable identity map and excluding link-only website/admissions URLs; the result is 123 with substantive claims / 82 without, matching the aggregate ledger. Every row names absent substantive domains, its latest recorded limitation, existing reference/candidate URLs clearly labeled by state, and the next legitimate source type/action. Category counts are mutually exclusive: 25 identity/scope, 25 field-specific source needed, 6 access/rendering, 6 cycle/staleness, 3 source-use review, and 17 with no field-specific disposition detail. These are follow-up priorities, not claims of permanent source unavailability. No new college fact or source URL was generated.
+
+### Checks run in this increment
+
+- Read-only Docker/database preflight under approved host access: **PASS**; exact loopback binding/database identity/counts above. The documented local env-file URL derivation was also exercised without outputting credentials: **PASS**. No writes.
+- Snapshot/ledger reconciliation: **PASS**; latest manifest count/checksum reconciles, all 205 IDs/slugs preserved, 377 claims and audits, 0 decisions/users/fixtures; substantive/reference split and 25-item packet state verified from stored artifacts.
+- JSON parse and backlog cardinality/category reconciliation: **PASS**, 82 unique slugs, category sum 82, no substantive snapshot claims in the backlog.
+- `git diff --check` — **PASS** after this documentation update. No lint/typecheck/build/browser rerun: application code, schema and tests did not change in this increment; latest applicable checks remain those recorded in the owner-review section above.
+
+### Phase 3 / Phase 4 decision
+
+**Phase 3 engineering is complete with explicit data and owner blockers; Phase 3 factual verification and production readiness are not complete.** The remaining 82-college research backlog and 16 held claims are documented, 214 substantive claims await an authorized human, and genuine VERIFIED count remains zero.
+
+**Decision: CONDITIONAL GO for Phase 4 local engineering only.** Phase 4 may proceed on local/disposable data while all public projections remain verified-only, unknown/demo/unreviewed states remain explicit, and no production resources are touched. Any Phase 4 acceptance item that requires genuine verified records is blocked until the owner reviews and approves eligible evidence. Production release remains NO-GO pending owner-side security and restore evidence.
+
+Next owner action: complete the local account setup and review the first packet. Next engineering task if proceeding: Phase 4's bounded cutoff exploration/profile work behind the existing reviewed-data projection, with no assumptions that staged evidence is verified.

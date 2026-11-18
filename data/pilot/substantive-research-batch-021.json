@@ -1,0 +1,222 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 21,
+  "researchedAt": "2026-11-18T12:22:50Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "method": "Manual inspection of IIT Roorkee official Academic Affairs fee schedule and Board of Governors UG Ordinance; public pages/PDFs opened directly, no automated bulk requests or access-control bypass.",
+    "factualUse": "Stage only concise exact fee-component/category values and UG admission route, year-labelled and linked. Exclude total grand totals, deposits, mess advance and untyped cost categories; no PDF or source prose stored.",
+    "reuseConditions": "Public visibility does not establish bulk redistribution permission. No explicit source licence was identified. Individual source-backed fact staging is internal and unreviewed; no bulk extraction or document reproduction permission is inferred. Reviewer must inspect originals and confirm intended use."
+  },
+  "sources": [
+    {
+      "id": "iitr-ug-fees-2026-27",
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "publisher": "Indian Institute of Technology Roorkee, Academic Affairs Office",
+      "url": "https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-18T12:22:50Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official IIT Roorkee UG I Year fee schedule manually opened as a public PDF. Store only concise fee/waiver facts, exact source link, publisher, year and table locator; do not store or reproduce the document. No explicit bulk reuse licence was established. This single-college factual staging is not permission for automated collection or bulk republication; reviewer must confirm source, year, programme/category scope and intended public use.",
+      "evidenceLocations": [
+        "PDF pages 1-2, fee table headed Structure of Fees/Charges (Session 2026-27), U.G. I Year; semester tuition categories and hostel accommodation/electricity lines."
+      ]
+    },
+    {
+      "id": "iitr-ug-ordinance-2025",
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "publisher": "Indian Institute of Technology Roorkee, Board of Governors",
+      "url": "https://www.iitr.ac.in/Academics/static/Regulation/UG/UG_Ordinance_BoG_2025.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "retrievedAt": "2026-11-18T12:22:50Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official IIT Roorkee Board of Governors UG Ordinance publicly opened and manually read. Only concise admission-route facts and precise locator retained, not the source text/document. No explicit bulk reuse licence established; reviewer must confirm intended public use and check current admission-cycle applicability.",
+      "evidenceLocations": [
+        "Ordinance page 22, section Admissions, clauses 10(1)-(2): UG programmes other than B.Des. through JEE Advanced and policy per JoSAA/regulations; B.Des. through UCEED."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "UG I Year: B.Tech./B.Arch./BS-MS/Integrated M.Tech./B.Des.",
+        "category": "Gen/Gen-EWS/OBC/OCI/PIO card holders",
+        "component": "Tuition fee",
+        "feeType": "TUITION",
+        "period": "SEMESTER",
+        "amountInr": 100000
+      },
+      "sourceIds": [
+        "iitr-ug-fees-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official fee schedule page 1, U.G. I Year, 2026-27, semester tuition row: Gen/Gen-EWS/OBC/OCI/PIO Card Holders = INR 100,000 for Autumn and Spring. This is tuition only, not total semester cost.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "scholarship",
+        "scheme": "IIT Roorkee UG I Year SC/ST/PwD tuition fee waiver (2026-27)",
+        "eligibility": "The 2026-27 UG I Year fee table lists tuition at INR 0 per semester for SC/ST/PwD. This is a tuition waiver; it does not mean other semester charges are zero.",
+        "url": "https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf"
+      },
+      "sourceIds": [
+        "iitr-ug-fees-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official fee schedule page 1, U.G. I Year, semester tuition row for SC/ST/PWD; not the grand total line.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "scholarship",
+        "scheme": "IIT Roorkee UG I Year full tuition remission for most economically backward category (2026-27)",
+        "eligibility": "The 2026-27 UG I Year fee table lists tuition at INR 0 per semester for the most economically backward students whose family income is below INR 1 lakh per annum. Other charges remain payable.",
+        "url": "https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf"
+      },
+      "sourceIds": [
+        "iitr-ug-fees-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official fee schedule page 1, U.G. I Year, semester tuition row describing family income below INR 1 lakh; the table lists tuition as zero.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "scholarship",
+        "scheme": "IIT Roorkee UG I Year partial tuition remission for economically backward category (2026-27)",
+        "eligibility": "The 2026-27 UG I Year fee table lists tuition at INR 33,333 per semester after 2/3 fee remission for students whose family income is between INR 1 lakh and INR 5 lakh per annum. This figure is tuition only.",
+        "url": "https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf"
+      },
+      "sourceIds": [
+        "iitr-ug-fees-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official fee schedule page 1, U.G. I Year, semester tuition row for income INR 1-5 lakh after 2/3 fee remission.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "UG I Year hostel residents",
+        "category": "Bachelor hostel accommodation; married accommodation charged as actual",
+        "component": "Hostel accommodation",
+        "feeType": "HOSTEL",
+        "period": "SEMESTER",
+        "amountInr": 5000
+      },
+      "sourceIds": [
+        "iitr-ug-fees-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official fee schedule page 1, U.G. I Year, Hostel Charges per Semester, Accommodation = INR 5,000; footnote states this is the minimum Bachelor Hostel charge.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "UG I Year hostel residents",
+        "category": "Bachelor hostel accommodation",
+        "component": "Hostel electricity charge",
+        "feeType": "HOSTEL",
+        "period": "SEMESTER",
+        "amountInr": 2500
+      },
+      "sourceIds": [
+        "iitr-ug-fees-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official fee schedule page 1, U.G. I Year, Hostel Charges per Semester, Electricity = INR 2,500.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "IIT Roorkee UG programmes other than B.Des.",
+        "route": "JEE Advanced followed by admission as provided by JoSAA and Institute regulations",
+        "category": "UG applicants",
+        "exam": "JEE Advanced",
+        "eligibility": "The 2025 UG Ordinance assigns JEE Advanced as the route; detailed candidate eligibility is set by JoSAA and applicable government/institute rules and is not expanded in this claim.",
+        "applicationUrl": "https://www.iitr.ac.in/Academics/Admission%20To%20Undergraduate%20Programmes.html"
+      },
+      "sourceIds": [
+        "iitr-ug-ordinance-2025"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "UG Ordinance 2025, page 22, section Admissions, clause 10(2); route is JEE Advanced, with detailed policy provided by JoSAA/regulations. The 2026-27 UG admissions page is linked as current cycle portal, not as evidence for the ordinance text.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Bachelor of Design (B.Des.)",
+        "route": "UCEED-based admission",
+        "category": "UG applicants",
+        "exam": "UCEED",
+        "applicationUrl": "https://www.iitr.ac.in/Academics/Admission%20To%20Undergraduate%20Programmes.html"
+      },
+      "sourceIds": [
+        "iitr-ug-ordinance-2025"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "UG Ordinance 2025, page 22, section Admissions, clause 10(2), which states admission to B.Des. shall be through UCEED.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchDisposition": [
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "outcome": "STAGEABLE_2026_27_TUITION_HOSTEL_AND_UG_ROUTE",
+      "sources": [
+        "https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf",
+        "https://www.iitr.ac.in/Academics/static/Regulation/UG/UG_Ordinance_BoG_2025.pdf"
+      ],
+      "note": "Official schedule separates annual academic year, first-year UG tuition categories, accommodation and electricity. Table totals, refundable deposits, mess advance (subject to adjustment), and zero amounts were not imported as fees. Tuition remissions are staged as aid/waiver with clear scope. 2026-27 scholarship application deadlines found in separate notices have elapsed, so no live application link or current-open claim is asserted."
+    }
+  ],
+  "counts": {
+    "institutionsFollowedUp": 1,
+    "previouslyNoStageableInstitutionsRevisited": 1,
+    "claimsEligibleForStaging": 8,
+    "claimsStaged": 0,
+    "claimsReusedOnImmediateRetry": 0,
+    "claimsHeldForConflictOrReuseReview": 0,
+    "institutionsHeld": 0,
+    "genuineVerifiedClaims": 0
+  }
+}

@@ -17,16 +17,17 @@ it('projects individual approved claims, supersession and rejection through the 
  let projected=await prisma.college.findUniqueOrThrow({where:{id:c.id},select:{...collegeListSelect,description:true}});
  expect(projected.description).toBe('Reviewed original');expect(projected.annualFees).toBeNull();expect(projected.naacGrade).toBeNull();
  const conflicting=await stageFieldEvidence(db,{collegeId:c.id,sourceId:source.id,draft:{...draft,value:'Competing claim'}});
- await reviewFieldEvidence(db,{evidenceId:conflicting.id,reviewerId:admin.id,status:'APPROVED',reason:'Competing fixture'});
- expect((await prisma.college.findUniqueOrThrow({where:{id:c.id},select:{...collegeListSelect,description:true}})).description).toBeNull();
+ await expect(reviewFieldEvidence(db,{evidenceId:conflicting.id,reviewerId:admin.id,status:'APPROVED',reason:'Competing fixture'})).rejects.toThrow(/Conflicting evidence remains unresolved/);
+ expect((await prisma.college.findUniqueOrThrow({where:{id:c.id},select:{...collegeListSelect,description:true}})).description).toBe('Reviewed original');
  await reviewFieldEvidence(db,{evidenceId:conflicting.id,reviewerId:admin.id,status:'REJECTED',reason:'Conflict resolved'});
  expect((await prisma.college.findUniqueOrThrow({where:{id:c.id},select:{...collegeListSelect,description:true}})).description).toBe('Reviewed original');
  const b=await stageFieldEvidence(db,{collegeId:c.id,sourceId:source.id,draft:{...draft,value:'Replacement'},supersedesId:a.id,validUntil:new Date('2020-01-01')});
- await reviewFieldEvidence(db,{evidenceId:b.id,reviewerId:admin.id,status:'APPROVED',reason:'Expired replacement'});
+ await expect(reviewFieldEvidence(db,{evidenceId:b.id,reviewerId:admin.id,status:'APPROVED',reason:'Expired replacement'})).rejects.toThrow(/Expired evidence cannot be published/);
+ await reviewFieldEvidence(db,{evidenceId:b.id,reviewerId:admin.id,status:'REJECTED',reason:'Expired replacement'});
  projected=await prisma.college.findUniqueOrThrow({where:{id:c.id},select:{...collegeListSelect,description:true}});
- expect(projected.description).toBeNull();
+ expect(projected.description).toBe('Reviewed original');
  await reviewFieldEvidence(db,{evidenceId:a.id,reviewerId:admin.id,status:'REJECTED',reason:'Withdraw original'});
- expect(await db.evidenceDecision.count()).toBe(5);
+ expect(await db.evidenceDecision.count()).toBe(4);
 });
 it('filters rejected typed records before take and distinct',async()=>{
  const c=await db.college.create({data:{slug:'rank-fixture',name:'Fixture',shortName:'F',city:'C',state:'Kerala',type:'GOVERNMENT'}});

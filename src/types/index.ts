@@ -1,3 +1,5 @@
+import type { StructuredFact } from '@/server/ingest/structured-facts';
+
 export type CollegeType = 'GOVERNMENT' | 'PRIVATE';
 export type DataStatus = 'DEMO' | 'UNVERIFIED' | 'VERIFIED';
 export type ExamType = 'JEE_MAIN' | 'JEE_ADVANCED' | 'NEET' | 'CAT' | 'GATE';
@@ -6,6 +8,8 @@ export type ViewMode = 'grid' | 'list';
 
 /** Matches `collegeListSelect` in src/server/colleges.ts. Null means "unknown". */
 export interface College {
+  structuredFacts?: { key: string; value: StructuredFact; academicYear: number | null; validUntil: Date | string | null; source: { url: string; publisher: string } }[];
+  admissions?: string | null;
   fieldEvidence?: Record<string, {status: string; year?: number | null; sources?: { url: string; publisher: string; retrievedAt: Date | string }[]}>;
   id: string;
   slug: string;

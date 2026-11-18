@@ -1,0 +1,125 @@
+{
+  "status": "STAGED",
+  "facts": 14,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 14,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "iiser-pune",
+      "field": "admissions",
+      "evidenceId": "cmwlti5240007q2tv89vtlcci",
+      "sourceId": "cmwlti5120000q2tvpsxtghoe",
+      "sourceUrl": "https://www.iiserpune.ac.in/education/admissions",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiser-pune",
+      "field": "courses",
+      "evidenceId": "cmwlti52i000aq2tv04pzdxck",
+      "sourceId": "cmwlti5190001q2tver9kezgw",
+      "sourceUrl": "https://www.iiserpune.ac.in/education/admissions/masters-programmes",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiser-pune",
+      "field": "structured.admission",
+      "evidenceId": "cmwlti52o000cq2tv8t32n2hv",
+      "sourceId": "cmwlti5190001q2tver9kezgw",
+      "sourceUrl": "https://www.iiserpune.ac.in/education/admissions/masters-programmes",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiser-pune",
+      "field": "structured.programme",
+      "evidenceId": "cmwlti52w000eq2tvrao6vlu3",
+      "sourceId": "cmwlti5190001q2tver9kezgw",
+      "sourceUrl": "https://www.iiserpune.ac.in/education/admissions/masters-programmes",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiser-pune",
+      "field": "structured.admission",
+      "evidenceId": "cmwlti531000gq2tvv330tpph",
+      "sourceId": "cmwlti5190001q2tver9kezgw",
+      "sourceUrl": "https://www.iiserpune.ac.in/education/admissions/masters-programmes",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiser-kolkata",
+      "field": "courses",
+      "evidenceId": "cmwlti53b000jq2tvfmt4afyr",
+      "sourceId": "cmwlti51d0002q2tvmx2utxbu",
+      "sourceUrl": "https://www.iiserkol.ac.in/web/admission",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiser-kolkata",
+      "field": "structured.admission",
+      "evidenceId": "cmwlti53g000lq2tvjxlh9l14",
+      "sourceId": "cmwlti51d0002q2tvmx2utxbu",
+      "sourceUrl": "https://www.iiserkol.ac.in/web/admission",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "bms-college-of-engineering",
+      "field": "courses",
+      "evidenceId": "cmwlti53q000oq2tvwr7pakc7",
+      "sourceId": "cmwlti51i0003q2tv31jsm8rw",
+      "sourceUrl": "https://www.bmsce.ac.in/home/Under-Graduation",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "bms-college-of-engineering",
+      "field": "structured.admission",
+      "evidenceId": "cmwlti53w000qq2tvx1qyw05g",
+      "sourceId": "cmwlti51i0003q2tv31jsm8rw",
+      "sourceUrl": "https://www.bmsce.ac.in/home/Under-Graduation",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "pes-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwlti54b000tq2tvzaqkx5rz",
+      "sourceId": "cmwlti51l0004q2tvva92wuvo",
+      "sourceUrl": "https://pes.edu/btech/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "pes-university",
+      "field": "structured.contact",
+      "evidenceId": "cmwlti54h000vq2tvaztimjdy",
+      "sourceId": "cmwlti51l0004q2tvva92wuvo",
+      "sourceUrl": "https://pes.edu/btech/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "pes-university",
+      "field": "structured.contact",
+      "evidenceId": "cmwlti54k000xq2tvb08y9fkx",
+      "sourceId": "cmwlti51l0004q2tvva92wuvo",
+      "sourceUrl": "https://pes.edu/btech/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "ms-ramaiah-institute",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwlti54r0010q2tvf494hjgh",
+      "sourceId": "cmwlti51p0005q2tvp349sq47",
+      "sourceUrl": "https://www.msrit.edu/index.html",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "ms-ramaiah-institute",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwlti54u0012q2tvfuvobcli",
+      "sourceId": "cmwlti51p0005q2tvp349sq47",
+      "sourceUrl": "https://www.msrit.edu/index.html",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

@@ -1,0 +1,29 @@
+{
+  "status": "STAGED",
+  "facts": 2,
+  "reviewState": "UNREVIEWED",
+  "staged": 2,
+  "reused": 0,
+  "createdSources": 1,
+  "createdRuns": 1,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "field": "courses",
+      "evidenceId": "cmwlwwvdr0002zitvryebz8z9",
+      "sourceId": "cmwlwwvdb0000zitvo552az7e",
+      "sourceUrl": "https://iitk.ac.in/doaa/data/UG_Manual.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "field": "admissions",
+      "evidenceId": "cmwlwwve00004zitvxjrz3y8f",
+      "sourceId": "cmwlwwvdb0000zitvo552az7e",
+      "sourceUrl": "https://iitk.ac.in/doaa/data/UG_Manual.pdf",
+      "status": "STAGED"
+    }
+  ],
+  "databaseChanged": true
+}

@@ -1,0 +1,213 @@
+{
+  "status": "STAGED",
+  "facts": 25,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 25,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "iit-indore",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3ripy0002hbtvzkfiw6mj",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iit-bhu-varanasi",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3riqd0005hbtvzydp758y",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iit-bhubaneswar",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3riql0008hbtv81tivtnm",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "jadavpur-university",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3riqs000bhbtvom7uvbw5",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iit-mandi",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3riqy000ehbtvf29fisqx",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iit-jodhpur",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3rir6000hhbtvymoc51hr",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "thapar-institute-of-engineering",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3rirb000khbtvir9upow2",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iit-ropar",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3rirh000nhbtvak1g6npm",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "malaviya-national-institute-of-technology",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3riro000qhbtv0hujc8bn",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-durgapur",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3rirt000thbtv88o26mbz",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-silchar",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3rirz000whbtvryrwor2f",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "birla-institute-of-technology-mesra",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3ris4000zhbtvnowwbiob",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-patna",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3ris80012hbtv0vaiemu8",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiit-delhi",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3risd0015hbtv0xcbq9xg",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iit-palakkad",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3rish0018hbtv6arka5ky",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-delhi",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3risl001bhbtvqa8jc32a",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3risr001ehbtvfzqtvg3t",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-meghalaya",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3risv001hhbtvzhkskpue",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3risy001khbtvc3wuqbss",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-raipur",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3rit3001nhbtver2ri09r",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-hamirpur",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3rit7001qhbtvonl4pbpm",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-puducherry",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3ritg001thbtv3jkedp0p",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iit-jammu",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3ritl001whbtvm4a9segz",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iit-dharwad",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3ritp001zhbtvrr750aur",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "field": "structured.nirfRanking",
+      "evidenceId": "cmwm3ritv0022hbtv8k7yw6oi",
+      "sourceId": "cmwm3rio50000hbtvo49f0zrh",
+      "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

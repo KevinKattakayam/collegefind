@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "indian-institute-of-technology-bombay",
+    "claimId": "cmwkye74000029stvbzk89seq",
+    "sourceId": "cmwkye73b00009stvepot22q1",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "indian-institute-of-technology-madras",
+    "claimId": "cmwkye74w00069stvi576b2pg",
+    "sourceId": "cmwkye74m00049stvy13ga3op",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "indian-institute-of-technology-delhi",
+    "claimId": "cmwkye75e000a9stvwta1b3ty",
+    "sourceId": "cmwkye75500089stvl9yodgh6",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "national-institute-of-technology-tiruchirappalli",
+    "claimId": "cmwkye760000e9stvz0bo6hph",
+    "sourceId": "cmwkye75q000c9stvizkv5iq9",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "vellore-institute-of-technology",
+    "claimId": "cmwkye76n000i9stvqitghtti",
+    "sourceId": "cmwkye76c000g9stvsltdf0kg",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "manipal-academy-of-higher-education",
+    "claimId": "cmwkye778000m9stvhj044v9x",
+    "sourceId": "cmwkye76y000k9stvgywmf3u4",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "amrita-vishwa-vidyapeetham",
+    "claimId": "cmwkye77x000q9stv6zfg4p64",
+    "sourceId": "cmwkye77k000o9stvjwfijq1x",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "birla-institute-of-technology-mesra",
+    "claimId": "cmwkye78h000u9stvtvrl2uu0",
+    "sourceId": "cmwkye78a000s9stvy7cqxgm6",
+    "status": "STAGED",
+    "field": "website"
+  }
+]

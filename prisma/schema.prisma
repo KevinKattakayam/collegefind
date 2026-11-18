@@ -112,6 +112,7 @@ model College {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  aliases          InstitutionAlias[]
   evidence         FieldEvidence[]
   savedBy          SavedCollege[]
   questions        Question[]
@@ -368,6 +369,9 @@ model AuditLog {
 
 // Profile claims only; financial/admission values stay in their existing typed tables.
 model FieldEvidence {
+  isFixture Boolean @default(false)
+  evidenceLocator String?
+  evidenceSnippet String?
   publishedAt  DateTime?
   id           String             @id @default(cuid())
   collegeId    String
@@ -389,6 +393,7 @@ model FieldEvidence {
   decisions    EvidenceDecision[]
 
   @@index([collegeId, field])
+  @@index([createdAt(sort: Desc), id(sort: Desc)])
 }
 
 // Append-only decisions; no college-wide status promotion on import.
@@ -411,6 +416,7 @@ model EvidenceDecision {
   reviewer    User             @relation(fields: [reviewerId], references: [id], onDelete: Restrict)
 
   @@index([evidenceId, createdAt])
+  @@index([evidenceId, createdAt(sort: Desc), id(sort: Desc)])
 }
 
 model ImportRun {
@@ -426,4 +432,19 @@ model ImportRun {
   source      Source    @relation(fields: [sourceId], references: [id], onDelete: Restrict)
 
   @@index([status, startedAt])
+}
+
+// Alternate names are campus-scoped; codes are never guessed from names.
+model InstitutionAlias {
+  id String @id @default(cuid())
+  collegeId String
+  namespace String
+  value String
+  campus String
+  validFrom DateTime?
+  validUntil DateTime?
+  sourceUrl String
+  college College @relation(fields: [collegeId], references: [id], onDelete: Restrict)
+  @@unique([namespace, value, campus, collegeId])
+  @@index([namespace, value])
 }

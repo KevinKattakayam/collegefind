@@ -1,0 +1,16 @@
+{
+  "batch": 7,
+  "retrievedAt": "2026-11-18T03:56:21Z",
+  "sourceUrl": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+  "sourcePageOpened": true,
+  "recordsResearched": 25,
+  "catalogueMatches": 25,
+  "staged": 0,
+  "verified": 0,
+  "blocker": "Typed NIRF ranking importer and reviewer queue support is required before safe staging.",
+  "candidateCountsByYear": {
+    "2025": 25
+  },
+  "category": "Engineering",
+  "checksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637"
+}

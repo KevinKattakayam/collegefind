@@ -1,0 +1,182 @@
+[
+  {
+    "slug": "indian-institute-of-technology-bombay",
+    "name": "Indian Institute of Technology Bombay",
+    "sourceUrl": "https://www.iitb.ac.in/",
+    "reason": "West; public technical institute",
+    "status": "READY_TO_STAGE_REFERENCE",
+    "publicationDate": null,
+    "checklist": [
+      "Independent identity/domain review",
+      "Campus scope",
+      "Programme/duration/eligibility source",
+      "Year/category fee notification",
+      "Scholarship/hostel source",
+      "Accreditation validity",
+      "Cohort/denominator placement report",
+      "Permission for extraction/snippets; no bulk copying"
+    ]
+  },
+  {
+    "slug": "indian-institute-of-technology-madras",
+    "name": "Indian Institute of Technology Madras",
+    "sourceUrl": "https://www.iitm.ac.in/",
+    "reason": "South; public technical institute",
+    "status": "READY_TO_STAGE_REFERENCE",
+    "publicationDate": null,
+    "checklist": [
+      "Independent identity/domain review",
+      "Campus scope",
+      "Programme/duration/eligibility source",
+      "Year/category fee notification",
+      "Scholarship/hostel source",
+      "Accreditation validity",
+      "Cohort/denominator placement report",
+      "Permission for extraction/snippets; no bulk copying"
+    ]
+  },
+  {
+    "slug": "indian-institute-of-technology-delhi",
+    "name": "Indian Institute of Technology Delhi",
+    "sourceUrl": "https://home.iitd.ac.in/",
+    "reason": "North; public technical institute",
+    "status": "READY_TO_STAGE_REFERENCE",
+    "publicationDate": null,
+    "checklist": [
+      "Independent identity/domain review",
+      "Campus scope",
+      "Programme/duration/eligibility source",
+      "Year/category fee notification",
+      "Scholarship/hostel source",
+      "Accreditation validity",
+      "Cohort/denominator placement report",
+      "Permission for extraction/snippets; no bulk copying"
+    ]
+  },
+  {
+    "slug": "national-institute-of-technology-tiruchirappalli",
+    "name": "National Institute of Technology Tiruchirappalli",
+    "sourceUrl": "https://www.nitt.edu/home/",
+    "reason": "South; NIT",
+    "status": "READY_TO_STAGE_REFERENCE",
+    "publicationDate": null,
+    "checklist": [
+      "Independent identity/domain review",
+      "Campus scope",
+      "Programme/duration/eligibility source",
+      "Year/category fee notification",
+      "Scholarship/hostel source",
+      "Accreditation validity",
+      "Cohort/denominator placement report",
+      "Permission for extraction/snippets; no bulk copying"
+    ]
+  },
+  {
+    "slug": "national-institute-of-technology-warangal",
+    "name": "National Institute of Technology Warangal",
+    "sourceUrl": "https://nitw.ac.in/",
+    "reason": "South; NIT; JS shell blocked",
+    "status": "BLOCKED",
+    "publicationDate": null,
+    "checklist": [
+      "Independent identity/domain review",
+      "Campus scope",
+      "Programme/duration/eligibility source",
+      "Year/category fee notification",
+      "Scholarship/hostel source",
+      "Accreditation validity",
+      "Cohort/denominator placement report",
+      "Permission for extraction/snippets; no bulk copying"
+    ]
+  },
+  {
+    "slug": "vellore-institute-of-technology",
+    "name": "Vellore Institute of Technology",
+    "sourceUrl": "https://vit.ac.in/",
+    "reason": "South; private university",
+    "status": "READY_TO_STAGE_REFERENCE",
+    "publicationDate": null,
+    "checklist": [
+      "Independent identity/domain review",
+      "Campus scope",
+      "Programme/duration/eligibility source",
+      "Year/category fee notification",
+      "Scholarship/hostel source",
+      "Accreditation validity",
+      "Cohort/denominator placement report",
+      "Permission for extraction/snippets; no bulk copying"
+    ]
+  },
+  {
+    "slug": "manipal-academy-of-higher-education",
+    "name": "Manipal Academy of Higher Education",
+    "sourceUrl": "https://www.manipal.edu/",
+    "reason": "Southwest; private multidisciplinary university",
+    "status": "READY_TO_STAGE_REFERENCE",
+    "publicationDate": null,
+    "checklist": [
+      "Independent identity/domain review",
+      "Campus scope",
+      "Programme/duration/eligibility source",
+      "Year/category fee notification",
+      "Scholarship/hostel source",
+      "Accreditation validity",
+      "Cohort/denominator placement report",
+      "Permission for extraction/snippets; no bulk copying"
+    ]
+  },
+  {
+    "slug": "amrita-vishwa-vidyapeetham",
+    "name": "Amrita Vishwa Vidyapeetham",
+    "sourceUrl": "https://www.amrita.edu/",
+    "reason": "Multicampus; private university; campus scope unresolved",
+    "status": "READY_TO_STAGE_REFERENCE",
+    "publicationDate": null,
+    "checklist": [
+      "Independent identity/domain review",
+      "Campus scope",
+      "Programme/duration/eligibility source",
+      "Year/category fee notification",
+      "Scholarship/hostel source",
+      "Accreditation validity",
+      "Cohort/denominator placement report",
+      "Permission for extraction/snippets; no bulk copying"
+    ]
+  },
+  {
+    "slug": "university-of-delhi",
+    "name": "University of Delhi",
+    "sourceUrl": "https://www.du.ac.in/",
+    "reason": "North; public multidisciplinary; timeout blocked",
+    "status": "BLOCKED",
+    "publicationDate": null,
+    "checklist": [
+      "Independent identity/domain review",
+      "Campus scope",
+      "Programme/duration/eligibility source",
+      "Year/category fee notification",
+      "Scholarship/hostel source",
+      "Accreditation validity",
+      "Cohort/denominator placement report",
+      "Permission for extraction/snippets; no bulk copying"
+    ]
+  },
+  {
+    "slug": "birla-institute-of-technology-mesra",
+    "name": "Birla Institute of Technology Mesra",
+    "sourceUrl": "https://bitmesra.ac.in/",
+    "reason": "East; private/deemed technical institute",
+    "status": "READY_TO_STAGE_REFERENCE",
+    "publicationDate": null,
+    "checklist": [
+      "Independent identity/domain review",
+      "Campus scope",
+      "Programme/duration/eligibility source",
+      "Year/category fee notification",
+      "Scholarship/hostel source",
+      "Accreditation validity",
+      "Cohort/denominator placement report",
+      "Permission for extraction/snippets; no bulk copying"
+    ]
+  }
+]
