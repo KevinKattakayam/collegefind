@@ -10,11 +10,11 @@ import { Toaster } from 'react-hot-toast';
 import { SITE_URL } from '@/lib/site';
 
 const description =
-  'Search Indian colleges, compare them side by side, and estimate admission chances from official JoSAA and MCC cutoff data. Free, with no sponsored listings.';
+  'Search Indian colleges, compare them side by side, and explore reviewed historical cutoff data. Free, with no sponsored listings.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: 'CollegeFind — Compare colleges and check admission chances', template: '%s · CollegeFind' },
+  title: { default: 'CollegeFind — Compare colleges and explore admission history', template: '%s · CollegeFind' },
   description,
   openGraph: { type: 'website', locale: 'en_IN', siteName: 'CollegeFind', title: 'CollegeFind', description },
   twitter: { card: 'summary', title: 'CollegeFind', description },

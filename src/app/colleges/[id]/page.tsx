@@ -94,6 +94,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             <DataStatusBadge status={college.dataStatus} />
           </div>
           <CollegeActions college={listCollege} />
+          <Link className="mt-3 inline-block text-indigo-700 underline" href={`/collegefit?location=${encodeURIComponent(college.state)}`}>Explore CollegeFit in {college.state}</Link>
           {listCollege.admissions && <p><a href={listCollege.admissions} target="_blank" rel="noopener noreferrer">Official admissions information</a></p>}
           <details className="mt-4 text-sm">
             <summary className="cursor-pointer font-semibold">Sources and verification</summary>
@@ -113,9 +114,10 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
 
       <section className="container-main py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
-          <section className="card-enterprise p-6">
+          <section id="programmes-and-admissions" className="card-enterprise p-6">
             <h2 className="text-xl font-black text-slate-800">Programmes and admissions</h2>
             {renderFacts(listCollege.structuredFacts ?? [], ['programme', 'admission'])}
+            <Link className="mt-3 inline-block text-indigo-700 underline" href={`/predictor?college=${encodeURIComponent(college.slug)}`}>Open admission guidance</Link>
           </section>
           <section className="card-enterprise p-6">
             <h2 className="text-xl font-black text-slate-800">Fees and scholarships</h2>

@@ -187,3 +187,26 @@ export async function listCollegesWithReviewedCutoffs(db: PrismaClient, exams: E
   `);
   return rows.map(({ collegeId }) => collegeId);
 }
+
+/** Read one published observation by stable id. A missing/revoked row is indistinguishable
+ * from an unknown id. Reject ambiguous latest decisions at the same timestamp. */
+export async function findPublicRankObservation(db: PrismaClient, id: string) {
+  const conditions = queryConditions(cutoffQuerySchema.parse({ metric: 'RANK' }));
+  const rows = await db.$queryRaw<Record<string, unknown>[]>(Prisma.sql`
+    ${SELECT}${FROM}
+    WHERE ${Prisma.join(conditions, ' AND ')}
+      AND r.id = ${id} AND NOT r."isPreparatory"
+      AND length(trim(r.quota)) > 0
+      AND s."retrievedAt" <= now() AND (s."publishedAt" IS NULL OR s."publishedAt" <= now())
+      AND r."rankType" <> 'UNSPECIFIED' AND r."counsellingSystem" <> 'UNSPECIFIED'
+      AND r."closingValue" > 0 AND r."closingValue" <= 3000000
+      AND r."closingValue" = trunc(r."closingValue")
+      AND (r."openingValue" IS NULL OR
+        (r."openingValue" > 0 AND r."openingValue" <= r."closingValue" AND r."openingValue" = trunc(r."openingValue")))
+      AND NOT EXISTS (
+        SELECT 1 FROM "EvidenceDecision" d WHERE d."cutoffId" = r.id
+          AND d."createdAt" = latest."createdAt" AND d.status <> 'APPROVED'
+      )
+  `);
+  return rows[0] ? toPublicCutoffRow(rows[0]) : null;
+}

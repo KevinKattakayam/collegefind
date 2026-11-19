@@ -1,12 +1,11 @@
 # CollegeFind
 
 A college discovery and decision tool for Indian students: search colleges, compare them
-side by side, and estimate admission chances from **official published cutoff data**.
+side by side, use CollegeFit to check preferences, and explore reviewed historical cutoffs.
 
 > **Data status:** the catalogue currently ships with **demo** college rows (names, cities and
 > states are real; fees, placement and package figures are sample values). They are labelled
-> "Demo data" everywhere they appear. The admission estimator only works once real cutoff data
-> has been imported — it says so rather than inventing numbers.
+> "Demo data" everywhere they appear. Admission guidance requires human-reviewed cutoff records before it can compare a rank.
 > See [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
 
 ## What it does
@@ -14,8 +13,8 @@ side by side, and estimate admission chances from **official published cutoff da
 - **Search and filter** colleges by state, type, fees, NAAC grade, courses and whether sourced
   cutoff data exists.
 - **Compare** two or three colleges. Highlights only compare values that are known for all of them.
-- **Estimate admission chances** from historical closing ranks, broken into Safe / Target / Reach
-  with a probability, a confidence level, a plain-language explanation and a link to the source.
+- **Explore CollegeFit** with programme, degree, location, institution type and tuition preferences.
+- **Check admission requirements and history** with source links and exact seat and rank definitions.
 - **Ask and answer questions** per college, with moderation and audit logging.
 
 ## Tech stack
@@ -78,7 +77,7 @@ cp .env.example .env
 
 npm run db:deploy          # apply migrations
 npm run db:seed            # demo colleges only (non-destructive)
-npm run db:seed:synthetic  # optional: fictional institutes so the predictor has data
+npm run db:seed:synthetic  # optional: fictional legacy cutoff fixtures for local tests
 
 npm run dev
 ```
@@ -144,7 +143,7 @@ Summarised in [docs/SECURITY.md](docs/SECURITY.md). Highlights:
 
 - [docs/AUDIT.md](docs/AUDIT.md) — what was wrong before, and what fixed it
 - [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) — sources, licences, ingestion
-- [docs/PREDICTOR.md](docs/PREDICTOR.md) — the model, its API contract and its limits
+- [docs/PREDICTOR.md](docs/PREDICTOR.md) — CollegeFit methodology and admission guidance API
 - [docs/SECURITY.md](docs/SECURITY.md) — threat model and controls
 - [docs/TESTING.md](docs/TESTING.md) — how to run every test layer
 - [docs/ROADMAP.md](docs/ROADMAP.md) — 30/60/90-day plan and what is deliberately missing

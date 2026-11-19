@@ -16,7 +16,7 @@ const rankLabel = (kind: PublicCutoffRow['rankType'], metric: PublicCutoffRow['m
 const metricLabel = (metric: PublicCutoffRow['metric']) => metric === 'RANK' ? 'Rank' : metric === 'PERCENTILE' ? 'Percentile' : 'Score';
 const systemLabel = (system: PublicCutoffRow['counsellingSystem']) => system === 'UNSPECIFIED' ? 'Counselling system not recorded' : system;
 
-export default function CutoffTable({ rows, showCollege = false }: { rows: PublicCutoffRow[]; showCollege?: boolean }) {
+export default function CutoffTable({ rows, showCollege = false, showGuidance = true }: { rows: PublicCutoffRow[]; showCollege?: boolean; showGuidance?: boolean }) {
   if (!rows.length) return <p className="text-sm text-slate-600">No reviewed official cutoff records match these filters.</p>;
   return (
     <div className="overflow-x-auto rounded-xl border border-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-700" role="region" aria-label={showCollege ? 'Scrollable official cutoff results table' : 'Scrollable college cutoff history table'} tabIndex={0}>
@@ -39,7 +39,10 @@ export default function CutoffTable({ rows, showCollege = false }: { rows: Publi
           <td className="p-3">{rankLabel(row.rankType, row.metric)}{row.isPreparatory && <span className="block text-xs">Preparatory rank list (P)</span>}</td>
           <td className="p-3 text-right tabular-nums">{row.openingValue === null ? 'Not published' : row.openingValue.toLocaleString('en-IN')}{row.isPreparatory && row.openingValue !== null ? ' P' : ''}</td>
           <td className="p-3 text-right font-semibold tabular-nums">{row.closingValue.toLocaleString('en-IN')}{row.isPreparatory ? ' P' : ''}</td>
-          <td className="p-3"><a href={row.source.url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline">{row.source.publisher}</a>{row.evidenceLocator && <span className="block text-xs text-slate-600">Evidence location: {row.evidenceLocator}</span>}<span className="block text-xs text-slate-500">Published: {date(row.source.publishedAt)}</span><span className="block text-xs text-slate-500">Collected: {date(row.source.retrievedAt)}</span><span className="block text-xs text-slate-500">Reviewed: {date(row.reviewedAt)}</span></td>
+          <td className="p-3"><a href={row.source.url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline">{row.source.publisher}</a>{row.evidenceLocator && <span className="block text-xs text-slate-600">Evidence location: {row.evidenceLocator}</span>}<span className="block text-xs text-slate-500">Published: {date(row.source.publishedAt)}</span><span className="block text-xs text-slate-500">Collected: {date(row.source.retrievedAt)}</span><span className="block text-xs text-slate-500">Reviewed: {date(row.reviewedAt)}</span>
+            {showGuidance && row.metric === 'RANK' && !row.isPreparatory && row.rankType !== 'UNSPECIFIED' && row.counsellingSystem !== 'UNSPECIFIED' &&
+              <Link className="mt-2 inline-block text-indigo-700 underline" href={`/predictor?cutoff=${encodeURIComponent(row.id)}`}>Compare a rank with this record</Link>}
+          </td>
         </tr>)}</tbody>
       </table>
     </div>

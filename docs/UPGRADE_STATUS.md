@@ -1,6 +1,6 @@
 # CollegeFind V3 upgrade status and evidence
 
-Status refreshed: 2026-11-19. Current work is local on `phase-5-search-comparison-shortlists`; Phase 2 local engineering and Phase 3 engineering remain subject to owner-controlled production/data blockers. Phase 4 local profile/cutoff engineering is complete with data/manual accessibility/production gates pending. Phase 5 implementation is in progress. Phase 3 coverage remains 205 college research dispositions, 377 STAGED claims (147 reference and 230 substantive) across 123 colleges with substantive staged evidence; 82 have no substantive staged facts. Genuine approvals/VERIFIED claims/fully enriched colleges remain 0/0/0. The original 205 catalogue identities, slugs, seed data, source history and audit history are preserved. The official cutoff baseline remains 0 staged and 0 genuinely verified records. Historical entries below retain their dates and describe the evidence then current; this increment is appended at the end.
+Status refreshed: 2026-11-19. Current work is local on `phase-6-collegefit-admissions`; Phase 2 local engineering and Phase 3 engineering remain subject to owner-controlled production/data blockers. Phase 4 local profile/cutoff engineering is complete with data/manual accessibility/production gates pending. Phase 5 checkpoint `f912aa8` passed local engineering acceptance with follow-ups. Phase 6 evidence is recorded below. Phase 3 coverage remains 205 college research dispositions, 377 STAGED claims (147 reference and 230 substantive) across 123 colleges with substantive staged evidence; 82 have no substantive staged facts. Genuine approvals/VERIFIED claims/fully enriched colleges remain 0/0/0. The original 205 catalogue identities, slugs, seed data, source history and audit history are preserved. The official cutoff baseline remains 0 staged and 0 genuinely verified records. Historical entries below retain their dates and describe the evidence then current; this increment is appended at the end.
 
 ## Carried-forward engineering evidence (not rerun)
 
@@ -1870,3 +1870,31 @@ This entry supersedes the earlier Phase 5 “scale/cap not tested” and browser
 | Genuine college verification and production readiness | **BLOCKED** | Catalogue remains 205 identities, 377 staged claims, zero genuine approvals/verified claims/cutoffs. Historical credential revocation, production seed configuration, Redis behavior, backup/restore readiness and deployed health need owner evidence. |
 
 **Decision:** Phase 5 local search/comparison/shortlist engineering is **accepted for local engineering purposes**, with manual assistive-technology and pg compatibility follow-ups recorded. Production/data readiness is **not accepted**. Recommendation: **CONDITIONAL GO** to Phase 6 local development; keep verified-only projection and owner release blockers in force. No commit, push, merge or deployment is recorded here; the current user request authorizes a separate local checkpoint after final diff review.
+
+## Phase 6 — CollegeFit and admission guidance — 2026-11-19
+
+Branch `phase-6-collegefit-admissions` starts at Phase 5 checkpoint `f912aa8`. CollegeFit uses catalogue identity and the existing reviewed public projection. The historical comparison reuses the verified cutoff database query. Search, profiles, comparisons and shortlists link to or work from the new flows. No Prisma schema or migration changes were needed.
+
+### Acceptance evidence
+
+| Requirement | Status | Evidence |
+|---|---|---|
+| Deterministic preference matching and priority | PASS | CollegeFit unit tests cover match, mismatch, unknown, priority normalization, exact annual tuition scope and reproducibility. |
+| Incomplete and untrusted evidence | PASS | Unit tests cover fixture, staged, rejected, expired, conflicting and legacy data. CollegeFit keeps incomplete results available for identity discovery without a fit rank. |
+| Eligibility, historical comparisons and future admission shown separately | PASS | Guidance reports eligibility as unconfirmed, cites reviewed requirements and displays one exact historical observation. The former heuristic and its probability, band and future range were retired. |
+| Rank dimension and review isolation | PASS | Disposable integration checks compare records across different seat scopes and exclude staged, revoked, preparatory, unspecified, score and future-source rows. |
+| Persistence and privacy | PASS for supported scope | CollegeFit preferences restore from a bookmarkable URL. Existing guest and account shortlists remain supported. There is no account preference model. The submitted rank remains in the browser. |
+| Genuine evidence coverage and production readiness | BLOCKED | 377 staged claims, zero genuine approvals and zero verified official cutoff records. Source permission and authorized review remain open. Historical credential revocation, seed protections, Redis behaviour, backups and production restore remain owner controlled. |
+| Manual assistive technology | PARTIAL | Keyboard, narrow viewport, semantic table and status behaviour have browser coverage. Manual screen-reader and magnification review remains open. |
+
+### Commands and environment
+
+- `npm test` passed 93 tests across 21 files. The former forecast model tests were retired with the forecast.
+- `npm run test:integration -- tests/integration/predictor.test.ts tests/integration/cutoff-explorer.test.ts tests/integration/api-security.test.ts` passed 45 tests across three files.
+- `npm run lint`, `npm run typecheck`, `npm run build -- --webpack` and `git diff --check` passed. The first webpack build found a missing type annotation for the projected college facts in guidance. The final build passed after the annotation was added.
+- Database checks used only `collegefind_phase5_test` on the CollegeFind disposable Docker container bound at `127.0.0.1:35440`. Independent SQL confirmed the exact database and role, PostgreSQL 16.13, eight applied migrations and zero college, user, field evidence and cutoff records before testing. All approvals used in tests were synthetic. The existing pg adapter deprecation appeared and the local server used its expected rate-limit fallback.
+- Seed verification counted 205 colleges and confirmed the original SHA-256 `a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637`. The evidence archive and review history were outside the test target.
+- `npm run test:e2e -- tests/e2e/college-fit.spec.ts tests/e2e/smoke.spec.ts tests/e2e/comparison.spec.ts --workers=2` passed **56**, skipped **2** mobile-only tests on desktop, and failed **0** on the final webpack build. Coverage included CollegeFit keyboard submission, preference restoration, unknown demo tuition, guest saving, reviewed admission requirements, exact rank scope, private rank input, the zero-evidence state, and existing comparison, authentication and shortlist regression flows. An initial run found ambiguous locators in the new tests. The tests now target the exact input and the selected history table.
+- After the runs, the guarded reset rechecked the disposable database, role and server address. College, User, FieldEvidence and CutoffRecord counts returned to zero.
+
+**Phase 6 local engineering acceptance passed with follow-ups. CONDITIONAL GO for Phase 7 locally.** Build private planning around source-backed requirements and explicitly unavailable deadlines. Admission eligibility still needs authority confirmation, and production release still requires owner evidence and genuine reviews.

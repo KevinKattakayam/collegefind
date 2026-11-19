@@ -62,7 +62,7 @@ export default async function ExamPage({ params }: { params: Promise<{ id: strin
       </section>
       {predictorSupported && (
         <Link href={`/predictor?exam=${exam.type}`} className="btn-primary inline-flex no-underline">
-          Estimate my chances with {exam.name} cutoffs
+          Explore {exam.name} admission guidance
         </Link>
       )}
     </div>

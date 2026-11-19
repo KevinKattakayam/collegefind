@@ -27,7 +27,8 @@ export default function Navbar() {
     { href: '/cutoffs', label: 'Cutoffs' },
     { href: '/rankings', label: 'Rankings' },
     { href: '/compare', label: 'Compare' },
-    { href: '/predictor', label: 'Predictor' },
+    { href: '/collegefit', label: 'CollegeFit' },
+    { href: '/predictor', label: 'Admission guidance' },
     { href: '/articles', label: 'News' },
     ...(session ? [{ href: '/saved', label: 'Saved' }] : []),
   ];
@@ -55,7 +56,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden xl:flex items-center gap-1">
             {navLinks.map(link => (
               <Link key={link.href} href={link.href}
                 className={`text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-200 no-underline ${
@@ -69,7 +70,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Auth */}
-          <div className="hidden lg:flex items-center gap-2.5">
+          <div className="hidden xl:flex items-center gap-2.5">
             {status === 'loading' && <div className="skeleton w-[80px] h-[36px] rounded-lg" />}
             {status === 'unauthenticated' && (
               <>
@@ -109,7 +110,7 @@ export default function Navbar() {
           </div>
 
           {/* Hamburger */}
-          <button className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" onClick={() => setMobileOpen(true)} aria-label="Open menu">
+          <button className="xl:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" onClick={() => setMobileOpen(true)} aria-label="Open menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#334155" strokeWidth="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
           </button>
         </div>
@@ -118,8 +119,8 @@ export default function Navbar() {
       {/* Mobile Sidebar */}
       {mobileOpen && (
         <>
-          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 lg:hidden" onClick={() => setMobileOpen(false)} />
-          <div className="fixed right-0 top-0 bottom-0 w-[300px] bg-white z-50 p-6 animate-slide-in-right lg:hidden overflow-y-auto shadow-modal">
+          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 xl:hidden" onClick={() => setMobileOpen(false)} />
+          <div className="fixed right-0 top-0 bottom-0 w-[300px] bg-white z-50 p-6 animate-slide-in-right xl:hidden overflow-y-auto shadow-modal">
             <div className="flex items-center justify-between mb-8">
               <span className="text-lg font-bold text-slate-900">Menu</span>
               <button onClick={() => setMobileOpen(false)} className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors">

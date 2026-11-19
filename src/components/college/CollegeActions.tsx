@@ -8,30 +8,30 @@ import { useSaveCollege } from '@/hooks/useSaveCollege';
 import { apiJson } from '@/lib/api';
 import { useShortlist } from '@/context/ShortlistContext';
 
-export default function CollegeActions({ college }: { college: College }) {
+export default function CollegeActions({ college, savedOnLoad, shareUrl }: { college: College; savedOnLoad?: boolean; shareUrl?: string }) {
   const { data: session } = useSession();
   const shortlist = useShortlist();
   const { addToCompare, isInCompare } = useCompare();
   const [initialSaved, setInitialSaved] = useState<boolean | null>(null);
 
   useEffect(() => {
-    if (!session) return;
+    if (!session || savedOnLoad !== undefined) return;
     apiJson<{ saved: { id: string }[] }>('/api/saved')
       .then((d) => setInitialSaved(d.saved.some((c) => c.id === college.id)))
       .catch(() => setInitialSaved(false));
-  }, [session, college.id, shortlist.guestSlugs]);
+  }, [session, college.id, shortlist.guestSlugs, savedOnLoad]);
 
   return (
     <div className="flex gap-3 flex-wrap">
       {/* Remount once the saved state is known so the hook starts from the right value. */}
-      <SaveButton key={String(initialSaved)} collegeId={college.id} slug={college.slug} initiallySaved={Boolean(initialSaved)} />
+      <SaveButton key={String(savedOnLoad ?? initialSaved)} collegeId={college.id} slug={college.slug} initiallySaved={savedOnLoad ?? Boolean(initialSaved)} />
       <button type="button" onClick={() => addToCompare(college)} aria-pressed={isInCompare(college.id)} className="btn-primary !h-[40px] text-sm">
         {isInCompare(college.id) ? 'In compare' : 'Add to compare'}
       </button>
       <button
         type="button"
         onClick={async () => {
-          const url = window.location.href;
+          const url = shareUrl ? new URL(shareUrl, window.location.origin).href : window.location.href;
           if (navigator.share) {
             try {
               await navigator.share({ title: college.name, url });

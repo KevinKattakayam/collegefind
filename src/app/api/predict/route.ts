@@ -1,19 +1,18 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { clientIp, readQuery, withErrorHandling } from '@/lib/http';
+import { CACHE_NONE, clientIp, readQuery, withErrorHandling } from '@/lib/http';
 import { enforceRateLimit } from '@/lib/rate-limit';
-import { predictQuerySchema } from '@/lib/validation';
-import { predict } from '@/lib/predictor/service';
+import { guidanceQuerySchema } from '@/lib/validation';
+import { findPublicRankObservation } from '@/server/cutoffs';
 
-/**
- * GET /api/predict — see docs/PREDICTOR.md for the full contract.
- * All filtering happens in PostgreSQL; only candidate programs are loaded.
- */
+/** Returns one reviewed historical rank observation. The URL is retained for existing navigation. */
 export const GET = withErrorHandling(async (request: Request) => {
   await enforceRateLimit('predict', clientIp(request));
-  const q = readQuery(request, predictQuerySchema);
-  const result = await predict(q, prisma);
-  return NextResponse.json(result, {
-    headers: { 'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600' },
-  });
+  const { cutoff } = readQuery(request, guidanceQuerySchema);
+  const observation = await findPublicRankObservation(prisma, cutoff);
+  return NextResponse.json({
+    status: observation ? 'HISTORICAL_OBSERVATION' : 'INSUFFICIENT_VERIFIED_EVIDENCE',
+    eligibility: 'NOT_CONFIRMED',
+    observation,
+  }, { headers: { 'Cache-Control': CACHE_NONE } });
 });

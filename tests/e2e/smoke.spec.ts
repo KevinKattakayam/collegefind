@@ -80,18 +80,13 @@ test('a missing college renders the not-found page and is excluded from indexing
   await expect(page.locator('head meta[name="robots"][content*="index, follow"]')).toHaveCount(0);
 });
 
-test('the predictor validates input and excludes unreviewed demo cutoffs', async ({ page }) => {
-  await page.goto('/predictor');
-  await page.getByLabel('Exam').selectOption('CAT');
-  await page.getByLabel('Percentile (0–100)').fill('150');
-  await page.getByRole('button', { name: 'Estimate my chances' }).click();
-  await expect(page.getByRole('alert').filter({ hasText: 'CAT percentile' })).toContainText('between 0 and 100');
-
-  await page.getByLabel('Exam').selectOption('JEE Main (JoSAA: NITs, IIITs, GFTIs)');
-  await page.getByLabel('CRL (Common Rank List) rank').fill('12000');
-  await page.getByRole('button', { name: 'Estimate my chances' }).click();
-  await expect(page.getByRole('heading', { name: 'No official cutoff data loaded for this exam yet' })).toBeVisible();
-  await expect(page.getByText('Why this estimate?')).toHaveCount(0);
+test('admission guidance preserves exam navigation and has no estimate for unavailable evidence', async ({ page }) => {
+  await page.goto('/predictor?exam=JEE_MAIN');
+  await expect(page.getByRole('heading', { name: 'Eligibility Not Confirmed' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Insufficient Verified Evidence' })).toBeVisible();
+  await expect(page.getByRole('textbox', { name: /Your rank/ })).toHaveCount(0);
+  await page.getByRole('link', { name: 'Open the cutoff explorer' }).click();
+  await expect(page).toHaveURL(/cutoffs\?exam=JEE_MAIN&metric=RANK/);
 });
 
 test('a visitor can keep a temporary shortlist on this device', async ({ page }) => {

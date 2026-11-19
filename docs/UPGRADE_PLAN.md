@@ -172,3 +172,14 @@ Phase 5 is active on `phase-5-search-comparison-shortlists`. The current milesto
 - [ ] Complete owner-controlled production security/release evidence inherited from Phases 2/3/4 and obtain genuine human review of sourced college claims.
 
 Phase 5 local engineering acceptance is **PASS with follow-ups**. Data verification and production readiness remain blocked; no official college data, cutoff coverage or genuine reviewer count changed in this milestone.
+
+### Phase 6 implementation checklist
+
+- [x] Reuse catalogue identity and the public evidence projection for CollegeFit. Show reasons, priority, source and academic year. Keep incomplete evidence outside the comparable ranking.
+- [x] Restore preferences from the URL. Reuse profile, comparison and shortlist actions. Account preference storage has no existing model, so bookmarks handle preference restoration in this phase.
+- [x] Replace the heuristic forecast with separate eligibility guidance and exact reviewed historical rank comparisons. Preserve the existing page URL and document the changed API contract.
+- [x] Keep rank entry local to the browser. Keep approval and source checks at the database read boundary.
+- [ ] Obtain authorized reviews of programme, fee, admission and cutoff evidence. Real coverage is limited by those reviews and legitimate cutoff source use.
+- [ ] Complete the inherited manual assistive technology and production acceptance checks.
+
+See [CollegeFit methodology and admission guidance](PREDICTOR.md) and the Phase 6 verification entry in [Upgrade status](UPGRADE_STATUS.md).

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   collegesQuerySchema,
   comparisonCreateSchema,
-  predictQuerySchema,
+  guidanceQuerySchema,
   questionCreateSchema,
   registerSchema,
 } from '@/lib/validation';
@@ -46,22 +46,11 @@ describe('collegesQuerySchema', () => {
   });
 });
 
-describe('predictQuerySchema', () => {
-  it('requires a rank for rank-based exams', () => {
-    expect(predictQuerySchema.safeParse({ exam: 'JEE_MAIN' }).success).toBe(false);
-  });
-  it('requires a score for CAT and rejects percentiles above 100', () => {
-    expect(predictQuerySchema.safeParse({ exam: 'CAT' }).success).toBe(false);
-    expect(predictQuerySchema.safeParse({ exam: 'CAT', score: '150' }).success).toBe(false);
-    expect(predictQuerySchema.safeParse({ exam: 'CAT', score: '98.2' }).success).toBe(true);
-  });
-  it('parses booleans and lists from query strings', () => {
-    const p = predictQuerySchema.parse({ exam: 'NEET', rank: '1200', includeUnlikely: 'true', branches: 'Computer, Electrical' });
-    expect(p.includeUnlikely).toBe(true);
-    expect(p.branches).toEqual(['Computer', 'Electrical']);
-  });
-  it('requires a PwD rank when PwD is selected', () => {
-    expect(predictQuerySchema.safeParse({ exam: 'JEE_MAIN', rank: '10', isPwd: 'true' }).success).toBe(false);
+describe('guidanceQuerySchema', () => {
+  it('requires a stable record identifier and rejects the retired prediction request', () => {
+    expect(guidanceQuerySchema.parse({ cutoff: 'reviewed-record-1' })).toEqual({ cutoff: 'reviewed-record-1' });
+    expect(guidanceQuerySchema.safeParse({ cutoff: '../invalid' }).success).toBe(false);
+    expect(guidanceQuerySchema.safeParse({ exam: 'JEE_MAIN', rank: '100' }).success).toBe(false);
   });
 });
 

@@ -1,4 +1,6 @@
 'use client';
+
+import Link from 'next/link';
 import { useState, useEffect, useCallback, useMemo, useRef, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import CollegeCard from '@/components/CollegeCard';
@@ -178,6 +180,8 @@ function CollegesContent() {
   return (
     <div className="container-main py-6">
       <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Colleges' }]} />
+
+      <Link className="mb-3 inline-block text-indigo-700 underline" href="/collegefit">Explore colleges by preference with CollegeFit</Link>
 
       {/* Search bar */}
       <div className="search-premium relative mb-6">

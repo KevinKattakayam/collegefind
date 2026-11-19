@@ -1,129 +1,27 @@
-# Admission chance estimator
+# CollegeFit and admission guidance
 
-## What it is
+## CollegeFit at `/collegefit`
 
-For each seat — a (program, quota, category, PwD flag, gender pool) combination — the estimator
-models **next year's closing value** as a random variable fitted to recent published closing
-values, then reports the probability that it lands no better than the student's rank or score.
+City, state and institution type use catalogue identity. Programme and degree must match the same reviewed programme fact. Programme coverage is incomplete, so the absence of a match stays **Unknown**. An explicit difference in catalogue location or institution type is a **Mismatch**.
 
-It is a **transparent heuristic, not a calibrated statistical model.** Nothing in it is trained on
-outcomes. Treat the probabilities as ordered guidance ("this is safer than that"), not as
-precise likelihoods.
+The tuition budget compares one reviewed annual tuition amount for the exact programme, published fee category and academic year. Multiple amounts, missing scope and other payment periods leave the result unknown. The budget excludes hostel and other charges. Published year and source appear beside each matching fact or price.
 
-## Why ranks are modelled in log space
+Each active criterion has weight one. Choosing a priority doubles the weight of its active criteria. Complete results are ordered by the share of active weight that matches, with name and canonical ID breaking ties. The interface shows reasons and source links without publishing numeric scores. Identity-only discovery and incomplete evidence have no fit ranking. Incomplete results remain available in a discovery list ordered by catalogue identity preferences and name.
 
-Year-to-year movement in closing ranks is roughly proportional, not absolute: a rank moving from
-2,000 to 2,200 and from 50,000 to 55,000 are both ordinary 10% shifts, while "+2,000 ranks" means
-very different things at the two ends. Working with `log(rank)` makes the spread comparable across
-the range and keeps every predicted rank positive. Percentiles and scores are modelled linearly.
+For example, if a student's city matches and a programme claim is awaiting review, the city shows **Match**, the programme shows **Unknown**, and CollegeFit reports **Insufficient evidence for ranking**. Preferences are encoded in the page URL so a student can bookmark or revisit them. CollegeFit adds no account preference storage. Compare and shortlist actions use the existing account and guest workflows.
 
-## Algorithm
+## Guidance at `/predictor`
 
-1. **Select data.** For each seat, take the **last round of each year** (that is the value that
-   actually closed) for up to 5 recent years. Preparatory-list ranks (JoSAA's `P` suffix) are
-   excluded.
-2. **Locate.** Weighted mean of the transformed values, each year weighted `0.5^(age in years)`,
-   so last year counts twice as much as the year before.
-3. **Trend.** With 3+ years, fit a weighted least-squares slope, clamp it (±0.15/yr in log space
-   for ranks) and apply **half** of it. Short noisy series otherwise extrapolate absurdly.
-4. **Spread.** Sample standard deviation, floored by how much data exists: one year 0.30,
-   two years 0.20, otherwise 0.10 (log units). Less data means a wider interval, never a
-   confident one.
-5. **Probability.** `P(admit) = Φ((μ − log(rank)) / σ)` for ranks; the sign flips for
-   percentiles and scores, where higher is better.
-6. **Clamp.** Displayed probabilities are capped to 2%–97%: the model cannot see rule changes,
-   seat-matrix changes or an unusual year, so it must never claim certainty.
+- **Eligibility.** The college and programme context can show reviewed admission requirements with publisher, category, route and year. The app does not establish a student's eligibility. Check the official requirements for the intended cycle and seat scope.
+- **Historical comparison.** Select an individual reviewed record in the cutoff explorer or college profile. The record retains the college, programme, exam, counselling authority, rank definition, quota, category, PwD flag, seat pool, year, round and source. Enter a rank from the same rank list to compare it with the published opening and closing numbers. The typed rank stays in the browser and is omitted from the URL. Missing opening values stay unavailable. Preparatory lists, score and percentile records, legacy unspecified dimensions and records without a current approval do not support this comparison.
+- **Future admission.** Probability is unavailable. The public product does not compute a future estimate, admission band or confidence score.
 
-| Band | Probability |
-| --- | --- |
-| Safe | ≥ 75% |
-| Target | 40–75% |
-| Reach | 15–40% |
-| Unlikely | < 15% (hidden unless requested) |
+With zero genuinely reviewed cutoff records, guidance shows **Insufficient Verified Evidence** and links to the explorer. Existing exam links still open the guidance page with an exam filter.
 
-Confidence is `HIGH` with 4+ years of data, `MEDIUM` with 2–3, `LOW` with 1.
+## API
 
-## Which rank applies to which seat
-
-This follows the rule printed on JoSAA's own opening/closing rank tables:
-
-- **OPEN seats** use the **Common Rank List (CRL)**.
-- **EWS, OBC-NCL, SC and ST seats** use the **category rank**.
-- **PwD seats** use the **PwD rank within the candidate's category**.
-- Female candidates are additionally eligible for **female-only (supernumerary)** seats.
-- Home-state quota (`HS`) seats are offered only for colleges in the student's state; `OS` only
-  outside it; `GO`, `JK` and `LA` only for those territories.
-
-If a reserved-category student does not supply a category rank, reserved seats are **skipped**
-and this is stated in the response — the estimator never substitutes CRL for a category rank.
-
-## API contract
-
-`GET /api/predict`
-
-| Parameter | Type | Notes |
-| --- | --- | --- |
-| `exam` | enum | `JEE_MAIN`, `JEE_ADVANCED`, `NEET`, `CAT`, `GATE` (required) |
-| `rank` | int | CRL / All India Rank; required for rank-based exams |
-| `categoryRank`, `pwdRank` | int | Required to evaluate reserved and PwD seats |
-| `score` | number | CAT percentile (0–100) or GATE score; required for those exams |
-| `category` | enum | `OPEN`, `EWS`, `OBC_NCL`, `SC`, `ST` (default `OPEN`) |
-| `isPwd` | bool | Default false |
-| `gender` | enum | `FEMALE`, `MALE`, `OTHER`, `UNSPECIFIED` |
-| `homeState`, `states`, `branches`, `maxFees`, `round`, `includeUnlikely`, `limit` | | Filters, applied in SQL |
-
-Response:
-
-```jsonc
-{
-  "meta": {
-    "hasData": true,            // false ⇒ no cutoffs imported for this exam
-    "latestDataYear": 2025,
-    "targetYear": 2026,
-    "assumptions": ["..."],     // shown to the user verbatim
-    "method": "...",
-    "disclaimer": "..."
-  },
-  "results": [{
-    "program": {...}, "college": {...},
-    "seat": { "quota": "AI", "category": "OPEN", "seatPool": "GENDER_NEUTRAL",
-              "valueUsed": 12000, "valueLabel": "CRL / All India Rank" },
-    "probability": 0.62, "band": "TARGET", "confidence": "MEDIUM",
-    "estimate": { "expected": 5150, "low": 4500, "high": 5900, "targetYear": 2026 },
-    "history": [{ "year": 2024, "round": 6, "closing": 4870, "source": {...} }],
-    "explanation": "Past final-round closing rank for OPEN, …"
-  }],
-  "total": 42
-}
-```
-
-Errors are `400` with per-field `details`.
-
-## Query strategy
-
-Two indexed queries, no table scan:
-
-1. Find candidate `programId`s whose closing values are plausibly within reach
-   (index: `exam, category, seatPool, year`).
-2. Fetch the multi-year history for only those programs, then compute in memory.
-
-## Calibration
-
-`intervalCoverage()` in `src/lib/predictor/model.ts` backtests the 80% interval: predict a known
-year from earlier years and measure how often the actual value falls inside. A well-calibrated
-model scores ≈0.80. **Run this against real JoSAA data before making any accuracy claim.**
-The current unit test only proves the machinery works on synthetic series.
-
-## Known limitations
-
-- Ignores seat-matrix changes, new institutes/branches and policy changes.
-- Assumes next year resembles recent years; a syllabus or exam-pattern change breaks that.
-- Single-year history produces a very wide interval shown as `LOW` confidence.
-- No modelling of choice-filling order or multi-round movement within a counselling cycle.
-- NEET state-quota rules vary by state and are not modelled.
+`GET /api/predict?cutoff=<record-id>` returns a single reviewed observation from the same PostgreSQL evidence query used by the explorer. Responses have `eligibility: "NOT_CONFIRMED"`. A result has `status: "HISTORICAL_OBSERVATION"` and an `observation` object. Unavailable records return `status: "INSUFFICIENT_VERIFIED_EVIDENCE"` with `observation: null`. Missing or invalid record IDs return HTTP 400. Consumers of the retired forecast query must migrate to the record ID contract. Existing rate limiting remains in place.
 
 ## Synthetic fixture
 
-`npm run db:seed:synthetic` creates **fictional** institutes with invented cutoffs so the feature
-can be demonstrated and tested. Real college names are never attached to invented cutoffs. It
-refuses to run with `NODE_ENV=production`.
+The optional synthetic cutoff seed exists for disposable development and tests. It creates fictional demo institutes, which the reviewed cutoff query excludes. Automated tests can exercise approval with synthetic decisions in an isolated database. This does not establish genuine approval or public data coverage.
