@@ -11,7 +11,7 @@ export interface SessionUser {
 export async function getSessionUser(): Promise<SessionUser | null> {
   const session = await getServerSession(authOptions);
   if (!session?.user?.id) return null;
-  const user = await prisma.user.findUnique({ where: { id: session.user.id }, select: { id: true, role: true } });
+  const user = await prisma.user.findFirst({ where: { id: session.user.id, deactivatedAt: null }, select: { id: true, role: true } });
   return user ? { id: user.id, role: user.role } : null;
 }
 

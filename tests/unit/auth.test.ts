@@ -39,7 +39,7 @@ describe('credentials authentication and JWT callbacks', () => {
 
   it('uses the same dummy-hash comparison for unknown users and returns null on failure', async () => {
     await expect(authorize({ email: 'missing@example.test', password: 'correct horse battery' }, { headers: { 'x-forwarded-for': '203.0.113.8' } })).resolves.toBeNull();
-    expect(mocks.findFirst).toHaveBeenCalledWith(expect.objectContaining({ where: { email: { equals: 'missing@example.test', mode: 'insensitive' } } }));
+    expect(mocks.findFirst).toHaveBeenCalledWith(expect.objectContaining({ where: { email: { equals: 'missing@example.test', mode: 'insensitive' }, deactivatedAt: null } }));
     expect(mocks.compare).toHaveBeenCalledWith('correct horse battery', expect.stringMatching(/^\$2b\$12\$/));
   });
 

@@ -294,6 +294,8 @@ model User {
   emailVerified DateTime?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @default(now()) @updatedAt
+  deactivatedAt DateTime?
+  timeZone      String?
 
   evidenceDecisions EvidenceDecision[]
   saved             SavedCollege[]
@@ -303,6 +305,8 @@ model User {
   reviews           Review[]
   auditLogs         AuditLog[]
   admissionPlans    AdmissionPlan[]
+  reportsMade      CommunityReport[] @relation("ReportReporter")
+  reportsResolved  CommunityReport[] @relation("ReportResolver")
 }
 
 model SavedCollege {
@@ -421,6 +425,7 @@ model PlanTask {
 model Question {
   id        String           @id @default(cuid())
   text      String
+  contentHash String?
   userId    String
   collegeId String
   status    ModerationStatus @default(VISIBLE)
@@ -428,23 +433,52 @@ model Question {
   user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
   college   College          @relation(fields: [collegeId], references: [id], onDelete: Cascade)
   answers   Answer[]
+  reports   CommunityReport[]
 
-  @@index([collegeId])
+  @@unique([userId, collegeId, contentHash])
+  @@index([collegeId, status, createdAt(sort: Desc), id])
   @@index([userId])
 }
 
 model Answer {
   id         String           @id @default(cuid())
   text       String
+  contentHash String?
   userId     String
   questionId String
   status     ModerationStatus @default(VISIBLE)
   createdAt  DateTime         @default(now())
   user       User             @relation(fields: [userId], references: [id], onDelete: Cascade)
   question   Question         @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  reports    CommunityReport[]
 
-  @@index([questionId])
+  @@unique([userId, questionId, contentHash])
+  @@index([questionId, status, createdAt, id])
   @@index([userId])
+}
+
+model CommunityReport {
+  id               String   @id @default(cuid())
+  reporterId       String
+  questionId       String?
+  answerId         String?
+  reason           String
+  status           String   @default("OPEN")
+  resolutionReason String?
+  resolvedAt       DateTime?
+  resolvedById     String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  reporter         User     @relation("ReportReporter", fields: [reporterId], references: [id], onDelete: Cascade)
+  question         Question? @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  answer           Answer?   @relation(fields: [answerId], references: [id], onDelete: Cascade)
+  resolvedBy       User?     @relation("ReportResolver", fields: [resolvedById], references: [id], onDelete: SetNull)
+
+  @@unique([reporterId, questionId])
+  @@unique([reporterId, answerId])
+  @@index([status, createdAt, id])
+  @@index([questionId, status])
+  @@index([answerId, status])
 }
 
 // Schema is ready; the submission UI is deliberately not shipped yet (see docs/ROADMAP.md).

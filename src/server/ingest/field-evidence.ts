@@ -32,7 +32,7 @@ export async function stageFieldEvidence(db: PrismaClient, input: {
 
 /** Reviewer identity is checked against current database roles; imports cannot approve claims. */
 export async function reviewFieldEvidence(db: PrismaClient, input: {
-  evidenceId: string; reviewerId: string; status: 'APPROVED' | 'REJECTED'; reason: string;
+  evidenceId: string; reviewerId: string; status: 'APPROVED' | 'REJECTED'; reason: string; expectedDecisionId?: string | null;
 }) {
   if (!input.reason.trim() || !['APPROVED', 'REJECTED'].includes(input.status)) throw new Error('Review reason and decision required');
   return db.$transaction(async (tx) => {
@@ -41,6 +41,10 @@ export async function reviewFieldEvidence(db: PrismaClient, input: {
     const reviewer = await tx.user.findUniqueOrThrow({ where: { id: input.reviewerId } });
     if (reviewer.role !== 'ADMIN') throw new Error('Reviewer access required');
     const claim = await tx.fieldEvidence.findUniqueOrThrow({ where: { id: input.evidenceId } });
+    if (input.expectedDecisionId !== undefined) {
+      const latest = await tx.evidenceDecision.findFirst({ where: { evidenceId: claim.id }, orderBy: [{ createdAt: 'desc' }, { id: 'desc' }], select: { id: true } });
+      if ((latest?.id ?? null) !== input.expectedDecisionId) throw new ApiError(409, 'REVIEW_CHANGED', 'Another reviewer changed this claim. Reload its current history before deciding.');
+    }
     if (input.status === 'APPROVED') {
       if (claim.isFixture) throw new ApiError(409, 'FIXTURE_NOT_PUBLISHABLE', 'Fixture evidence cannot be published');
       const held = evidenceReviewHold(claim.id);
@@ -48,7 +52,7 @@ export async function reviewFieldEvidence(db: PrismaClient, input: {
       const now = new Date();
       if (claim.validUntil && claim.validUntil < now) throw new ApiError(409, 'EVIDENCE_EXPIRED', 'Expired evidence cannot be published; obtain a current source or reject it');
       if (claim.validFrom && claim.validFrom > now) throw new ApiError(409, 'EVIDENCE_NOT_YET_VALID', 'Future-valid evidence cannot be published yet');
-      const conflicts = await tx.$queryRaw<{ id: string }[]>`
+      const conflicts = await tx.$queryRaw<{ id: string; }[]>`
         SELECT other.id FROM "FieldEvidence" other
         LEFT JOIN LATERAL (
           SELECT status FROM "EvidenceDecision" d WHERE d."evidenceId"=other.id
@@ -68,7 +72,8 @@ export async function reviewFieldEvidence(db: PrismaClient, input: {
         LIMIT 1`;
       if (conflicts.length) throw new ApiError(409, 'EVIDENCE_CONFLICT', 'Conflicting evidence remains unresolved; review the matching claims first');
     }
-    const decision = await tx.evidenceDecision.create({ data: input });
+    const decisionData = { evidenceId: input.evidenceId, reviewerId: input.reviewerId, status: input.status, reason: input.reason };
+    const decision = await tx.evidenceDecision.create({ data: decisionData });
     await tx.auditLog.create({ data: { actorId: reviewer.id, action: 'evidence.review', targetType: 'FieldEvidence', targetId: input.evidenceId, metadata: { status: input.status, reason: input.reason } } });
     return decision;
   });
@@ -77,16 +82,24 @@ export async function reviewFieldEvidence(db: PrismaClient, input: {
 /** Reuse the same append-only decisions for existing typed facts; no duplicated numeric values. */
 export async function reviewTypedRecord(db: PrismaClient, input: {
   kind: 'cutoff' | 'fees' | 'placement' | 'ranking'; recordId: string;
-  reviewerId: string; status: 'APPROVED' | 'REJECTED'; reason: string;
+  reviewerId: string; status: 'APPROVED' | 'REJECTED'; reason: string; expectedDecisionId?: string | null;
 }) {
   if (!['cutoff', 'fees', 'placement', 'ranking'].includes(input.kind) || !input.reason.trim() || !['APPROVED', 'REJECTED'].includes(input.status)) throw new Error('Invalid record review');
   return db.$transaction(async (tx) => {
+    await tx.$queryRaw<Array<{ locked: boolean; }>>`SELECT pg_advisory_xact_lock(180231, 4) IS NULL AS locked`;
     const reviewer = await tx.user.findUniqueOrThrow({ where: { id: input.reviewerId } });
     if (reviewer.role !== 'ADMIN') throw new Error('Reviewer access required');
     const target = { [`${input.kind}Id`]: input.recordId };
-    const decision = await tx.evidenceDecision.create({ data: {
-      ...target, reviewerId: reviewer.id, status: input.status, reason: input.reason,
-    } });
+    if (input.expectedDecisionId !== undefined) {
+      const where = input.kind === 'cutoff' ? { cutoffId: input.recordId } : input.kind === 'fees' ? { feesId: input.recordId } : input.kind === 'placement' ? { placementId: input.recordId } : { rankingId: input.recordId };
+      const latest = await tx.evidenceDecision.findFirst({ where, orderBy: [{ createdAt: 'desc' }, { id: 'desc' }], select: { id: true } });
+      if ((latest?.id ?? null) !== input.expectedDecisionId) throw new ApiError(409, 'REVIEW_CHANGED', 'Another reviewer changed this record. Reload its current history before deciding.');
+    }
+    const decision = await tx.evidenceDecision.create({
+      data: {
+        ...target, reviewerId: reviewer.id, status: input.status, reason: input.reason,
+      }
+    });
     await tx.auditLog.create({ data: { actorId: reviewer.id, action: 'record.review', targetType: input.kind, targetId: input.recordId, metadata: { status: input.status, reason: input.reason } } });
     return decision;
   });

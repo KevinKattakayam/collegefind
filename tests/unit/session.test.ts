@@ -3,12 +3,12 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 const state = vi.hoisted(() => ({
   session: null as null | { user?: { id?: string } },
   user: null as null | { id: string; role: 'USER' | 'ADMIN' },
-  findUnique: vi.fn(),
+  findFirst: vi.fn(),
 }));
 
 vi.mock('next-auth', () => ({ getServerSession: vi.fn(async () => state.session) }));
 vi.mock('@/lib/auth', () => ({ authOptions: {} }));
-vi.mock('@/lib/prisma', () => ({ prisma: { user: { findUnique: state.findUnique } } }));
+vi.mock('@/lib/prisma', () => ({ prisma: { user: { findFirst: state.findFirst } } }));
 
 import { getSessionUser, requireAdmin, requireUser } from '@/lib/session';
 
@@ -16,14 +16,14 @@ describe('session authorization boundary', () => {
   beforeEach(() => {
     state.session = null;
     state.user = null;
-    state.findUnique.mockReset().mockImplementation(async () => state.user);
+    state.findFirst.mockReset().mockImplementation(async () => state.user);
   });
 
   it('does not query for absent sessions or sessions without a user id', async () => {
     expect(await getSessionUser()).toBeNull();
     state.session = { user: {} };
     expect(await getSessionUser()).toBeNull();
-    expect(state.findUnique).not.toHaveBeenCalled();
+    expect(state.findFirst).not.toHaveBeenCalled();
   });
 
   it('treats a deleted account as unauthenticated even when a JWT remains', async () => {
@@ -31,8 +31,8 @@ describe('session authorization boundary', () => {
     state.user = null;
     expect(await getSessionUser()).toBeNull();
     await expect(requireUser()).rejects.toMatchObject({ status: 401, code: 'UNAUTHENTICATED' });
-    expect(state.findUnique).toHaveBeenCalledWith({
-      where: { id: 'deleted-user' },
+    expect(state.findFirst).toHaveBeenCalledWith({
+      where: { id: 'deleted-user', deactivatedAt: null },
       select: { id: true, role: true },
     });
   });

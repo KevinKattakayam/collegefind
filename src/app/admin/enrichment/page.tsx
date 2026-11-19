@@ -102,7 +102,7 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
           <details className="my-3"><summary>Reviewer decision history</summary>
             {claim.decisions.length ? <ol>{claim.decisions.map((decision) => <li key={decision.id}>{decision.status} by {decision.reviewer.name ?? decision.reviewerId} on {date(decision.createdAt)} — {decision.reason}</li>)}</ol> : <p>No reviewer decisions recorded.</p>}
           </details>
-          <ReviewDecision id={claim.id} fixture={claim.isFixture} held={Boolean(hold)} expired={state === 'EXPIRED'} future={state === 'NOT_YET_VALID'} conflicted={state === 'CONFLICTED'} />
+          <ReviewDecision id={claim.id} currentDecisionId={claim.decisions[0]?.id ?? null} fixture={claim.isFixture} held={Boolean(hold)} expired={state === 'EXPIRED'} future={state === 'NOT_YET_VALID'} conflicted={state === 'CONFLICTED'} />
         </article>;
       })}
     </div>

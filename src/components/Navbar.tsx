@@ -30,7 +30,7 @@ export default function Navbar() {
     { href: '/collegefit', label: 'CollegeFit' },
     { href: '/predictor', label: 'Admission guidance' },
     { href: '/articles', label: 'News' },
-    ...(session ? [{ href: '/saved', label: 'Saved' }] : []),
+    ...(session ? [{ href: '/saved', label: 'Saved' }, { href: '/account', label: 'Account' }] : []),
   ];
 
   const isActive = (href: string) => pathname === href;
@@ -96,6 +96,7 @@ export default function Navbar() {
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
                         Saved Colleges
                       </Link>
+                      <Link href="/account" className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 rounded-lg mx-1.5 no-underline transition-colors" onClick={() => setDropdownOpen(false)}>Account and privacy</Link>
                       <div className="border-t border-slate-100 my-1" />
                       <button onClick={() => { signOut({ callbackUrl: '/' }); setDropdownOpen(false); }}
                         className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm text-error-600 hover:bg-error-50 rounded-lg mx-1.5 transition-colors text-left" style={{ width: 'calc(100% - 12px)' }}>

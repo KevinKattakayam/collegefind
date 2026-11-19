@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function ReviewDecision({
-  id, fixture, held, expired, future, conflicted,
-}: { id: string; fixture: boolean; held: boolean; expired: boolean; future: boolean; conflicted: boolean }) {
+  id, currentDecisionId, fixture, held, expired, future, conflicted,
+}: { id: string; currentDecisionId: string | null; fixture: boolean; held: boolean; expired: boolean; future: boolean; conflicted: boolean }) {
   const router = useRouter();
   const [reason, setReason] = useState('');
   const [message, setMessage] = useState('');
@@ -19,7 +19,7 @@ export default function ReviewDecision({
     try {
       const response = await fetch('/api/admin/evidence', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ kind: 'field', id, status, reason }),
+        body: JSON.stringify({ kind: 'field', id, status, reason, expectedDecisionId: currentDecisionId }),
       });
       if (!response.ok) {
         setMessage(response.status === 401 || response.status === 403

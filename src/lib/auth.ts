@@ -39,7 +39,7 @@ export const authOptions: NextAuthOptions = {
         // Case-insensitive lookup keeps accounts created before emails were
         // normalised to lowercase working.
         const user = await prisma.user.findFirst({
-          where: { email: { equals: email, mode: 'insensitive' } },
+          where: { email: { equals: email, mode: 'insensitive' }, deactivatedAt: null },
           select: { id: true, email: true, name: true, password: true, role: true },
         });
         const ok = await compare(password, user?.password ?? DUMMY_HASH);

@@ -479,11 +479,11 @@ describe('community content', () => {
     const q = await db.question.create({ data: { text: 'Spam content here', userId: user.id, collegeId: college.id } });
 
     session.current = { id: user.id, role: 'USER' };
-    const forbidden = await json(await moderationRoute.POST(req('/api/admin/moderation', { method: 'POST', body: JSON.stringify({ type: 'question', id: q.id, status: 'HIDDEN' }) })));
+    const forbidden = await json(await moderationRoute.POST(req('/api/admin/moderation', { method: 'POST', body: JSON.stringify({ type: 'question', id: q.id, status: 'HIDDEN', expectedStatus: 'VISIBLE', reason: 'spam' }) })));
     expect(forbidden.status).toBe(403);
 
     session.current = { id: admin.id, role: 'ADMIN' };
-    const ok = await json(await moderationRoute.POST(req('/api/admin/moderation', { method: 'POST', body: JSON.stringify({ type: 'question', id: q.id, status: 'HIDDEN', reason: 'spam' }) })));
+    const ok = await json(await moderationRoute.POST(req('/api/admin/moderation', { method: 'POST', body: JSON.stringify({ type: 'question', id: q.id, status: 'HIDDEN', expectedStatus: 'VISIBLE', reason: 'spam' }) })));
     expect(ok.status).toBe(200);
 
     const list = await json(await questionsByCollege.GET(req(`/api/questions/${college.id}`), { params: Promise.resolve({ collegeId: college.id }) }));
@@ -499,20 +499,20 @@ describe('community content', () => {
     session.current = { id: admin.id, role: 'ADMIN' };
 
     const badOrigin = await json(await moderationRoute.POST(req('/api/admin/moderation', {
-      method: 'POST', origin: 'https://attacker.test', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'HIDDEN' }),
+      method: 'POST', origin: 'https://attacker.test', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'HIDDEN', expectedStatus: 'VISIBLE', reason: 'spam' }),
     })));
     expect(badOrigin.status).toBe(403);
     const invalid = await json(await moderationRoute.POST(req('/api/admin/moderation', {
-      method: 'POST', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'DELETED' }),
+      method: 'POST', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'DELETED', expectedStatus: 'VISIBLE', reason: 'invalid' }),
     })));
     expect(invalid.status).toBe(400);
 
     expect((await moderationRoute.POST(req('/api/admin/moderation', {
-      method: 'POST', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'HIDDEN' }),
+      method: 'POST', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'HIDDEN', expectedStatus: 'VISIBLE', reason: 'spam' }),
     }))).status).toBe(200);
     expect((await db.answer.findUniqueOrThrow({ where: { id: answer.id } })).status).toBe('HIDDEN');
     expect((await moderationRoute.POST(req('/api/admin/moderation', {
-      method: 'POST', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'VISIBLE', reason: 'Review completed' }),
+      method: 'POST', body: JSON.stringify({ type: 'answer', id: answer.id, status: 'VISIBLE', expectedStatus: 'HIDDEN', reason: 'Review completed' }),
     }))).status).toBe(200);
     expect((await db.answer.findUniqueOrThrow({ where: { id: answer.id } })).status).toBe('VISIBLE');
     expect(await db.auditLog.count({ where: { action: { in: ['answer.hide', 'answer.restore'] } } })).toBe(2);

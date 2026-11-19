@@ -45,17 +45,37 @@ describe('field evidence staging and typed reviewer audit', () => {
 
   it('links typed review decisions to the existing record and audit in one transaction', async () => {
     const tx = {
+      $queryRaw: vi.fn(async () => [{ locked: true }]),
       user: { findUniqueOrThrow: vi.fn().mockResolvedValue({ id: 'admin-1', role: 'ADMIN' }) },
       evidenceDecision: { create: vi.fn().mockResolvedValue({ id: 'decision-1' }) },
       auditLog: { create: vi.fn() },
     };
     const db = { $transaction: vi.fn(async (work: (client: typeof tx) => unknown) => work(tx)) };
     await reviewTypedRecord(db as never, { kind: 'fees', recordId: 'fee-1', reviewerId: 'admin-1', status: 'APPROVED', reason: 'Official fee schedule' });
-    expect(tx.evidenceDecision.create).toHaveBeenCalledWith({ data: {
-      feesId: 'fee-1', reviewerId: 'admin-1', status: 'APPROVED', reason: 'Official fee schedule',
-    } });
-    expect(tx.auditLog.create).toHaveBeenCalledWith({ data: expect.objectContaining({
-      actorId: 'admin-1', action: 'record.review', targetType: 'fees', targetId: 'fee-1',
-    }) });
+    expect(tx.evidenceDecision.create).toHaveBeenCalledWith({
+      data: {
+        feesId: 'fee-1', reviewerId: 'admin-1', status: 'APPROVED', reason: 'Official fee schedule',
+      }
+    });
+    expect(tx.$queryRaw).toHaveBeenCalledOnce();
+    expect(tx.auditLog.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        actorId: 'admin-1', action: 'record.review', targetType: 'fees', targetId: 'fee-1',
+      })
+    });
+  });
+
+  it('rejects stale typed evidence review decisions before writing an audit record', async () => {
+    const tx = {
+      $queryRaw: vi.fn(async () => [{ locked: true }]),
+      user: { findUniqueOrThrow: vi.fn().mockResolvedValue({ id: 'admin-1', role: 'ADMIN' }) },
+      evidenceDecision: { findFirst: vi.fn().mockResolvedValue({ id: 'newer-decision' }), create: vi.fn() },
+      auditLog: { create: vi.fn() },
+    };
+    const db = { $transaction: vi.fn(async (work: (client: typeof tx) => unknown) => work(tx)) };
+    await expect(reviewTypedRecord(db as never, { kind: 'fees', recordId: 'fee-1', reviewerId: 'admin-1', status: 'APPROVED', reason: 'Current schedule', expectedDecisionId: null }))
+      .rejects.toMatchObject({ status: 409, code: 'REVIEW_CHANGED' });
+    expect(tx.evidenceDecision.create).not.toHaveBeenCalled();
+    expect(tx.auditLog.create).not.toHaveBeenCalled();
   });
 });
