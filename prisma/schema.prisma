@@ -305,8 +305,8 @@ model User {
   reviews           Review[]
   auditLogs         AuditLog[]
   admissionPlans    AdmissionPlan[]
-  reportsMade      CommunityReport[] @relation("ReportReporter")
-  reportsResolved  CommunityReport[] @relation("ReportResolver")
+  reportsMade       CommunityReport[]  @relation("ReportReporter")
+  reportsResolved   CommunityReport[]  @relation("ReportResolver")
 }
 
 model SavedCollege {
@@ -423,53 +423,55 @@ model PlanTask {
 }
 
 model Question {
-  id        String           @id @default(cuid())
-  text      String
+  id          String            @id @default(cuid())
+  text        String
   contentHash String?
-  userId    String
-  collegeId String
-  status    ModerationStatus @default(VISIBLE)
-  createdAt DateTime         @default(now())
-  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  college   College          @relation(fields: [collegeId], references: [id], onDelete: Cascade)
-  answers   Answer[]
-  reports   CommunityReport[]
+  userId      String
+  collegeId   String
+  status      ModerationStatus  @default(VISIBLE)
+  createdAt   DateTime          @default(now())
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  college     College           @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+  answers     Answer[]
+  reports     CommunityReport[]
 
   @@unique([userId, collegeId, contentHash])
+  @@index([collegeId])
   @@index([collegeId, status, createdAt(sort: Desc), id])
   @@index([userId])
 }
 
 model Answer {
-  id         String           @id @default(cuid())
-  text       String
+  id          String            @id @default(cuid())
+  text        String
   contentHash String?
-  userId     String
-  questionId String
-  status     ModerationStatus @default(VISIBLE)
-  createdAt  DateTime         @default(now())
-  user       User             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  question   Question         @relation(fields: [questionId], references: [id], onDelete: Cascade)
-  reports    CommunityReport[]
+  userId      String
+  questionId  String
+  status      ModerationStatus  @default(VISIBLE)
+  createdAt   DateTime          @default(now())
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question    Question          @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  reports     CommunityReport[]
 
   @@unique([userId, questionId, contentHash])
+  @@index([questionId])
   @@index([questionId, status, createdAt, id])
   @@index([userId])
 }
 
 model CommunityReport {
-  id               String   @id @default(cuid())
+  id               String    @id @default(cuid())
   reporterId       String
   questionId       String?
   answerId         String?
   reason           String
-  status           String   @default("OPEN")
+  status           String    @default("OPEN")
   resolutionReason String?
   resolvedAt       DateTime?
   resolvedById     String?
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
-  reporter         User     @relation("ReportReporter", fields: [reporterId], references: [id], onDelete: Cascade)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  reporter         User      @relation("ReportReporter", fields: [reporterId], references: [id], onDelete: Cascade)
   question         Question? @relation(fields: [questionId], references: [id], onDelete: Cascade)
   answer           Answer?   @relation(fields: [answerId], references: [id], onDelete: Cascade)
   resolvedBy       User?     @relation("ReportResolver", fields: [resolvedById], references: [id], onDelete: SetNull)
@@ -592,7 +594,7 @@ model InstitutionAlias {
   validFrom  DateTime?
   validUntil DateTime?
   sourceUrl  String
-  college    College   @relation(fields: [collegeId], references: [id], onDelete: Restrict)
+  college    College   @relation(fields: [collegeId], references: [id], onDelete: Restrict, onUpdate: NoAction)
 
   @@unique([namespace, value, campus, collegeId])
   @@index([namespace, value])

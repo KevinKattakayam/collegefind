@@ -19,7 +19,7 @@ test('CollegeFit restores keyboard-submitted preferences and keeps unknowns out 
   try {
     await db.college.create({ data: { slug, name, shortName: 'Fit test', city, state: 'Test State', type: 'PRIVATE', dataStatus: 'DEMO', annualFees: 1 } });
     await page.goto('/collegefit');
-    await page.getByLabel('City or state').fill(city);
+    await page.getByRole('textbox', { name: 'City or state', exact: true }).fill(city);
     await page.getByRole('spinbutton', { name: 'Annual tuition budget (₹)', exact: true }).fill('1000');
     const submit = page.getByRole('button', { name: 'Find colleges' });
     await submit.focus();
@@ -30,11 +30,11 @@ test('CollegeFit restores keyboard-submitted preferences and keeps unknowns out 
     await expect(result.getByText('Annual tuition budget · UNKNOWN')).toBeVisible();
     await expect(result.getByText(/Insufficient evidence for ranking/)).toBeVisible();
     await page.reload();
-    await expect(page.getByLabel('City or state')).toHaveValue(city);
+    await expect(page.getByRole('textbox', { name: 'City or state', exact: true })).toHaveValue(city);
     await result.getByRole('button', { name: 'Save college' }).click();
     await expect(result.getByRole('button', { name: 'Saved', exact: true })).toBeVisible();
     await page.getByRole('link', { name: 'Open shortlist' }).click();
-    await expect(page.getByText(name, { exact: true })).toBeVisible();
+    await expect(page.getByRole('link', { name, exact: true })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => window.innerWidth));
   } finally {
     await db.college.deleteMany({ where: { slug } });

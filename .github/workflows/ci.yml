@@ -19,7 +19,7 @@ env:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
 
     services:
       postgres:
@@ -61,6 +61,7 @@ jobs:
           createdb -h localhost -U postgres collegefind_upgrade_test
           createdb -h localhost -U postgres collegefind_restore_test
           createdb -h localhost -U postgres collegefind_e2e_test
+          test "$(psql -h localhost -U postgres -d collegefind_e2e_test -Atqc "SELECT current_database() || '|' || current_user || '|' || (SELECT count(*) FROM information_schema.tables WHERE table_schema='public')")" = 'collegefind_e2e_test|postgres|0'
 
       - name: Check formatting of the Prisma schema
         run: npx prisma format && git diff --exit-code prisma/schema.prisma
@@ -97,12 +98,8 @@ jobs:
         env:
           TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/collegefind_upgrade_test
           COLLEGEFIND_TEST_DATABASE_CONFIRMED: 'true'
-          PGPASSWORD: postgres
-        run: |
-          npx tsx scripts/verify-phase2-upgrade.ts
-          pg_dump -h localhost -U postgres -d collegefind_upgrade_test -Fc -f /tmp/collegefind-upgrade.dump
-          pg_restore -h localhost -U postgres -d collegefind_restore_test /tmp/collegefind-upgrade.dump
-          test "$(psql -h localhost -U postgres -d collegefind_restore_test -Atqc 'SELECT count(*) FROM "SavedComparison"')" = '1'
+          RESTORE_TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/collegefind_restore_test
+        run: bash scripts/rehearse-release-recovery.sh
 
       - name: Seed isolated browser database
         env:
@@ -116,7 +113,7 @@ jobs:
       - name: Build
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/collegefind_e2e_test
-        run: npm run build
+        run: npm run vercel-build
 
       - name: Browser tests
         env:
@@ -126,7 +123,8 @@ jobs:
           NEXTAUTH_URL: http://127.0.0.1:3100
         run: |
           npx playwright install --with-deps chromium
-          npm run test:e2e -- --workers=2
+          npm run test:e2e -- --workers=2 --project=chromium
+          npm run test:e2e -- --workers=2 --project=mobile
 
   secret-scan:
     runs-on: ubuntu-latest
@@ -135,27 +133,14 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
       - name: Scan for committed secrets
-        # A real database URL and NEXTAUTH_SECRET were committed once before
-        # (render-new.yaml). This job fails the build if that happens again.
+        # Scan the current tree and report only paths and line numbers.
         run: |
-          set -e
-          # Ignore documented placeholders (.env.example) and CI's own throwaway
-          # local-Postgres URLs; flag anything else that looks like a real credential.
-          if git grep -nIE '(postgres(ql)?://[^ "'"'"']*:[^ "'"'"'@/]+@)|(npg_[A-Za-z0-9]{10,})' \
-               -- . ':!*.md' ':!package-lock.json' ':!.env.example' ':!.github/workflows/ci.yml' \
-             | grep -vE '://(user|postgres|cf):(password|postgres|cf)@(localhost|127\.0\.0\.1|host)'; then
-            echo "::error::A database URL with a password appears to be committed."
-            exit 1
-          fi
-          echo "No obvious committed credentials found."
+          python3 scripts/check-release-secrets.py
 
   audit:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -163,4 +148,4 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npm audit --omit=dev --audit-level=critical
+      - run: npm audit --audit-level=high

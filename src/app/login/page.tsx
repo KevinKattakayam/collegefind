@@ -23,11 +23,17 @@ function LoginContent() {
     setError('');
     if (!email || !password) { setError('All fields are required'); return; }
     setLoading(true);
-    const result = await signIn('credentials', { email, password, redirect: false });
-    setLoading(false);
-    if (result?.error === TOO_MANY_ATTEMPTS) setError('Too many sign-in attempts. Please wait 15 minutes and try again.');
-    else if (result?.error) setError('Incorrect email or password');
-    else router.push(callbackUrl);
+    try {
+      const result = await signIn('credentials', { email, password, redirect: false });
+      if (!result || result.error === 'SignInUnavailable') setError('Sign-in is temporarily unavailable. Please try again.');
+      else if (result.error === TOO_MANY_ATTEMPTS) setError('Too many sign-in attempts. Please wait 15 minutes and try again.');
+      else if (!result.ok || result.error) setError('Incorrect email or password');
+      else router.push(callbackUrl);
+    } catch {
+      setError('Sign-in is temporarily unavailable. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -42,19 +48,19 @@ function LoginContent() {
           <div className="relative">
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#94A3B8]">✉</span>
             <input type="email" value={email} onChange={e => setEmail(e.target.value)}
-              placeholder="Email address" className="input-field !pl-10" />
+              aria-label="Email address" autoComplete="username" placeholder="Email address" className="input-field !pl-10" />
           </div>
           <div className="relative">
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#94A3B8]">🔒</span>
             <input type={showPwd ? 'text' : 'password'} value={password} onChange={e => setPassword(e.target.value)}
-              placeholder="Password" className="input-field !pl-10 !pr-10" />
-            <button type="button" onClick={() => setShowPwd(!showPwd)}
+              aria-label="Password" autoComplete="current-password" placeholder="Password" className="input-field !pl-10 !pr-10" />
+            <button type="button" aria-label={showPwd ? "Hide password" : "Show password"} onClick={() => setShowPwd(!showPwd)}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-[#94A3B8] text-sm">{showPwd ? '🙈' : '👁'}</button>
           </div>
-          <div className="text-right"><span className="text-xs text-[#64748B] cursor-pointer">Forgot Password?</span></div>
-          {error && <p className="text-sm text-[#DC2626]">{error}</p>}
+          <p className="text-right text-xs text-[#64748B]">Password reset is unavailable.</p>
+          {error && <p role="alert" className="text-sm text-[#DC2626]">{error}</p>}
           <button type="submit" disabled={loading} className="btn-primary w-full !h-[44px]">
-            {loading ? <span className="animate-spin">⟳</span> : 'Login'}
+            {loading ? 'Signing in…' : 'Login'}
           </button>
         </form>
         <p className="text-center text-sm text-[#64748B] mt-4">

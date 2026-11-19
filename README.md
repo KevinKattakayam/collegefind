@@ -122,17 +122,19 @@ is idempotent: re-running the same file updates rows in place. See
 | `NEXTAUTH_SECRET` | yes | Session signing key, ≥32 chars |
 | `NEXTAUTH_URL` | production | Canonical site URL for NextAuth |
 | `NEXT_PUBLIC_SITE_URL` | yes | Base URL for canonical links and sitemap |
-| `UPSTASH_REDIS_REST_URL` / `_TOKEN` | recommended | Shared rate limiting across serverless instances |
-| `SEED_ENABLED`, `SEED_ALLOW_PRODUCTION`, `ADMIN_SEED_TOKEN` | no | HTTP seeding, off by default |
+| `UPSTASH_REDIS_REST_URL` / `_TOKEN` | production | Shared HTTPS rate limiting. Sensitive actions return 503 during outages. |
+| `SEED_ENABLED`, `ADMIN_SEED_TOKEN` | local only | Development-only HTTP seeding, off by default |
 | `NEXT_PUBLIC_DATA_NOTICE` | no | Set to `off` to hide the demo-data banner |
 
 Never commit real values. `.env` is git-ignored and CI fails if a credential-shaped string appears.
 
 ## Security
 
+Release, incident and recovery procedures are in [Production release](docs/PRODUCTION_RELEASE.md).
+
 Summarised in [docs/SECURITY.md](docs/SECURITY.md). Highlights:
 
-- No public destructive endpoints; seeding requires a bearer token and is disabled by default.
+- HTTP seeding is disabled in production. Development seeding is off by default and requires a bearer token.
 - Ownership is enforced inside the database query on every saved/comparison route.
 - Origin checks on all mutations, plus SameSite cookies.
 - Rate limits on registration, login, questions, answers, saves and the predictor.

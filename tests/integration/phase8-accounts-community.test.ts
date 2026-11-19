@@ -39,7 +39,7 @@ async function fixtures() {
 
 describe('Phase 8 account and community privacy', () => {
   it('updates only safe account fields, exports owned data without credentials, and deactivates with private-data cleanup', async () => {
-    const { owner, other, college } = await fixtures();
+    const { owner, other, admin, college } = await fixtures();
     const plan = await db.admissionPlan.create({ data: { userId: owner.id, name: 'Private plan', cycle: '2027' } });
     session.current = { id: owner.id, role: 'USER' };
     expect((await json(await account.PATCH(req({ name: 'Updated Owner', timeZone: 'Asia/Kolkata' }, 'PATCH')))).status).toBe(200);
@@ -65,6 +65,13 @@ describe('Phase 8 account and community privacy', () => {
     expect(await db.admissionPlan.count({ where: { id: plan.id } })).toBe(0);
     expect(await db.question.findFirstOrThrow({ where: { userId: owner.id } })).toMatchObject({ status: 'HIDDEN', text: '[Removed after account deactivation]' });
     expect((await json(await account.GET())).status).toBe(401);
+    session.current = { id: admin.id, role: 'ADMIN' };
+    const restore = await moderation.POST(req({
+      type: 'question', id: createdQuestion.body.question.id, status: 'VISIBLE',
+      expectedStatus: 'HIDDEN', reason: 'Synthetic attempt to restore deactivated content',
+    }));
+    expect(restore.status).toBe(409);
+    expect(await db.question.count({ where: { id: createdQuestion.body.question.id, status: 'VISIBLE' } })).toBe(0);
   });
 
   it('supports author edits/removals and rejects duplicates and cross-owner changes', async () => {

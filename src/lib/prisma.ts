@@ -2,7 +2,6 @@ import { getEnv } from './env';
 import { projectPublicResult } from '@/server/public-evidence';
 import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
-import pg from 'pg';
 
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
 
@@ -17,13 +16,14 @@ function createPrismaClient() {
   // Certificate verification is left ON. The previous code set
   // `rejectUnauthorized: false`, which accepted any certificate and allowed
   // man-in-the-middle attacks on database traffic.
-  const pool = new pg.Pool({
+  // The adapter owns the pool and closes it on Prisma disconnect.
+  const adapter = new PrismaPg({
     connectionString,
     max: env.DB_POOL_MAX,
     connectionTimeoutMillis: 10_000,
     idleTimeoutMillis: 30_000,
   });
-  return new PrismaClient({ adapter: new PrismaPg(pool) }).$extends({
+  return new PrismaClient({ adapter }).$extends({
     query: { $allModels: { async $allOperations({ model, operation, args, query }) {
       const pagination = args as { take?: number; skip?: number; distinct?: string | string[] };
       const savedPage = { take: pagination.take, skip: pagination.skip, distinct: pagination.distinct };

@@ -26,7 +26,7 @@ Alternatives:
 
 ## Nine-phase roadmap and gates
 
-Phase 1 audit is complete; Phase 2 local engineering is complete with production operations still owner-blocked; Phase 3 engineering is conditionally accepted with factual review and production blockers; Phase 4 local profile/cutoff engineering is complete with data/manual accessibility/production gates pending; Phase 5 and Phase 6 have local checkpoints; Phase 7 private plans, counselling choice lists, application tracking, personal deadlines, checklists and in-app reminders are implemented and locally verified. Phase 8 local account, community, moderation and stale-safe evidence-review slices have passed focused checks, but Phase 8 remains **PARTIAL**: email recovery/verification, manual assistive-technology review and inherited production/data gates remain open. Phase 9 has not started. Passing a phase requires recorded automated evidence and essential permitted browser/manual evidence; blocked checks prevent DONE. Phase 1 is not a production-readiness certification.
+Phase 1 audit is complete; Phase 2 local engineering is complete with production operations still owner-blocked; Phase 3 engineering is conditionally accepted with factual review and production blockers; Phase 4 local profile/cutoff engineering is complete with data/manual accessibility/production gates pending; Phase 5 and Phase 6 have local checkpoints; Phase 7 private plans, counselling choice lists, application tracking, personal deadlines, checklists and in-app reminders are implemented and locally verified. Phase 8 local account, community, moderation and stale-safe evidence-review slices have passed focused checks, but Phase 8 remains **PARTIAL**: email recovery/verification, manual assistive-technology review and inherited production/data gates remain open. Phase 9 is active on `phase-9-production-hardening`. The local release gates and recovery rehearsal are recorded in the status document. Remote and owner gates remain open. Passing a phase requires recorded automated evidence and essential permitted browser/manual evidence; blocked checks prevent DONE. Phase 1 is not a production-readiness certification.
 
 | Phase | Scope and user outcome | Pass/fail acceptance | Dependencies / verification |
 | --- | --- | --- | --- |
@@ -53,6 +53,18 @@ Phase 1 audit is complete; Phase 2 local engineering is complete with production
 - [ ] Complete manual screen-reader/magnification review and owner-controlled production security, rate-limit, backup/restore and genuine-evidence review.
 
 Exact Phase 8 test evidence and the local-only limitation are recorded in `docs/UPGRADE_STATUS.md`. This snapshot is not a Phase 8 completion or production-readiness claim.
+
+### Phase 9 release gates
+
+- [x] Remove migration execution from deployment builds and reconcile Prisma declarations with the tracked migration history.
+- [x] Disable production demo seeding and require a working distributed limiter on sensitive production actions. Keep liveness independent of dependency readiness.
+- [x] Exercise fresh and legacy schema migration paths and restore a synthetic backup into a separate verified disposable database.
+- [x] Add blocking advisory and redacted secret scans to CI. Run desktop and mobile suites with isolated server lifecycles.
+- [ ] Verify the exact candidate SHA in remote GitHub Actions, then verify production configuration, rollout and rollback in an owner-approved environment.
+- [ ] Complete manual accessibility checks and collect owner evidence of historical credential revocation, distributed rate limits, backup retention and measured recovery readiness.
+- [ ] Obtain required source permissions and genuine reviewer decisions. Preserve the reviewed-only public projection.
+
+See [Production release and recovery](PRODUCTION_RELEASE.md) for the owner procedure and [Upgrade status](UPGRADE_STATUS.md) for exact test evidence.
 
 ## Full-catalogue research process
 

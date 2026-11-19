@@ -97,7 +97,7 @@ describe('seed endpoint (was: public and destructive)', () => {
     expect(await db.college.count()).toBe(1);
   });
 
-  it('fails closed for missing seed credentials and refuses synthetic data in production', async () => {
+  it('fails closed for missing seed credentials and refuses seeding in production even with the retired override', async () => {
     process.env.SEED_ENABLED = 'true';
     delete process.env.ADMIN_SEED_TOKEN;
     expect((await json(await seedRoute.POST(req('/api/seed', { method: 'POST' })))).status).toBe(404);
@@ -110,9 +110,10 @@ describe('seed endpoint (was: public and destructive)', () => {
       const response = await json(await seedRoute.POST(req('/api/seed?synthetic=true', {
         method: 'POST', headers: { authorization: `Bearer ${process.env.ADMIN_SEED_TOKEN}` },
       })));
-      expect(response.status).toBe(400);
+      expect(response.status).toBe(404);
       expect(await db.auditLog.count({ where: { action: 'seed.run' } })).toBe(0);
     } finally {
+      delete process.env.SEED_ALLOW_PRODUCTION;
       if (oldNodeEnv === undefined) Reflect.deleteProperty(process.env, 'NODE_ENV');
       else Reflect.set(process.env, 'NODE_ENV', oldNodeEnv);
     }

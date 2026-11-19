@@ -2,7 +2,6 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const state = vi.hoisted(() => ({
   extension: null as unknown,
-  poolOptions: null as unknown,
   adapterOptions: null as unknown,
 }));
 
@@ -10,7 +9,6 @@ vi.mock('@/lib/env', () => ({ getEnv: () => ({
   DATABASE_URL: 'postgresql://postgres:postgres@127.0.0.1:5432/fixture',
   DB_POOL_MAX: 3,
 }) }));
-vi.mock('pg', () => ({ default: { Pool: class { constructor(options: unknown) { state.poolOptions = options; } } } }));
 vi.mock('@prisma/adapter-pg', () => ({ PrismaPg: class { constructor(options: unknown) { state.adapterOptions = options; } } }));
 vi.mock('@prisma/client', () => ({ PrismaClient: class { $extends(extension: unknown) { state.extension = extension; return this; } } }));
 
@@ -27,8 +25,7 @@ describe('Prisma public evidence query extension', () => {
   });
 
   it('validates pool construction settings and filters before distinct/pagination', async () => {
-    expect(state.poolOptions).toMatchObject({ connectionString: expect.stringContaining('127.0.0.1'), max: 3, connectionTimeoutMillis: 10000 });
-    expect(state.adapterOptions).toBeDefined();
+    expect(state.adapterOptions).toMatchObject({ connectionString: expect.stringContaining('127.0.0.1'), max: 3, connectionTimeoutMillis: 10000, idleTimeoutMillis: 30000 });
     const args: Record<string, unknown> = { take: 1, skip: 1, distinct: ['year'], select: { year: true } };
     const query = vi.fn().mockResolvedValue([
       { id: 'a', year: 2026, decisions: approved() },

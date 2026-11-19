@@ -20,6 +20,6 @@ export const logger = {
 };
 
 export function errorFields(err: unknown): Record<string, unknown> {
-  if (err instanceof Error) return { errName: err.name, errMessage: err.message, stack: err.stack };
-  return { err: String(err) };
+  // Driver messages and stacks can contain connection URLs, query values or paths.
+  return { errorType: err instanceof Error ? err.constructor.name : typeof err };
 }

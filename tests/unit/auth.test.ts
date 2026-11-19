@@ -11,7 +11,7 @@ vi.mock('bcryptjs', () => ({ compare: mocks.compare }));
 vi.mock('@/lib/prisma', () => ({ prisma: { user: { findFirst: mocks.findFirst } } }));
 vi.mock('@/lib/rate-limit', () => ({ checkRateLimit: mocks.checkRateLimit }));
 
-import { authOptions, TOO_MANY_ATTEMPTS } from '@/lib/auth';
+import { authOptions, SIGN_IN_UNAVAILABLE, TOO_MANY_ATTEMPTS } from '@/lib/auth';
 
 type Provider = { authorize: (credentials: unknown, request?: { headers?: Record<string, unknown> }) => Promise<unknown> };
 const authorize = (authOptions.providers[0] as unknown as Provider).authorize;
@@ -35,6 +35,13 @@ describe('credentials authentication and JWT callbacks', () => {
     await expect(authorize({ email: 'user@example.test', password: 'correct horse battery' }, { headers: { 'x-forwarded-for': '203.0.113.4' } }))
       .rejects.toThrow(TOO_MANY_ATTEMPTS);
     expect(mocks.findFirst).not.toHaveBeenCalled();
+  });
+
+  it('does not expose provider details when the credential lookup fails', async () => {
+    mocks.findFirst.mockRejectedValueOnce(new Error('private driver details'));
+    await expect(authorize({ email: 'user@example.test', password: 'correct horse battery' }))
+      .rejects.toThrow(SIGN_IN_UNAVAILABLE);
+    expect(mocks.compare).not.toHaveBeenCalled();
   });
 
   it('uses the same dummy-hash comparison for unknown users and returns null on failure', async () => {

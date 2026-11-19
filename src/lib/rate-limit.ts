@@ -1,7 +1,8 @@
 import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
 import { ApiError } from './http';
-import { logger, errorFields } from './logger';
+import { logger } from './logger';
+import { createHmac } from 'node:crypto';
 
 export const RATE_LIMIT_POLICIES = {
   register: { limit: 5, windowSec: 3600 }, // per IP
@@ -56,44 +57,73 @@ export class MemoryRateLimiter {
 
 const memory = new MemoryRateLimiter();
 const upstashLimiters = new Map<RateLimitPolicy, Ratelimit>();
-let warnedNoRedis = false;
+const BACKEND_TIMEOUT_MS = 1200;
 
-function getUpstash(policy: RateLimitPolicy): Ratelimit | null {
+function disposableBrowserTest(): boolean {
+  const { TEST_DATABASE_URL, DATABASE_URL, COLLEGEFIND_TEST_DATABASE_CONFIRMED, VERCEL, RAILWAY_ENVIRONMENT_ID } = process.env;
+  if (VERCEL || RAILWAY_ENVIRONMENT_ID || COLLEGEFIND_TEST_DATABASE_CONFIRMED !== 'true'
+    || !TEST_DATABASE_URL || TEST_DATABASE_URL !== DATABASE_URL) return false;
+  try {
+    const url = new URL(TEST_DATABASE_URL);
+    return ['postgres:', 'postgresql:'].includes(url.protocol)
+      && ['localhost', '127.0.0.1'].includes(url.hostname)
+      && /^\/collegefind_(?:[a-z0-9]+_)*test$/.test(url.pathname)
+      && !url.search;
+  } catch { return false; }
+}
+
+function createRedis(): Redis | null {
   const url = process.env.UPSTASH_REDIS_REST_URL;
   const token = process.env.UPSTASH_REDIS_REST_TOKEN;
-  if (!url || !token) {
-    if (process.env.NODE_ENV === 'production' && !warnedNoRedis) {
-      warnedNoRedis = true;
-      logger.warn('rate_limit_memory_fallback', {
-        note: 'UPSTASH_REDIS_REST_URL/TOKEN not set; rate limits are per-instance only',
-      });
-    }
-    return null;
-  }
-  let limiter = upstashLimiters.get(policy);
-  if (!limiter) {
-    const { limit, windowSec } = RATE_LIMIT_POLICIES[policy];
-    limiter = new Ratelimit({
-      redis: new Redis({ url, token }),
-      limiter: Ratelimit.slidingWindow(limit, `${windowSec} s`),
-      prefix: `cf:rl:${policy}`,
-    });
-    upstashLimiters.set(policy, limiter);
-  }
+  if (!url || !token || new URL(url).protocol !== 'https:') return null;
+  return new Redis({ url, token, retry: false, signal: () => AbortSignal.timeout(BACKEND_TIMEOUT_MS) });
+}
+
+function getUpstash(policy: RateLimitPolicy): Ratelimit | null {
+  const existing = upstashLimiters.get(policy);
+  if (existing) return existing;
+  const redis = createRedis();
+  if (!redis) return null;
+  const { limit, windowSec } = RATE_LIMIT_POLICIES[policy];
+  const limiter = new Ratelimit({
+    redis,
+    limiter: Ratelimit.slidingWindow(limit, `${windowSec} s`),
+    prefix: `cf:rl:${policy}`,
+    timeout: BACKEND_TIMEOUT_MS,
+  });
+  upstashLimiters.set(policy, limiter);
   return limiter;
+}
+
+export function isRateLimitUnavailable(error: unknown): boolean {
+  return error instanceof ApiError && error.code === 'RATE_LIMIT_UNAVAILABLE';
+}
+
+export async function rateLimitBackendHealth(): Promise<'ok' | 'unavailable' | 'local'> {
+  try {
+    const redis = createRedis();
+    if (redis) return await redis.ping() === 'PONG' ? 'ok' : 'unavailable';
+    return process.env.NODE_ENV !== 'production' || disposableBrowserTest() ? 'local' : 'unavailable';
+  } catch { return 'unavailable'; }
 }
 
 export async function checkRateLimit(policy: RateLimitPolicy, key: string): Promise<RateLimitResult> {
   const { limit, windowSec } = RATE_LIMIT_POLICIES[policy];
-  const upstash = getUpstash(policy);
-  if (upstash) {
-    try {
-      const r = await upstash.limit(key);
-      return { success: r.success, remaining: r.remaining, resetAt: r.reset };
-    } catch (err) {
-      // Fail open on Redis outage so the site stays up, but log loudly.
-      logger.error('rate_limit_backend_error', { policy, ...errorFields(err) });
+  const secret = process.env.NEXTAUTH_SECRET;
+  try {
+    const upstash = getUpstash(policy);
+    if (upstash && secret) {
+      const identifier = createHmac('sha256', secret).update(key).digest('hex');
+      const result = await upstash.limit(identifier);
+      // Upstash returns success=true alongside reason=timeout by default.
+      if (result.reason === 'timeout') throw new Error('Rate limit backend timed out');
+      return { success: result.success, remaining: result.remaining, resetAt: result.reset };
     }
+  } catch {
+    logger.warn('rate_limit_backend_error', { policy });
+  }
+  if (process.env.NODE_ENV === 'production' && policy !== 'predict' && !disposableBrowserTest()) {
+    throw new ApiError(503, 'RATE_LIMIT_UNAVAILABLE', 'This action is temporarily unavailable. Please try again.', undefined, { 'Retry-After': '5' });
   }
   return memory.check(`${policy}:${key}`, limit, windowSec * 1000);
 }
@@ -111,4 +141,5 @@ export async function enforceRateLimit(policy: RateLimitPolicy, key: string): Pr
 
 export function resetRateLimitsForTests() {
   memory.reset();
+  upstashLimiters.clear();
 }

@@ -121,16 +121,17 @@ export const POST = withErrorHandling(async (request: Request) => {
 
   const { type, id, status, expectedStatus, reason, reportId } = input;
   await prisma.$transaction(async tx => {
+    const author = status === 'VISIBLE' ? { user: { deactivatedAt: null } } : {};
     const changed = type === 'question'
-      ? await tx.question.updateMany({ where: { id, status: expectedStatus }, data: { status } })
-      : await tx.answer.updateMany({ where: { id, status: expectedStatus }, data: { status } });
+      ? await tx.question.updateMany({ where: { id, status: expectedStatus, ...author }, data: { status } })
+      : await tx.answer.updateMany({ where: { id, status: expectedStatus, ...author }, data: { status } });
 
     if (!changed.count) {
       const exists = type === 'question'
         ? await tx.question.findUnique({ where: { id }, select: { id: true } })
         : await tx.answer.findUnique({ where: { id }, select: { id: true } });
       if (!exists) throw new ApiError(404, 'NOT_FOUND', 'Community item not found');
-      throw new ApiError(409, 'CONTENT_CHANGED', 'Community content changed. Reload the moderation queue before acting');
+      throw new ApiError(409, 'CONTENT_CHANGED', 'Community content changed or is no longer available. Reload the moderation queue before acting');
     }
 
     await tx.auditLog.create({
