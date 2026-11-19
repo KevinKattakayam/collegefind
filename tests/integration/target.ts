@@ -10,7 +10,11 @@ export function assertDisposableTestTarget(env: Record<string, string | undefine
   if (!['postgres:', 'postgresql:'].includes(parsed.protocol) || !parsed.hostname || parsed.pathname.length < 2) {
     throw new Error('TEST_DATABASE_URL must identify a PostgreSQL database.');
   }
-  const unsafe = /(?:^|[^a-z0-9])(prod|production|live|primary)(?:$|[^a-z0-9])/i.test(decodeURIComponent(parsed.pathname.slice(1)))
+  const databaseName = decodeURIComponent(parsed.pathname.slice(1));
+  const unsafe = /(?:^|[^a-z0-9])(prod|production|live|primary)(?:$|[^a-z0-9])/i.test(databaseName)
+    || /(?:^|_)owner_review(?:_|$)/i.test(databaseName)
+    || parsed.username.toLowerCase() === 'cf_owner_review'
+    || (parsed.hostname === '127.0.0.1' && parsed.port === '35441')
     || parsed.hostname.toLowerCase().startsWith('prod.');
   if (unsafe) throw new Error('TEST_DATABASE_URL target looks production-like and is refused.');
   return url;

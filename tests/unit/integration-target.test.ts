@@ -8,7 +8,11 @@ describe('integration database target guard', () => {
     expect(() => assertDisposableTestTarget({ TEST_DATABASE_URL: 'postgresql://postgres:postgres@localhost/test' })).toThrow(/COLLEGEFIND_TEST_DATABASE_CONFIRMED/);
   });
   it('rejects malformed, non-Postgres and production-like targets', () => {
-    for (const TEST_DATABASE_URL of ['nope', 'https://localhost/test', 'postgresql://localhost/production', 'postgresql://prod.db.example/test']) {
+    for (const TEST_DATABASE_URL of [
+      'nope', 'https://localhost/test', 'postgresql://localhost/production', 'postgresql://prod.db.example/test',
+      'postgresql://cf_owner_review@127.0.0.1:35441/collegefind_owner_review_main',
+      'postgresql://other@127.0.0.1:5432/collegefind_owner_review_main',
+    ]) {
       expect(() => assertDisposableTestTarget({ ...base, TEST_DATABASE_URL })).toThrow();
     }
   });

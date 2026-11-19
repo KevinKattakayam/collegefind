@@ -1,14 +1,14 @@
 # Owner evidence review: local persistent workflow
 
-**State: ready for owner provisioning, not yet operational.** No real claim is approved. Do not use the disposable databases named below to make genuine decisions.
+**State: persistent local review environment is provisioned and restored; awaiting the owner's account and decisions.** No real claim is approved. The persistent database is not a test target.
 
 ## Database disposition and required owner action
 
-The last documented read-only check (2026-11-18) found `collegefind_phase3_snapshot_owner_review_20261118_test` inside the `collegefind-phase3-disposable-20261118` container, mapped only to `127.0.0.1:35439`. It contained the 205-college/377-claim snapshot and zero users/decisions. Its `_test` name, test role and disposable container mean it is **not** an approved persistent owner-review database. It is not selected for review, and its state was not rechecked in this task.
+The old `collegefind_phase3_snapshot_owner_review_20261118_test` database was a disposable clone and is not a review destination. A new persistent local service was provisioned on 2026-11-19 after checking its proposed container, volume, port, environment file and storage paths were absent. Its exact identity is `collegefind_owner_review_main|cf_owner_review|5432`, bound on the host only to `127.0.0.1:35441`. It uses Docker container `collegefind-owner-review-postgres`, named volume `collegefind-owner-review-pgdata`, and PostgreSQL 16. The runtime role is not a superuser and cannot create databases. Private state and logs are under `${HOME}/.local/share/collegefind-owner-review/`; the encrypted backup directory is `${HOME}/.local/share/collegefind-owner-review/backups/`. The application environment is the ignored mode-600 repository `.env.local`.
 
-**Owner action required:** select or provision a durable, local, non-production PostgreSQL service with a named persistent volume and encrypted backup location. Keep it separate from all integration/browser databases. The setup below uses the dedicated name `collegefind_owner_review_main`, a non-superuser database-owner role `cf_owner_review`, loopback port `35441`, and a persistent Docker volume; the owner must create and protect separate bootstrap/runtime passwords using a local secret manager/file. Do not put credentials in the repository, shell history, command output, or this guide. Do not reuse the historical Phase 3 `cf_phase3_test` role, ports 35439/35440, the default development database, production, or DevSync.
+The owner-review database is separate from all integration/browser databases. The bootstrap/runtime credentials and stable local `NEXTAUTH_SECRET` are generated and stored in mode-600 files under the private directory; none are included in repository files or output. Do not put credentials in shell history or this guide. Do not reuse the historical Phase 3 `cf_phase3_test` role, ports 35439/35440, the default development database, production, or DevSync.
 
-An owner may provision the suggested local service only after choosing that storage location and backup policy:
+For a future new installation only, the original safe provisioning recipe is retained below. It refuses no conflicts by itself, so check the exact proposed names/port and private paths first. **Do not rerun it on this machine:** the named container, volume, database and env file already exist.
 
 ```bash
 set -euo pipefail
@@ -52,7 +52,7 @@ Confirm the database name, role, `127.0.0.1:35441` mapping, persistent volume, P
 
 The old `scripts/rehearse-staging-snapshot.ts` and `scripts/export-staging-snapshot.ts` are deliberately disposable-test-only. The exporter refuses a database containing users or review decisions; do not weaken either guard or use those commands for owner progress.
 
-After owner provisioning and independent identity verification, load the owner's URL from a private, mode-600 local environment file as `OWNER_REVIEW_DATABASE_URL` (not `TEST_DATABASE_URL`). Set the confirmation only after verifying the target. First apply the existing additive Prisma migrations to this owner-selected database, with test/production overrides unset; then dry-run and explicitly restore the checksummed archive:
+The initial migration and archive restore were completed on the new target and independently checked after restart. For a future empty owner target, the guarded commands are below. On this machine, do not repeat `--apply` unless restoring a newly created, independently verified empty owner database. The current database is populated, and a repeat is read-only/idempotent:
 
 ```bash
 set -euo pipefail
@@ -77,7 +77,7 @@ The restore rehearsal completed on 2026-11-19 in a newly created ephemeral conta
 
 ## Start the local reviewer and grant only the owner's account
 
-Keep `.env.local` untracked and mode 600. It should point `DATABASE_URL` and `OWNER_REVIEW_DATABASE_URL` only at the verified local owner database, use `NEXTAUTH_URL=http://127.0.0.1:3317`, and contain an owner-generated `NEXTAUTH_SECRET` of at least 32 characters. Do not set test confirmation, test URLs, `DIRECT_URL`, `SHADOW_DATABASE_URL`, production credentials, or live Redis settings for the app. Start the app on loopback:
+`.env.local` has been created, is Git-ignored and mode 600. It points `DATABASE_URL` and `OWNER_REVIEW_DATABASE_URL` only at this verified local owner database, uses `NEXTAUTH_URL=http://127.0.0.1:3317`, and contains a generated local `NEXTAUTH_SECRET`. The app is currently running on loopback port 3317. To restart it after stopping, run:
 
 ```bash
 set -euo pipefail
@@ -88,9 +88,10 @@ set +a
 unset TEST_DATABASE_URL COLLEGEFIND_TEST_DATABASE_CONFIRMED DIRECT_URL SHADOW_DATABASE_URL
 export DATABASE_URL="$OWNER_REVIEW_DATABASE_URL"
 export UPSTASH_REDIS_REST_URL='' UPSTASH_REDIS_REST_TOKEN='' ADMIN_SEED_TOKEN=''
-export NEXTAUTH_SECRET="$(openssl rand -base64 32)"
 npm run dev -- --hostname 127.0.0.1 --port 3317
 ```
+
+To start PostgreSQL after a host reboot, use `docker start collegefind-owner-review-postgres`. To stop it safely without deleting its data, use `docker stop collegefind-owner-review-postgres`; the named volume remains. Stop the app with Ctrl+C in its managed terminal, then use the command above to restart it. Do not use `docker rm`, `docker volume rm` or `docker compose down -v` for this owner database.
 
 In a browser on that machine, visit `http://127.0.0.1:3317/register` and create **your own** account. Registration grants only USER. Recheck the local database identity, then in a separate terminal use the same private environment and a parameterized update; this intentionally refuses zero or multiple matching USER accounts:
 
@@ -101,6 +102,7 @@ set -a
 . ./.env.local
 set +a
 export DATABASE_URL="$OWNER_REVIEW_DATABASE_URL"
+export PGPASSFILE="$HOME/.local/share/collegefind-owner-review/secrets/pgpass"
 psql -X -h 127.0.0.1 -p 35441 -U cf_owner_review -d collegefind_owner_review_main <<'SQL'
 \prompt 'Email used for the account you just registered: ' owner_email
 BEGIN;
@@ -133,35 +135,56 @@ The 25 claims break down as: 8 CMI/IIM Calcutta programme/admission claims, 1 SP
 
 ## Preserve and restore owner progress
 
-Once a human has registered, the database contains private account identifiers and reviewer decisions. Back up the **whole owner-review database**, not the staged-evidence JSON exporter. Use an encrypted, access-controlled backup location, a mode-600 `.pgpass`, and no shell tracing. Never upload plaintext dumps or print connection strings:
+Once a human has registered, the database contains private account identifiers and reviewer decisions. Back up the **whole owner-review database**, not the staged-evidence JSON exporter. Use the encrypted, access-controlled backup location, mode-600 `.pgpass` and backup passphrase file, and no shell tracing. Never upload plaintext dumps or print connection strings. GPG is available locally; `age` is not. The initial empty-review-state archive was validated (encrypted file checksum is recorded in `UPGRADE_STATUS.md`):
 
-The preferred form streams a custom dump directly to local age encryption (so a plaintext archive is not left behind). Store the passphrase/key separately. `age` must be installed and encryption must complete before the backup is considered usable:
+Use the local GPG installation with a passphrase stored separately in the mode-700 private storage directory. The backup is encrypted at rest; verification briefly decrypts to a mode-600 temporary file so `pg_restore --list` can validate the full archive, then removes that plaintext file. Do not upload plaintext dumps or print connection strings:
 
 ```bash
 set -euo pipefail
 set +x
 umask 077
 BACKUP_DIR="${HOME}/.local/share/collegefind-owner-review/backups"
+SECRET_DIR="${HOME}/.local/share/collegefind-owner-review/secrets"
 mkdir -p "$BACKUP_DIR"
 chmod 700 "$BACKUP_DIR"
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
+BACKUP="$BACKUP_DIR/collegefind-owner-review-$STAMP.dump.gpg"
+test ! -e "$BACKUP"
+CHECK="$(mktemp "$BACKUP_DIR/.restore-check.XXXXXX")"
+trap 'rm -f -- "$CHECK"' EXIT
+umask 077
+PGPASSFILE="$SECRET_DIR/pgpass" \
 pg_dump -h 127.0.0.1 -p 35441 -U cf_owner_review -d collegefind_owner_review_main \
   --format=custom --no-owner --no-privileges \
-  | age -p -o "$BACKUP_DIR/collegefind-owner-review-$STAMP.dump.age"
-sha256sum "$BACKUP_DIR/collegefind-owner-review-$STAMP.dump.age"
+  | gpg --batch --yes --quiet --pinentry-mode loopback \
+      --passphrase-file "$SECRET_DIR/backup-passphrase" --symmetric --cipher-algo AES256 --output "$BACKUP"
+gpg --batch --quiet --pinentry-mode loopback --passphrase-file "$SECRET_DIR/backup-passphrase" \
+  --decrypt --output "$CHECK" "$BACKUP"
+pg_restore --list "$CHECK" >/dev/null
+rm -f -- "$CHECK"
+trap - EXIT
+sha256sum "$BACKUP"
 ```
 
 Test recovery into a **new, separately named local database**, after independently checking the target:
 
 ```bash
 RECOVERY_DB="collegefind_owner_review_recovery_$(date -u +%Y%m%dT%H%M%S)"
-createdb -h 127.0.0.1 -p 35441 -U cf_local_pg_admin -O cf_owner_review "$RECOVERY_DB"
-age -d "$BACKUP_DIR/collegefind-owner-review-$STAMP.dump.age" \
-  | pg_restore -h 127.0.0.1 -p 35441 -U cf_owner_review -d "$RECOVERY_DB" \
-      --single-transaction --exit-on-error --no-owner --no-privileges
+PGPASSFILE="$SECRET_DIR/pgpass-admin" createdb -h 127.0.0.1 -p 35441 -U cf_local_pg_admin -O cf_owner_review "$RECOVERY_DB"
+umask 077
+CHECK="$(mktemp "$BACKUP_DIR/.restore-check.XXXXXX")"
+trap 'rm -f -- "$CHECK"' EXIT
+gpg --batch --quiet --pinentry-mode loopback --passphrase-file "$SECRET_DIR/backup-passphrase" \
+  --decrypt --output "$CHECK" "$BACKUP"
+pg_restore -h 127.0.0.1 -p 35441 -U cf_owner_review -d "$RECOVERY_DB" \
+  --single-transaction --exit-on-error --no-owner --no-privileges "$CHECK"
+rm -f -- "$CHECK"
+trap - EXIT
 ```
 
 Never use `--clean`. Verify schema/migration status, 205 catalogue identities, claim/source/run/audit/decision/user counts and selected decision/audit rows, then point a local app only at the recovered database. Do not test restore by overwriting the live owner-review database. Record the encrypted dump checksum and restore counts without recording email addresses or other private values. Schedule backups after each review session and before migrations/imports.
+
+For disaster recovery, keep a protected copy of `secrets/backup-passphrase` in an owner-controlled location separate from this workstation/volume. A GPG-encrypted backup without its passphrase is not recoverable; storing both only on the same disk does not protect against loss of that disk.
 
 ## Current factual and operational counts
 
@@ -169,4 +192,5 @@ Never use `--clean`. Verify schema/migration status, 205 catalogue identities, c
 - Human inspection packet: 25; current unreviewed substantive open queue: 214; separate held claims: 16.
 - Genuine human approvals: 0; verified colleges: 0; verified official cutoff records: 0.
 - Synthetic approvals are test-only and are never included in these counts.
-- The documented disposable review clone is not a persistent review database. The owner must provision/select the durable local target and execute its guarded restore/account setup; no evidence decision has been made in this work.
+- Persistent owner-review database restored: 205 colleges, 269 sources, 377 claims, 293 import runs and 377 staging audits; users and decisions are both 0. The first 25 packet claims reconcile to rows in this database.
+- The owner still must register their own account, promote only that account using the guarded local procedure, log out/in, then review each claim individually. The running app currently redirects anonymous `/admin/enrichment` access and returns 401 for unauthenticated evidence API access.
