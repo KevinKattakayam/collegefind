@@ -951,6 +951,17 @@ input[type="radio"] {
 .skip-link:focus {
   top: 0.5rem;
 }
+@media print {
+  body * { visibility: hidden !important; }
+  [data-print-choice-list="true"], [data-print-choice-list="true"] * { visibility: visible !important; }
+  [data-print-choice-list="true"] {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

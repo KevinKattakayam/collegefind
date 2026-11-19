@@ -132,6 +132,9 @@ model College {
   aliases          InstitutionAlias[]
   evidence         FieldEvidence[]
   savedBy          SavedCollege[]
+  planChoices      PlanChoice[]
+  planApplications PlanApplication[]
+  planTasks        PlanTask[]
   questions        Question[]
   programs         Program[]
   feesRecords      FeesRecord[]
@@ -161,6 +164,7 @@ model Program {
   cutoffs          CutoffRecord[]
   feesRecords      FeesRecord[]
   placementRecords PlacementRecord[]
+  planChoices      PlanChoice[]
 
   @@unique([collegeId, name])
   @@index([collegeId])
@@ -298,6 +302,7 @@ model User {
   answers           Answer[]
   reviews           Review[]
   auditLogs         AuditLog[]
+  admissionPlans    AdmissionPlan[]
 }
 
 model SavedCollege {
@@ -323,6 +328,94 @@ model SavedComparison {
 
   @@unique([userId, signature])
   @@index([userId])
+}
+
+model AdmissionPlan {
+  id           String            @id @default(cuid())
+  userId       String
+  name         String
+  cycle        String
+  authority    String?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  user         User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  choices      PlanChoice[]
+  applications PlanApplication[]
+  tasks        PlanTask[]
+
+  @@unique([userId, name, cycle])
+  @@index([userId, updatedAt(sort: Desc), id])
+}
+
+model PlanChoice {
+  id              String           @id @default(cuid())
+  planId          String
+  collegeId       String?
+  programId       String?
+  cycle           String
+  label           String
+  position        Int
+  note            String?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  plan            AdmissionPlan    @relation(fields: [planId], references: [id], onDelete: Cascade)
+  college         College?         @relation(fields: [collegeId], references: [id], onDelete: SetNull)
+  program         Program?         @relation(fields: [programId], references: [id], onDelete: SetNull)
+  planApplication PlanApplication?
+
+  @@unique([planId, cycle, label])
+  @@unique([planId, position])
+  @@index([planId, cycle, position])
+}
+
+model PlanApplication {
+  id                 String        @id @default(cuid())
+  planId             String
+  choiceId           String?       @unique
+  version            Int           @default(0)
+  collegeId          String?
+  institutionName    String?
+  programName        String?
+  counsellingDetails String?
+  status             String        @default("INTERESTED")
+  cycle              String
+  submittedAt        DateTime?
+  nextAction         String?
+  note               String?
+  reference          String?
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+  plan               AdmissionPlan @relation(fields: [planId], references: [id], onDelete: Cascade)
+  choice             PlanChoice?   @relation(fields: [choiceId], references: [id], onDelete: SetNull)
+  college            College?      @relation(fields: [collegeId], references: [id], onDelete: SetNull)
+  tasks              PlanTask[]
+
+  @@index([planId, status, updatedAt(sort: Desc)])
+  @@index([planId, collegeId, status])
+}
+
+model PlanTask {
+  id            String           @id @default(cuid())
+  planId        String
+  applicationId String?
+  collegeId     String?
+  version       Int              @default(0)
+  title         String
+  description   String?
+  kind          String
+  dueAt         DateTime?
+  timeZone      String
+  completedAt   DateTime?
+  note          String?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  plan          AdmissionPlan    @relation(fields: [planId], references: [id], onDelete: Cascade)
+  application   PlanApplication? @relation(fields: [applicationId], references: [id], onDelete: SetNull)
+  college       College?         @relation(fields: [collegeId], references: [id], onDelete: SetNull)
+
+  @@index([planId, completedAt, dueAt])
+  @@index([planId, applicationId])
+  @@index([planId, collegeId])
 }
 
 model Question {
