@@ -2,6 +2,190 @@
   "catalogueSize": 205,
   "asOf": "2026-11-18T16:29:37Z",
   "verifiedRealClaims": 0,
+  "phase4CutoffCoverage": {
+    "checkedAt": "2026-11-19",
+    "catalogueInstitutions": 205,
+    "officialCutoffClaimsRecordedInCoverageLedger": 0,
+    "genuinelyVerifiedCutoffClaims": 0,
+    "productionDatabaseQueried": false,
+    "testDatabaseRowsAreOfficialCoverage": false,
+    "note": "The repository research manifests and coverage ledger contain no staged JoSAA/MCC/state cutoff records. NIRF candidates are rankings, not cutoff data. Disposable test records are synthetic and excluded from coverage.",
+    "performanceVerification": {
+      "environment": "verified loopback-only disposable PostgreSQL collegefind_phase4_migration_test; local warm-cache measurements",
+      "syntheticRows": 2001,
+      "institutions": 12,
+      "programmes": 12,
+      "sources": 4,
+      "warmups": 10,
+      "samplesPerQuery": 100,
+      "latencyMsP50P95P99": {
+        "nonselectivePage1": [
+          15.125,
+          16.088,
+          24.942
+        ],
+        "nonselectivePage21": [
+          19.227,
+          20.194,
+          23.257
+        ],
+        "selectivePage": [
+          3.392,
+          3.91,
+          4.158
+        ],
+        "nonselectiveCount": [
+          7.219,
+          12.584,
+          13.166
+        ],
+        "selectiveCount": [
+          1.879,
+          2.818,
+          3.061
+        ]
+      },
+      "explainFindings": [
+        "EvidenceDecision_cutoffId_createdAt_id_idx used for latest-decision lookup",
+        "selective CutoffRecord query uses CutoffRecord_exam_category_seatPool_year_idx",
+        "broad query scans all 2001 synthetic cutoff rows",
+        "zero shared-read blocks in measured warm-cache plans"
+      ],
+      "productionPerformanceClaim": false,
+      "tests": "Latest verified run after evidenceLocator projection: 2,001-row integration case, 100 samples/query, 10 warmups; actual EXPLAIN findings and conditions are recorded in DATA_COVERAGE.md and UPGRADE_STATUS.md."
+    },
+    "correctnessVerification": {
+      "checkedAt": "2026-11-19",
+      "command": "npx vitest run --project integration tests/integration/cutoff-explorer.test.ts tests/integration/josaa-ingest.test.ts --reporter=dot",
+      "result": "PASS",
+      "testsPassed": 18,
+      "syntheticRows": [
+        61,
+        2001
+      ],
+      "covered": [
+        "pagination and total counts",
+        "stable ID tie-break ordering",
+        "compound database filters",
+        "latest reviewer decision",
+        "rank/source attribution",
+        "UNSPECIFIED legacy dimensions",
+        "out-of-range page clamp",
+        "invalid API filter HTTP 400",
+        "fully scoped rank-trend selection and ambiguous identity rejection",
+        "year/round missing-gap materialization and source/evidence locator retention"
+      ]
+    },
+    "browserVerification": {
+      "checkedAt": "2026-11-19",
+      "command": "npx playwright test tests/e2e/smoke.spec.ts tests/e2e/admin.spec.ts --workers=1 --reporter=list",
+      "result": "PASS",
+      "testsPassed": 24,
+      "projects": [
+        "chromium",
+        "mobile"
+      ],
+      "syntheticData": true,
+      "covered": [
+        "filter URL refresh and Back/Forward restoration",
+        "invalid and empty states",
+        "mobile viewport overflow",
+        "profile-to-explorer navigation",
+        "source attribution",
+        "rank trend/table semantics, evidence location, noindex 404 state, reviewer audit workflow, desktop/mobile layouts",
+        "keyboard-only cutoff filtering, visible focus and polite live result announcement"
+      ]
+    },
+    "sourceUse": {
+      "provider": "JoSAA official OR/CR pages and archive",
+      "officialPages": [
+        "https://josaa.nic.in/or-cr/",
+        "https://josaa.admissions.nic.in/applicant/seatmatrix/openingclosingrankarchieve.aspx",
+        "https://josaa.admissions.nic.in/Applicant/SeatAllotmentResult/CurrentORCR.aspx"
+      ],
+      "currentRankSemanticsChecked": true,
+      "publicListingAccessible": true,
+      "automatedExtractionPermission": "UNRESOLVED",
+      "storageAndRedistributionPermission": "WRITTEN_PERMISSION_REQUIRED_OR_COMPATIBLE_OPEN_LICENSE",
+      "realRecordsImported": 0,
+      "realClaimsStaged": 0,
+      "genuinelyVerified": 0
+    },
+    "schema": {
+      "additiveMigration": "20261119030000_cutoff_source_locator",
+      "evidenceLocator": "Nullable CutoffRecord.evidenceLocator stores row/page references for new imports; legacy rows remain null. No source document text is copied.",
+      "migrationCountOnDisposableDatabase": 8,
+      "existingSyntheticCutoffRowsPreserved": 2001
+    },
+    "trendVerification": {
+      "checkedAt": "2026-11-19",
+      "state": "IMPLEMENTED_AND_TESTED_WITH_SYNTHETIC_DISPOSABLE_RECORDS",
+      "seriesScope": [
+        "exact college",
+        "unambiguous programme",
+        "counselling system",
+        "rank type",
+        "exam",
+        "reservation category",
+        "quota",
+        "seat pool",
+        "PwD setting",
+        "RANK metric"
+      ],
+      "behavior": [
+        "opening and closing ranks remain distinct",
+        "unrelated counselling/programme/category/quota/seat-pool series are not combined",
+        "missing year/round combinations render explicit gaps and break chart lines",
+        "null opening values remain unknown",
+        "no extrapolation",
+        "source/publisher/year/publication/retrieval/review/evidence-location are available in accessible table alternative",
+        "empty, single-observation, non-rank and ambiguous cases have explicit states",
+        "keyboard navigation submits filters and the result count is announced through aria-live"
+      ],
+      "testFiles": [
+        "tests/unit/cutoff-trend.test.ts",
+        "tests/integration/cutoff-explorer.test.ts",
+        "tests/e2e/smoke.spec.ts"
+      ],
+      "genuineOfficialRows": 0,
+      "syntheticRowsCountAsOfficial": false
+    },
+    "phase4Acceptance": {
+      "checkedAt": "2026-11-19",
+      "results": [
+        {
+          "requirement": "Scoped historical trend, missing gaps, rank semantics, source attribution and accessible table alternative",
+          "status": "PASS",
+          "evidence": "114 unit tests and 18 cutoff/JoSAA integration tests passed; desktop/mobile Playwright verifies synthetic reviewed trend rows only."
+        },
+        {
+          "requirement": "Cutoff correctness, filtering, count, stable pagination and 2,001-row local performance",
+          "status": "PASS_LOCAL_SYNTHETIC",
+          "evidence": "2,001 rows / 21 pages reconciled; measurements and plans in DATA_COVERAGE.md. Not production SLA evidence."
+        },
+        {
+          "requirement": "Profile/cutoff authorization, verified-only projection and DEMO/fixture exclusion",
+          "status": "PASS_AUTOMATED_SYNTHETIC",
+          "evidence": "22 desktop/mobile Playwright tests include reviewer workflow and public projection using synthetic disposable records; zero genuine approvals."
+        },
+        {
+          "requirement": "Automated accessibility labels, chart description/table, keyboard focus and mobile overflow",
+          "status": "PASS_FOCUSED_AUTOMATION",
+          "evidence": "Browser smoke coverage. Manual screen-reader and broader assistive-technology review remains open."
+        },
+        {
+          "requirement": "Legitimate official cutoff ingestion and genuine reviewer approval",
+          "status": "BLOCKED",
+          "evidence": "No suitable open reuse permission established; zero real rows imported/staged/verified."
+        },
+        {
+          "requirement": "Owner-controlled production security, backup/restore and release readiness",
+          "status": "BLOCKED",
+          "evidence": "Phase 2/3 owner evidence remains outstanding; no production access."
+        }
+      ]
+    }
+  },
   "institutions": [
     {
       "slug": "indian-institute-of-technology-bombay",

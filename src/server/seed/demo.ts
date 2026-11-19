@@ -116,6 +116,8 @@ export async function seedSyntheticCutoffs(db: PrismaClient): Promise<{ records:
                 const data = {
                   programId: program.id,
                   exam: 'JEE_MAIN' as const,
+                  counsellingSystem: 'UNSPECIFIED' as const,
+                  rankType: 'UNSPECIFIED' as const,
                   year: Number(yearStr),
                   round,
                   quota,
@@ -132,6 +134,7 @@ export async function seedSyntheticCutoffs(db: PrismaClient): Promise<{ records:
                     naturalKey: {
                       programId: data.programId,
                       exam: data.exam,
+                      counsellingSystem: data.counsellingSystem,
                       year: data.year,
                       round,
                       quota,

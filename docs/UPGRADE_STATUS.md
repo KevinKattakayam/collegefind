@@ -1,6 +1,6 @@
 # CollegeFind V3 upgrade status and evidence
 
-Status refreshed: 2026-11-18 16:29 UTC. Current work is local on `phase-3-catalogue-enrichment`; Phase 2 implementation is complete locally, with owner-controlled production security/recovery checks still blocking production release. Phase 3 is in progress: all 205 college research dispositions remain recorded. The latest disposable snapshot has 377 claims (147 source-reference claims and 230 substantive claims) across 205 colleges, with 123 colleges holding staged substantive evidence. All real claims remain unreviewed; there are zero genuine human approvals, zero genuinely VERIFIED claims and zero fully enriched colleges. The original 205 catalogue identities, slugs, seed data, source history and audit history are preserved. Historical audit entries below remain historical; the latest continuation evidence is at the end of this file.
+Status refreshed: 2026-11-19. Current work is local on `phase-4-profiles-cutoffs`; Phase 2 local engineering and Phase 3 engineering remain subject to owner-controlled production/data blockers. Phase 4 profile/cutoff work is in progress. The Phase 3 coverage baseline remains 205 college research dispositions, 377 STAGED claims (147 reference and 230 substantive) across 123 colleges with substantive staged evidence; 82 have no substantive staged facts. Genuine approvals/VERIFIED claims/fully enriched colleges remain 0/0/0. The original 205 catalogue identities, slugs, seed data, source history and audit history are preserved. Phase 4 has added a cutoff-specific coverage baseline of 0 staged official cutoff claims and 0 genuinely verified cutoff claims. Historical entries below retain their dates and describe the evidence then current; this increment is appended at the end.
 
 ## Carried-forward engineering evidence (not rerun)
 
@@ -1539,6 +1539,49 @@ No code changes were made beyond the focused browser test. Current owners still 
 
 The only remaining human-review blocker is owner-side access: there is no owner account in the evidence archive and registration alone creates a USER. The owner must restore the latest snapshot into a fresh local review database, create their own account, promote only that account to ADMIN after verifying the local DB target, and then inspect/decide the 25-claim packet. Sixteen existing holds remain untouched. Source-specific rights/campus review is required per claim; no genuine verification was achieved here.
 
+## Phase 4 cutoff scale, source and UX verification — 2026-11-19
+
+Branch remains `phase-4-profiles-cutoffs`. This increment preserved all 205 original catalogue entries and stable slugs, the Phase 3 evidence/review history, and the uncommitted Phase 4 work. No production, DevSync, owner-review database, account, credential or source record was changed. The disposable test target was `collegefind_phase4_migration_test` on loopback `127.0.0.1:35440`; the test suite populated it only with synthetic rows and reviewer decisions. It is not official cutoff coverage.
+
+### Implementation and issue fixed
+
+- The explorer now clamps a requested page beyond the filtered result's last page to the last page (page 1 for an empty result), retaining accurate total counts rather than rendering a misleading empty page.
+- Added a client filter form that synchronizes inputs from the URL on browser Back/Forward and `pageshow`; server query parameters remain the source of truth. The regression had been exposed by browser checks: URL changed to the previous filters but the restored input retained the newer value. No assertion was weakened.
+- Added API regression coverage requiring invalid year ranges to return HTTP 400 before a database query.
+- Measurement showed repeated latest-review lookups were costly. Added Prisma index `EvidenceDecision(cutoffId, createdAt DESC, id DESC)` in additive migration `20261119020000_cutoff_review_lookup_index`. The new index is performance-only and preserves rows/relationships. `EXPLAIN ANALYZE` now uses it for the latest decision. The selective cutoff filter uses the existing `CutoffRecord_exam_category_seatPool_year_idx`; the broad fixture query sequentially scans 2,001 cutoff rows, as expected for the complete result set.
+
+### Scale correctness and local performance
+
+`npx vitest run --project integration tests/integration/cutoff-explorer.test.ts --reporter=dot` — **PASS, 6/6** against the verified disposable database. Tests cover 61 records over default pages and 2,001 records over 21 pages; multiple institutions/programmes, years, systems, exams, categories, quotas, seat pools, rounds, metrics and rank types; tied display/sort values with ID tie-breaker; missing dimensions defaulted to `UNSPECIFIED`; rank/source metadata; approved/rejected/latest-review projection; compound filters; page boundaries and out-of-range page clamp. Every page was compared with independent deterministic expected rows/counts. Invalid API range returns 400. `npx prisma migrate status` with the disposable environment reported seven migrations and schema up to date. An earlier invocation omitted that environment, targeted unavailable `localhost:5432`, and exited P1001 without connecting; it was not used for tests or writes.
+
+The 2,001-row benchmark used ten warmups and 100 samples for each production query shape. Latencies (milliseconds, p50/p95/p99) were: nonselective page 1 **14.896/16.545/22.377**; nonselective page 21 **19.178/20.938/22.330**; selective page **2.293/4.987/5.657**; nonselective filtered count **7.081/10.734/12.563**; selective count **2.366/3.858/4.799**. The plans had zero shared-read blocks in these warm-cache measurements. These are local synthetic results only, not production promises. Before the index, this same harness recorded roughly 275 ms p50 for a broad page and 2,001 sequential evidence-decision lookups; the final plan used the new index and reported roughly 15 ms p50.
+
+### Official-source assessment
+
+The official JoSAA OR/CR page exposes the current-year rank listing and links to earlier-year materials; the archive page offers year, round, institute/programme and category dimensions. JoSAA's current public page defines OPEN as CRL, reserved seats as the respective category rank, PwD ranks within category, and `P` as preparatory rank. Its copyright policy says reproduction requires proper permission from NIC/stakeholders and separately requires rights-holder permission for third-party material. This is not an open bulk-reuse licence. We did not bypass dynamic pages/access controls or infer that public viewing permits automated extraction, repository storage or redistribution. No source-specific reproduction approval or permissively licensed official cutoff dataset was established. **No real cutoff was imported or staged; official staged/genuinely verified counts remain 0/0.** JoSAA candidates are still the practical pilot source only after written permission for the intended extraction/storage/display, or discovery of a suitable licensed dataset. NIRF rankings are not cutoffs.
+
+### Browser, build and code checks
+
+After fixing URL-state restoration, `npx playwright test tests/e2e/smoke.spec.ts --grep 'cutoff explorer|college profile links to its own reviewed cutoff history' --reporter=list` — **PASS, 6/6**, desktop Chromium and Pixel 7. It verified filters after submit/reload/Back/Forward, invalid-filter state and clear action, no viewport-level horizontal overflow at mobile width, profile-to-explorer navigation, and source attribution from a synthetic reviewed record. The immediately preceding run had 4 passes and 2 failures on the stale input after browser Back; this regression was fixed and the same assertions then passed.
+
+`npx next build --webpack` with the disposable database and throwaway local auth secret — **PASS** after the UI change; expected `.next` production routes include `/cutoffs` and `/api/cutoffs`. `npm run lint` — **PASS**; `npm run typecheck` — **PASS**; `npm test -- --run tests/unit/cutoff-query.test.ts` — **PASS, 2/2**; `git diff --check` — **PASS**. Prisma generation had passed after the schema/index update. No production setting or secret was read/changed. Local performance and browser checks do not establish deployed health.
+
+### Phase 4 acceptance snapshot
+
+| Area | Status | Evidence / remaining limit |
+|---|---|---|
+| Complete server-side filtering/counting/pagination and stable order | **PASS (tested to 2,001 synthetic rows)** | Six integration tests, all-page ID reconciliation, API validation and 61-row default-limit regression coverage. No production-scale/SLA claim. |
+| Query performance and indexes | **PASS (local measurement)** | EXPLAIN verified index use and latency distribution above; production workload/profile still unmeasured. |
+| Desktop/mobile cutoff navigation and accessible filter labels | **PASS (focused browser scope)** | Six desktop/mobile cutoff smoke checks. Full screen-reader/keyboard/manual profile audit remains open. |
+| Verified-only projection and fixture isolation | **PASS (automated synthetic tests)** | Approved rows only; latest reject removes a row; demo, unreviewed and insecure-source rows excluded. Synthetic reviewer decisions are not real approvals. |
+| Legacy missing dimensions | **PASS** | Existing unknown counselling/rank dimensions remain `UNSPECIFIED`; no inference. |
+| Official cutoff coverage | **BLOCKED / 0 records** | JoSAA source use terms require permission for reproduction; no explicit permission or suitable open licensed data found. Obtain written use approval or a compatible official dataset before importing. |
+| Cutoff evidence row/page locator and trends | **PARTIAL** | Source URL/dates/publisher preserved; schema does not yet capture precise row/page locator; trend charts remain absent. |
+| Genuine official data and reviewer approvals | **BLOCKED / 0** | No actual cutoffs staged or approved; public explorer correctly shows empty state. Human review and source permission remain required. |
+| Production readiness | **BLOCKED** | Existing Phase 2/3 owner-controlled security, backups, credentials and deployment verification blockers remain unchanged. No production access occurred. |
+
+Performance migration rollback is documented in `docs/UPGRADE_PLAN.md`; it is an additive, data-preserving index. A production rollback or migration still requires owner authorization and a verified backup. Next scoped work: confirm JoSAA permitted-use terms or select an appropriately licensed source, then implement a reviewed source locator/staging pilot without changing the zero verified count until a genuine reviewer decision.
+
 ## Owner-review workflow completion — 2026-11-18
 
 Branch remains `phase-3-catalogue-enrichment` at `19d8c91`; existing work and the 205 original identities are preserved. No production or DevSync resources, credentials, account roles or real decisions were changed.
@@ -1630,3 +1673,103 @@ Added an 82-entry machine-readable backlog under `substantiveResearchSummary.sub
 **Decision: CONDITIONAL GO for Phase 4 local engineering only.** Phase 4 may proceed on local/disposable data while all public projections remain verified-only, unknown/demo/unreviewed states remain explicit, and no production resources are touched. Any Phase 4 acceptance item that requires genuine verified records is blocked until the owner reviews and approves eligible evidence. Production release remains NO-GO pending owner-side security and restore evidence.
 
 Next owner action: complete the local account setup and review the first packet. Next engineering task if proceeding: Phase 4's bounded cutoff exploration/profile work behind the existing reviewed-data projection, with no assumptions that staged evidence is verified.
+
+## Phase 4 local increment — profiles and cutoff explorer — 2026-11-19
+
+Branch: `phase-4-profiles-cutoffs`. The Phase 3 local checkpoint is `02661ec` (`chore: checkpoint Phase 3 enrichment work`), created before this branch from the reviewed local Phase 3 worktree. The existing untracked `CollegeFind_AGENTS_V3.md` was preserved and not altered. No Phase 4 commit, push, merge or deployment was made.
+
+### Implemented
+
+- Reworked the college detail page into clearer programme/admissions, fee/scholarship, accreditation/ranking, placement/facility/contact, and historical cutoff sections. It consumes the existing reviewed public projection, includes source publication/collection/review dates where facts are available, retains the DEMO label, and gives missing facts explicit unavailable states rather than inferring values.
+- Added a mobile-friendly `/cutoffs` explorer and `GET /api/cutoffs`, plus full paginated support in `/api/colleges/[id]/cutoffs`. Filtering, counting and pagination are performed in PostgreSQL. URL query parameters retain filter selections; page size is 1–100; result ordering ends with unique cutoff ID. Rows retain counselling system, exam/metric/rank definition, year, round, quota, category, PwD, seat pool and source/review dates. Only latest-APPROVED decisions, HTTPS sources with publisher attribution, and non-DEMO colleges are included. Historical rows are shown by year without extrapolation.
+- Added the profile cutoff preview and a direct link to the filtered explorer even when a college has zero or only a few records.
+- Added `CounsellingSystem` and `CutoffRankType`. The additive migration defaults legacy records to `UNSPECIFIED`; it does not infer JoSAA for old rows. Only the JoSAA adapter labels newly ingested rows as `JOSAA` and assigns its explicit category/PwD rank type. Synthetic seed cutoff records use `UNSPECIFIED` and remain excluded from verified public results.
+- Fixed an actual PostgreSQL query defect found by integration tests: the raw projection now quotes Prisma's camel-case `"dataStatus"` column and casts the enum correctly.
+- Kept the existing 205 college IDs/slugs and catalogue seed unchanged. Seed SHA-256 remains `a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637`.
+
+### Phase 4 checklist / acceptance state
+
+| Requirement | Status | Evidence / limit |
+|---|---|---|
+| Preserve Phase 3 and isolate work on a local Phase 4 branch | **PASS** | Checkpoint `02661ec`; branch `phase-4-profiles-cutoffs`; no production access. |
+| Verified-only profile projection; unknown/demo states explicit | **PASS (synthetic workflow)** | Existing projection was reused; profile E2E verified source/year and DEMO labeling with a synthetic approved claim. No real claim has been approved. |
+| Profile domains and source/freshness attribution | **PARTIAL** | Profile sections and available field attribution implemented. Real verified values are absent; no claim is made that each section is factually populated. |
+| Full supported cutoff dimensions and source links | **PASS (tested dimensions)** | Unit/integration/API/E2E checks cover system/exam/year/round/quota/category/PwD/seat pool/metric, rank type and source. Existing rows default to UNSPECIFIED. |
+| Database-side filters/counts, bounded pagination, stable ordering, URL restoration | **PASS** | Integration filtering/pagination/boundary/tie-break tests and desktop/mobile filter/reload browser tests passed. No silent 60/1000/2000 cap remains in the changed routes. |
+| College profile to cutoff explorer navigation | **PASS** | Synthetic browser flow opened an approved test cutoff from the profile and followed its college-scoped link into `/cutoffs`. |
+| DEMO, unreviewed, rejected, insecure-source exclusion | **PASS (automated)** | 47 focused PostgreSQL integration tests and the synthetic publication smoke path. These do not verify real-world cutoff claims. |
+| Additive migration on clean DB | **PASS** | All six migrations applied from a clean schema to `collegefind_phase4_migration_test`, verified loopback-only inside the new CollegeFind disposable container; zero college rows in that migration rehearsal DB. |
+| Existing populated-schema migration compatibility | **PARTIAL** | The same additive SQL successfully applied to a disposable database at the preceding schema. No production/owner DB was used; a before/after populated-row-count preservation comparison was not captured. |
+| 61+ / 2,001+ histories, load/performance and query-plan evidence | **NOT TESTED** | Current integration cases exercise a small synthetic set; no 2,001-row load or latency distribution was measured. No production-scale performance claim. |
+| Official source-backed cutoff coverage | **BLOCKED / none evidenced** | The repository coverage ledger contains 0 staged official cutoff claims and 0 genuinely VERIFIED cutoff claims. NIRF candidates are ranking records, not admission cutoffs. Production was not queried. Test fixtures do not count. |
+| Genuine reviewer publication | **BLOCKED on owner review** | Genuine VERIFIED claim count remains 0; no reviewer was impersonated and no authentic decision was made. |
+| Production release readiness | **BLOCKED** | Phase 2/3 owner checks for historical credential revocation, seed-route configuration, Redis-backed rate-limit behavior, production backups/restore and deployed health remain unresolved. |
+
+### Exact verification evidence
+
+Database: new container `collegefind-phase4-disposable-20261119`, PostgreSQL 16, loopback-only `127.0.0.1:35440`, dedicated role `cf_phase4_test`. Before test confirmation, the exact database and user were independently queried; the migration DB was `collegefind_phase4_migration_test`, with 0 public tables. It was then explicitly confirmed as disposable. No production, staging, DevSync or owner-review database was accessed. After the final integration run, the guarded `resetDb` helper was used and read-back showed College=0, User=0, Source=0, CutoffRecord=0, EvidenceDecision=0 and six applied migrations. Browser fixtures were synthetic and cleaned up. One earlier disposable database in the same new container was used before correcting the migration timestamp; final verification uses the correctly named migration in the separate migration-test database.
+
+Commands and results:
+
+- `npx prisma format` — **PASS**.
+- `npx prisma generate` — **PASS**, Prisma Client 7.10.1.
+- `npx prisma migrate deploy` on the clean disposable migration-test database — **PASS**, all six migrations including `20261119010000_cutoff_counselling_system` applied.
+- `npx vitest run --project unit tests/unit/cutoff-query.test.ts` — **PASS**, 2 focused query-schema tests (earlier focused run).
+- `npm test` — **PASS**, 111 tests / 21 files after final application and test changes.
+- `npx vitest run --project integration tests/integration/cutoff-explorer.test.ts tests/integration/api-security.test.ts tests/integration/josaa-ingest.test.ts` — **PASS**, 47 tests / 3 files against the verified disposable PostgreSQL database after final migration naming. This includes schema query, JoSAA importer, public API and latest reviewer-decision conflict behavior.
+- `npm run lint` — **PASS**, zero warnings.
+- `npm run typecheck` — **PASS**.
+- `npx next build --webpack` — **PASS** after the final profile change; the generated production build launched successfully through Playwright's `next start` web server.
+- `npx playwright test tests/e2e/smoke.spec.ts` — final **PASS**, 18 tests across desktop Chromium and mobile Pixel 7. Covers profile-to-cutoff link/source rendering, filter URL restore on reload, search/detail, predictor unknown cutoff state, auth redirect, keyboard focus and comparison share. An initial run against a database left populated by integration tests had 17 pass / 1 fail because the predictor expected no cutoff rows. The failure was database fixture contamination, not hidden by changing the assertion: tests were rerun after verifying test-only email domains and clearing only the disposable database with guarded `resetDb`; all 18 then passed.
+- `npx next build` (default Turbopack) — **BLOCKED by environment**, with the complete error identifying CSS worker process port binding (`Operation not permitted`). A supported webpack build passed; no security config was weakened.
+- First sandbox-only integration attempt — **BLOCKED before SQL** by `connect EPERM` to `127.0.0.1`; the identical focused suite ran successfully after approved host access to the disposable database.
+- `DATA_COVERAGE.json` validation and 205-entry count — **PASS**; original seed SHA matches the Phase 3 baseline.
+
+### Coverage and next work
+
+Catalogue research remains 205/205 first-pass dispositions; 123 colleges have substantive STAGED evidence, 82 have no substantive STAGED facts, 377 total STAGED claims (230 substantive, 147 reference), and 0 genuine VERIFIED claims/colleges. Those values did not change in this code increment. Cutoff-specific ledger coverage is now explicit: 0 official staged cutoff claims / 0 verified cutoff claims recorded. Synthetic integration/browser records are excluded.
+
+The next scoped Phase 4 milestone is to generate representative 2,001+ cutoff fixtures only on the verified disposable DB, verify all page boundaries and dimension combinations, capture `EXPLAIN (ANALYZE, BUFFERS)` and latency distributions, and add indexes only if measured query plans justify them. Then identify a legitimate official cutoff dataset/provider and stage a small source-backed batch for explicit human review. Do not infer real coverage from fixtures or begin production migration/release. Keep Phase 3 owner/security blockers visible.
+
+## Phase 4 trend and engineering closeout — 2026-11-19
+
+This addendum supersedes the earlier “trend absent / 2,001-row performance not tested” entries above. It records the final implementation/verification state for this local Phase 4 increment. Branch is `phase-4-profiles-cutoffs`; Phase 3 checkpoint remains `02661ec`. No production or DevSync resource was accessed, and no real reviewer decision or official cutoff claim was created.
+
+### Implemented
+
+- Added a rank trend sourced from the same PostgreSQL reviewed-only projection as the table. A series requires one exact college and unambiguous programme plus counselling system, rank definition, exam, category, quota, seat pool, PwD setting and rank metric. This prevents mixing counselling systems, campuses/programmes or seat definitions. Scores/percentiles are intentionally not drawn as ranks.
+- Trend rows are not capped or sampled. Year/round slots without a reviewed record are materialized as gaps and split chart paths; null opening ranks stay unknown, empty/single-point/non-rank/ambiguous cases have explicit explanations, and no missing value is interpolated or predicted.
+- Added an accessible SVG title/description, visible series key, keyboard-focusable chart and scrollable table alternative. The table includes opening/closing values, admission year/round, official publisher/source URL, source publication/retrieval date, review date and optional evidence row/page locator. Existing filter controls remain labelled; result counts use a polite live region; invalid filters/errors expose an alert; mobile checks show no viewport-level horizontal overflow.
+- Added nullable `CutoffRecord.evidenceLocator` and additive migration `20261119030000_cutoff_source_locator`; the JoSAA CSV parser records a source line reference. It does not store copied source text. Existing rows and IDs are preserved. All eight migrations are applied in the verified disposable migration database; the 2,001 existing synthetic records were preserved through the additive locator migration. No rollback was run. The migration is reversible by dropping the nullable column after confirming no deployed code relies on it; do not roll back production without owner authorization and a verified backup.
+- Fixed a real not-found SEO defect found in browser verification: global `index, follow` metadata conflicted with Next's not-found `noindex`. Removed the redundant global robots declaration (index/follow is the platform default) and added a regression assertion that not-found responses include `noindex` without the conflicting global directive.
+- Fixed stale/ambiguous admin-browser assertions to reflect current headings, localized INR formatting and repeated profile fact labels. Assertions remain scoped to the relevant public profile content.
+
+### Exact verification evidence
+
+All database tests used the independently checked loopback disposable environment at `127.0.0.1:35440`, database `collegefind_phase4_migration_test`, role `cf_phase4_test`, with `COLLEGEFIND_TEST_DATABASE_CONFIRMED=true`. No Phase 3 owner-review DB, production DB or DevSync resource was used. One sandbox-only integration attempt failed before SQL with `connect EPERM`; the host-approved rerun passed.
+
+- `npm test` — **PASS, 114/114 unit tests in 22 files**.
+- `set -a; . /tmp/collegefind-phase4-migration-disposable.env; set +a; COLLEGEFIND_TEST_DATABASE_CONFIRMED=true npx vitest run --project integration tests/integration/cutoff-explorer.test.ts tests/integration/josaa-ingest.test.ts --reporter=dot` — **PASS, 18/18 tests**. Includes 61-row and 2,001-row histories, compound filters, source/review projection, rank trend gaps/ambiguity, query-plan and importer evidence-locator checks.
+- The 2,001-record benchmark used 10 warmups and 100 samples for each query shape. p50/p95/p99 in milliseconds: broad page 1 **15.125/16.088/24.942**; broad page 21 **19.227/20.194/23.257**; selective page **3.392/3.910/4.158**; broad count **7.219/12.584/13.166**; selective count **1.879/2.818/3.061**. Broad scans read all 2,001 synthetic cutoff rows; selective filtering used `CutoffRecord_exam_category_seatPool_year_idx`; latest review lookups used `EvidenceDecision_cutoffId_createdAt_id_idx`. These are local warm-cache synthetic results, not a production SLA.
+- `set -a; . /tmp/collegefind-phase4-migration-disposable.env; set +a; COLLEGEFIND_TEST_DATABASE_CONFIRMED=true npx playwright test tests/e2e/smoke.spec.ts tests/e2e/admin.spec.ts --workers=1 --reporter=list` — **PASS, 24/24 desktop Chromium and Pixel 7 checks**. Covers profile/cutoff navigation, trend chart and table, evidence locator, gaps, URL refresh/Back/Forward, invalid/empty states, mobile overflow, keyboard-only cutoff filtering with visible focus and polite result announcement, admin denial/decisions/audit, fixture exclusion and public projection of synthetic approved records. Synthetic approvals are not genuine approvals.
+- `npm run lint` — **PASS**; `npm run typecheck` — **PASS**; `npx prisma generate` — **PASS**.
+- Sandbox `npx next build --webpack` attempt failed before application compilation because Next's TypeScript `--showConfig` subprocess was blocked (the same environment-level `EPERM` previously observed). Host-approved `npx next build --webpack` then **PASS**; a second host-approved build with the disposable database environment **PASS**, including sitemap generation with no fallback warning. No security setting or test assertion was weakened to obtain the build.
+- `npx prisma migrate status` against `collegefind_phase4_migration_test` — **PASS, eight migrations found; schema up to date**. `git diff --check` and machine-readable coverage JSON parse — **PASS** after the final documentation update. The high-confidence secret-pattern scan found no newly added secret or credential; two existing documented loopback disposable-DB examples in earlier status history match the generic URI pattern and are not new changes or production credentials. `CollegeFind_AGENTS_V3.md` remains preserved untracked and is excluded from the Phase 4 checkpoint as unrelated.
+
+### Phase 4 acceptance checklist
+
+| Requirement | Status | Evidence / remaining limit |
+|---|---|---|
+| Preserve all 205 college identities, stable IDs/slugs, Phase 3 evidence and safeguards | **PASS** | No catalogue seed or identity mapping changed; no real/staging review records modified. |
+| Profile and cutoff verified-only projection; fixture/demo/unreviewed/rejected exclusion | **PASS (automated synthetic workflow)** | 22 browser checks and integration cases; zero genuine human approvals, so no genuine fact is verified by this test evidence. |
+| Server-side compound filters, totals, deterministic pagination and full result history | **PASS (local synthetic)** | 61-row and 2,001-row tests, exact counts/page reconciliation and stable ordering in 18 integration tests. |
+| Historical opening/closing rank trend, system/programme/category isolation, gaps and no estimates | **PASS (local synthetic)** | Unit/integration/browser coverage; only actual stored approved rows are queried, but no real approved cutoff rows exist. |
+| Source/academic-year/evidence locator attribution | **PASS (implementation/tests)** | Source dates/URL/publisher/review date plus optional row locator in accessible table; legacy locators remain null. |
+| Migration compatibility and preservation | **PASS (disposable only)** | Additive locator migration and eight-migration status verified; 2,001 synthetic rows survived. Production migration is not authorized. |
+| Automated desktop/mobile keyboard semantics, labels, live status, table alternative and narrow viewport | **PASS (focused automation)** | Browser verifies semantic controls, focusable regions, labels, live counts and no page overflow. |
+| Full manual screen-reader and wider assistive-technology audit | **PARTIAL** | Not performed. Automated semantics do not replace human screen-reader review. |
+| Official cutoff sources and real-world source use | **BLOCKED / 0 imported** | JoSAA public pages are accessible; current copyright policy requires permission for reproduction and third-party materials retain their rights. No suitable open licence/written permission established; no bypass attempted. |
+| Genuine human-reviewed cutoff records | **BLOCKED / 0 staged, 0 VERIFIED** | None imported. Genuine Phase 3 approval count also remains 0. Reviewer decisions stay owner-controlled. |
+| Production security, backup/restore, deployed behavior | **BLOCKED** | Owner-controlled Phase 2/3 evidence remains pending; no production check was made. |
+
+**Decision:** Phase 4 cutoff/profile engineering is **ready for local engineering acceptance**, with accessibility breadth, genuine cutoff data/review and all production readiness explicitly partial/blocked. **CONDITIONAL GO for Phase 5 local work** using the current verified-only projection and disposable data; do not claim production readiness or complete factual cutoff coverage. Before production, obtain permitted official-source use, genuine reviewer decisions, manual accessibility review and owner evidence for historical credential revocation, seed protection, Redis rate limits, backups/restores and deployment health.

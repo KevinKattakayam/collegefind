@@ -7,6 +7,7 @@ import {
   parseProgramName,
   parseRank,
   parseSeatType,
+  rankTypeForJosaa,
 } from '@/server/ingest/josaa';
 import { resetDb, testDb } from './db';
 
@@ -41,6 +42,11 @@ afterAll(async () => {
 });
 
 describe('JoSAA parsing', () => {
+  it('keeps CRL, category and PwD rank definitions distinct', () => {
+    expect(rankTypeForJosaa({ category: 'OPEN', isPwd: false })).toBe('CRL');
+    expect(rankTypeForJosaa({ category: 'OBC_NCL', isPwd: false })).toBe('CATEGORY');
+    expect(rankTypeForJosaa({ category: 'OPEN', isPwd: true })).toBe('PWD_CATEGORY');
+  });
   it('parses seat types, including PwD variants', () => {
     expect(parseSeatType('OPEN')).toEqual({ category: 'OPEN', isPwd: false });
     expect(parseSeatType('OBC-NCL')).toEqual({ category: 'OBC_NCL', isPwd: false });
@@ -88,6 +94,13 @@ describe('JoSAA import', () => {
 
     const after = await db.cutoffRecord.count();
     expect(after).toBe(5);
+    const imported = await db.cutoffRecord.findMany({ orderBy: [{ category: 'asc' }, { isPwd: 'asc' }], select: { counsellingSystem: true, rankType: true, category: true, isPwd: true } });
+    expect(imported.every((row) => row.counsellingSystem === 'JOSAA')).toBe(true);
+    expect(imported).toEqual(expect.arrayContaining([
+      expect.objectContaining({ category: 'OPEN', isPwd: false, rankType: 'CRL' }),
+      expect.objectContaining({ category: 'OBC_NCL', isPwd: false, rankType: 'CATEGORY' }),
+      expect.objectContaining({ category: 'SC', isPwd: true, rankType: 'PWD_CATEGORY' }),
+    ]));
 
     // Re-running the same file must not duplicate rows.
     await importJosaaRows(db, rows, { year: 2025, round: 6, source: SOURCE, institutes: MAPPING });
@@ -99,7 +112,7 @@ describe('JoSAA import', () => {
     expect(pwd).toMatchObject({ category: 'SC', isPreparatory: true, closingValue: 124 });
 
     const open = await db.cutoffRecord.findFirst({ where: { category: 'OPEN', seatPool: 'GENDER_NEUTRAL', quota: 'AI' } });
-    expect(open).toMatchObject({ openingValue: 1024, closingValue: 4870, exam: 'JEE_MAIN' });
+    expect(open).toMatchObject({ openingValue: 1024, closingValue: 4870, exam: 'JEE_MAIN', evidenceLocator: 'CSV line 2' });
 
     const withSource = await db.cutoffRecord.findFirst({ include: { source: true } });
     expect(withSource?.source.url).toBe(SOURCE.url);

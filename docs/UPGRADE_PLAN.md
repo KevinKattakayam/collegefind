@@ -1,6 +1,6 @@
 # CollegeFind V3 upgrade plan
 
-Status: Phase 2 implementation and local verification authorized; operational acceptance pending. Phase 3 NOT STARTED.
+Status: Phase 2 local engineering complete with owner-controlled production gates pending; Phase 3 engineering conditionally accepted for local work; Phase 4 profile/cutoff implementation is in progress on `phase-4-profiles-cutoffs`.
 Baseline: main `3ddf88d7f0dec224cde1984100e9208ce6285328`; audit date 2026-11-17.
 Later user instructions authorize Phase 2 application changes and independently verified disposable local database/browser verification. Production, credential, push/merge and deployment actions remain unauthorized.
 
@@ -26,14 +26,14 @@ Alternatives:
 
 ## Nine-phase roadmap and gates
 
-All implementation phases are NOT STARTED. Passing a phase requires recorded automated evidence and essential permitted browser/manual evidence; blocked checks prevent DONE. Phase 1 is the completed repository audit plus this documentation deliverable, not a production-readiness certification.
+Phase 1 audit is complete; Phase 2 local engineering is complete with production operations still owner-blocked; Phase 3 engineering is conditionally accepted with factual review and production blockers; Phase 4 is active and incomplete; Phases 5–9 are not started. Passing a phase requires recorded automated evidence and essential permitted browser/manual evidence; blocked checks prevent DONE. Phase 1 is not a production-readiness certification.
 
 | Phase | Scope and user outcome | Pass/fail acceptance | Dependencies / verification |
 | --- | --- | --- | --- |
 | 1 — Audit and V3 specification | Architecture, full 205-row completeness ledger, existing-flow inventory, risks, baseline checks and scoped plan | Exactly 205 unique ledger entries reconcile to seed; all ten requested domains assessed; evidence statuses distinguish tested, blocked and unverified; only three approved docs changed | Reuse Phase 1 tests/CI; validate documentation references and ledger mechanically |
 | 2 — Data-integrity and safety foundation | Safe disposable-test harness; enforced server env; field evidence, review states, import runs/source versions, demo isolation and reviewed-summary policy | Unknown/non-disposable targets rejected before opening a DB; no DATABASE_URL fallback; explicit disposable fixture succeeds; schema migrations rehearse on isolated DB; stale demo metrics cannot become published facts through cutoff import; invalid source metadata rejected | Sol Medium/High for security/schema; owner evidence for historical secret remediation remains a release gate; unit + isolated integration + migration tests |
 | 3 — Full-catalogue official enrichment | Verify 10-college pilot, expand to 50, then batches of up to 25 until all 205 dispositioned; research identity, descriptions, courses, admissions, fees, placements, scholarships, facilities, accreditation and official links | 10/10 pilot colleges have official identity/link evidence and ten-domain dispositions before scaling; final 205/205 have research attempt dates, field statuses, source/evidence trail or explicit blockers; zero invented facts/citations; zero automatic VERIFIED claims from retrieval alone | Phase 2 evidence model; legitimate source access/rights; independent reviewer capacity; import reconciliation and manual evidence review |
-| 4 — Useful profiles and complete cutoff exploration | Improved programme-aware profiles, costs, outcomes, accreditation validity, facilities/scholarships, sources and corrections; shared cutoff service with filters, all supported seat pools, years/rounds and pagination | 61+ and 2,001+ fixture histories fully reachable with correct totals; PwD/female/category/quota/exam dimensions preserved; page/API agree; per-field unknown/stale/source rendering works; fees and placement definitions/year are visible | Phase 3 pilot minimum; shared query integration tests, mobile/keyboard E2E, empty/error/source checks |
+| 4 — Useful profiles and complete cutoff exploration | Improved programme-aware profiles, costs, outcomes, accreditation validity, facilities/scholarships, sources and corrections; shared cutoff service with filters, all supported seat pools, years/rounds and pagination | 61+ and 2,001+ fixture histories fully reachable with correct totals; every represented exam/system/year/round/quota/category/PwD/seat-pool/rank dimension is preserved; page/API agree; page size is bounded and ordering has a unique tie-breaker; unknown/stale/source states are explicit; fees and placement definitions/year are visible; desktop/mobile and keyboard checks pass; no staged/demo value appears verified | Phase 3 engineering gate; source-backed projection; additive migration rehearsed on a verified disposable DB; unit/integration, mobile/keyboard E2E, empty/error/source checks; genuine data coverage reported separately |
 | 5 — Search, comparison and shortlists | Search/filter/sort/autocomplete, truthful featured/recommendations, shareable comparisons, restoring saved comparisons, fresh persisted selection IDs | Shared 2–3-college URL reconstructs in a clean browser; saved comparison restores exact order; invalid/deleted IDs explicit; no null or demo value wins; all compared facts have matching scope/year or explicit incompatibility; API errors differ from zero results; deterministic pagination | Reviewed projections; unit and desktop/mobile E2E for search/back/forward/filtering/save/share/restore/delete and denied access |
 | 6 — CollegeFit and responsible estimates | Explainable preference matching by eligible programme, location, verified cost and user priorities; distinguish preference fit from admission history; freshness-aware predictor | Reasons and exclusions reproducible; unknowns do not score as advantages; no demo inputs; changing one preference yields explainable results; unsupported/stale admission cycles withheld; no uncalibrated numeric admission probability published | Programme/rule coverage; deterministic fit tests; held-out per-exam/category evaluation before probabilistic claims; interval coverage alone is not probability calibration |
 | 7 — Admissions planning | Private choice lists, application/counselling tasks, official deadlines, source-backed eligibility and optional reminders | Choice ordering persists across reload/login; deadlines have year/timezone/source/review validity; stale/conflicting dates explicit; unauthorized access denied; no promise of admission; notification sends require explicit consent/authorization | CollegeFit + official policy coverage; isolated integration and real-session E2E; exam-specific rules approved before enabling |
@@ -98,12 +98,14 @@ Source rights/access may prevent complete factual population; definitions and ac
 
 Use Luna Medium for routine bounded implementation and Sol Medium/High for architecture, DB integrity, admission rules and security. If a model is unavailable, report that limitation rather than claiming a switch. Reuse evidence and avoid repetitive scans. Delegate only when user/instruction scope permits it; no delegation was needed for these documentation edits.
 
-Maintain only the three approved files in this step. Future DATA_COVERAGE.md, VERIFICATION_EVIDENCE.md and BLOCKERS.md remain planned; their required ledgers live in UPGRADE_STATUS.md until file creation is authorized.
+The three-file restriction applied to the initial audit documentation deliverable. Phase 4 code and the requested upgrade/coverage documentation are now authorized; preserve the rest of the repository scope unless separately approved.
 
-## Exact first Phase 2 task — not started
+## Phase 2 first task — completed (historical acceptance)
 
 Harden the integration-test database target guard before any test connection or destructive reset.
 Proposed files: tests/integration/db.ts, tests/integration/setup.ts, a small pure target-validator module and unit tests, plus relevant testing docs/status within the then-approved scope. No change is authorized by this plan alone.
+
+The following was the acceptance contract. Its completion evidence is maintained in `docs/UPGRADE_STATUS.md`; do not treat this historical section as an unstarted task.
 
 Acceptance:
 
@@ -114,3 +116,37 @@ Acceptance:
 - Prove both integration import order and beforeAll order cannot bypass validation; absent authorization exits without network connection.
 - Lint/typecheck/unit tests pass. Run reset/integration only after creating and explicitly verifying a disposable DB; record isolated integration evidence or leave BLOCKED, never DONE.
 - No real database/production connection, credential changes or deployment. Sol Medium/High reviews the safety boundary. Report exact changed files/tests and preserve the 205-record catalogue baseline.
+
+## Phase 4 implementation checklist — current local increment
+
+- [x] Preserve Phase 3 on a clean local checkpoint and work on `phase-4-profiles-cutoffs`; keep production and owner-review data untouched.
+- [x] Inspect existing college profile, approved evidence projection, JoSAA ingestion and cutoff endpoints before extending them.
+- [x] Render structured verified profile facts in domain sections with source publisher, URL, publication/retrieval/review times and unavailable states; keep demo summaries labeled and staged evidence unpublished.
+- [x] Provide profile cutoff preview and a direct institution-filtered link to the shared explorer.
+- [x] Provide server-side cutoff filtering/counting/pagination with stable order, bounded page size, URL-restorable filters and provenance on each row.
+- [x] Preserve unknown legacy counselling/rank dimensions as `UNSPECIFIED`; classify only JoSAA-imported data from the known importer as JoSAA with explicit rank semantics.
+- [x] Add the counselling system and rank type through an additive migration; apply it only to a newly verified disposable DB.
+- [x] Verify query filters, latest review decision, fixture/demo exclusion, pagination, public API behavior, JoSAA import and desktop/mobile browser navigation.
+- [x] Load-test 61 and 2,001 records with representative dimensions; inspect query plans and add the measured latest-decision lookup index.
+- [x] Add a fully scoped historical opening/closing-rank trend with missing year/round gaps, no extrapolation, exact academic-year/source/evidence-location table and rank-only semantics.
+- [x] Verify trend scope isolation, empty/single-point/missing-value behavior, source attribution, keyboard-focusable alternatives, narrow viewport overflow and URL Back/Forward/refresh on desktop/mobile.
+- [ ] Obtain/ingest source-backed cutoff records and verify their public coverage after genuine authorized review. The test-only fixtures are not official data.
+- [x] Verify cutoff filter labels, invalid/empty states, narrow viewport overflow, refresh, Back/Forward restoration and profile navigation on desktop/mobile smoke coverage.
+- [ ] Complete manual screen-reader and broader profile accessibility review beyond the automated focused browser coverage.
+
+### Phase 4 migration safety
+
+Migration `20261119010000_cutoff_counselling_system` adds `CounsellingSystem` and `CutoffRankType`, defaults existing records to `UNSPECIFIED`, and replaces the natural-key index to include counselling system. It leaves all college and user IDs/relationships intact. It was applied to a newly provisioned, loopback-only disposable database; no production migration ran.
+
+Before any future rollback, first verify the new values are unused or acceptably recoverable. The added counselling-system/rank-type values are semantically meaningful, so dropping the columns after real imports is lossy. Also check for duplicate old natural keys after ignoring `counsellingSystem`:
+
+```sql
+SELECT "programId", exam, year, round, quota, category, "isPwd", "seatPool", count(*)
+FROM "CutoffRecord"
+GROUP BY "programId", exam, year, round, quota, category, "isPwd", "seatPool"
+HAVING count(*) > 1;
+```
+
+Any returned group blocks restoring the previous unique index until the source records are reconciled without deleting evidence/audit history. If no conflict exists and no non-`UNSPECIFIED` values need preservation, a reviewed rollback may drop the expanded index, recreate the prior natural-key index, drop the two columns, then drop the two enum types. Prefer a forward fix once real data uses these fields. Take and verify a disposable backup before rehearsing rollback; production rollback requires separate owner authorization and a protected backup/restore plan.
+
+The additional performance migration `20261119020000_cutoff_review_lookup_index` adds an index for latest-decision lookups. It changes no rows and is not required for application correctness; reverting application code does not require dropping it. If a reviewed rollback explicitly removes the index, PostgreSQL requires `DROP INDEX CONCURRENTLY "EvidenceDecision_cutoffId_createdAt_id_idx";` outside a transaction; reconcile Prisma migration history with the migration operator. This rollback was not run against production. The migration was applied only to the verified disposable database described in status.

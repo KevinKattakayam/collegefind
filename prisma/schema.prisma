@@ -73,6 +73,23 @@ enum SeatPool {
   FEMALE_ONLY
 }
 
+enum CounsellingSystem {
+  UNSPECIFIED
+  JOSAA
+  CSAB
+  MCC
+  STATE
+  OTHER
+}
+
+enum CutoffRankType {
+  UNSPECIFIED
+  CRL
+  CATEGORY
+  PWD_CATEGORY
+  MERIT
+}
+
 model College {
   id              String      @id @default(cuid())
   slug            String      @unique
@@ -174,27 +191,30 @@ model Source {
 }
 
 model CutoffRecord {
-  decisions     EvidenceDecision[]
-  id            String             @id @default(cuid())
-  programId     String
-  exam          Exam
-  year          Int
-  round         Int
-  quota         String // JoSAA: AI, HS, OS, GO, JK, LA. MCC: published quota name.
-  category      SeatCategory
-  isPwd         Boolean            @default(false)
-  seatPool      SeatPool
-  metric        CutoffMetric       @default(RANK)
-  openingValue  Float?
-  closingValue  Float
-  isPreparatory Boolean            @default(false) // JoSAA 'P' suffix
-  sourceId      String
-  createdAt     DateTime           @default(now())
+  decisions         EvidenceDecision[]
+  id                String             @id @default(cuid())
+  programId         String
+  exam              Exam
+  counsellingSystem CounsellingSystem  @default(UNSPECIFIED)
+  rankType          CutoffRankType     @default(UNSPECIFIED)
+  year              Int
+  round             Int
+  quota             String // JoSAA: AI, HS, OS, GO, JK, LA. MCC: published quota name.
+  category          SeatCategory
+  isPwd             Boolean            @default(false)
+  seatPool          SeatPool
+  metric            CutoffMetric       @default(RANK)
+  openingValue      Float?
+  closingValue      Float
+  isPreparatory     Boolean            @default(false) // JoSAA 'P' suffix
+  evidenceLocator   String? // Imported table row or document page/table reference; never treated as a human review.
+  sourceId          String
+  createdAt         DateTime           @default(now())
 
   program Program @relation(fields: [programId], references: [id], onDelete: Cascade)
   source  Source  @relation(fields: [sourceId], references: [id], onDelete: Restrict)
 
-  @@unique([programId, exam, year, round, quota, category, isPwd, seatPool], name: "naturalKey", map: "CutoffRecord_natural_key")
+  @@unique([programId, exam, year, round, quota, category, counsellingSystem, isPwd, seatPool], name: "naturalKey", map: "CutoffRecord_natural_key")
   @@index([exam, category, seatPool, year])
   @@index([programId])
   @@index([sourceId])
@@ -369,28 +389,28 @@ model AuditLog {
 
 // Profile claims only; financial/admission values stay in their existing typed tables.
 model FieldEvidence {
-  isFixture Boolean @default(false)
+  isFixture       Boolean            @default(false)
   evidenceLocator String?
   evidenceSnippet String?
-  publishedAt  DateTime?
-  id           String             @id @default(cuid())
-  collegeId    String
-  field        String
-  value        Json
-  unit         String?
-  programScope String?
-  academicYear Int?
-  validFrom    DateTime?
-  validUntil   DateTime?
-  sourceId     String
-  identityKey  String             @unique
-  supersedesId String?
-  createdAt    DateTime           @default(now())
-  college      College            @relation(fields: [collegeId], references: [id], onDelete: Restrict)
-  source       Source             @relation(fields: [sourceId], references: [id], onDelete: Restrict)
-  supersedes   FieldEvidence?     @relation("EvidenceHistory", fields: [supersedesId], references: [id], onDelete: Restrict)
-  successors   FieldEvidence[]    @relation("EvidenceHistory")
-  decisions    EvidenceDecision[]
+  publishedAt     DateTime?
+  id              String             @id @default(cuid())
+  collegeId       String
+  field           String
+  value           Json
+  unit            String?
+  programScope    String?
+  academicYear    Int?
+  validFrom       DateTime?
+  validUntil      DateTime?
+  sourceId        String
+  identityKey     String             @unique
+  supersedesId    String?
+  createdAt       DateTime           @default(now())
+  college         College            @relation(fields: [collegeId], references: [id], onDelete: Restrict)
+  source          Source             @relation(fields: [sourceId], references: [id], onDelete: Restrict)
+  supersedes      FieldEvidence?     @relation("EvidenceHistory", fields: [supersedesId], references: [id], onDelete: Restrict)
+  successors      FieldEvidence[]    @relation("EvidenceHistory")
+  decisions       EvidenceDecision[]
 
   @@index([collegeId, field])
   @@index([createdAt(sort: Desc), id(sort: Desc)])
@@ -417,6 +437,7 @@ model EvidenceDecision {
 
   @@index([evidenceId, createdAt])
   @@index([evidenceId, createdAt(sort: Desc), id(sort: Desc)])
+  @@index([cutoffId, createdAt(sort: Desc), id(sort: Desc)])
 }
 
 model ImportRun {
@@ -436,15 +457,16 @@ model ImportRun {
 
 // Alternate names are campus-scoped; codes are never guessed from names.
 model InstitutionAlias {
-  id String @id @default(cuid())
-  collegeId String
-  namespace String
-  value String
-  campus String
-  validFrom DateTime?
+  id         String    @id @default(cuid())
+  collegeId  String
+  namespace  String
+  value      String
+  campus     String
+  validFrom  DateTime?
   validUntil DateTime?
-  sourceUrl String
-  college College @relation(fields: [collegeId], references: [id], onDelete: Restrict)
+  sourceUrl  String
+  college    College   @relation(fields: [collegeId], references: [id], onDelete: Restrict)
+
   @@unique([namespace, value, campus, collegeId])
   @@index([namespace, value])
 }

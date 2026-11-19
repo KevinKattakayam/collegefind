@@ -336,20 +336,32 @@ describe('public college endpoints', () => {
     expect((await json(await collegeDetailRoute.GET(req('/api/colleges/bad%2Fkey'), { params: Promise.resolve({ id: 'bad/key' }) }))).status).toBe(400);
   });
 
-  it('returns only the final cutoff round for each pool and excludes PwD rows', async () => {
+  it('returns all approved historical cutoff rounds and dimensions without demo rows', async () => {
     const college = await makeCollege('cutoff-fixture');
     const source = await db.source.create({ data: { name: 'Fixture source', publisher: 'Authority', url: 'https://example.gov.in/data', retrievedAt: new Date('2026-01-01') } });
     const program = await db.program.create({ data: { collegeId: college.id, name: 'Course', branch: 'Course' } });
-    const common = { programId: program.id, exam: 'JEE_MAIN' as const, year: 2025, quota: 'AI', category: 'OPEN' as const, seatPool: 'GENDER_NEUTRAL' as const, sourceId: source.id, metric: 'RANK' as const };
-    await db.cutoffRecord.createMany({ data: [
-      { ...common, round: 1, openingValue: 1, closingValue: 100 },
-      { ...common, round: 2, openingValue: 2, closingValue: 90 },
-      { ...common, round: 3, isPwd: true, openingValue: 3, closingValue: 80 },
-    ] });
+    const common = { programId: program.id, exam: 'JEE_MAIN' as const, year: 2025, quota: 'AI', category: 'OPEN' as const, seatPool: 'GENDER_NEUTRAL' as const, sourceId: source.id, metric: 'RANK' as const, counsellingSystem: 'JOSAA' as const, rankType: 'CRL' as const };
+    const rows = await Promise.all([
+      db.cutoffRecord.create({ data: { ...common, round: 1, openingValue: 1, closingValue: 100 } }),
+      db.cutoffRecord.create({ data: { ...common, round: 2, openingValue: 2, closingValue: 90 } }),
+      db.cutoffRecord.create({ data: { ...common, round: 3, isPwd: true, rankType: 'PWD_CATEGORY', openingValue: 3, closingValue: 80 } }),
+      db.cutoffRecord.create({ data: { ...common, counsellingSystem: 'CSAB', round: 1, openingValue: 4, closingValue: 70 } }),
+    ]);
+    const demo = await db.college.create({ data: { slug: 'cutoff-demo-fixture', name: 'Demo cutoff fixture', shortName: 'Demo cutoff', city: 'C', state: 'Kerala', type: 'GOVERNMENT', dataStatus: 'DEMO' } });
+    const demoProgram = await db.program.create({ data: { collegeId: demo.id, name: 'Demo course' } });
+    const demoRow = await db.cutoffRecord.create({ data: { ...common, programId: demoProgram.id, round: 1, openingValue: 5, closingValue: 60 } });
+    const admin = await makeUser('cutoff-reviewer@example.test', 'ADMIN');
+    await db.evidenceDecision.createMany({ data: [...rows, demoRow].map((row) => ({ cutoffId: row.id, reviewerId: admin.id, status: 'APPROVED' as const, reason: 'Synthetic route test approval' })) });
     const result = await json(await cutoffsRoute.GET(req('/api/colleges/cutoff-fixture/cutoffs'), { params: Promise.resolve({ id: college.id }) }));
     expect(result.status).toBe(200);
-    expect(result.body.cutoffs).toHaveLength(1);
-    expect(result.body.cutoffs[0]).toMatchObject({ round: 2, closingValue: 90 });
+    expect(result.body.cutoffs).toHaveLength(4);
+    expect(result.body.cutoffs.map((row: { round: number }) => row.round).sort()).toEqual([1, 1, 2, 3]);
+    expect(result.body.cutoffs.some((row: { isPwd: boolean }) => row.isPwd)).toBe(true);
+    expect(new Set(result.body.cutoffs.map((row: { counsellingSystem: string }) => row.counsellingSystem))).toEqual(new Set(['JOSAA', 'CSAB']));
+    const filtered = await json(await cutoffsRoute.GET(req('/api/colleges/cutoff-fixture/cutoffs?counsellingSystem=JOSAA&category=OPEN&isPwd=false'), { params: Promise.resolve({ id: college.id }) }));
+    expect(filtered.body.total).toBe(2);
+    expect(filtered.body.cutoffs.map((row: { round: number }) => row.round).sort()).toEqual([1, 2]);
+    expect((await json(await cutoffsRoute.GET(req('/api/colleges/cutoff-demo-fixture/cutoffs'), { params: Promise.resolve({ id: demo.id }) }))).body.total).toBe(0);
     expect((await json(await cutoffsRoute.GET(req('/api/colleges/missing/cutoffs'), { params: Promise.resolve({ id: 'missing' }) }))).status).toBe(404);
   });
 

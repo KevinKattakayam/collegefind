@@ -42,8 +42,10 @@ function projectStructuredFacts(claims: Claim[], now: Date) {
     const approved = eligible.filter((claim) =>
       resolveReviewedField([{ ...claim, value: JSON.stringify(claim.value) }], now).value === resolved.value);
     const claim = approved.sort((a, b) => b.source.retrievedAt.getTime() - a.source.retrievedAt.getTime() || a.id.localeCompare(b.id))[0];
+    const decision = [...claim.decisions].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())[0];
     return [{ key, value: structuredFact.parse(claim.value), academicYear: claim.academicYear,
-      validUntil: claim.validUntil, source: { url: claim.source.url, publisher: claim.source.publisher } }];
+      validUntil: claim.validUntil, source: { url: claim.source.url, publisher: claim.source.publisher,
+        publishedAt: claim.publishedAt, retrievedAt: claim.source.retrievedAt, reviewedAt: decision?.createdAt ?? null } }];
   });
 }
 
@@ -71,7 +73,7 @@ export function projectPublicCollege<T extends Record<string, unknown>>(college:
     } else if (!['totalStudents', 'establishedYear'].includes(field) && value !== null && typeof value !== 'string') value = null;
     if (['website','admissions'].includes(field) && value) { try { if (new URL(String(value)).protocol !== 'https:') value = null; } catch { value = null; } }
     if (field in college || field === 'admissions') out[field] = value;
-    fieldEvidence[field] = { status: resolved.status === 'UNKNOWN' && candidates.length ? (candidates.some((c) => c.decisions.some((d) => d.status === 'APPROVED')) ? 'OUTDATED' : 'UNREVIEWED') : resolved.status, sources: resolved.status === 'AVAILABLE' ? eligible.filter((c) => [...c.decisions].sort((a,b) => b.createdAt.getTime()-a.createdAt.getTime())[0]?.status === 'APPROVED').map((c) => ({ url: c.source.url, publisher: c.source.publisher, retrievedAt: c.source.retrievedAt })) : [] };
+    fieldEvidence[field] = { status: resolved.status === 'UNKNOWN' && candidates.length ? (candidates.some((c) => c.decisions.some((d) => d.status === 'APPROVED')) ? 'OUTDATED' : 'UNREVIEWED') : resolved.status, sources: resolved.status === 'AVAILABLE' ? eligible.filter((c) => [...c.decisions].sort((a,b) => b.createdAt.getTime()-a.createdAt.getTime())[0]?.status === 'APPROVED').map((c) => ({ url: c.source.url, publisher: c.source.publisher, publishedAt: c.publishedAt, retrievedAt: c.source.retrievedAt, reviewedAt: [...c.decisions].sort((a,b) => b.createdAt.getTime()-a.createdAt.getTime())[0]?.createdAt ?? null })) : [] };
   }
   for (const key of ['annualFees', 'placementPct', 'avgPackage', 'highestPackage', 'metricsYear', 'rating']) if (key in out) out[key] = null;
   // Only comparable college-wide annual tuition records; programme-specific/other fees cannot be substituted.

@@ -1,7 +1,7 @@
 import { checksum, sourceIdentity } from './identity';
 import type { Prisma } from '@prisma/client';
 import { parse } from 'csv-parse/sync';
-import type { CollegeType, PrismaClient, SeatCategory, SeatPool } from '@prisma/client';
+import type { CollegeType, CounsellingSystem, CutoffRankType, PrismaClient, SeatCategory, SeatPool } from '@prisma/client';
 
 /**
  * Parser + importer for JoSAA "Opening and Closing Ranks" tables exported to CSV.
@@ -28,6 +28,7 @@ export interface JosaaRow {
   seatPool: SeatPool;
   opening: ParsedRank | null;
   closing: ParsedRank;
+  sourceLine?: number;
 }
 
 export interface Rejected {
@@ -77,6 +78,11 @@ export function examForInstitute(institute: string): 'JEE_ADVANCED' | 'JEE_MAIN'
   // IITs (including "Indian Institute of Technology (ISM) Dhanbad") admit via JEE Advanced.
   // "Indian Institute of Information Technology ..." does NOT match this prefix.
   return /^indian institute of technology\b/i.test(institute.trim()) ? 'JEE_ADVANCED' : 'JEE_MAIN';
+}
+
+export function rankTypeForJosaa(row: Pick<JosaaRow, 'category' | 'isPwd'>): CutoffRankType {
+  if (row.isPwd) return 'PWD_CATEGORY';
+  return row.category === 'OPEN' ? 'CRL' : 'CATEGORY';
 }
 
 const HEADER_ALIASES: Record<string, keyof RawRecord> = {
@@ -144,6 +150,7 @@ export function parseJosaaCsv(text: string): { rows: JosaaRow[]; rejected: Rejec
       seatPool,
       opening,
       closing,
+      sourceLine: line,
     };
     const key = naturalKey(row);
     if (byKey.has(key)) duplicates++;
@@ -187,6 +194,7 @@ export function parseInstituteMapping(text: string): Map<string, InstituteMappin
 export interface ImportOptions {
   year: number;
   round: number;
+  counsellingSystem?: CounsellingSystem;
   source: { name: string; publisher: string; url: string; license?: string; retrievedAt: Date; notes?: string };
   institutes: Map<string, InstituteMapping>;
   examOverride?: 'JEE_MAIN' | 'JEE_ADVANCED';
@@ -252,6 +260,7 @@ async function applyRows(db: Prisma.TransactionClient, rows: JosaaRow[], opts: I
     }
     summary.colleges++;
     const exam = opts.examOverride ?? examForInstitute(institute);
+    const counsellingSystem = opts.counsellingSystem ?? 'JOSAA';
 
     {
       const tx = db;
@@ -275,9 +284,11 @@ async function applyRows(db: Prisma.TransactionClient, rows: JosaaRow[], opts: I
           isPreparatory: r.closing.isPreparatory,
           sourceId: source.id,
           metric: 'RANK' as const,
+          rankType: counsellingSystem === 'JOSAA' ? rankTypeForJosaa(r) : 'UNSPECIFIED' as const,
+          evidenceLocator: r.sourceLine === undefined ? null : `CSV line ${r.sourceLine}`,
         };
         const previous = await tx.cutoffRecord.findUnique({ where: { naturalKey: {
-          programId, exam, year: opts.year, round: opts.round, quota: r.quota,
+          programId, exam, year: opts.year, round: opts.round, quota: r.quota, counsellingSystem,
           category: r.category, isPwd: r.isPwd, seatPool: r.seatPool,
         } } });
         if (previous && (previous.closingValue !== values.closingValue || previous.openingValue !== values.openingValue || previous.isPreparatory !== values.isPreparatory)) {
@@ -291,6 +302,7 @@ async function applyRows(db: Prisma.TransactionClient, rows: JosaaRow[], opts: I
               year: opts.year,
               round: opts.round,
               quota: r.quota,
+              counsellingSystem,
               category: r.category,
               isPwd: r.isPwd,
               seatPool: r.seatPool,
@@ -303,6 +315,7 @@ async function applyRows(db: Prisma.TransactionClient, rows: JosaaRow[], opts: I
             year: opts.year,
             round: opts.round,
             quota: r.quota,
+            counsellingSystem,
             category: r.category,
             isPwd: r.isPwd,
             seatPool: r.seatPool,
@@ -324,7 +337,7 @@ export async function importJosaaRows(db: PrismaClient, rows: JosaaRow[], opts: 
   const identityKey = sourceIdentity(opts.source, content);
   if (opts.dryRun) return applyRows(db, rows, opts, { id: '' });
   const source = await db.source.upsert({ where: { identityKey }, update: {}, create: { ...opts.source, identityKey } });
-  const runKey = checksum([identityKey, opts.year, opts.round, opts.examOverride ?? '', [...opts.institutes.entries()].sort()]);
+  const runKey = checksum([identityKey, opts.year, opts.round, opts.counsellingSystem ?? 'JOSAA', opts.examOverride ?? '', [...opts.institutes.entries()].sort()]);
   const run = await db.importRun.upsert({ where: { identityKey: runKey }, update: {}, create: { identityKey: runKey, checksum: content, sourceId: source.id } });
   try {
     return await db.$transaction(async (tx) => {

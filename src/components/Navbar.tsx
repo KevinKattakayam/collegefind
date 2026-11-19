@@ -24,6 +24,7 @@ export default function Navbar() {
     { href: '/colleges', label: 'Colleges' },
     { href: '/exams', label: 'Exams' },
     { href: '/courses', label: 'Courses' },
+    { href: '/cutoffs', label: 'Cutoffs' },
     { href: '/rankings', label: 'Rankings' },
     { href: '/compare', label: 'Compare' },
     { href: '/predictor', label: 'Predictor' },

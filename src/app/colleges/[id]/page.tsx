@@ -6,14 +6,15 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CollegeCard from '@/components/CollegeCard';
 import DataStatusBadge from '@/components/DataStatusBadge';
 import CollegeActions from '@/components/college/CollegeActions';
-import CutoffHistory from '@/components/college/CutoffHistory';
+import CutoffTable from '@/components/college/CutoffTable';
 import QuestionsAndAnswers from '@/components/college/QuestionsAndAnswers';
 import { prisma } from '@/lib/prisma';
 import { collegeDetailSelect, collegeListSelect } from '@/server/colleges';
 import { formatCount, formatINR, formatLPA, formatPct } from '@/lib/utils';
 import { SITE_URL } from '@/lib/site';
-import type { College, CutoffRow } from '@/types';
+import type { College } from '@/types';
 import { structuredLabels } from '@/server/ingest/structured-facts';
+import { listPublicCutoffs } from '@/server/cutoffs';
 
 export const dynamic = 'force-dynamic';
 
@@ -29,32 +30,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   if (!college) notFound();
   return {
     title: `${college.name}, ${college.city}`,
-    description: `${college.name} in ${college.city}, ${college.state}: courses, fees, official cutoff history and questions from students.`,
+    description: `${college.name} in ${college.city}, ${college.state}. View source-reviewed college information and historical admissions cutoffs where available.`,
     alternates: { canonical: `/colleges/${college.slug}` },
   };
 }
 
-async function getCutoffs(collegeId: string): Promise<CutoffRow[]> {
-  const records = await prisma.cutoffRecord.findMany({
-    where: { program: { collegeId }, isPwd: false },
-    select: {
-      exam: true, year: true, round: true, quota: true, category: true, seatPool: true, metric: true,
-      openingValue: true, closingValue: true, isPreparatory: true,
-      program: { select: { id: true, name: true, branch: true } },
-      source: { select: { name: true, publisher: true, url: true, retrievedAt: true } },
-    },
-    orderBy: [{ year: 'desc' }, { round: 'desc' }, { category: 'asc' }],
-    take: 1000,
-  });
-  const seen = new Set<string>();
-  return records
-    .filter((r) => {
-      const k = [r.program.id, r.exam, r.year, r.quota, r.category, r.seatPool].join('|');
-      if (seen.has(k)) return false;
-      seen.add(k);
-      return true;
-    })
-    .map((r) => ({ ...r, source: { ...r.source, retrievedAt: r.source.retrievedAt.toISOString() } }));
+async function getCutoffs(collegeSlug: string) {
+  return listPublicCutoffs(prisma, { college: collegeSlug, page: 1, pageSize: 8 });
 }
 
 async function getSimilar(college: { id: string; state: string; type: 'GOVERNMENT' | 'PRIVATE' }) {
@@ -73,7 +55,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
   // Old links used the database id; send them to the canonical slug URL.
   if (key !== college.slug) permanentRedirect(`/colleges/${college.slug}`);
 
-  const [cutoffs, similar] = await Promise.all([getCutoffs(college.id), getSimilar(college)]);
+  const [cutoffs, similar] = await Promise.all([getCutoffs(college.slug), getSimilar(college)]);
   const isDemo = college.dataStatus === 'DEMO';
   const listCollege: College = { ...college };
 
@@ -131,27 +113,22 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
 
       <section className="container-main py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
-          {!!listCollege.structuredFacts?.length && (
-            <section className="card-enterprise p-6">
-              <h2 className="text-xl font-black text-slate-800">Reviewed official facts</h2>
-              <ul className="mt-3 space-y-4">
-                {listCollege.structuredFacts.map(({ key, value, academicYear, validUntil, source }) => (
-                  <li key={key} className="break-words">
-                    <h3 className="font-semibold">{structuredLabels[value.kind]}{academicYear !== null && ` · ${academicYear}`}</h3>
-                    <dl className="text-sm">
-                      {Object.entries(value).filter(([label]) => label !== 'kind').map(([label, item]) => (
-                        <div key={label}><dt className="inline font-medium capitalize">{label.replace(/([A-Z])/g, ' $1')}: </dt>
-                          <dd className="inline">{label === 'url' || label === 'applicationUrl'
-                            ? <a href={String(item)} className="underline">{String(item)}</a> : String(item)}</dd></div>
-                      ))}
-                      {validUntil && <div><dt className="inline font-medium">Valid through: </dt><dd className="inline">{new Date(validUntil).toISOString().slice(0, 10)}</dd></div>}
-                    </dl>
-                    <a href={source.url} className="text-sm underline" rel="noopener noreferrer">{source.publisher}</a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
+          <section className="card-enterprise p-6">
+            <h2 className="text-xl font-black text-slate-800">Programmes and admissions</h2>
+            {renderFacts(listCollege.structuredFacts ?? [], ['programme', 'admission'])}
+          </section>
+          <section className="card-enterprise p-6">
+            <h2 className="text-xl font-black text-slate-800">Fees and scholarships</h2>
+            {renderFacts(listCollege.structuredFacts ?? [], ['fee', 'scholarship'])}
+          </section>
+          <section className="card-enterprise p-6">
+            <h2 className="text-xl font-black text-slate-800">Recognition and rankings</h2>
+            {renderFacts(listCollege.structuredFacts ?? [], ['recognition', 'nirfRanking'])}
+          </section>
+          <section className="card-enterprise p-6">
+            <h2 className="text-xl font-black text-slate-800">Placements, facilities and contacts</h2>
+            {renderFacts(listCollege.structuredFacts ?? [], ['placement', 'facility', 'contact'])}
+          </section>
           <div className="card-enterprise p-6">
             <h2 className="text-xl font-black text-slate-800 mb-1">Key numbers</h2>
             {isDemo ? (
@@ -199,12 +176,12 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
           )}
 
           <div className="card-enterprise p-6">
-            <h2 className="text-xl font-black text-slate-800 mb-1">Official cutoff history</h2>
-            <p className="text-sm text-slate-600 mb-4">Last-round closing ranks published by the counselling authority.</p>
-            <CutoffHistory rows={cutoffs} />
-            {cutoffs.length > 0 && (
-              <Link href="/predictor" className="inline-block mt-4 font-semibold text-indigo-700">Estimate my chances</Link>
-            )}
+            <h2 className="text-xl font-black text-slate-800 mb-1">Reviewed historical cutoffs</h2>
+            <p className="text-sm text-slate-600 mb-4">Official records are shown with counselling system, rank definition, category, quota, seat pool, round and source. Historical cutoffs are not admission predictions.</p>
+            <CutoffTable rows={cutoffs.items} />
+            <Link href={`/cutoffs?college=${encodeURIComponent(college.slug)}`} className="mt-4 inline-block font-semibold text-indigo-700 underline">
+              {cutoffs.total > cutoffs.items.length ? `Explore all ${cutoffs.total.toLocaleString('en-IN')} reviewed cutoff records for this college` : 'Open the cutoff explorer for this college'}
+            </Link>
           </div>
 
           <div className="card-enterprise p-6">
@@ -254,4 +231,37 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
       <QuestionsAndAnswers collegeId={college.id} collegeSlug={college.slug} />
     </div>
   );
+}
+
+function reviewedDate(value: Date | string | null | undefined) {
+  if (!value) return 'Not recorded';
+  return new Intl.DateTimeFormat('en-IN', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value));
+}
+
+function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: string[]) {
+  const selected = facts.filter(({ value }) => kinds.includes(value.kind));
+  if (!selected.length) return <p className="mt-3 text-sm text-slate-600">Not yet available as reviewed, source-backed information. Check the institution or relevant authority for current details.</p>;
+  return <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+    {selected.map(({ key, value, academicYear, validUntil, source }) => (
+      <li key={key} className="min-w-0 rounded-lg border border-slate-200 p-4">
+        <h3 className="font-semibold text-slate-900">{structuredLabels[value.kind]}{academicYear !== null ? ` · ${academicYear}` : ''}</h3>
+        <dl className="mt-2 space-y-1 break-words text-sm text-slate-700">
+          {Object.entries(value).filter(([label]) => label !== 'kind').map(([label, item]) => (
+            <div key={label}>
+              <dt className="inline font-medium capitalize">{label.replace(/([A-Z])/g, ' $1')}: </dt>
+              <dd className="inline">{label === 'amountInr' && typeof item === 'number' ? formatINR(item)
+                : label === 'durationMonths' && typeof item === 'number' ? `${item} months`
+                : label === 'url' || label === 'applicationUrl' ? <a href={String(item)} target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline">Open official link</a>
+                : String(item)}</dd>
+            </div>
+          ))}
+          {validUntil && <div><dt className="inline font-medium">Valid through: </dt><dd className="inline">{reviewedDate(validUntil)}</dd></div>}
+        </dl>
+        <p className="mt-3 border-t pt-2 text-xs leading-5 text-slate-600">
+          Source: <a href={source.url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline">{source.publisher}</a><br />
+          Published: {reviewedDate(source.publishedAt)} · Collected: {reviewedDate(source.retrievedAt)} · Reviewed: {reviewedDate(source.reviewedAt)}
+        </p>
+      </li>
+    ))}
+  </ul>;
 }

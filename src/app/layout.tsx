@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   description,
   openGraph: { type: 'website', locale: 'en_IN', siteName: 'CollegeFind', title: 'CollegeFind', description },
   twitter: { card: 'summary', title: 'CollegeFind', description },
-  robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = { themeColor: '#4F46E5' };
