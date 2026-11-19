@@ -1131,81 +1131,11 @@ Website and admissions-link references (130 and 17 respectively) are counted sep
 
 No production or DevSync database, production setting, credential, push, merge or deployment was accessed or modified.
 
-## Owner-local review setup and dashboard handoff — 2026-11-18
+## Historical owner-review clone record — superseded
 
-The current review artifact is the [`batch 027 snapshot manifest`](../data/pilot/staged-evidence-after-batch-027-manifest.json): 205 colleges, 269 sources, 377 claims, 293 import runs and 377 staging audits; zero users, decisions and fixture claims. Its content hash is `24c039bb7fd13a994e0c0e01ce1059f06dc7c492e118aa3cbfbaefe4b2697fbf`. The admin dashboard now exposes the ordered 25-claim owner packet and each item's claim ID, institution/campus slug, field, proposed value, year/scope, source publisher/link, evidence location and reviewer question. Search accepts a claim ID, and packet links retain that exact ID in the queue URL. All 25 remain STAGED; the separate 16-claim hold list is unchanged.
+The 2026-11-18 clone `collegefind_phase3_snapshot_owner_review_20261118_test` was hosted in the disposable CollegeFind test container on port 35439. It held 205 colleges, 269 sources, 377 staged claims, 293 import runs and 377 staging audits, with zero users and decisions at that time. This was a restore/test clone, **not a persistent owner-review database**. The old startup and ADMIN-promotion commands that used this target have been withdrawn; do not use that clone to make genuine review decisions.
 
-### Fresh local review database (provisioned from the latest snapshot)
-
-A clean owner-review clone has been provisioned inside the dedicated CollegeFind-only disposable PostgreSQL container. It is separate from both the archival restore database and browser-test database:
-
-- Container: `collegefind-phase3-disposable-20261118`; host port binds only to `127.0.0.1:35439`.
-- Database/role: `collegefind_phase3_snapshot_owner_review_20261118_test` / `cf_phase3_test`.
-- Five current migrations applied. Latest snapshot restoration passed exact read-back and an idempotent retry.
-- Rows: 205 colleges, 269 sources, 377 claims, 293 import runs, 377 staging audits; zero users, decisions or fixtures.
-- Snapshot SHA-256: `24c039bb7fd13a994e0c0e01ce1059f06dc7c492e118aa3cbfbaefe4b2697fbf`.
-
-To start the local app, load the existing host-only disposable connection file (values are never echoed), verify the container/database identity and row counts, derive a URL for the new review clone, then run Next.js on loopback. This does not write any review decision or create a user. Stop if any guard fails.
-
-```bash
-set -euo pipefail
-set +x
-set -a
-. /tmp/collegefind-phase3-restore.env
-set +a
-unset COLLEGEFIND_TEST_DATABASE_CONFIRMED
-CF_CONTAINER=collegefind-phase3-disposable-20261118
-CF_REVIEW_DB=collegefind_phase3_snapshot_owner_review_20261118_test
-test "$(docker port "$CF_CONTAINER" 5432/tcp)" = '127.0.0.1:35439'
-test "$(docker exec "$CF_CONTAINER" psql -U cf_phase3_test -d "$CF_REVIEW_DB" -XAtc \
-  "SELECT current_database() || chr(124) || current_user")" = "$CF_REVIEW_DB|cf_phase3_test"
-test "$(docker exec "$CF_CONTAINER" psql -U cf_phase3_test -d "$CF_REVIEW_DB" -XAtc \
-  'SELECT (SELECT count(*)::text FROM "College") || chr(124) || (SELECT count(*)::text FROM "Source") || chr(124) || (SELECT count(*)::text FROM "FieldEvidence") || chr(124) || (SELECT count(*)::text FROM "ImportRun") || chr(124) || (SELECT count(*)::text FROM "AuditLog") || chr(124) || (SELECT count(*)::text FROM "EvidenceDecision") || chr(124) || (SELECT count(*)::text FROM "User") || chr(124) || (SELECT count(*)::text FROM "FieldEvidence" WHERE "isFixture")')" = '205|269|377|293|377|0|0|0'
-export CF_REVIEW_DB
-export COLLEGEFIND_SNAPSHOT_TEST_DATABASE_URL="$(node -e '
-  const u = new URL(process.env.TEST_DATABASE_URL ?? "");
-  if (u.hostname !== "127.0.0.1" || u.port !== "35439" || u.username !== "cf_phase3_test" || u.pathname !== "/collegefind_phase3_restore" || u.search || u.hash) process.exit(2);
-  u.pathname = "/" + process.env.CF_REVIEW_DB;
-  process.stdout.write(u.toString());
-')"
-export DATABASE_URL="$COLLEGEFIND_SNAPSHOT_TEST_DATABASE_URL"
-export COLLEGEFIND_TEST_DATABASE_CONFIRMED=true
-export NEXTAUTH_URL=http://127.0.0.1:3317
-export NEXTAUTH_SECRET="$(openssl rand -hex 32)"
-export UPSTASH_REDIS_REST_URL= UPSTASH_REDIS_REST_TOKEN=
-unset DIRECT_URL SHADOW_DATABASE_URL ADMIN_SEED_TOKEN
-npm run dev -- --hostname 127.0.0.1 --port 3317
-```
-
-Register only your own account at `http://127.0.0.1:3317/register`. The registration route creates it as USER and signs it in locally. In another terminal, repeat the loopback/database identity checks above, load the same connection file, and enter the exact email you registered. This guarded parameterized update promotes only one matching USER in this local review clone; it refuses zero/multiple matches:
-
-```bash
-set -euo pipefail
-set +x
-set -a
-. /tmp/collegefind-phase3-restore.env
-set +a
-CF_CONTAINER=collegefind-phase3-disposable-20261118
-CF_REVIEW_DB=collegefind_phase3_snapshot_owner_review_20261118_test
-test "$(docker port "$CF_CONTAINER" 5432/tcp)" = '127.0.0.1:35439'
-test "$(docker exec "$CF_CONTAINER" psql -U cf_phase3_test -d "$CF_REVIEW_DB" -XAtc \
-  "SELECT current_database() || chr(124) || current_user")" = "$CF_REVIEW_DB|cf_phase3_test"
-read -r -p 'Email used for your owner account: ' CF_OWNER_EMAIL
-MATCHES="$(docker exec -i "$CF_CONTAINER" psql -U cf_phase3_test -d "$CF_REVIEW_DB" -XAt -v owner_email="$CF_OWNER_EMAIL" <<'SQL'
-SELECT count(*) FROM "User" WHERE lower(email)=lower(:'owner_email') AND role='USER';
-SQL
-)"
-test "$MATCHES" = 1
-docker exec -i "$CF_CONTAINER" psql -U cf_phase3_test -d "$CF_REVIEW_DB" -X -v owner_email="$CF_OWNER_EMAIL" <<'SQL'
-UPDATE "User" SET role='ADMIN'
-WHERE lower(email)=lower(:'owner_email') AND role='USER'
-RETURNING id, role;
-SQL
-```
-
-Log out and back in, then visit `http://127.0.0.1:3317/admin/enrichment`. Confirm your identity and the packet panel. Filter by an exact packet claim ID and confirm the queue retains that ID; inspect the claim card's campus context, source, year, value, evidence location and reviewer question. The 16 held claims remain separate. Unauthenticated requests redirect to login; an ordinary USER is denied. Each approve/reject action requires at least three characters of reviewer reasoning and is auditable. Do not perform any review unless you personally inspected the linked source and agree with the claim.
-
-The browser suite previously verified ADMIN access, USER denial, fixture rejection, reason-required approve/reject, audit history and synthetic STAGED→VERIFIED→profile visibility including source/year/category for a fee. It did not authenticate the project owner. Owner access remains pending the owner-run local setup above; genuine VERIFIED claim count remains **0**. The exact command outcomes for the current packet-panel and claim-ID changes are recorded in the latest `UPGRADE_STATUS.md` continuation entry.
+For the current owner handoff, use [`OWNER_EVIDENCE_REVIEW.md`](OWNER_EVIDENCE_REVIEW.md). It keeps test safeguards separate, documents a guarded persistent local restore path, owner account creation and one-account ADMIN promotion, review checklist, encrypted full-database backup and safe restore. No owner database has been selected or provisioned in this task.
 
 ## Phase 3 acceptance, owner review and actionable 82-college backlog — 2026-11-18
 
@@ -1312,11 +1242,7 @@ Backlog distribution: CURRENT_CYCLE_OR_STALENESS: 6; IDENTITY_OR_SCOPE: 25; ACCE
 
 ### First genuine review packet and local access
 
-The first packet contains **25 exact STAGED_UNREVIEWED evidence IDs**, all present in the review clone and none among the 16 holds. The review panel is built into `/admin/enrichment`; the convenience export is [`first-human-review-batch.json`](../data/pilot/first-human-review-batch.json). It displays institution/slug, field, proposed value, year/scope, publisher, exact source link, evidence location, and a review question. Search by the exact evidence ID opens the relevant queue record. Review source and campus identity before acting. The packet is a prioritized inspection list, not an approval recommendation.
-
-The read-only preflight was re-run on 2026-11-18 with host approval: the named CollegeFind-only container bound `127.0.0.1:35439`; database `collegefind_phase3_snapshot_owner_review_20261118_test`, role `cf_phase3_test`; counts `205|269|377|293|377|0|0|0` for College/Source/FieldEvidence/ImportRun/AuditLog/EvidenceDecision/User/fixture evidence. It did not read a secret, create a user, or write a review decision. The owner database remains empty of users and decisions.
-
-Owner-controlled steps (do these yourself): follow the executable, guarded setup in [Owner-local review setup and dashboard handoff](#owner-local-review-setup-and-dashboard-handoff), which loads `/tmp/collegefind-phase3-restore.env` without echoing it and starts the app only on loopback `127.0.0.1:3317`. Visit `http://127.0.0.1:3317/register`, create your own account, verify the database identity again, and run the documented parameterized promotion only if exactly one USER row matches the email you just entered. Log out/in, then open `http://127.0.0.1:3317/admin/enrichment`. Registration/login and ADMIN/USER authorization code paths and synthetic browser workflow have test evidence; an owner cannot be logged in or promoted by this audit, so actual owner page access remains owner-controlled. Review claims individually with reasons. Keep the 16 held claims separate.
+The 25-claim packet remains in [`first-human-review-batch.json`](../data/pilot/first-human-review-batch.json) and is rendered in `/admin/enrichment`. The clone identity and counts described in the following historical section were checked on 2026-11-18, but that database was a disposable `_test` restore clone, not durable owner storage. **Do not register, promote an account or write genuine review decisions to that clone.** The former command block that targeted it has been withdrawn. The current owner setup, target contract and local review steps are in [`OWNER_EVIDENCE_REVIEW.md`](OWNER_EVIDENCE_REVIEW.md); owner provisioning is still pending. The 16 held claims remain excluded.
 
 ### Phase 3 decision and Phase 4 boundary
 
@@ -1339,6 +1265,12 @@ The disposable integration fixture exercised 61 and 2,001 approved **synthetic**
 The run exposed an expensive repeated latest-review lookup. The additive `EvidenceDecision(cutoffId, createdAt DESC, id DESC)` index was added and applied to the disposable database; EXPLAIN ANALYZE used this index for latest-decision retrieval. With the final source-locator projection, 10 warmups and 100 local samples per query, nonselective page 1 latency was p50/p95/p99 **15.125/16.088/24.942 ms**; page 21 **19.227/20.194/23.257 ms**; selective page **3.392/3.910/4.158 ms**; broad count **7.219/12.584/13.166 ms**; selective count **1.879/2.818/3.061 ms**. In the broad 2,001-row plan PostgreSQL sequentially scanned the small synthetic cutoff table (2,001 rows), while the selective plan used `CutoffRecord_exam_category_seatPool_year_idx`; latest decisions used `EvidenceDecision_cutoffId_createdAt_id_idx`. These are warm local synthetic measurements, not production performance claims.
 
 JoSAA currently exposes an official opening/closing rank listing and a previous-years archive with year, round, institution, programme and category dimensions. Its current official page defines OPEN as CRL, reserved categories as their category rank, PwD ranks within the category, and the `P` suffix as a preparatory rank list ([current official OR/CR page](https://josaa.admissions.nic.in/Applicant/SeatAllotmentResult/CurrentORCR.aspx), [JoSAA OR-CR listing](https://josaa.nic.in/or-cr/)). The JoSAA reproduction policy says reproduction requires proper permission from NIC and stakeholders and separately protected third-party material needs its copyright holder's permission ([JoSAA copyright policy](https://josaa.admissions.nic.in/Applicant/FooterPages/copyrightPolicy.aspx)). Public viewing therefore supports linking and source research, but does not establish permission for automated extraction, storing complete source tables, or bulk republication. No JoSAA records were imported; source-use and permitted storage/republication remain unresolved pending written permission or a clearly licensed official dataset. No restriction was bypassed.
+
+## Persistent owner review readiness — 2026-11-19
+
+The owner review database recorded on 2026-11-18 is a disposable `_test` clone on the Phase 3 disposable container. It is **not** the owner's persistent review destination and must not be used for genuine decisions. This task did not connect to it. A distinct guarded restore workflow is prepared for an owner-selected durable local PostgreSQL service at loopback port 35441; no service, credential, reviewer account or decision was created. See [`OWNER_EVIDENCE_REVIEW.md`](OWNER_EVIDENCE_REVIEW.md) for the target contract, snapshot restore, account setup, review checklist and encrypted full-database backup/restore procedure.
+
+The first 25-claim packet remains the same archive-reconciled set of STAGED_UNREVIEWED claims. Its dashboard/JSON view now includes college location, source publication and retrieval dates, archived source license/notes, freshness prompt, campus/scope question and potential conflict peer IDs. All 25 remain inspection candidates, not approval recommendations; the 16 held claims remain separate. Current evidence is still 377 staged (230 substantive across 123 colleges, 147 references), 214 substantive claims open for inspection and 16 held; genuine approvals 0, verified colleges 0, verified cutoffs 0. New claims staged in this increment: 0.
 
 ### Phase 4 trend and accessibility verification — 2026-11-19
 

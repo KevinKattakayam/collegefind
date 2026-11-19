@@ -43,8 +43,12 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
           <p><strong>{item.order}. {item.institutionName}</strong> ({item.institutionSlug}) · <code>{item.evidenceId}</code></p>
           <p><strong>Field:</strong> {item.field} · <strong>Academic year:</strong> {item.academicYear ?? 'Not recorded'}{item.programScope ? ` · ${item.programScope}` : ''}</p>
           <p><strong>Proposed value:</strong> <code className="whitespace-pre-wrap">{JSON.stringify(item.value)}</code>{item.unit ? ` ${item.unit}` : ''}</p>
-          <p><strong>Source:</strong> {item.sourcePublisher} · <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Open official source</a></p>
+          <p><strong>College location:</strong> {item.collegeCity}, {item.collegeState} · <strong>Campus check:</strong> {item.campusReviewQuestion}</p>
+          <p><strong>Source:</strong> {item.sourcePublisher} · <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Open official source</a> · <strong>Published:</strong> {item.sourcePublishedAt ? date(new Date(item.sourcePublishedAt)) : 'Not recorded'} · <strong>Retrieved:</strong> {date(new Date(item.sourceRetrievedAt))}</p>
           <p><strong>Evidence location:</strong> {item.evidenceLocation ?? 'Not recorded'}</p>
+          <details><summary>Source access, reuse and collection notes</summary><p role="note"><strong>Source-use review:</strong> {item.sourceUseWarning}</p><p>{item.sourceNotes}</p></details>
+          {item.freshnessWarning && <p role="note"><strong>Freshness review:</strong> {item.freshnessWarning}</p>}
+          {item.conflictWarning && <p role="alert"><strong>Conflict warning:</strong> {item.conflictWarning} {item.conflictPeerIds.join(', ')}</p>}
           <p><strong>Reviewer question:</strong> {item.recommendedQuestion}</p>
           <Link href={pageLink(1, { status: 'ALL', q: item.evidenceId })}>Open this claim in the queue</Link>
         </li>)}
