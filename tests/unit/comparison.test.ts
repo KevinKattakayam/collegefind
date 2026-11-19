@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { bestComparisonIndex, comparisonSlugs, shareComparisonUrl } from '@/lib/comparison';
+import { bestComparisonIndex, comparisonSlugs, comparisonUrl, shareComparisonUrl } from '@/lib/comparison';
 import { buildCollegeWhere } from '@/server/colleges';
 
 describe('comparison links and missing values', () => {
@@ -15,6 +15,10 @@ describe('comparison links and missing values', () => {
       .toBe('https://example.test/compare?colleges=iit-bombay,nit-trichy');
     expect(shareComparisonUrl('https://example.test', [{ slug: 'alone' }])).toBeNull();
   });
+  it('keeps the current comparison URL aligned after editing or clearing slots', () => {
+    expect(comparisonUrl([{ slug: 'iit-bombay' }, { slug: 'nit-trichy' }])).toBe('/compare?colleges=iit-bombay,nit-trichy');
+    expect(comparisonUrl([{ slug: 'one' }])).toBe('/compare');
+  });
   it('only chooses a winner when every compared value is known', () => {
     expect(bestComparisonIndex([{ n: 1 }, { n: 2 }], (x) => x.n, 'min')).toBe(0);
     expect(bestComparisonIndex([{ n: 5 }, { n: 2 }, { n: 4 }], (x) => x.n, 'min')).toBe(1);
@@ -23,8 +27,8 @@ describe('comparison links and missing values', () => {
     expect(bestComparisonIndex([{ n: 1 }, { n: null }, { n: 2 }], (x) => x.n, 'min')).toBe(-1);
     expect(bestComparisonIndex([{ n: 1 }, { n: Number.NaN }], (x) => x.n, 'max')).toBe(-1);
   });
-  it('excludes demo rows from numeric fee filters', () => {
+  it('does not query unreviewed summary columns for trusted fee filtering', () => {
     const where = buildCollegeWhere({ minFees: 100, maxFees: 500, page: 1, limit: 12, sort: 'name' } as never);
-    expect(where).toMatchObject({ AND: expect.arrayContaining([{ dataStatus: { not: 'DEMO' } }]) });
+    expect(where).toEqual({});
   });
 });

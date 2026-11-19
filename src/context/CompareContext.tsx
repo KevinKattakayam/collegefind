@@ -63,6 +63,7 @@ interface CompareContextType {
   removeFromCompare: (id: string) => void;
   clearCompare: () => void;
   replaceCompare: (colleges: College[]) => void;
+  replaceCompareAt: (index: number, college: College) => void;
   isInCompare: (id: string) => boolean;
 }
 
@@ -106,6 +107,17 @@ export function CompareProvider({ children }: { children: ReactNode }) {
       removeFromCompare: (id) => write(getSnapshot().filter((c) => c.id !== id)),
       clearCompare: () => write([]),
       replaceCompare: (colleges) => write(colleges.slice(0, MAX)),
+      replaceCompareAt: (index, college) => {
+        const current = getSnapshot();
+        if (index < 0 || index > current.length || index >= MAX) return;
+        if (current.some((item, itemIndex) => item.id === college.id && itemIndex !== index)) {
+          toast.error('That college is already in this comparison');
+          return;
+        }
+        const next = [...current];
+        next[index] = college;
+        write(next.slice(0, MAX));
+      },
       isInCompare: (id) => compareList.some((c) => c.id === id),
     }),
     [compareList, addToCompare],

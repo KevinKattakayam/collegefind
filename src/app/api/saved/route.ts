@@ -13,30 +13,44 @@ export const GET = withErrorHandling(async () => {
   const saved = await prisma.savedCollege.findMany({
     where: { userId: user.id },
     select: { college: { select: collegeListSelect } },
-    orderBy: { createdAt: 'desc' },
+    orderBy: [{ createdAt: 'desc' }, { id: 'desc' }],
   });
   return NextResponse.json({ saved: saved.map((s) => s.college) }, { headers: { 'Cache-Control': CACHE_NONE } });
 });
 
-/** Idempotent: saving twice (or two tabs at once) never produces a 500. */
+/** Idempotently adds one college or merges a device shortlist for the signed-in owner. */
 export const POST = withErrorHandling(async (request: Request) => {
   const user = await requireUser();
   assertSameOrigin(request);
   await enforceRateLimit('save', user.id);
-  const { collegeId } = await readJson(request, saveCollegeSchema);
+  const input = await readJson(request, saveCollegeSchema, 32 * 1024);
+  const keys = 'collegeKeys' in input ? input.collegeKeys : [input.collegeId];
 
-  const college = await prisma.college.findUnique({ where: { id: collegeId }, select: { id: true } });
-  if (!college) throw new ApiError(404, 'NOT_FOUND', 'College not found');
-
-  const count = await prisma.savedCollege.count({ where: { userId: user.id } });
-  if (count >= MAX_SAVED) throw new ApiError(409, 'LIMIT_REACHED', `You can save up to ${MAX_SAVED} colleges`);
-
-  const result = await prisma.savedCollege.createMany({
-    data: [{ userId: user.id, collegeId }],
-    skipDuplicates: true,
+  const result = await prisma.$transaction(async (tx) => {
+    // Serialize per-user cap checks so concurrent requests cannot exceed the limit.
+    await tx.$queryRaw`SELECT id FROM "User" WHERE id = ${user.id} FOR UPDATE`;
+    const colleges = await tx.college.findMany({
+      where: { OR: [{ id: { in: keys } }, { slug: { in: keys } }] },
+      select: { id: true, slug: true },
+    });
+    const matched = new Map(colleges.flatMap((college) => [[college.id, college.id], [college.slug, college.id]]));
+    const missing = keys.filter((key) => !matched.has(key));
+    if (missing.length) throw new ApiError(404, 'NOT_FOUND', 'One or more colleges are unavailable');
+    const collegeIds = [...new Set(keys.map((key) => matched.get(key)!))];
+    const existing = await tx.savedCollege.findMany({ where: { userId: user.id, collegeId: { in: collegeIds } }, select: { collegeId: true } });
+    const existingIds = new Set(existing.map((row) => row.collegeId));
+    const toAdd = collegeIds.filter((id) => !existingIds.has(id));
+    const total = await tx.savedCollege.count({ where: { userId: user.id } });
+    if (total + toAdd.length > MAX_SAVED) throw new ApiError(409, 'LIMIT_REACHED', `You can save up to ${MAX_SAVED} colleges`);
+    if (toAdd.length) await tx.savedCollege.createMany({ data: toAdd.map((collegeId) => ({ userId: user.id, collegeId })), skipDuplicates: true });
+    return { addedCount: toAdd.length, alreadySavedCount: collegeIds.length - toAdd.length };
   });
+
+  const batch = 'collegeKeys' in input;
   return NextResponse.json(
-    { success: true, alreadySaved: result.count === 0 },
-    { status: result.count === 0 ? 200 : 201 },
+    batch
+      ? { success: true, savedCount: result.addedCount, alreadySavedCount: result.alreadySavedCount }
+      : { success: true, alreadySaved: result.addedCount === 0 },
+    { status: !batch && result.addedCount > 0 ? 201 : 200 },
   );
 });

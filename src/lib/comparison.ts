@@ -14,6 +14,11 @@ export function shareComparisonUrl(origin: string, colleges: Pick<College, 'slug
   return `${origin}/compare?colleges=${slugs.map(encodeURIComponent).join(',')}`;
 }
 
+export function comparisonUrl(colleges: Pick<College, 'slug'>[]): string {
+  const slugs = colleges.length >= 2 ? comparisonSlugs(colleges.map((college) => college.slug)) : null;
+  return slugs ? `/compare?colleges=${slugs.map(encodeURIComponent).join(',')}` : '/compare';
+}
+
 export function bestComparisonIndex<T>(items: T[], getValue: (item: T) => number | null | undefined, direction: 'min' | 'max'): number {
   if (items.length < 2) return -1;
   const values = items.map(getValue);

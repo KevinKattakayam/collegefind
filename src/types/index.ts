@@ -67,6 +67,7 @@ export interface Answer {
 
 export interface CollegesResponse {
   colleges: College[];
+  missingSlugs?: string[];
   total: number;
   page: number;
   limit: number;

@@ -44,3 +44,16 @@ it('honors establishment period boundaries and all deterministic sort modes', ()
  expect(filterPublicColleges(colleges,collegesQuerySchema.parse({sort:'fees_desc'})).map(c=>c.slug)).toEqual(['older','recent','middle','later']);
  expect(filterPublicColleges(colleges,collegesQuerySchema.parse({sort:'name'})).map(c=>c.slug)).toEqual(['older','middle','later','recent']);
 });
+
+it('matches only projected structured programme and admission facts, with city and degree filters', () => {
+ const colleges = [
+  row({ slug: 'approved', city: 'Chennai', structuredFacts: [
+   { key: 'programme:1', value: { kind: 'programme', programme: 'B.Tech Computer Science', level: 'UG' }, academicYear: 2026, validUntil: null, source: { url: 'https://example.edu/programmes', publisher: 'Example University', publishedAt: null, retrievedAt: '2026-01-01', reviewedAt: '2026-01-02' } },
+   { key: 'admission:1', value: { kind: 'admission', programme: 'B.Tech Computer Science', route: 'JoSAA', category: 'OPEN', eligibility: 'JEE Advanced qualified' }, academicYear: 2026, validUntil: null, source: { url: 'https://example.edu/admissions', publisher: 'Example University', publishedAt: null, retrievedAt: '2026-01-01', reviewedAt: '2026-01-02' } },
+  ] }),
+  row({ slug: 'unknown', city: 'Chennai', structuredFacts: [] }),
+  row({ slug: 'different', city: 'Mumbai', structuredFacts: [{ key: 'programme:2', value: { kind: 'programme', programme: 'MBA', level: 'PG' }, academicYear: null, validUntil: null, source: { url: 'https://example.edu', publisher: 'Example University', publishedAt: null, retrievedAt: '2026-01-01', reviewedAt: null } }] }),
+ ];
+ expect(filterPublicColleges(colleges, collegesQuerySchema.parse({ city: 'chennai', programme: 'computer', degrees: 'UG', eligibility: 'Advanced' })).map((college) => college.slug)).toEqual(['approved']);
+ expect(filterPublicColleges(colleges, collegesQuerySchema.parse({ programme: 'B.Tech' })).map((college) => college.slug)).toEqual(['approved']);
+});

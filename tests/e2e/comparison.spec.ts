@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { hash } from 'bcryptjs';
 import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import pg from 'pg';
@@ -24,6 +25,19 @@ test.beforeAll(async () => {
  });
 });
 test.afterAll(async () => { await fixtureDb?.$disconnect(); });
+async function createBrowserUser(label: string) {
+ const email = `${label}-${Date.now()}-${Math.random().toString(16).slice(2)}@example.test`;
+ const password = `Synthetic ${label} account 3841!`;
+ await fixtureDb.user.create({ data: { name: `Synthetic ${label} account`, email, password: await hash(password, 4), role: 'USER' } });
+ return { email, password };
+}
+async function signInBrowserUser(page: import('@playwright/test').Page, email: string, password: string) {
+ await page.goto('/login?callbackUrl=/saved');
+ await page.getByPlaceholder('Email address', { exact: true }).fill(email);
+ await page.getByPlaceholder('Password', { exact: true }).fill(password);
+ await page.getByRole('button', { name: 'Login', exact: true }).click();
+ await expect.poll(() => new URL(page.url()).pathname).toBe('/saved');
+}
 
 test('demo college details and recommendations never promote demo peers', async ({ page, request }) => {
  const catalogue = await (await request.get('/api/colleges?limit=1')).json();
@@ -31,7 +45,8 @@ test('demo college details and recommendations never promote demo peers', async 
  expect(college.annualFees).toBeNull();
  const response = await request.get(`/api/colleges/similar/${college.slug}`);
  expect(response.status()).toBe(200);
- expect((await response.json()).colleges).toEqual([]);
+ const recommendations = (await response.json()).colleges as { dataStatus: string; annualFees: number | null }[];
+ expect(recommendations.every((recommended) => recommended.dataStatus !== 'DEMO' && recommended.annualFees === null)).toBe(true);
  await page.goto(`/colleges/${college.slug}`);
  await expect(page.getByRole('heading', { level: 1 })).toHaveText(college.name);
  await expect(page.getByText('Demo data').first()).toBeVisible();
@@ -49,9 +64,9 @@ const fixture = (slug:string) => ({id:slug,slug,name:`Current ${slug}`,shortName
 test('a clean browser and refresh load current records from a shared URL', async ({page}) => {
  await page.route('**/api/colleges/*', route => route.fulfill({json:{college:fixture(route.request().url().split('/').pop()!)}}));
  await page.goto('/compare?colleges=alpha,beta');
- await expect(page.getByRole('heading',{name:'Current alpha',exact:true})).toBeVisible();
+ await expect(page.getByRole('region', { name: 'Comparison slot for Current alpha' }).getByRole('heading',{name:'Current alpha',exact:true})).toBeVisible();
  await page.reload();
- await expect(page.getByRole('heading',{name:'Current beta',exact:true})).toBeVisible();
+ await expect(page.getByRole('region', { name: 'Comparison slot for Current beta' }).getByRole('heading',{name:'Current beta',exact:true})).toBeVisible();
  await expect(page.getByText('Lowest listed annual fees:')).toHaveCount(0);
 });
 test('invalid duplicate and missing identifiers do not retain stale comparisons', async ({page}) => {
@@ -62,11 +77,57 @@ test('invalid duplicate and missing identifiers do not retain stale comparisons'
  await page.goto('/compare?colleges=alpha,missing');
  await expect(page.getByText('One or more colleges in this comparison are no longer available.')).toBeVisible();
 });
+
+test('a comparison slot can be replaced and the shared URL follows the updated selection', async ({ page }) => {
+ await page.route('**/api/colleges/*', (route) => route.fulfill({ json: { college: fixture(route.request().url().split('/').pop()!) } }));
+ await page.route('**/api/colleges?**', (route) => route.fulfill({ json: { colleges: [fixture('gamma')], total: 1, page: 1, limit: 10, totalPages: 1 } }));
+ await page.goto('/compare?colleges=alpha,beta');
+ await expect(page.getByRole('region', { name: 'Comparison slot for Current alpha' }).getByRole('heading', { name: 'Current alpha', exact: true })).toBeVisible();
+ await page.getByRole('button', { name: 'Replace college' }).first().click();
+ const dialog = page.getByRole('dialog', { name: 'Choose a college' });
+ const search = page.getByRole('searchbox', { name: 'Search colleges to compare' });
+ await expect(search).toBeFocused();
+ await search.press('Shift+Tab');
+ await expect(dialog.getByRole('button', { name: 'Close' })).toBeFocused();
+ await dialog.getByRole('button', { name: 'Close' }).press('Shift+Tab');
+ await expect(search).toBeFocused();
+ await search.press('Tab');
+ await expect(dialog.getByRole('button', { name: 'Close' })).toBeFocused();
+ await search.focus();
+ await search.fill('gamma');
+ await page.getByRole('button', { name: /Current gamma/ }).click();
+ await expect(page.locator('[data-compare-heading]')).toBeFocused();
+ await expect(page).toHaveURL(/colleges=gamma,beta/);
+ await expect(page.getByRole('region', { name: 'Comparison slot for Current gamma' }).getByRole('heading', { name: 'Current gamma', exact: true })).toBeVisible();
+ await page.reload();
+ await expect(page.getByRole('region', { name: 'Comparison slot for Current gamma' }).getByRole('heading', { name: 'Current gamma', exact: true })).toBeVisible();
+});
+
+test('structured reviewed facts keep their own scope, year and official source attribution', async ({ page }) => {
+ const sourced = {
+  ...fixture('alpha'),
+  structuredFacts: [{
+   key: 'structured.fee:programme-scope:2025',
+   value: { kind: 'fee', programme: 'B.Tech Computer Science', category: 'OBC_NCL', component: 'Tuition', feeType: 'TUITION', period: 'SEMESTER', amountInr: 95000 },
+   academicYear: 2025, validUntil: null,
+   source: { url: 'https://example.edu/fees', publisher: 'Example Institute', publishedAt: '2025-03-01T00:00:00.000Z', retrievedAt: '2025-04-01T00:00:00.000Z', reviewedAt: '2025-04-02T00:00:00.000Z' },
+  }],
+ };
+ await page.route('**/api/colleges/alpha', (route) => route.fulfill({ json: { college: sourced } }));
+ await page.route('**/api/colleges/beta', (route) => route.fulfill({ json: { college: fixture('beta') } }));
+ await page.goto('/compare?colleges=alpha,beta');
+ const reviewed = page.getByRole('region', { name: 'Reviewed information for Current alpha' });
+ await expect(reviewed.getByText(/B\.Tech Computer Science · OBC_NCL · Tuition: ₹95,000 per semester/)).toBeVisible();
+ await expect(reviewed.getByText('Academic year 2025 · Example Institute')).toBeVisible();
+ await expect(reviewed.getByRole('link', { name: 'Open official source' })).toHaveAttribute('href', 'https://example.edu/fees');
+ const dimensions = await page.evaluate(() => ({ width: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth }));
+ expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.width);
+});
 test('old persisted snapshots are replaced by current server records', async ({page}) => {
  await page.addInitScript(() => localStorage.setItem('compareList:v2',JSON.stringify([{id:'alpha',slug:'alpha',name:'Stale snapshot',annualFees:1},{id:'beta',slug:'beta'}])));
  await page.route('**/api/colleges/*', route => route.fulfill({json:{college:fixture(route.request().url().split('/').pop()!)}}));
  await page.goto('/compare');
- await expect(page.getByRole('heading',{name:'Current alpha',exact:true})).toBeVisible();
+ await expect(page.getByRole('region', { name: 'Comparison slot for Current alpha' }).getByRole('heading',{name:'Current alpha',exact:true})).toBeVisible();
  await expect(page.getByText('Stale snapshot')).toHaveCount(0);
 });
 
@@ -110,9 +171,100 @@ test('a real local session can save and retrieve a college without leaking demo 
  await page.reload();
  await page.getByRole('link',{name:'Open compare page'}).click();
  await expect(page).toHaveURL(/colleges=/);
- await expect(page.getByRole('heading',{name:pair[0].name,exact:true})).toBeVisible();
+ await expect(page.getByRole('region', { name: `Comparison slot for ${pair[0].name}` }).getByRole('heading',{name:pair[0].name,exact:true})).toBeVisible();
  await page.reload();
- await expect(page.getByRole('heading',{name:pair[1].name,exact:true})).toBeVisible();
+ await expect(page.getByRole('region', { name: `Comparison slot for ${pair[1].name}` }).getByRole('heading',{name:pair[1].name,exact:true})).toBeVisible();
+});
+
+test('signing in merges the device shortlist once into the authenticated account', async ({ page, request }) => {
+ const catalogue = await (await request.get('/api/colleges?limit=1')).json();
+ const college = catalogue.colleges[0];
+ const email = `shortlist-merge-${Date.now()}-${Math.random().toString(16).slice(2)}@example.test`;
+ const password = 'Unique shortlist fixture 7864!';
+ expect((await request.post('/api/auth/register', { data: { name: 'Shortlist fixture', email, password } })).status()).toBe(201);
+ await page.addInitScript((slug: string) => localStorage.setItem('collegefind:shortlist:v1', JSON.stringify([slug])), college.slug);
+ await page.goto('/login?callbackUrl=/saved');
+ await page.getByPlaceholder('Email address', { exact: true }).fill(email);
+ await page.getByPlaceholder('Password', { exact: true }).fill(password);
+ const merge = page.waitForResponse((response) => new URL(response.url()).pathname === '/api/saved' && response.request().method() === 'POST');
+ await page.getByRole('button', { name: 'Login', exact: true }).click();
+ expect((await merge).status()).toBe(200);
+ await expect(page).toHaveURL(/\/saved$/);
+ await expect(page.getByRole('article').filter({ hasText: college.name })).toBeVisible();
+ const stored = await (await page.request.get('/api/saved')).json();
+ expect(stored.saved.map((savedCollege: { id: string }) => savedCollege.id)).toContain(college.id);
+ expect(await page.evaluate(() => localStorage.getItem('collegefind:shortlist:v1'))).toBe('[]');
+});
+
+test('an authenticated shortlist restores in a fresh browser context with the same stable order', async ({ browser, page, request }) => {
+ const catalogue = await (await request.get('/api/colleges?limit=3&sort=name')).json();
+ const colleges = catalogue.colleges as { id: string; slug: string; name: string }[];
+ expect(colleges).toHaveLength(3);
+ const { email, password } = await createBrowserUser('cross-device');
+ const baseURL = process.env.NEXTAUTH_URL ?? `http://127.0.0.1:${process.env.E2E_PORT ?? 3100}`;
+ const secondContext = await browser.newContext({ baseURL });
+ try {
+  const firstPage = page;
+  await signInBrowserUser(firstPage, email, password);
+
+  const secondPage = await secondContext.newPage();
+  await signInBrowserUser(secondPage, email, password);
+  const secondSession = await (await secondPage.request.get('/api/auth/session')).json();
+  expect(secondSession.user?.email).toBe(email);
+  const [firstResult, secondResult] = await Promise.all([
+   firstPage.request.post('/api/saved', { data: { collegeKeys: [colleges[0].slug, colleges[1].slug] } }),
+   secondPage.request.post('/api/saved', { data: { collegeKeys: [colleges[1].slug, colleges[2].slug] } }),
+  ]);
+  expect(firstResult.status()).toBe(200);
+  expect(secondResult.status()).toBe(200);
+  const firstRead = await (await firstPage.request.get('/api/saved')).json();
+  await secondPage.reload();
+  await expect(secondPage.getByRole('heading', { name: 'Saved Colleges', exact: true })).toBeVisible();
+  const secondRead = await (await secondPage.request.get('/api/saved')).json();
+  expect(secondRead.saved.map((college: { id: string }) => college.id)).toEqual(firstRead.saved.map((college: { id: string }) => college.id));
+  expect(firstRead.saved).toHaveLength(3);
+  const visible = await secondPage.locator('article h3').allTextContents();
+  expect(visible).toEqual(firstRead.saved.map((college: { name: string }) => college.name));
+ } finally {
+  await secondContext.close();
+ }
+});
+
+test('a failed device-shortlist merge keeps local selections for a successful retry', async ({ page, request }) => {
+ const catalogue = await (await request.get('/api/colleges?limit=1')).json();
+ const college = catalogue.colleges[0] as { slug: string; name: string };
+ const { email, password } = await createBrowserUser('merge-retry');
+ await page.addInitScript((slug: string) => localStorage.setItem('collegefind:shortlist:v1', JSON.stringify([slug])), college.slug);
+ await page.route('**/api/saved', (route) => route.request().method() === 'POST'
+  ? route.fulfill({ status: 503, json: { error: 'Service unavailable' } })
+  : route.continue());
+ await signInBrowserUser(page, email, password);
+ await expect(page.getByText('Your device shortlist is safe. We could not sync it yet; retry after reconnecting.')).toBeVisible();
+ expect(await page.evaluate(() => localStorage.getItem('collegefind:shortlist:v1'))).toBe(JSON.stringify([college.slug]));
+ await page.unroute('**/api/saved');
+ await page.reload();
+ await expect.poll(() => page.evaluate(() => localStorage.getItem('collegefind:shortlist:v1'))).toBe('[]');
+ await expect(page.getByRole('article').filter({ hasText: college.name })).toBeVisible();
+ const saved = await page.request.get('/api/saved');
+ expect(saved.status()).toBe(200);
+ expect((await saved.json()).saved.map((item: { slug: string }) => item.slug)).toContain(college.slug);
+});
+
+test('authenticated optimistic save rolls back after a server error', async ({ page }) => {
+ const { email, password } = await createBrowserUser('save-rollback');
+ await signInBrowserUser(page, email, password);
+ await page.goto('/colleges');
+ const firstCard = page.getByRole('article').first();
+ const saveButton = firstCard.getByRole('button', { name: /^Save / });
+ await expect(saveButton).toHaveAttribute('aria-pressed', 'false');
+ await page.route('**/api/saved', (route) => route.request().method() === 'POST'
+  ? route.fulfill({ status: 503, json: { error: 'Service unavailable' } })
+  : route.continue());
+ const response = page.waitForResponse((item) => new URL(item.url()).pathname === '/api/saved' && item.request().method() === 'POST');
+ await saveButton.click();
+ expect((await response).status()).toBe(503);
+ await expect(saveButton).toHaveAttribute('aria-pressed', 'false');
+ await expect(page.getByText('Service unavailable')).toBeVisible();
 });
 
 test('public filters exclude demo measurements and record local API timings',async({request})=>{

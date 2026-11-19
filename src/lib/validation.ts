@@ -115,7 +115,10 @@ export const moderationSchema = z.object({
 
 // ---------- saved items ----------
 
-export const saveCollegeSchema = z.object({ collegeId: idSchema });
+export const saveCollegeSchema = z.union([
+  z.strictObject({ collegeId: idSchema }),
+  z.strictObject({ collegeKeys: z.array(collegeKeySchema).min(1).max(200) }).refine(({ collegeKeys }) => new Set(collegeKeys).size === collegeKeys.length, 'Colleges must be different'),
+]);
 
 export const comparisonCreateSchema = z.object({
   collegeIds: z
@@ -134,6 +137,8 @@ export const SORTS = ['name', 'fees_asc', 'fees_desc', 'newest', 'rating'] as co
 export const collegesQuerySchema = z
   .object({
     search: z.string().trim().max(100).optional(),
+    slugs: csv(collegeKeySchema, 25).refine((slugs) => !slugs || new Set(slugs.map((slug) => slug.toLowerCase())).size === slugs.length, 'College slugs must be unique'),
+    city: z.string().trim().max(80).optional(),
     state: z.string().trim().max(60).optional(),
     type: z.enum(['GOVERNMENT', 'PRIVATE']).optional().or(z.literal('').transform(() => undefined)),
     minFees: optionalInt(0, 100_000_000),
@@ -141,6 +146,9 @@ export const collegesQuerySchema = z
     naac: csv(z.enum(NAAC_GRADES), NAAC_GRADES.length),
     minRating: optionalNumber(0, 5),
     courses: csv(z.string().max(30), 15),
+    programme: z.string().trim().max(140).optional(),
+    degrees: csv(z.enum(['UG', 'PG', 'DOCTORAL', 'DIPLOMA']), 4),
+    eligibility: z.string().trim().max(140).optional(),
     exams: csv(z.enum(EXAMS), EXAMS.length),
     established: z
       .enum(['before_1960', '1960_1990', '1990_2010', 'after_2010'])

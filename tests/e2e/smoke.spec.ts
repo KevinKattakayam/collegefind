@@ -41,6 +41,37 @@ test('a visitor can search and open a college', async ({ page }) => {
   }
 });
 
+test('college search input and filters restore from browser history', async ({ page }) => {
+  await page.goto('/colleges?search=first-query&city=Chennai&type=GOVERNMENT');
+  const search = page.getByLabel('Search colleges, cities, or states');
+  await expect(search).toHaveValue('first-query');
+  await search.fill('second-query');
+  await expect.poll(() => new URL(page.url()).searchParams.get('search')).toBe('second-query');
+  await page.goBack();
+  await expect.poll(() => new URL(page.url()).searchParams.get('search')).toBe('first-query');
+  await expect(search).toHaveValue('first-query');
+  await expect(new URL(page.url()).searchParams.get('city')).toBe('Chennai');
+  await page.reload();
+  await expect(search).toHaveValue('first-query');
+});
+
+test('mobile college filter sheet manages keyboard focus and Escape dismissal', async ({ page, isMobile }) => {
+  test.skip(!isMobile, 'Mobile filter sheet only');
+  await page.goto('/colleges');
+  const trigger = page.getByRole('button', { name: 'Filters' });
+  await trigger.click();
+  const dialog = page.getByRole('dialog', { name: 'Filters' });
+  const close = dialog.getByRole('button', { name: 'Close filters' });
+  await expect(close).toBeFocused();
+  await page.keyboard.press('Shift+Tab');
+  await expect(dialog.locator(':focus')).toHaveCount(1);
+  await page.keyboard.press('Tab');
+  await expect(close).toBeFocused();
+  await page.keyboard.press('Escape');
+  await expect(dialog).toHaveCount(0);
+  await expect(trigger).toBeFocused();
+});
+
 test('a missing college renders the not-found page and is excluded from indexing', async ({ page }) => {
   await page.goto('/colleges/this-college-does-not-exist');
   await expect(page.getByRole('heading', { name: '404', level: 1 })).toBeVisible();
@@ -63,9 +94,26 @@ test('the predictor validates input and excludes unreviewed demo cutoffs', async
   await expect(page.getByText('Why this estimate?')).toHaveCount(0);
 });
 
-test('saving a college requires signing in', async ({ page }) => {
-  await page.goto('/saved');
-  await expect(page).toHaveURL(/\/login/);
+test('a visitor can keep a temporary shortlist on this device', async ({ page }) => {
+  const connectionString = assertDisposableTestTarget();
+  const db = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+  const slug = `guest-shortlist-${randomUUID()}`;
+  const name = `Guest Shortlist Fixture ${slug.slice(-10)}`;
+  try {
+    await db.college.create({ data: { slug, name, shortName: 'Guest shortlist', city: 'Test City', state: 'Test State', type: 'PRIVATE', dataStatus: 'DEMO' } });
+    await page.goto(`/colleges?search=${encodeURIComponent(name)}`);
+    const card = page.getByRole('article').filter({ hasText: name });
+    await expect(card).toBeVisible();
+    await card.getByRole('button', { name: `Save ${name}` }).click();
+    await page.goto('/saved');
+    await expect(page.getByText('saved on this device')).toBeVisible();
+    await expect(page.getByRole('article').filter({ hasText: name })).toBeVisible();
+    await page.getByRole('button', { name: `Remove ${name} from saved` }).click();
+    await expect(page.getByRole('heading', { name: 'Nothing saved yet' })).toBeVisible();
+  } finally {
+    try { await db.college.deleteMany({ where: { slug } }); }
+    finally { await db.$disconnect(); }
+  }
 });
 
 test('keyboard users get a skip link and visible focus', async ({ page }) => {
@@ -138,7 +186,7 @@ test('keyboard users can filter cutoffs and receive an announced result count', 
   await expect(apply).toBeFocused();
   await page.keyboard.press('Enter');
   await expect.poll(() => new URL(page.url()).searchParams.get('q')).toBe('keyboard-empty-result');
-  await expect(page.locator('[aria-live="polite"]')).toContainText('0 results');
+  await expect(page.locator('#main [aria-live="polite"]').filter({ hasText: 'Reviewed records' })).toContainText('0 results');
   await expect(page.getByLabel('Institution', { exact: true })).toBeVisible();
   await expect(page.getByLabel('Rank definition')).toBeVisible();
 });

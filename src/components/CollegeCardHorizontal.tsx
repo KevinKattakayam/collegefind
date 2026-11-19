@@ -14,7 +14,7 @@ interface Props {
 
 export default function CollegeCardHorizontal({ college, savedIds = [], onToggleSave }: Props) {
   const { addToCompare, isInCompare } = useCompare();
-  const { isSaved, pending, toggle } = useSaveCollege(college.id, savedIds.includes(college.id), onToggleSave);
+  const { isSaved, pending, toggle } = useSaveCollege(college.id, savedIds.includes(college.id), onToggleSave, college.slug);
   const href = `/colleges/${college.slug ?? college.id}`;
   const inCompare = isInCompare(college.id);
 

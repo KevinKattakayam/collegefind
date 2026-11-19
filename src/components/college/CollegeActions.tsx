@@ -6,9 +6,11 @@ import type { College } from '@/types';
 import { useCompare } from '@/context/CompareContext';
 import { useSaveCollege } from '@/hooks/useSaveCollege';
 import { apiJson } from '@/lib/api';
+import { useShortlist } from '@/context/ShortlistContext';
 
 export default function CollegeActions({ college }: { college: College }) {
   const { data: session } = useSession();
+  const shortlist = useShortlist();
   const { addToCompare, isInCompare } = useCompare();
   const [initialSaved, setInitialSaved] = useState<boolean | null>(null);
 
@@ -17,12 +19,12 @@ export default function CollegeActions({ college }: { college: College }) {
     apiJson<{ saved: { id: string }[] }>('/api/saved')
       .then((d) => setInitialSaved(d.saved.some((c) => c.id === college.id)))
       .catch(() => setInitialSaved(false));
-  }, [session, college.id]);
+  }, [session, college.id, shortlist.guestSlugs]);
 
   return (
     <div className="flex gap-3 flex-wrap">
       {/* Remount once the saved state is known so the hook starts from the right value. */}
-      <SaveButton key={String(initialSaved)} collegeId={college.id} initiallySaved={Boolean(initialSaved)} />
+      <SaveButton key={String(initialSaved)} collegeId={college.id} slug={college.slug} initiallySaved={Boolean(initialSaved)} />
       <button type="button" onClick={() => addToCompare(college)} aria-pressed={isInCompare(college.id)} className="btn-primary !h-[40px] text-sm">
         {isInCompare(college.id) ? 'In compare' : 'Add to compare'}
       </button>
@@ -49,8 +51,8 @@ export default function CollegeActions({ college }: { college: College }) {
   );
 }
 
-function SaveButton({ collegeId, initiallySaved }: { collegeId: string; initiallySaved: boolean }) {
-  const { isSaved, pending, toggle } = useSaveCollege(collegeId, initiallySaved);
+function SaveButton({ collegeId, slug, initiallySaved }: { collegeId: string; slug: string; initiallySaved: boolean }) {
+  const { isSaved, pending, toggle } = useSaveCollege(collegeId, initiallySaved, undefined, slug);
   return (
     <button type="button" onClick={toggle} disabled={pending} aria-pressed={isSaved}
       className={`px-5 h-[40px] rounded-xl font-semibold text-sm ${isSaved ? 'bg-indigo-600 text-white' : 'border-2 border-indigo-300 text-indigo-700 hover:bg-indigo-50'}`}>

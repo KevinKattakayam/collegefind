@@ -170,3 +170,20 @@ export async function listPublicCutoffTrend(db: PrismaClient, raw: unknown) {
   if (colleges.size > 1 || programs.size > 1) return { state: 'AMBIGUOUS' as const, rows: [] as PublicCutoffRow[] };
   return { state: rows.length ? 'READY' as const : 'EMPTY' as const, rows };
 }
+
+/** Canonical institutions with at least one currently reviewed, source-backed
+ * cutoff for an exam. This avoids filtering discovery on unreviewed raw rows. */
+export async function listCollegesWithReviewedCutoffs(db: PrismaClient, exams: Exam[]) {
+  if (!exams.length) return [] as string[];
+  const rows = await db.$queryRaw<{ collegeId: string }[]>(Prisma.sql`
+    SELECT DISTINCT c.id AS "collegeId"
+    ${FROM}
+    WHERE c."dataStatus" <> 'DEMO'::"DataStatus"
+      AND latest.status = 'APPROVED'
+      AND r.exam IN (${Prisma.join(exams.map((exam) => Prisma.sql`${exam}::"Exam"`))})
+      AND lower(s.url) LIKE 'https://%'
+      AND position('@' in split_part(split_part(s.url, '://', 2), '/', 1)) = 0
+      AND length(trim(s.publisher)) > 0
+  `);
+  return rows.map(({ collegeId }) => collegeId);
+}

@@ -3,10 +3,14 @@ import type { CollegesQuery } from '@/lib/validation';
 
 export function filterPublicColleges(rows: College[], q: CollegesQuery): College[] {
   return rows.filter((c) => {
+    if (q.city && c.city.localeCompare(q.city, undefined, { sensitivity: 'base' }) !== 0) return false;
     if (q.minFees !== undefined && (c.annualFees === null || c.annualFees < q.minFees)) return false;
     if (q.maxFees !== undefined && (c.annualFees === null || c.annualFees > q.maxFees)) return false;
     if (q.naac?.length && (!c.naacGrade || !q.naac.some((grade) => grade === c.naacGrade))) return false;
     if (q.courses?.length && !q.courses.some((v) => c.courses.includes(v))) return false;
+    if (q.programme && !c.structuredFacts?.some(({ value }) => value.kind === 'programme' && value.programme.toLocaleLowerCase().includes(q.programme!.toLocaleLowerCase()))) return false;
+    if (q.degrees?.length && !c.structuredFacts?.some(({ value }) => value.kind === 'programme' && q.degrees!.includes(value.level))) return false;
+    if (q.eligibility && !c.structuredFacts?.some(({ value }) => value.kind === 'admission' && value.eligibility?.toLocaleLowerCase().includes(q.eligibility!.toLocaleLowerCase()))) return false;
     if (q.minRating !== undefined && (c.rating === null || c.rating < q.minRating)) return false;
     const year = c.establishedYear;
     if (q.established && year === null) return false;

@@ -227,6 +227,33 @@ describe('saved colleges and comparisons (authorization)', () => {
     expect(await db.savedCollege.count()).toBe(1);
   });
 
+  it('merges a device shortlist by stable slug atomically and idempotently', async () => {
+    const user = await makeUser('guest-merge@example.com');
+    const [first, second] = await Promise.all([makeCollege('guest-merge-a'), makeCollege('guest-merge-b')]);
+    session.current = { id: user.id, role: 'USER' };
+    const body = { method: 'POST', body: JSON.stringify({ collegeKeys: ['guest-merge-a', second.id, 'guest-merge-a'] }) };
+    const invalid = await json(await savedRoute.POST(req('/api/saved', body)));
+    expect(invalid.status).toBe(400);
+    const missing = await json(await savedRoute.POST(req('/api/saved', { method: 'POST', body: JSON.stringify({ collegeKeys: ['guest-merge-a', 'missing-guest-college'] }) })));
+    expect(missing.status).toBe(404);
+    expect(await db.savedCollege.count({ where: { userId: user.id } })).toBe(0);
+    const batch = { method: 'POST', body: JSON.stringify({ collegeKeys: ['guest-merge-a', 'guest-merge-b'] }) };
+    expect((await json(await savedRoute.POST(req('/api/saved', batch)))).body).toMatchObject({ savedCount: 2, alreadySavedCount: 0 });
+    expect((await json(await savedRoute.POST(req('/api/saved', batch)))).body).toMatchObject({ savedCount: 0, alreadySavedCount: 2 });
+    expect(await db.savedCollege.count({ where: { userId: user.id } })).toBe(2);
+    expect((await db.savedCollege.findMany({ where: { userId: user.id }, select: { collegeId: true } })).map((row) => row.collegeId).sort()).toEqual([first.id, second.id].sort());
+  });
+
+  it('serializes concurrent guest-list merges without losing or duplicating selections', async () => {
+    const user = await makeUser('guest-merge-race@example.com');
+    const [a, b, c] = await Promise.all([makeCollege('guest-race-a'), makeCollege('guest-race-b'), makeCollege('guest-race-c')]);
+    session.current = { id: user.id, role: 'USER' };
+    const post = (collegeKeys: string[]) => savedRoute.POST(req('/api/saved', { method: 'POST', body: JSON.stringify({ collegeKeys }) }));
+    const responses = await Promise.all([post([a.id, b.id]), post([b.id, c.id])]);
+    expect(responses.every((response) => response.status === 200)).toBe(true);
+    expect(await db.savedCollege.count({ where: { userId: user.id } })).toBe(3);
+  });
+
   it('concurrent saves of the same college create only one row', async () => {
     const user = await makeUser('race@example.com');
     const college = await makeCollege('race');
@@ -293,6 +320,33 @@ describe('saved colleges and comparisons (authorization)', () => {
 });
 
 describe('colleges listing', () => {
+  it('searches official historical aliases and campus labels, and resolves guest shortlist slugs in requested order', async () => {
+    const first = await makeCollege('alias-search-a');
+    const second = await makeCollege('alias-search-b');
+    await db.institutionAlias.create({ data: { collegeId: first.id, namespace: 'OFFICIAL', value: 'North Institute', campus: 'Riverside campus', sourceUrl: 'https://example.edu/about' } });
+    const alias = await json(await collegesRoute.GET(req('/api/colleges?search=Riverside')));
+    expect(alias.body.colleges.map((college: { slug: string }) => college.slug)).toEqual(['alias-search-a']);
+    const guest = await json(await collegesRoute.GET(req('/api/colleges?slugs=alias-search-b,alias-search-a,deleted-college')));
+    expect(guest.status).toBe(200);
+    expect(guest.body.colleges.map((college: { id: string }) => college.id)).toEqual([second.id, first.id]);
+    expect(guest.body.missingSlugs).toEqual(['deleted-college']);
+  });
+
+  it('matches exam filters only against currently approved, source-backed cutoff evidence', async () => {
+    const approvedCollege = await makeCollege('approved-cutoff-search');
+    const stagedCollege = await makeCollege('unreviewed-cutoff-search');
+    const source = await db.source.create({ data: { name: 'Cutoff authority', publisher: 'Official Authority', url: 'https://example.gov.in/cutoffs', retrievedAt: new Date() } });
+    const approvedProgram = await db.program.create({ data: { collegeId: approvedCollege.id, name: 'B.Tech' } });
+    const stagedProgram = await db.program.create({ data: { collegeId: stagedCollege.id, name: 'B.Tech' } });
+    const common = { exam: 'JEE_MAIN' as const, year: 2025, round: 1, quota: 'AI', category: 'OPEN' as const, seatPool: 'GENDER_NEUTRAL' as const, sourceId: source.id, metric: 'RANK' as const, counsellingSystem: 'JOSAA' as const, rankType: 'CRL' as const, openingValue: 1, closingValue: 100 };
+    const approvedCutoff = await db.cutoffRecord.create({ data: { ...common, programId: approvedProgram.id } });
+    await db.cutoffRecord.create({ data: { ...common, programId: stagedProgram.id } });
+    const reviewer = await makeUser('cutoff-search-reviewer@example.test', 'ADMIN');
+    await db.evidenceDecision.create({ data: { cutoffId: approvedCutoff.id, reviewerId: reviewer.id, status: 'APPROVED', reason: 'Synthetic route test approval' } });
+    const result = await json(await collegesRoute.GET(req('/api/colleges?exams=JEE_MAIN')));
+    expect(result.body.colleges.map((college: { slug: string }) => college.slug)).toEqual(['approved-cutoff-search']);
+  });
+
   it('returns distinct states without applying list pagination', async () => {
     await makeCollege('state-kerala');
     await db.college.create({ data: { slug: 'state-tamil-nadu', name: 'Tamil Nadu Fixture', shortName: 'TN', city: 'Chennai', state: 'Tamil Nadu', type: 'GOVERNMENT' } });
@@ -302,7 +356,7 @@ describe('colleges listing', () => {
   });
 
   it('handles malformed query parameters with 400, not 500', async () => {
-    for (const qs of ['minFees=abc', 'page=abc', 'limit=99999', 'exams=DROP', 'naac=Z', 'minFees=900&maxFees=100']) {
+    for (const qs of ['minFees=abc', 'page=abc', 'limit=99999', 'exams=DROP', 'naac=Z', 'minFees=900&maxFees=100', 'slugs=college-a,college-a']) {
       const res = await json(await collegesRoute.GET(req(`/api/colleges?${qs}`)));
       expect(res.status, qs).toBe(400);
     }

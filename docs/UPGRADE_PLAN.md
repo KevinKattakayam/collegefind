@@ -1,6 +1,6 @@
 # CollegeFind V3 upgrade plan
 
-Status: Phase 2 local engineering complete with owner-controlled production gates pending; Phase 3 engineering conditionally accepted for local work; Phase 4 profile/cutoff implementation is in progress on `phase-4-profiles-cutoffs`.
+Status: Phase 2 local engineering complete with owner-controlled production gates pending; Phase 3 engineering conditionally accepted for local work; Phase 4 local profile/cutoff engineering is complete with real-data/owner gates pending; Phase 5 local engineering acceptance passed on `phase-5-search-comparison-shortlists`, with manual assistive-technology and owner-controlled release follow-ups still open.
 Baseline: main `3ddf88d7f0dec224cde1984100e9208ce6285328`; audit date 2026-11-17.
 Later user instructions authorize Phase 2 application changes and independently verified disposable local database/browser verification. Production, credential, push/merge and deployment actions remain unauthorized.
 
@@ -12,7 +12,7 @@ The nine phases below consolidate the V3 scope supplied in the conversation. The
 
 ## Existing architecture and decision
 
-Browser client pages call Next.js API routes; server college/course/ranking pages query Prisma directly. PostgreSQL stores College summaries, Programs, dated CutoffRecord/FeesRecord/PlacementRecord/NirfRanking linked to Source, users, shortlists, comparisons, Q&A, Review schema and AuditLog. NextAuth credentials use bcrypt and seven-day JWTs. CompareContext persists complete college objects in localStorage. Upstash is optional, with per-instance fallback. Offline CSV ingestion upserts cutoffs. Vercel production builds currently run migrations before the Next build succeeds.
+Browser client pages call Next.js API routes; server college/course/ranking pages query Prisma directly. PostgreSQL stores College summaries, Programs, dated CutoffRecord/FeesRecord/PlacementRecord/NirfRanking linked to Source, users, shortlists, comparisons, Q&A, Review schema and AuditLog. NextAuth credentials use bcrypt and seven-day JWTs. CompareContext persists only canonical IDs/slugs and restores current records from the server; the anonymous shortlist stores canonical slugs locally and merges through the authenticated saved API. Upstash is optional, with per-instance fallback. Offline CSV ingestion upserts cutoffs. Vercel production builds currently run migrations before the Next build succeeds.
 
 Keep a modular monolith and existing typed records. Introduce shared server query services, versioned imports, review evidence and explicit projections of reviewed facts into filter/display summaries. Add field-level evidence for profile/contact/accreditation claims. A cutoff source cannot verify unrelated fees or placements.
 
@@ -26,7 +26,7 @@ Alternatives:
 
 ## Nine-phase roadmap and gates
 
-Phase 1 audit is complete; Phase 2 local engineering is complete with production operations still owner-blocked; Phase 3 engineering is conditionally accepted with factual review and production blockers; Phase 4 is active and incomplete; Phases 5–9 are not started. Passing a phase requires recorded automated evidence and essential permitted browser/manual evidence; blocked checks prevent DONE. Phase 1 is not a production-readiness certification.
+Phase 1 audit is complete; Phase 2 local engineering is complete with production operations still owner-blocked; Phase 3 engineering is conditionally accepted with factual review and production blockers; Phase 4 local engineering is complete with cutoff data/manual accessibility/production gates pending; Phase 5 is active; Phases 6–9 are not started. Passing a phase requires recorded automated evidence and essential permitted browser/manual evidence; blocked checks prevent DONE. Phase 1 is not a production-readiness certification.
 
 | Phase | Scope and user outcome | Pass/fail acceptance | Dependencies / verification |
 | --- | --- | --- | --- |
@@ -150,3 +150,25 @@ HAVING count(*) > 1;
 Any returned group blocks restoring the previous unique index until the source records are reconciled without deleting evidence/audit history. If no conflict exists and no non-`UNSPECIFIED` values need preservation, a reviewed rollback may drop the expanded index, recreate the prior natural-key index, drop the two columns, then drop the two enum types. Prefer a forward fix once real data uses these fields. Take and verify a disposable backup before rehearsing rollback; production rollback requires separate owner authorization and a protected backup/restore plan.
 
 The additional performance migration `20261119020000_cutoff_review_lookup_index` adds an index for latest-decision lookups. It changes no rows and is not required for application correctness; reverting application code does not require dropping it. If a reviewed rollback explicitly removes the index, PostgreSQL requires `DROP INDEX CONCURRENTLY "EvidenceDecision_cutoffId_createdAt_id_idx";` outside a transaction; reconcile Prisma migration history with the migration operator. This rollback was not run against production. The migration was applied only to the verified disposable database described in status.
+
+## Phase 5 implementation checkpoint — 2026-11-19
+
+Phase 5 is active on `phase-5-search-comparison-shortlists`. The current milestone improves the existing catalogue search/comparison/save flows; it does not declare Phase 5 accepted. See `docs/SEARCH_COMPARISON_SHORTLISTS.md` for API and persistence behavior.
+
+- [x] Search aliases/campus labels in the existing query path; add city, programme text, degree-level and eligibility filters backed by the reviewed public projection.
+- [x] Keep identity-only search count/pagination/order in PostgreSQL; use projected-data filtering for trusted measured fields over the current bounded 205-record catalogue. Reassess and move this filtering/count path into SQL before catalogue scale materially increases.
+- [x] Ensure exam filtering uses only currently approved, source-backed cutoff records; raw unreviewed cutoff rows cannot qualify a result.
+- [x] Keep filter state in the URL and restore the controlled search input on Back/Forward; add an accessible responsive filter sheet with focus management, Escape close, and an explanation that unknown values do not match.
+- [x] Persist only comparison IDs/slugs locally, resolve current server records for shared links, permit replacing/removing/clearing slots, and keep edited slots reflected in shareable URLs.
+- [x] Compare structured reviewed facts with their own programme/category/year/source context without declaring winners across unlike scopes; retain missing-value suppression in numeric highlights.
+- [x] Add anonymous device-only slug shortlists, guest slug resolution, authenticated transactional/idempotent merge, owner isolation and recovery behavior.
+- [x] Test alias/trusted search, shortlist merging and ownership, comparison sharing/restoration/editing, and mobile workflows on the latest built tree.
+- [x] Measure projected search at 205 and 5,205 synthetic college rows with 30 warm route-handler requests per size, verified result counts/pages and stable boundaries; local target is p95 <=300 ms at 5,205 rows (not a production SLA). The current final run measured p95 231.16 ms. No DB-side fact-filter rewrite or index was justified at this tested size.
+- [x] Inspect PostgreSQL plan for identity filtering at 5,205 rows; record scan/sort behavior and buffer use. Keep unique ID tie-breakers for equal sort values.
+- [x] Stress the real saved API at the 200-item cap with 201 candidate colleges and concurrent requests from two authenticated browser contexts; verify one cap rejection, no duplicates/lost rows, stable reads, idempotent merge and owner isolation.
+- [x] Verify cross-context restoration, merge-failure retry, optimistic save rollback after 503, comparison share/refresh and desktop/mobile flow after the final build.
+- [ ] Complete manual screen-reader/assistive-technology review. Automated keyboard, semantic, focus and narrow viewport checks pass but do not replace human AT review.
+- [ ] Review the non-fatal PrismaPg/pg deprecation warning under query concurrency before upgrading to pg 9; current tested calls complete and all DB/browser assertions pass.
+- [ ] Complete owner-controlled production security/release evidence inherited from Phases 2/3/4 and obtain genuine human review of sourced college claims.
+
+Phase 5 local engineering acceptance is **PASS with follow-ups**. Data verification and production readiness remain blocked; no official college data, cutoff coverage or genuine reviewer count changed in this milestone.

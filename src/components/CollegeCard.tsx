@@ -22,7 +22,7 @@ function BookmarkIcon({ filled }: { filled: boolean }) {
 
 export default function CollegeCard({ college, savedIds = [], onToggleSave }: Props) {
   const { addToCompare, isInCompare } = useCompare();
-  const { isSaved, pending, toggle } = useSaveCollege(college.id, savedIds.includes(college.id), onToggleSave);
+  const { isSaved, pending, toggle } = useSaveCollege(college.id, savedIds.includes(college.id), onToggleSave, college.slug);
   const href = `/colleges/${college.slug ?? college.id}`;
   const inCompare = isInCompare(college.id);
   const coursesShown = college.courses.slice(0, 3);

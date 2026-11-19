@@ -1,17 +1,18 @@
 'use client';
 import { Suspense, useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useCompare } from '@/context/CompareContext';
 import SearchModal from '@/components/SearchModal';
 import RadarChart from '@/components/RadarChart';
 import type { College } from '@/types';
 import { apiJson, postJson } from '@/lib/api';
-import { bestComparisonIndex, comparisonSlugs, shareComparisonUrl } from '@/lib/comparison';
+import { bestComparisonIndex, comparisonSlugs, comparisonUrl, shareComparisonUrl } from '@/lib/comparison';
 import { formatCount, formatINR, formatLPA, formatPct } from '@/lib/utils';
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 import toast from 'react-hot-toast';
+import type { StructuredFact } from '@/server/ingest/structured-facts';
 
 type Best = 'min' | 'max';
 interface Metric {
@@ -20,6 +21,20 @@ interface Metric {
   format: (c: College) => string;
   value?: (c: College) => number | null;
   best?: Best;
+}
+
+function factText(fact: StructuredFact): string {
+  switch (fact.kind) {
+    case 'programme': return `${fact.level} · ${fact.programme}${fact.durationMonths ? ` · ${fact.durationMonths} months` : ''}`;
+    case 'admission': return `${fact.programme} · ${fact.route} · ${fact.category}${fact.exam ? ` · ${fact.exam}` : ''}${fact.eligibility ? ` · Eligibility: ${fact.eligibility}` : ''}`;
+    case 'fee': return `${fact.programme} · ${fact.category} · ${fact.component}: ₹${fact.amountInr.toLocaleString('en-IN')} per ${fact.period.toLowerCase()} (${fact.feeType.toLowerCase()})`;
+    case 'scholarship': return `${fact.scheme}${fact.eligibility ? ` · ${fact.eligibility}` : ''}`;
+    case 'recognition': return `${fact.authority} · ${fact.credential} · ${fact.coverage}: ${fact.result}`;
+    case 'nirfRanking': return `${fact.category}: rank ${fact.rank}`;
+    case 'placement': return `${fact.metric.toLowerCase()} · ${fact.cohort} · ${fact.value.toLocaleString('en-IN')} (cohort denominator ${fact.denominator.toLocaleString('en-IN')}) · ${fact.definition}`;
+    case 'contact': return `${fact.office} · ${fact.channel.toLowerCase()}: ${fact.contact}`;
+    case 'facility': return `${fact.facility} · ${fact.description}`;
+  }
 }
 
 const METRICS: Metric[] = [
@@ -46,7 +61,8 @@ function bestIndex(list: College[], m: Metric): number {
 
 function ComparePage() {
   const searchParams = useSearchParams();
-  const { compareList, addToCompare, removeFromCompare, clearCompare, replaceCompare } = useCompare();
+  const { compareList, removeFromCompare, clearCompare, replaceCompare, replaceCompareAt } = useCompare();
+  const router = useRouter();
   const [modalSlot, setModalSlot] = useState<number | null>(null);
   const { data: session } = useSession();
   const [saving, setSaving] = useState(false);
@@ -99,6 +115,7 @@ function ComparePage() {
   };
 
   const slots = [0, 1, 2];
+  const syncUrl = (colleges: College[]) => router.replace(comparisonUrl(colleges), { scroll: false });
 
   const handleSaveComparison = async () => {
     if (!session) {
@@ -126,7 +143,7 @@ function ComparePage() {
       <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Compare' }]} />
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-3xl font-bold text-[#1E293B]">Compare Colleges</h1>
+          <h1 data-compare-heading tabIndex={-1} className="text-3xl font-bold text-[#1E293B]">Compare Colleges</h1>
           <p className="text-sm text-slate-600 mt-1">Side by side. Highlights only compare values that are known for every college.</p>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
@@ -141,7 +158,7 @@ function ComparePage() {
               </button>
             </>
           )}
-          {compareList.length > 0 && <button onClick={clearCompare} className="btn-danger text-sm">Clear All</button>}
+          {compareList.length > 0 && <button onClick={() => { clearCompare(); syncUrl([]); }} className="btn-danger text-sm">Clear All</button>}
         </div>
       </div>
 
@@ -150,12 +167,13 @@ function ComparePage() {
         {slots.map(i => {
           const college = compareList[i];
           return college ? (
-            <div key={college.id} className="card-premium p-4 relative">
-              <button onClick={() => removeFromCompare(college.id)} className="absolute top-2 right-2 text-[#94A3B8] hover:text-[#DC2626] transition-colors">
+            <div key={college.id} role="region" aria-label={`Comparison slot for ${college.name}`} className="card-premium p-4 relative">
+              <button aria-label={`Remove ${college.name} from comparison`} onClick={() => { removeFromCompare(college.id); syncUrl(compareList.filter((item) => item.id !== college.id)); }} className="absolute top-2 right-2 text-[#94A3B8] hover:text-[#DC2626] transition-colors">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
               </button>
               <h3 className="font-bold text-lg text-[#1E293B] pr-6">{college.name}</h3>
               <p className="text-sm text-[#64748B]">{college.city}, {college.state}</p>
+              <button type="button" className="mt-2 text-xs text-indigo-700 underline" onClick={() => setModalSlot(i)}>Replace college</button>
               <div className="flex items-center gap-2 mt-2 flex-wrap">
                 <span className="text-sm font-bold text-[#F97316]">{college.rating === null ? 'Rating not available' : `★ ${college.rating}`}</span>
                 {college.type === 'GOVERNMENT' ? <span className="badge-green text-[10px]">Govt</span> : <span className="badge-red text-[10px]">Pvt</span>}
@@ -191,6 +209,33 @@ function ComparePage() {
         <div className="mb-8">
           <RadarChart colleges={compareList} />
         </div>
+      )}
+
+      {compareList.length >= 2 && (
+        <section aria-labelledby="reviewed-facts-title" className="mb-8">
+          <h2 id="reviewed-facts-title" className="text-xl font-bold text-slate-900 mb-2">Available reviewed information</h2>
+          <p className="text-sm text-slate-600 mb-4">These source-backed facts are grouped by college because programme, fee and reporting scopes may differ. No missing value is treated as a negative result.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {compareList.map((college) => (
+              <section key={college.id} className="rounded-xl border border-slate-200 bg-white p-4 min-w-0" aria-label={`Reviewed information for ${college.name}`}>
+                <h3 className="font-semibold text-slate-900">{college.name}</h3>
+                <ul className="mt-3 space-y-3">
+                  {(college.structuredFacts ?? []).map((fact) => (
+                    <li key={fact.key} className="border-t border-slate-100 pt-3 text-sm">
+                      <p className="font-medium text-slate-800">{factText(fact.value)}</p>
+                      <p className="mt-1 text-xs text-slate-600">
+                        {fact.academicYear ? `Academic year ${fact.academicYear}` : 'Year not specified'} · {fact.source.publisher} · Reviewed {new Date(fact.source.reviewedAt ?? fact.source.retrievedAt).toLocaleDateString('en-IN')}
+                      </p>
+                      <a className="mt-1 inline-block break-all text-xs text-indigo-700 underline" href={fact.source.url} target="_blank" rel="noopener noreferrer">Open official source</a>
+                    </li>
+                  ))}
+                  {!college.structuredFacts?.length && <li className="text-sm text-slate-500">No current reviewed structured facts available.</li>}
+                </ul>
+                <Link href={`/cutoffs?college=${encodeURIComponent(college.slug)}`} className="mt-4 inline-block text-sm text-indigo-700 underline">Explore reviewed cutoff history</Link>
+              </section>
+            ))}
+          </div>
+        </section>
       )}
 
       {/* Verdict */}
@@ -262,7 +307,16 @@ function ComparePage() {
         </div>
       )}
 
-      <SearchModal isOpen={modalSlot !== null} onClose={() => setModalSlot(null)} onSelect={(c) => { addToCompare(c); setModalSlot(null); }} />
+      <SearchModal isOpen={modalSlot !== null} onClose={() => setModalSlot(null)} onSelect={(college) => {
+        if (modalSlot === null) return;
+        const next = [...compareList];
+        if (modalSlot < next.length) next[modalSlot] = college;
+        else next.push(college);
+        if (new Set(next.map((item) => item.id)).size !== next.length) { toast.error('That college is already in this comparison'); return; }
+        replaceCompareAt(modalSlot, college);
+        syncUrl(next.slice(0, 3));
+        setModalSlot(null);
+      }} />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { College, CollegesResponse } from '@/types';
 import { apiJson } from '@/lib/api';
 
@@ -10,10 +10,34 @@ interface Props {
 }
 
 export default function SearchModal({ isOpen, onClose, onSelect }: Props) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef(onClose);
+  useEffect(() => { closeRef.current = onClose; }, [onClose]);
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<College[]>([]);
   const [loading, setLoading] = useState(false);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const focusable = () => dialogRef.current ? [...dialogRef.current.querySelectorAll<HTMLElement>('button:not([disabled]), input:not([disabled]), select:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')] : [];
+    dialogRef.current?.querySelector<HTMLElement>('input[type="search"]')?.focus();
+    const handleKeys = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { closeRef.current(); return; }
+      if (event.key !== 'Tab') return;
+      const items = focusable();
+      if (!items.length) return;
+      if (event.shiftKey && document.activeElement === items[0]) { event.preventDefault(); items.at(-1)?.focus(); }
+      else if (!event.shiftKey && document.activeElement === items.at(-1)) { event.preventDefault(); items[0].focus(); }
+    };
+    window.addEventListener('keydown', handleKeys);
+    return () => {
+      window.removeEventListener('keydown', handleKeys);
+      if (previousFocus?.isConnected) previousFocus.focus();
+      else document.querySelector<HTMLElement>('[data-compare-heading]')?.focus();
+    };
+  }, [isOpen]);
 
   const handleSearch = (value: string) => {
     setQuery(value);
@@ -35,14 +59,16 @@ export default function SearchModal({ isOpen, onClose, onSelect }: Props) {
 
   return (
     <>
-      <div className="fixed inset-0 bg-black/50 z-50" onClick={onClose} />
-      <div className="fixed top-[10%] left-1/2 -translate-x-1/2 w-[90%] max-w-[500px] bg-white rounded-lg shadow-modal z-50 animate-scale-in max-h-[70vh] flex flex-col">
+      <div aria-hidden="true" className="fixed inset-0 bg-black/50 z-50" onClick={onClose} />
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="college-search-dialog-title" className="fixed top-[10%] left-1/2 -translate-x-1/2 w-[90%] max-w-[500px] bg-white rounded-lg shadow-modal z-50 animate-scale-in max-h-[70vh] flex flex-col">
         <div className="p-4 border-b border-[#E2E8F0]">
-          <input type="text" value={query} onChange={e => handleSearch(e.target.value)}
+          <div className="flex items-center gap-3 mb-3"><h2 id="college-search-dialog-title" className="font-semibold text-slate-900">Choose a college</h2><button type="button" className="ml-auto text-sm underline" onClick={onClose}>Close</button></div>
+          <label htmlFor="college-search-query" className="sr-only">Search colleges to compare</label>
+          <input id="college-search-query" type="search" value={query} onChange={e => handleSearch(e.target.value)}
             placeholder="Search colleges..." autoFocus className="input-field" />
         </div>
         <div className="overflow-y-auto flex-1 p-2">
-          {loading && <div className="text-center py-4 text-[#64748B] text-sm">Searching...</div>}
+          {loading && <div role="status" className="text-center py-4 text-[#64748B] text-sm">Searching...</div>}
           {!loading && query && results.length === 0 && (
             <div className="text-center py-4 text-[#64748B] text-sm">No colleges found</div>
           )}

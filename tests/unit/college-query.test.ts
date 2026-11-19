@@ -3,37 +3,23 @@ import { buildCollegeOrderBy, buildCollegeWhere } from '@/server/colleges';
 import { collegesQuerySchema } from '@/lib/validation';
 
 describe('college query construction', () => {
-  it('combines search, location, type, trusted metric, course and exam constraints', () => {
+  it('combines identity search, location and type constraints without filtering raw summary facts', () => {
     const query = collegesQuerySchema.parse({
       search: 'IIT', state: 'Kerala', type: 'GOVERNMENT', minFees: '100', maxFees: '500',
       naac: 'A+,A', minRating: '4', courses: 'B.Tech,M.Tech', exams: 'JEE_MAIN,JEE_ADVANCED',
     });
     const where = buildCollegeWhere(query) as { AND: Array<Record<string, unknown>> };
     expect(where.AND).toEqual(expect.arrayContaining([
-      { dataStatus: { not: 'DEMO' } },
       { state: { equals: 'Kerala', mode: 'insensitive' } },
       { type: 'GOVERNMENT' },
-      { annualFees: { gte: 100, lte: 500 } },
-      { naacGrade: { in: ['A+', 'A'] } },
-      { rating: { gte: 4 } },
-      { courses: { hasSome: ['B.Tech', 'M.Tech'] } },
-      { programs: { some: { cutoffs: { some: { exam: { in: ['JEE_MAIN', 'JEE_ADVANCED'] } } } } } },
     ]));
-    expect(where.AND.some((part) => 'OR' in part)).toBe(true);
+    expect(where.AND.some((part) => 'OR' in part && JSON.stringify(part).includes('aliases'))).toBe(true);
+    expect(JSON.stringify(where)).not.toMatch(/annualFees|naacGrade|cutoffs|establishedYear|rating/);
   });
 
-  it('does not add a DEMO exclusion for identity-only queries and applies each year window', () => {
+  it('uses only trusted projected facts for measurements and does not push those filters into raw columns', () => {
     expect(buildCollegeWhere(collegesQuerySchema.parse({ search: 'NIT' }))).toMatchObject({ AND: [expect.objectContaining({ OR: expect.any(Array) })] });
-    for (const [established, condition] of [
-      ['before_1960', { lt: 1960 }],
-      ['1960_1990', { gte: 1960, lt: 1990 }],
-      ['1990_2010', { gte: 1990, lte: 2010 }],
-      ['after_2010', { gt: 2010 }],
-    ] as const) {
-      const where = buildCollegeWhere(collegesQuerySchema.parse({ established })) as { AND: Array<Record<string, unknown>> };
-      expect(where.AND).toContainEqual({ establishedYear: condition });
-      expect(where.AND).toContainEqual({ dataStatus: { not: 'DEMO' } });
-    }
+    expect(buildCollegeWhere(collegesQuerySchema.parse({ established: 'before_1960', minFees: '1', naac: 'A', exams: 'JEE_MAIN' }))).toEqual({});
     expect(buildCollegeWhere(collegesQuerySchema.parse({}))).toEqual({});
   });
 
