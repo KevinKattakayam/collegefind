@@ -2154,3 +2154,29 @@ Existing staged evidence remains **377** (230 substantive across 123 colleges; 1
 - Current content counts remain **377 staged, 0 genuine approvals, 0 verified colleges, 0 verified official cutoffs**. All 16 held claims remain unchanged. The review packet stays at 25.
 
 **Next owner action:** open `http://127.0.0.1:3317/register`, register your own account, then use the identity-checked local SQL procedure in [`OWNER_EVIDENCE_REVIEW.md`](OWNER_EVIDENCE_REVIEW.md) to promote exactly that account. Sign out and back in, open `/admin/enrichment`, inspect each source/value/scope individually, and approve/reject with a reason. Make a fresh encrypted backup after the review session. The initial backup checksum above predates any user or review decision.
+
+### Owner review readiness recheck — 2026-11-19
+
+- Reused the existing service; no restart, restore or write was needed. Container `collegefind-owner-review-postgres` is running, mounted on `collegefind-owner-review-pgdata`, bound to `127.0.0.1:35441`. Read-only TCP identity is `collegefind_owner_review_main|cf_owner_review|5432`.
+- Current counts: **205 colleges, 269 sources, 377 staged claims, 293 import runs, 377 staging audits, 0 users, 0 evidence decisions**. Aggregate user-role and decision-status queries returned empty. No personal identifiers were read. Real approvals/rejections: **0/0**; genuine verified cutoffs: **0**.
+- Local app checks: `/register` **200**; unauthenticated `/admin/enrichment` **307**; unauthenticated `/api/admin/evidence` **401**. App is already available at `http://127.0.0.1:3317`; no second server was started.
+- Rechecked with host access because the sandbox cannot reach the host-bound service: the existing container was still running (`Up`, loopback-only `127.0.0.1:35441`) and the existing app returned `/register` **200** and anonymous `/admin/enrichment` **307**. Aggregate-only database verification still returned 205/269/377/293/377/0/0; no user identifiers or evidence values were read. Read-only public projection checks for CMI Chennai and IIM Calcutta returned `UNVERIFIED`, zero structured facts and zero legacy official metrics; a two-college list response returned total 2 with the same empty verified-fact projection. This confirms staged claims were not exposed in these sampled public responses. It does not prove publication of genuinely approved claims, because there are none.
+- Review queue preparation: the existing 25-claim packet still matches the archived records and persistent DB read-back from setup. All 25 are pending individual human inspection, not approvals. The packet reports missing publication dates for 24 claims; only the SPJIMR source has a publication date recorded. Source-use and campus/programme scope must be reviewed claim by claim. The 16 separately held items remain held; 214 substantive items remain open for inspection; the other 147 claims are source references.
+- No browser login was attempted, no account was created/promoted and no claim was approved/rejected. Publication against genuine approved data is therefore **PENDING**. Existing synthetic disposable-browser tests do not count as genuine publication evidence.
+- The initial encrypted backup remains available and unchanged. No new post-review backup was made because there are no genuine review decisions yet. Create a fresh timestamped encrypted backup after the owner completes a real review session; never overwrite the initial archive.
+
+| Release criterion | Current state | Evidence / remaining action |
+|---|---|---|
+| Local persistent review DB and archive restore | **PASS locally** | Named persistent volume, 13 migrations, 205/269/377/293/377 restore and restart persistence already verified. |
+| Owner identity and genuine claim decisions | **BLOCKED — owner action** | `User=0`, `EvidenceDecision=0`. Owner must register, promote only their account and inspect each claim. |
+| Verified-only publication from genuine approvals | **PENDING** | No genuine approved claim exists. Test after owner decisions; synthetic test approvals do not qualify. |
+| Historical credential revocation/rotation | **BLOCKED — owner evidence** | Requires non-secret owner confirmation and provider/history evidence; repository edits cannot establish revocation. |
+| Remote GitHub Actions acceptance | **BLOCKED — remote evidence** | No remote workflow was triggered or inspected in this task. |
+| Production Redis, HTTPS and cookie behavior | **BLOCKED — production owner checks** | Local app check does not establish production service behavior. |
+| Production backup retention and restore target | **BLOCKED — production owner evidence** | Local encrypted backup is not production retention or a production restore rehearsal. |
+| Email verification and account recovery | **BLOCKED — provider setup** | No provider configured or delivery flow verified. |
+| Manual screen-reader and magnification review | **BLOCKED — human check** | Must be completed by a person using assistive technology. |
+| Official cutoff source-use and genuine cutoff coverage | **BLOCKED — source/human review** | 0 verified cutoff records; permission and reviewer decisions remain outstanding. |
+| Genuine approved college data | **BLOCKED — human review** | 377 staged, 0 genuine approvals. Production remains **NO-GO**. |
+
+**Next action is the owner's registration at `http://127.0.0.1:3317/register`.** Then run the guarded, identity-specific local ADMIN promotion command in `docs/OWNER_EVIDENCE_REVIEW.md`, log out/in, and review the 25 claims individually. No further automated action is safe before that owner step.

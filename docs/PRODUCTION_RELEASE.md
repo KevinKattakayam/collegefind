@@ -14,16 +14,16 @@ Phase 9 is a local verification milestone. The owner executes release operations
 
 ## Release checklist
 
-| Criterion | Required evidence |
-| --- | --- |
-| Source and SHA | Remote CI succeeds for the exact candidate SHA, including migrations, restore, build, browser, secret scan and dependency audit. Require these checks in branch protections. |
-| Historical incident | Provider-side revocation, rotation, session invalidation and audit review recorded with non-secret identifiers and dates. |
-| Dependencies | Deployment readiness and liveness return 200. Verify 429 across multiple actual instances and 503 plus recovery during a controlled test outside live traffic. |
-| Deployed protection | Check secure cookie attributes, tenant and admin boundaries, HTTP seed refusal, external proxy IP behavior and error-log redaction in an approved release environment. |
-| Recovery | Confirm the approved backup retention and access controls. Record last successful restore time, actual recovery point and measured recovery duration against owner-approved RPO and RTO. |
-| Product | Complete manual screen-reader and magnification checks for primary journeys. Approve remaining account recovery limitations or supply a verified email flow. |
-| Content | Confirm the 205 stable college identities, source-use permissions and reviewed-only publishing. Keep unapproved facts and cutoff history unavailable. |
-| Release | Record the approver, candidate and rollback SHA, intended DB target by non-secret identifier, maintenance/rollout plan and check times. |
+| Criterion | Required evidence | Current state |
+| --- | --- | --- |
+| Source and SHA | Remote CI succeeds for the exact candidate SHA, including migrations, restore, build, browser, secret scan and dependency audit. Require these checks in branch protections. | **BLOCKED / not verified here.** Local checks do not establish remote CI or branch-protection acceptance. |
+| Historical incident | Provider-side revocation, rotation, session invalidation and audit review recorded with non-secret identifiers and dates. | **BLOCKED — owner evidence required.** No credentials were inspected or changed. |
+| Dependencies | Deployment readiness and liveness return 200. Verify 429 across multiple actual instances and 503 plus recovery during a controlled test outside live traffic. | **BLOCKED for production.** Phase 9 local outage/readiness tests are recorded in `UPGRADE_STATUS.md`; no deployed or multi-instance check was made here. |
+| Deployed protection | Check secure cookie attributes, tenant and admin boundaries, HTTP seed refusal, external proxy IP behavior and error-log redaction in an approved release environment. | **BLOCKED — production environment required.** Local review app returned register 200, unauthenticated admin page 307 and admin evidence API 401. |
+| Recovery | Confirm the approved backup retention and access controls. Record last successful restore time, actual recovery point and measured recovery duration against owner-approved RPO and RTO. | **PARTIAL locally; BLOCKED for production.** The local owner-review snapshot restore and encrypted initial backup passed; production retention/RPO/RTO and recovery target remain unverified. |
+| Product | Complete manual screen-reader and magnification checks for primary journeys. Approve remaining account recovery limitations or supply a verified email flow. | **PARTIAL.** Automated/local browser checks exist; manual assistive-technology review and provider-backed email verification/recovery remain open. |
+| Content | Confirm the 205 stable college identities, source-use permissions and reviewed-only publishing. Keep unapproved facts and cutoff history unavailable. | **BLOCKED for genuine publication.** The local DB has 205 identities and 377 staged claims, but 0 genuine decisions and 0 verified official cutoffs. The 25-item packet awaits owner review. |
+| Release | Record the approver, candidate and rollback SHA, intended DB target by non-secret identifier, maintenance/rollout plan and check times. | **NO-GO.** No production change is authorized or prepared by this local review setup. |
 
 ## Rehearsed disposable backup and restore
 
