@@ -36,7 +36,7 @@ async function assertRestoredRows(db: PrismaClient | Prisma.TransactionClient, s
     const normalizedArchive = archived.map((row) => dated(row, [...dateFields]));
     if (!exactJsonEqual(actualRows, normalizedArchive)) throw new Error('Post-restore provenance or audit read-back differs from the checksummed snapshot.');
   }
-  const actualIdentities = await db.college.findMany({ select: { id: true, slug: true }, orderBy: { slug: 'asc' } });
+  const actualIdentities = (await db.college.findMany({ select: { id: true, slug: true } })).sort((a,b) => a.slug.localeCompare(b.slug));
   if (await db.college.count() !== 205 || !exactJsonEqual(actualIdentities, [...snapshot.collegeIdentity].sort((a,b) => a.slug.localeCompare(b.slug)))) {
     throw new Error('Post-restore college ID/slug map differs from the checksummed snapshot.');
   }
@@ -44,9 +44,10 @@ async function assertRestoredRows(db: PrismaClient | Prisma.TransactionClient, s
 }
 
 async function main() {
-  const { values } = parseArgs({ options: { apply: { type: 'boolean', default: false } } });
+  const { values } = parseArgs({ options: { apply: { type: 'boolean', default: false }, rehearsal: { type: 'boolean', default: false } } });
   // All file/target guards run before creating a pool or Prisma client.
-  const targetUrl = assertOwnerReviewTarget();
+  const rehearsal = values.rehearsal === true;
+  const targetUrl = assertOwnerReviewTarget(process.env, rehearsal ? 'rehearsal' : 'persistent');
   const payload = readFileSync(snapshotFile);
   const manifest = JSON.parse(readFileSync(manifestFile, 'utf8')) as OwnerReviewManifest;
   const snapshot = JSON.parse(payload.toString('utf8')) as Snapshot;
@@ -60,7 +61,8 @@ async function main() {
         (SELECT count(*) FROM "_prisma_migrations" WHERE finished_at IS NOT NULL AND rolled_back_at IS NULL) AS migrations`);
     const actual = identity.rows[0];
     const migrationDirectories = readdirSync(resolve('prisma/migrations'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
-    if (!actual || actual.database !== targetUrl.pathname.slice(1) || actual.role !== 'cf_owner_review' || actual.port !== 5432 || Number(actual.migrations) !== migrationDirectories) {
+    const expectedRole = rehearsal ? 'cf_owner_rehearsal' : 'cf_owner_review';
+    if (!actual || actual.database !== targetUrl.pathname.slice(1) || actual.role !== expectedRole || actual.port !== 5432 || Number(actual.migrations) !== migrationDirectories) {
       throw new Error('Connected database identity or migration history does not match the explicitly confirmed owner-review target.');
     }
     const names = ['College', 'Source', 'FieldEvidence', 'ImportRun', 'AuditLog', 'EvidenceDecision', 'User'];
@@ -77,7 +79,7 @@ async function main() {
     const empty = Object.values(before).every((count) => count === 0);
     if (empty) {
       if (!values.apply) {
-        console.log(JSON.stringify({ mode: 'DRY_RUN', database: actual.database, role: actual.role, snapshotSha256: manifest.sha256, counts: { colleges: 205, sources: snapshot.sources.length, claims: snapshot.claims.length, runs: snapshot.runs.length, audits: snapshot.audits.length }, writes: 'none; rerun with --apply after owner confirmation' }));
+        console.log(JSON.stringify({ mode: rehearsal ? 'REHEARSAL_DRY_RUN' : 'DRY_RUN', database: actual.database, role: actual.role, snapshotSha256: manifest.sha256, counts: { colleges: 205, sources: snapshot.sources.length, claims: snapshot.claims.length, runs: snapshot.runs.length, audits: snapshot.audits.length }, writes: 'none; rerun with --apply after target verification and explicit confirmation' }));
         return;
       }
       const verifiedCounts = await db.$transaction(async (tx) => {
@@ -91,7 +93,7 @@ async function main() {
         // Verify counts and exact provenance/audit rows before commit so any mismatch rolls back all inserts.
         return assertRestoredRows(tx, snapshot);
       }, { timeout: 60_000 });
-      console.log(JSON.stringify({ mode: 'RESTORED', database: actual.database, role: actual.role, snapshotSha256: manifest.sha256, counts: verifiedCounts, humanDecisions: 0 }));
+      console.log(JSON.stringify({ mode: rehearsal ? 'REHEARSAL_RESTORED' : 'RESTORED', database: actual.database, role: actual.role, snapshotSha256: manifest.sha256, counts: verifiedCounts, humanDecisions: 0 }));
       return;
     } else {
       // Existing owner progress is never overwritten. Allow an idempotent retry only
@@ -111,7 +113,7 @@ async function main() {
           throw new Error(`Existing ${table} data does not match the archive; no rows changed.`);
         }
       }
-      console.log(JSON.stringify({ mode: 'IDEMPOTENT_VERIFIED', database: actual.database, role: actual.role, snapshotSha256: manifest.sha256, userAndDecisionCountsPreserved: true, writes: 'none' }));
+      console.log(JSON.stringify({ mode: rehearsal ? 'REHEARSAL_IDEMPOTENT_VERIFIED' : 'IDEMPOTENT_VERIFIED', database: actual.database, role: actual.role, snapshotSha256: manifest.sha256, userAndDecisionCountsPreserved: true, writes: 'none' }));
       return;
     }
   } finally {

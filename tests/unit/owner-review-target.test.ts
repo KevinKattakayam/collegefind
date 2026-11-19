@@ -5,6 +5,10 @@ const allowed = {
   OWNER_REVIEW_DATABASE_URL: 'postgresql://cf_owner_review@127.0.0.1:35441/collegefind_owner_review_main',
   COLLEGEFIND_OWNER_REVIEW_DATABASE_CONFIRMED: 'true',
 };
+const rehearsal = {
+  OWNER_REVIEW_REHEARSAL_DATABASE_URL: 'postgresql://cf_owner_rehearsal@127.0.0.1:35442/collegefind_owner_rehearsal_local_20261119',
+  COLLEGEFIND_OWNER_REVIEW_REHEARSAL_CONFIRMED: 'true',
+};
 
 describe('owner evidence-review database target', () => {
   it('requires explicit owner target and confirmation variables', () => {
@@ -29,5 +33,17 @@ describe('owner evidence-review database target', () => {
     expect(target.port).toBe('35441');
     expect(target.username).toBe('cf_owner_review');
     expect(target.pathname).toBe('/collegefind_owner_review_main');
+  });
+
+  it('requires a separate explicit disposable rehearsal target and rejects persistent/test targets', () => {
+    expect(() => assertOwnerReviewTarget({}, 'rehearsal')).toThrow(/OWNER_REVIEW_REHEARSAL_DATABASE_URL is required/);
+    expect(() => assertOwnerReviewTarget({ OWNER_REVIEW_REHEARSAL_DATABASE_URL: rehearsal.OWNER_REVIEW_REHEARSAL_DATABASE_URL }, 'rehearsal')).toThrow(/Confirm the independently checked disposable/);
+    expect(assertOwnerReviewTarget(rehearsal, 'rehearsal').pathname).toBe('/collegefind_owner_rehearsal_local_20261119');
+    for (const url of [
+      'postgresql://cf_owner_review@127.0.0.1:35441/collegefind_owner_review_main',
+      'postgresql://cf_owner_rehearsal@127.0.0.1:35442/collegefind_owner_rehearsal_test',
+      'postgresql://cf_owner_rehearsal@localhost:35442/collegefind_owner_rehearsal_local',
+      'postgresql://cf_owner_rehearsal@127.0.0.1:5432/collegefind_owner_rehearsal_local',
+    ]) expect(() => assertOwnerReviewTarget({ ...rehearsal, OWNER_REVIEW_REHEARSAL_DATABASE_URL: url }, 'rehearsal')).toThrow();
   });
 });
