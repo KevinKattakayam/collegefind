@@ -91,7 +91,17 @@ export UPSTASH_REDIS_REST_URL='' UPSTASH_REDIS_REST_TOKEN='' ADMIN_SEED_TOKEN=''
 npm run dev -- --hostname 127.0.0.1 --port 3317
 ```
 
-To start PostgreSQL after a host reboot, use `docker start collegefind-owner-review-postgres`. To stop it safely without deleting its data, use `docker stop collegefind-owner-review-postgres`; the named volume remains. Stop the app with Ctrl+C in its managed terminal, then use the command above to restart it. Do not use `docker rm`, `docker volume rm` or `docker compose down -v` for this owner database.
+To start PostgreSQL after a host reboot, use `docker start collegefind-owner-review-postgres`. To stop it safely without deleting its data, use `docker stop collegefind-owner-review-postgres`; the named volume remains. Stop the app with Ctrl+C in the terminal where it was started. If it is running as the managed local process, identify and stop only the Next server bound to port 3317:
+
+```bash
+set -euo pipefail
+PID="$(ss -lptn '( sport = :3317 )' | sed -n 's/.*pid=\([0-9][0-9]*\).*/\1/p')"
+test -n "$PID"
+ps -p "$PID" -o args= | grep -q '^next-server (v'
+kill -TERM "$PID"
+```
+
+Do not use `docker rm`, `docker volume rm` or `docker compose down -v` for this owner database.
 
 In a browser on that machine, visit `http://127.0.0.1:3317/register` and create **your own** account. Registration grants only USER. Recheck the local database identity, then in a separate terminal use the same private environment and a parameterized update; this intentionally refuses zero or multiple matching USER accounts:
 
