@@ -1,4 +1,4 @@
-import { resolveReviewedField } from './ingest/evidence';
+import { activeReviewedClaims, resolveReviewedField } from './ingest/evidence';
 import { structuredFact } from './ingest/structured-facts';
 
 export const publicEvidenceSelect = {
@@ -39,8 +39,8 @@ function projectStructuredFacts(claims: Claim[], now: Date) {
     });
     const resolved = resolveReviewedField(eligible.map((claim) => ({ ...claim, value: JSON.stringify(claim.value) })), now);
     if (resolved.status !== 'AVAILABLE') return [];
-    const approved = eligible.filter((claim) =>
-      resolveReviewedField([{ ...claim, value: JSON.stringify(claim.value) }], now).value === resolved.value);
+    const activeIds = new Set(activeReviewedClaims(eligible.map((claim) => ({ ...claim, value: JSON.stringify(claim.value) })), now).map(({ id }) => id));
+    const approved = eligible.filter(({ id }) => activeIds.has(id));
     const claim = approved.sort((a, b) => b.source.retrievedAt.getTime() - a.source.retrievedAt.getTime() || a.id.localeCompare(b.id))[0];
     const decision = [...claim.decisions].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())[0];
     return [{ key, value: structuredFact.parse(claim.value), academicYear: claim.academicYear,
@@ -71,9 +71,20 @@ export function projectPublicCollege<T extends Record<string, unknown>>(college:
       if (typeof value === 'string') { try { value = JSON.parse(value); } catch { value = null; } }
       value = Array.isArray(value) && value.every((v) => typeof v === 'string') ? value : [];
     } else if (!['totalStudents', 'establishedYear'].includes(field) && value !== null && typeof value !== 'string') value = null;
-    if (['website','admissions'].includes(field) && value) { try { if (new URL(String(value)).protocol !== 'https:') value = null; } catch { value = null; } }
+    if (['website','admissions'].includes(field) && value) { try { const url = new URL(String(value)); if (url.protocol !== 'https:' || url.username || url.password) value = null; } catch { value = null; } }
     if (field in college || field === 'admissions') out[field] = value;
-    fieldEvidence[field] = { status: resolved.status === 'UNKNOWN' && candidates.length ? (candidates.some((c) => c.decisions.some((d) => d.status === 'APPROVED')) ? 'OUTDATED' : 'UNREVIEWED') : resolved.status, sources: resolved.status === 'AVAILABLE' ? eligible.filter((c) => [...c.decisions].sort((a,b) => b.createdAt.getTime()-a.createdAt.getTime())[0]?.status === 'APPROVED').map((c) => ({ url: c.source.url, publisher: c.source.publisher, publishedAt: c.publishedAt, retrievedAt: c.source.retrievedAt, reviewedAt: [...c.decisions].sort((a,b) => b.createdAt.getTime()-a.createdAt.getTime())[0]?.createdAt ?? null })) : [] };
+    const active = resolved.status === 'AVAILABLE' && value !== null
+      ? activeReviewedClaims(eligible.map((c) => ({ ...c, value: JSON.stringify(c.value) })), now)
+      : [];
+    const status = resolved.status === 'AVAILABLE' && value === null ? 'UNKNOWN'
+      : resolved.status === 'UNKNOWN' && candidates.length
+        ? (candidates.some((c) => c.decisions.some((d) => d.status === 'APPROVED')) ? 'OUTDATED' : 'UNREVIEWED')
+        : resolved.status;
+    fieldEvidence[field] = { status, sources: active.map((c) => ({
+      url: c.source.url, publisher: c.source.publisher, publishedAt: c.publishedAt,
+      retrievedAt: c.source.retrievedAt,
+      reviewedAt: [...c.decisions].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())[0]?.createdAt ?? null,
+    })) };
   }
   for (const key of ['annualFees', 'placementPct', 'avgPackage', 'highestPackage', 'metricsYear', 'rating']) if (key in out) out[key] = null;
   // Only comparable college-wide annual tuition records; programme-specific/other fees cannot be substituted.

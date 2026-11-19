@@ -41,3 +41,22 @@ describe('public field projection', () => {
    expect(projectPublicCollege({annualFees:500,evidence:[],feesRecords:[fee,{...fee,amountInr:200000}]},now).annualFees).toBeNull();
  });
 });
+
+describe('profile source attribution', () => {
+  it('omits expired and superseded sources when a reviewed field is displayed', () => {
+    const expired = { ...claim, id: 'expired', validUntil: new Date('2026-06-01'), source: { ...claim.source, url: 'https://example.edu/expired' } };
+    const current = { ...claim, id: 'current', supersedesId: claim.id, source: { ...claim.source, url: 'https://example.edu/current' } };
+    expect(projectPublicCollege({ naacGrade: null, evidence: [claim, expired, current] }, now)).toMatchObject({
+      naacGrade: 'A',
+      fieldEvidence: { naacGrade: { status: 'AVAILABLE', sources: [{ url: current.source.url }] } },
+    });
+  });
+
+  it('withholds an approved website value containing URL credentials', () => {
+    const website = { ...claim, field: 'website', value: 'https://user:secret@example.edu' };
+    expect(projectPublicCollege({ website: null, evidence: [website] }, now)).toMatchObject({
+      website: null,
+      fieldEvidence: { website: { status: 'UNKNOWN', sources: [] } },
+    });
+  });
+});

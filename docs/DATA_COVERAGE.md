@@ -1281,3 +1281,26 @@ Latest relevant verification: `npm test` **PASS, 114/114 unit tests**; the cutof
 The build and browser server used `/tmp/collegefind-phase4-migration-disposable.env`, whose database identity was independently checked before destructive tests; no production/DevSync resource was used. An initial unapproved sandbox integration attempt failed before SQL with `connect EPERM`; the same suite passed under host permission. The build also passed under host permission; with the verified database environment sitemap generation completed without the fallback warning. Local Playwright logs show the intentional in-memory rate-limit fallback because test Redis credentials are absent; this is not production Redis evidence.
 
 Cutoff row/page evidence locations are now available for new importer rows through nullable `CutoffRecord.evidenceLocator`; legacy rows remain null and unchanged. Migration `20261119030000_cutoff_source_locator` is additive. The disposable migration DB has eight applied migrations and its existing 2,001 synthetic test rows were preserved across this migration. No migration rollback was executed; rollback is a forward-compatible additive-column reversal only after confirming no importer/client depends on the field. No real cutoff candidate was staged or approved: official staged/genuine VERIFIED counts remain **0/0**.
+
+## Profile content milestone and Batch 029
+
+[Profile completeness report](PROFILE_COMPLETENESS.json) covers all 205 stable college identities and groups all 377 archived claims by institution and source for individual review. Each row includes public catalogue identity, existing staged claims and locators, archived freshness and holds, newly researched candidate/hold counts, the approval count, missing categories and the next source action. The source groups reuse the existing review IDs and the 25-claim packet. An editorial reading link contributes navigation only. The report's substantive public completeness threshold requires reviewed content.
+
+| Measure | Before | After |
+| --- | ---: | ---: |
+| Stable catalogue identities | 205 | 205 |
+| Staged claims / substantive claims | 377 / 230 | 377 / 230 |
+| Colleges with substantive staged facts | 123 | 123 |
+| Genuine approved claims / verified official cutoffs | 0 / 0 | 0 / 0 |
+| Profiles with new first-party reading links from Batch 029 | 0 | 9 |
+
+[Batch 029](../data/pilot/substantive-research-batch-029.json) follows up 20 of the 82 colleges without substantive staged facts. Nine candidates across nine colleges passed the database-free importer dry run. Eight are scoped programme records and one is a dated admissions route. There are 13 separate research holds, including ten observations with a factual value and three unresolved leads. Seventeen colleges have at least one concrete observation across both dispositions. None of the candidates was imported or approved. The persistent owner-review target is excluded by the existing importer's disposable database guard. The manifest is the durable handoff for a separately authorized staging path.
+
+Research used first-party institution or counselling authority material. Candidate and hold records include the exact URL, collection timestamp and evidence locator. Where the source omits its publication date or cycle, the record leaves that value unknown. Check campus and currency before staging or publication. The batch contains no official cutoff facts, copied reports or bulk datasets. Older handbook and prospectus observations need a current source. The IIIT Sri City reporting page returned 403. The CUSAT programme entry needs a campus match, and the CLAT authority list establishes institutional participation only. Scope and reuse limits are recorded in the individual entries.
+
+### Catalogue follow-up order
+
+1. Start with the existing first owner review packet. Group by institution and source, opening each source once and checking each claim separately. Where a new cohort is published, retain the older source as historical.
+2. Take the 82 colleges in the existing substantive backlog in groups of roughly 20. Apply the next source action from each ledger row. Start with an official programme or admissions page, then pursue a fee schedule, accreditor decision or cohort report with comparable definitions. For medical colleges require campus-specific counselling and seat category. For engineering use institution or counselling authority material and keep course offerings separate from cutoffs. For management use the specific programme, campus and intake policy. For universities and private institutions use the department and campus, plus the relevant statutory or accrediting authority where available.
+3. Review the 123 colleges with staged substantive material in source groups, prioritizing current programme, scoped fee, eligibility and recognition claims. Skip held entries until their recorded restriction, expiry or conflict is resolved. Source-only references need a domain and campus check independently of academic facts.
+4. After the owner records genuine decisions, compare approved values to public profile sections, search, comparisons and CollegeFit where the field is supported. Check dates, units and scope. Validate eligible cutoff publication separately when reviewed cutoff records exist.

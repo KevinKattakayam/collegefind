@@ -53,16 +53,22 @@ export function canTransitionImportRun(from: ImportRunState, to: ImportRunState)
 }
 
 /** Never pick arbitrarily between competing approved values or expired claims. */
-export function resolveReviewedField(claims: {
+type ReviewedClaim = {
   id: string; value: string; validUntil?: Date | null; validFrom?: Date | null;
   supersedesId?: string | null; decisions: { status: string; createdAt: Date }[];
-}[], now = new Date()): { status: 'AVAILABLE' | 'CONFLICT' | 'UNKNOWN'; value: string | null } {
+};
+
+export function activeReviewedClaims<T extends ReviewedClaim>(claims: T[], now: Date): T[] {
   const approved = claims.filter((claim) => {
     const latest = [...claim.decisions].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())[0];
     return latest?.status === 'APPROVED' && !claim.decisions.some((d) => d.createdAt.getTime() === latest.createdAt.getTime() && d.status !== 'APPROVED');
   });
   const superseded = new Set(approved.map((claim) => claim.supersedesId).filter(Boolean));
-  const active = approved.filter((claim) => !superseded.has(claim.id) && (!claim.validFrom || claim.validFrom <= now) && (!claim.validUntil || claim.validUntil >= now));
+  return approved.filter((claim) => !superseded.has(claim.id) && (!claim.validFrom || claim.validFrom <= now) && (!claim.validUntil || claim.validUntil >= now));
+}
+
+export function resolveReviewedField(claims: ReviewedClaim[], now = new Date()): { status: 'AVAILABLE' | 'CONFLICT' | 'UNKNOWN'; value: string | null } {
+  const active = activeReviewedClaims(claims, now);
   if (!active.length) return { status: 'UNKNOWN', value: null };
   if (new Set(active.map((claim) => claim.value)).size !== 1) return { status: 'CONFLICT', value: null };
   return { status: 'AVAILABLE', value: active[0].value };
