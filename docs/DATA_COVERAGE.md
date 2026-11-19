@@ -1,6 +1,6 @@
 # College catalogue coverage ledger
 
-Current as of 2026-11-18 16:29 UTC. The latest identity-complete snapshot contains **377 staged claims** across 205 catalogue entries: 147 link references and 230 substantive claims. All real claims remain unreviewed; the original demo values retain their DEMO status.
+Current as of 2026-11-19 14:54 UTC. The latest identity-complete snapshot still contains **377 staged claims** across 205 catalogue entries: 147 link references and 230 substantive claims. Batch 028 adds seven source-backed research candidates in a durable, unreviewed artifact, but no database claims; all real database claims remain unreviewed and original demo values retain their DEMO status.
 
 - Original catalogue entries and unique slugs: 205
 - Official homepage references: 130 staged, 75 blocked or conflicted
@@ -8,14 +8,14 @@ Current as of 2026-11-18 16:29 UTC. The latest identity-complete snapshot contai
 - Colleges with substantive facts staged for human review: 123
 - Substantive claims staged: 230 (current per-field counts are in the latest field coverage section below)
 - Distinct institutions with a substantive research disposition: 205 (123 with staged facts, 82 with no staged facts, 0 not yet attempted)
-- Follow-up source research: 3 institutions; 4 programme/admissions fact candidates recorded in batch 008, not staged pending reuse and source-scope review
+- Follow-up source research: 10 additional colleges in batch 028; seven precise programme/admission facts from three institutions captured in an import-ready, dry-run-validated artifact; 0 imported/staged pending source-use clearance and an authorized persistent destination
 - Additional typed ranking candidates: 25 in batch 007, held because the source returned HTTP 403 on recheck and bulk reuse remains unresolved
 - Genuinely verified real claims / institutions: 0 / 0
 - Institutions fully enriched: 0
 - Latest disposable snapshot: 205 colleges, 269 sources, 377 claims, 293 import runs, 377 staging audits; zero users, review decisions or fixtures.
 - Machine-readable per-college/per-field ledger and source evidence: [`DATA_COVERAGE.json`](DATA_COVERAGE.json)
 
-The archived homepage-reference and earlier batch sections below are historical. The final owner-handoff/batch-027 section records current counts and supersedes older cumulative totals.
+The archived homepage-reference and earlier batch sections below are historical. The final owner-handoff/batch-027 section records the latest imported snapshot counts; batch 028 below records subsequent research-only candidates and does not change database totals.
 
 ## Priority backlog
 
@@ -34,6 +34,23 @@ AISHE publishes downloadable reports, but its copyright policy says content may 
 ## Status vocabulary
 
 `DEMO` = seed fixture value, not evidence. `MISSING` = no seed field. Future statuses: `SOURCE_BACKED_UNREVIEWED`, `VERIFIED`, `CONFLICT`, `EXPIRED`, `BLOCKED`. Retrieval never changes a claim to verified.
+
+## Batch 028 — ten-college substantive follow-up (2026-11-19)
+
+| Measure | Before | After | Meaning |
+|---|---:|---:|---|
+| Original catalogue identities | 205 | 205 | No IDs or slugs changed; seed SHA-256 remains `a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637`. |
+| Colleges with substantive database facts | 123 | 123 | No additions were written to an evidence database. |
+| Substantive facts staged in database | 230 | 230 | Batch 028 staged zero. |
+| Research-only candidate facts | 0 in this batch | 7 | Seven precise facts in `data/pilot/substantive-research-batch-028.json`, from NIT Manipur (2), Jamia Millia Islamia (3) and University of Madras (2). |
+| Colleges newly researched in this batch | 0 | 10 | The remaining seven have source rendering, stale-cycle, campus-scope or source-use blockers and no claim. |
+| Genuine human approvals / verified cutoff claims | 0 / 0 | 0 / 0 | No reviewer account, decision or cutoff record was created. |
+
+The review handoff is [`substantive-batch-028-review-packet.md`](../data/pilot/substantive-batch-028-review-packet.md). Its seven candidate references are manifest array positions, not database claim IDs. The importer dry run accepted all seven as UNREVIEWED and reported no writes; a ledger/prior-manifest duplicate check found no identical fact. Persistent database uniqueness/idempotency was not exercised.
+
+**Source-use:** Jamia Millia Islamia's [official copyright policy](https://jmi.ac.in/Legal-document/Copyright-Policy) says website content may not be reproduced without due permission; its three candidates remain held pending written permission or documented owner/legal review. NIT Manipur's directly read CSE page has no identified factual-reuse licence in this check and shows a 2017 footer alongside newer programme text, so freshness and reuse remain for human review. University of Madras' 2026–27 PDF/portal was directly read, but no specific factual-reuse licence was found; its PG registration closed 1 June 2026, so both facts are historical-cycle only and held for source-use review. No PDFs/tables or prose are included in the artifacts.
+
+No explicitly authorized persistent non-production evidence destination was available. The research artifact is the durable handoff; no disposable database was used as a persistent genuine-research store. To stage later, the owner must approve a preservation path and resolve source-use holds, then import via the existing guarded workflow and retain the exported source/audit snapshot. No automatic approval is allowed.
 
 ## Fixture pipeline operations
 

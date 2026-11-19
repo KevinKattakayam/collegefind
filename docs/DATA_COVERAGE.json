@@ -1,6 +1,6 @@
 {
   "catalogueSize": 205,
-  "asOf": "2026-11-18T16:29:37Z",
+  "asOf": "2026-11-19T14:54:00Z",
   "verifiedRealClaims": 0,
   "phase4CutoffCoverage": {
     "checkedAt": "2026-11-19",
@@ -5035,9 +5035,20 @@
             "status": "NOT_STAGED",
             "reason": "Institute page found for the integrated programme. Confirm provision for the Thane sub-campus and actual duration before staging.",
             "batch": 10
+          },
+          {
+            "batch": 28,
+            "retrievedAt": "2026-11-19T14:54:00Z",
+            "status": "NO_CLAIM_IDENTITY_CAMPUS_SCOPE",
+            "sourceUrl": "https://admi.mu.ac.in/admissions/",
+            "candidateFactsInResearchArtifact": 0,
+            "databaseImport": "NOT_IMPORTED",
+            "reviewState": "UNREVIEWED_NOT_IN_DATABASE",
+            "note": "Official admissions portal lists broad programme cards and states programme-specific steps vary; page context is an admissions portal whose relationship to catalogue-wide university/campus identity is unclear. No programme fact generalized to University of Mumbai."
           }
         ]
-      }
+      },
+      "followUpResearchDisposition": "BATCH_028_RESEARCH_ONLY_NO_NEW_STAGED_FACTS"
     },
     {
       "slug": "university-of-delhi",
@@ -6091,9 +6102,20 @@
             "status": "NOT_STAGED",
             "reason": "Targeted official-domain search did not establish the mechanical programme from a checked first-party page.",
             "batch": 10
+          },
+          {
+            "batch": 28,
+            "retrievedAt": "2026-11-19T14:54:00Z",
+            "status": "NO_CLAIM_UNRENDERED_TEMPLATE",
+            "sourceUrl": "https://enquiry.psgtech.ac.in/",
+            "candidateFactsInResearchArtifact": 0,
+            "databaseImport": "NOT_IMPORTED",
+            "reviewState": "UNREVIEWED_NOT_IN_DATABASE",
+            "note": "Official 2026-27 enquiry page opened with unresolved template placeholders for mobile/phone/email. It states enquiry registration is closed and gives no usable programme/eligibility/fee evidence. No values copied or inferred."
           }
         ]
-      }
+      },
+      "followUpResearchDisposition": "BATCH_028_RESEARCH_ONLY_NO_NEW_STAGED_FACTS"
     },
     {
       "slug": "symbiosis-international-university",
@@ -8679,9 +8701,20 @@
             "status": "NOT_STAGED",
             "reason": "Page responded but no matching B.Tech text was exposed by this retrieval. Department source follow-up needed.",
             "batch": 9
+          },
+          {
+            "batch": 28,
+            "retrievedAt": "2026-11-19T14:54:00Z",
+            "status": "RESEARCH_ONLY_OFFICIAL_PAGE_RENDERING_BLOCK",
+            "sourceUrl": "https://www.iittp.ac.in/btech",
+            "candidateFactsInResearchArtifact": 0,
+            "databaseImport": "NOT_IMPORTED",
+            "reviewState": "UNREVIEWED_NOT_IN_DATABASE",
+            "note": "Official search-index content surfaced programme names and an eight-semester structure; opening the official page returned only a one-line shell. Separate official admission page also failed to render usable text. Search snippets were not used as claim evidence; no fact staged."
           }
         ]
-      }
+      },
+      "followUpResearchDisposition": "BATCH_028_RESEARCH_ONLY_NO_NEW_STAGED_FACTS"
     },
     {
       "slug": "nit-silchar",
@@ -15132,9 +15165,20 @@
             "sourceUrl": null,
             "status": "RESEARCH_ONLY_FEE_COMPONENT_UNCLEAR",
             "reason": "Official fee table amount lacked a directly validated fee-component definition; no amount staged."
+          },
+          {
+            "batch": 28,
+            "retrievedAt": "2026-11-19T14:54:00Z",
+            "status": "NO_CLAIM_OFFICIAL_FETCH_TIMEOUT",
+            "sourceUrl": "https://www.kgmu.org/",
+            "candidateFactsInResearchArtifact": 0,
+            "databaseImport": "NOT_IMPORTED",
+            "reviewState": "UNREVIEWED_NOT_IN_DATABASE",
+            "note": "Official-domain search returned current-cycle headings through a malformed/nested URL which timed out. No retry or bypass; no source facts staged."
           }
         ]
-      }
+      },
+      "followUpResearchDisposition": "BATCH_028_RESEARCH_ONLY_NO_NEW_STAGED_FACTS"
     },
     {
       "slug": "netaji-subhas-university-of-technology",
@@ -16132,9 +16176,20 @@
             "sourceUrl": null,
             "status": "HISTORICAL_CYCLE_NOT_STAGED",
             "reason": "Directly read 2026-27 prospectus material has passed admission dates; await a current-cycle notice."
+          },
+          {
+            "batch": 28,
+            "retrievedAt": "2026-11-19T14:54:00Z",
+            "status": "CANDIDATE_FACTS_EXPLICIT_PERMISSION_HOLD",
+            "sourceUrl": "https://admission.jmi.ac.in/application/assets/pdfFile/prospectus/UniversityProspectus/University_Prospectus_2026_2027.pdf",
+            "candidateFactsInResearchArtifact": 3,
+            "databaseImport": "NOT_IMPORTED",
+            "reviewState": "UNREVIEWED_NOT_IN_DATABASE",
+            "note": "Three scoped B.Tech programme/admission candidates from 2026-27 prospectus. JMI copyright policy requires due permission before reproducing website content; all three held pending owner/legal decision. 2026 admissions cycle-specific facts are not represented as open."
           }
         ]
-      }
+      },
+      "followUpResearchDisposition": "BATCH_028_RESEARCH_ONLY_NO_NEW_STAGED_FACTS"
     },
     {
       "slug": "srm-ap",
@@ -17779,9 +17834,20 @@
             "sourceUrl": null,
             "status": "RESEARCH_ONLY_STALE_PAGE",
             "reason": "Official department page displays 2017 copyright; current linked programme document was not readable in this access path. Do not stage stale facts or use search excerpts."
+          },
+          {
+            "batch": 28,
+            "retrievedAt": "2026-11-19T14:54:00Z",
+            "status": "CANDIDATE_FACTS_SOURCE_USE_AND_FRESHNESS_HOLD",
+            "sourceUrl": "https://nitmanipur.ac.in/Deptindex.aspx?ItemID=ca&nDeptID=k&page=a",
+            "candidateFactsInResearchArtifact": 2,
+            "databaseImport": "NOT_IMPORTED",
+            "reviewState": "UNREVIEWED_NOT_IN_DATABASE",
+            "note": "Two directly read programme candidates (B.Tech CSE four years; integrated B.Tech-M.Tech CSE start year 2026). Department page's 2017 copyright footer conflicts with newer programme text; confirm current programme status. No explicit source-use terms found; human source-use review required."
           }
         ]
-      }
+      },
+      "followUpResearchDisposition": "BATCH_028_RESEARCH_ONLY_NO_NEW_STAGED_FACTS"
     },
     {
       "slug": "nit-mizoram",
@@ -18402,9 +18468,20 @@
             "sourceUrl": null,
             "status": "NO_DIRECT_PAGE_VALIDATED",
             "reason": "Official programme/admissions page was not directly validated in this source pass; no search excerpt used as claim evidence. Existing research disposition remains; next attempt should use an official university prospectus or admissions page, not a third-party listing."
+          },
+          {
+            "batch": 28,
+            "retrievedAt": "2026-11-19T14:54:00Z",
+            "status": "NO_CLAIM_CLOSED_CYCLE_AND_FETCH_BLOCK",
+            "sourceUrl": "https://banasthali.org/banasthali/wcms/en/home/lower-menu/research-development/doctoral-research/RET_PHD_Notification.html",
+            "candidateFactsInResearchArtifact": 0,
+            "databaseImport": "NOT_IMPORTED",
+            "reviewState": "UNREVIEWED_NOT_IN_DATABASE",
+            "note": "Official page result concerns PhD admission AY 2025-26 and dates in Dec 2025/Jan 2026; direct open returned 502. Not current admission guidance. No claim staged."
           }
         ]
-      }
+      },
+      "followUpResearchDisposition": "BATCH_028_RESEARCH_ONLY_NO_NEW_STAGED_FACTS"
     },
     {
       "slug": "nit-sikkim",
@@ -22388,9 +22465,20 @@
             "sourceUrl": null,
             "status": "BLOCKED_DIRECT_RETRIEVAL",
             "reason": "Direct official URLs previously returned 502; do not bypass or stage search snippets."
+          },
+          {
+            "batch": 28,
+            "retrievedAt": "2026-11-19T14:54:00Z",
+            "status": "NO_CLAIM_OFFICIAL_FETCH_TIMEOUT",
+            "sourceUrl": "https://lnmiit.ac.in/admissions/ug/regular-mode/",
+            "candidateFactsInResearchArtifact": 0,
+            "databaseImport": "NOT_IMPORTED",
+            "reviewState": "UNREVIEWED_NOT_IN_DATABASE",
+            "note": "Official search surfaced 2026-27 admission/programme information, but direct official page and admissions page timed out. No claim based on snippets; do not retry aggressively or bypass."
           }
         ]
-      }
+      },
+      "followUpResearchDisposition": "BATCH_028_RESEARCH_ONLY_NO_NEW_STAGED_FACTS"
     },
     {
       "slug": "sikkim-university",
@@ -24396,9 +24484,20 @@
             "field": "substantive research disposition",
             "sourceUrl": null,
             "reason": "No current programme/admission source reviewed to a claim-ready level."
+          },
+          {
+            "batch": 28,
+            "retrievedAt": "2026-11-19T14:54:00Z",
+            "status": "NO_CURRENT_CLAIM_CYCLE_COMPLETED",
+            "sourceUrl": "https://www.stjohns.in/medicalcollege/announcements/commencement-of-mbbs-academic-session-2026",
+            "candidateFactsInResearchArtifact": 0,
+            "databaseImport": "NOT_IMPORTED",
+            "reviewState": "UNREVIEWED_NOT_IN_DATABASE",
+            "note": "Direct official announcement dated 15 September 2026 says MBBS batch 2026 session commenced 17 September 2026. This establishes a completed/current academic session event only, not current admissions criteria, fees, or a current application route."
           }
         ]
-      }
+      },
+      "followUpResearchDisposition": "BATCH_028_RESEARCH_ONLY_NO_NEW_STAGED_FACTS"
     },
     {
       "slug": "cochin-university",
@@ -29361,9 +29460,20 @@
             "field": "substantive research disposition",
             "sourceUrl": null,
             "reason": "No department- and cycle-specific fact reviewed sufficiently for university-wide attribution."
+          },
+          {
+            "batch": 28,
+            "retrievedAt": "2026-11-19T14:54:00Z",
+            "status": "CANDIDATE_FACTS_CLOSED_CYCLE_AND_SOURCE_USE_HOLD",
+            "sourceUrl": "https://www.unom.ac.in/webportal/uploads/admissions/eligibility_condition_2026-27.pdf",
+            "candidateFactsInResearchArtifact": 2,
+            "databaseImport": "NOT_IMPORTED",
+            "reviewState": "UNREVIEWED_NOT_IN_DATABASE",
+            "note": "Two candidates for University Departments M.A. International Relations (programme and eligibility). AY 2026-27 PG registration closed 1 June 2026. Department named but campus not specified. No source-specific factual reuse licence identified; human source-use review required. No fee/placement/accreditation inference."
           }
         ]
-      }
+      },
+      "followUpResearchDisposition": "BATCH_028_RESEARCH_ONLY_NO_NEW_STAGED_FACTS"
     },
     {
       "slug": "hindustan-university",
@@ -32113,6 +32223,33 @@
         "bulkRedistribution": "No bulk extraction/republication permission established; no document/table copying. Concise factual records remain unreviewed and require human source-use assessment before public approval.",
         "policyUrl": "https://www.cmch-vellore.edu/intellectual-property-policy/",
         "review": "Confirm exact campus/institution scope and whether the intended concise factual summaries and public linking comply with applicable terms; do not infer a licence from public access."
+      },
+      "National Institute of Technology Manipur": {
+        "access": "Direct manual read of public official CSE department HTML page over HTTPS; no automated access or controls bypassed.",
+        "factualExtraction": "The department page has a 2017 copyright footer but includes a CSE integrated programme start year of 2026. No explicit factual-extraction or republication licence was located in this review.",
+        "attribution": "Exact department URL and line locator retained in batch 028 research artifact.",
+        "documentStorage": "No PDF or page prose copied; concise candidate facts only in a local research artifact, not a database.",
+        "bulkRedistribution": "No bulk collection or redistribution authorization inferred.",
+        "policyUrl": "https://nitmanipur.ac.in/Deptindex.aspx?ItemID=ca&nDeptID=k&page=a",
+        "review": "Two candidates are not imported. Confirm current programme applicability and source-use basis before staging or publication."
+      },
+      "Jamia Millia Islamia": {
+        "access": "Official University Prospectus 2026-27 PDF and official copyright policy page opened and read manually over HTTPS; no access controls bypassed.",
+        "factualExtraction": "The official copyright policy states site content may not be reproduced partially or fully without due permission and requires source acknowledgement when referred to in another publication. Candidate facts are kept concise; neither the PDF nor its tables/prose are redistributed.",
+        "attribution": "Publisher, exact prospectus URL, printed page and web-line locators retained in batch 028 research artifact.",
+        "documentStorage": "No PDF or source text stored in the application database; candidate values/locators remain in a local, unimported research artifact.",
+        "bulkRedistribution": "No automated extraction or bulk redistribution permitted by this work; written permission or a documented legal decision is required before staging/public use.",
+        "policyUrl": "https://jmi.ac.in/Legal-document/Copyright-Policy",
+        "review": "Three candidates held; owner/legal permission decision required before staging. Admission claims are historical AY 2026-27."
+      },
+      "University of Madras": {
+        "access": "Official University Departments CBCS admission portal and eligibility PDF manually opened/read over HTTPS; no automated extraction or controls bypassed.",
+        "factualExtraction": "No source-specific factual-extraction licence was identified in this check. The candidate summary is concise and the PDF table/document is not reproduced.",
+        "attribution": "Exact official PDF and admissions portal URLs, publisher, AY 2026-27 and lines retained in batch 028 research artifact.",
+        "documentStorage": "No PDF or source table stored in the application database.",
+        "bulkRedistribution": "No permission for automated retrieval or bulk redistribution assumed.",
+        "policyUrl": "https://www.unom.ac.in/webportal/uploads/admissions/eligibility_condition_2026-27.pdf",
+        "review": "Two candidates held for human source-use and scope decision. Admissions portal records PG registration closed 1 June 2026; facts are historical AY 2026-27."
       }
     }
   },
@@ -32592,6 +32729,22 @@
         "snapshotManifest": "data/pilot/staged-evidence-after-batch-027-manifest.json",
         "snapshotSha256": "24c039bb7fd13a994e0c0e01ce1059f06dc7c492e118aa3cbfbaefe4b2697fbf",
         "dispositions": 20
+      },
+      {
+        "batch": 28,
+        "institutionResearchAttempts": 10,
+        "institutionClaims": 0,
+        "officialSourceCandidateFacts": 7,
+        "candidateInstitutions": 3,
+        "claimsStaged": 0,
+        "claimsVerified": 0,
+        "claimsExportedForLaterReview": 7,
+        "manifest": "data/pilot/substantive-research-batch-028.json",
+        "reviewPacket": "data/pilot/substantive-batch-028-review-packet.md",
+        "dryRun": "PASS: importer accepted 7 candidates; databaseChanged=false",
+        "duplicateCheck": "PASS against current per-college ledger and prior batch manifests; no identical candidate found",
+        "blocker": "No authorized persistent non-production evidence destination; source-use/legal review required for candidate sources; no test database was used for genuine staging.",
+        "reviewState": "UNREVIEWED_NOT_IMPORTED"
       }
     ],
     "fieldStatusNote": "Legacy fieldCounts describe raw seed columns and retain DEMO/MISSING labels. Source-backed unreviewed evidence is a separate overlay and never promotes a legacy field.",
@@ -32599,7 +32752,7 @@
     "institutionsWithCandidateClaimsPendingSafeDatabaseStage": 0,
     "typedRankingCandidatesPendingImport": 0,
     "institutionsWithTypedRankingCandidate": 0,
-    "followUpFieldResearchAttempts": 15,
+    "followUpFieldResearchAttempts": 25,
     "additionalCandidateFactsNotStaged": 4,
     "totalStagedClaimsAcrossReferencesAndSubstantive": 377,
     "batch012SnapshotSha256": "b248ee7c8a329d9cf713e9b75e46d5ca50d663ce8aa08351cf62178712dadfdf",
@@ -36397,7 +36550,12 @@
           ]
         }
       ]
-    }
+    },
+    "researchOnlyCandidatesBatch028": 7,
+    "institutionsWithResearchOnlyCandidatesBatch028": 3,
+    "latestResearchBatchDisposition": "Batch 028: 10 colleges researched; seven precise official-source candidates from three institutions preserved as unreviewed import artifact; zero database staging because source-use holds and approved persistent destination unavailable.",
+    "batch028ImportedClaims": 0,
+    "batch028GenuineVerifiedClaims": 0
   },
   "disposableDatabaseVerification": {
     "containerName": "collegefind-phase3-disposable-20261118",

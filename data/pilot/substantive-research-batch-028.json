@@ -1,0 +1,453 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 28,
+  "researchedAt": "2026-11-19T14:54:00Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourceUsePolicy": "Manual, read-only review of official institutional webpages and publications. Candidate facts below are concise records with exact source links and locators; no source document, table or expressive prose is stored. Candidate archival does not authorize public display, source reuse, automated collection or bulk redistribution. JMI's explicit website copyright policy requires due permission before reproducing website content; its candidates are held for owner/legal source-use review. NIT Manipur and University of Madras source-specific reuse terms were not established; their candidates also require human source-use review. No restricted access, CAPTCHA, authentication or rate-limit control was bypassed. No database apply occurred.",
+  "selectedInstitutions": [
+    {
+      "institutionSlug": "iit-tirupati",
+      "name": "IIT Tirupati",
+      "type": "GOVERNMENT",
+      "currentSubstantiveCoverage": "NONE_STAGED",
+      "missingPriorityFields": [
+        "programmes",
+        "admissions",
+        "eligibility",
+        "fees",
+        "hostel",
+        "scholarships",
+        "accreditation",
+        "placements"
+      ],
+      "selectionReason": "South Indian institute of national importance; official undergraduate and admission URLs are separately surfaced in official search results, but direct page extraction returned only a shell in this pass.",
+      "reviewStatus": "RESEARCH_ONLY_SOURCE_RENDERING_BLOCK"
+    },
+    {
+      "institutionSlug": "nit-manipur",
+      "name": "NIT Manipur",
+      "type": "GOVERNMENT",
+      "currentSubstantiveCoverage": "NONE_STAGED",
+      "missingPriorityFields": [
+        "programmes",
+        "admissions",
+        "eligibility",
+        "fees",
+        "hostel",
+        "scholarships",
+        "accreditation",
+        "placements"
+      ],
+      "selectionReason": "Northeast government institute; directly readable official department programme page supports bounded CSE programme facts.",
+      "reviewStatus": "CANDIDATES_HELD_SOURCE_USE_AND_FRESHNESS_REVIEW"
+    },
+    {
+      "institutionSlug": "madras-university",
+      "name": "Madras University",
+      "type": "GOVERNMENT",
+      "currentSubstantiveCoverage": "NONE_STAGED",
+      "missingPriorityFields": [
+        "programmes",
+        "admissions",
+        "eligibility",
+        "fees",
+        "hostel",
+        "scholarships",
+        "accreditation",
+        "placements"
+      ],
+      "selectionReason": "South Indian public university; current-cycle 2026-27 university-department eligibility document is publicly readable and precisely identifies one programme/department.",
+      "reviewStatus": "CANDIDATES_HELD_CLOSED_CYCLE_AND_SOURCE_USE_REVIEW"
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "name": "Jamia Millia Islamia",
+      "type": "GOVERNMENT",
+      "currentSubstantiveCoverage": "NONE_STAGED",
+      "missingPriorityFields": [
+        "programmes",
+        "admissions",
+        "eligibility",
+        "fees",
+        "hostel",
+        "scholarships",
+        "accreditation",
+        "placements"
+      ],
+      "selectionReason": "North Indian central university; official 2026-27 prospectus provides scoped BTech programme/admission facts, but the university's explicit copyright policy requires permission before reproducing site content.",
+      "reviewStatus": "CANDIDATES_HELD_EXPLICIT_COPYRIGHT_PERMISSION"
+    },
+    {
+      "institutionSlug": "lnmiit-jaipur",
+      "name": "LNMIIT Jaipur",
+      "type": "PRIVATE",
+      "currentSubstantiveCoverage": "NONE_STAGED",
+      "missingPriorityFields": [
+        "programmes",
+        "admissions",
+        "eligibility",
+        "fees",
+        "hostel",
+        "scholarships",
+        "accreditation",
+        "placements"
+      ],
+      "selectionReason": "Private technical institute in Rajasthan; official admissions search results surfaced 2026-27 material, but direct page fetch timed out. Search snippets are not used as claims.",
+      "reviewStatus": "RESEARCH_ONLY_OFFICIAL_PAGE_TIMEOUT"
+    },
+    {
+      "institutionSlug": "psg-college-of-technology",
+      "name": "PSG College of Technology",
+      "type": "PRIVATE",
+      "currentSubstantiveCoverage": "NONE_STAGED",
+      "missingPriorityFields": [
+        "programmes",
+        "admissions",
+        "eligibility",
+        "fees",
+        "hostel",
+        "scholarships",
+        "accreditation",
+        "placements"
+      ],
+      "selectionReason": "Private autonomous college in Tamil Nadu; official admission enquiry page opened but its data was an unrendered template with placeholders.",
+      "reviewStatus": "RESEARCH_ONLY_SOURCE_RENDERING_DEFECT"
+    },
+    {
+      "institutionSlug": "university-of-mumbai",
+      "name": "University of Mumbai",
+      "type": "GOVERNMENT",
+      "currentSubstantiveCoverage": "NONE_STAGED",
+      "missingPriorityFields": [
+        "programmes",
+        "admissions",
+        "eligibility",
+        "fees",
+        "hostel",
+        "scholarships",
+        "accreditation",
+        "placements"
+      ],
+      "selectionReason": "West Indian public university; the official portal describes programme categories, but its scope appears linked to a distinct admissions portal/institute and does not resolve catalogue-campus matching.",
+      "reviewStatus": "RESEARCH_ONLY_IDENTITY_AND_CAMPUS_SCOPE"
+    },
+    {
+      "institutionSlug": "king-georges-medical-university",
+      "name": "King Georges Medical University",
+      "type": "GOVERNMENT",
+      "currentSubstantiveCoverage": "NONE_STAGED",
+      "missingPriorityFields": [
+        "programmes",
+        "admissions",
+        "eligibility",
+        "fees",
+        "hostel",
+        "scholarships",
+        "accreditation",
+        "placements"
+      ],
+      "selectionReason": "North Indian medical university; official domain surfaced current-cycle headings, but the page path returned a timeout and was not retried or bypassed.",
+      "reviewStatus": "RESEARCH_ONLY_OFFICIAL_PAGE_TIMEOUT"
+    },
+    {
+      "institutionSlug": "st-johns-medical-college",
+      "name": "St Johns Medical College",
+      "type": "PRIVATE",
+      "currentSubstantiveCoverage": "NONE_STAGED",
+      "missingPriorityFields": [
+        "programmes",
+        "admissions",
+        "eligibility",
+        "fees",
+        "hostel",
+        "scholarships",
+        "accreditation",
+        "placements"
+      ],
+      "selectionReason": "South Indian private medical college; a directly accessible official MBBS 2026 session notice confirms only a cycle that has already commenced, not current admissions requirements.",
+      "reviewStatus": "RESEARCH_ONLY_HISTORICAL_CYCLE"
+    },
+    {
+      "institutionSlug": "banasthali-vidyapith",
+      "name": "Banasthali Vidyapith",
+      "type": "PRIVATE",
+      "currentSubstantiveCoverage": "NONE_STAGED",
+      "missingPriorityFields": [
+        "programmes",
+        "admissions",
+        "eligibility",
+        "fees",
+        "hostel",
+        "scholarships",
+        "accreditation",
+        "placements"
+      ],
+      "selectionReason": "Private women's university in Rajasthan; official PhD notice found was for the closed 2025-26 cycle, and the source page returned 502 on direct access.",
+      "reviewStatus": "RESEARCH_ONLY_CLOSED_CYCLE_AND_RENDERING_BLOCK"
+    }
+  ],
+  "sources": [
+    {
+      "id": "nit-manipur-cse-programmes-2026",
+      "institutionSlug": "nit-manipur",
+      "publisher": "National Institute of Technology Manipur, Department of Computer Science and Engineering",
+      "url": "https://nitmanipur.ac.in/Deptindex.aspx?ItemID=ca&nDeptID=k&page=a",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-19T14:54:00Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Direct official HTML was opened and read manually. The page's footer carries a 2017 copyright marker, while it includes an integrated programme starting in 2026. No express factual-extraction or republication licence was located. Only concise candidate facts are preserved here with attribution and exact locator; no page prose/table is copied. Keep both candidates held until an owner/reviewer confirms current programme applicability and the permissible storage/publication basis. No automated collection was performed.",
+      "evidenceLocations": [
+        "Lines 43-51: department programme section; lines 45-50 state four-year B.Tech, CSE specialization, five-year integrated B.Tech-M.Tech, and CSE integrated programme starting 2026."
+      ]
+    },
+    {
+      "id": "jmi-university-prospectus-2026-27",
+      "institutionSlug": "jamia-millia-islamia",
+      "publisher": "Jamia Millia Islamia, University Prospectus 2026-27",
+      "url": "https://admission.jmi.ac.in/application/assets/pdfFile/prospectus/UniversityProspectus/University_Prospectus_2026_2027.pdf",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-19T14:54:00Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official PDF directly opened and manually read; only individual factual candidate values and page/line locators are encoded, not the PDF or its tables. JMI's official Copyright Policy (https://jmi.ac.in/Legal-document/Copyright-Policy, lines 348-351) says website content may not be reproduced without due permission and requires attribution when referenced. Therefore all JMI claims are held; owner must obtain written permission or a documented legal determination for retaining/publicly presenting these extracted facts. Do not automate downloads or redistribute this PDF.",
+      "evidenceLocations": [
+        "Prospectus printed page 22 / web lines 746-754: B.Tech admission route uses JEE (Main) 2026, JMI application form, JEE application number, and final JEE Main rank merit under JMI reservation policy.",
+        "Prospectus printed page 20 / web lines 2177-2202: 2026-27 programme table identifies B.Tech Civil Engineering and B.Tech Computer Engineering; each row has eight semesters.",
+        "Official copyright policy at https://jmi.ac.in/Legal-document/Copyright-Policy, lines 348-351: reproduction requires due permission; source acknowledgement is required when referenced."
+      ]
+    },
+    {
+      "id": "university-of-madras-pg-eligibility-2026-27",
+      "institutionSlug": "madras-university",
+      "publisher": "University of Madras, University Departments Admissions under CBCS",
+      "url": "https://www.unom.ac.in/webportal/uploads/admissions/eligibility_condition_2026-27.pdf",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-19T14:54:00Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official PDF directly opened and read manually. The associated official admissions portal https://egovernance.unom.ac.in/CBCS2627/ identifies AY 2026-27 and shows PG registration ended 1 June 2026. No source-specific licence for extracted facts, automated collection or bulk redistribution was identified. Preserve only concise factual candidates with attribution; do not reproduce the table/document. Hold for human source-use and cycle-status review; treat admissions as historical AY 2026-27, never currently open.",
+      "evidenceLocations": [
+        "Eligibility PDF, web lines 94-97: item 15, M.A. International Relations, Department of Politics and Public Administration; eligibility is a pass in B.A. Political Science/History or another degree recognized by the University.",
+        "Official CBCS admission portal https://egovernance.unom.ac.in/CBCS2627/, lines 6-11 and 24-28: University Departments admissions AY 2026-27; PG registration 25 April-1 June 2026, marked closed."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "nit-manipur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech Computer Science and Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "nit-manipur-cse-programmes-2026"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Official NIT Manipur CSE department page, lines 43-48: the department offers a four-year B.Tech and lists Computer Science and Engineering as the specialization. Academic-year applicability is not stated; human reviewer must confirm the current offering.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-manipur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Integrated B.Tech-M.Tech Computer Science and Engineering",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "nit-manipur-cse-programmes-2026"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Official NIT Manipur CSE department page, lines 45-50: five-year integrated B.Tech-M.Tech is listed and the CSE integrated programme start year is 2026. This record denotes a programme start year, not proof of ongoing admissions; reviewer must confirm current availability.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "jmi-university-prospectus-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official JMI University Prospectus 2026-27, programme table, printed page 20/web lines 2177-2202: B.Tech Civil Engineering, eight semesters. Candidate is historical cycle-scoped and held for JMI's explicit reproduction permission requirement.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech Computer Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "jmi-university-prospectus-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official JMI University Prospectus 2026-27, programme table, printed page 20/web lines 2177-2202: B.Tech Computer Engineering, eight semesters. Candidate is historical cycle-scoped and held for JMI's explicit reproduction permission requirement.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech programmes, Faculty of Engineering and Technology",
+        "route": "JEE (Main) 2026 followed by submission of the Jamia Millia Islamia admission form; selection by final JEE (Main) 2026 rank under merit and JMI reservation policy",
+        "category": "B.Tech applicants, academic year 2026-27",
+        "exam": "JEE (Main) 2026",
+        "applicationUrl": "https://admission.jmi.ac.in"
+      },
+      "sourceIds": [
+        "jmi-university-prospectus-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official JMI University Prospectus 2026-27, printed page 22/web lines 746-754. Cycle-specific; not current application guidance. Held for explicit reproduction permission requirement.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "madras-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.A. International Relations, University Departments (Politics and Public Administration)",
+        "level": "PG"
+      },
+      "sourceIds": [
+        "university-of-madras-pg-eligibility-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "University of Madras eligibility PDF, item 15/web lines 94-97, matched with the CBCS University Departments portal for AY 2026-27. Department scope is explicit; campus is not specified in the document. Candidate is historical cycle-scoped.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "madras-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "M.A. International Relations, University Departments",
+        "route": "University of Madras University Departments admissions under CBCS (AY 2026-27)",
+        "category": "PG applicants to University Departments, academic year 2026-27",
+        "eligibility": "A pass in B.A. Political Science or History, or another degree recognized by the University of Madras.",
+        "applicationUrl": "https://egovernance.unom.ac.in/CBCS2627/"
+      },
+      "sourceIds": [
+        "university-of-madras-pg-eligibility-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Eligibility PDF, item 15/web lines 94-97. The official CBCS portal lines 24-28 says PG registration ended 1 June 2026 and is closed. Do not present as an open/current admission cycle.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchDispositions": [
+    {
+      "institutionSlug": "iit-tirupati",
+      "status": "RESEARCH_ONLY_OFFICIAL_PAGE_RENDERING_BLOCK",
+      "sourceUrl": "https://www.iittp.ac.in/btech",
+      "note": "Official search-index content surfaced programme names and an eight-semester structure; opening the official page returned only a one-line shell. Separate official admission page also failed to render usable text. Search snippets were not used as claim evidence; no fact staged."
+    },
+    {
+      "institutionSlug": "nit-manipur",
+      "status": "CANDIDATE_FACTS_SOURCE_USE_AND_FRESHNESS_HOLD",
+      "sourceUrl": "https://nitmanipur.ac.in/Deptindex.aspx?ItemID=ca&nDeptID=k&page=a",
+      "note": "Two directly read programme candidates (B.Tech CSE four years; integrated B.Tech-M.Tech CSE start year 2026). Department page's 2017 copyright footer conflicts with newer programme text; confirm current programme status. No explicit source-use terms found; human source-use review required."
+    },
+    {
+      "institutionSlug": "madras-university",
+      "status": "CANDIDATE_FACTS_CLOSED_CYCLE_AND_SOURCE_USE_HOLD",
+      "sourceUrl": "https://www.unom.ac.in/webportal/uploads/admissions/eligibility_condition_2026-27.pdf",
+      "note": "Two candidates for University Departments M.A. International Relations (programme and eligibility). AY 2026-27 PG registration closed 1 June 2026. Department named but campus not specified. No source-specific factual reuse licence identified; human source-use review required. No fee/placement/accreditation inference."
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "status": "CANDIDATE_FACTS_EXPLICIT_PERMISSION_HOLD",
+      "sourceUrl": "https://admission.jmi.ac.in/application/assets/pdfFile/prospectus/UniversityProspectus/University_Prospectus_2026_2027.pdf",
+      "note": "Three scoped B.Tech programme/admission candidates from 2026-27 prospectus. JMI copyright policy requires due permission before reproducing website content; all three held pending owner/legal decision. 2026 admissions cycle-specific facts are not represented as open."
+    },
+    {
+      "institutionSlug": "lnmiit-jaipur",
+      "status": "NO_CLAIM_OFFICIAL_FETCH_TIMEOUT",
+      "sourceUrl": "https://lnmiit.ac.in/admissions/ug/regular-mode/",
+      "note": "Official search surfaced 2026-27 admission/programme information, but direct official page and admissions page timed out. No claim based on snippets; do not retry aggressively or bypass."
+    },
+    {
+      "institutionSlug": "psg-college-of-technology",
+      "status": "NO_CLAIM_UNRENDERED_TEMPLATE",
+      "sourceUrl": "https://enquiry.psgtech.ac.in/",
+      "note": "Official 2026-27 enquiry page opened with unresolved template placeholders for mobile/phone/email. It states enquiry registration is closed and gives no usable programme/eligibility/fee evidence. No values copied or inferred."
+    },
+    {
+      "institutionSlug": "university-of-mumbai",
+      "status": "NO_CLAIM_IDENTITY_CAMPUS_SCOPE",
+      "sourceUrl": "https://admi.mu.ac.in/admissions/",
+      "note": "Official admissions portal lists broad programme cards and states programme-specific steps vary; page context is an admissions portal whose relationship to catalogue-wide university/campus identity is unclear. No programme fact generalized to University of Mumbai."
+    },
+    {
+      "institutionSlug": "king-georges-medical-university",
+      "status": "NO_CLAIM_OFFICIAL_FETCH_TIMEOUT",
+      "sourceUrl": "https://www.kgmu.org/",
+      "note": "Official-domain search returned current-cycle headings through a malformed/nested URL which timed out. No retry or bypass; no source facts staged."
+    },
+    {
+      "institutionSlug": "st-johns-medical-college",
+      "status": "NO_CURRENT_CLAIM_CYCLE_COMPLETED",
+      "sourceUrl": "https://www.stjohns.in/medicalcollege/announcements/commencement-of-mbbs-academic-session-2026",
+      "note": "Direct official announcement dated 15 September 2026 says MBBS batch 2026 session commenced 17 September 2026. This establishes a completed/current academic session event only, not current admissions criteria, fees, or a current application route."
+    },
+    {
+      "institutionSlug": "banasthali-vidyapith",
+      "status": "NO_CLAIM_CLOSED_CYCLE_AND_FETCH_BLOCK",
+      "sourceUrl": "https://banasthali.org/banasthali/wcms/en/home/lower-menu/research-development/doctoral-research/RET_PHD_Notification.html",
+      "note": "Official page result concerns PhD admission AY 2025-26 and dates in Dec 2025/Jan 2026; direct open returned 502. Not current admission guidance. No claim staged."
+    }
+  ],
+  "reviewPacket": {
+    "status": "RESEARCH_ARTIFACT_ONLY_NOT_IMPORTED",
+    "candidateCount": 7,
+    "sourceBackedInstitutions": 3,
+    "claimIds": "No FieldEvidence IDs exist: the candidates have not been imported. Candidate identifiers are manifest array indices and must not be represented as database claim IDs.",
+    "reviewOrder": [
+      "NIT Manipur programme candidates (source freshness and current offering)",
+      "University of Madras AY 2026-27 candidates (closed-cycle/historical labeling, campus scope, source-use)",
+      "Jamia Millia Islamia candidates (written permission/legal source-use decision required before any staging)"
+    ],
+    "requiredReviewerActions": [
+      "Confirm exact institution/campus and department scope.",
+      "Confirm whether the NIT CSE page's programme facts remain applicable despite its 2017 footer.",
+      "Keep University of Madras and JMI 2026-27 admissions facts visibly historical; confirm expiry/status before publication.",
+      "Resolve source-specific retention and public attribution terms, especially JMI's explicit prior-permission statement.",
+      "Only after source-use clearance, use the existing guarded importer to stage unreviewed claims; then use the existing authenticated admin dashboard for an explicit human factual decision."
+    ],
+    "blockedFromDatabase": "No explicitly authorized persistent non-production evidence database was available in the current checkout. Existing disposable/test databases were not used for genuine research. Import artifacts were validated in dry-run only."
+  },
+  "sourceTitlesById": {
+    "nit-manipur-cse-programmes-2026": "Computer Science and Engineering — Programmes Offered",
+    "jmi-university-prospectus-2026-27": "University Prospectus 2026-27",
+    "university-of-madras-pg-eligibility-2026-27": "Eligibility Conditions — Academic Year 2026-27"
+  }
+}

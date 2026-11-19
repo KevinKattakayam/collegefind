@@ -1,6 +1,6 @@
 # CollegeFind V3 upgrade status and evidence
 
-Status refreshed: 2026-11-19. Phase 9 work is on `phase-9-production-hardening` from Phase 8 checkpoint `47e65ec`. The 205 original college identities and evidence history remain intact. The repository records 377 STAGED claims, zero genuine approvals and zero verified official cutoffs. Phase 8 email verification and recovery and manual accessibility checks remain open. See the Phase 9 entry for the latest release evidence.
+Status refreshed: 2026-11-19. The current local content-readiness workstream is on `verified-content-release-readiness`, based on Phase 9 checkpoint `44a2a2a`. The 205 original college identities and evidence history remain intact. Baseline repository evidence is 377 STAGED claims, zero genuine approvals and zero verified official cutoffs. Phase 9 owner-controlled production gates remain open. Batch 028 added research-only source candidates without changing staged evidence counts; see the latest section at the end.
 
 Phase 8 checklist is below. Account, community, moderation and evidence-review changes are recorded in the Phase 8 entry at the end. No real college records or evidence decisions were changed.
 
@@ -2055,3 +2055,40 @@ A new PostgreSQL 16 Docker container exposed only loopback `127.0.0.1:32768`. Be
 - A second loopback production server with the disposable limiter exemption turned off verified missing-Redis 503 readiness and registration, while liveness and the DB probe remained healthy.
 
 **Local engineering:** PASS for the exercised release engineering scope, with infrastructure and manual follow-ups listed above. **Genuine data:** BLOCKED for unapproved claims and cutoffs. **Production deployment:** NO-GO pending remote CI, owner evidence, manual assistive technology and genuine-data acceptance. Owner procedures are in `docs/PRODUCTION_RELEASE.md` and `docs/SECURITY.md`.
+
+## Verified-content release readiness — batch 028
+
+**Branch/base:** `verified-content-release-readiness`, based on local Phase 9 checkpoint `44a2a2a`. Worktree was clean before this increment except for the pre-existing unrelated untracked `CollegeFind_AGENTS_V3.md`, which remains untouched and excluded. The 205-college seed was not modified; SHA-256 remains `a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637`.
+
+### Actual research and data results
+
+- Researched **10 colleges** with no substantive STAGED facts before this pass: IIT Tirupati, NIT Manipur, Madras University, Jamia Millia Islamia, LNMIIT Jaipur, PSG College of Technology, University of Mumbai, King George's Medical University, St John's Medical College, and Banasthali Vidyapith. Types/regions span seven government and three private colleges in North, West, South, Rajasthan and the Northeast.
+- Found **7 precise official-source candidate facts across 3 colleges**: two programme facts for NIT Manipur (four-year B.Tech CSE; five-year integrated B.Tech–M.Tech CSE start year 2026); two B.Tech programme facts for Jamia Millia Islamia (Civil Engineering and Computer Engineering, eight semesters); one JMI B.Tech admission route (JEE Main 2026 plus JMI application and final JEE rank); and University of Madras M.A. International Relations programme/eligibility facts.
+- **Imported/staged: 0.** All seven remain research candidates only. **Exported for owner/reviewer follow-up: 7** in `data/pilot/substantive-research-batch-028.json` and the readable packet `data/pilot/substantive-batch-028-review-packet.md`. The candidates have no database `FieldEvidence` IDs and are not visible in `/admin/enrichment` yet. The packet's references are manifest array indices, not claim IDs.
+- The current counts remain **123/205 colleges with substantive STAGED facts; 230 substantive STAGED claims; 147 source-reference claims; 377 total STAGED claims; 0 genuine approvals; 0 genuinely VERIFIED claims/institutions; 0 verified official cutoff records; 0 fully enriched colleges**. No candidate has been counted as verified or staged.
+- The other seven colleges yielded no stageable facts: IIT Tirupati direct content did not render; LNMIIT pages timed out; PSG's enquiry form returned template placeholders; University of Mumbai portal scope/campus attribution is unresolved; KGMU's official page path timed out; St John's source was for a completed 2026 MBBS start; Banasthali's official PhD notice was for closed 2025–26 and direct page returned 502. No failed source was retried through a bypass and no snippets were used as evidence.
+
+### Source-use and review holds
+
+- **Jamia Millia Islamia:** its official copyright policy states website content may not be reproduced without due permission and requires source acknowledgement. Its three candidates remain held until written permission or an owner-approved documented legal determination permits the intended factual storage/public use.
+- **NIT Manipur:** the department page was directly readable and the two programme statements have line locators. The same page shows a 2017 copyright footer while describing a programme starting in 2026. No source-specific factual-use permission was found. Human confirmation of current offering and owner source-use review are required.
+- **University of Madras:** its official AY 2026–27 admissions portal marks PG registration closed on 1 June 2026. The PDF states one programme and eligibility, but no source-specific factual reuse licence was identified; the two facts remain historical and held for campus/scope and source-use review.
+- All documents remain externally linked only; no source PDF, full table or prose was copied. No automated source collection was performed.
+
+### Persistence and verification evidence
+
+- No authorized persistent non-production evidence destination was available for genuine research. No database was connected or modified; in particular, no disposable test DB was used as a persistent evidence destination. This is why candidates were exported as a durable artifact rather than claimed as database-staged facts.
+- `npm run ingest:official-facts -- --file data/pilot/substantive-research-batch-028.json --report /tmp/collegefind-batch-028-dry-run.json` — **PASS**, 7 candidates validated, `reviewState: UNREVIEWED`, `databaseChanged: false`. This dry-run validates shape/source metadata only; it does not prove database idempotency or source rights.
+- `npx vitest run --project unit tests/unit/data-foundation.test.ts tests/unit/public-evidence.test.ts tests/unit/evidence.test.ts tests/unit/field-evidence.test.ts` — **PASS**, 4 files / 22 tests. The initial focused `data-foundation` run also passed 1 file / 3 tests. These are unit checks, not DB-backed importer idempotency.
+- `git diff --check` — **PASS** after final documentation/artifact edits.
+- Candidate deduplication against the current per-college coverage ledger and earlier substantive research manifests — **PASS**, no identical candidate fact found. This is an artifact-level comparison, not a database uniqueness test.
+- Seed/coverage reconciliation — **PASS**, exactly 205 records; baseline checksum unchanged. Coverage ledger records the ten follow-up dispositions and preserves all previous import, review and audit counts.
+- No application code, schema or migration changed; integration, browser, production build and DB migration suites were not rerun because this increment changes research artifacts and documentation only.
+
+### Files changed and remaining owner actions
+
+Changed: `data/pilot/substantive-research-batch-028.json`, `data/pilot/substantive-batch-028-review-packet.md`, `docs/DATA_COVERAGE.json`, `docs/DATA_COVERAGE.md`, and this status file. No app code, database, environment file or credentials changed.
+
+Owner actions before import/review: (1) decide and document the intended rights basis for concise factual extraction/retention from each provider, especially obtain permission or legal approval for JMI; (2) confirm NIT Manipur page freshness and University of Madras campus/scope and closed-cycle labeling; (3) provide an explicitly authorized non-production evidence destination and approved preservation/export procedure; then stage via the existing guarded importer and inspect the resulting records through the existing authenticated `/admin/enrichment` workflow. An authorized reviewer must make a separate explicit decision for every fact. No approvals were fabricated.
+
+This batch improves **research documentation**, not public catalogue coverage: the user-facing profile, search, comparison and CollegeFit data counts did not change. Security controls were not weakened. Production readiness remains **NO-GO** under inherited owner-controlled Phase 9 and genuine-data gates. Next scoped task: after owner source-use and persistence decisions, stage only the approved subset through the existing importer and verify read-back/audit via the approved preservation path.
