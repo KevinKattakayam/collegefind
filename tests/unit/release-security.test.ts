@@ -90,3 +90,14 @@ it('reports readiness degradation and bounds the public guidance fallback', asyn
   await expect(enforceRateLimit('predict', 'client')).rejects.toMatchObject({ status: 429 });
   expect(errorFields(new Error('private query or credential'))).toEqual({ errorType: 'Error' });
 });
+
+it('honors the configured owner-review loopback origin when the dev server normalizes its request URL', () => {
+  vi.stubEnv('NODE_ENV', 'development');
+  vi.stubEnv('NEXTAUTH_URL', 'http://127.0.0.1:3317');
+  expect(() => assertSameOrigin(new Request('http://localhost:3317/api/admin/evidence', {
+    method: 'POST', headers: { origin: 'http://127.0.0.1:3317' },
+  }))).not.toThrow();
+  expect(() => assertSameOrigin(new Request('http://localhost:3317/api/admin/evidence', {
+    method: 'POST', headers: { origin: 'http://localhost:3317' },
+  }))).toThrow();
+});

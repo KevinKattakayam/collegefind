@@ -26,7 +26,12 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
   const parsed = queueQuery.safeParse(raw);
   if (!parsed.success) return <main className="container-page py-8"><h1>Invalid queue filters</h1><p>Choose a valid page, year and filter value.</p></main>;
 
-  const result = await evidenceQueue(prisma, parsed.data);
+  const [result, packetRows] = await Promise.all([
+    evidenceQueue(prisma, parsed.data),
+    prisma.fieldEvidence.findMany({ where: { id: { in: reviewBatch.claimIds } }, select: { id: true, decisions: { take: 1, orderBy: [{ createdAt: 'desc' }, { id: 'desc' }], select: { status: true } } } }),
+  ]);
+  const packetStates = new Map<string, string>(packetRows.map((row) => [row.id, row.decisions[0]?.status ?? 'UNREVIEWED']));
+  const next = reviewBatch.claims.find(({ evidenceId }) => packetStates.get(evidenceId) === 'UNREVIEWED' && evidenceId !== parsed.data.q);
   const { page, pageSize, status, q, college, campus, field, academicYear, freshness, total, items } = result;
   const filters = { status, q, college, campus, field, academicYear, freshness };
   const pages = Math.max(1, Math.ceil(total / pageSize));
@@ -35,12 +40,13 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
   return <main className="container-page min-w-0 overflow-x-hidden py-8">
     <h1>Enrichment review</h1>
     <p>Retrieval is not verification. Only an authorized reviewer decision can publish evidence. Fixture claims are never publishable.</p>
-    <details className="my-5 border p-4" open>
+    {next && <p className="mt-4"><Link href={pageLink(1, { status: 'ALL', q: next.evidenceId })}>Next unreviewed packet claim: {next.institutionName} · {next.field}</Link></p>}
+    <details className="my-5 break-words border p-4" open={!reviewBatch.claimIds.includes(q)}>
       <summary className="cursor-pointer font-semibold">First owner review batch · {reviewBatch.claims.length} claims · staged for inspection, not approval</summary>
       <p className="my-2">Review each source and institution/campus independently. These entries are a prioritized handoff; opening the source or passing automated checks is not approval.</p>
       <ol className="space-y-3">
         {reviewBatch.claims.map((item) => <li key={item.evidenceId} className="border-t pt-3">
-          <p><strong>{item.order}. {item.institutionName}</strong> ({item.institutionSlug}) · <code>{item.evidenceId}</code></p>
+          <p><strong>{item.order}. {item.institutionName}</strong> ({item.institutionSlug}) · <code>{item.evidenceId}</code> · {packetStates.get(item.evidenceId) === 'PENDING' ? 'Held' : packetStates.get(item.evidenceId) ?? 'Unavailable'}</p>
           <p><strong>Field:</strong> {item.field} · <strong>Academic year:</strong> {item.academicYear ?? 'Not recorded'}{item.programScope ? ` · ${item.programScope}` : ''}</p>
           <p><strong>Proposed value:</strong> <code className="whitespace-pre-wrap">{JSON.stringify(item.value)}</code>{item.unit ? ` ${item.unit}` : ''}</p>
           <p><strong>College location:</strong> {item.collegeCity}, {item.collegeState} · <strong>Campus check:</strong> {item.campusReviewQuestion}</p>
@@ -56,7 +62,7 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
     </details>
     <form className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4" action="/admin/enrichment">
       <label>Review state<select name="status" defaultValue={status} className="block w-full">
-        {['STAGED', 'ALL', 'CONFLICTED', 'EXPIRED', 'NOT_YET_VALID', 'VERIFIED', 'REJECTED', 'DEMO'].map((value) => <option key={value}>{value}</option>)}
+        {['STAGED', 'ALL', 'HELD', 'CONFLICTED', 'EXPIRED', 'NOT_YET_VALID', 'VERIFIED', 'REJECTED', 'DEMO'].map((value) => <option key={value}>{value}</option>)}
       </select></label>
       <label>Search college, claim ID, field or programme<input name="q" defaultValue={q} className="block w-full" /></label>
       <label>College<input name="college" defaultValue={college} className="block w-full" /></label>
@@ -117,7 +123,7 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
 
 function safeSource(url: string, label = url) {
   try {
-    if (new URL(url).protocol === 'https:') return <a href={url} target="_blank" rel="noopener noreferrer">{label}</a>;
+    if (new URL(url).protocol === 'https:' && !new URL(url).username && !new URL(url).password) return <a href={url} target="_blank" rel="noopener noreferrer">{label}</a>;
   } catch { /* show malformed source as text for reviewer correction */ }
   return <span>{label} (invalid or non-HTTPS source URL)</span>;
 }

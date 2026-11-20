@@ -125,9 +125,8 @@ export function assertSameOrigin(request: Request) {
   if (!origin && request.headers.get('sec-fetch-site') !== 'cross-site') return;
   try {
     const configured = process.env.NEXTAUTH_URL;
-    const expected = process.env.NODE_ENV === 'production'
-      ? (configured ? new URL(configured).origin : null)
-      : new URL(request.url).origin;
+    const expected = configured ? new URL(configured).origin
+      : process.env.NODE_ENV === 'production' ? null : new URL(request.url).origin;
     if (origin && expected && origin === expected) return;
   } catch {
     // Invalid configuration or origin is rejected without logging its contents.

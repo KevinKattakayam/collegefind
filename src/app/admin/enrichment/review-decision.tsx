@@ -12,7 +12,7 @@ export default function ReviewDecision({
   const [pending, setPending] = useState(false);
   const cannotApprove = fixture || held || expired || future || conflicted;
 
-  async function submit(status: 'APPROVED' | 'REJECTED') {
+  async function submit(status: 'APPROVED' | 'REJECTED' | 'PENDING') {
     if (pending) return;
     setPending(true);
     setMessage('Submitting decision…');
@@ -27,7 +27,7 @@ export default function ReviewDecision({
           : 'Decision not recorded. Review the claim state and reason, then try again.');
         return;
       }
-      setMessage(`${status === 'APPROVED' ? 'Approval' : 'Rejection'} recorded in the audit history.`);
+      setMessage(`${status === 'APPROVED' ? 'Approval' : status === 'PENDING' ? 'Hold' : 'Rejection'} recorded in the audit history.`);
       router.refresh();
     } catch {
       setMessage('Request failed; no decision was confirmed. Try again.');
@@ -43,6 +43,7 @@ export default function ReviewDecision({
     <div className="flex flex-wrap gap-2">
       <button disabled={pending || reason.trim().length < 3 || cannotApprove} onClick={() => submit('APPROVED')}>Approve</button>
       <button disabled={pending || reason.trim().length < 3} onClick={() => submit('REJECTED')}>Reject</button>
+      <button disabled={pending || reason.trim().length < 3} onClick={() => submit('PENDING')}>Hold</button>
     </div>
     <p role="status" aria-live="polite">{message}</p>
   </div>;

@@ -1,6 +1,7 @@
 {
   "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
   "batch": 29,
+  "ownerStagingReady": true,
   "researchedAt": "2026-11-19T17:03:54Z",
   "sourceUsePolicy": "Manual reading and attribution of individually recorded factual information. No source prose, tables or documents retained. Bulk extraction and redistribution rights are not established. Confirm source-specific terms, scope and freshness before staging or publication.",
   "selectedInstitutions": [

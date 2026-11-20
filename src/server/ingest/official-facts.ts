@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { PrismaClient } from '@prisma/client';
+import type { Prisma, PrismaClient } from '@prisma/client';
 import { checksum } from './identity';
 import { structuredFact, structuredScope } from './structured-facts';
 
@@ -61,19 +61,7 @@ function yearNumber(year: string | null): number | undefined {
   return Number(match[1]);
 }
 
-/**
- * Atomically stages a bounded batch of manually researched official facts.
- * It creates only UNREVIEWED evidence and never updates College summary fields.
- */
-export function importOfficialFacts(db: null, input: unknown, dryRun?: true, now?: Date): Promise<OfficialFactsDryRunResult>;
-export function importOfficialFacts(db: null, input: unknown, dryRun: true, now?: Date): Promise<OfficialFactsDryRunResult>;
-export function importOfficialFacts(db: PrismaClient, input: unknown, dryRun: false, now?: Date): Promise<OfficialFactsImportResult>;
-export async function importOfficialFacts(
-  db: PrismaClient | null,
-  input: unknown,
-  dryRun = true,
-  now = new Date(),
-): Promise<OfficialFactsDryRunResult | OfficialFactsImportResult> {
+export function validateOfficialFacts(input: unknown, now = new Date()) {
   const manifest = officialFactsManifestSchema.parse(input);
   const sources = new Map(manifest.sources.map((source) => [source.id, source]));
   if (sources.size !== manifest.sources.length) throw new Error('Duplicate source identifiers in manifest');
@@ -81,7 +69,7 @@ export async function importOfficialFacts(
     const url = new URL(source.url);
     if (url.username || url.password || new Date(source.retrievedAt) > now) throw new Error('Invalid source identity or collection time');
   }
-  const rows = manifest.candidateClaims.map((claim) => {
+  return manifest.candidateClaims.map((claim) => {
     const source = sources.get(claim.sourceIds[0]);
     if (!source || source.institutionSlug !== claim.institutionSlug) throw new Error('Claim/source institution mismatch');
     const academicYear = yearNumber(claim.academicYear);
@@ -104,21 +92,44 @@ export async function importOfficialFacts(
     }
     return { claim, source, academicYear, field: claim.field, scope: claim.academicYear ? `Academic year ${claim.academicYear}` : null };
   });
+}
+
+/**
+ * Atomically stages a bounded batch of manually researched official facts.
+ * It creates only UNREVIEWED evidence and never updates College summary fields.
+ */
+export function importOfficialFacts(db: null, input: unknown, dryRun?: true, now?: Date): Promise<OfficialFactsDryRunResult>;
+export function importOfficialFacts(db: null, input: unknown, dryRun: true, now?: Date): Promise<OfficialFactsDryRunResult>;
+export function importOfficialFacts(db: PrismaClient, input: unknown, dryRun: false, now?: Date): Promise<OfficialFactsImportResult>;
+export async function importOfficialFacts(
+  db: PrismaClient | null,
+  input: unknown,
+  dryRun = true,
+  now = new Date(),
+): Promise<OfficialFactsDryRunResult | OfficialFactsImportResult> {
+  const rows = validateOfficialFacts(input, now);
   const facts = rows.length;
   if (dryRun) return { status: 'DRY_RUN', facts, reviewState: 'UNREVIEWED' };
   if (!db) throw new Error('A validated disposable database client is required to apply official facts');
 
+  return stageOfficialFactRows(db, rows);
+}
+
+export type OfficialFactRows = ReturnType<typeof validateOfficialFacts>;
+
+export async function stageOfficialFactRows(db: PrismaClient, rows: OfficialFactRows, ownerPlan?: (tx: Prisma.TransactionClient, rows: OfficialFactRows) => Promise<OfficialFactRows>): Promise<OfficialFactsImportResult> {
   return db.$transaction(async (tx) => {
     // Serialize this bounded importer so concurrent retries cannot duplicate audit events.
     await tx.$executeRaw`SELECT pg_advisory_xact_lock(180231, 3)`;
+    const selectedRows = ownerPlan ? await ownerPlan(tx, rows) : rows;
     const collegeBySlug = new Map<string, { id: string }>();
-    for (const slug of new Set(rows.map(({ claim }) => claim.institutionSlug))) {
+    for (const slug of new Set(selectedRows.map(({ claim }) => claim.institutionSlug))) {
       collegeBySlug.set(slug, await tx.college.findUniqueOrThrow({ where: { slug }, select: { id: true } }));
     }
     const sourceIds = new Map<string, string>();
     const sourceKeys = new Map<string, string>();
     let createdSources = 0;
-    for (const { source } of rows) {
+    for (const { source } of selectedRows) {
       if (sourceIds.has(source.id)) continue;
       const sourceKey = checksum(['official-fact-source-v1', source.publisher, new URL(source.url).href, source.retrievedAt, source.publicationDate, source.reuseConditions]);
       const priorSource = await tx.source.findUnique({ where: { identityKey: sourceKey }, select: { id: true } });
@@ -141,13 +152,13 @@ export async function importOfficialFacts(
       sourceKeys.set(source.id, sourceKey);
     }
 
-    const claimsBySource = new Map<string, typeof rows>();
-    for (const row of rows) {
+    const claimsBySource = new Map<string, OfficialFactRows>();
+    for (const row of selectedRows) {
       const sourceId = row.source.id;
       claimsBySource.set(sourceId, [...(claimsBySource.get(sourceId) ?? []), row]);
     }
     let staged = 0;
-    let reused = 0;
+    let reused = rows.length - selectedRows.length;
     let createdRuns = 0;
     let repairedRuns = 0;
     const claimResults: Array<{ institutionSlug: string; field: string; evidenceId: string; sourceId: string; sourceUrl: string; status: 'STAGED' | 'REUSED' }> = [];
@@ -218,13 +229,13 @@ export async function importOfficialFacts(
           where: { id: run.id },
           data: { finishedAt, status: 'STAGED', summary: { candidates: sourceRows.length, staged: sourceStaged, reused: sourceReused, reviewState: 'UNREVIEWED' } },
         });
-      } else if (!priorRun.finishedAt || priorRun.finishedAt < priorRun.startedAt) {
+      } else if (!ownerPlan && (!priorRun.finishedAt || priorRun.finishedAt < priorRun.startedAt)) {
         // Old imported runs can contain clock-skewed inverted timestamps. We do
         // not invent an elapsed duration; clamp the missing/invalid end to start.
         await tx.importRun.update({ where: { id: run.id }, data: { finishedAt: priorRun.startedAt, status: 'STAGED' } });
         repairedRuns += 1;
       }
     }
-    return { status: 'STAGED' as const, facts, reviewState: 'UNREVIEWED' as const, staged, reused, createdSources, createdRuns, repairedRuns, claimResults, databaseChanged: staged + createdSources + createdRuns + repairedRuns > 0 };
-  });
+    return { status: 'STAGED' as const, facts: rows.length, reviewState: 'UNREVIEWED' as const, staged, reused, createdSources, createdRuns, repairedRuns, claimResults, databaseChanged: staged + createdSources + createdRuns + repairedRuns > 0 };
+  }, ownerPlan ? { timeout: 150_000 } : undefined);
 }

@@ -59,6 +59,8 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
   const [cutoffs, similar] = await Promise.all([getCutoffs(college.slug), getSimilar(college)]);
   const sourceLinks = collegeSourceLinks(college.slug);
   const listCollege: College = { ...college };
+  const reviewedFields = Object.entries(listCollege.fieldEvidence ?? {}).filter(([, evidence]) =>
+    ['AVAILABLE', 'CONFLICT', 'OUTDATED'].includes(evidence.status));
   const contactFacts = (listCollege.structuredFacts ?? []).filter(({ value }) => value.kind === 'contact');
 
   const jsonLd = {
@@ -109,12 +111,16 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
           <details className="mt-4 text-sm">
             <summary className="cursor-pointer font-semibold">Sources and verification</summary>
             <p className="mt-2">Fields are reviewed individually. Missing, conflicting or outdated values are withheld.</p>
+            {reviewedFields.length === 0 && <p className="mt-2">No reviewed profile summary fields are available yet. Source details for reviewed programme records appear with each record.</p>}
             <ul className="mt-2 space-y-2">
-              {Object.entries(listCollege.fieldEvidence ?? {}).map(([field, evidence]) => (
+              {reviewedFields.map(([field, evidence]) => (
                 <li key={field}>
                   <span className="font-medium">{({ annualFees: 'Annual fees', naacGrade: 'NAAC grade', establishedYear: 'Established', totalStudents: 'Students', topRecruiters: 'Recruiters', description: 'Description', about: 'About', admissions: 'Admissions link', website: 'Website', phone: 'Phone', email: 'Email', courses: 'Courses' } as Record<string,string>)[field] ?? field}</span>
                   {': '}{evidence.status === 'AVAILABLE' ? 'Reviewed' : evidence.status === 'CONFLICT' ? 'Conflicting sources' : evidence.status === 'OUTDATED' ? 'Outdated' : 'Not yet verified'}
-                  {(evidence.sources ?? []).map((source, index) => <a key={index} href={source.url} target="_blank" rel="noopener noreferrer" className="ml-2 underline">{source.publisher}</a>)}
+                  {(evidence.sources ?? []).map((source, index) => <p key={index} className="mt-1 break-words text-xs text-slate-600">
+                    <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline">{source.publisher}</a>
+                    {' · Published '}{reviewedDate(source.publishedAt)}{' · Reviewed '}{reviewedDate(source.reviewedAt)}
+                  </p>)}
                 </li>
               ))}
             </ul>

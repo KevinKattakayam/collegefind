@@ -217,3 +217,5 @@ See [CollegeFit methodology and admission guidance](PREDICTOR.md) and the Phase 
 - [x] Complete the first bounded follow-up on 20 colleges and validate supported candidates with the official facts importer in dry run.
 - [ ] Stage eligible Batch 029 candidates through an authorized path compatible with persistent owner review. Resolve source-specific, campus and freshness holds separately.
 - [ ] Have the owner review individual archived claims and check the published result in supported student views. Continue through the catalogue backlog with current programme, fee, eligibility, accreditation and outcome sources.
+
+The dedicated owner staging command now supports read-only preview, batch hash approval and encrypted backup validation. Persistent staging remains an owner authorization gate. The first 25 existing claims are available independently of the Batch 029 authorization.

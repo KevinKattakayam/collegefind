@@ -32,9 +32,9 @@ export async function stageFieldEvidence(db: PrismaClient, input: {
 
 /** Reviewer identity is checked against current database roles; imports cannot approve claims. */
 export async function reviewFieldEvidence(db: PrismaClient, input: {
-  evidenceId: string; reviewerId: string; status: 'APPROVED' | 'REJECTED'; reason: string; expectedDecisionId?: string | null;
+  evidenceId: string; reviewerId: string; status: 'APPROVED' | 'REJECTED' | 'PENDING'; reason: string; expectedDecisionId?: string | null;
 }) {
-  if (!input.reason.trim() || !['APPROVED', 'REJECTED'].includes(input.status)) throw new Error('Review reason and decision required');
+  if (!input.reason.trim() || !['APPROVED', 'REJECTED', 'PENDING'].includes(input.status)) throw new Error('Review reason and decision required');
   return db.$transaction(async (tx) => {
     // Share the importer lock so a review cannot race a same-scope import.
     await tx.$executeRaw`SELECT pg_advisory_xact_lock(180231, 3)`;

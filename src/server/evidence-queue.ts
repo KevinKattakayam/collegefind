@@ -1,7 +1,7 @@
 import { Prisma, type PrismaClient } from '@prisma/client';
 import { z } from 'zod';
 
-const states = ['ALL', 'STAGED', 'VERIFIED', 'REJECTED', 'DEMO', 'EXPIRED', 'NOT_YET_VALID', 'CONFLICTED'] as const;
+const states = ['ALL', 'STAGED', 'HELD', 'VERIFIED', 'REJECTED', 'DEMO', 'EXPIRED', 'NOT_YET_VALID', 'CONFLICTED'] as const;
 const freshnesses = ['ALL', 'CURRENT', 'UNDATED', 'SOURCE_UNDATED', 'EXPIRED', 'FUTURE', 'OLDER'] as const;
 
 export const queueQuery = z.object({
@@ -42,6 +42,7 @@ export async function evidenceQueue(db: PrismaClient, raw: unknown) {
       SELECT b.*, CASE
         WHEN b."isFixture" THEN 'DEMO'
         WHEN b.decision_status='REJECTED' THEN 'REJECTED'
+        WHEN b.decision_status='PENDING' THEN 'HELD'
         WHEN b."validUntil" < CURRENT_TIMESTAMP THEN 'EXPIRED'
         WHEN b."validFrom" > CURRENT_TIMESTAMP THEN 'NOT_YET_VALID'
         WHEN EXISTS (

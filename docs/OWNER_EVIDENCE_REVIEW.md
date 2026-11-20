@@ -204,3 +204,36 @@ For disaster recovery, keep a protected copy of `secrets/backup-passphrase` in a
 - Synthetic approvals are test-only and are never included in these counts.
 - Persistent owner-review database restored: 205 colleges, 269 sources, 377 claims, 293 import runs and 377 staging audits; users and decisions are both 0. The first 25 packet claims reconcile to rows in this database.
 - The owner still must register their own account, promote only that account using the guarded local procedure, log out/in, then review each claim individually. The running app currently redirects anonymous `/admin/enrichment` access and returns 401 for unauthenticated evidence API access.
+
+## Stage new facts in the persistent review queue
+
+The owner-staging command uses the exact database `collegefind_owner_review_main`, role `cf_owner_review` and loopback port `35441`. It checks the server-side database, role and port and matches all 205 original ID/slug pairs against the archive. The ordinary importer still requires a disposable target.
+
+Run the read-only preview from the repository root after independently checking the Docker port and SQL identity above:
+
+```bash
+set +x
+set -a
+. ./.env.local
+set +a
+export COLLEGEFIND_OWNER_REVIEW_DATABASE_CONFIRMED=true
+node --import tsx scripts/stage-owner-review-facts.ts --file data/pilot/substantive-research-batch-029.json
+```
+
+The preview lists exact values, scopes, years, sources and evidence locations. Compare each proposed addition with the existing queue. Batch 029 previews nine additions. Its SHA-256 is `2406e1d8c281b3c33c72cb60653379bf30308109b5f578e887f791ede973ee4c`. Batch 028 is blocked for owner staging pending source-use and freshness resolution. Its older importer parser flags do not constitute clearance.
+
+For an apply, personally authorize the **exact file hash and destination** after reviewing the preview. The apply form adds `--apply --approve-sha256 <reviewed-preview-hash>` to the command above. The command takes and verifies a fresh, encrypted whole-database backup in the private owner backup directory before the first write. It requires the private backup directory and passphrase file described above. It reads the full decrypted archive through `pg_restore` without saving plaintext or connecting a restore to any database. The output includes the encrypted archive's path and hash, the additions, and reused claims. Keep the backup with the earlier recovery copies.
+
+The command replans under the same transaction lock used by field reviewers, preserves decision history, and records only new unreviewed evidence, sources, runs and staging audits. Exact or equivalent retries from the same source URL and factual scope reuse existing evidence, even after it has a decision. A no-op retry makes no backup or database changes. Source recording date or factual scope changes still need a new inspection. If backup verification fails, the transaction aborts.
+
+A reviewer can choose **Hold** and enter a reason in the existing dashboard. The recorded pending decision is shown as Held and is excluded from public projection. The packet shows the latest decision and links to the next undecided item. The original curated holds still apply. Use explicit decisions only after inspecting the source and the correct programme, campus, cycle, category and rights.
+
+After genuine approval, verify the specific college read-only. Replace the slug with the approved college and inspect the exact matched fact and source:
+
+```bash
+college_slug=dit-university
+curl --fail --silent --show-error "http://127.0.0.1:3317/api/colleges/$college_slug" |
+  jq '{slug, website, fieldEvidence, structuredFacts}'
+```
+
+Then open the profile and check any supported projection in search, comparison and CollegeFit. Admission guidance and the cutoff explorer still require their own qualifying evidence. For a first publication check, use a genuinely approved, currently applicable claim from the existing 25-claim packet. Batch 029 requires separate staging authorization before any review can begin.

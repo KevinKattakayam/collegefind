@@ -182,3 +182,24 @@ it('reconciles typed scopes, concurrent retries, rollback and reviewed projectio
   expect(await visible()).toMatchObject([{ value: { ...programme.value, durationMonths: 60 } }]);
   expect(await db.auditLog.count({ where: { action: 'evidence.review' } })).toBe(4);
 });
+
+it('records a durable hold and refuses a concurrent decision based on old review history', async () => {
+  await seedResearchColleges();
+  const imported = await importOfficialFacts(db, research, false, now);
+  const evidenceId = imported.claimResults[0].evidenceId;
+  const reviewer = await db.user.create({ data: {
+    name: 'Synthetic reviewer', email: 'owner-stage-hold@example.test', password: 'synthetic', role: 'ADMIN',
+  } });
+  const input = { evidenceId, reviewerId: reviewer.id, reason: 'Independent source scope check required', expectedDecisionId: null };
+  const decisions = await Promise.allSettled([
+    reviewFieldEvidence(db, { ...input, status: 'PENDING' }),
+    reviewFieldEvidence(db, { ...input, status: 'PENDING' }),
+  ]);
+  expect(decisions.filter(({ status }) => status === 'fulfilled')).toHaveLength(1);
+  expect(decisions.find(({ status }) => status === 'rejected')).toMatchObject({ reason: { code: 'REVIEW_CHANGED' } });
+  expect((await importOfficialFacts(db, research, false, now)).staged).toBe(0);
+  expect(await db.evidenceDecision.count({ where: { evidenceId, status: 'PENDING' } })).toBe(1);
+  expect(await db.auditLog.count({ where: { targetId: evidenceId, action: 'evidence.review' } })).toBe(1);
+  const { evidenceQueue } = await import('@/server/evidence-queue');
+  expect((await evidenceQueue(db, { status: 'HELD', q: evidenceId })).items.map(({ id }) => id)).toEqual([evidenceId]);
+});
