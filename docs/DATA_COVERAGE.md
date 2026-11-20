@@ -1348,3 +1348,38 @@ Classification measures what a student can read on the page. A basic profile sho
 All 205 profiles are currently classified as basic. The number with direct institutional or authority resources rose from 131 to 139, with 66 directory-only profiles remaining. There are still 377 staged records and 230 substantive staged claims across 123 institutions. No new persistent evidence, genuine decision or official cutoff was added. Exact values, source locations, scope, freshness and rights notes for new research are in the batch. The completeness ledger records the individual differences.
 
 Batch 028's seven candidates retain their source-use and freshness blocks. Batch 029's nine candidates still require explicit authorization of the exact manifest and owner destination. Batch 030's four candidates still need scope, freshness and rights checks, including the historical Andhra University cycle. Batch 031 excludes already-staged Ashoka admission, NISER entrance route and IIM Nagpur MBA programme facts. It remains disabled for persistent staging pending source-specific checks and owner authorization.
+
+## Source-reported release pilot — 2026-11-20
+
+The [release register](../data/pilot/source-reported-release.json) binds each card to one archived or importer-validated candidate, exact official page, 205-college identity map, campus, collection time, page recheck, evidence locator and source-use assessment. Before the change all 205 profiles showed zero substantive source-reported records. The local release adds 22 programme records across 20 profiles. The other 185 profiles retain basic coverage. All 205 profiles still lack a fully informative verified dataset; 377 claims remain in the owner-review inventory, including 230 substantive claims across 123 colleges. Genuine approvals and verified official cutoffs remain zero. 13 of the cards use archived claims; 9 use earlier candidate manifests. No persistent evidence rows or decisions were changed.
+
+The reviewed source pages report standing programmes. The cards show the scope and source and say where no intake is specified. Search filters, CollegeFit, comparison and guidance continue using the existing verified projection. No tuition, scholarship amounts, cutoffs, ranking, seat, placement, eligibility or admissions figures entered this release. Other blocked or unselected records retain their archived states. Of the 401 records evaluated for this release, 379 stayed outside public profile projection under this policy. That includes 364 archived claims and 15 Batch 029–031 candidates. Batch 028’s seven earlier holds are tracked separately.
+
+AFMC explicitly requires advance permission for incoming hyperlinks and limits reproduction. Its direct navigation link was removed in favour of the existing directory fallback and its staged claim was withheld. GNLU's disclaimer restricts copying and the batch has an open campus-check note. The collector and release both leave it pending. Loyola returned HTTP 403. MICA timed out. NISER's hostel source could not be fetched in this recheck. JIPMER's undated programme PDF and the historical Andhra University cycle were outside the pilot. Admissions-cycle claims for IISER Mohali, LNMIIT and Central University of Kerala did not meet the standing programme policy. Batch 028's existing holds are unchanged. [AFMC website policies](https://afmc.nic.in/WebsitePolicies) · [GNLU disclaimer](https://gnlu.ac.in/GNLU/Disclaimer)
+
+### Programme details visible on local profiles
+
+| College | Source-reported programme | Attribution |
+| --- | --- | --- |
+| Indian Institute of Technology Kharagpur | B.Tech in Civil Engineering · 48 months | [Civil Engineering academic programmes](https://civil.iitkgp.ac.in/academics_new.html) |
+| Indian Institute of Technology Hyderabad | Bachelor of Design | [Undergraduate programmes](https://www.iith.ac.in/academics/under-graduate/) |
+| Indian Institute of Management Ahmedabad | MBA (Post Graduate Programme in Management) · 24 months | [Postgraduate Programme in Management](https://iima.ac.in/academics/mba) |
+| BITS Pilani | B.E. Computer Science | [Pilani campus programmes](https://www.bits-pilani.ac.in/pilani/) |
+| Management Development Institute | PGDM in Banking and Financial Services · 24 months | [PGDM in Banking and Financial Services](https://mdi.ac.in/programmes/post-graduate-diploma-in-management-banking-financial-services-pgdm-bfs) |
+| Maulana Azad Medical College | MBBS (including compulsory internship) · 66 months | [MBBS undergraduate programme](https://mamc.delhi.gov.in/mamc/undergraduate-admission) |
+| National Law School of India University | B.A., LL.B. (Hons.) · 60 months | [Five-year B.A., LL.B. (Hons.)](https://www.nls.ac.in/programme/ba-llb-hons/) |
+| Fergusson College | B.Sc. Computer Science | [Undergraduate programmes](https://fergusson.edu/under-graduate-programmes) |
+| Flame University | BBA (Hons.) · 48 months | [Undergraduate degrees](https://www.flame.edu.in/academics/ug) |
+| IIIT Hyderabad | B.Tech in Computer Science and Engineering (CSE) | [Undergraduate programmes](https://www.iiit.ac.in/undergraduate/) |
+| IIIT Hyderabad | B.Tech in Electronics and Communication Engineering (ECE) | [Undergraduate programmes](https://www.iiit.ac.in/undergraduate/) |
+| IIIT Bangalore | Integrated M.Tech. in Computer Science and Engineering (B.Tech. and M.Tech.) · 60 months | [Integrated M.Tech in Computer Science and Engineering](https://www.iiitb.ac.in/academics/integrated-programmes/integrated-mtech-computer-science-and-engineering) |
+| IIIT Allahabad | B.Tech in Information Technology | [Department of Information Technology programmes](https://www.iiita.ac.in/department-information-technology/program) |
+| IIM Kozhikode | Post Graduate Programme in Finance · 24 months | [Programmes offered](https://iimk.ac.in/ir-programs-offered) |
+| Presidency University | B.Sc. (Hons.) in Physics | [Undergraduate programmes](https://presiuniv.ac.in/web/ugprogramme.php) |
+| NALSAR University of Law | B.A., LL.B. (Hons.) · 60 months | [Undergraduate Study in Law](https://nalsar.ac.in/programmes/undergraduate-study-in-law/) |
+| IIT Patna | B.Tech in Computer Science and Engineering · 48 months | [Computer Science and Engineering programmes](https://iitp.ac.in/departments/computer-science-engineering) |
+| IIT Patna | B.Tech in Artificial Intelligence and Data Science · 48 months | [Computer Science and Engineering programmes](https://iitp.ac.in/departments/computer-science-engineering) |
+| RGNUL Patiala | Integrated B.A. LL.B. (Hons.) · 60 months | [Five-year integrated B.A., LL.B.](https://www.rgnul.ac.in/63/ballb-hons-admission) |
+| DIT University | B.Tech in Civil Engineering · 48 months | [B.Tech Civil Engineering](https://www.dituniversity.edu.in/ug-courses/btech-civil-engineering) |
+| Galgotias University | B.Tech in Computer Science and Engineering · 48 months | [B.Tech Computer Science and Engineering](https://www.galgotiasuniversity.edu.in/p/program/under-graduate/department-of-computing-science-and-engineering/btech-in-computer-science-and-engineering) |
+| Nirma University | Integrated B.A., LL.B. (Hons.) · 60 months | [Undergraduate programmes FAQ](https://law.nirmauni.ac.in/admission-aid/frequently-asked-questions/) |

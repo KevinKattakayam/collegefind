@@ -215,6 +215,7 @@ See [CollegeFit methodology and admission guidance](PREDICTOR.md) and the Phase 
 - [x] Present catalogue identity separately from individually reviewed facts. Add direct first-party reading links where the institution and source can be matched.
 - [x] Build a 205-college publication and research ledger joined to the preserved archive. Group existing claims by institution and source using their current review IDs.
 - [x] Complete the first bounded follow-up on 20 colleges and validate supported candidates with the official facts importer in dry run.
+- [x] Show standing programme facts on profiles under a separate, time-limited source-reported policy. Keep the verified-only product inputs unchanged. Confirm the first 20 colleges in desktop and mobile Chromium.
 - [ ] Stage eligible Batch 029 candidates through an authorized path compatible with persistent owner review. Resolve source-specific, campus and freshness holds separately.
 - [ ] Have the owner review individual archived claims and check the published result in supported student views. Continue through the catalogue backlog with current programme, fee, eligibility, accreditation and outcome sources.
 

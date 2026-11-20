@@ -16,6 +16,7 @@ import { structuredLabels } from '@/server/ingest/structured-facts';
 import { listPublicCutoffs } from '@/server/cutoffs';
 import { collegeSourceLinks } from '@/server/college-source-links';
 import { logger, errorFields } from '@/lib/logger';
+import { eligibleSourceReported, suppressSourceReported, type SourceReportedFact } from '@/server/source-reported';
 
 export const dynamic = 'force-dynamic';
 
@@ -49,6 +50,19 @@ async function getSimilar(college: { id: string; state: string; type: 'GOVERNMEN
   });
 }
 
+async function getSourceReported(college: College) {
+  const facts = eligibleSourceReported(college);
+  if (!facts.length) return [];
+  const rows = await prisma.fieldEvidence.findMany({
+    where: { collegeId: college.id, isFixture: false, field: { in: [...new Set(facts.map(({ value }) => `structured.${value.kind}`))] } },
+    select: {
+      id: true, field: true, isFixture: true, value: true, academicYear: true, validFrom: true, validUntil: true, supersedesId: true,
+      decisions: { orderBy: [{ createdAt: 'desc' }, { id: 'desc' }], take: 1, select: { status: true } },
+    },
+  });
+  return suppressSourceReported(facts, rows, college.structuredFacts ?? []);
+}
+
 export default async function CollegeDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const key = (await params).id;
   const college = await getCollege(key);
@@ -57,7 +71,8 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
   if (key !== college.slug) permanentRedirect(`/colleges/${college.slug}`);
 
   // Optional queries must not make the institution identity and source links unavailable.
-  const [cutoffs, similar] = await Promise.all([
+  const listCollege: College = { ...college };
+  const [cutoffs, similar, sourceReported] = await Promise.all([
     getCutoffs(college.slug).catch((error: unknown) => {
       logger.warn('college_profile_cutoffs_unavailable', errorFields(error));
       return null;
@@ -66,9 +81,12 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
       logger.warn('college_profile_related_unavailable', errorFields(error));
       return [];
     }),
+    getSourceReported(listCollege).catch((error: unknown) => {
+      logger.warn('college_profile_source_reported_unavailable', errorFields(error));
+      return [];
+    }),
   ]);
   const sourceLinks = collegeSourceLinks(college.slug);
-  const listCollege: College = { ...college };
   const sectionSource = (categories: string[]) => {
     const index = sourceLinks.findIndex(({ category }) => categories.includes(category));
     if (index === -1) return null;
@@ -119,7 +137,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             {college.type === 'GOVERNMENT' ? <span className="badge-green">Government</span> : <span className="badge-purple">Private</span>}
             {college.naacGrade && <span className="badge-blue">NAAC {college.naacGrade}</span>}
             <span className="badge-blue">Catalogue identity</span>
-            <span className="text-xs text-slate-700">{hasReviewedDetails ? 'Reviewed facts are marked with sources' : 'Detailed facts awaiting verification'}</span>
+            <span className="text-xs text-slate-700">{hasReviewedDetails ? 'Reviewed facts are marked with sources' : sourceReported.length ? 'Institution-reported details available below' : 'Detailed facts awaiting verification'}</span>
           </div>
           <CollegeActions college={listCollege} />
           <Link className="mt-3 inline-block text-indigo-700 underline" href={`/collegefit?location=${encodeURIComponent(college.state)}`}>Explore CollegeFit in {college.state}</Link>
@@ -136,6 +154,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
           <details className="mt-4 text-sm">
             <summary className="cursor-pointer font-semibold">Sources and verification</summary>
             <p className="mt-2">Fields are reviewed individually. Missing, conflicting or outdated values are withheld.</p>
+            {sourceReported.length > 0 && <p className="mt-2">Source-reported details come from a named institution page. Use the linked source to check the applicable intake.</p>}
             {reviewedFields.length === 0 && <p className="mt-2">No reviewed profile summary fields are available yet. Source details for reviewed programme records appear with each record.</p>}
             <ul className="mt-2 space-y-2">
               {reviewedFields.map(([field, evidence]) => (
@@ -207,6 +226,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             {listCollege.admissions && <a href={listCollege.admissions} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-indigo-700 underline">Official admissions information</a>}
             {college.courses.length > 0 && <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">{college.courses.map((course) => <li key={course}>{course}</li>)}</ul>}
             {renderFacts(listCollege.structuredFacts ?? [], ['programme', 'admission'], college.courses.length ? 'Programme eligibility and admission routes are not verified yet.' : 'Programme details and admission routes are not verified yet.')}
+            {renderSourceReported(sourceReported, 'programme')}
             {sectionSource(['admissions', 'programmes'])}
             <Link className="mt-3 block text-indigo-700 underline" href={`/predictor?college=${encodeURIComponent(college.slug)}`}>Open admission guidance</Link>
           </section>
@@ -236,6 +256,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
           <section id="facilities" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
             <h2 className="text-xl font-black text-slate-800">Hostels and facilities</h2>
             {renderFacts(listCollege.structuredFacts ?? [], ['facility'], 'Hostel availability and campus facilities are not verified yet. Check with the institution for your campus.')}
+            {renderSourceReported(sourceReported, 'facility')}
             {sectionSource(['facilities'])}
           </section>
           <section id="historical-cutoffs" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
@@ -286,8 +307,9 @@ function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: stri
   if (!selected.length) return unavailable && <p className="mt-3 text-sm text-slate-600">{unavailable}</p>;
   return <ul className="mt-4 grid gap-4 sm:grid-cols-2">
     {selected.map(({ key, value, academicYear, validUntil, source }) => (
-      <li key={key} className="min-w-0 rounded-lg border border-slate-200 p-4">
+      <li key={key} data-evidence-status="VERIFIED" className="min-w-0 rounded-lg border border-slate-200 p-4">
         <h3 className="font-semibold text-slate-900">{structuredLabels[value.kind]}{academicYear !== null ? ` · ${academicYear}` : ''}</h3>
+        <p className="mt-1 text-xs font-semibold text-emerald-800">Independently reviewed</p>
         <dl className="mt-2 space-y-1 break-words text-sm text-slate-700">
           {Object.entries(value).filter(([label]) => label !== 'kind').map(([label, item]) => (
             <div key={label}>
@@ -304,6 +326,29 @@ function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: stri
           Source: <a href={source.url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline">{source.publisher}</a><br />
           Published: {reviewedDate(source.publishedAt)} · Collected: {reviewedDate(source.retrievedAt)} · Reviewed: {reviewedDate(source.reviewedAt)}
         </p>
+      </li>
+    ))}
+  </ul>;
+}
+
+function renderSourceReported(facts: SourceReportedFact[], kind: 'programme' | 'facility') {
+  const selected = facts.filter(({ value }) => value.kind === kind);
+  if (!selected.length) return null;
+  return <ul className="mt-4 grid gap-4 sm:grid-cols-2" aria-label={kind === 'programme' ? 'Institution-reported programmes' : 'Institution-reported facilities'}>
+    {selected.map(({ ref, value, campus, publisher, url, evidenceLocation, sourceTitle, collectedAt, publicationDate, checkedAt }) => (
+      <li key={ref} data-evidence-status="OFFICIAL_SOURCE_REPORTED" className="min-w-0 space-y-2 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-slate-800">
+        <p className="text-xs font-semibold text-amber-950">Source-reported; not independently verified</p>
+        <h3 className="break-words font-semibold">{value.kind === 'programme' ? value.programme : value.facility}</h3>
+        <p>{campus}</p>
+        {value.kind === 'programme' ? <p>{factFieldValues.level[value.level]}
+          {value.durationMonths && ` · ${value.durationMonths % 12 === 0 ? `${value.durationMonths / 12} ${value.durationMonths === 12 ? 'year' : 'years'}` : `${value.durationMonths} months`}`}
+        </p> : <p>{value.description}</p>}
+        <div className="space-y-1 break-words border-t border-amber-200 pt-2 text-xs leading-5">
+          <a href={url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-800 underline">{publisher} · {sourceTitle}</a>
+          <p>Evidence location: {evidenceLocation}</p>
+          <p>Collected <time dateTime={collectedAt}>{reviewedDate(collectedAt)}</time> · Checked <time dateTime={checkedAt}>{reviewedDate(checkedAt)}</time></p>
+          <p>{publicationDate ? `Published ${reviewedDate(publicationDate)}. ` : ''}The institution does not specify an intake for this detail.</p>
+        </div>
       </li>
     ))}
   </ul>;
