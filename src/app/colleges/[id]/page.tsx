@@ -54,7 +54,7 @@ async function getSourceReported(college: College) {
   const facts = eligibleSourceReported(college);
   if (!facts.length) return [];
   const rows = await prisma.fieldEvidence.findMany({
-    where: { collegeId: college.id, isFixture: false, field: { in: [...new Set(facts.map(({ value }) => `structured.${value.kind}`))] } },
+    where: { collegeId: college.id, isFixture: false, field: { in: [...new Set(facts.flatMap(({ value }) => value.kind === 'programme' ? ['structured.programme', 'courses'] : ['structured.facility']))] } },
     select: {
       id: true, field: true, isFixture: true, value: true, academicYear: true, validFrom: true, validUntil: true, supersedesId: true,
       decisions: { orderBy: [{ createdAt: 'desc' }, { id: 'desc' }], take: 1, select: { status: true } },
@@ -335,7 +335,7 @@ function renderSourceReported(facts: SourceReportedFact[], kind: 'programme' | '
   const selected = facts.filter(({ value }) => value.kind === kind);
   if (!selected.length) return null;
   return <ul className="mt-4 grid gap-4 sm:grid-cols-2" aria-label={kind === 'programme' ? 'Institution-reported programmes' : 'Institution-reported facilities'}>
-    {selected.map(({ ref, value, campus, publisher, url, evidenceLocation, sourceTitle, collectedAt, publicationDate, checkedAt }) => (
+    {selected.map(({ ref, value, campus, publisher, url, evidenceLocation, sourceTitle, collectedAt, publicationDate, checkedAt, academicYear, validFrom, validUntil, historical, publisherPeriod }) => (
       <li key={ref} data-evidence-status="OFFICIAL_SOURCE_REPORTED" className="min-w-0 space-y-2 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-slate-800">
         <p className="text-xs font-semibold text-amber-950">Source-reported; not independently verified</p>
         <h3 className="break-words font-semibold">{value.kind === 'programme' ? value.programme : value.facility}</h3>
@@ -347,7 +347,10 @@ function renderSourceReported(facts: SourceReportedFact[], kind: 'programme' | '
           <a href={url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-800 underline">{publisher} · {sourceTitle}</a>
           <p>Evidence location: {evidenceLocation}</p>
           <p>Collected <time dateTime={collectedAt}>{reviewedDate(collectedAt)}</time> · Checked <time dateTime={checkedAt}>{reviewedDate(checkedAt)}</time></p>
-          <p>{publicationDate ? `Published ${reviewedDate(publicationDate)}. ` : ''}The institution does not specify an intake for this detail.</p>
+          {publicationDate && <p>Published {reviewedDate(publicationDate)}</p>}
+          {academicYear !== null && <p>{historical ? 'Historical programme listing' : 'Publisher’s programme period'} · {publisherPeriod ?? academicYear}. Check the source for intake availability.</p>}
+          {(validFrom || validUntil) && <p>Applicable period{validFrom ? ` from ${reviewedDate(validFrom)}` : ''}{validUntil ? ` through ${reviewedDate(validUntil)}` : ''}</p>}
+          {academicYear === null && !validFrom && !validUntil && <p>The institution does not specify an intake for this detail.</p>}
         </div>
       </li>
     ))}

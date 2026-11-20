@@ -5,7 +5,7 @@ import { eligibleSourceReported } from '../../src/server/source-reported';
 
 test('source-reported programmes render with campus, duration and provenance across the pilot', async ({ page, request, isMobile }) => {
   test.skip(process.env.COLLEGEFIND_REPORTED_BROWSER !== 'true', 'Requires the isolated catalogue archive rehearsal');
-  test.setTimeout(90_000);
+  test.setTimeout(240_000);
   // Keep the main owner-stage test free to exercise live hold and rejection on its own two colleges.
   const main = page.getByRole('main');
   const slugs = [...new Set(policy.records.map(({ slug }) => slug))].filter((slug) => !['dit-university', 'galgotias-university'].includes(slug));
@@ -14,12 +14,13 @@ test('source-reported programmes render with campus, duration and provenance acr
     const expected = eligibleSourceReported({ slug, id: records[0].collegeId });
     expect(expected).toHaveLength(records.length);
     await page.goto('/colleges/' + slug + '#programmes-and-admissions');
-    const cards = main.locator('#programmes-and-admissions [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]');
+    const cards = main.locator('#programmes-and-admissions [data-evidence-status="OFFICIAL_SOURCE_REPORTED"], #facilities [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]');
     await expect(cards).toHaveCount(expected.length);
     for (const [index, item] of expected.entries()) {
-      if (item.value.kind !== 'programme') throw new Error('Expected programme pilot');
       const card = cards.nth(index);
-      await expect(card.getByRole('heading', { name: item.value.programme, exact: true })).toBeVisible();
+      const name = item.value.kind === 'programme' ? item.value.programme : item.value.facility;
+      await expect(card.getByRole('heading', { name, exact: true })).toBeVisible();
+      if (item.academicYear !== null) await expect(card).toContainText(String(item.publisherPeriod ?? item.academicYear));
       await expect(card.getByText('Source-reported; not independently verified', { exact: true })).toBeVisible();
       await expect(card).toContainText(item.campus);
       await expect(card).toContainText(item.evidenceLocation);
@@ -41,7 +42,7 @@ test('source-reported programmes render with campus, duration and provenance acr
 
   await page.goto('/colleges/ashoka-university#fees');
   await expect(main.locator('#fees')).toContainText('Not verified yet');
-  await expect(main.locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
+  await expect(main.locator('#fees [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
   await page.goto('/colleges/indian-institute-of-technology-kanpur');
   await expect(main.locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
 });

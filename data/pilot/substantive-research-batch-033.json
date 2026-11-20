@@ -1,0 +1,670 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 33,
+  "researchedAt": "2026-11-20T14:56:57.470Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "033-1",
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "publisher": "IIT Bombay Academic Office",
+      "url": "https://acad.iitb.ac.in/admissions/bachelors",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Bachelor’s Programmes · B.Tech Aerospace Engineering"
+      ]
+    },
+    {
+      "id": "033-2",
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "publisher": "NIT Tiruchirappalli",
+      "url": "https://www.nitt.edu/home/academics/programmes/",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Undergraduate programmes · Chemical Engineering"
+      ]
+    },
+    {
+      "id": "033-3",
+      "institutionSlug": "nit-mizoram",
+      "publisher": "NIT Mizoram",
+      "url": "https://nitmz.ac.in/academics/programmes/",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Academics · Undergraduate programmes · Civil Engineering"
+      ]
+    },
+    {
+      "id": "033-4",
+      "institutionSlug": "indian-institute-of-technology-guwahati",
+      "publisher": "IIT Guwahati",
+      "url": "https://www.iitg.ac.in/acad/programmes/bachelors.php/",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Bachelors programmes · Biosciences and Bioengineering"
+      ]
+    },
+    {
+      "id": "033-5",
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "publisher": "NIT Karnataka Surathkal",
+      "url": "https://www.nitk.ac.in/btech",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "B.Tech · Artificial Intelligence"
+      ]
+    },
+    {
+      "id": "033-6",
+      "institutionSlug": "iisc-bangalore",
+      "publisher": "Indian Institute of Science",
+      "url": "https://ug.iisc.ac.in/",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Bachelor of Science (Research) programme overview"
+      ]
+    },
+    {
+      "id": "033-7",
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "publisher": "NIT Calicut",
+      "url": "https://nitc.ac.in/ug-programmes",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "UG Programmes · Bachelor of Architecture"
+      ]
+    },
+    {
+      "id": "033-8",
+      "institutionSlug": "netaji-subhas-university-of-technology",
+      "publisher": "Netaji Subhas University of Technology",
+      "url": "https://www.nsut.ac.in/index.php/en/node/124",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Main campus academic programmes · Undergraduate · Electronics and Communication"
+      ]
+    },
+    {
+      "id": "033-9",
+      "institutionSlug": "nit-goa",
+      "publisher": "NIT Goa",
+      "url": "https://www.nitgoa.ac.in/admissions/josaa.html",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "JoSAA admissions · Civil Engineering branch"
+      ]
+    },
+    {
+      "id": "033-10",
+      "institutionSlug": "iiit-kottayam",
+      "publisher": "IIIT Kottayam",
+      "url": "https://www.iiitkottayam.ac.in/views/admission.html",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Admissions · B.Tech/B.Tech-MS list · Cyber Security specialization"
+      ]
+    },
+    {
+      "id": "033-11",
+      "institutionSlug": "niser-bhubaneswar",
+      "publisher": "NISER",
+      "url": "https://niser.ac.in/acad/education",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Academics · Integrated MSc · Physics"
+      ]
+    },
+    {
+      "id": "033-12",
+      "institutionSlug": "bms-college-of-engineering",
+      "publisher": "BMS College of Engineering",
+      "url": "https://www.bmsce.ac.in/home/Under-Graduation",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Under Graduation · Civil Engineering"
+      ]
+    },
+    {
+      "id": "033-13",
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "publisher": "IIT Bombay",
+      "url": "https://www.iitb.ac.in/students/students-affair-office",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Student affairs office · Hostel coordinating unit"
+      ]
+    },
+    {
+      "id": "033-14",
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "publisher": "NIT Calicut",
+      "url": "https://ir.nitc.ac.in/assets/downloads/NITC_Student_guide_final.pdf",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Student guide · Central Library"
+      ]
+    },
+    {
+      "id": "033-15",
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "publisher": "NIT Tiruchirappalli",
+      "url": "https://www.nitt.edu/home/%2520/students/facilitiesnservices/hostelsnmess/%2Bview",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Hostels and Mess · Hostel administration"
+      ]
+    },
+    {
+      "id": "033-16",
+      "institutionSlug": "indian-institute-of-technology-madras",
+      "publisher": "IIT Madras",
+      "url": "https://apm.iitm.ac.in/programs/undergraduate/btech-cem/",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Programme overview · Duration and degree awarded"
+      ]
+    },
+    {
+      "id": "033-17",
+      "institutionSlug": "lnmiit-jaipur",
+      "publisher": "LNMIIT",
+      "url": "https://lnmiit.ac.in/department/cse/programs/",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "CSE programmes · Five-year Integrated Degree"
+      ]
+    },
+    {
+      "id": "033-18",
+      "institutionSlug": "iiser-kolkata",
+      "publisher": "IISER Kolkata",
+      "url": "https://math.iiserkol.ac.in/degree-programmes.html",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "Degree Programmes · BS-MS Programme"
+      ]
+    },
+    {
+      "id": "033-19",
+      "institutionSlug": "college-of-engineering-pune",
+      "publisher": "COEP Technological University",
+      "url": "https://www.coeptech.ac.in/admissions/undergraduate/first-year-admissions/b-planning-admissions/",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "B. Planning admissions · academic year 2026–27 closure notice"
+      ]
+    },
+    {
+      "id": "033-20",
+      "institutionSlug": "kasturba-medical-college",
+      "publisher": "Manipal Academy of Higher Education",
+      "url": "https://www.manipal.edu/academics/programs/mbbs-kmc-manipal",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "KMC Manipal MBBS · Duration"
+      ]
+    },
+    {
+      "id": "033-21",
+      "institutionSlug": "kiit-university",
+      "publisher": "KIIT",
+      "url": "https://kiitee.kiit.ac.in/courses-available/",
+      "retrievedAt": "2026-11-20T14:56:57.470Z",
+      "publicationDate": null,
+      "academicYear": "2027",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public first-party institutional source reviewed for an individual attributed fact. No prose, tables, eligibility, prices or bulk licensing inferred.",
+      "evidenceLocations": [
+        "KIITEE Courses Available · Electrical Engineering programme"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Aerospace Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "033-1"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Bachelor’s Programmes · B.Tech Aerospace Engineering",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Chemical Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "033-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Undergraduate programmes · Chemical Engineering",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-mizoram",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "033-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Academics · Undergraduate programmes · Civil Engineering",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-guwahati",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Biosciences and Bioengineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "033-4"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Bachelors programmes · Biosciences and Bioengineering",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Artificial Intelligence",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "033-5"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "B.Tech · Artificial Intelligence",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iisc-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Science (Research)",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "033-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Bachelor of Science (Research) programme overview",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Architecture",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "033-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "UG Programmes · Bachelor of Architecture",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "netaji-subhas-university-of-technology",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Electronics and Communication Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "033-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Main campus academic programmes · Undergraduate · Electronics and Communication",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-goa",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "033-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "JoSAA admissions · Civil Engineering branch",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iiit-kottayam",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Computer Science (Cyber Security specialization)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "033-10"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Admissions · B.Tech/B.Tech-MS list · Cyber Security specialization",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "niser-bhubaneswar",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Integrated MSc in Physics",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "033-11"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Academics · Integrated MSc · Physics",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "bms-college-of-engineering",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.E. in Civil Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "033-12"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Under Graduation · Civil Engineering",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Student hostels",
+        "description": "The Hostels Coordinating Unit manages campus student accommodation."
+      },
+      "sourceIds": [
+        "033-13"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Student affairs office · Hostel coordinating unit",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library",
+        "description": "The institute lists a Central Library on campus."
+      },
+      "sourceIds": [
+        "033-14"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Student guide · Central Library",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Hostels and mess services",
+        "description": "The institute has a hostel office for campus accommodation and mess services."
+      },
+      "sourceIds": [
+        "033-15"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Hostels and Mess · Hostel administration",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-madras",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Computational Engineering & Mechanics",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "033-16"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programme overview · Duration and degree awarded",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "lnmiit-jaipur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Integrated B.Tech.–M.Tech. in Computer Science and Engineering",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "033-17"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "CSE programmes · Five-year Integrated Degree",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iiser-kolkata",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "BS–MS dual degree",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "033-18"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Degree Programmes · BS-MS Programme",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "college-of-engineering-pune",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Planning",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "033-19"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "B. Planning admissions · academic year 2026–27 closure notice",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "kasturba-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS, Kasturba Medical College Manipal campus",
+        "level": "UG",
+        "durationMonths": 66
+      },
+      "sourceIds": [
+        "033-20"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "KMC Manipal MBBS · Duration",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "kiit-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Electrical Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "033-21"
+      ],
+      "academicYear": "2027",
+      "evidenceLocation": "KIITEE Courses Available · Electrical Engineering programme",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ]
+}

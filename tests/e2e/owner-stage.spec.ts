@@ -12,6 +12,7 @@ test('staged official candidate requires review and publishes across student vie
     !/^\/collegefind_owner_rehearsal_[a-z0-9]+$/.test(target.pathname)) {
     throw new Error('This test requires the independently verified owner-staging rehearsal clone with Batch 029 already staged.');
   }
+  const main = page.getByRole('main');
   const db = new PrismaClient({ adapter: new PrismaPg({ connectionString: target.href }) });
   try {
     const slug = isMobile ? 'galgotias-university' : 'dit-university';
@@ -26,8 +27,8 @@ test('staged official candidate requires review and publishes across student vie
     expect(await db.college.count()).toBe(205);
     await page.goto(profile);
     await expect(page.getByRole('navigation', { name: 'On this college profile' })).toBeVisible();
-    await expect(page.locator('#programmes-and-admissions [data-evidence-status="VERIFIED"]').getByText(programme, { exact: true })).toHaveCount(0);
-    const sourceReported = page.locator('#programmes-and-admissions [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]');
+    await expect(main.locator('#programmes-and-admissions [data-evidence-status="VERIFIED"]').getByText(programme, { exact: true })).toHaveCount(0);
+    const sourceReported = main.locator('#programmes-and-admissions [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]');
     await expect(sourceReported.getByRole('heading', { name: programme, exact: true })).toBeVisible();
     await expect(sourceReported.getByText('Source-reported; not independently verified')).toBeVisible();
     await expect(sourceReported.getByRole('link')).toHaveAttribute('href', claim.source.url);
@@ -60,7 +61,7 @@ test('staged official candidate requires review and publishes across student vie
     await page.reload();
     await expect(article.getByText('HELD', { exact: true })).toBeVisible();
     await page.goto(profile);
-    await expect(page.locator('#programmes-and-admissions').getByText(programme, { exact: true })).toHaveCount(0);
+    await expect(main.locator('#programmes-and-admissions').getByText(programme, { exact: true })).toHaveCount(0);
     await page.goto(review);
     await article.getByLabel('Review reason').fill('Synthetic approval in disposable staging rehearsal');
     await article.getByRole('button', { name: 'Approve', exact: true }).click();
@@ -77,15 +78,15 @@ test('staged official candidate requires review and publishes across student vie
     expect((await page.request.post('/api/admin/evidence', { data: { ...decision, status: 'APPROVED' } })).status()).toBe(200);
 
     await page.goto(profile);
-    const fees = page.locator('#fees');
+    const fees = main.locator('#fees');
     await expect(fees.getByRole('heading', { name: 'Fees (INR) · ' + year })).toBeVisible();
     await expect(fees.getByText('Per semester', { exact: true })).toBeVisible();
     await expect(fees.getByText('₹12,345', { exact: true })).toBeVisible();
     await expect(fees.getByText('Rehearsal cohort', { exact: true })).toBeVisible();
     await expect(fees.getByRole('link', { name: claim.source.publisher, exact: true })).toHaveAttribute('href', claim.source.url);
     expect((await page.request.post('/api/admin/evidence', { data: { ...decision, status: 'REJECTED' } })).status()).toBe(200);
-    const programmes = page.locator('#programmes-and-admissions [data-evidence-status="VERIFIED"]');
-    await expect(page.locator('#programmes-and-admissions [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
+    const programmes = main.locator('#programmes-and-admissions [data-evidence-status="VERIFIED"]');
+    await expect(main.locator('#programmes-and-admissions [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
     await expect(programmes.getByText(programme, { exact: true })).toBeVisible();
     await expect(programmes.getByText('4 years', { exact: true })).toBeVisible();
     await expect(programmes.getByRole('link', { name: claim.source.publisher, exact: true })).toHaveAttribute('href', claim.source.url);
@@ -104,7 +105,7 @@ test('staged official candidate requires review and publishes across student vie
     await article.getByRole('button', { name: 'Reject', exact: true }).click();
     await expect(article.getByText('REJECTED', { exact: true })).toBeVisible();
     await page.goto(profile);
-    await expect(page.locator('#programmes-and-admissions').getByText(programme, { exact: true })).toHaveCount(0);
+    await expect(main.locator('#programmes-and-admissions').getByText(programme, { exact: true })).toHaveCount(0);
     expect(await db.auditLog.count({ where: { action: 'evidence.review', targetId: claim.id } })).toBe(previousReviews + 3);
     expect(await db.college.count()).toBe(205);
   } finally {

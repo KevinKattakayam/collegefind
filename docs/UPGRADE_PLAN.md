@@ -220,3 +220,5 @@ See [CollegeFit methodology and admission guidance](PREDICTOR.md) and the Phase 
 - [ ] Have the owner review individual archived claims and check the published result in supported student views. Continue through the catalogue backlog with current programme, fee, eligibility, accreditation and outcome sources.
 
 The dedicated owner staging command now supports read-only preview, batch hash approval and encrypted backup validation. Persistent staging remains an owner authorization gate. The first 25 existing claims are available independently of the Batch 029 authorization.
+
+The scoped programme milestone adds a further 42 institutions through Batch 033 and explicitly attributed archive releases. Reuse the same evidence and release checks as the remaining colleges are researched. Scope each programme to the publisher’s period when supplied. Treat price, outcomes and admission decisions under the existing human review rules. [Coverage](DATA_COVERAGE.md#publication-of-programme-periods-and-facilities-batch-033)

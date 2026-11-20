@@ -15,7 +15,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(20);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(62);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
@@ -48,6 +48,27 @@ describe('source-reported profile eligibility', () => {
     expect(policy.records.some(({ ref }) => ledger.humanReviewManifest.heldClaims.some(({ evidenceId }) => evidenceId === ref))).toBe(false);
   });
 
+  it('retains the publisher period for a historical listing and compares staged evidence within that year', () => {
+    const item = policy.records.find(({ slug }) => slug === 'college-of-engineering-pune')!;
+    const [fact] = eligibleSourceReported({ id: item.collegeId, slug: item.slug }, now);
+    expect(fact).toMatchObject({ academicYear: '2026-27', historical: true, publisherPeriod: 'Closed 2026–27 admission cycle' });
+    const row = { id: 'different-reference', field: 'structured.programme', value: fact.value, isFixture: false,
+      academicYear: 2026, validFrom: null, validUntil: null, supersedesId: null, decisions: [] };
+    expect(suppressSourceReported([fact], [row], [], now)).toEqual([fact]);
+    expect(suppressSourceReported([fact], [{ ...row, decisions: [{ status: 'REJECTED' }] }], [], now)).toEqual([]);
+    expect(suppressSourceReported([fact], [{ ...row, academicYear: 2025, decisions: [{ status: 'REJECTED' }] }], [], now)).toEqual([fact]);
+  });
+
+  it('blocks duplicate releases when the same fact is withdrawn', () => {
+    const published = policy.records.find(({ slug }) => slug === 'kasturba-medical-college')!;
+    const identity = { id: published.collegeId, slug: published.slug };
+    const proposed = { ...published, status: 'PUBLISH' as const, basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const };
+    const ref = 'cmwlqtg820024gvtvkagz2fo7';
+    expect(eligibleSourceReported(identity, now, [proposed])).toHaveLength(1);
+    expect(eligibleSourceReported(identity, now, [proposed, { ...proposed, ref,
+      fingerprint: sourceReportedFingerprint(ref)!, status: 'WITHDRAWN' }])).toEqual([]);
+  });
+
   it('withdraws a release and does not modify verified-only projection', () => {
     expect(eligibleSourceReported(college, now, [{ ...record, status: 'WITHDRAWN', reason: 'Institution removed programme' }])).toEqual([]);
     const out = projectPublicCollege({ ...college, dataStatus: 'DEMO', courses: ['Legacy fictional course'] }, now);
@@ -60,6 +81,15 @@ describe('source-reported profile eligibility', () => {
     const baseline = { id: 'staged-record', field: 'structured.programme', value: facts[0].value,
       isFixture: false, academicYear: null, validFrom: null, validUntil: null, supersedesId: null, decisions: [] };
     expect(suppressSourceReported(facts, [baseline], [], now)).toEqual(facts);
+    const legacy = { ...baseline, field: 'courses', value: ['B.Tech — Civil Engineering (4 years)'] };
+    expect(suppressSourceReported(facts, [legacy], [], now)).toEqual(facts);
+    expect(suppressSourceReported(facts, [{ ...legacy, decisions: [{ status: 'REJECTED' }] }], [], now)).toEqual([]);
+    expect(suppressSourceReported(facts, [{ ...baseline, value: { kind: 'programme',
+      programme: 'B.Tech in Civil Engineering', level: 'UG' } }], [], now)).toEqual(facts);
+    expect(suppressSourceReported(facts, [{ ...baseline, value: { ...facts[0].value, durationMonths: 36 },
+      validUntil: new Date('2026-01-01') }], [], now)).toEqual(facts);
+    expect(suppressSourceReported(facts, [{ ...baseline, supersedesId: facts[0].ref,
+      value: { ...facts[0].value, programme: 'Renamed programme' } }], [], now)).toEqual([]);
     expect(suppressSourceReported(facts, [{ ...baseline, decisions: [{ status: 'REJECTED' }] }], [], now)).toEqual([]);
     expect(suppressSourceReported(facts, [{ ...baseline, decisions: [{ status: 'PENDING' }] }], [], now)).toEqual([]);
     expect(suppressSourceReported(facts, [{ ...baseline, value: { ...facts[0].value, durationMonths: 36 } }], [], now)).toEqual([]);

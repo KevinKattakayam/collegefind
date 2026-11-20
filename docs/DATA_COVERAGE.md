@@ -1383,3 +1383,13 @@ AFMC explicitly requires advance permission for incoming hyperlinks and limits r
 | DIT University | B.Tech in Civil Engineering · 48 months | [B.Tech Civil Engineering](https://www.dituniversity.edu.in/ug-courses/btech-civil-engineering) |
 | Galgotias University | B.Tech in Computer Science and Engineering · 48 months | [B.Tech Computer Science and Engineering](https://www.galgotiasuniversity.edu.in/p/program/under-graduate/department-of-computing-science-and-engineering/btech-in-computer-science-and-engineering) |
 | Nirma University | Integrated B.A., LL.B. (Hons.) · 60 months | [Undergraduate programmes FAQ](https://law.nirmauni.ac.in/admission-aid/frequently-asked-questions/) |
+
+## Publication of programme periods and facilities, Batch 033
+
+Local profile coverage grew from 20 to 62 of 205 institutions. The release adds 45 cards, bringing the total to 67. Students can see 64 programme records and three facilities records. IIT Bombay, NIT Tiruchirappalli and NIT Calicut have both categories. The other 143 profiles have basic identity or navigation. The per-college ledger lists each published fact, campus, publisher, source URL, source date and evidence location.
+
+The additions draw on 23 archived claims, one Batch 029 claim and 21 independently sourced or reformatted Batch 033 candidates. Batch 033 records individual facts from first-party pages. It carries a source-use assessment for each source. Three facilities cards cover campus accommodation or library presence. They provide no housing guarantee, prices or capacity claims. Decisions about financial figures, admissions and eligibility, accreditation, placements and cutoffs remain in the stronger review workflow.
+
+Historical listings include the closed 2026–27 COEP Bachelor of Planning cycle and the 2025–26 St. Xavier’s College handbook. Other cards retain named periods, including SPJIMR’s 2027–29 cohort and Central University of Kerala’s 2026–27 programme listing. Expired release checks and explicit fact validity limits still prevent publication.
+
+Batch 028 retains its seven holds. The Jamia prospectus exceeded the browser fetch limit and its reproduction question remains open. MICA timed out, Loyola returned 403, and the original LNMIIT admissions URL timed out. The LNMIIT department page independently substantiates the five-year integrated CSE programme. The GNLU and AFMC source restrictions remain unresolved. Andhra University’s historical notice and other unselected candidates remain outside the release, as do the IIT Kanpur conflict and Ashoka fee records. [Publication manifest](../data/pilot/source-reported-release.json) · [Batch 033](../data/pilot/substantive-research-batch-033.json) · [College-level coverage](PROFILE_COMPLETENESS.json)
