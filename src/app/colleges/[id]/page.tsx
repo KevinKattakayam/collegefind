@@ -4,7 +4,6 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import { cache } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CollegeCard from '@/components/CollegeCard';
-import DataStatusBadge from '@/components/DataStatusBadge';
 import CollegeActions from '@/components/college/CollegeActions';
 import CutoffTable from '@/components/college/CutoffTable';
 import QuestionsAndAnswers from '@/components/college/QuestionsAndAnswers';
@@ -16,6 +15,7 @@ import type { College } from '@/types';
 import { structuredLabels } from '@/server/ingest/structured-facts';
 import { listPublicCutoffs } from '@/server/cutoffs';
 import { collegeSourceLinks } from '@/server/college-source-links';
+import { logger, errorFields } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -56,9 +56,22 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
   // Old links used the database id; send them to the canonical slug URL.
   if (key !== college.slug) permanentRedirect(`/colleges/${college.slug}`);
 
-  const [cutoffs, similar] = await Promise.all([getCutoffs(college.slug), getSimilar(college)]);
+  // Optional queries must not make the institution identity and source links unavailable.
+  const [cutoffs, similar] = await Promise.all([
+    getCutoffs(college.slug).catch((error: unknown) => {
+      logger.warn('college_profile_cutoffs_unavailable', errorFields(error));
+      return null;
+    }),
+    getSimilar(college).catch((error: unknown) => {
+      logger.warn('college_profile_related_unavailable', errorFields(error));
+      return [];
+    }),
+  ]);
   const sourceLinks = collegeSourceLinks(college.slug);
   const listCollege: College = { ...college };
+  const website = college.website ?? sourceLinks.find(({ category }) => category === 'website')?.url;
+  const hasReviewedSummary = Object.values(listCollege.fieldEvidence ?? {}).some(({ status }) => status === 'AVAILABLE');
+  const hasReviewedDetails = hasReviewedSummary || Boolean(listCollege.structuredFacts?.length);
   const reviewedFields = Object.entries(listCollege.fieldEvidence ?? {}).filter(([, evidence]) =>
     ['AVAILABLE', 'CONFLICT', 'OUTDATED'].includes(evidence.status));
   const contactFacts = (listCollege.structuredFacts ?? []).filter(({ value }) => value.kind === 'contact');
@@ -81,7 +94,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
   ].filter(({ value }) => value !== null);
   const sections = [
     ['overview', 'Overview'], ['programmes-and-admissions', 'Programmes & admissions'],
-    ['fees', 'Fees & aid'], ['recognition', 'Recognition'], ['placements', 'Placements & facilities'],
+    ['fees', 'Fees & aid'], ['recognition', 'Recognition'], ['placements', 'Placements'], ['facilities', 'Hostels & facilities'],
     ['historical-cutoffs', 'Cutoffs'], ['official-resources', 'Contacts & sources'],
   ];
 
@@ -99,10 +112,16 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
           <div className="flex items-center gap-2 mb-5 flex-wrap">
             {college.type === 'GOVERNMENT' ? <span className="badge-green">Government</span> : <span className="badge-purple">Private</span>}
             {college.naacGrade && <span className="badge-blue">NAAC {college.naacGrade}</span>}
-            <DataStatusBadge status={college.dataStatus} />
+            <span className="badge-blue">Catalogue identity</span>
+            <span className="text-xs text-slate-700">{hasReviewedDetails ? 'Reviewed facts are marked with sources' : 'Detailed facts awaiting verification'}</span>
           </div>
           <CollegeActions college={listCollege} />
           <Link className="mt-3 inline-block text-indigo-700 underline" href={`/collegefit?location=${encodeURIComponent(college.state)}`}>Explore CollegeFit in {college.state}</Link>
+          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {website &&
+              <a className="text-indigo-700 underline" href={website} target="_blank" rel="noopener noreferrer">Official institution website</a>}
+            <a className="text-indigo-700 underline" href="#official-resources">Find programmes, admissions and contact sources</a>
+          </div>
           <nav aria-label="On this college profile" className="mt-5">
             <ul className="flex flex-wrap gap-x-5 gap-y-3 text-sm">
               {sections.map(([id, label]) => <li key={id}><a className="text-indigo-700 underline underline-offset-4" href={`#${id}`}>{label}</a></li>)}
@@ -129,14 +148,48 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
       </section>
 
       <section className="container-main py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 space-y-8">
+        <aside className="min-w-0 space-y-6 lg:col-start-3 lg:row-start-1">
+          <section id="official-resources" className="detail-sidebar-card scroll-mt-24">
+            <h2 className="font-bold text-base text-slate-800 mb-4">Contacts and official sources</h2>
+            {college.website || college.phone || college.email ? (
+              <dl className="space-y-3 text-sm">
+                {college.website && (
+                  <div>
+                    <dt className="text-xs text-slate-500">Website</dt>
+                    <dd><a href={college.website} target="_blank" rel="noopener noreferrer" className="text-indigo-700 break-all">{college.website}</a></dd>
+                  </div>
+                )}
+                {college.phone && (<div><dt className="text-xs text-slate-500">Phone</dt><dd>{college.phone}</dd></div>)}
+                {college.email && (<div><dt className="text-xs text-slate-500">Email</dt><dd className="break-all">{college.email}</dd></div>)}
+              </dl>
+            ) : null}
+            {renderFacts(contactFacts, ['contact'], null)}
+            {sourceLinks.length > 0 ? <>
+              <h3 className="mt-4 text-sm font-semibold">Official pages and documents</h3>
+              <p className="mt-1 text-xs text-slate-600">Use the linked institution pages to check your programme, campus and intake. Each link is checked separately from the facts on it.</p>
+              <ul className="mt-3 divide-y divide-slate-200 text-sm">
+                {sourceLinks.map(({ url, label, scope, checkedAt }) => <li key={url} className="py-2">
+                  <a className="break-words text-indigo-700 underline underline-offset-4" href={url} target="_blank" rel="noopener noreferrer">{label}</a>
+                  <p className="mt-1 text-xs text-slate-600">{scope} · Link checked <time dateTime={checkedAt}>{reviewedDate(checkedAt)}</time></p>
+                </li>)}
+              </ul>
+            </> : !website && !listCollege.admissions ? <p className="text-sm text-slate-600">
+              An institution-specific source link is not available yet. Look up the institution by name and state in the{' '}
+              <a href="https://dashboard.aishe.gov.in/" target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline">AISHE directory</a>.
+            </p> : null}
+            {!college.phone && !college.email && contactFacts.length === 0 &&
+              <p className="mt-3 text-xs text-slate-600">Phone and email details are not verified yet.</p>}
+          </section>
+        </aside>
+        <div className="min-w-0 lg:col-span-2 space-y-8 lg:col-start-1 lg:row-start-1">
           <section id="overview" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
             <h2 className="text-xl font-black text-slate-800">Overview</h2>
             <dl className="mt-3 grid gap-3 text-sm sm:grid-cols-2">
               <div><dt className="font-medium">Catalogue location</dt><dd>{college.city}, {college.state}</dd></div>
+              <div><dt className="font-medium">Catalogue name</dt><dd>{college.shortName}</dd></div>
               <div><dt className="font-medium">Institution type</dt><dd>{college.type === 'GOVERNMENT' ? 'Government' : 'Private'}</dd></div>
             </dl>
-            <p className="mt-4 text-sm leading-relaxed text-slate-700">{college.about ?? college.description ?? 'A source-reviewed institution overview is not available yet.'}</p>
+            <p className="mt-4 text-sm leading-relaxed text-slate-700">{college.about ?? college.description ?? 'For campus-specific information, check the institution’s pages or contact its admissions office.'}</p>
             {metrics.length > 0 && <dl className="mt-4 grid gap-3 sm:grid-cols-2">
               {metrics.map(({ label, value, year }) => <div key={label} className="rounded-lg bg-slate-50 p-3">
                 <dt className="text-sm">{label}{year ? ` (${year})` : ''}</dt><dd className="font-semibold">{value}</dd>
@@ -160,50 +213,24 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             {renderFacts(listCollege.structuredFacts ?? [], ['recognition', 'nirfRanking'], 'Detailed recognition and ranking records are not verified yet.')}
           </section>
           <section id="placements" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
-            <h2 className="text-xl font-black text-slate-800">Placements, facilities and contacts</h2>
-            {renderFacts(listCollege.structuredFacts ?? [], ['placement', 'facility'], 'Placement outcomes and campus facilities are not verified yet.')}
+            <h2 className="text-xl font-black text-slate-800">Placements and career outcomes</h2>
+            {renderFacts(listCollege.structuredFacts ?? [], ['placement'], 'Placement figures are not verified yet. Look for a report that specifies the graduating class and reporting year.')}
             {college.topRecruiters.length > 0 && <p className="mt-3 text-sm">Reported recruiters: {college.topRecruiters.join(', ')}</p>}
+          </section>
+          <section id="facilities" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
+            <h2 className="text-xl font-black text-slate-800">Hostels and facilities</h2>
+            {renderFacts(listCollege.structuredFacts ?? [], ['facility'], 'Hostel availability and campus facilities are not verified yet. Check with the institution for your campus.')}
           </section>
           <section id="historical-cutoffs" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
             <h2 className="text-xl font-black text-slate-800 mb-1">Reviewed historical cutoffs</h2>
             <p className="text-sm text-slate-600 mb-4">Official records are shown with counselling system, rank definition, category, quota, seat pool, round and source. Historical cutoffs are not admission predictions.</p>
-            <CutoffTable rows={cutoffs.items} />
+            {cutoffs ? <CutoffTable rows={cutoffs.items} /> : <p className="text-sm text-slate-600">Cutoff history could not load. You can retry in the cutoff explorer.</p>}
             <Link href={`/cutoffs?college=${encodeURIComponent(college.slug)}`} className="mt-4 inline-block font-semibold text-indigo-700 underline">
-              {cutoffs.total > cutoffs.items.length ? `Explore all ${cutoffs.total.toLocaleString('en-IN')} reviewed cutoff records for this college` : 'Open the cutoff explorer for this college'}
+              {cutoffs && cutoffs.total > cutoffs.items.length ? `Explore all ${cutoffs.total.toLocaleString('en-IN')} reviewed cutoff records for this college` : 'Open the cutoff explorer for this college'}
             </Link>
           </section>
         </div>
 
-        <aside className="space-y-6">
-          <section id="official-resources" className="detail-sidebar-card scroll-mt-24">
-            <h2 className="font-bold text-base text-slate-800 mb-4">Contacts and official sources</h2>
-            {college.website || college.phone || college.email ? (
-              <dl className="space-y-3 text-sm">
-                {college.website && (
-                  <div>
-                    <dt className="text-xs text-slate-500">Website</dt>
-                    <dd><a href={college.website} target="_blank" rel="noopener noreferrer" className="text-indigo-700 break-all">{college.website}</a></dd>
-                  </div>
-                )}
-                {college.phone && (<div><dt className="text-xs text-slate-500">Phone</dt><dd>{college.phone}</dd></div>)}
-                {college.email && (<div><dt className="text-xs text-slate-500">Email</dt><dd className="break-all">{college.email}</dd></div>)}
-              </dl>
-            ) : contactFacts.length === 0 ? (
-              <p className="text-sm text-slate-600">
-                We have not verified contact details for this college. Search for its official website, or find it in the{' '}
-                <a href="https://aishe.gov.in" target="_blank" rel="noopener noreferrer" className="text-indigo-700">AISHE directory</a>.
-              </p>
-            ) : null}
-            {renderFacts(contactFacts, ['contact'], null)}
-            {sourceLinks.length > 0 && <>
-              <h3 className="mt-5 text-sm font-semibold">Read on the institution’s site</h3>
-              <p className="mt-1 text-xs text-slate-600">Check the campus and admission cycle on the source page. CollegeFind reviews details separately before publishing them here.</p>
-              <ul className="mt-2 space-y-2 text-sm">
-                {sourceLinks.map(({ url, label }) => <li key={url}><a className="text-indigo-700 underline underline-offset-4" href={url} target="_blank" rel="noopener noreferrer">{label}</a></li>)}
-              </ul>
-            </>}
-          </section>
-        </aside>
       </section>
 
       {similar.length > 0 && (

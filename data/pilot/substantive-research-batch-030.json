@@ -1,0 +1,204 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 30,
+  "ownerStagingReady": false,
+  "researchedAt": "2026-11-20T02:34:07.434Z",
+  "sourceUsePolicy": "Individual factual notes attributed to first-party sources from manual public viewing only. No source prose, dataset or report reproduced. Source-specific bulk and republication rights have not been established. Review intended use, campus and currency before publishing.",
+  "sources": [
+    {
+      "id": "batch030-iiit-bangalore",
+      "institutionSlug": "iiit-bangalore",
+      "publisher": "International Institute of Information Technology Bangalore",
+      "url": "https://www.iiitb.ac.in/academics/integrated-programmes/integrated-mtech-computer-science-and-engineering",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-20T02:34:07.434Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Individual factual notes attributed to first-party sources from manual public viewing only. No source prose, dataset or report reproduced. Source-specific bulk and republication rights have not been established. Review intended use, campus and currency before publishing.",
+      "evidenceLocations": [
+        "Opening programme description and ten-semester curriculum paragraph"
+      ]
+    },
+    {
+      "id": "batch030-andhra-university",
+      "institutionSlug": "andhra-university",
+      "publisher": "Directorate of Admissions, Andhra University",
+      "url": "https://audoa.andhrauniversity.edu.in/documents/Admission%20Into%205%20Year%20LL.B.%20%203%20Year%20LL.B.%20%202%20Year%20PG%20LL.M.%20Courses%20(Self-Support)%20%20in%20%20Andhra%20University%20Campus-2026.pdf",
+      "academicYear": "2026",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-20T02:34:07.434Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Individual factual notes attributed to first-party sources from manual public viewing only. No source prose, dataset or report reproduced. Source-specific bulk and republication rights have not been established. Review intended use, campus and currency before publishing.",
+      "evidenceLocations": [
+        "Page 1, rows 1 and 2, duration and course columns"
+      ]
+    },
+    {
+      "id": "batch030-madras-university",
+      "institutionSlug": "madras-university",
+      "publisher": "University of Madras",
+      "url": "https://www.unom.ac.in/",
+      "academicYear": null,
+      "publicationDate": "2026-05-12",
+      "retrievedAt": "2026-11-20T02:34:07.434Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Individual factual notes attributed to first-party sources from manual public viewing only. No source prose, dataset or report reproduced. Source-specific bulk and republication rights have not been established. Review intended use, campus and currency before publishing.",
+      "evidenceLocations": [
+        "Announcements, entry posted 12 May 2026, M.Sc. Molecular & Structural Biology"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "iiit-bangalore",
+      "sourceIds": [
+        "batch030-iiit-bangalore"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Opening programme description and ten-semester curriculum paragraph",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Integrated M.Tech. in Computer Science and Engineering (B.Tech. and M.Tech.)",
+        "level": "UG",
+        "durationMonths": 60
+      }
+    },
+    {
+      "institutionSlug": "andhra-university",
+      "sourceIds": [
+        "batch030-andhra-university"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Page 1, rows 1 and 2, duration and course columns",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "LL.B. (self-support, five-year route)",
+        "level": "UG",
+        "durationMonths": 60
+      }
+    },
+    {
+      "institutionSlug": "andhra-university",
+      "sourceIds": [
+        "batch030-andhra-university"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Page 1, rows 1 and 2, duration and course columns",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "LL.B. (self-support, three-year route)",
+        "level": "UG",
+        "durationMonths": 36
+      }
+    },
+    {
+      "institutionSlug": "madras-university",
+      "sourceIds": [
+        "batch030-madras-university"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Announcements, entry posted 12 May 2026, M.Sc. Molecular & Structural Biology",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.Sc. Molecular & Structural Biology",
+        "level": "PG"
+      }
+    }
+  ],
+  "candidateContext": [
+    {
+      "collegeId": "cmwkyn9wq0021fhtvod3fab5w",
+      "institutionSlug": "iiit-bangalore",
+      "sourceId": "batch030-iiit-bangalore",
+      "title": "Integrated M.Tech (Computer Science and Engineering)",
+      "scope": "IIIT Bangalore, programme-wide, no campus allocation asserted",
+      "useful": "Students can compare dual-degree programme length.",
+      "freshness": "Current source observed, applicable intake unconfirmed.",
+      "conflicts": "No conflicting programme record identified in the staged archive for this exact scope. Reviewer checks required."
+    },
+    {
+      "collegeId": "cmwlksy2f001w31tv4nnlx9tx",
+      "institutionSlug": "andhra-university",
+      "sourceId": "batch030-andhra-university",
+      "title": "Admission into self-support law courses at Andhra University Campus, 2026",
+      "scope": "Andhra University Campus, Visakhapatnam, self-support seats",
+      "useful": "Students can distinguish the two programme lengths. The 2026 notice is historical cycle evidence and says nothing about the next intake.",
+      "freshness": "Historical intake evidence. Establish current applicability before presenting as current.",
+      "conflicts": "No conflicting programme record identified in the staged archive for this exact scope. Reviewer checks required."
+    },
+    {
+      "collegeId": "cmwlksy2f001w31tv4nnlx9tx",
+      "institutionSlug": "andhra-university",
+      "sourceId": "batch030-andhra-university",
+      "title": "Admission into self-support law courses at Andhra University Campus, 2026",
+      "scope": "Andhra University Campus, Visakhapatnam, self-support seats",
+      "useful": "Students can distinguish the two programme lengths. The 2026 notice is historical cycle evidence and says nothing about the next intake.",
+      "freshness": "Historical intake evidence. Establish current applicability before presenting as current.",
+      "conflicts": "No conflicting programme record identified in the staged archive for this exact scope. Reviewer checks required."
+    },
+    {
+      "collegeId": "cmwlksy28001u31tvzduvw2hu",
+      "institutionSlug": "madras-university",
+      "sourceId": "batch030-madras-university",
+      "title": "University announcement of M.Sc. Molecular & Structural Biology",
+      "scope": "University department programme, campus, duration and next intake unconfirmed",
+      "useful": "Students can identify a named degree to check with the university department.",
+      "freshness": "Current source observed, applicable intake unconfirmed.",
+      "conflicts": "No conflicting programme record identified in the staged archive for this exact scope. Reviewer checks required."
+    }
+  ],
+  "heldFindings": [
+    {
+      "collegeId": "cmwlksxlx000d31tvtc9z0oot",
+      "institutionSlug": "university-of-mumbai",
+      "url": "https://archive.mu.ac.in/arts/social_science/eco/MA%20Admisions%202025-26%20Pre%20Registration.pdf",
+      "evidenceLocation": "M.A. Economics 2025–26 registration notice, first paragraph",
+      "reason": "Historical registration and programme-duration reference. Current admissions endpoint timed out, so no current-cycle claim prepared.",
+      "academicYear": "2025-26",
+      "retrievedAt": "2026-11-20T02:34:07.434Z"
+    },
+    {
+      "collegeId": "cmwlksxs2000y31tv7o7kmsf5",
+      "institutionSlug": "king-georges-medical-university",
+      "url": "https://kgmu.org/download/SSR-21-06-2025.pdf",
+      "evidenceLocation": "2025 Self Study Report, page 21, Hostel Details",
+      "reason": "University self-report with historical occupancy. Obtain current campus and student-category availability before a facilities claim.",
+      "academicYear": "2025",
+      "retrievedAt": "2026-11-20T02:34:07.434Z"
+    },
+    {
+      "collegeId": "cmwlksxmc000g31tvulhzeb6e",
+      "institutionSlug": "osmania-university",
+      "url": "https://uccbm.osmania.ac.in/Academic_Programmes.php",
+      "evidenceLocation": "University College of Commerce and Business Management programme list",
+      "reason": "Live source timed out; discovery result alone insufficient.",
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T02:34:07.434Z"
+    },
+    {
+      "collegeId": "cmwlksxyv001i31tvhn9lhcmc",
+      "institutionSlug": "rvce-bangalore",
+      "url": "https://naac.rvce.edu.in/",
+      "evidenceLocation": "RV College accreditation self study portal",
+      "reason": "Bad Gateway on direct open. Old institution disclosure does not establish current accreditation.",
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T02:34:07.434Z"
+    }
+  ]
+}

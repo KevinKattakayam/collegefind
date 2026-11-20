@@ -88,12 +88,35 @@ export function projectPublicCollege<T extends Record<string, unknown>>(college:
   }
   for (const key of ['annualFees', 'placementPct', 'avgPackage', 'highestPackage', 'metricsYear', 'rating']) if (key in out) out[key] = null;
   // Only comparable college-wide annual tuition records; programme-specific/other fees cannot be substituted.
-  const fees = (college.feesRecords ?? []) as { amountInr: number; programId: string | null; feeType: string; year: number; decisions: Decision[]; source: Claim['source'] }[];
-  const approved = fees.filter((f) => f.programId === null && f.feeType === 'TUITION_PER_YEAR' && f.year >= now.getUTCFullYear() - 1 && f.year <= now.getUTCFullYear() && officialSource(f.source, now) && [...f.decisions].sort((a,b) => b.createdAt.getTime()-a.createdAt.getTime())[0]?.status === 'APPROVED' && !f.decisions.some((d) => d.status !== 'APPROVED' && d.createdAt.getTime() === Math.max(...f.decisions.map((item) => item.createdAt.getTime()))));
-  const latest = Math.max(...approved.map((f) => f.year));
-  const current = approved.filter((f) => f.year === latest);
-  if (current.length && new Set(current.map((f) => f.amountInr)).size === 1 && 'annualFees' in out) { out.annualFees = current[0].amountInr; out.metricsYear = latest; }
-  fieldEvidence.annualFees = { status: out.annualFees === null ? 'UNKNOWN' : 'AVAILABLE', year: Number.isFinite(latest) ? latest : null };
+  const fees = (college.feesRecords ?? []) as {
+    amountInr: number; programId: string | null; feeType: string; year: number; decisions: Decision[];
+    source: Claim['source'] & { publishedAt?: Date | null };
+  }[];
+  const approved = fees.flatMap((fee) => {
+    if (fee.programId !== null || fee.feeType !== 'TUITION_PER_YEAR' ||
+        fee.year < now.getUTCFullYear() - 1 || fee.year > now.getUTCFullYear() ||
+        !officialSource(fee.source, now) || (fee.source.publishedAt && fee.source.publishedAt > now)) return [];
+    const decision = [...fee.decisions].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())[0];
+    if (decision?.status !== 'APPROVED' ||
+        fee.decisions.some((d) => d.status !== 'APPROVED' && d.createdAt.getTime() === decision.createdAt.getTime())) return [];
+    return [{ ...fee, reviewedAt: decision.createdAt }];
+  });
+  const latest = Math.max(...approved.map((fee) => fee.year));
+  const current = approved.filter((fee) => fee.year === latest);
+  const conflictingFees = current.some((fee) => fee.amountInr !== current[0].amountInr);
+  const comparable = current.length > 0 && !conflictingFees && 'annualFees' in out;
+  if (comparable) {
+    out.annualFees = current[0].amountInr;
+    out.metricsYear = latest;
+  }
+  fieldEvidence.annualFees = {
+    status: comparable ? 'AVAILABLE' : conflictingFees ? 'CONFLICT' : 'UNKNOWN',
+    year: comparable ? latest : null,
+    sources: comparable ? current.map(({ source, reviewedAt }) => ({
+      url: source.url, publisher: source.publisher, retrievedAt: source.retrievedAt,
+      publishedAt: source.publishedAt ?? null, reviewedAt,
+    })) : [],
+  };
   const reviews = (college.reviews ?? []) as {rating:number}[];
   if ('rating' in out) out.rating = reviews.length ? reviews.reduce((sum,r) => sum+r.rating,0)/reviews.length : null;
   if ('reviewCount' in out) out.reviewCount = reviews.length;

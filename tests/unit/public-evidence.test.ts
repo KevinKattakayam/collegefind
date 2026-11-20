@@ -60,3 +60,21 @@ describe('profile source attribution', () => {
     });
   });
 });
+
+it('attributes only comparable current annual tuition and does not attach a source to conflicting fees', () => {
+  const fee = {
+    amountInr: 50000, programId: null, feeType: 'TUITION_PER_YEAR', year: 2026,
+    source: { ...claim.source, publishedAt: new Date('2026-01-01') },
+    decisions: claim.decisions,
+  };
+  const older = { ...fee, year: 2025, source: { ...fee.source, url: 'https://example.edu/old' } };
+  const unreviewed = { ...fee, amountInr: 100, decisions: [] };
+  expect(projectPublicCollege({ annualFees: null, feesRecords: [fee, older, unreviewed] }, now)).toMatchObject({
+    annualFees: 50000,
+    fieldEvidence: { annualFees: { status: 'AVAILABLE', year: 2026, sources: [{ url: fee.source.url, reviewedAt: claim.decisions[0].createdAt }] } },
+  });
+  expect(projectPublicCollege({ annualFees: null, feesRecords: [fee, { ...fee, amountInr: 40000 }] }, now)).toMatchObject({
+    annualFees: null,
+    fieldEvidence: { annualFees: { status: 'CONFLICT', year: null, sources: [] } },
+  });
+});

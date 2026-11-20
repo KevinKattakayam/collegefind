@@ -1310,3 +1310,22 @@ Research used first-party institution or counselling authority material. Candida
 The [profile completeness report](PROFILE_COMPLETENESS.json) includes the exact archived values and per-claim triage alongside each source, locator, scope and year. There are 214 substantive claims open for source inspection, including 25 in the first packet, 16 substantive holds, and 147 link-only references. There are 360 claims with a missing publication date or academic year. Campus/scope and intended source use remain explicit human checks. An archived same-source/value/scope comparison found no duplicates and no recorded supersession links. Triage is based on archived evidence and does not establish that the source is current.
 
 Batch 028 has seven research candidates on hold, including the unresolved JMI reproduction permission question and NIT Manipur and Madras source-use/freshness checks. Batch 029's nine candidates are ready for a separately authorized staging decision. The 13 Batch 029 research holds remain outside the staging manifest's candidate list. No new research claims or persistent writes were added in this increment. The persistent database read-back is 205 colleges, 377 staged evidence records, and zero users or decisions. No reviewed substantive facts or official cutoff records are visible.
+
+### Public profile navigation and Batch 030
+
+| Public measure | Before | After |
+| --- | ---: | ---: |
+| Original identities with name, location and type | 205 | 205 |
+| Profiles with attributed institution-specific links | 9 | 131 |
+| Institution-specific link destinations | 9 | 162 |
+| Profiles with only the government directory fallback | 196 | 74 |
+| Genuinely approved facts publicly displayed | 0 | 0 |
+| Verified official cutoffs | 0 | 0 |
+
+The source guide distinguishes publisher navigation from reviewed academic facts. The registry incorporates read-only HTML observations and link-only research from the archive, plus selected directly opened institutional pages this turn. It shows the original check date and distinguishes institution-wide resources from campus or intake-specific material. Known inaccessible and ambiguous destinations were excluded. Historical references name the cycle where supported. Rendering checks cover the URLs in the app. They do not establish ongoing availability of every external site.
+
+The registry has 125 homepage, 22 admissions, eight programme, two contact, two facilities, one fee, one scholarship and one placements destination. The O.P. Jindal profile now routes to the Sonipat institution. The two archived Raigarh homepage and admissions claims are held in the reviewer boundary, preserving their IDs and audit trail.
+
+[Batch 030](../data/pilot/substantive-research-batch-030.json) covers seven colleges. Four supported programme candidates across three institutions passed the importer dry run. Four research findings remain held for an earlier academic cycle, missing current campus scope or unavailable pages. The IIIT Bangalore department page resolved the programme-length gap left by the older brochure. The Andhra law notice describes the 2026 self-support routes. It supplies no evidence of the next intake. Madras University announced the named MSc in 2026 without enough evidence to assign a campus, duration or next intake. No fact was staged or approved in the owner database. Batch 030 remains disabled for owner staging pending scope, freshness and source-use review.
+
+The [per-college report](PROFILE_COMPLETENESS.json) records the individual links and source scope, programme, admissions, fees and aid, recognition, placements, facilities and contact coverage, and missing fields. The 377 existing evidence rows include 230 substantive claims and 214 substantive claims open for inspection. The two new reference holds do not change either substantive count.

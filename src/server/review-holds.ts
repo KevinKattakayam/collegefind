@@ -2,6 +2,8 @@
  * These are not decisions and do not alter evidence or its audit history.
  */
 const holds: Record<string, string> = {
+  cmwkzioa60002b9tvn4vb7p89: 'Institution mismatch: the archived OPJU domain belongs to the Raigarh university. This catalogue record is for O.P. Jindal Global University in Sonipat.',
+  cmwkz9wpo0022fbtvxixkrfep: 'Institution mismatch: the archived OPJU domain belongs to the Raigarh university. This catalogue record is for O.P. Jindal Global University in Sonipat.',
   cmwlwwvdr0002zitvryebz8z9: 'Hold: IIT Kanpur DoAA Manual and undated UG programme page disagree about the programme list. Reconcile the controlling source before approval.',
   cmwlwwve00004zitvxjrz3y8f: 'Hold: IIT Kanpur admissions evidence was derived from the same unresolved DoAA Manual versus undated UG page discrepancy. Reconcile before approval.',
   "cmwm3rj6a0003hxtvu3e41wts": "SCOPE_COLLISION: four programme-specific MNNIT admission routes share the broad scalar scope “Academic year 2024-25”; this is not evidence that the routes contradict. Keep the group held until each claim has programme-specific scope.",
