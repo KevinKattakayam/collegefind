@@ -1556,5 +1556,125 @@
       "checkedAt": "2026-11-17",
       "reference": "cmwkynr3h0016p0tv5jq0gtkn"
     }
+  ],
+  "ashoka-university": [
+    {
+      "url": "https://www.ashoka.edu.in/admissions/undergraduate-students/",
+      "label": "Undergraduate admissions and first-year fees (August 2027)",
+      "category": "admissions",
+      "scope": "Ashoka University, Sonipat · 2027 intake",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "niser-bhubaneswar": [
+    {
+      "url": "https://niser.ac.in/acad/admission",
+      "label": "Integrated MSc and other admissions",
+      "category": "admissions",
+      "scope": "NISER, Jatni · check programme and cycle",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    },
+    {
+      "url": "https://niser.ac.in/hostels/",
+      "label": "Hostels and rules",
+      "category": "facilities",
+      "scope": "NISER, Jatni",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "loyola-college": [
+    {
+      "url": "https://www.loyolacollege.edu//admission/courses-offered",
+      "label": "Programmes by shift",
+      "category": "programmes",
+      "scope": "Loyola College, Chennai",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    },
+    {
+      "url": "https://www.loyolacollege.edu//services/mens-hostel",
+      "label": "Men’s hostel",
+      "category": "facilities",
+      "scope": "Loyola College, Chennai",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "iim-nagpur": [
+    {
+      "url": "https://www.iimnagpur.ac.in/programmes/mba/about-mba/",
+      "label": "Full-time MBA programme",
+      "category": "programmes",
+      "scope": "Main Nagpur MBA, separate from the Pune executive programme",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    },
+    {
+      "url": "https://www.iimnagpur.ac.in/admissions/mba/fees-financial-aid-scholarship/",
+      "label": "MBA fees and financial aid (2026–28 reference)",
+      "category": "scholarships",
+      "scope": "IIM Nagpur full-time MBA · 2026–28 batch",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "nirma-university": [
+    {
+      "url": "https://law.nirmauni.ac.in/admission-aid/frequently-asked-questions/",
+      "label": "Institute of Law programmes and CLAT 2027 information",
+      "category": "admissions",
+      "scope": "Institute of Law, Nirma University, Ahmedabad",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "maulana-azad-medical-college": [
+    {
+      "url": "https://mamc.delhi.gov.in/",
+      "label": "College website and notices",
+      "category": "website",
+      "scope": "MAMC, New Delhi, Government of NCT of Delhi",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    },
+    {
+      "url": "https://mamc.delhi.gov.in/mamc/undergraduate-admission",
+      "label": "Undergraduate programme information",
+      "category": "programmes",
+      "scope": "MAMC, New Delhi · check dated notices for current admissions",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "bits-pilani": [
+    {
+      "url": "https://www.bits-pilani.ac.in/pilani/",
+      "label": "Pilani campus and integrated first-degree programmes",
+      "category": "website",
+      "scope": "BITS Pilani, Pilani campus, Rajasthan",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    },
+    {
+      "url": "https://www.bits-pilani.ac.in/academics/integrated-first-degree/b-e-computer-science/",
+      "label": "B.E. Computer Science programme",
+      "category": "programmes",
+      "scope": "Use the Pilani campus catalogue for campus-specific availability",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "nujs-kolkata": [
+    {
+      "url": "https://clat2027.consortiumofnlus.ac.in/clat-2027/participating_universities.html",
+      "label": "CLAT 2027 participating universities: WBNUJS Kolkata",
+      "category": "admissions",
+      "scope": "Consortium of NLUs · authority reference, CLAT 2027",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
   ]
 }

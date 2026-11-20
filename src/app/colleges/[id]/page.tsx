@@ -69,6 +69,13 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
   ]);
   const sourceLinks = collegeSourceLinks(college.slug);
   const listCollege: College = { ...college };
+  const sectionSource = (categories: string[]) => {
+    const index = sourceLinks.findIndex(({ category }) => categories.includes(category));
+    if (index === -1) return null;
+    return <a className="mt-3 inline-block text-sm text-indigo-700 underline" href={`#official-source-${index}`}>
+      Source guide: {sourceLinks[index].label}
+    </a>;
+  };
   const website = college.website ?? sourceLinks.find(({ category }) => category === 'website')?.url;
   const hasReviewedSummary = Object.values(listCollege.fieldEvidence ?? {}).some(({ status }) => status === 'AVAILABLE');
   const hasReviewedDetails = hasReviewedSummary || Boolean(listCollege.structuredFacts?.length);
@@ -86,7 +93,6 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
   };
 
   const metrics = [
-    { label: 'Annual tuition', value: college.annualFees == null ? null : formatINR(college.annualFees), year: college.metricsYear },
     { label: 'Placement rate', value: college.placementPct == null ? null : formatPct(college.placementPct) },
     { label: 'Average package', value: college.avgPackage == null ? null : formatLPA(college.avgPackage) },
     { label: 'Highest package', value: college.highestPackage == null ? null : formatLPA(college.highestPackage) },
@@ -168,7 +174,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
               <h3 className="mt-4 text-sm font-semibold">Official pages and documents</h3>
               <p className="mt-1 text-xs text-slate-600">Use the linked institution pages to check your programme, campus and intake. Each link is checked separately from the facts on it.</p>
               <ul className="mt-3 divide-y divide-slate-200 text-sm">
-                {sourceLinks.map(({ url, label, scope, checkedAt }) => <li key={url} className="py-2">
+                {sourceLinks.map(({ url, label, scope, checkedAt }, index) => <li key={url} id={`official-source-${index}`} className="scroll-mt-24 py-2">
                   <a className="break-words text-indigo-700 underline underline-offset-4" href={url} target="_blank" rel="noopener noreferrer">{label}</a>
                   <p className="mt-1 text-xs text-slate-600">{scope} · Link checked <time dateTime={checkedAt}>{reviewedDate(checkedAt)}</time></p>
                 </li>)}
@@ -191,8 +197,8 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             </dl>
             <p className="mt-4 text-sm leading-relaxed text-slate-700">{college.about ?? college.description ?? 'For campus-specific information, check the institution’s pages or contact its admissions office.'}</p>
             {metrics.length > 0 && <dl className="mt-4 grid gap-3 sm:grid-cols-2">
-              {metrics.map(({ label, value, year }) => <div key={label} className="rounded-lg bg-slate-50 p-3">
-                <dt className="text-sm">{label}{year ? ` (${year})` : ''}</dt><dd className="font-semibold">{value}</dd>
+              {metrics.map(({ label, value }) => <div key={label} className="rounded-lg bg-slate-50 p-3">
+                <dt className="text-sm">{label}</dt><dd className="font-semibold">{value}</dd>
               </div>)}
             </dl>}
           </section>
@@ -200,26 +206,37 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             <h2 className="text-xl font-black text-slate-800">Programmes and admissions</h2>
             {listCollege.admissions && <a href={listCollege.admissions} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-indigo-700 underline">Official admissions information</a>}
             {college.courses.length > 0 && <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">{college.courses.map((course) => <li key={course}>{course}</li>)}</ul>}
-            {renderFacts(listCollege.structuredFacts ?? [], ['programme', 'admission'], 'Detailed programme requirements and admission routes are not verified yet.')}
-            <Link className="mt-3 inline-block text-indigo-700 underline" href={`/predictor?college=${encodeURIComponent(college.slug)}`}>Open admission guidance</Link>
+            {renderFacts(listCollege.structuredFacts ?? [], ['programme', 'admission'], college.courses.length ? 'Programme eligibility and admission routes are not verified yet.' : 'Programme details and admission routes are not verified yet.')}
+            {sectionSource(['admissions', 'programmes'])}
+            <Link className="mt-3 block text-indigo-700 underline" href={`/predictor?college=${encodeURIComponent(college.slug)}`}>Open admission guidance</Link>
           </section>
           <section id="fees" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
             <h2 className="text-xl font-black text-slate-800">Fees and scholarships</h2>
-            {renderFacts(listCollege.structuredFacts ?? [], ['fee', 'scholarship'])}
+            {college.annualFees != null && <div className="mt-3 text-sm">
+              <p><strong>Annual tuition</strong>{college.metricsYear ? ` · ${college.metricsYear}` : ''}: {formatINR(college.annualFees)}</p>
+              {(listCollege.fieldEvidence?.annualFees?.sources ?? []).map(({ url, publisher }) => <a
+                className="mr-3 text-indigo-700 underline" key={url} href={url} target="_blank" rel="noopener noreferrer">{publisher}</a>)}
+            </div>}
+            {renderFacts(listCollege.structuredFacts ?? [], ['fee', 'scholarship'],
+              college.annualFees != null ? 'Programme-level fees and scholarship details are not verified yet.' : 'Not verified yet. Ask for the fee schedule and aid rules for your intake.')}
+            {sectionSource(['fees', 'scholarships'])}
           </section>
           <section id="recognition" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
             <h2 className="text-xl font-black text-slate-800">Recognition and rankings</h2>
             {college.naacGrade && <p className="mt-3 text-sm">NAAC grade {college.naacGrade}</p>}
             {renderFacts(listCollege.structuredFacts ?? [], ['recognition', 'nirfRanking'], 'Detailed recognition and ranking records are not verified yet.')}
+            {sectionSource(['recognition', 'accreditation'])}
           </section>
           <section id="placements" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
             <h2 className="text-xl font-black text-slate-800">Placements and career outcomes</h2>
             {renderFacts(listCollege.structuredFacts ?? [], ['placement'], 'Placement figures are not verified yet. Look for a report that specifies the graduating class and reporting year.')}
+            {sectionSource(['placements'])}
             {college.topRecruiters.length > 0 && <p className="mt-3 text-sm">Reported recruiters: {college.topRecruiters.join(', ')}</p>}
           </section>
           <section id="facilities" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
             <h2 className="text-xl font-black text-slate-800">Hostels and facilities</h2>
             {renderFacts(listCollege.structuredFacts ?? [], ['facility'], 'Hostel availability and campus facilities are not verified yet. Check with the institution for your campus.')}
+            {sectionSource(['facilities'])}
           </section>
           <section id="historical-cutoffs" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
             <h2 className="text-xl font-black text-slate-800 mb-1">Reviewed historical cutoffs</h2>
@@ -252,6 +269,18 @@ function reviewedDate(value: Date | string | null | undefined) {
   return new Intl.DateTimeFormat('en-IN', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value));
 }
 
+const factFieldLabels: Record<string, string> = {
+  amountInr: 'Amount (INR)', durationMonths: 'Duration', feeType: 'Fee type',
+  applicationUrl: 'Application page', url: 'Official page', denominator: 'Cohort size',
+};
+
+const factFieldValues: Record<string, Record<string, string>> = {
+  level: { UG: 'Undergraduate', PG: 'Postgraduate', DOCTORAL: 'Doctoral', DIPLOMA: 'Diploma' },
+  period: { SEMESTER: 'Per semester', YEAR: 'Per year', MONTH: 'Per month', ONE_TIME: 'One-time payment' },
+  feeType: { TUITION: 'Tuition', HOSTEL: 'Hostel or residence' },
+  metric: { MEDIAN: 'Median', MEAN: 'Mean', HIGHEST: 'Highest', PLACED_COUNT: 'Students placed' },
+};
+
 function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: string[], unavailable: string | null = 'Not verified yet. Check the institution for current details.') {
   const selected = facts.filter(({ value }) => kinds.includes(value.kind));
   if (!selected.length) return unavailable && <p className="mt-3 text-sm text-slate-600">{unavailable}</p>;
@@ -262,11 +291,11 @@ function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: stri
         <dl className="mt-2 space-y-1 break-words text-sm text-slate-700">
           {Object.entries(value).filter(([label]) => label !== 'kind').map(([label, item]) => (
             <div key={label}>
-              <dt className="inline font-medium capitalize">{label.replace(/([A-Z])/g, ' $1')}: </dt>
+              <dt className="inline font-medium capitalize">{factFieldLabels[label] ?? label.replace(/([A-Z])/g, ' $1')}: </dt>
               <dd className="inline">{label === 'amountInr' && typeof item === 'number' ? formatINR(item)
                 : label === 'durationMonths' && typeof item === 'number' ? (item % 12 === 0 ? `${item / 12} ${item === 12 ? 'year' : 'years'}` : `${item} months`)
                 : label === 'url' || label === 'applicationUrl' ? <a href={String(item)} target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline">Open official link</a>
-                : String(item)}</dd>
+                : (factFieldValues[label]?.[String(item)] ?? String(item))}</dd>
             </div>
           ))}
           {validUntil && <div><dt className="inline font-medium">Valid through: </dt><dd className="inline">{reviewedDate(validUntil)}</dd></div>}

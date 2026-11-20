@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto';
 import { expect, test } from '@playwright/test';
 import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
@@ -55,7 +56,24 @@ test('staged official candidate requires review and publishes across student vie
     await article.getByRole('button', { name: 'Approve', exact: true }).click();
     await expect(article.getByText('VERIFIED', { exact: true })).toBeVisible();
 
+    const year = new Date().getUTCFullYear();
+    const fee = await db.fieldEvidence.create({ data: {
+      collegeId: college.id, sourceId: claim.sourceId, field: 'structured.fee', academicYear: year, identityKey: randomUUID(),
+      programScope: JSON.stringify([programme.toLowerCase(), 'rehearsal cohort', 'tuition', 'synthetic fee', 'semester']),
+      value: { kind: 'fee', programme, category: 'Rehearsal cohort', feeType: 'TUITION',
+        component: 'Synthetic fee', period: 'SEMESTER', amountInr: 12345 },
+    } });
+    const decision = { kind: 'field', id: fee.id, reason: 'Synthetic fee presentation test on disposable archive only' };
+    expect((await page.request.post('/api/admin/evidence', { data: { ...decision, status: 'APPROVED' } })).status()).toBe(200);
+
     await page.goto(profile);
+    const fees = page.locator('#fees');
+    await expect(fees.getByRole('heading', { name: 'Fees (INR) · ' + year })).toBeVisible();
+    await expect(fees.getByText('Per semester', { exact: true })).toBeVisible();
+    await expect(fees.getByText('₹12,345', { exact: true })).toBeVisible();
+    await expect(fees.getByText('Rehearsal cohort', { exact: true })).toBeVisible();
+    await expect(fees.getByRole('link', { name: claim.source.publisher, exact: true })).toHaveAttribute('href', claim.source.url);
+    expect((await page.request.post('/api/admin/evidence', { data: { ...decision, status: 'REJECTED' } })).status()).toBe(200);
     const programmes = page.locator('#programmes-and-admissions');
     await expect(programmes.getByText(programme, { exact: true })).toBeVisible();
     await expect(programmes.getByText('4 years', { exact: true })).toBeVisible();
