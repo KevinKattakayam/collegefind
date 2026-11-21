@@ -82,6 +82,10 @@ test('source-reported facts render in their sections with campus, scope and prov
     if (process.env.CF_PROFILE_SCREENSHOTS && [
       'all-india-institute-of-medical-sciences', 'university-of-delhi', 'amity-university', 'madras-university',
       'lovely-professional-university', 'jipmer-puducherry', 'university-of-mumbai', 'srm-institute-of-science-and-technology',
+      'indian-institute-of-technology-roorkee', 'chandigarh-university', 'manipal-academy-of-higher-education',
+      'amrita-vishwa-vidyapeetham', 'nlu-delhi', 'shri-ram-college-of-commerce', 'armed-forces-medical-college',
+      'andhra-university', 'loyola-college',
+      'nit-kurukshetra', 'madras-medical-college', 'stanley-medical-college',
     ].includes(slug)) {
       const suffix = isMobile ? 'mobile' : 'desktop';
       await main.locator('#programmes-and-admissions').screenshot({ path: join(process.env.CF_PROFILE_SCREENSHOTS, `${slug}-programmes-${suffix}.png`) });

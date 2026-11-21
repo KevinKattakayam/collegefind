@@ -1,0 +1,243 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 41,
+  "researchedAt": "2026-11-21T16:46:45Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b41-nitkkr-computing",
+      "institutionSlug": "nit-kurukshetra",
+      "publisher": "National Institute of Technology Kurukshetra, Computer Engineering Department",
+      "url": "https://nitkkr.ac.in/ug-computer/",
+      "publicationDate": null,
+      "academicYear": "2024-25",
+      "retrievedAt": "2026-11-21T16:46:45Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Concise attributed course-name facts only; no seat counts or copied tables. Page says scheme/syllabi links apply w.e.f. 2024-25 batch; page does not establish the current 2026 intake. One Computer Engineering/CSE naming discrepancy is held.",
+      "evidenceLocations": ["Programs · UG Programs, department course list and linked scheme labels, lines 7–25"]
+    },
+    {
+      "id": "b41-nitkkr-academic-contact",
+      "institutionSlug": "nit-kurukshetra",
+      "publisher": "National Institute of Technology Kurukshetra, Academic Section",
+      "url": "https://nitkkr.ac.in/contact-us-academic/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T16:46:45Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Individual institutional email references transcribed with office scope. Page footer says copyright 2024; current contact availability should be reconfirmed. No personal contact names or phone numbers copied.",
+      "evidenceLocations": ["UG subsection contact details, lines 20–28"]
+    },
+    {
+      "id": "b41-mmc-courses",
+      "institutionSlug": "madras-medical-college",
+      "publisher": "Madras Medical College, Admissions/Courses",
+      "url": "https://mmc.ac.in/en/admissions/courses/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T16:46:45Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Short factual programme names and duration only; no annual admissibility counts or copied tables. Page publication date and applicable intake year are not stated; verify current intake before relying on these listings.",
+      "evidenceLocations": ["Medicine · Undergraduate MBBS row and Post-Graduate MD/MS heading/MD General Medicine row, lines 94–113"]
+    },
+    {
+      "id": "b41-stanley-news",
+      "institutionSlug": "stanley-medical-college",
+      "publisher": "Stanley Medical College, Latest News",
+      "url": "https://stanleymedicalcollege.ac.in/news.html",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-21T16:46:45Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "One historical course-cycle label only; source explicitly names MBBS batch 2026 and 2026-27 course commencement. Admission dates are not reproduced.",
+      "evidenceLocations": ["Official announcement, lines 4–6: MBBS Batch 2026 and course commencement 2026-2027"]
+    },
+    {
+      "id": "b41-stanley-contact",
+      "institutionSlug": "stanley-medical-college",
+      "publisher": "Stanley Medical College, Contact Us",
+      "url": "https://stanleymedicalcollege.ac.in/page/contact",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T16:46:45Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Institution-level contact details transcribed from the official contact page. Footer copyright is 2025-2026; verify current availability before use. No personal admissions records stored.",
+      "evidenceLocations": ["Contact Us · institutional address, phone and public email block, lines 85–101"]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "field": "structured",
+      "value": {"kind": "programme", "programme": "B.Tech Information Technology", "level": "UG"},
+      "sourceIds": ["b41-nitkkr-computing"],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Programs · UG listing names Information Technology; scheme and syllabus link marked w.e.f. 2024-25 batch, lines 11–16",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Computer Engineering Department, NIT Kurukshetra; scheme/syllabus version for 2024-25 batch",
+      "publisherPeriod": "Historical scheme label w.e.f. 2024-25 batch; current intake not established",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "field": "structured",
+      "value": {"kind": "programme", "programme": "B.Tech Artificial Intelligence & Machine Learning (AI & ML)", "level": "UG"},
+      "sourceIds": ["b41-nitkkr-computing"],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Programs · UG listing names AI & ML and links its scheme/syllabus w.e.f. 2024-25 batch, lines 11–18",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Computer Engineering Department, NIT Kurukshetra; scheme/syllabus version for 2024-25 batch",
+      "publisherPeriod": "Historical scheme label w.e.f. 2024-25 batch; current intake not established",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "field": "structured",
+      "value": {"kind": "programme", "programme": "B.Tech Artificial Intelligence & Data Science", "level": "UG"},
+      "sourceIds": ["b41-nitkkr-computing"],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Programs · UG listing names AI & Data Science and links its scheme/syllabus w.e.f. 2024-25 batch, lines 11–17",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Computer Engineering Department, NIT Kurukshetra; scheme/syllabus version for 2024-25 batch",
+      "publisherPeriod": "Historical scheme label w.e.f. 2024-25 batch; current intake not established",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "field": "structured",
+      "value": {"kind": "programme", "programme": "B.Tech Computer Engineering / Computer Science & Engineering", "level": "UG"},
+      "sourceIds": ["b41-nitkkr-computing"],
+      "academicYear": "2024-25",
+      "evidenceLocation": "UG listing says Computer Engineering; linked scheme is named Computer Science and Engineering, lines 11–16",
+      "status": "RESEARCH_HOLD",
+      "reviewState": "UNREVIEWED",
+      "stageable": false,
+      "campusScope": "Computer Engineering Department, NIT Kurukshetra",
+      "holdReason": "The course label and linked scheme title differ (Computer Engineering vs Computer Science and Engineering); held for institution-level name reconciliation."
+    },
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "field": "structured",
+      "value": {"kind": "contact", "office": "Undergraduate Academic Section", "channel": "EMAIL", "contact": "academic@nitkkr.ac.in"},
+      "sourceIds": ["b41-nitkkr-academic-contact"],
+      "academicYear": null,
+      "evidenceLocation": "UG subsection · academic queries other than admissions and scholarships, line 24",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Kurukshetra, UG Academic Section",
+      "publisherPeriod": "Official page footer copyright © 2024; reconfirm contact availability"
+    },
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "field": "structured",
+      "value": {"kind": "contact", "office": "Undergraduate Admissions", "channel": "EMAIL", "contact": "admission@nitkkr.ac.in"},
+      "sourceIds": ["b41-nitkkr-academic-contact"],
+      "academicYear": null,
+      "evidenceLocation": "UG subsection · admission queries, line 26",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Kurukshetra, UG Academic Section",
+      "publisherPeriod": "Official page footer copyright © 2024; reconfirm contact availability"
+    },
+    {
+      "institutionSlug": "madras-medical-college",
+      "field": "structured",
+      "value": {"kind": "programme", "programme": "MBBS", "level": "UG", "durationMonths": 66},
+      "sourceIds": ["b41-mmc-courses"],
+      "academicYear": null,
+      "evidenceLocation": "Medicine · Undergraduate course row, duration shown as 5 years 6 months, lines 94–100",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Madras Medical College, Chennai; Medicine undergraduate section",
+      "publisherPeriod": "Course page publication date and applicable intake year not stated; checked 2026-11-21"
+    },
+    {
+      "institutionSlug": "madras-medical-college",
+      "field": "structured",
+      "value": {"kind": "programme", "programme": "MD General Medicine", "level": "PG", "durationMonths": 36},
+      "sourceIds": ["b41-mmc-courses"],
+      "academicYear": null,
+      "evidenceLocation": "Medicine · Post-Graduate MD/MS (3 years) section and MD General Medicine row, lines 102–113",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Madras Medical College, Chennai; Medicine postgraduate section",
+      "publisherPeriod": "Course page publication date and applicable intake year not stated; checked 2026-11-21"
+    },
+    {
+      "institutionSlug": "stanley-medical-college",
+      "field": "structured",
+      "value": {"kind": "programme", "programme": "MBBS", "level": "UG"},
+      "sourceIds": ["b41-stanley-news"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official announcement names MBBS batch 2026 and course commencement 2026-2027, lines 4–6",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Stanley Medical College, Chennai",
+      "publisherPeriod": "Historical course/commencement listing for AY 2026-27; cycle has commenced",
+      "historical": true
+    },
+    {
+      "institutionSlug": "stanley-medical-college",
+      "field": "structured",
+      "value": {"kind": "contact", "office": "College contact office", "channel": "PHONE", "contact": "9363475462"},
+      "sourceIds": ["b41-stanley-contact"],
+      "academicYear": null,
+      "evidenceLocation": "Contact Us · institutional phone block, lines 89–95",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Stanley Medical College, No. 1 Old Jail Road, Chennai",
+      "publisherPeriod": "Page footer copyright © 2025–2026; reconfirm current availability"
+    },
+    {
+      "institutionSlug": "stanley-medical-college",
+      "field": "structured",
+      "value": {"kind": "contact", "office": "College contact office", "channel": "EMAIL", "contact": "deansmc@tn.gov.in"},
+      "sourceIds": ["b41-stanley-contact"],
+      "academicYear": null,
+      "evidenceLocation": "Contact Us · public college email block, lines 97–99",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Stanley Medical College, No. 1 Old Jail Road, Chennai",
+      "publisherPeriod": "Page footer copyright © 2025–2026; reconfirm current availability"
+    }
+  ],
+  "holds": [
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "sourceId": "b41-nitkkr-computing",
+      "field": "programme name",
+      "reason": "The source list says Computer Engineering, but the linked scheme page calls it Computer Science and Engineering; excluded until the institution reconciles the naming."
+    },
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "sourceId": "b41-nitkkr-computing",
+      "field": "current applicability",
+      "reason": "Programme schemes are identified as w.e.f. 2024-25; no current 2026-27 intake is established, so released entries are historical only."
+    },
+    {
+      "institutionSlug": "madras-medical-college",
+      "sourceId": "b41-mmc-courses",
+      "field": "current intake year",
+      "reason": "The course listing is accessible and precise but does not state an applicable academic year or a publication date; no intake cycle is claimed."
+    },
+    {
+      "institutionSlug": "stanley-medical-college",
+      "sourceId": "b41-stanley-contact",
+      "field": "contact freshness",
+      "reason": "The contact page is identifiable and public, but the displayed details have no independent publication date; user should reconfirm with institution before relying on them."
+    }
+  ]
+}

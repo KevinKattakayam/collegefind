@@ -1465,3 +1465,35 @@ Every displayed item remains labeled “Source-reported; not independently verif
 The exact institution-level facts and categories are recorded in [`PROFILE_COMPLETENESS.json`](PROFILE_COMPLETENESS.json); candidate provenance and explicit holds are in [Batch 038](../data/pilot/substantive-research-batch-038.json) and [Batch 039](../data/pilot/substantive-research-batch-039.json). The existing source-reported projection register is [`source-reported-release.json`](../data/pilot/source-reported-release.json). Desktop and mobile screenshots captured by the focused Playwright run are stored under `/tmp/cf-profile-depth-20261121-b038/`.
 
 Final browser verification for Batches 038–039 passed **2/2 projects** (desktop Chromium and Pixel 7 mobile). Each project checked all 205 canonical college routes; the tests rendered source-reported cards and exact source links for the newly covered profiles, including programme duration, historical/cycle context, source-reported labels, JIPMER's campus separation and SRM's separate Kattankulathur scope link. The same run confirmed fee figures remain unavailable, the held IIT Kanpur claim remains absent, and source-reported facts do not appear in the verified public API. Focused unit tests passed **11/11**; lint, typecheck, production webpack build, secret scan, JSON/provenance validation and `git diff --check` passed. No database writes or synthetic review decisions occurred.
+
+## Source-reported content depth — Batch 040 (2026-11-21)
+
+Batch 040 adds 36 individually sourced facts from direct official pages across eight institutions and releases two previously researched Loyola programme facts. This is a local checked-in source-reported release, not a persistent owner-review import and not human verification. Each fact is separately labeled `OFFICIAL_SOURCE_REPORTED` in the policy and per-college ledger, with exact source URL, locator, campus/programme scope, collection/check date and publisher period where stated.
+
+| Measure | Before | After | Change |
+| --- | ---: | ---: | ---: |
+| Profiles with substantive source-reported facts | 117 | 124 | +7 |
+| Source-reported facts | 206 | 244 | +38 |
+| Profiles with at least two substantive categories | 29 | 37 | +8 |
+| Basic identity/navigation-only profiles | 88 | 81 | -7 |
+
+Newly released fact categories: 21 programmes (19 Batch 040 plus two reused Loyola facts), five historical admissions-route summaries, six facilities and six contacts. The section totals are programmes 184, facilities 29, admissions 16, contacts 15; fees, scholarships, recognition, placements, rankings and cutoffs remain zero in this source-reported set. Six Batch 040 colleges moved from basic to substantive profiles; one additional basic profile (Loyola) gained two already-researched Batch 031 programme facts. IIT Roorkee, Chandigarh University, MAHE, Amrita, AFMC and Andhra University are the six newly covered Batch 040 basic profiles. NLU Delhi and SRCC gain category depth; Loyola gains its prior candidate release.
+
+Claims retain historical scope: the Andhra University 2026–27 notice and AILET 2026 route are labeled historical/closed. The AFMC route is cycle-scoped; the 2024-updated MBBS listing is not presented as a current admission guarantee. No fees, eligibility thresholds, accreditation-validity assertions, placements, rankings or cutoffs were released. Eight source-use/freshness/scope holds remain listed in `data/pilot/substantive-research-batch-040.json`, including the GNLU campus conflict, ambiguous current admission cycles and decision-critical claims. Public access is not treated as a bulk-reuse licence; the release stores concise attributed facts, not copied source tables/prose. No owner-review database writes or reviewer decisions occurred.
+
+The exact candidate facts, official source manifests, locators and holds are in `data/pilot/substantive-research-batch-040.json`; publication decisions and fingerprints are in `data/pilot/source-reported-release.json`; the updated 205-row per-college ledger is `docs/PROFILE_COMPLETENESS.json`. The automated unit check verifies all 36 Batch 040 rows and the two reused Loyola rows against source fingerprints and college-scoped archive suppression. Browser rendering remains unverified in this environment because no disposable PostgreSQL URL/service is configured and the local app is stopped; do not interpret ledger policy eligibility as a successful live browser run. Genuine human approvals remain 0 and verified official cutoffs remain 0.
+
+## Source-reported content breadth — Batch 041 (2026-11-21)
+
+Batch 041 adds 10 source-reported observations from five official pages across three previously basic profiles: six programme records and four institution contact records. The candidates were directly checked against the listed institutional pages; publication policy dates and scopes are preserved. Three profiles gained facts (NIT Kurukshetra, Madras Medical College and Stanley Medical College), two of them now have at least two substantive categories. This is a checked-in source-reported release, not a persistent review import or human approval.
+
+| Measure | Before Batch 041 | After Batch 041 | Change |
+| --- | ---: | ---: | ---: |
+| Profiles with substantive source-reported facts | 124 | 127 | +3 |
+| Source-reported facts | 244 | 254 | +10 |
+| Profiles with at least two substantive categories | 37 | 39 | +2 |
+| Basic identity/navigation-only profiles | 81 | 78 | -3 |
+
+After this batch the source-reported section totals are 190 programme facts, 29 facilities, 16 admissions-route facts and 19 contacts. Fees, scholarships, recognition, placements, rankings and cutoffs remain at zero in this release set. NIT Kurukshetra's programme entries are historical 2024–25 scheme listings and do not establish current intake; the Computer Engineering versus Computer Science and Engineering naming discrepancy remains held. Madras Medical College's course page does not state a publication or applicable intake year. Stanley's MBBS item is historical for AY 2026–27; its contact page details have a freshness caveat. The four documented holds and one excluded ambiguous claim remain in `data/pilot/substantive-research-batch-041.json`.
+
+No persistent database import or reviewer action occurred. The archive remains 377 staged claims; genuine human approvals remain 0; verified official cutoff records remain 0. Facts are labeled `Source-reported; not independently verified`, and source links/evidence locations are retained in the release register and batch manifest. The counts describe checked-in local release eligibility, not live-browser publication: an isolated database-backed app/browser run remains blocked because no disposable database is available and Docker access is denied. Exact per-college values are in `docs/PROFILE_COMPLETENESS.json`.

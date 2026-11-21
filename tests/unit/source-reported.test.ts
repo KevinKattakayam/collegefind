@@ -5,7 +5,7 @@ import ledger from '../../docs/DATA_COVERAGE.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
 
-const now = new Date('2026-11-21T06:00:00Z');
+const now = new Date('2026-11-21T18:00:00Z');
 const record = {
   ...policy.records.find(({ slug }) => slug === 'dit-university')!,
   basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const,
@@ -15,7 +15,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(117);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(127);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
@@ -122,6 +122,88 @@ describe('source-reported profile eligibility', () => {
     expect(srmFacts.map(({ value }) => value.kind === 'programme' ? value.durationMonths : null)).toEqual([60, 60, 60, 36]);
     expect(srmFacts.every(({ scopeVerification }) => scopeVerification?.url === 'https://law.srmist.edu.in/faculties/')).toBe(true);
     expect(rows.some(({ slug }) => slug === 'jadavpur-university')).toBe(false);
+  });
+
+  it('adds the Batch 040 breadth slice with distinct categories, source attribution and historical labels', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-40:'));
+    expect(rows).toHaveLength(36);
+    for (const row of rows) expect(sourceReportedFingerprint(row.ref), row.ref).toBe(row.fingerprint);
+    expect(new Set(rows.map(({ slug }) => slug)).size).toBe(8);
+    expect(rows.every(({ status }) => status === 'PUBLISH')).toBe(true);
+
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    const factsFor = (slug: string) => rows.filter((row) => row.slug === slug).flatMap((row) =>
+      eligibleSourceReported({ id: row.collegeId, slug }, now).filter((fact) => fact.ref === row.ref));
+    expect(facts).toHaveLength(36);
+    expect(facts.every(({ status, url, evidenceLocation }) => status === 'OFFICIAL_SOURCE_REPORTED' &&
+      url.startsWith('https://') && evidenceLocation.length > 0)).toBe(true);
+    expect(facts.filter(({ value }) => value.kind === 'programme')).toHaveLength(19);
+    expect(facts.filter(({ value }) => value.kind === 'admission')).toHaveLength(5);
+    expect(facts.filter(({ value }) => value.kind === 'facility')).toHaveLength(6);
+    expect(facts.filter(({ value }) => value.kind === 'contact')).toHaveLength(6);
+
+    const archivedRows = archive.claims.map((claim) => ({
+      collegeId: claim.collegeId,
+      id: claim.id, field: claim.field, value: claim.value, isFixture: claim.isFixture,
+      academicYear: typeof claim.academicYear === 'number' ? claim.academicYear : null,
+      validFrom: claim.validFrom ? new Date(claim.validFrom) : null,
+      validUntil: claim.validUntil ? new Date(claim.validUntil) : null,
+      supersedesId: claim.supersedesId, decisions: [],
+    }));
+    const surviving = [...new Set(rows.map(({ slug }) => slug))].flatMap((slug) => {
+      const collegeRows = rows.filter((row) => row.slug === slug);
+      const collegeFacts = collegeRows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug }, now)
+        .filter((fact) => fact.ref === row.ref));
+      return suppressSourceReported(collegeFacts, archivedRows.filter((row) => row.collegeId === collegeRows[0].collegeId), [], now);
+    });
+    expect(surviving.map(({ ref }) => ref).sort()).toEqual(facts.map(({ ref }) => ref).sort());
+
+    const andhra = factsFor('andhra-university');
+    expect(andhra).toHaveLength(6);
+    expect(andhra.every(({ historical, academicYear, publisherPeriod }) => historical && academicYear === '2026-27' &&
+      publisherPeriod?.includes('13 October 2026'))).toBe(true);
+    expect(andhra.filter(({ value }) => value.kind === 'admission').every(({ publisherPeriod }) =>
+      publisherPeriod?.includes('cycle closed'))).toBe(true);
+    const ailet = facts.find(({ ref }) => ref === 'batch-40:19');
+    expect(ailet).toMatchObject({ historical: true, academicYear: '2026-27', status: 'OFFICIAL_SOURCE_REPORTED' });
+
+    const srcc = factsFor('shri-ram-college-of-commerce');
+    expect(srcc).toHaveLength(6);
+    expect(srcc.some(({ value }) => value.kind === 'programme' && value.programme.includes('B.Com'))).toBe(false);
+
+    const loyola = policy.records.filter(({ ref }) => ['batch-31:3', 'batch-31:4'].includes(ref));
+    expect(loyola).toHaveLength(2);
+    expect(loyola.every(({ slug }) => slug === 'loyola-college')).toBe(true);
+    expect(loyola.flatMap(({ collegeId, slug, ref }) => eligibleSourceReported({ id: collegeId, slug }, now)
+      .filter((fact) => fact.ref === ref))).toHaveLength(2);
+  });
+
+  it('adds Batch 041 facts from three previously basic profiles and retains scope/date warnings', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-41:'));
+    expect(rows).toHaveLength(10);
+    expect(new Set(rows.map(({ slug }) => slug))).toEqual(new Set([
+      'nit-kurukshetra', 'madras-medical-college', 'stanley-medical-college',
+    ]));
+    for (const row of rows) expect(sourceReportedFingerprint(row.ref), row.ref).toBe(row.fingerprint);
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    expect(facts).toHaveLength(10);
+    expect(facts.every(({ status, url, evidenceLocation }) => status === 'OFFICIAL_SOURCE_REPORTED' &&
+      url.startsWith('https://') && evidenceLocation.length > 0)).toBe(true);
+    expect(facts.filter(({ value }) => value.kind === 'programme')).toHaveLength(6);
+    expect(facts.filter(({ value }) => value.kind === 'contact')).toHaveLength(4);
+    expect(rows.some(({ ref }) => ref === 'batch-41:3')).toBe(false);
+    const kkrProgrammes = facts.filter(({ ref }) => ['batch-41:0', 'batch-41:1', 'batch-41:2'].includes(ref));
+    expect(kkrProgrammes).toHaveLength(3);
+    expect(kkrProgrammes.every(({ historical, academicYear, publisherPeriod }) => historical && academicYear === '2024-25' &&
+      publisherPeriod?.includes('current intake not established'))).toBe(true);
+    const stanleyProgramme = facts.find(({ ref }) => ref === 'batch-41:8');
+    expect(stanleyProgramme).toMatchObject({ historical: true, academicYear: '2026-27' });
+    const mmc = facts.filter(({ ref }) => ref === 'batch-41:6' || ref === 'batch-41:7');
+    expect(mmc.map(({ value }) => value.kind === 'programme' ? value.durationMonths : null)).toEqual([66, 36]);
+    expect(mmc.every(({ publisherPeriod }) => publisherPeriod?.includes('intake year not stated'))).toBe(true);
+    expect(policy.records.some(({ ref }) => ref === 'batch-41:3')).toBe(false);
   });
 
   it('refuses mismatched identities, changed provenance, duplicate decisions and stale checks', () => {
