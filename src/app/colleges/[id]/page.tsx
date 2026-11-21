@@ -100,6 +100,8 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
   const reviewedFields = Object.entries(listCollege.fieldEvidence ?? {}).filter(([, evidence]) =>
     ['AVAILABLE', 'CONFLICT', 'OUTDATED'].includes(evidence.status));
   const contactFacts = (listCollege.structuredFacts ?? []).filter(({ value }) => value.kind === 'contact');
+  const hasSourceReportedProgrammeDetails = sourceReported.some(({ value }) => value.kind === 'programme' || value.kind === 'admission');
+  const hasSourceReportedFacilities = sourceReported.some(({ value }) => value.kind === 'facility');
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -228,7 +230,9 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             <h2 className="text-xl font-black text-slate-800">Programmes and admissions</h2>
             {listCollege.admissions && <a href={listCollege.admissions} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-indigo-700 underline">Official admissions information</a>}
             {college.courses.length > 0 && <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">{college.courses.map((course) => <li key={course}>{course}</li>)}</ul>}
-            {renderFacts(listCollege.structuredFacts ?? [], ['programme', 'admission'], college.courses.length ? 'Programme eligibility and admission routes are not verified yet.' : 'Programme details and admission routes are not verified yet.')}
+            {renderFacts(listCollege.structuredFacts ?? [], ['programme', 'admission'], hasSourceReportedProgrammeDetails
+              ? 'Official pages report the details below; CollegeFind has not independently verified them.'
+              : college.courses.length ? 'Programme eligibility and admission routes are not verified yet.' : 'Programme details and admission routes are not verified yet.')}
             {renderSourceReported(sourceReported, 'programme')}
             {renderSourceReported(sourceReported, 'admission')}
             {sectionSource(['admissions', 'programmes'])}
@@ -259,7 +263,9 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
           </section>
           <section id="facilities" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
             <h2 className="text-xl font-black text-slate-800">Hostels and facilities</h2>
-            {renderFacts(listCollege.structuredFacts ?? [], ['facility'], 'Hostel availability and campus facilities are not verified yet. Check with the institution for your campus.')}
+            {renderFacts(listCollege.structuredFacts ?? [], ['facility'], hasSourceReportedFacilities
+              ? 'Official pages report the facilities below; CollegeFind has not independently verified them. Hostel availability may need separate confirmation.'
+              : 'Hostel availability and campus facilities are not verified yet. Check with the institution for your campus.')}
             {renderSourceReported(sourceReported, 'facility')}
             {sectionSource(['facilities'])}
           </section>

@@ -20,6 +20,12 @@ test('source-reported facts render in their sections with campus, scope and prov
     const expected = eligibleSourceReported({ slug, id: records[0].collegeId });
     expect(expected).toHaveLength(records.length);
     await page.goto('/colleges/' + slug + '#programmes-and-admissions');
+    if (['delhi-technological-university', 'vjti-mumbai', 'iit-gandhinagar'].includes(slug)) {
+      await expect(main.locator('#programmes-and-admissions')).toContainText('Official pages report the details below; CollegeFind has not independently verified them.');
+      if (slug === 'iit-gandhinagar') {
+        await expect(main.locator('#facilities')).toContainText('Official pages report the facilities below; CollegeFind has not independently verified them.');
+      }
+    }
     const cards = main.locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]');
     await expect(cards).toHaveCount(expected.length);
     for (const item of expected) {
@@ -36,6 +42,14 @@ test('source-reported facts render in their sections with campus, scope and prov
         if (value.exam) await expect(card).toContainText(value.exam);
       }
       await expect(card.getByRole('heading', { name, exact: true })).toBeVisible();
+      if (slug === 'vjti-mumbai') {
+        await expect(card).toContainText('Published 27 Jun 2025');
+        await expect(card).toContainText('updated timestamp 22 October 2026');
+      }
+      if (slug === 'delhi-technological-university') {
+        await expect(card).toContainText('last updated 01 September 2026');
+        await expect(card).not.toContainText('Published 01 Sep 2026');
+      }
       if (item.academicYear !== null) await expect(card).toContainText(String(item.publisherPeriod ?? item.academicYear));
       await expect(card.getByText('Source-reported; not independently verified', { exact: true })).toBeVisible();
       await expect(card).toContainText(item.campus);

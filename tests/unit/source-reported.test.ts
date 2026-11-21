@@ -5,7 +5,7 @@ import ledger from '../../docs/DATA_COVERAGE.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
 
-const now = new Date('2026-11-21T00:00:00Z');
+const now = new Date('2026-11-21T06:00:00Z');
 const record = {
   ...policy.records.find(({ slug }) => slug === 'dit-university')!,
   basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const,
@@ -15,13 +15,37 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(103);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(109);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
         url: row.sourceUrl, campus: row.campus, status: 'OFFICIAL_SOURCE_REPORTED', evidenceLocation: expect.any(String),
       });
     }
+  });
+
+  it('publishes new degree listings with their exact period without implying human verification', () => {
+    const vjti = policy.records.filter(({ slug }) => slug === 'vjti-mumbai');
+    expect(vjti).toHaveLength(10);
+    const identity = { id: vjti[0].collegeId, slug: vjti[0].slug };
+    const facts = eligibleSourceReported(identity, now);
+    expect(facts[0]).toMatchObject({ publicationDate: '2025-06-27' });
+    expect(facts[0].evidenceLocation).toContain('updated timestamp 22 October 2026');
+    expect(facts.filter(({ value }) => value.kind === 'programme')).toHaveLength(9);
+    expect(facts.find(({ value }) => value.kind === 'admission')).toMatchObject({
+      academicYear: '2026-27', publisherPeriod: 'VJTI source describes the process for admissions 2026-27 only',
+      status: 'OFFICIAL_SOURCE_REPORTED',
+    });
+    expect(facts.every(({ status }) => status === 'OFFICIAL_SOURCE_REPORTED')).toBe(true);
+    const pec = policy.records.filter(({ slug }) => slug === 'pec-chandigarh');
+    expect(eligibleSourceReported({ id: pec[0].collegeId, slug: pec[0].slug }, now)).toHaveLength(4);
+    const dtu = policy.records.filter(({ slug }) => slug === 'delhi-technological-university');
+    expect(eligibleSourceReported({ id: dtu[0].collegeId, slug: dtu[0].slug }, now)).toHaveLength(14);
+    const dtuFacts = eligibleSourceReported({ id: dtu[0].collegeId, slug: dtu[0].slug }, now);
+    expect(dtuFacts.every(({ publicationDate }) => publicationDate === null)).toBe(true);
+    expect(dtuFacts[0].sourceTitle).toContain('last updated 01 September 2026');
+    const iitgn = policy.records.filter(({ slug }) => slug === 'iit-gandhinagar');
+    expect(eligibleSourceReported({ id: iitgn[0].collegeId, slug: iitgn[0].slug }, now)).toHaveLength(10);
   });
 
   it('refuses mismatched identities, changed provenance, duplicate decisions and stale checks', () => {
