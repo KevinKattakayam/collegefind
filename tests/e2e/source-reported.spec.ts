@@ -33,10 +33,21 @@ test('source-reported facts render in their sections with campus, scope and prov
       const section = value.kind === 'contact' ? '#official-resources' : value.kind === 'facility' ? '#facilities' : '#programmes-and-admissions';
       const name = value.kind === 'contact' ? value.office : value.kind === 'facility' ? value.facility : value.programme;
       const source = page.getByRole('link', { name: item.publisher + ' · ' + item.sourceTitle, exact: true });
-      const card = main.locator(section).locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')
+      const kindLabel = value.kind === 'admission' ? 'admission route'
+        : value.kind === 'contact' ? 'official contact'
+        : value.kind === 'facility' ? 'campus facility' : value.kind;
+      const card = main.locator(section).getByRole('list', { name: `Institution-reported ${kindLabel}` })
+        .locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')
         .filter({ has: source }).filter({ has: page.getByRole('heading', { name, exact: true }) });
       if (value.kind === 'contact') await expect(card).toContainText(value.contact);
       if (value.kind === 'facility') await expect(card).toContainText(value.description);
+      if (value.kind === 'programme' && value.durationMonths) {
+        const level = { UG: 'Undergraduate', PG: 'Postgraduate', DOCTORAL: 'Doctoral', DIPLOMA: 'Diploma' }[value.level];
+        const duration = value.durationMonths % 12 === 0
+          ? `${value.durationMonths / 12} ${value.durationMonths === 12 ? 'year' : 'years'}`
+          : `${value.durationMonths} months`;
+        await expect(card).toContainText(`${level} · ${duration}`);
+      }
       if (value.kind === 'admission') {
         await expect(card).toContainText(value.route);
         if (value.exam) await expect(card).toContainText(value.exam);
@@ -50,11 +61,36 @@ test('source-reported facts render in their sections with campus, scope and prov
         await expect(card).toContainText('last updated 01 September 2026');
         await expect(card).not.toContainText('Published 01 Sep 2026');
       }
+      if (item.historical) {
+        const historyLabel = value.kind === 'admission' ? 'Historical admission cycle'
+          : value.kind === 'programme' ? 'Historical programme listing' : 'Historical source information';
+        await expect(card).toContainText(historyLabel);
+        if (item.publisherPeriod) await expect(card).toContainText(item.publisherPeriod);
+      }
       if (item.academicYear !== null) await expect(card).toContainText(String(item.publisherPeriod ?? item.academicYear));
       await expect(card.getByText('Source-reported; not independently verified', { exact: true })).toBeVisible();
       await expect(card).toContainText(item.campus);
       await expect(card).toContainText(item.evidenceLocation);
       await expect(card.getByRole('link', { name: item.publisher + ' · ' + item.sourceTitle, exact: true })).toHaveAttribute('href', item.url);
+      if (item.scopeVerification) {
+        await expect(card).toContainText('Campus scope cross-check');
+        await expect(card.getByRole('link', { name: item.scopeVerification.title, exact: false }))
+          .toHaveAttribute('href', item.scopeVerification.url);
+        await expect(card).toContainText(item.scopeVerification.evidenceLocation);
+      }
+    }
+    if (process.env.CF_PROFILE_SCREENSHOTS && [
+      'all-india-institute-of-medical-sciences', 'university-of-delhi', 'amity-university', 'madras-university',
+      'lovely-professional-university', 'jipmer-puducherry', 'university-of-mumbai', 'srm-institute-of-science-and-technology',
+    ].includes(slug)) {
+      const suffix = isMobile ? 'mobile' : 'desktop';
+      await main.locator('#programmes-and-admissions').screenshot({ path: join(process.env.CF_PROFILE_SCREENSHOTS, `${slug}-programmes-${suffix}.png`) });
+      if (expected.some(({ value }) => value.kind === 'facility')) {
+        await main.locator('#facilities').screenshot({ path: join(process.env.CF_PROFILE_SCREENSHOTS, `${slug}-facilities-${suffix}.png`) });
+      }
+      if (expected.some(({ value }) => value.kind === 'contact')) {
+        await main.locator('#official-resources').screenshot({ path: join(process.env.CF_PROFILE_SCREENSHOTS, `${slug}-contacts-${suffix}.png`) });
+      }
     }
   }
   await page.goto('/colleges/indian-institute-of-technology-kharagpur#programmes-and-admissions');

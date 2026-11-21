@@ -1,0 +1,551 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 38,
+  "researchedAt": "2026-11-21T05:33:00.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "batch38-official-2",
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "publisher": "All India Institute of Medical Sciences, New Delhi",
+      "url": "https://www.aiims.edu/index.php/en/academic_section_courses",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T05:33:00.000Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "A short list of individually named degree/course facts transcribed with attribution. Source page says last updated 21 Nov 2023; facts are explicitly historical and not represented as a current catalogue. No tables or prose copied.",
+      "evidenceLocations": [
+        "Courses · last updated 21 Nov 2023 · lines 264–273: course groups and undergraduate course names",
+        "Courses · lines 283–291: institution address and board number"
+      ]
+    },
+    {
+      "id": "batch38-official-3",
+      "institutionSlug": "university-of-delhi",
+      "publisher": "University of Delhi, Undergraduate Admissions Branch",
+      "url": "https://www.du.ac.in/uploads/2026/06012026_BOI_UG_2026_27_compressed.pdf",
+      "publicationDate": "2026-01-05",
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-21T05:33:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "One historical admission-route summary and two official Admission Branch contacts transcribed with source/page attribution. The cycle is closed/historical; no eligibility, fees, seats or rules are published through this record. No bulk reproduction.",
+      "evidenceLocations": [
+        "Bulletin of Information 2026–27 · pages vi–viii / lines 134–150, 209–229: CUET and CSAS routes; exceptions are explicitly described",
+        "Bulletin of Information 2026–27 · page x / lines 1846–1859: Admission Branch contact"
+      ]
+    },
+    {
+      "id": "batch38-official-4",
+      "institutionSlug": "amity-university",
+      "publisher": "Amity University Noida",
+      "url": "https://www.amity.edu/course-list.aspx",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T05:33:00.000Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Three individual Noida-campus MBA programme names and listed durations transcribed with attribution. No programme descriptions or full catalogue reproduced; broad site terms were not treated as blanket reuse permission.",
+      "evidenceLocations": [
+        "Course List · MBA Business Analytics, Noida campus, lines 3424–3427",
+        "Course List · MBA Construction Economics & Quantity Surveying, Noida campus only, lines 3441–3447",
+        "Course List · MBA Construction Project Management, Noida campus, lines 3472–3478"
+      ]
+    },
+    {
+      "id": "batch38-official-5",
+      "institutionSlug": "madras-university",
+      "publisher": "University of Madras, University Departments Admissions under CBCS",
+      "url": "https://egovernance.unom.ac.in/CBCS2627/",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-21T05:33:00.000Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Individual programme names, stated durations and admissions route transcribed with direct attribution from the University of Madras department admissions page. The source shows the 2026-27 registration period closed; entries are historical only. No admission tables or page prose copied; campus for the blended programme is not stated.",
+      "evidenceLocations": [
+        "Academic Year 2026-2027 · University Departments Admissions under CBCS · lines 6–18: B.Sc. Blended Science Programme jointly offered with University of Melbourne",
+        "Academic Year 2026-2027 · Professional Courses note · lines 29–33: MBA and MCA durations and DoTE single-window admission route; source gives Guindy contact location"
+      ]
+    },
+    {
+      "id": "batch38-official-6",
+      "institutionSlug": "amity-university",
+      "publisher": "Amity University",
+      "url": "https://www.amity.edu/course-list.aspx",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T05:33:00.000Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official admissions helpline and email transcribed as individual contact facts from the same institutional course-list page. No bulk extraction or reuse permission is inferred.",
+      "evidenceLocations": [
+        "Course List footer · Amity Helpline and admissions email · lines 623–625"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch38-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses · Undergraduate list · MBBS",
+      "publisherPeriod": "Source page last updated 21 Nov 2023; historical listing, confirm current status with AIIMS",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. Nursing (Hons.)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch38-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses · Undergraduate list · B.Sc. Nursing (Hons.)",
+      "publisherPeriod": "Source page last updated 21 Nov 2023; historical listing, confirm current status with AIIMS",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. Nursing Post Basic",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch38-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses · Undergraduate list · B.Sc. Nursing Post Basic",
+      "publisherPeriod": "Source page last updated 21 Nov 2023; historical listing, confirm current status with AIIMS",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. (Hons.) in Medical Technology in Radiography",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch38-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses · Undergraduate list · B.Sc. (Hons.) in Medical Technology in Radiography",
+      "publisherPeriod": "Source page last updated 21 Nov 2023; historical listing, confirm current status with AIIMS",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Optometry",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch38-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses · Undergraduate list · Bachelor of Optometry",
+      "publisherPeriod": "Source page last updated 21 Nov 2023; historical listing, confirm current status with AIIMS",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. (OTT)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch38-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses · Undergraduate list · B.Sc. (OTT)",
+      "publisherPeriod": "Source page last updated 21 Nov 2023; historical listing, confirm current status with AIIMS",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. (Dental Room Asstt.)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch38-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses · Undergraduate list · B.Sc. (Dental Room Asstt.)",
+      "publisherPeriod": "Source page last updated 21 Nov 2023; historical listing, confirm current status with AIIMS",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. (Dental Hygiene)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch38-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses · Undergraduate list · B.Sc. (Dental Hygiene)",
+      "publisherPeriod": "Source page last updated 21 Nov 2023; historical listing, confirm current status with AIIMS",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "AIIMS New Delhi",
+        "channel": "ADDRESS",
+        "contact": "Ansari Nagar, New Delhi - 110029"
+      },
+      "sourceIds": [
+        "batch38-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses · Contact Us · lines 283–287",
+      "publisherPeriod": "Source page last updated 21 Nov 2023",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "all-india-institute-of-medical-sciences",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "AIIMS New Delhi Board Number",
+        "channel": "PHONE",
+        "contact": "+91-11-26588500"
+      },
+      "sourceIds": [
+        "batch38-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses · Contact Us · Board Number · first number in listed pair · lines 288–290",
+      "publisherPeriod": "Source page last updated 21 Nov 2023",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "university-of-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Undergraduate programmes other than B.Tech (regular students)",
+        "route": "Common University Entrance Test (CUET UG 2026), followed by Common Seat Allocation System (CSAS UG 2026)",
+        "category": "Regular UG programmes other than B.Tech",
+        "exam": "CUET (UG)-2026",
+        "counselling": "CSAS (UG)-2026"
+      },
+      "sourceIds": [
+        "batch38-official-3"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Bulletin of Information 2026–27 · regular students and important points, pages vi–viii. Scope excludes B.Tech because a separate University B.Tech admission bulletin specifies JEE Main.",
+      "publisherPeriod": "2026–27 admission cycle; bulletin published 05 Jan 2026; historical cycle, check current DU admissions notices",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "university-of-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "University of Delhi Undergraduate Admissions Branch",
+        "channel": "PHONE",
+        "contact": "011-27666073"
+      },
+      "sourceIds": [
+        "batch38-official-3"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Bulletin of Information 2026–27 · Address for Correspondence · Contact Number · page x",
+      "publisherPeriod": "2026–27 admissions bulletin; contact details as printed, verify current contact before use",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "university-of-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "University of Delhi Undergraduate Admissions Branch",
+        "channel": "EMAIL",
+        "contact": "ug@admission.du.ac.in"
+      },
+      "sourceIds": [
+        "batch38-official-3"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Bulletin of Information 2026–27 · Address for Correspondence · Email · page x",
+      "publisherPeriod": "2026–27 admissions bulletin; contact details as printed, verify current contact before use",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "amity-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBA — Business Analytics",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "batch38-official-4"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Course List · MBA (Business Analytics) · Noida campus · lines 3424–3427",
+      "publisherPeriod": null,
+      "historical": false,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "amity-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBA — Construction Economics & Quantity Surveying",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "batch38-official-4"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Course List · MBA (Construction Economics & Quantity Surveying) · Noida campus only · lines 3441–3447",
+      "publisherPeriod": null,
+      "historical": false,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "amity-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBA — Construction Project Management",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "batch38-official-4"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Course List · MBA (Construction Project Management) · Noida campus · lines 3472–3478",
+      "publisherPeriod": null,
+      "historical": false,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "madras-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. (Blended) Science, jointly offered with the University of Melbourne",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch38-official-5"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic Year 2026-2027 · B.Sc. Blended Science Programme · lines 6–13",
+      "publisherPeriod": "University Departments CBCS academic year 2026-27; registration period shown closed",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "madras-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBA (Regular and Self-Supportive)",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "batch38-official-5"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Professional Courses note · MBA regular/self-supportive · 2 years · lines 29–32",
+      "publisherPeriod": "University Departments CBCS academic year 2026-27; registration period shown closed",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "madras-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MCA",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "batch38-official-5"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Professional Courses note · MCA · 2 years · lines 29–32",
+      "publisherPeriod": "University Departments CBCS academic year 2026-27; registration period shown closed",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "madras-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA (Regular/Self-Supportive) and MCA",
+        "route": "Single Window System through Directorate of Technical Education (DoTE)",
+        "category": "University Department professional courses",
+        "counselling": "DoTE"
+      },
+      "sourceIds": [
+        "batch38-official-5"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic Year 2026-2027 · Professional Courses admissions route · lines 29–33",
+      "publisherPeriod": "University Departments CBCS academic year 2026-27; registration period shown closed",
+      "historical": true,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "amity-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Amity University Admissions Helpline",
+        "channel": "PHONE",
+        "contact": "0120-2445252"
+      },
+      "sourceIds": [
+        "batch38-official-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Course List footer · Amity Helpline · first number listed · lines 623–625",
+      "publisherPeriod": null,
+      "historical": false,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "amity-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Amity University Admissions",
+        "channel": "EMAIL",
+        "contact": "admissions@amity.edu"
+      },
+      "sourceIds": [
+        "batch38-official-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Course List footer · admissions email · lines 623–625",
+      "publisherPeriod": null,
+      "historical": false,
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "holds": [
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "sourceUrl": "https://acad.iitr.ac.in/Varsity/UGProgrammes_new.html",
+      "reason": "Official Academic Affairs page direct open timed out. Search result was not used as claim evidence."
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "sourceUrl": "https://www.iimb.ac.in/admissions/pgp-admissions",
+      "reason": "Official admissions source returned HTTP 403; no attempt to bypass."
+    },
+    {
+      "institutionSlug": "iit-indore",
+      "sourceUrl": "https://academic.iiti.ac.in/academic_program.php",
+      "reason": "Official academic source returned HTTP 403; search result was not used as claim evidence."
+    },
+    {
+      "institutionSlug": "iit-dharwad",
+      "sourceUrl": "https://www.iitdh.ac.in/btech-programs",
+      "reason": "Official source returned HTTP 502 on direct open; no retry loop."
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "sourceUrl": "https://iitbhilai.ac.in/index.php?pid=admin_aboutiitbh",
+      "reason": "Official source timed out on direct open; search result was not used as claim evidence."
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "sourceUrl": "https://www.iitk.ac.in/doaa/academic-programmes",
+      "reason": "Not published: the existing archive contains an explicitly held IIT Kanpur programme-list claim and an unresolved conflict about the undated current list versus the UG manual. The 14 new programme candidates were removed from this batch and must remain held until the source conflict is independently resolved."
+    }
+  ]
+}

@@ -10,6 +10,8 @@ import batch34 from '../../data/pilot/substantive-research-batch-034.json';
 import batch35 from '../../data/pilot/substantive-research-batch-035.json';
 import batch36 from '../../data/pilot/substantive-research-batch-036.json';
 import batch37 from '../../data/pilot/substantive-research-batch-037.json';
+import batch38 from '../../data/pilot/substantive-research-batch-038.json';
+import batch39 from '../../data/pilot/substantive-research-batch-039.json';
 import coverage from '../../docs/DATA_COVERAGE.json';
 import release from '../../data/pilot/source-reported-release.json';
 import { evidenceReviewHold } from './review-holds';
@@ -22,6 +24,7 @@ const decisionRow = z.strictObject({
   basis: z.literal('ATTRIBUTED_INDIVIDUAL_FACT'), usageAssessment: nonempty, fingerprint: z.hash('sha256'),
   status: z.enum(['PUBLISH', 'WITHDRAWN']), reason: nonempty,
   publisherPeriod: nonempty.optional(), historical: z.boolean().optional(),
+  scopeSourceUrl: z.url().optional(), scopeSourceTitle: nonempty.optional(), scopeEvidenceLocation: nonempty.optional(),
 });
 
 type Identity = { id: string; slug: string };
@@ -46,7 +49,7 @@ for (const claim of archive.claims) {
     publicationDate: claim.publishedAt ?? source.publishedAt, year: claim.academicYear, validFrom: claim.validFrom, validUntil: claim.validUntil,
   });
 }
-for (const batch of [batch29, batch30, batch31, batch32, batch33, batch34, batch35, batch36, batch37]) {
+for (const batch of [batch29, batch30, batch31, batch32, batch33, batch34, batch35, batch36, batch37, batch38, batch39]) {
   for (const [index, claim] of batch.candidateClaims.entries()) {
     const source = batch.sources.find(({ id }) => id === claim.sourceIds[0]);
     const collegeId = identity.get(claim.institutionSlug);
@@ -107,6 +110,9 @@ export function eligibleSourceReported(college: Identity, now = new Date(), reco
     const parsed = decisionRow.safeParse(raw);
     if (!parsed.success) return [];
     const record = parsed.data;
+    const scopeFields = [record.scopeSourceUrl, record.scopeSourceTitle, record.scopeEvidenceLocation];
+    if ((scopeFields.some(Boolean) && !scopeFields.every(Boolean)) ||
+        (record.scopeSourceUrl !== undefined && !safeUrl(record.scopeSourceUrl))) return [];
     const c = candidates.get(record.ref);
     if (!c || heldRefs.has(record.ref) || evidenceReviewHold(record.ref) || record.status !== 'PUBLISH' || !c.locator || !c.publisher.trim() ||
         record.collegeId !== college.id || c.collegeId !== college.id || record.slug !== college.slug || c.slug !== college.slug ||
@@ -141,7 +147,11 @@ export function eligibleSourceReported(college: Identity, now = new Date(), reco
       ref: c.ref, value: fact.data, campus: record.campus, publisher: c.publisher, url: c.url,
       evidenceLocation: c.locator, sourceTitle: record.sourceTitle, collectedAt: c.collectedAt,
       publicationDate: c.publicationDate, academicYear: c.year, validFrom: c.validFrom, validUntil: c.validUntil,
-      publisherPeriod: record.publisherPeriod, historical: record.historical === true || (start !== null && start < now.getUTCFullYear()), checkedAt: record.checkedAt, status: 'OFFICIAL_SOURCE_REPORTED' as const,
+      publisherPeriod: record.publisherPeriod,
+      scopeVerification: record.scopeSourceUrl && record.scopeSourceTitle && record.scopeEvidenceLocation
+        ? { url: record.scopeSourceUrl, title: record.scopeSourceTitle, evidenceLocation: record.scopeEvidenceLocation }
+        : undefined,
+      historical: record.historical === true || (start !== null && start < now.getUTCFullYear()), checkedAt: record.checkedAt, status: 'OFFICIAL_SOURCE_REPORTED' as const,
     }];
   });
 }

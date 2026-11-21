@@ -345,7 +345,7 @@ function renderSourceReported(facts: SourceReportedFact[], kind: SourceReportedF
   const selected = facts.filter(({ value }) => value.kind === kind);
   if (!selected.length) return null;
   return <ul className="mt-4 grid gap-4 sm:grid-cols-2" aria-label={`Institution-reported ${structuredLabels[kind].toLowerCase()}`}>
-    {selected.map(({ ref, value, campus, publisher, url, evidenceLocation, sourceTitle, collectedAt, publicationDate, checkedAt, academicYear, validFrom, validUntil, historical, publisherPeriod }) => (
+    {selected.map(({ ref, value, campus, publisher, url, evidenceLocation, sourceTitle, collectedAt, publicationDate, checkedAt, academicYear, validFrom, validUntil, historical, publisherPeriod, scopeVerification }) => (
       <li key={ref} data-evidence-status="OFFICIAL_SOURCE_REPORTED" className="min-w-0 space-y-2 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-slate-800">
         <p className="text-xs font-semibold text-amber-950">Source-reported; not independently verified</p>
         <h3 className="break-words font-semibold">{value.kind === 'programme' || value.kind === 'admission' ? value.programme : value.kind === 'contact' ? value.office : value.facility}</h3>
@@ -365,9 +365,12 @@ function renderSourceReported(facts: SourceReportedFact[], kind: SourceReportedF
         <div className="space-y-1 break-words border-t border-amber-200 pt-2 text-xs leading-5">
           <a href={url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-800 underline">{publisher} · {sourceTitle}</a>
           <p>Evidence location: {evidenceLocation}</p>
+          {scopeVerification && <p>Campus scope cross-check: <a href={scopeVerification.url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-800 underline">{scopeVerification.title}</a> · {scopeVerification.evidenceLocation}</p>}
           <p>Collected <time dateTime={collectedAt}>{reviewedDate(collectedAt)}</time> · Checked <time dateTime={checkedAt}>{reviewedDate(checkedAt)}</time></p>
           {publicationDate && <p>Published {reviewedDate(publicationDate)}</p>}
-          {academicYear !== null && <p>{historical ? (kind === 'admission' ? 'Historical admission cycle' : 'Historical programme listing') : 'Publisher’s period'} · {publisherPeriod ?? academicYear}. Check the source for intake availability.</p>}
+          {(historical || academicYear !== null) && <p>{historical
+            ? (kind === 'admission' ? 'Historical admission cycle' : kind === 'programme' ? 'Historical programme listing' : 'Historical source information')
+            : 'Publisher’s period'} · {publisherPeriod ?? academicYear ?? 'publisher-dated source context'}. Check the source for current availability.</p>}
           {(validFrom || validUntil) && <p>Applicable period{validFrom ? ` from ${reviewedDate(validFrom)}` : ''}{validUntil ? ` through ${reviewedDate(validUntil)}` : ''}</p>}
           {kind === 'programme' && academicYear === null && !validFrom && !validUntil && <p>The institution does not specify an intake for this detail.</p>}
         </div>

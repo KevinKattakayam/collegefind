@@ -15,7 +15,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(109);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(117);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
@@ -46,6 +46,82 @@ describe('source-reported profile eligibility', () => {
     expect(dtuFacts[0].sourceTitle).toContain('last updated 01 September 2026');
     const iitgn = policy.records.filter(({ slug }) => slug === 'iit-gandhinagar');
     expect(eligibleSourceReported({ id: iitgn[0].collegeId, slug: iitgn[0].slug }, now)).toHaveLength(10);
+  });
+
+  it('adds Batch 038 details only for previously basic colleges and preserves historical and campus scope', () => {
+    const batchRows = policy.records.filter(({ ref }) => ref.startsWith('batch-38:'));
+    expect(batchRows).toHaveLength(22);
+    const bySlug = (slug: string) => batchRows.filter((row) => row.slug === slug);
+    const aiims = bySlug('all-india-institute-of-medical-sciences');
+    expect(aiims).toHaveLength(10);
+    expect(aiims.every((row) => row.historical === true && row.publisherPeriod?.includes('21 Nov 2023'))).toBe(true);
+    const aiimsFacts = eligibleSourceReported({ id: aiims[0].collegeId, slug: aiims[0].slug }, now);
+    expect(aiimsFacts.filter(({ ref }) => ref.startsWith('batch-38:'))).toHaveLength(10);
+    expect(aiimsFacts.filter(({ historical }) => historical)).toHaveLength(10);
+
+    const delhi = bySlug('university-of-delhi');
+    expect(delhi).toHaveLength(3);
+    expect(delhi.find(({ ref }) => ref.startsWith('batch-38:') && ref === 'batch-38:10')?.historical).toBe(true);
+    const delhiAdmission = eligibleSourceReported({ id: delhi[0].collegeId, slug: delhi[0].slug }, now)
+      .find(({ ref }) => ref === 'batch-38:10');
+    expect(delhiAdmission).toMatchObject({
+      value: { kind: 'admission', programme: 'Undergraduate programmes other than B.Tech (regular students)' },
+      academicYear: '2026-27', historical: true, publisherPeriod: expect.stringContaining('historical cycle'),
+    });
+
+    const amity = bySlug('amity-university');
+    expect(amity).toHaveLength(5);
+    expect(amity.filter(({ ref }) => ref.startsWith('batch-38:'))).toHaveLength(5);
+    const madras = bySlug('madras-university');
+    expect(madras).toHaveLength(4);
+    const madrasFacts = eligibleSourceReported({ id: madras[0].collegeId, slug: madras[0].slug }, now)
+      .filter(({ ref }) => ref.startsWith('batch-38:'));
+    expect(madrasFacts).toHaveLength(4);
+    expect(madrasFacts.every(({ historical, academicYear }) => historical && academicYear === '2026-27')).toBe(true);
+    expect(batchRows.every(({ status }) => status === 'PUBLISH')).toBe(true);
+    expect(batchRows.some(({ status }) => status === 'VERIFIED')).toBe(false);
+    expect(batchRows.some(({ slug }) => slug === 'indian-institute-of-technology-kanpur')).toBe(false);
+  });
+
+  it('adds Batch 039 facts with explicit campus and historical scope while withholding Jadavpur after a fetch failure', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-39:'));
+    expect(rows).toHaveLength(16);
+    const bySlug = (slug: string) => rows.filter((row) => row.slug === slug);
+
+    const lpu = bySlug('lovely-professional-university');
+    expect(lpu).toHaveLength(6);
+    expect(lpu.every(({ historical, campus }) => historical && campus.includes('LPU School of Civil Engineering'))).toBe(true);
+    const lpuFacts = eligibleSourceReported({ id: lpu[0].collegeId, slug: lpu[0].slug }, now)
+      .filter(({ ref }) => ref.startsWith('batch-39:'));
+    expect(lpuFacts.filter(({ value }) => value.kind === 'programme')).toHaveLength(2);
+    expect(lpuFacts.filter(({ value }) => value.kind === 'facility')).toHaveLength(4);
+
+    const jipmer = bySlug('jipmer-puducherry');
+    expect(jipmer).toHaveLength(2);
+    const route = eligibleSourceReported({ id: jipmer[0].collegeId, slug: jipmer[0].slug }, now)
+      .find(({ ref }) => ref === 'batch-39:7');
+    expect(route).toMatchObject({
+      value: { kind: 'admission', exam: 'NTA NEET 2025', counselling: 'Medical Counselling Committee (MCC)' },
+      academicYear: '2025-26', historical: true, status: 'OFFICIAL_SOURCE_REPORTED',
+    });
+    expect(route?.value.kind === 'admission' ? route.value.eligibility : 'unexpected').toBeUndefined();
+
+    const mumbai = bySlug('university-of-mumbai');
+    expect(mumbai).toHaveLength(4);
+    expect(mumbai.every(({ campus }) => campus.includes('physical teaching campus'))).toBe(true);
+    const mumbaiFacts = eligibleSourceReported({ id: mumbai[0].collegeId, slug: mumbai[0].slug }, now)
+      .filter(({ ref }) => ref.startsWith('batch-39:'));
+    expect(mumbaiFacts).toHaveLength(4);
+    expect(mumbaiFacts.every(({ academicYear }) => academicYear === null)).toBe(true);
+
+    const srm = bySlug('srm-institute-of-science-and-technology');
+    expect(srm).toHaveLength(4);
+    expect(srm.every(({ campus }) => campus.includes('Kattankulathur'))).toBe(true);
+    const srmFacts = eligibleSourceReported({ id: srm[0].collegeId, slug: srm[0].slug }, now)
+      .filter(({ ref }) => ref.startsWith('batch-39:'));
+    expect(srmFacts.map(({ value }) => value.kind === 'programme' ? value.durationMonths : null)).toEqual([60, 60, 60, 36]);
+    expect(srmFacts.every(({ scopeVerification }) => scopeVerification?.url === 'https://law.srmist.edu.in/faculties/')).toBe(true);
+    expect(rows.some(({ slug }) => slug === 'jadavpur-university')).toBe(false);
   });
 
   it('refuses mismatched identities, changed provenance, duplicate decisions and stale checks', () => {
