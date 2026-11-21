@@ -66,6 +66,10 @@ Exact Phase 8 test evidence and the local-only limitation are recorded in `docs/
 
 See [Production release and recovery](PRODUCTION_RELEASE.md) for the owner procedure and [Upgrade status](UPGRADE_STATUS.md) for exact test evidence.
 
+## Current content execution update — Batches 045–048 (2026-11-21)
+
+The existing source-reported projection was extended with 53 individually attributed facts across programme, facilities, admission-route, and contact sections. Runtime eligibility at 2026-11-21 17:54:26 UTC measured 173/205 profiles with source-reported facts, 380 facts, 70 multi-category profiles, and 32 basic-only profiles. Compared with the current pre-Batch-045 projection (161 / 327 / 56 / 44), the increment adds 12 newly informative profiles and 14 multi-category profiles. Batch 046 adds depth to nine already-covered profiles; Batches 045, 047, and 048 newly cover five, four, and three profiles respectively. This is a time-specific projection, not a completed catalogue-enrichment claim. Genuine human approvals remain zero; decision-critical facts remain behind stronger review. Browser/build verification and direct source restrictions are recorded in the status document.
+
 ## Full-catalogue research process
 
 1. Freeze the original 205-slug manifest from the status ledger; never silently replace the cohort or count synthetic institutes toward coverage. Maintain aliases and external institution identifiers without changing existing IDs.

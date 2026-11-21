@@ -47607,39 +47607,56 @@
     ]
   },
   "sourceReportedPublicProjection": {
-    "asOf": "2026-11-21T13:28:49Z",
+    "asOf": "2026-11-21T17:54:26.858Z",
     "catalogueSize": 205,
-    "profilesWithSubstantiveSourceReportedFacts": 161,
-    "sourceReportedFactsVisible": 327,
-    "profilesWithTwoOrMoreSubstantiveCategories": 56,
-    "basicIdentityOrNavigationOnlyProfiles": 44,
-    "newBatch": 44,
-    "newFactsReleased": 31,
-    "newProfilesCovered": 19,
+    "profilesWithSubstantiveSourceReportedFacts": 173,
+    "sourceReportedFactsVisible": 380,
+    "profilesWithTwoOrMoreSubstantiveCategories": 70,
+    "basicIdentityOrNavigationOnlyProfiles": 32,
+    "newBatches": "045–048",
+    "newFactsReleased": 53,
+    "newProfilesCovered": 12,
     "newFactsByCategory": {
-      "programmes": 14,
-      "facilities": 8,
-      "admissions": 2,
-      "contacts": 7
+      "programmes": 18,
+      "facilities": 15,
+      "admissions": 6,
+      "contacts": 14
     },
-    "genuinelyHumanApprovedClaims": 0,
-    "verifiedOfficialCutoffRecords": 0,
-    "stagedEvidenceClaims": 377,
-    "sourceUse": "Concise individual facts only, direct official-page attribution; no blanket reproduction or bulk-use permission inferred.",
     "countsByCategory": {
-      "programmes": 235,
-      "facilities": 41,
-      "admissions": 21,
-      "contacts": 30,
+      "programmes": 253,
+      "facilities": 56,
+      "admissions": 27,
+      "contacts": 44,
       "fees": 0,
+      "scholarships": 0,
       "recognition": 0,
       "placements": 0,
       "cutoffs": 0
     },
+    "baselineBeforeBatch045": {
+      "profiles": 161,
+      "facts": 327,
+      "multi": 56,
+      "basic": 44,
+      "categories": {
+        "programmes": 235,
+        "facilities": 41,
+        "admissions": 21,
+        "contacts": 30
+      }
+    },
+    "genuinelyHumanApprovedClaims": 0,
+    "stagedEvidenceClaims": 377,
+    "verifiedOfficialCutoffRecords": 0,
+    "sourceUse": "Short individually attributed facts only; no blanket copying/republication rights inferred. Higher-impact claims remain behind stronger review requirements.",
     "notes": [
-      "OFFICIAL_SOURCE_REPORTED is distinct from human VERIFIED.",
-      "Batch 044 has three withheld source-backed candidates: IIT Kanpur archive conflict, IIIT Gwalior duplicate archived route, and IIT Jodhpur direct-source retrieval timeout.",
-      "Eight additional institution source attempts are recorded as inaccessible or otherwise held in the Batch 044 research artifact."
+      "As-of snapshot is time-dependent and uses the application runtime eligibility/suppression policy; future-dated, expired, held, conflicted, withdrawn and reviewer-superseded records are excluded.",
+      "Batch 045 added 15 facts across five newly informative profiles.",
+      "Batch 046 added 22 facts across nine already-informative profiles (depth only); earlier static report incorrectly called these nine newly covered.",
+      "Batch 047 added nine facts across four newly informative profiles.",
+      "Batch 048 added seven facts across Central University of Rajasthan, University of Mysore and JAIN University; one obfuscated JAIN email candidate remains held rather than normalized.",
+      "All added facts remain OFFICIAL_SOURCE_REPORTED and outside verified-only search, comparison, CollegeFit and admissions scoring. No owner-review database writes or human decisions occurred.",
+      "Fees, scholarship amounts, eligibility thresholds, placement outcomes, accreditation validity, rankings and cutoffs remain zero in source-reported facts."
     ]
   }
 }

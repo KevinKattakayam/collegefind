@@ -1,0 +1,163 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 47,
+  "researchedAt": "2026-11-21T16:31:15.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b47-1",
+      "institutionSlug": "hindustan-university",
+      "publisher": "Hindustan Institute of Technology and Science",
+      "title": "Undergraduate Programs",
+      "url": "https://hindustanuniv.ac.in/undergraduate-degree/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:31:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "One concise programme name is attributed to the institution's current UG listing. No list/table is reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "UG Programs → School of Engineering and Technology → Department of Aeronautical Engineering, page lines 172–179; the page lists B.Tech Aeronautical Engineering and links to Admissions 2027, but does not assign a programme-specific academic year."
+      ]
+    },
+    {
+      "id": "b47-2",
+      "institutionSlug": "hindustan-university",
+      "publisher": "Hindustan Institute of Technology and Science, Central Library",
+      "title": "Central Library — Online Resources",
+      "url": "https://hindustanuniv.ac.in/facilities/library/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:31:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Qualitative institutional facility statement only. Collection quantities and vendor details are omitted; no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Online Resources, page lines 531–535 and 612–635: the University library describes campus-wide access to databases, e-journals and e-books and user-awareness sessions."
+      ]
+    },
+    {
+      "id": "b47-3",
+      "institutionSlug": "hindustan-university",
+      "publisher": "Hindustan Institute of Technology and Science, Central Library",
+      "title": "Central Library — Contact Us",
+      "url": "https://hindustanuniv.ac.in/facilities/library/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:31:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Public institutional library email only; no private person-level contact is presented. No blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Contact Us, page lines 1034–1043: the Chief Librarian contact block names HITS and lists cl@hindustanuniv.ac.in."
+      ]
+    },
+    {
+      "id": "b47-4",
+      "institutionSlug": "gitam-university",
+      "publisher": "GITAM School of Computer Science and Engineering, Visakhapatnam",
+      "title": "GITAM School of Computer Science and Engineering, Visakhapatnam",
+      "url": "https://www.gitam.edu/visakhapatnam/gitam-school-of-computer-science-and-engineering",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:31:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "One concise programme name is attributed to the official Visakhapatnam school page. Programme-specific year and duration are not stated on the inspected section; no additional scope is inferred and no blanket reuse licence is assumed.",
+      "evidenceLocations": [
+        "Specialised Programmes, page lines 38–50: B.Tech Computer Science and Engineering is listed under the Visakhapatnam School of Computer Science and Engineering."
+      ]
+    },
+    {
+      "id": "b47-5",
+      "institutionSlug": "gitam-university",
+      "publisher": "GITAM School of Computer Science and Engineering, Visakhapatnam",
+      "title": "GITAM School of Computer Science and Engineering, Visakhapatnam — Infrastructure and Facilities",
+      "url": "https://www.gitam.edu/visakhapatnam/gitam-school-of-computer-science-and-engineering",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:31:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Qualitative named facility only, scoped to the Visakhapatnam school page. Promotional descriptions are not reused; no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Infrastructure and Facilities, page lines 101–111: the page names the Technology Exploration and Product Engineering Centre and Makerspace, and describes the latter as a laboratory/experiential-learning facility."
+      ]
+    },
+    {
+      "id": "b47-6",
+      "institutionSlug": "gitam-university",
+      "publisher": "GITAM, Visakhapatnam Campus",
+      "title": "Contact Us — Visakhapatnam Campus",
+      "url": "https://www.gitam.edu/contact-us",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:31:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Public campus-level enquiries phone only. No personal admissions-advisor details are used; no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Visakhapatnam, page lines 120–141: All Other Enquiries lists 08912840501 and the VDC office address at Gandhi Nagar, Rushikonda, Visakhapatnam."
+      ]
+    },
+    {
+      "id": "b47-7",
+      "institutionSlug": "ms-ramaiah-institute",
+      "publisher": "Ramaiah Institute of Technology",
+      "title": "Facilities — Hostel",
+      "url": "https://msrit.edu/facilities/hostel.html",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:31:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Qualitative hostel facility fact only; no charges, availability guarantee or personal contact is repeated. The page is associated with RIT but does not specify a programme year; no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Boys Hostel, page lines 35–50: the page lists single/double rooms, dining halls, recreation space, indoor/outdoor games, and Wi-Fi; hostel rules state accommodation is for bona fide RIT students at page lines 51–54."
+      ]
+    },
+    {
+      "id": "b47-8",
+      "institutionSlug": "ms-ramaiah-institute",
+      "publisher": "Ramaiah Institute of Technology, Hostel Office",
+      "title": "Contact Us — Hostel Office",
+      "url": "https://msrit.edu/contact-us.html",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:31:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Public hostel-office email only; mobile numbers and personal contacts omitted. No blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Contact Info, page lines 39–47: the Boys Hostel section lists hostel@msrit.edu as an office contact."
+      ]
+    },
+    {
+      "id": "b47-9",
+      "institutionSlug": "banaras-hindu-university",
+      "publisher": "Banaras Hindu University, Central Admission Committee",
+      "title": "Registration for Undergraduate Admissions (Academic Session 2026–27)",
+      "url": "https://admission.bhu.ac.in/en/notice/registration-for-undergraduate-admissions-2026/ckgr9qd2xdq1qkmud380paqh",
+      "academicYear": "2026-27",
+      "publicationDate": "2026-07-09T00:00:00.000Z",
+      "retrievedAt": "2026-11-21T16:31:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Historical cycle-specific admission route only. The notice's 25 July 2026 registration deadline has elapsed; no current deadline, eligibility threshold, selection chance or ongoing admission is implied. No source prose or table is reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Public Notice, page lines 17–28: published 9 July 2026 for undergraduate admissions in academic session 2026–27 and requires appearance in CUET (UG) 2026.",
+        "Registration Process and Last Date, page lines 30–45: registration through the BHU admission portal and deadline 25 July 2026 at 11:59 PM."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {"institutionSlug":"hindustan-university","field":"structured","value":{"kind":"programme","programme":"B.Tech in Aeronautical Engineering","level":"UG"},"sourceIds":["b47-1"],"academicYear":null,"evidenceLocation":"UG Programs → School of Engineering and Technology → Department of Aeronautical Engineering, lines 172–179.","status":"UNREVIEWED","reviewState":"UNREVIEWED","stageable":true,"campusScope":"HITS main campus in Padur, Chennai; Aeronautical Engineering Department; UG programme listing.","publisherPeriod":"The current UG listing links to Admissions 2027, but the programme-specific academic year is not stated.","historical":false},
+    {"institutionSlug":"hindustan-university","field":"structured","value":{"kind":"facility","facility":"Central Library online resources","description":"The Central Library states that the University subscribes to databases, e-journals and e-books accessible campus-wide."},"sourceIds":["b47-2"],"academicYear":null,"evidenceLocation":"Online Resources, lines 531–535 and 612–635; source states campus-wide access to databases, e-journals and e-books.","status":"UNREVIEWED","reviewState":"UNREVIEWED","stageable":true,"campusScope":"HITS University Central Library; institutional scope, with online access stated as campus-wide.","publisherPeriod":"Current page accessed 21 November 2026; no publication date or academic year is stated.","historical":false},
+    {"institutionSlug":"hindustan-university","field":"structured","value":{"kind":"contact","office":"Chief Librarian, Dr. K.C.G. Verghese Research & Resource Centre","channel":"EMAIL","contact":"cl@hindustanuniv.ac.in"},"sourceIds":["b47-3"],"academicYear":null,"evidenceLocation":"Contact Us, lines 1034–1043; Chief Librarian contact block identifies HITS and gives cl@hindustanuniv.ac.in.","status":"UNREVIEWED","reviewState":"UNREVIEWED","stageable":true,"campusScope":"HITS Central Library, Padur, Kancheepuram District, Tamil Nadu.","publisherPeriod":"Public institutional contact page retrieved 21 November 2026; no publication date stated.","historical":false},
+    {"institutionSlug":"gitam-university","field":"structured","value":{"kind":"programme","programme":"B.Tech in Computer Science and Engineering","level":"UG"},"sourceIds":["b47-4"],"academicYear":null,"evidenceLocation":"Specialised Programmes, lines 38–50; B.Tech CSE listed on the Visakhapatnam School of CSE page.","status":"UNREVIEWED","reviewState":"UNREVIEWED","stageable":true,"campusScope":"GITAM School of Computer Science and Engineering, Visakhapatnam.","publisherPeriod":"Current official school page accessed 21 November 2026; programme-specific academic year and duration are not stated.","historical":false},
+    {"institutionSlug":"gitam-university","field":"structured","value":{"kind":"facility","facility":"Technology Exploration and Product Engineering Centre and Makerspace","description":"The Visakhapatnam School of Computer Science and Engineering page names the Technology Exploration and Product Engineering Centre and a Makerspace laboratory facility."},"sourceIds":["b47-5"],"academicYear":null,"evidenceLocation":"Infrastructure and Facilities, lines 101–111; page names the TEPE Centre and Makerspace, with the Makerspace described as a laboratory and experiential-learning facility.","status":"UNREVIEWED","reviewState":"UNREVIEWED","stageable":true,"campusScope":"GITAM School of Computer Science and Engineering, Visakhapatnam campus.","publisherPeriod":"Official page accessed 21 November 2026; no publication date or academic year stated.","historical":false},
+    {"institutionSlug":"gitam-university","field":"structured","value":{"kind":"contact","office":"Visakhapatnam Campus — All Other Enquiries","channel":"PHONE","contact":"08912840501"},"sourceIds":["b47-6"],"academicYear":null,"evidenceLocation":"Contact Us → Visakhapatnam, lines 120–141; All Other Enquiries phone 08912840501 and campus office address.","status":"UNREVIEWED","reviewState":"UNREVIEWED","stageable":true,"campusScope":"GITAM Visakhapatnam Campus, Gandhi Nagar, Rushikonda, Visakhapatnam, Andhra Pradesh.","publisherPeriod":"Official campus contact page accessed 21 November 2026; hours are stated on source page and no academic year applies.","historical":false},
+    {"institutionSlug":"ms-ramaiah-institute","field":"structured","value":{"kind":"facility","facility":"Engineering students' boys hostel","description":"The institute's hostel page lists single or double occupancy rooms, dining halls, recreation halls, indoor and outdoor games, and Wi-Fi for its boys hostel."},"sourceIds":["b47-7"],"academicYear":null,"evidenceLocation":"Boys Hostel, lines 35–50; hostel rules at lines 51–54 say RIT students are eligible for accommodation.","status":"UNREVIEWED","reviewState":"UNREVIEWED","stageable":true,"campusScope":"Ramaiah Institute of Technology engineering hostel; the source page does not specify a separate campus address.","publisherPeriod":"Official hostel page accessed 21 November 2026; no publication date or academic year stated.","historical":false},
+    {"institutionSlug":"ms-ramaiah-institute","field":"structured","value":{"kind":"contact","office":"Boys Hostel Office","channel":"EMAIL","contact":"hostel@msrit.edu"},"sourceIds":["b47-8"],"academicYear":null,"evidenceLocation":"Contact Us, lines 39–47; Boys Hostel section lists hostel@msrit.edu.","status":"UNREVIEWED","reviewState":"UNREVIEWED","stageable":true,"campusScope":"Ramaiah Institute of Technology Boys Hostel office.","publisherPeriod":"Official contact page accessed 21 November 2026; no publication date or academic year stated.","historical":false},
+    {"institutionSlug":"banaras-hindu-university","field":"structured","value":{"kind":"admission","programme":"Undergraduate programmes, academic session 2026-27","route":"CUET-UG 2026 score; registration through BHU admission portal","category":"Undergraduate","exam":"CUET-UG 2026"},"sourceIds":["b47-9"],"academicYear":"2026-27","evidenceLocation":"Public Notice published 9 July 2026, lines 17–28; registration through BHU portal lines 30–36; last date 25 July 2026 lines 41–45.","status":"UNREVIEWED","reviewState":"UNREVIEWED","stageable":true,"campusScope":"Banaras Hindu University, Varanasi; general undergraduate notice for academic session 2026-27.","publisherPeriod":"Historical 2026-27 admission notice. Registration deadline was 25 July 2026 and has elapsed","historical":true}
+  ],
+  "researchHolds": [
+    {"institutionSlug":"cochin-university","status":"RESEARCH_HOLD_SOURCE_UNAVAILABLE","reason":"The official CUSAT admissions course-list search result appeared relevant, but direct open returned HTTP 502 in this pass; no snippet-derived facts were staged."},
+    {"institutionSlug":"iit-jodhpur","status":"RESEARCH_HOLD_SOURCE_UNAVAILABLE","reason":"Official department pages timed out on direct retrieval during this pass; no search-result snippets used as evidence."},
+    {"institutionSlug":"jadavpur-university","status":"RESEARCH_HOLD_SOURCE_UNAVAILABLE","reason":"Official Jadavpur course/department pages returned direct-fetch timeouts; search-result snippets were not used as factual proof."},
+    {"institutionSlug":"nit-puducherry","status":"RESEARCH_HOLD_SOURCE_UNAVAILABLE","reason":"Official NIT Puducherry library page returned a direct-fetch timeout; no search-result excerpt used as proof."},
+    {"institutionSlug":"indian-institute-of-management-lucknow","status":"RESEARCH_HOLD_SOURCE_UNAVAILABLE","reason":"Official library page returned a direct-fetch timeout; no search-result excerpt used as proof."}
+  ],
+  "sourceUseNotes": "No blanket licence is inferred from public access. Only short, individual facts from directly opened first-party pages are candidates. Decision-critical values were excluded. Research candidates remain unreviewed; the BHU route is historical and its registration period is closed."
+}

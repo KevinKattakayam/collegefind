@@ -1,0 +1,660 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 46,
+  "researchedAt": "2026-11-21T16:16:32.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b46-1",
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "publisher": "National Institute of Technology Tiruchirappalli",
+      "title": "Academic Programmes",
+      "url": "https://nitt.edu/home/academics/programmes/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only a concise programme name and duration from the current official page are summarized with attribution. No bulk reproduction or blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Academic Programmes, lines 165–175: B.Tech is listed as an eight-semester programme and Computer Science and Engineering is one of its disciplines."
+      ]
+    },
+    {
+      "id": "b46-2",
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "publisher": "National Institute of Technology Tiruchirappalli, Central Library",
+      "title": "Central Library",
+      "url": "https://nitt.edu/home/students/facilitiesnservices/library/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Qualitative facility details only; conflicting library collection quantities are omitted. No bulk reproduction or blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Central Library, lines 157–170: the institute identifies a Digital Knowledge Centre and describes access to print/electronic resources and digital learning/research support."
+      ]
+    },
+    {
+      "id": "b46-3",
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "publisher": "National Institute of Technology Calicut, Department of Electrical Engineering",
+      "title": "Electrical Engineering Department profile",
+      "url": "https://nitc.ac.in/department/electrical-engineering",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Concise department facts only. Contact is a public departmental office address; no personal contact data is used and no blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Department profile, lines 530–549: department contact email; four-year B.Tech in Electrical and Electronics Engineering; department statement on laboratories and research facilities."
+      ]
+    },
+    {
+      "id": "b46-4",
+      "institutionSlug": "st-xaviers-college",
+      "publisher": "St. Xavier’s College, Mumbai",
+      "title": "Programmes",
+      "url": "https://xaviers.edu/academics/programmes/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "One concise official programme title is summarized with direct attribution. No bulk programme-list reproduction or blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Programmes, lines 38–58: undergraduate list includes B.Sc. Biotechnology & Computational Biology."
+      ]
+    },
+    {
+      "id": "b46-5",
+      "institutionSlug": "st-xaviers-college",
+      "publisher": "St. Xavier’s College, Mumbai",
+      "title": "Resources",
+      "url": "https://xaviers.edu/resources/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Qualitative facilities summary only. Conflicting or changeable quantities and staff names are omitted; no blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Resources → Library, lines 257–262: library print/electronic resources, online catalogue, reference collections and study spaces.",
+        "Resources → Knowledge Center, lines 269–271: solar-powered labs and computer-laboratory facility; quantity omitted."
+      ]
+    },
+    {
+      "id": "b46-6",
+      "institutionSlug": "st-xaviers-college",
+      "publisher": "St. Xavier’s College, Mumbai",
+      "title": "Resources — Contact and address",
+      "url": "https://xaviers.edu/resources/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Institutional public contact and address only; no individual staff contact is used. No blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Resources, lines 283–296: Mumbai campus postal address and General Queries email."
+      ]
+    },
+    {
+      "id": "b46-7",
+      "institutionSlug": "iiit-bangalore",
+      "publisher": "International Institute of Information Technology Bangalore",
+      "title": "Integrated M.Tech and 2026–27 admissions",
+      "url": "https://www.iiitb.ac.in/courses/btech-integrated-mtech",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only programme titles, cycle-labeled route, and campus assignment are summarized. Closed 2026–27 admissions are explicitly historical; no ranks, fees, eligibility thresholds, cutoffs or seat counts are republished. No blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Admissions announcements, lines 245–270 and 442–450: 2026–27 admissions closed; common application for B.Tech and Integrated M.Tech; institute states this route is not JoSAA; 2026 entrants are assigned to the Extension Campus."
+      ]
+    },
+    {
+      "id": "b46-8",
+      "institutionSlug": "indian-institute-of-technology-madras",
+      "publisher": "Indian Institute of Technology Madras",
+      "title": "Undergraduate Programmes",
+      "url": "https://www.iitm.ac.in/academics/study-at-iitm/undergraduate-programmes",
+      "academicYear": null,
+      "publicationDate": "2026-11-18T00:00:00.000Z",
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "A degree-duration statement and concise qualitative laboratory scope are reported. Source states a recent site update on 18 November 2026. No rankings, outcomes, numeric enrolment figures or blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Undergraduate Programmes, lines 197–199: B.Tech duration is four years.",
+        "Page overview, lines 192–193: institute page describes nearly 100 laboratories across engineering and pure sciences; count is retained as the source’s attributed wording, not an independent measurement.",
+        "Footer, line 423: page updated 2026-11-18."
+      ]
+    },
+    {
+      "id": "b46-9",
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "publisher": "Indian Institute of Technology Bombay, Academic Office",
+      "title": "Bachelors’ Programmes",
+      "url": "https://acad.iitb.ac.in/index.php/admissions/bachelors",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "One concise current programme name is summarized with attribution. Admission-route details were not released because no applicable cycle was stated on this page. No blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Bachelors’ Programmes, lines 18–31: B.Tech programme list includes Computer Science & Engineering."
+      ]
+    },
+    {
+      "id": "b46-10",
+      "institutionSlug": "indian-institute-of-technology-delhi",
+      "publisher": "Indian Institute of Technology Delhi, Department of Design",
+      "title": "B.Tech in Design",
+      "url": "https://design.iitd.ac.in/programmes/btech",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The programme is explicitly labeled as started in 2025–26 and displayed as historical, not represented as a current intake. The public departmental office contact is separately scoped. Intake counts and eligibility details are omitted. No blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "B.Tech in Design, lines 46–48: programme began in academic year 2025–26, is a four-year programme, and the page states the admissions basis.",
+        "Department office, lines 56–61: IIT Delhi department address and public office email."
+      ]
+    },
+    {
+      "id": "b46-11",
+      "institutionSlug": "national-institute-of-technology-warangal",
+      "publisher": "National Institute of Technology Warangal",
+      "title": "Academic Regulations of UG Programmes (effective 2024–25)",
+      "url": "https://nitw.ac.in/api/static/files/UG_Regulations_%282024-25%29_2024-7-17-11-36-22.pdf",
+      "academicYear": "2024-25",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "All content is explicitly historical to regulations effective 2024–25. Only one degree name and the general admission route are summarized; no category thresholds or seat data are copied. No blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "UG Regulations, page 1, lines 27–49: regulations effective 2024–25 list B.Tech Computer Science and Engineering.",
+        "UG Regulations, page 2, lines 57–69: 2024–25 rules describe first-year admission based on relative JEE Main performance under Ministry of Education guidance."
+      ]
+    },
+    {
+      "id": "b46-12",
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "publisher": "Motilal Nehru National Institute of Technology Allahabad",
+      "title": "Annual Report 2024–25",
+      "url": "https://mnnit.ac.in/images/newstories/2026/notices/Annual_Report_Audit_Report_for_the_year_2024-25_English.pdf",
+      "academicYear": "2024-25",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:16:32.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "The programme listing is historical to the 2024–25 Annual Report, not asserted as the current intake. Only a concise programme and duration statement is summarized. No enrolment, placement or financial values are copied. No blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Annual Report 2024–25, printed page 53, lines 2963–2976: B.Tech degree courses are stated as four years/eight semesters and Computer Science Engineering is listed."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Computer Science and Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b46-1"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "NIT Tiruchirappalli, undergraduate programme list; the page does not name a cohort.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Current official programme page; no academic year stated.",
+      "publisherPeriod": "Current official programme page; no academic year stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library Digital Knowledge Centre",
+        "description": "The Central Library identifies a Digital Knowledge Centre and describes print/electronic resources and digital learning and research support."
+      },
+      "sourceIds": [
+        "b46-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "NIT Tiruchirappalli Central Library.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Current official library page; dynamic collection quantities omitted.",
+      "publisherPeriod": "Current official library page; dynamic collection quantities omitted.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Electrical and Electronics Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b46-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Electrical Engineering Department, NIT Calicut; undergraduate programme.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official department profile; no current cohort stated.",
+      "publisherPeriod": "Official department profile; no current cohort stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Electrical Engineering laboratories and research facilities",
+        "description": "The department says it has laboratories and research facilities and reports ongoing maintenance and updates; no inventory or capacity is claimed."
+      },
+      "sourceIds": [
+        "b46-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Electrical Engineering Department, NIT Calicut.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official department profile; qualitative statement only.",
+      "publisherPeriod": "Official department profile; qualitative statement only.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Department of Electrical Engineering",
+        "channel": "EMAIL",
+        "contact": "hodeed@nitc.ac.in"
+      },
+      "sourceIds": [
+        "b46-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Public departmental contact, NIT Calicut.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official department profile; retrieval date only.",
+      "publisherPeriod": "Official department profile; retrieval date only.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "st-xaviers-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. Biotechnology & Computational Biology",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b46-4"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Undergraduate programme listing, St. Xavier’s College Mumbai.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official programme page; no academic year stated.",
+      "publisherPeriod": "Official programme page; no academic year stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "st-xaviers-college",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "College Library and Reference Library",
+        "description": "The college describes print and electronic academic resources, an online catalogue, reference collections, and study spaces."
+      },
+      "sourceIds": [
+        "b46-5"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "St. Xavier’s College Mumbai library.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official resources page; qualitative summary.",
+      "publisherPeriod": "Official resources page; qualitative summary.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "st-xaviers-college",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Xavier Knowledge Centre",
+        "description": "The college describes a knowledge centre with solar-powered computer laboratories supporting curriculum computer courses; quantities omitted."
+      },
+      "sourceIds": [
+        "b46-5"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "St. Xavier’s College Mumbai Knowledge Centre.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official resources page; quantities omitted.",
+      "publisherPeriod": "Official resources page; quantities omitted.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "st-xaviers-college",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "General Queries",
+        "channel": "EMAIL",
+        "contact": "webadmin@xaviers.edu"
+      },
+      "sourceIds": [
+        "b46-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Public general queries contact, St. Xavier’s College Mumbai.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official resources page; no service hours implied.",
+      "publisherPeriod": "Official resources page; no service hours implied.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "st-xaviers-college",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "College campus",
+        "channel": "ADDRESS",
+        "contact": "5, Mahapalika Marg, Mumbai, Maharashtra 400001"
+      },
+      "sourceIds": [
+        "b46-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "St. Xavier’s College Mumbai campus address.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official resources page; institutional campus, not a mailing guarantee.",
+      "publisherPeriod": "Official resources page; institutional campus, not a mailing guarantee.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iiit-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. in Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b46-7"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "IIIT Bangalore; programme listing within 2026–27 admissions page.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "2026–27 cycle page; admissions closed; programme listing is cycle-scoped.",
+      "publisherPeriod": "2026-27",
+      "historical": true
+    },
+    {
+      "institutionSlug": "iiit-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. in Electronics and Communication Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b46-7"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "IIIT Bangalore; programme listing within 2026–27 admissions page.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "2026–27 cycle page; admissions closed; programme listing is cycle-scoped.",
+      "publisherPeriod": "2026-27",
+      "historical": true
+    },
+    {
+      "institutionSlug": "iiit-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech and Integrated M.Tech programmes",
+        "route": "Common application process; the institute states applications are not through JoSAA",
+        "category": "2026–27 admission cycle (closed)",
+        "exam": "JEE Main or JEE Advanced"
+      },
+      "sourceIds": [
+        "b46-7"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "IIIT Bangalore; 2026–27 undergraduate admissions.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official 2026–27 admission cycle; explicitly closed.",
+      "publisherPeriod": "2026-27",
+      "historical": true
+    },
+    {
+      "institutionSlug": "iiit-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "IIITB Extension Campus assignment for 2026 entrants",
+        "description": "The institute states that students entering B.Tech and Integrated M.Tech in 2026 will be accommodated at its Extension Campus."
+      },
+      "sourceIds": [
+        "b46-7"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "IIIT Bangalore Extension Campus assignment for 2026 B.Tech and Integrated M.Tech entrants.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official 2026–27 cycle notice; not a general campus guarantee.",
+      "publisherPeriod": "2026-27",
+      "historical": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-madras",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Technology (B.Tech)",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b46-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "IIT Madras undergraduate programmes.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official page updated 2026-11-18; page does not specify an academic-year cohort.",
+      "publisherPeriod": "Official page updated 2026-11-18; page does not specify an academic-year cohort.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-madras",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Laboratories across engineering and pure sciences",
+        "description": "IIT Madras describes nearly 100 laboratories across engineering and pure sciences; this is the source’s attributed figure, not an independent count."
+      },
+      "sourceIds": [
+        "b46-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "IIT Madras institute-wide; engineering and pure-sciences disciplines.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official page updated 2026-11-18; count reflects publisher wording.",
+      "publisherPeriod": "Official page updated 2026-11-18; count reflects publisher wording.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b46-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "IIT Bombay undergraduate B.Tech list.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official Academic Office page; no admission cycle stated.",
+      "publisherPeriod": "Official Academic Office page; no admission cycle stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Design",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b46-10"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "IIT Delhi Department of Design.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Programme page states started in academic year 2025–26; historical listing.",
+      "publisherPeriod": "2025-26",
+      "historical": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Department of Design Office",
+        "channel": "EMAIL",
+        "contact": "dodoffice@admin.iitd.ac.in"
+      },
+      "sourceIds": [
+        "b46-10"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Public office contact, IIT Delhi Department of Design, Hauz Khas campus.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Official department programme page; contact attribution only.",
+      "publisherPeriod": "Official department programme page; contact attribution only.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-warangal",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b46-11"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "NIT Warangal undergraduate regulations.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Regulations effective 2024–25; explicitly historical.",
+      "publisherPeriod": "2024-25",
+      "historical": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-warangal",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Undergraduate first-year programmes",
+        "route": "Admission based on relative performance in JEE Main under Ministry of Education guidance",
+        "category": "2024–25 undergraduate admission regulations",
+        "exam": "JEE Main"
+      },
+      "sourceIds": [
+        "b46-11"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "NIT Warangal first-year UG admissions under 2024–25 regulations.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Regulations effective 2024–25; explicitly historical.",
+      "publisherPeriod": "2024-25",
+      "historical": true
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Computer Science Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b46-12"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "MNNIT Allahabad annual report programme listing.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Annual Report 2024–25; explicitly historical, not a current intake statement.",
+      "publisherPeriod": "2024-25",
+      "historical": true
+    }
+  ],
+  "researchHolds": [
+    {
+      "institutionSlug": "iiit-hyderabad",
+      "status": "RESEARCH_HOLD_FRESHNESS",
+      "reason": "Official academic-programme page was directly readable but search indexing indicated an older page and it contains explicitly suspended/not-current programme listings; no current programme fact was released from that page."
+    },
+    {
+      "institutionSlug": "nit-calicut",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "The official central library UG-programmes page returned an access error on direct open in this pass; no search excerpt was used as proof. Programme, department facility and departmental email facts instead use the directly opened NITC Electrical Engineering page."
+    }
+  ]
+}

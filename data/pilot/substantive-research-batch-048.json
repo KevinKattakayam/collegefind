@@ -1,0 +1,247 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 48,
+  "researchedAt": "2026-11-21T17:50:15.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b48-1",
+      "institutionSlug": "central-university-of-rajasthan",
+      "publisher": "Central University of Rajasthan",
+      "title": "Admission Newsletter 2025-26 — Admission 2026-27",
+      "url": "https://www.curaj.ac.in/sites/default/files/Admission%20Newsletter%202025-26.pdf",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:50:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "Only short factual programme/route values with direct attribution are extracted; no PDF table or prose is reproduced and no blanket redistribution permission is inferred.",
+      "evidenceLocations": [
+        "PDF lines 2-10: Admission 2026-27 heading, CUET (UG)/CUET (PG) 2026 route by NTA, four-year B.Sc. programme and listed subjects including Computer Science."
+      ]
+    },
+    {
+      "id": "b48-2",
+      "institutionSlug": "central-university-of-rajasthan",
+      "publisher": "Central University of Rajasthan, Admissions",
+      "title": "Admissions — Admission/Counselling Contact Details",
+      "url": "https://curaj.ac.in/admissions",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:50:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Public admissions-office mailbox only; no personal contact information or blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Admissions page lines 40-44: section titled Contact details regarding Admission/Counselling Queries lists admission@curaj.ac.in."
+      ]
+    },
+    {
+      "id": "b48-3",
+      "institutionSlug": "mysore-university",
+      "publisher": "University of Mysore, Academic Section",
+      "title": "Fee Structure for UG and PG Admission 2026-27 — School of Planning and Architecture",
+      "url": "https://uni-mysore.ac.in/english-version/sites/default/files/content/Fee%20Structure%20for%20UG%20and%20PG%20Admission-Affiliation-Examination-Certificates-Research%20Centres-Specialized%20Programs%20for%20the%20year%202026-27.pdf",
+      "academicYear": "2026-27",
+      "publicationDate": "2026-04-09T00:00:00.000Z",
+      "retrievedAt": "2026-11-21T17:50:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "Only the non-financial programme title/duration and Registrar mailbox are extracted. Fee amounts and tables are not copied or published; source access does not establish blanket redistribution rights.",
+      "evidenceLocations": [
+        "PDF lines 12-16 date and identify the 2026-27 fee schedule; lines 34-57 identify the School of Planning and Architecture at Senate Bhavan/MGM, Mysore; printed page 14, lines 1104-1108 list the five-year B.Arch course.",
+        "PDF lines 0-10 identify the University of Mysore Registrar mailbox and Crawford Hall address."
+      ]
+    },
+    {
+      "id": "b48-4",
+      "institutionSlug": "jain-university",
+      "publisher": "JAIN (Deemed-to-be University), Admissions",
+      "title": "Apply to JAIN (Deemed-to-be University) for Admissions",
+      "url": "https://www.jainuniversity.ac.in/admission",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:50:15.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only concise cycle-route and public institutional contact facts are extracted. Application portal URLs are not copied into this profile claim; no blanket reuse permission is inferred.",
+      "evidenceLocations": [
+        "Admissions page lines 64-70 and 77-89: separate UG, PG, MBA and B.Tech portal links and the Admissions 2026-27 heading.",
+        "Admissions page lines 117-123: JAIN University Bengaluru address, main office phone and admissions mailbox as rendered by the publisher."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "central-university-of-rajasthan",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. Computer Science",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b48-1"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Admission Newsletter PDF lines 2-10: four-year B.Sc. programme; Computer Science appears in the listed subjects under the 2026-27 admission heading.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Central University of Rajasthan; the institution-wide admissions newsletter does not identify a programme-specific campus.",
+      "publisherPeriod": "Historical 2026-27 admissions newsletter; this is not a current-cycle guarantee.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "central-university-of-rajasthan",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Undergraduate and postgraduate programmes",
+        "route": "Admission for 2026-27 was through CUET (UG) and CUET (PG) 2026 conducted by the National Testing Agency.",
+        "category": "Academic session 2026-27",
+        "exam": "CUET (UG)/CUET (PG) 2026"
+      },
+      "sourceIds": [
+        "b48-1"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Admission Newsletter PDF lines 2-4: 2026-27 heading and CUET (UG)/CUET (PG) 2026 conducted by NTA.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Central University of Rajasthan, institution-wide 2026-27 UG/PG admissions notice; programme-specific campus scope is not stated.",
+      "publisherPeriod": "Historical admission route for academic session 2026-27; no current application window is implied.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "central-university-of-rajasthan",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Admissions and Counselling Queries",
+        "channel": "EMAIL",
+        "contact": "admission@curaj.ac.in"
+      },
+      "sourceIds": [
+        "b48-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Admissions page, Contact details regarding Admission/Counselling Queries section, lines 40-44.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Central University of Rajasthan admissions office; general admissions/counselling mailbox, not a programme-specific contact.",
+      "publisherPeriod": "Official admissions contact page checked 21 November 2026; no academic year applies.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "mysore-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Architecture (B.Arch.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "b48-3"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "2026-27 University of Mysore schedule, printed page 14, lines 1104-1108: School of Planning and Architecture B.Arch (5 Year Program).",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University of Mysore, School of Planning and Architecture, Senate Bhavan/MGM, Mysore; programme is school-scoped.",
+      "publisherPeriod": "Applicable to the 2026-27 schedule; the document is dated 9 April 2026.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "mysore-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Registrar's Office",
+        "channel": "EMAIL",
+        "contact": "registrar@uni-mysore.ac.in"
+      },
+      "sourceIds": [
+        "b48-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "University of Mysore 2026-27 schedule, lines 0-10: Registrar's office mailbox and Crawford Hall, Mysore address.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University-level Registrar's Office, Crawford Hall, Mysore; not an admissions-specific mailbox.",
+      "publisherPeriod": "Official University PDF dated 9 April 2026; general Registrar contact.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "jain-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "UG, PG, MBA and B.Tech applications",
+        "route": "The official admissions page lists separate UG, PG, MBA and B.Tech application portals.",
+        "category": "Admission page labeled 2026-27"
+      },
+      "sourceIds": [
+        "b48-4"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Admissions page lines 64-70 and 77-89: UG/PG/MBA/B.Tech portal links and Admissions 2026-27 heading; availability of the application windows is not stated.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "JAIN (Deemed-to-be University), Bengaluru institutional admissions page; it does not specify the portal's campus assignment.",
+      "publisherPeriod": "Historical/cycle-scoped 2026-27 page; the source does not confirm an open application window.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "jain-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "JAIN University Admissions",
+        "channel": "PHONE",
+        "contact": "080 - 69279444"
+      },
+      "sourceIds": [
+        "b48-4"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Admissions page lines 117-123; public university main office phone adjacent to the Bengaluru address and admissions mailbox.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "JAIN University, #44/4 District Fund Road, Jayanagar 9th Block, Bengaluru; main office contact.",
+      "publisherPeriod": "Official admissions page checked 21 November 2026; no academic year applies to the contact.",
+      "historical": false
+    }
+  ],
+  "researchHolds": [
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official NIT Jamshedpur admissions page direct open returned only a JavaScript shell, so search-indexed programme/admission summaries were not used as factual evidence."
+    },
+    {
+      "institutionSlug": "mizoram-university",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official 2026-27 admissions notice returned HTTP 502 during direct open; search results were not used as proof."
+    },
+    {
+      "institutionSlug": "cochin-university",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official CUSAT admissions listing and engineering-college page returned HTTP 502/timeouts in direct opens; no snippet-derived facts were published."
+    }
+  ],
+  "sourceUseNotes": "No blanket licence is inferred. Only concise, individually attributed facts from directly opened official sources are candidates. High-impact fees and eligibility details are not published; the 2026-27 University of Mysore fee schedule's amounts remain outside the source-reported layer. Historical admissions routes are clearly cycle-labeled.",
+  "candidateHolds": [
+    {
+      "institutionSlug": "jain-university",
+      "field": "contact.email",
+      "value": "admissions(at)jainuniversity.ac.in",
+      "status": "RESEARCH_HOLD_CONTACT_FORMAT",
+      "reason": "The official page obfuscates the mailbox as admissions(at)jainuniversity.ac.in. This is retained verbatim in source notes but not normalized into a clickable/email-validated contact claim."
+    }
+  ]
+}

@@ -10,7 +10,8 @@ test('source-reported facts render in their sections with campus, scope and prov
   const browserCheckDate = new Date();
   // The owner-stage scenario mutates these two institutions in its separate rehearsal.
   const main = page.getByRole('main');
-  const newSlugs = new Set(policy.records.filter(({ ref }) => ref.startsWith('batch-44:')).map(({ slug }) => slug));
+  const newSlugs = new Set(policy.records.filter(({ ref }) =>
+    ref.startsWith('batch-45:') || ref.startsWith('batch-46:') || ref.startsWith('batch-47:') || ref.startsWith('batch-48:')).map(({ slug }) => slug));
   for (const college of ledger.institutions) {
     const response = await request.get(`/colleges/${college.slug}`);
     expect(response.ok(), `${college.slug} should render`).toBe(true);
@@ -80,6 +81,7 @@ test('source-reported facts render in their sections with campus, scope and prov
         await expect(card).toContainText(historyLabel);
         if (item.publisherPeriod) await expect(card).toContainText(item.publisherPeriod);
       }
+      if (item.ref === 'batch-47:8') await expect(card).not.toContainText('elapsed..');
       if (item.academicYear !== null) await expect(card).toContainText(String(item.publisherPeriod ?? item.academicYear));
       await expect(card.getByText('Source-reported; not independently verified', { exact: true })).toBeVisible();
       await expect(card).toContainText(item.campus);

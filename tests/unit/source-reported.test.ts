@@ -4,6 +4,10 @@ import archive from '../../data/pilot/staged-evidence-after-batch-027.json';
 import ledger from '../../docs/DATA_COVERAGE.json';
 import batch43 from '../../data/pilot/substantive-research-batch-043.json';
 import batch44 from '../../data/pilot/substantive-research-batch-044.json';
+import batch45 from '../../data/pilot/substantive-research-batch-045.json';
+import batch46 from '../../data/pilot/substantive-research-batch-046.json';
+import batch47 from '../../data/pilot/substantive-research-batch-047.json';
+import batch48 from '../../data/pilot/substantive-research-batch-048.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
 
@@ -17,7 +21,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(161);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(173);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
@@ -200,6 +204,150 @@ describe('source-reported profile eligibility', () => {
     expect(batch44.candidateClaims.find(({ institutionSlug, value }) =>
       institutionSlug === 'iiit-gwalior' && value.kind === 'admission'))
       .toMatchObject({ stageable: false, status: 'RESEARCH_HOLD_DUPLICATE_ARCHIVED_EVIDENCE' });
+  });
+
+  it('publishes Batch 045 across five formerly basic colleges with explicit scope and holds access-blocked sources', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-45:'));
+    expect(rows).toHaveLength(15);
+    expect(new Set(rows.map(({ slug }) => slug)).size).toBe(5);
+    expect(rows.every(({ status, basis, usageAssessment, fingerprint, ref }) =>
+      status === 'PUBLISH' && basis === 'ATTRIBUTED_INDIVIDUAL_FACT' && usageAssessment.length > 30 &&
+      sourceReportedFingerprint(ref) === fingerprint)).toBe(true);
+    expect(rows.some(({ status }) => status === 'VERIFIED')).toBe(false);
+
+    const bySlug = (slug: string) => rows.filter((row) => row.slug === slug);
+    expect(bySlug('nit-manipur')).toHaveLength(3);
+    expect(bySlug('iit-bhilai')).toHaveLength(4);
+    expect(bySlug('iiit-delhi')).toHaveLength(1);
+    expect(bySlug('birla-institute-of-technology-mesra')).toHaveLength(2);
+    expect(bySlug('woxsen-university')).toHaveLength(5);
+
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    expect(facts).toHaveLength(15);
+    expect(facts.filter(({ value }) => value.kind === 'programme')).toHaveLength(4);
+    expect(facts.filter(({ value }) => value.kind === 'facility')).toHaveLength(6);
+    expect(facts.filter(({ value }) => value.kind === 'admission')).toHaveLength(1);
+    expect(facts.filter(({ value }) => value.kind === 'contact')).toHaveLength(4);
+    expect(facts.find(({ ref }) => ref === 'batch-45:4')).toMatchObject({
+      academicYear: '2026-27', historical: true, publisherPeriod: '2026-27', status: 'OFFICIAL_SOURCE_REPORTED',
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-45:8')).toMatchObject({
+      campus: expect.stringContaining('main campus, Ranchi'), value: { kind: 'programme', durationMonths: 48 },
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-45:11')?.value).toMatchObject({ kind: 'facility' });
+    expect(batch45.candidateClaims).toHaveLength(15);
+    expect(batch45.candidateClaims.every(({ stageable, reviewState, status }) =>
+      stageable && reviewState === 'UNREVIEWED' && status === 'UNREVIEWED')).toBe(true);
+    for (const slug of ['indian-institute-of-management-bangalore', 'osmania-university', 'iiit-sri-city', 'ict-mumbai', 'iit-dharwad', 'nit-srinagar', 'punjab-technical-university']) {
+      expect(batch45.researchHolds.some((hold) => hold.institutionSlug === slug)).toBe(true);
+      expect(rows.some((row) => row.slug === slug)).toBe(false);
+    }
+    expect(rows.every(({ slug }) => !['indian-institute-of-management-bangalore', 'osmania-university', 'iiit-sri-city', 'ict-mumbai', 'iit-dharwad', 'nit-srinagar', 'punjab-technical-university'].includes(slug))).toBe(true);
+  });
+
+  it('adds Batch 046 scoped programme, facility, contact and historical facts across nine colleges', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-46:'));
+    expect(rows).toHaveLength(22);
+    expect(new Set(rows.map(({ slug }) => slug)).size).toBe(9);
+    for (const { status, basis, fingerprint, ref } of rows) {
+      expect(status, ref).toBe('PUBLISH');
+      expect(basis, ref).toBe('ATTRIBUTED_INDIVIDUAL_FACT');
+      expect(sourceReportedFingerprint(ref), ref).toBe(fingerprint);
+    }
+
+    const counts: Record<string, number> = {};
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    expect(facts).toHaveLength(22);
+    for (const { value } of facts) counts[value.kind] = (counts[value.kind] ?? 0) + 1;
+    expect(counts).toEqual({ programme: 10, facility: 6, contact: 4, admission: 2 });
+
+    for (const ref of ['batch-46:10', 'batch-46:11', 'batch-46:12', 'batch-46:13',
+      'batch-46:17', 'batch-46:19', 'batch-46:20', 'batch-46:21']) {
+      expect(facts.find((fact) => fact.ref === ref)?.historical, ref).toBe(true);
+    }
+    expect(facts.find(({ ref }) => ref === 'batch-46:12')).toMatchObject({
+      academicYear: '2026-27', publisherPeriod: '2026-27', value: { kind: 'admission' },
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-46:20')).toMatchObject({
+      academicYear: '2024-25', publisherPeriod: '2024-25', value: { kind: 'admission' },
+    });
+    expect(batch46.candidateClaims.every(({ stageable, reviewState, status }) =>
+      stageable && reviewState === 'UNREVIEWED' && status === 'UNREVIEWED')).toBe(true);
+    expect(batch46.researchHolds.some(({ institutionSlug }) => institutionSlug === 'iiit-hyderabad')).toBe(true);
+  });
+
+  it('adds Batch 047 facts from directly inspected official pages with historical-cycle labeling', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-47:'));
+    expect(rows).toHaveLength(9);
+    expect(new Set(rows.map(({ slug }) => slug)).size).toBe(4);
+    for (const { status, basis, fingerprint, ref } of rows) {
+      expect(status, ref).toBe('PUBLISH');
+      expect(basis, ref).toBe('ATTRIBUTED_INDIVIDUAL_FACT');
+      expect(sourceReportedFingerprint(ref), ref).toBe(fingerprint);
+    }
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    expect(facts).toHaveLength(9);
+    expect(facts.filter(({ value }) => value.kind === 'programme')).toHaveLength(2);
+    expect(facts.filter(({ value }) => value.kind === 'facility')).toHaveLength(3);
+    expect(facts.filter(({ value }) => value.kind === 'contact')).toHaveLength(3);
+    expect(facts.filter(({ value }) => value.kind === 'admission')).toHaveLength(1);
+    expect(facts.every(({ status }) => status === 'OFFICIAL_SOURCE_REPORTED')).toBe(true);
+    expect(facts.find(({ ref }) => ref === 'batch-47:8')).toMatchObject({
+      academicYear: '2026-27', historical: true, status: 'OFFICIAL_SOURCE_REPORTED',
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-47:8')?.value).toMatchObject({
+      kind: 'admission', exam: 'CUET-UG 2026', category: 'Undergraduate',
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-47:8')?.publisherPeriod).not.toContain('elapsed..');
+    expect(batch47.candidateClaims).toHaveLength(9);
+    expect(batch47.candidateClaims.every(({ stageable, reviewState, status }) =>
+      stageable && reviewState === 'UNREVIEWED' && status === 'UNREVIEWED')).toBe(true);
+    for (const slug of ['cochin-university', 'iit-jodhpur', 'jadavpur-university', 'nit-puducherry', 'indian-institute-of-management-lucknow']) {
+      expect(batch47.researchHolds.some((hold) => hold.institutionSlug === slug)).toBe(true);
+      expect(rows.some((row) => row.slug === slug)).toBe(false);
+    }
+  });
+
+  it('adds Batch 048 programme, cycle-route and official contact facts across three previously basic colleges', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-48:'));
+    expect(rows).toHaveLength(7);
+    expect(new Set(rows.map(({ slug }) => slug))).toEqual(new Set(['central-university-of-rajasthan', 'mysore-university', 'jain-university']));
+    for (const { status, basis, fingerprint, ref } of rows) {
+      expect(status, ref).toBe('PUBLISH');
+      expect(basis, ref).toBe('ATTRIBUTED_INDIVIDUAL_FACT');
+      expect(sourceReportedFingerprint(ref), ref).toBe(fingerprint);
+    }
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    expect(facts).toHaveLength(7);
+    expect(facts.filter(({ value }) => value.kind === 'programme')).toHaveLength(2);
+    expect(facts.filter(({ value }) => value.kind === 'admission')).toHaveLength(2);
+    expect(facts.filter(({ value }) => value.kind === 'contact')).toHaveLength(3);
+    expect(facts.every(({ status }) => status === 'OFFICIAL_SOURCE_REPORTED')).toBe(true);
+    expect(facts.find(({ ref }) => ref === 'batch-48:0')).toMatchObject({
+      academicYear: '2026-27', historical: true, value: { kind: 'programme', durationMonths: 48 },
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-48:1')).toMatchObject({
+      academicYear: '2026-27', historical: true, value: { kind: 'admission', exam: 'CUET (UG)/CUET (PG) 2026' },
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-48:3')).toMatchObject({
+      academicYear: '2026-27', historical: false, campus: expect.stringContaining('School of Planning and Architecture'),
+      value: { kind: 'programme', durationMonths: 60 },
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-48:5')).toMatchObject({
+      academicYear: '2026-27', historical: true, value: { kind: 'admission' },
+    });
+    expect(batch48.candidateClaims).toHaveLength(7);
+    expect(batch48.candidateClaims.every(({ stageable, reviewState, status }) =>
+      stageable && reviewState === 'UNREVIEWED' && status === 'UNREVIEWED')).toBe(true);
+    expect(batch48.candidateHolds.some(({ field, status }) => field === 'contact.email' && status === 'RESEARCH_HOLD_CONTACT_FORMAT')).toBe(true);
+    for (const slug of ['nit-jamshedpur', 'mizoram-university']) {
+      expect(batch48.researchHolds.some(({ institutionSlug }) => institutionSlug === slug)).toBe(true);
+      expect(rows.some(({ slug: published }) => published === slug)).toBe(false);
+    }
   });
 
   it('adds the Batch 040 breadth slice with distinct categories, source attribution and historical labels', () => {
