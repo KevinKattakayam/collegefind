@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import policy from '../../data/pilot/source-reported-release.json';
 import archive from '../../data/pilot/staged-evidence-after-batch-027.json';
 import ledger from '../../docs/DATA_COVERAGE.json';
+import batch43 from '../../data/pilot/substantive-research-batch-043.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
 
@@ -15,13 +16,51 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(135);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(142);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
         url: row.sourceUrl, campus: row.campus, status: 'OFFICIAL_SOURCE_REPORTED', evidenceLocation: expect.any(String),
       });
     }
+  });
+
+  it('publishes Batch 043 with year/campus provenance and keeps the unsupported historical route held', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-43:'));
+    expect(rows).toHaveLength(27);
+    expect(rows.every(({ status }) => status === 'PUBLISH')).toBe(true);
+    expect(rows.every(({ basis, usageAssessment, expiresAt }) =>
+      basis === 'ATTRIBUTED_INDIVIDUAL_FACT' && usageAssessment.length > 20 && Date.parse(expiresAt) > +now)).toBe(true);
+    expect(rows.some(({ status }) => status === 'VERIFIED')).toBe(false);
+    expect(rows.some(({ ref }) => ref === 'batch-43:23')).toBe(false);
+    expect(batch43.researchHolds.some(({ candidateIndex, reason }) =>
+      candidateIndex === 23 && reason.includes('does not establish a precise admission academic cycle'))).toBe(true);
+
+    const bySlug = (slug: string) => rows.filter((row) => row.slug === slug);
+    expect(bySlug('jamia-millia-islamia')).toHaveLength(6);
+    expect(bySlug('symbiosis-international-university')).toHaveLength(3);
+    expect(bySlug('symbiosis-law-school')).toHaveLength(5);
+    expect(bySlug('iiit-jabalpur')).toHaveLength(5);
+    expect(bySlug('gnlu-gandhinagar')).toHaveLength(3);
+    expect(bySlug('lady-hardinge-medical-college')).toHaveLength(2);
+    expect(bySlug('nit-arunachal-pradesh')).toHaveLength(3);
+
+    const gnlu = bySlug('gnlu-gandhinagar');
+    expect(gnlu.every(({ historical, publisherPeriod }) =>
+      historical && publisherPeriod?.includes('academic year is not stated'))).toBe(true);
+    const gnluFacts = eligibleSourceReported({ id: gnlu[0].collegeId, slug: gnlu[0].slug }, now)
+      .filter(({ ref }) => ref.startsWith('batch-43:'));
+    expect(gnluFacts.every(({ academicYear, historical }) => academicYear === null && historical)).toBe(true);
+    const lhmc = bySlug('lady-hardinge-medical-college');
+    expect(lhmc.every(({ historical }) => historical)).toBe(true);
+    const lhmcFacts = eligibleSourceReported({ id: lhmc[0].collegeId, slug: lhmc[0].slug }, now)
+      .filter(({ ref }) => ref.startsWith('batch-43:'));
+    expect(lhmcFacts.every(({ academicYear, historical }) => academicYear === null && historical)).toBe(true);
+    const jmiRows = bySlug('jamia-millia-islamia');
+    const jmiAdmission = eligibleSourceReported({ id: jmiRows[0].collegeId, slug: jmiRows[0].slug }, now)
+      .find(({ ref }) => ref === 'batch-43:3');
+    expect(jmiAdmission).toMatchObject({ academicYear: '2026-27', historical: true, status: 'OFFICIAL_SOURCE_REPORTED' });
+    expect(rows.every(({ status }) => status === 'PUBLISH')).toBe(true);
   });
 
   it('publishes new degree listings with their exact period without implying human verification', () => {

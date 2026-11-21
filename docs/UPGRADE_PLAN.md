@@ -249,3 +249,7 @@ Batch 041 adds ten official-source observations across three previously basic pr
 ### Batch 042 student profile follow-up
 
 The host webpack build and archive-backed browser workflow cleared the Batch 040–041 verification gap. Batch 042 publishes eight more profiles through the existing source-reported pipeline. Current coverage is 135/205 substantive profiles, including 45 with multiple categories. Continue research across the remaining 70 basic profiles and use the existing human review packet for fees, eligibility, aid and outcomes.
+
+### Content increment: Batch 043
+
+Seven previously identity/link-only profiles now display 27 source-attributed details through the existing profile renderer. This is source-reported content, not human-verified evidence: 23 programme listings, one historical admissions route, one historical library schedule and two contacts. Coverage moved from 135 to 142 substantive profiles, 45 to 47 multi-category profiles, and 70 to 63 basic-only profiles. The year was not inferred for historical pages that did not state one; one LHMC route candidate is held because its admission cycle is unspecified. Archived evidence remains at 377 claims, genuine human approvals at zero, and cutoff records at zero. Continue broadening accurate current-cycle admissions, facilities and contact information across the remaining 63 basic profiles while preparing decision-critical facts for genuine reviewer inspection.

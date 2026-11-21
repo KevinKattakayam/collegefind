@@ -3,6 +3,7 @@ import { expect, test } from '@playwright/test';
 import policy from '../../data/pilot/source-reported-release.json';
 import ledger from '../../docs/PROFILE_COMPLETENESS.json';
 import batch42 from '../../data/pilot/substantive-research-batch-042.json';
+import batch43 from '../../data/pilot/substantive-research-batch-043.json';
 import { eligibleSourceReported } from '../../src/server/source-reported';
 
 test('source-reported facts render in their sections with campus, scope and provenance', async ({ page, request, isMobile }) => {
@@ -10,7 +11,7 @@ test('source-reported facts render in their sections with campus, scope and prov
   test.setTimeout(240_000);
   // The owner-stage scenario mutates these two institutions in its separate rehearsal.
   const main = page.getByRole('main');
-  const newSlugs = new Set(batch42.candidateClaims.map(({ institutionSlug }) => institutionSlug));
+  const newSlugs = new Set([...batch42.candidateClaims, ...batch43.candidateClaims].map(({ institutionSlug }) => institutionSlug));
   for (const college of ledger.institutions) {
     const response = await request.get(`/colleges/${college.slug}`);
     expect(response.ok(), `${college.slug} should render`).toBe(true);

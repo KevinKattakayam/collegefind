@@ -1,0 +1,762 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 43,
+  "researchedAt": "2026-11-21T17:35:50.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b43-1",
+      "institutionSlug": "jamia-millia-islamia",
+      "publisher": "Jamia Millia Islamia, Office of the Chief Public Relations Officer",
+      "title": "Press Release: Prospectus for Academic Session 2026–27",
+      "url": "https://www.jmi.ac.in/upload/publication/pr2_English_2026February20.pdf",
+      "academicYear": "2026-27",
+      "publicationDate": "2026-02-20T00:00:00.000Z",
+      "retrievedAt": "2026-11-21T17:35:50.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise programme names and routes attributed to the official release; no source prose, tables, eligibility criteria, fees or ranking content reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Press Release, dated 20 February 2026 · list of newly introduced programmes for academic session 2026–27"
+      ]
+    },
+    {
+      "id": "b43-2",
+      "institutionSlug": "jamia-millia-islamia",
+      "publisher": "Jamia Millia Islamia, Faculty of Engineering and Technology",
+      "title": "List of Programmes",
+      "url": "https://www.jmi.ac.in/ACADEMICS/Faculty-Of-Studies/Faculty-Of-Engineering-And-Technology/List-Of-Programmes",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:35:50.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only individual contact facts and source attribution recorded. Contact details are not independently verified; no blanket reproduction or reuse licence inferred.",
+      "evidenceLocations": [
+        "Page footer · Jamia Millia Islamia, Jamia Nagar, New Delhi address and main switchboard"
+      ]
+    },
+    {
+      "id": "b43-3",
+      "institutionSlug": "jamia-millia-islamia",
+      "publisher": "Jamia Millia Islamia",
+      "title": "University Prospectus 2026–2027",
+      "url": "https://admission.jmi.ac.in/application/assets/pdfFile/prospectus/UniversityProspectus/University_Prospectus_2026_2027.pdf",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:35:50.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Historical admission route only, with the stated year and official attribution. No thresholds, source prose or bulk document content reproduced; no blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Prospectus 2026–27, printed p.22, section 2.1.2(a), steps (i)–(iv): JEE Main 2026 and Jamia form/selection-list sequence"
+      ]
+    },
+    {
+      "id": "b43-4",
+      "institutionSlug": "symbiosis-international-university",
+      "publisher": "Symbiosis International (Deemed University)",
+      "title": "Academic Calendar 2026–2027",
+      "url": "https://apps.siu.edu.in/acadcal/webview/2026-2027",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:35:50.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Individual programme names attributed to the official 2026–27 calendar. Each item retains the constituent institute and campus scope. No blanket reproduction or reuse licence inferred.",
+      "evidenceLocations": [
+        "Academic Calendar · Year 2026–2027 · constituent institute programme listings"
+      ]
+    },
+    {
+      "id": "b43-5",
+      "institutionSlug": "symbiosis-law-school",
+      "publisher": "Symbiosis International (Deemed University), Symbiosis Law School Pune",
+      "title": "Academic Calendar 2026–2027",
+      "url": "https://apps.siu.edu.in/acadcal/webview/2026-2027",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:35:50.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Individual programme names attributed to the official 2026–27 calendar. Scope is explicitly Symbiosis Law School, Pune. No blanket reproduction or reuse licence inferred.",
+      "evidenceLocations": [
+        "Academic Calendar · Year 2026–2027 · Symbiosis Law School, Pune listing"
+      ]
+    },
+    {
+      "id": "b43-6",
+      "institutionSlug": "iiit-jabalpur",
+      "publisher": "Indian Institute of Information Technology, Design and Manufacturing Jabalpur",
+      "title": "Offered Programmes",
+      "url": "https://www.iiitdmj.ac.in/academics/programme.php",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:35:50.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Concise individual programme names and duration attributed to the current official programme page; no source prose or tables copied. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Offered Programmes · Undergraduate Programme · four-year B.Tech list"
+      ]
+    },
+    {
+      "id": "b43-7",
+      "institutionSlug": "gnlu-gandhinagar",
+      "publisher": "Gujarat National Law University",
+      "title": "Under Graduate Programme",
+      "url": "https://gnlu.ac.in/GNLU/Under-Graduate-Programme",
+      "academicYear": null,
+      "publicationDate": "2024-08-16T00:00:00.000Z",
+      "retrievedAt": "2026-11-21T17:35:50.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Historical programme names and duration only, with direct attribution. The page footer says last updated 16 August 2024; this is not represented as a current offering. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Under Graduate Programme · five-year integrated law-programme heading and programme variants; page footer last updated 16-08-2024"
+      ]
+    },
+    {
+      "id": "b43-8",
+      "institutionSlug": "lady-hardinge-medical-college",
+      "publisher": "Lady Hardinge Medical College and Associated Hospitals",
+      "title": "Annual Report 2024",
+      "url": "https://lhmc-hosp.gov.in/WriteReadData/Suo-MotoDisclosure/Annexures/Annexure-16-LHMCAnnualReport_2023.pdf",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:35:50.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Historical programme, admission-route and library details from the 2024 annual report, with exact scope and period. No fees, eligibility thresholds, seat totals or outcomes are published by this batch. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Annual Report 2024, p. xvii, MBBS course/duration/examination table; p.31, library working-hours section"
+      ]
+    },
+    {
+      "id": "b43-9",
+      "institutionSlug": "nit-arunachal-pradesh",
+      "publisher": "National Institute of Technology Arunachal Pradesh, Academic Section",
+      "title": "B.Tech Rules and Regulations (applicable from 2022 batch onwards)",
+      "url": "https://www.nitap.ac.in/storage/pdf/8335b1b7540ed0d6ecfff4699f079da4-03-38-11_FINAL.pdf",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:35:50.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Historical 2022-batch programme listings only, clearly labeled historical. Admission rules, eligibility, fees, seat data and current availability are not asserted. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "B.Tech Rules and Regulations · document states applicability from 2022 batch onwards · programme list, table e1"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. (Robotics and Artificial Intelligence) (Self-Financed)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b43-1"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Press Release, dated 20 February 2026 · new programme list · B.Tech. (Robotics & Artificial Intelligence) (Self Financed)",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Jamia Millia Islamia, Jamia Nagar, New Delhi",
+      "publisherPeriod": "Programme announced for academic session 2026–27",
+      "historical": false
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. Civil Engineering (Construction Technology) (Self-Financed)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b43-1"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Press Release, dated 20 February 2026 · new programme list · B.Tech. Civil Engineering (Construction Technology) (Self Financed)",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Jamia Millia Islamia, Jamia Nagar, New Delhi",
+      "publisherPeriod": "Programme announced for academic session 2026–27",
+      "historical": false
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.Sc. Biophysics (NEP-based)",
+        "level": "PG"
+      },
+      "sourceIds": [
+        "b43-1"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Press Release, dated 20 February 2026 · new programme list · M.Sc. (Biophysics) (as per NEP)",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Jamia Millia Islamia, Jamia Nagar, New Delhi",
+      "publisherPeriod": "Programme announced for academic session 2026–27",
+      "historical": false
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech programmes",
+        "route": "JEE Main 2026 followed by a Jamia admission form and selection list based on the final JEE Main rank",
+        "category": "2026–27 admission cycle",
+        "exam": "JEE Main 2026",
+        "counselling": "Jamia publishes the selection list by final JEE Main rank"
+      },
+      "sourceIds": [
+        "b43-3"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "University Prospectus 2026–27, printed p.22, section 2.1.2(a), steps (i)–(iv)",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Jamia Millia Islamia, Jamia Nagar, New Delhi",
+      "publisherPeriod": "Historical admission process described in the 2026–27 prospectus (JEE Main 2026)",
+      "historical": true
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "University contact",
+        "channel": "ADDRESS",
+        "contact": "Jamia Millia Islamia, Jamia Nagar, New Delhi-110025, India"
+      },
+      "sourceIds": [
+        "b43-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "List of Programmes page footer · Jamia Nagar, New Delhi-110025 postal address",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Jamia Millia Islamia, Jamia Nagar, New Delhi",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "University switchboard",
+        "channel": "PHONE",
+        "contact": "+91 (11) 26981717"
+      },
+      "sourceIds": [
+        "b43-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "List of Programmes page footer · main switchboard +91 (11) 26981717",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Jamia Millia Islamia, Jamia Nagar, New Delhi",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "symbiosis-international-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. in Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b43-4"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic Calendar 2026–2027 · Symbiosis Institute of Technology, Pune · Bachelor of Technology listing",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Symbiosis Institute of Technology, Pune (constituent institute of SIU)",
+      "publisherPeriod": "Academic calendar year 2026–2027",
+      "historical": false
+    },
+    {
+      "institutionSlug": "symbiosis-international-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Master of Business Administration",
+        "level": "PG"
+      },
+      "sourceIds": [
+        "b43-4"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic Calendar 2026–2027 · Symbiosis Institute of Business Management, Pune · MBA listing",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Symbiosis Institute of Business Management, Pune (constituent institute of SIU)",
+      "publisherPeriod": "Academic calendar year 2026–2027",
+      "historical": false
+    },
+    {
+      "institutionSlug": "symbiosis-international-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Arts and Bachelor of Laws (Honours)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b43-4"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic Calendar 2026–2027 · Symbiosis Law School, Pune · programme listing",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Symbiosis Law School, Pune (constituent institute of SIU)",
+      "publisherPeriod": "Academic calendar year 2026–2027",
+      "historical": false
+    },
+    {
+      "institutionSlug": "symbiosis-law-school",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Laws",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b43-5"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic Calendar 2026–2027 · Symbiosis Law School, Pune · Bachelor of Laws listing",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Symbiosis Law School, Pune",
+      "publisherPeriod": "Academic calendar year 2026–2027",
+      "historical": false
+    },
+    {
+      "institutionSlug": "symbiosis-law-school",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Arts and Bachelor of Laws (Honours)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b43-5"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic Calendar 2026–2027 · Symbiosis Law School, Pune · BA and LLB (Honours) listing",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Symbiosis Law School, Pune",
+      "publisherPeriod": "Academic calendar year 2026–2027",
+      "historical": false
+    },
+    {
+      "institutionSlug": "symbiosis-law-school",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Business Administration and Bachelor of Laws (Honours)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b43-5"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic Calendar 2026–2027 · Symbiosis Law School, Pune · BBA and LLB (Honours) listing",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Symbiosis Law School, Pune",
+      "publisherPeriod": "Academic calendar year 2026–2027",
+      "historical": false
+    },
+    {
+      "institutionSlug": "symbiosis-law-school",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Commerce and Bachelor of Laws (Honours)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b43-5"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic Calendar 2026–2027 · Symbiosis Law School, Pune · BCom and LLB (Honours) listing",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Symbiosis Law School, Pune",
+      "publisherPeriod": "Academic calendar year 2026–2027",
+      "historical": false
+    },
+    {
+      "institutionSlug": "symbiosis-law-school",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Master of Laws",
+        "level": "PG"
+      },
+      "sourceIds": [
+        "b43-5"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic Calendar 2026–2027 · Symbiosis Law School, Pune · Master of Laws listing",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Symbiosis Law School, Pune",
+      "publisherPeriod": "Academic calendar year 2026–2027",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iiit-jabalpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Computer Science and Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b43-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Offered Programmes · Undergraduate Programme · source states four-year B.Tech degree in Computer Science & Engineering",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIITDM Jabalpur",
+      "publisherPeriod": "Current official programme page; recheck before 2027 admissions",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iiit-jabalpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Electronics and Communication Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b43-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Offered Programmes · Undergraduate Programme · source states four-year B.Tech degree in Electronics & Communication Engineering",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIITDM Jabalpur",
+      "publisherPeriod": "Current official programme page; recheck before 2027 admissions",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iiit-jabalpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Design",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b43-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Offered Programmes · Undergraduate Programme · source states four-year B.Tech degree in Design",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIITDM Jabalpur",
+      "publisherPeriod": "Current official programme page; recheck before 2027 admissions",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iiit-jabalpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Mechanical Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b43-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Offered Programmes · Undergraduate Programme · source states four-year B.Tech degree in Mechanical Engineering",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIITDM Jabalpur",
+      "publisherPeriod": "Current official programme page; recheck before 2027 admissions",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iiit-jabalpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Smart Manufacturing",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b43-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Offered Programmes · Undergraduate Programme · Smart Manufacturing linked under four-year B.Tech degree programme",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIITDM Jabalpur",
+      "publisherPeriod": "Current official programme page; recheck before 2027 admissions",
+      "historical": false
+    },
+    {
+      "institutionSlug": "gnlu-gandhinagar",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.A. LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "b43-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Under Graduate Programme · five-year integrated law-programme heading · page last updated 16-08-2024",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "GNLU Gandhinagar campus",
+      "publisherPeriod": "Historical page snapshot last updated 16 August 2024; academic year is not stated",
+      "historical": true
+    },
+    {
+      "institutionSlug": "gnlu-gandhinagar",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Com. LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "b43-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Under Graduate Programme · five-year integrated law-programme heading and B.Com. variant · page last updated 16-08-2024",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "GNLU Gandhinagar campus",
+      "publisherPeriod": "Historical page snapshot last updated 16 August 2024; academic year is not stated",
+      "historical": true
+    },
+    {
+      "institutionSlug": "gnlu-gandhinagar",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.B.A. LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "b43-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Under Graduate Programme · five-year integrated law-programme heading and B.B.A. variant · page last updated 16-08-2024",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "GNLU Gandhinagar campus",
+      "publisherPeriod": "Historical page snapshot last updated 16 August 2024; academic year is not stated",
+      "historical": true
+    },
+    {
+      "institutionSlug": "lady-hardinge-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.B.B.S.",
+        "level": "UG",
+        "durationMonths": 66
+      },
+      "sourceIds": [
+        "b43-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Annual Report 2024, printed p. xvii · M.B.B.S duration listed as 4½ years plus one-year compulsory rotatory internship",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Lady Hardinge Medical College, New Delhi",
+      "publisherPeriod": "Annual Report 2024 historical information; academic-year applicability is not stated",
+      "historical": true
+    },
+    {
+      "institutionSlug": "lady-hardinge-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "M.B.B.S.",
+        "route": "NEET (UG) conducted by the National Testing Agency; the University of Delhi Faculty of Medical Sciences issues admission notices",
+        "category": "2024–25 applicants",
+        "exam": "NEET (UG)",
+        "counselling": "University of Delhi Faculty of Medical Sciences admission notice"
+      },
+      "sourceIds": [
+        "b43-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Annual Report 2024, printed p. xvii · M.B.B.S course and entrance examination table; report notes notices are issued by DU Faculty of Medical Sciences",
+      "status": "HELD_MISSING_APPLICABLE_ACADEMIC_YEAR",
+      "reviewState": "UNREVIEWED",
+      "stageable": false,
+      "campusScope": "Lady Hardinge Medical College, New Delhi",
+      "publisherPeriod": "Annual Report 2024 historical information; academic-year applicability is not stated",
+      "historical": true
+    },
+    {
+      "institutionSlug": "lady-hardinge-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "College library reading facility",
+        "description": "The 2024 annual report lists a ground-floor reading facility as open 24 hours and other library sections from 8 a.m. to 8 p.m.; these are historical reported hours, not a current schedule."
+      },
+      "sourceIds": [
+        "b43-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Annual Report 2024, printed p.31 · Library working-hours section",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Lady Hardinge Medical College library, New Delhi",
+      "publisherPeriod": "Annual Report 2024 historical library schedule; current hours and academic-year applicability are not stated",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nit-arunachal-pradesh",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b43-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "B.Tech Rules and Regulations applicable from 2022 batch onwards · programme table",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Arunachal Pradesh, 2022 batch programme rules",
+      "publisherPeriod": "Historical B.Tech rules applicable from 2022 batch onwards; current programme availability is not confirmed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nit-arunachal-pradesh",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Biotechnology",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b43-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "B.Tech Rules and Regulations applicable from 2022 batch onwards · programme table",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Arunachal Pradesh, 2022 batch programme rules",
+      "publisherPeriod": "Historical B.Tech rules applicable from 2022 batch onwards; current programme availability is not confirmed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nit-arunachal-pradesh",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Chemical Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b43-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "B.Tech Rules and Regulations applicable from 2022 batch onwards · programme table",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Arunachal Pradesh, 2022 batch programme rules",
+      "publisherPeriod": "Historical B.Tech rules applicable from 2022 batch onwards; current programme availability is not confirmed",
+      "historical": true
+    }
+  ],
+  "researchHolds": [
+    {
+      "institutionSlug": "osmania-university",
+      "reason": "Official University pages timed out or returned gateway errors during direct opening; search-result excerpts were not used as factual proof.",
+      "nextAction": "Retry once through a distinct first-party page or official downloadable prospectus; do not infer a curriculum from aggregate counts."
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "reason": "The official library page is directly readable but carries an old 2015 copyright and no current facility schedule; current availability is not established.",
+      "nextAction": "Find a recently dated official facilities document before presenting current library or accommodation details."
+    },
+    {
+      "institutionSlug": "nit-arunachal-pradesh",
+      "reason": "The official programme rules in this batch apply from the 2022 cohort; current 2026–27 programme availability was not established.",
+      "nextAction": "Retain as historical only; locate a current intake notice before changing current-offering status."
+    },
+    {
+      "institutionSlug": "lady-hardinge-medical-college",
+      "reason": "The available detailed official report is for 2024 and its admission conditions, facility hours and numerical metrics are not current-cycle evidence.",
+      "nextAction": "Use current 2026–27 official programme/admission notices for any present-tense claims; decision-critical thresholds remain held."
+    },
+    {
+      "institutionSlug": "lady-hardinge-medical-college",
+      "candidateIndex": 23,
+      "field": "structured.admission",
+      "value": {
+        "kind": "admission",
+        "programme": "M.B.B.S.",
+        "route": "NEET (UG) conducted by the National Testing Agency; the University of Delhi Faculty of Medical Sciences issues admission notices",
+        "category": "2024–25 applicants",
+        "exam": "NEET (UG)",
+        "counselling": "University of Delhi Faculty of Medical Sciences admission notice"
+      },
+      "sourceIds": [
+        "b43-8"
+      ],
+      "evidenceLocation": "Annual Report 2024, printed p. xvii · M.B.B.S course and entrance examination table; report notes notices are issued by DU Faculty of Medical Sciences",
+      "reason": "The 2024 annual report provides an historical route but does not establish a precise admission academic cycle. The source-reported admission gate requires an explicit applicable year; do not present this as current."
+    }
+  ]
+}
