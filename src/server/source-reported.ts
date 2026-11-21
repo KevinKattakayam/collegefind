@@ -16,6 +16,7 @@ import batch40 from '../../data/pilot/substantive-research-batch-040.json';
 import batch41 from '../../data/pilot/substantive-research-batch-041.json';
 import batch42 from '../../data/pilot/substantive-research-batch-042.json';
 import batch43 from '../../data/pilot/substantive-research-batch-043.json';
+import batch44 from '../../data/pilot/substantive-research-batch-044.json';
 import coverage from '../../docs/DATA_COVERAGE.json';
 import release from '../../data/pilot/source-reported-release.json';
 import { evidenceReviewHold } from './review-holds';
@@ -53,7 +54,7 @@ for (const claim of archive.claims) {
     publicationDate: claim.publishedAt ?? source.publishedAt, year: claim.academicYear, validFrom: claim.validFrom, validUntil: claim.validUntil,
   });
 }
-for (const batch of [batch29, batch30, batch31, batch32, batch33, batch34, batch35, batch36, batch37, batch38, batch39, batch40, batch41, batch42, batch43]) {
+for (const batch of [batch29, batch30, batch31, batch32, batch33, batch34, batch35, batch36, batch37, batch38, batch39, batch40, batch41, batch42, batch43, batch44]) {
   for (const [index, claim] of batch.candidateClaims.entries()) {
     const source = batch.sources.find(({ id }) => id === claim.sourceIds[0]);
     const collegeId = identity.get(claim.institutionSlug);

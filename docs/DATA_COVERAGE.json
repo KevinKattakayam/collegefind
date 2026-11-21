@@ -1,6 +1,6 @@
 {
   "catalogueSize": 205,
-  "asOf": "2026-11-19T14:54:00Z",
+  "asOf": "2026-11-21T13:28:49Z",
   "verifiedRealClaims": 0,
   "phase4CutoffCoverage": {
     "checkedAt": "2026-11-19",
@@ -47604,6 +47604,42 @@
         "status": "BLOCKED",
         "evidence": "No production resources were accessed. Owner-controlled evidence is still required for historical credential revocation/rotation, production seed-route protection, Redis-backed rate limiting/outage behavior and production database backup retention/restore readiness."
       }
+    ]
+  },
+  "sourceReportedPublicProjection": {
+    "asOf": "2026-11-21T13:28:49Z",
+    "catalogueSize": 205,
+    "profilesWithSubstantiveSourceReportedFacts": 161,
+    "sourceReportedFactsVisible": 327,
+    "profilesWithTwoOrMoreSubstantiveCategories": 56,
+    "basicIdentityOrNavigationOnlyProfiles": 44,
+    "newBatch": 44,
+    "newFactsReleased": 31,
+    "newProfilesCovered": 19,
+    "newFactsByCategory": {
+      "programmes": 14,
+      "facilities": 8,
+      "admissions": 2,
+      "contacts": 7
+    },
+    "genuinelyHumanApprovedClaims": 0,
+    "verifiedOfficialCutoffRecords": 0,
+    "stagedEvidenceClaims": 377,
+    "sourceUse": "Concise individual facts only, direct official-page attribution; no blanket reproduction or bulk-use permission inferred.",
+    "countsByCategory": {
+      "programmes": 235,
+      "facilities": 41,
+      "admissions": 21,
+      "contacts": 30,
+      "fees": 0,
+      "recognition": 0,
+      "placements": 0,
+      "cutoffs": 0
+    },
+    "notes": [
+      "OFFICIAL_SOURCE_REPORTED is distinct from human VERIFIED.",
+      "Batch 044 has three withheld source-backed candidates: IIT Kanpur archive conflict, IIIT Gwalior duplicate archived route, and IIT Jodhpur direct-source retrieval timeout.",
+      "Eight additional institution source attempts are recorded as inaccessible or otherwise held in the Batch 044 research artifact."
     ]
   }
 }

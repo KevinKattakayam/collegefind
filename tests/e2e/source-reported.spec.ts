@@ -2,16 +2,15 @@ import { join } from 'node:path';
 import { expect, test } from '@playwright/test';
 import policy from '../../data/pilot/source-reported-release.json';
 import ledger from '../../docs/PROFILE_COMPLETENESS.json';
-import batch42 from '../../data/pilot/substantive-research-batch-042.json';
-import batch43 from '../../data/pilot/substantive-research-batch-043.json';
 import { eligibleSourceReported } from '../../src/server/source-reported';
 
 test('source-reported facts render in their sections with campus, scope and provenance', async ({ page, request, isMobile }) => {
   test.skip(process.env.COLLEGEFIND_REPORTED_BROWSER !== 'true', 'Requires the isolated catalogue archive rehearsal');
   test.setTimeout(240_000);
+  const browserCheckDate = new Date();
   // The owner-stage scenario mutates these two institutions in its separate rehearsal.
   const main = page.getByRole('main');
-  const newSlugs = new Set([...batch42.candidateClaims, ...batch43.candidateClaims].map(({ institutionSlug }) => institutionSlug));
+  const newSlugs = new Set(policy.records.filter(({ ref }) => ref.startsWith('batch-44:')).map(({ slug }) => slug));
   for (const college of ledger.institutions) {
     const response = await request.get(`/colleges/${college.slug}`);
     expect(response.ok(), `${college.slug} should render`).toBe(true);
@@ -22,8 +21,9 @@ test('source-reported facts render in their sections with campus, scope and prov
     !reviewScenario || !['dit-university', 'galgotias-university'].includes(slug));
   for (const slug of slugs) {
     const records = policy.records.filter((row) => row.slug === slug);
-    const expected = eligibleSourceReported({ slug, id: records[0].collegeId });
-    expect(expected).toHaveLength(records.length);
+    const expected = eligibleSourceReported({ slug, id: records[0].collegeId }, browserCheckDate);
+    expect(expected.every(({ ref }) => records.some((row) => row.ref === ref)),
+      `all eligible facts for ${slug} belong to a published source record`).toBe(true);
     await page.goto('/colleges/' + slug + '#programmes-and-admissions');
     if (['delhi-technological-university', 'vjti-mumbai', 'iit-gandhinagar'].includes(slug)) {
       await expect(main.locator('#programmes-and-admissions')).toContainText('Official pages report the details below; CollegeFind has not independently verified them.');

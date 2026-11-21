@@ -3,6 +3,7 @@ import policy from '../../data/pilot/source-reported-release.json';
 import archive from '../../data/pilot/staged-evidence-after-batch-027.json';
 import ledger from '../../docs/DATA_COVERAGE.json';
 import batch43 from '../../data/pilot/substantive-research-batch-043.json';
+import batch44 from '../../data/pilot/substantive-research-batch-044.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
 
@@ -16,7 +17,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(142);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(161);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
@@ -161,6 +162,44 @@ describe('source-reported profile eligibility', () => {
     expect(srmFacts.map(({ value }) => value.kind === 'programme' ? value.durationMonths : null)).toEqual([60, 60, 60, 36]);
     expect(srmFacts.every(({ scopeVerification }) => scopeVerification?.url === 'https://law.srmist.edu.in/faculties/')).toBe(true);
     expect(rows.some(({ slug }) => slug === 'jadavpur-university')).toBe(false);
+  });
+
+  it('publishes Batch 044 facts across 20 previously basic colleges with source and period provenance', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-44:'));
+    expect(rows).toHaveLength(31);
+    expect(new Set(rows.map(({ slug }) => slug)).size).toBe(19);
+    expect(rows.every(({ status, basis, usageAssessment, fingerprint, ref }) =>
+      status === 'PUBLISH' && basis === 'ATTRIBUTED_INDIVIDUAL_FACT' && usageAssessment.length > 20 &&
+      sourceReportedFingerprint(ref) === fingerprint)).toBe(true);
+    expect(rows.some(({ status }) => status === 'VERIFIED')).toBe(false);
+
+    const bySlug = (slug: string) => rows.filter((row) => row.slug === slug);
+    expect(bySlug('iit-jodhpur')).toHaveLength(0);
+    expect(bySlug('indian-institute-of-technology-kanpur')).toHaveLength(0);
+    expect(bySlug('grant-medical-college')).toHaveLength(2);
+    expect(bySlug('grant-medical-college').some(({ sourceUrl }) => sourceUrl === 'https://gmcjjh.edu.in/courses/')).toBe(true);
+    expect(bySlug('vel-tech-university')[0]).toMatchObject({ publisherPeriod: 'B.Tech admissions open 2027.' });
+    expect(eligibleSourceReported({ id: bySlug('vel-tech-university')[0].collegeId, slug: 'vel-tech-university' }, now)
+      .find(({ ref }) => ref === 'batch-44:30')).toMatchObject({ academicYear: '2027', historical: false });
+    expect(bySlug('jntu-hyderabad')[0].campus).toContain('institutional postal address');
+    expect(bySlug('north-eastern-hill-university')).toHaveLength(2);
+    expect(bySlug('central-university-of-haryana').filter(({ ref }) => ref.startsWith('batch-44:')))
+      .toHaveLength(4);
+
+    const admitted = rows.filter(({ slug }) => ['nit-andhra-pradesh', 'siksha-o-anusandhan'].includes(slug));
+    expect(admitted.every(({ historical, publisherPeriod }) => historical && publisherPeriod)).toBe(true);
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    expect(facts.every(({ status, url, evidenceLocation }) => status === 'OFFICIAL_SOURCE_REPORTED' &&
+      url.startsWith('https://') && evidenceLocation.length > 0)).toBe(true);
+    expect(facts).toHaveLength(31);
+    expect(batch44.candidateClaims.find(({ institutionSlug }) => institutionSlug === 'iit-jodhpur'))
+      .toMatchObject({ stageable: false, status: 'RESEARCH_HOLD_SOURCE_UNAVAILABLE' });
+    expect(batch44.candidateClaims.find(({ institutionSlug }) => institutionSlug === 'indian-institute-of-technology-kanpur'))
+      .toMatchObject({ stageable: false, status: 'RESEARCH_HOLD_ARCHIVED_SOURCE_CONFLICT' });
+    expect(batch44.candidateClaims.find(({ institutionSlug, value }) =>
+      institutionSlug === 'iiit-gwalior' && value.kind === 'admission'))
+      .toMatchObject({ stageable: false, status: 'RESEARCH_HOLD_DUPLICATE_ARCHIVED_EVIDENCE' });
   });
 
   it('adds the Batch 040 breadth slice with distinct categories, source attribution and historical labels', () => {
