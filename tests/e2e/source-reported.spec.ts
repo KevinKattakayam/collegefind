@@ -2,19 +2,23 @@ import { join } from 'node:path';
 import { expect, test } from '@playwright/test';
 import policy from '../../data/pilot/source-reported-release.json';
 import ledger from '../../docs/PROFILE_COMPLETENESS.json';
+import batch42 from '../../data/pilot/substantive-research-batch-042.json';
 import { eligibleSourceReported } from '../../src/server/source-reported';
 
 test('source-reported facts render in their sections with campus, scope and provenance', async ({ page, request, isMobile }) => {
   test.skip(process.env.COLLEGEFIND_REPORTED_BROWSER !== 'true', 'Requires the isolated catalogue archive rehearsal');
   test.setTimeout(240_000);
-  // Keep the main owner-stage test free to exercise live hold and rejection on its own two colleges.
+  // The owner-stage scenario mutates these two institutions in its separate rehearsal.
   const main = page.getByRole('main');
+  const newSlugs = new Set(batch42.candidateClaims.map(({ institutionSlug }) => institutionSlug));
   for (const college of ledger.institutions) {
     const response = await request.get(`/colleges/${college.slug}`);
     expect(response.ok(), `${college.slug} should render`).toBe(true);
     expect(await response.text()).toContain(college.catalogueIdentity.name);
   }
-  const slugs = [...new Set(policy.records.map(({ slug }) => slug))].filter((slug) => !['dit-university', 'galgotias-university'].includes(slug));
+  const reviewScenario = process.env.COLLEGEFIND_OWNER_STAGE_BROWSER === 'true';
+  const slugs = [...new Set(policy.records.map(({ slug }) => slug))].filter((slug) =>
+    !reviewScenario || !['dit-university', 'galgotias-university'].includes(slug));
   for (const slug of slugs) {
     const records = policy.records.filter((row) => row.slug === slug);
     const expected = eligibleSourceReported({ slug, id: records[0].collegeId });
@@ -28,6 +32,7 @@ test('source-reported facts render in their sections with campus, scope and prov
     }
     const cards = main.locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]');
     await expect(cards).toHaveCount(expected.length);
+    await expect(main.locator('[data-evidence-status="VERIFIED"]')).toHaveCount(0);
     for (const item of expected) {
       const { value } = item;
       const section = value.kind === 'contact' ? '#official-resources' : value.kind === 'facility' ? '#facilities' : '#programmes-and-admissions';
@@ -36,10 +41,17 @@ test('source-reported facts render in their sections with campus, scope and prov
       const kindLabel = value.kind === 'admission' ? 'admission route'
         : value.kind === 'contact' ? 'official contact'
         : value.kind === 'facility' ? 'campus facility' : value.kind;
-      const card = main.locator(section).getByRole('list', { name: `Institution-reported ${kindLabel}` })
+      const matchingCards = main.locator(section).getByRole('list', { name: `Institution-reported ${kindLabel}` })
         .locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')
         .filter({ has: source }).filter({ has: page.getByRole('heading', { name, exact: true }) });
-      if (value.kind === 'contact') await expect(card).toContainText(value.contact);
+      const card = value.kind === 'contact'
+        ? matchingCards.filter({ hasText: value.contact })
+        : matchingCards.filter({ hasText: item.evidenceLocation });
+      await expect(card).toHaveCount(1);
+      if (value.kind === 'contact') {
+        const channel = { EMAIL: 'Email', PHONE: 'Phone', ADDRESS: 'Address' }[value.channel];
+        await expect(card.getByText(`${channel} · ${value.contact}`, { exact: true })).toBeVisible();
+      }
       if (value.kind === 'facility') await expect(card).toContainText(value.description);
       if (value.kind === 'programme' && value.durationMonths) {
         const level = { UG: 'Undergraduate', PG: 'Postgraduate', DOCTORAL: 'Doctoral', DIPLOMA: 'Diploma' }[value.level];
@@ -79,14 +91,14 @@ test('source-reported facts render in their sections with campus, scope and prov
         await expect(card).toContainText(item.scopeVerification.evidenceLocation);
       }
     }
-    if (process.env.CF_PROFILE_SCREENSHOTS && [
+    if (process.env.CF_PROFILE_SCREENSHOTS && (newSlugs.has(slug) || [
       'all-india-institute-of-medical-sciences', 'university-of-delhi', 'amity-university', 'madras-university',
       'lovely-professional-university', 'jipmer-puducherry', 'university-of-mumbai', 'srm-institute-of-science-and-technology',
       'indian-institute-of-technology-roorkee', 'chandigarh-university', 'manipal-academy-of-higher-education',
       'amrita-vishwa-vidyapeetham', 'nlu-delhi', 'shri-ram-college-of-commerce', 'armed-forces-medical-college',
       'andhra-university', 'loyola-college',
       'nit-kurukshetra', 'madras-medical-college', 'stanley-medical-college',
-    ].includes(slug)) {
+    ].includes(slug))) {
       const suffix = isMobile ? 'mobile' : 'desktop';
       await main.locator('#programmes-and-admissions').screenshot({ path: join(process.env.CF_PROFILE_SCREENSHOTS, `${slug}-programmes-${suffix}.png`) });
       if (expected.some(({ value }) => value.kind === 'facility')) {
@@ -109,6 +121,9 @@ test('source-reported facts render in their sections with campus, scope and prov
   const { college } = await profile.json();
   expect(college.structuredFacts).toEqual([]);
   expect(college).not.toHaveProperty('sourceReported');
+  const search = await request.get('/api/colleges?programme=Digital%20Agriculture');
+  expect(search.ok()).toBe(true);
+  expect((await search.json()).colleges.map((row: { slug: string }) => row.slug)).not.toContain('iit-ropar');
 
   if (screenshotDir) {
     const suffix = isMobile ? 'mobile' : 'desktop';
@@ -135,4 +150,16 @@ test('source-reported facts render in their sections with campus, scope and prov
   await expect(main.locator('#fees [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
   await page.goto('/colleges/indian-institute-of-technology-kanpur');
   await expect(main.locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
+});
+
+test('source-reported programmes stay outside comparison and CollegeFit', async ({ page }) => {
+  test.skip(process.env.COLLEGEFIND_REPORTED_BROWSER !== 'true', 'Requires the isolated catalogue archive rehearsal');
+  await page.goto('/compare?colleges=iit-ropar,iit-bhubaneswar');
+  await expect(page.getByRole('region', { name: 'Comparison slot for IIT Ropar' })).toBeVisible();
+  await expect(page.getByText(/Digital Agriculture/)).toHaveCount(0);
+
+  await page.goto('/collegefit?programme=Digital%20Agriculture&location=Rupnagar');
+  const result = page.getByRole('article').filter({ has: page.getByRole('link', { name: 'IIT Ropar', exact: true }) });
+  await expect(result.getByText('Programme and degree · UNKNOWN')).toBeVisible();
+  await expect(result.getByText('Insufficient evidence for ranking', { exact: false })).toBeVisible();
 });

@@ -1,7 +1,8 @@
 import { expect, test } from '@playwright/test';
 
 test('sparse and sourced archive profiles guide students without leaking unreviewed claims', async ({ page, request }) => {
-  test.skip(process.env.COLLEGEFIND_OWNER_STAGE_BROWSER !== 'true', 'Requires independently verified archive rehearsal');
+  test.skip(process.env.COLLEGEFIND_OWNER_STAGE_BROWSER !== 'true' && process.env.COLLEGEFIND_REPORTED_BROWSER !== 'true',
+    'Requires independently verified archive rehearsal');
   await page.goto('/colleges/psg-college-of-technology');
   await expect(page.getByRole('heading', { level: 1, name: /PSG/ })).toBeVisible();
   await expect(page.getByText('Catalogue identity', { exact: true }).first()).toBeVisible();

@@ -1497,3 +1497,35 @@ Batch 041 adds 10 source-reported observations from five official pages across t
 After this batch the source-reported section totals are 190 programme facts, 29 facilities, 16 admissions-route facts and 19 contacts. Fees, scholarships, recognition, placements, rankings and cutoffs remain at zero in this release set. NIT Kurukshetra's programme entries are historical 2024–25 scheme listings and do not establish current intake; the Computer Engineering versus Computer Science and Engineering naming discrepancy remains held. Madras Medical College's course page does not state a publication or applicable intake year. Stanley's MBBS item is historical for AY 2026–27; its contact page details have a freshness caveat. The four documented holds and one excluded ambiguous claim remain in `data/pilot/substantive-research-batch-041.json`.
 
 No persistent database import or reviewer action occurred. The archive remains 377 staged claims; genuine human approvals remain 0; verified official cutoff records remain 0. Facts are labeled `Source-reported; not independently verified`, and source links/evidence locations are retained in the release register and batch manifest. The counts describe checked-in local release eligibility, not live-browser publication: an isolated database-backed app/browser run remains blocked because no disposable database is available and Docker access is denied. Exact per-college values are in `docs/PROFILE_COMPLETENESS.json`.
+
+## Batch 042 source-reported content
+
+The [profile ledger](PROFILE_COMPLETENESS.json) covers all 205 original colleges. Batch 042 adds 15 source-reported facts across eight previously basic profiles. Six of those profiles now have more than one category.
+
+| Measure | Batch 041 | Batch 042 |
+| --- | ---: | ---: |
+| Profiles with substantive facts | 127 | 135 |
+| Profiles with at least two substantive categories | 39 | 45 |
+| Basic profiles | 78 | 70 |
+| Programme facts | 190 | 198 |
+| Admissions facts | 16 | 18 |
+| Facilities facts | 29 | 32 |
+| Contact facts | 19 | 21 |
+| Total source-reported facts | 254 | 269 |
+
+MICA and CHRIST gain programme and institutional contact facts. WBNUJS gains a programme and a domicile-specific historical admissions reference. IIT Ropar gains programme, historical admissions and campus health information. IIM Amritsar and ISI Kolkata gain programme and facility information. IIT Bhubaneswar and Pondicherry University gain programme facts. Dated routes retain their original cycle. The [batch manifest](../data/pilot/substantive-research-batch-042.json) retains 12 research exclusions for withheld access, inadequate direct source content or outdated rules. Concise facts are individually attributed. Fees, scholarships, accreditation validity, outcomes, ranks and cutoffs remain subject to human review.
+
+### First owner-review decisions to prioritize
+
+The [existing 25-claim packet](../data/pilot/first-human-review-batch.json) contains each original link, locator and scope. In the authorized review dashboard, search by the claim ID. Check current applicability and permitted reuse against the source before recording each decision.
+
+| Priority | Claim ID | Source location and review question |
+| --- | --- | --- |
+| 1 | `cmwm4060u0003lftv8hj4ur0o` | [IIT Roorkee UG I Year schedule](https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf), page 1. Confirm the listed categories, first-year scope and INR 100,000 tuition per semester for 2026–27. |
+| 2 | `cmwm4trd200073otvpjb30qsw` | [CMC Vellore prospectus](https://www.cmch-vellore.edu/wp-content/uploads/sites/14/2026/11/college-prospectus-2026-2027-revised.pdf), printed page 177. Confirm INR 3,000 annual MBBS tuition for 2026–27. The claim covers tuition only. |
+| 3 | `cmwlpjrzh001syttvn05nz1d4` | [DAU All India B.Tech admissions](https://daiict.ac.in/undergraduate-admissions-all-india-category), fee table. Confirm the alias, INR 192,500 per semester and whether the provisional amount has been revised. |
+| 4 | `cmwlqtg7i001qgvtvfvd0j4ev` | [Nirma BBA Honours admissions](https://management.nirmauni.ac.in/admission-aid/undergraduate/bba-honours-admissions/), eligibility and selection sections. Confirm 2026–27, All India scope, aggregate requirement and IPMAT/interview route. |
+| 5 | `cmwm406100005lftvhno5hr3x` | [IIT Roorkee UG I Year schedule](https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf), page 1. Confirm the SC/ST/PwD tuition waiver and separately charged components. |
+| 6 | `cmwm3rj75000bhxtvbr105oe7` | [MNNIT Annual Report 2024–25](https://mnnit.ac.in/images/newstories/2026/notices/Annual_Report_Audit_Report_for_the_year_2024-25_English.pdf), printed page 11. Check the B.Tech eligible cohort of 844 and 703 placements. Keep the reporting year visible. |
+
+The archive still contains 377 staged claims and zero human decisions. No new recognition-validity or cutoff claim was cleared for review in this batch.

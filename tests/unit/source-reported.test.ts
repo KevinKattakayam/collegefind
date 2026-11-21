@@ -15,7 +15,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(127);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(135);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
