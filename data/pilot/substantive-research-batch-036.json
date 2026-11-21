@@ -1,0 +1,354 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 36,
+  "researchedAt": "2026-11-20T15:34:00.305Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "batch36-official-1",
+      "institutionSlug": "iim-sambalpur",
+      "publisher": "IIM Sambalpur",
+      "url": "https://library.iimsambalpur.ac.in/profile",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Learning Resource Centre · Central Library profile"
+      ]
+    },
+    {
+      "id": "batch36-official-2",
+      "institutionSlug": "nit-meghalaya",
+      "publisher": "NIT Meghalaya",
+      "url": "https://www.nitm.ac.in/page_details.php?page=central-library",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Central Library page"
+      ]
+    },
+    {
+      "id": "batch36-official-3",
+      "institutionSlug": "nliu-bhopal",
+      "publisher": "National Law Institute University Bhopal",
+      "url": "https://nliu.ac.in/library-2/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "University library page · Gyan Mandir"
+      ]
+    },
+    {
+      "id": "batch36-official-4",
+      "institutionSlug": "nit-hamirpur",
+      "publisher": "NIT Hamirpur",
+      "url": "https://web.nith.ac.in/central-library",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Central Library · Library Services"
+      ]
+    },
+    {
+      "id": "batch36-official-5",
+      "institutionSlug": "nit-durgapur",
+      "publisher": "NIT Durgapur",
+      "url": "https://nitdgp.ac.in/p/library-5.html",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Library · Accessibility"
+      ]
+    },
+    {
+      "id": "batch36-official-6",
+      "institutionSlug": "iit-tirupati",
+      "publisher": "IIT Tirupati Central Library",
+      "url": "https://library.iittp.ac.in/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "About Central Library"
+      ]
+    },
+    {
+      "id": "batch36-official-7",
+      "institutionSlug": "iit-jammu",
+      "publisher": "IIT Jammu Central Library",
+      "url": "https://library.iitjammu.ac.in/about-the-library/index.html",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "About the Library · Central Library"
+      ]
+    },
+    {
+      "id": "batch36-official-8",
+      "institutionSlug": "nit-delhi",
+      "publisher": "NIT Delhi",
+      "url": "https://nitdelhi.ac.in/facilities/central-library/about",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "About Central Library"
+      ]
+    },
+    {
+      "id": "batch36-official-9",
+      "institutionSlug": "tezpur-university",
+      "publisher": "Tezpur University Central Library",
+      "url": "https://library.tezu.ernet.in/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Central Library homepage"
+      ]
+    },
+    {
+      "id": "batch36-official-10",
+      "institutionSlug": "cmi-chennai",
+      "publisher": "Chennai Mathematical Institute",
+      "url": "https://www.cmi.ac.in/admissions/",
+      "publicationDate": null,
+      "academicYear": "2027-28",
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Applying to CMI in 2027 · examination and programme list"
+      ]
+    },
+    {
+      "id": "batch36-official-11",
+      "institutionSlug": "nit-goa",
+      "publisher": "NIT Goa",
+      "url": "https://www.nitgoa.ac.in/admissions/josaa.html",
+      "publicationDate": null,
+      "academicYear": "2026",
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "JoSAA/CSAB · Orientation notice for the 2026 batch"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "iim-sambalpur",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Learning Resource Centre",
+        "description": "IIM Sambalpur operates its Central Library through the Learning Resource Centre."
+      },
+      "sourceIds": [
+        "batch36-official-1"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Learning Resource Centre · Central Library profile",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-meghalaya",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library",
+        "description": "The institute lists a Central Library and its library resources."
+      },
+      "sourceIds": [
+        "batch36-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Central Library page",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nliu-bhopal",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "University library",
+        "description": "NLIU describes its university library as Gyan Mandir."
+      },
+      "sourceIds": [
+        "batch36-official-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "University library page · Gyan Mandir",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-hamirpur",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library",
+        "description": "The campus Central Library publishes its services and collection information."
+      },
+      "sourceIds": [
+        "batch36-official-4"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Central Library · Library Services",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-durgapur",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library",
+        "description": "The Central Library offers print resources and electronic resources accessible on the campus network."
+      },
+      "sourceIds": [
+        "batch36-official-5"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Library · Accessibility",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-tirupati",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library",
+        "description": "The institute Central Library provides print and electronic resources for students."
+      },
+      "sourceIds": [
+        "batch36-official-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "About Central Library",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-jammu",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library",
+        "description": "The Central Library provides books, journals and digital resources."
+      },
+      "sourceIds": [
+        "batch36-official-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "About the Library · Central Library",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library",
+        "description": "NIT Delhi lists a Central Library on the institute facilities site."
+      },
+      "sourceIds": [
+        "batch36-official-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "About Central Library",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "tezpur-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library",
+        "description": "Tezpur University provides a Central Library for students and researchers."
+      },
+      "sourceIds": [
+        "batch36-official-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Central Library homepage",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "cmi-chennai",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.S. (Hons.) programmes",
+        "route": "CMI common entrance examination",
+        "exam": "CMI entrance examination 2027",
+        "category": "2027-28 applicants"
+      },
+      "sourceIds": [
+        "batch36-official-10"
+      ],
+      "academicYear": "2027-28",
+      "evidenceLocation": "Applying to CMI in 2027 · examination and programme list",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-goa",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech",
+        "route": "JoSAA and CSAB counselling",
+        "category": "2026 JoSAA/CSAB applicants"
+      },
+      "sourceIds": [
+        "batch36-official-11"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "JoSAA/CSAB · Orientation notice for the 2026 batch",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ]
+}

@@ -1,24 +1,40 @@
 import { join } from 'node:path';
 import { expect, test } from '@playwright/test';
 import policy from '../../data/pilot/source-reported-release.json';
+import ledger from '../../docs/PROFILE_COMPLETENESS.json';
 import { eligibleSourceReported } from '../../src/server/source-reported';
 
-test('source-reported programmes render with campus, duration and provenance across the pilot', async ({ page, request, isMobile }) => {
+test('source-reported facts render in their sections with campus, scope and provenance', async ({ page, request, isMobile }) => {
   test.skip(process.env.COLLEGEFIND_REPORTED_BROWSER !== 'true', 'Requires the isolated catalogue archive rehearsal');
   test.setTimeout(240_000);
   // Keep the main owner-stage test free to exercise live hold and rejection on its own two colleges.
   const main = page.getByRole('main');
+  for (const college of ledger.institutions) {
+    const response = await request.get(`/colleges/${college.slug}`);
+    expect(response.ok(), `${college.slug} should render`).toBe(true);
+    expect(await response.text()).toContain(college.catalogueIdentity.name);
+  }
   const slugs = [...new Set(policy.records.map(({ slug }) => slug))].filter((slug) => !['dit-university', 'galgotias-university'].includes(slug));
   for (const slug of slugs) {
     const records = policy.records.filter((row) => row.slug === slug);
     const expected = eligibleSourceReported({ slug, id: records[0].collegeId });
     expect(expected).toHaveLength(records.length);
     await page.goto('/colleges/' + slug + '#programmes-and-admissions');
-    const cards = main.locator('#programmes-and-admissions [data-evidence-status="OFFICIAL_SOURCE_REPORTED"], #facilities [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]');
+    const cards = main.locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]');
     await expect(cards).toHaveCount(expected.length);
-    for (const [index, item] of expected.entries()) {
-      const card = cards.nth(index);
-      const name = item.value.kind === 'programme' ? item.value.programme : item.value.facility;
+    for (const item of expected) {
+      const { value } = item;
+      const section = value.kind === 'contact' ? '#official-resources' : value.kind === 'facility' ? '#facilities' : '#programmes-and-admissions';
+      const name = value.kind === 'contact' ? value.office : value.kind === 'facility' ? value.facility : value.programme;
+      const source = page.getByRole('link', { name: item.publisher + ' · ' + item.sourceTitle, exact: true });
+      const card = main.locator(section).locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')
+        .filter({ has: source }).filter({ has: page.getByRole('heading', { name, exact: true }) });
+      if (value.kind === 'contact') await expect(card).toContainText(value.contact);
+      if (value.kind === 'facility') await expect(card).toContainText(value.description);
+      if (value.kind === 'admission') {
+        await expect(card).toContainText(value.route);
+        if (value.exam) await expect(card).toContainText(value.exam);
+      }
       await expect(card.getByRole('heading', { name, exact: true })).toBeVisible();
       if (item.academicYear !== null) await expect(card).toContainText(String(item.publisherPeriod ?? item.academicYear));
       await expect(card.getByText('Source-reported; not independently verified', { exact: true })).toBeVisible();
@@ -39,6 +55,26 @@ test('source-reported programmes render with campus, duration and provenance acr
   const { college } = await profile.json();
   expect(college.structuredFacts).toEqual([]);
   expect(college).not.toHaveProperty('sourceReported');
+
+  if (screenshotDir) {
+    const suffix = isMobile ? 'mobile' : 'desktop';
+    await page.goto('/colleges/nalsar-university-of-law#programmes-and-admissions');
+    const admissions = main.locator('#programmes-and-admissions');
+    await expect(admissions).toContainText('Historical admission cycle');
+    await admissions.screenshot({ path: join(screenshotDir, `nalsar-admissions-${suffix}.png`) });
+
+    await page.goto('/colleges/indian-institute-of-technology-delhi#facilities');
+    const facilities = main.locator('#facilities');
+    await expect(facilities.getByRole('heading', { name: 'Central Library' })).toBeVisible();
+    await facilities.screenshot({ path: join(screenshotDir, `iit-delhi-facilities-${suffix}.png`) });
+
+    await page.goto('/colleges/pes-university#official-resources');
+    const resources = main.locator('#official-resources');
+    await expect(resources).toContainText('PES University admissions office');
+    await expect(resources).toContainText('The contact listed above is source-reported and not independently verified');
+    await expect(resources).not.toContainText('Phone and email details are not verified yet');
+    await resources.screenshot({ path: join(screenshotDir, `pes-contact-${suffix}.png`) });
+  }
 
   await page.goto('/colleges/ashoka-university#fees');
   await expect(main.locator('#fees')).toContainText('Not verified yet');

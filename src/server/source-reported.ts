@@ -6,6 +6,9 @@ import batch30 from '../../data/pilot/substantive-research-batch-030.json';
 import batch31 from '../../data/pilot/substantive-research-batch-031.json';
 import batch32 from '../../data/pilot/substantive-research-batch-032.json';
 import batch33 from '../../data/pilot/substantive-research-batch-033.json';
+import batch34 from '../../data/pilot/substantive-research-batch-034.json';
+import batch35 from '../../data/pilot/substantive-research-batch-035.json';
+import batch36 from '../../data/pilot/substantive-research-batch-036.json';
 import coverage from '../../docs/DATA_COVERAGE.json';
 import release from '../../data/pilot/source-reported-release.json';
 import { evidenceReviewHold } from './review-holds';
@@ -42,7 +45,7 @@ for (const claim of archive.claims) {
     publicationDate: claim.publishedAt ?? source.publishedAt, year: claim.academicYear, validFrom: claim.validFrom, validUntil: claim.validUntil,
   });
 }
-for (const batch of [batch29, batch30, batch31, batch32, batch33]) {
+for (const batch of [batch29, batch30, batch31, batch32, batch33, batch34, batch35, batch36]) {
   for (const [index, claim] of batch.candidateClaims.entries()) {
     const source = batch.sources.find(({ id }) => id === claim.sourceIds[0]);
     const collegeId = identity.get(claim.institutionSlug);
@@ -125,7 +128,14 @@ export function eligibleSourceReported(college: Identity, now = new Date(), reco
     if (withdrawn) return [];
     const fact = structuredFact.safeParse(c.value);
     if (!fact.success || c.field !== `structured.${fact.data.kind}` ||
-        (fact.data.kind !== 'programme' && fact.data.kind !== 'facility')) return [];
+        (fact.data.kind !== 'programme' && fact.data.kind !== 'facility' &&
+          fact.data.kind !== 'contact' && fact.data.kind !== 'admission')) return [];
+    if (fact.data.kind === 'admission') {
+      const { eligibility, applicationUrl, programme, category, route, exam, counselling } = fact.data;
+      const description = [programme, category, route, exam, counselling].join(' ');
+      if (start === null || !record.publisherPeriod || eligibility || applicationUrl ||
+          /[%₹]|\b(?:percentile|cutoff|cut-off)\b|\b\d[\d,]*\s+seats?\b/i.test(description)) return [];
+    }
     return [{
       ref: c.ref, value: fact.data, campus: record.campus, publisher: c.publisher, url: c.url,
       evidenceLocation: c.locator, sourceTitle: record.sourceTitle, collectedAt: c.collectedAt,
@@ -159,6 +169,8 @@ function scoped(value: unknown) {
   const parsed = structuredFact.safeParse(value);
   if (!parsed.success) return null;
   if (parsed.data.kind === 'programme') return programmeScope(parsed.data.programme);
+  if (parsed.data.kind === 'admission') return JSON.stringify(['admission', programmeScope(parsed.data.programme), parsed.data.category.toLowerCase()]);
+  if (parsed.data.kind === 'contact') return JSON.stringify(['contact', parsed.data.office.toLowerCase(), parsed.data.channel]);
   if (parsed.data.kind === 'facility') return ['facility', parsed.data.facility.toLowerCase().trim()].join(':');
   return null;
 }
@@ -171,6 +183,10 @@ function compatibleFact(a: unknown, b: unknown) {
     return scoped(left.data) === scoped(right.data) && left.data.level === right.data.level &&
       (left.data.durationMonths === undefined || right.data.durationMonths === undefined ||
         left.data.durationMonths === right.data.durationMonths);
+  }
+  if (left.data.kind === 'admission' && right.data.kind === 'admission') {
+    return left.data.route === right.data.route && left.data.exam === right.data.exam &&
+      left.data.counselling === right.data.counselling;
   }
   return JSON.stringify(left.data) === JSON.stringify(right.data);
 }

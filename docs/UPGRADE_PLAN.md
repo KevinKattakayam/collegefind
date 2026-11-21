@@ -222,3 +222,10 @@ See [CollegeFit methodology and admission guidance](PREDICTOR.md) and the Phase 
 The dedicated owner staging command now supports read-only preview, batch hash approval and encrypted backup validation. Persistent staging remains an owner authorization gate. The first 25 existing claims are available independently of the Batch 029 authorization.
 
 The scoped programme milestone adds a further 42 institutions through Batch 033 and explicitly attributed archive releases. Reuse the same evidence and release checks as the remaining colleges are researched. Scope each programme to the publisher’s period when supplied. Treat price, outcomes and admission decisions under the existing human review rules. [Coverage](DATA_COVERAGE.md#publication-of-programme-periods-and-facilities-batch-033)
+
+### Content depth follow-up — 2026-11-21
+
+- [x] Add source-reported admissions-route and institutional-contact cards to the existing profile sections while preserving the separate source label and keeping these facts out of verified-only APIs, search, comparison, CollegeFit and admission recommendations.
+- [x] Reuse existing official-source research and add 51 individually attributed low-risk programme, facility and time-scoped admission candidates across batches 034–036. No persistent evidence or owner-review decision was written.
+- [x] Reconcile source facts into the existing 205-entry profile ledger. Source-reported cards now cover 103 profiles (126 facts); 21 profiles have facts in at least two categories. These are content-depth measures, not verified completeness.
+- [ ] Complete type-specific source research and genuine review for missing eligibility, fees, scholarships, recognition, placements and cutoffs. High-impact facts remain behind human evidence review and appropriate source-use checks.

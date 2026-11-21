@@ -1,0 +1,633 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 35,
+  "researchedAt": "2026-11-20T15:34:00.305Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "batch35-official-1",
+      "institutionSlug": "iiitdm-kancheepuram",
+      "publisher": "IIITDM Kancheepuram",
+      "url": "https://www.iiitdm.ac.in/academics/study-at-iiitdm",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Study at IIITDM · Undergraduate programme table"
+      ]
+    },
+    {
+      "id": "batch35-official-2",
+      "institutionSlug": "graphic-era-university",
+      "publisher": "Graphic Era Deemed to be University",
+      "url": "https://geu.ac.in/department/civil-engineering",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Civil Engineering programmes · Specialization listing"
+      ]
+    },
+    {
+      "id": "batch35-official-3",
+      "institutionSlug": "tezpur-university",
+      "publisher": "Tezpur University",
+      "url": "https://www.tezu.ernet.in/dcivil/btech.php",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Department of Civil Engineering · B.Tech Programme"
+      ]
+    },
+    {
+      "id": "batch35-official-4",
+      "institutionSlug": "iit-mandi",
+      "publisher": "IIT Mandi",
+      "url": "https://academics.iitmandi.ac.in/degreeprograms",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Degree programmes · Bachelor of Technology"
+      ]
+    },
+    {
+      "id": "batch35-official-5",
+      "institutionSlug": "nit-uttarakhand",
+      "publisher": "NIT Uttarakhand",
+      "url": "https://nituk.ac.in/en/civil-engineering",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Civil Engineering department overview"
+      ]
+    },
+    {
+      "id": "batch35-official-6",
+      "institutionSlug": "st-johns-medical-college",
+      "publisher": "St. John’s Medical College",
+      "url": "https://www.stjohns.in/medicalcollege/courses/undergraduate---mbbs",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Undergraduate MBBS programme"
+      ]
+    },
+    {
+      "id": "batch35-official-7",
+      "institutionSlug": "manipal-institute-of-technology",
+      "publisher": "Manipal Institute of Technology",
+      "url": "https://www.manipal.edu/academics/programs/btech-in-civil-engineering-mit-manipal",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Civil Engineering · programme duration"
+      ]
+    },
+    {
+      "id": "batch35-official-8",
+      "institutionSlug": "thapar-institute-of-engineering",
+      "publisher": "Thapar Institute of Engineering and Technology",
+      "url": "https://ced.thapar.edu/programmes",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Civil Engineering academic programmes"
+      ]
+    },
+    {
+      "id": "batch35-official-9",
+      "institutionSlug": "king-georges-medical-university",
+      "publisher": "King George’s Medical University",
+      "url": "https://www.kgmu.org/courses_admission.php",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Courses and Admission · MBBS"
+      ]
+    },
+    {
+      "id": "batch35-official-10",
+      "institutionSlug": "central-university-of-punjab",
+      "publisher": "Central University of Punjab",
+      "url": "https://www.cup.edu.in/programmes_offered/pg_programmes",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Postgraduate programmes · Department of Chemistry"
+      ]
+    },
+    {
+      "id": "batch35-official-11",
+      "institutionSlug": "ashoka-university",
+      "publisher": "Ashoka University",
+      "url": "https://www.ashoka.edu.in/programme/undergraduate-programme-in-political-science/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Undergraduate Political Science · Major and degree"
+      ]
+    },
+    {
+      "id": "batch35-official-12",
+      "institutionSlug": "anna-university",
+      "publisher": "Anna University Centre for Academic Courses",
+      "url": "https://cac.annauniv.edu/uddetails/revision_ud_ug_cands_2023.html",
+      "publicationDate": null,
+      "academicYear": "2023",
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "University Departments · Regulations 2023 · curriculum listing"
+      ]
+    },
+    {
+      "id": "batch35-official-13",
+      "institutionSlug": "sai-university",
+      "publisher": "Sai University",
+      "url": "https://www.saiuniversity.edu.in/program/ba-llb",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "School of Law · BA LLB (Hons) programme"
+      ]
+    },
+    {
+      "id": "batch35-official-14",
+      "institutionSlug": "iit-palakkad",
+      "publisher": "IIT Palakkad",
+      "url": "https://iitpkd.ac.in/academics",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Academics · B.Tech curricula · Civil Engineering"
+      ]
+    },
+    {
+      "id": "batch35-official-15",
+      "institutionSlug": "vellore-institute-of-technology",
+      "publisher": "Vellore Institute of Technology",
+      "url": "https://vit.ac.in/admissions/programmes-offered",
+      "publicationDate": null,
+      "academicYear": "2027",
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Programmes Offered · Biotechnology · Vellore campus listing"
+      ]
+    },
+    {
+      "id": "batch35-official-16",
+      "institutionSlug": "indian-institute-of-technology-delhi",
+      "publisher": "IIT Delhi",
+      "url": "https://library.iitd.ac.in/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Central Library · library services"
+      ]
+    },
+    {
+      "id": "batch35-official-17",
+      "institutionSlug": "malaviya-national-institute-of-technology",
+      "publisher": "MNIT Jaipur",
+      "url": "https://library.mnit.ac.in/index",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Central Library homepage"
+      ]
+    },
+    {
+      "id": "batch35-official-18",
+      "institutionSlug": "nlu-delhi",
+      "publisher": "National Law University Delhi",
+      "url": "https://nludelhi.ac.in/library-justice-t-p-s-chawla-library/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Justice T.P.S. Chawla Library"
+      ]
+    },
+    {
+      "id": "batch35-official-19",
+      "institutionSlug": "nlu-jodhpur",
+      "publisher": "National Law University Jodhpur",
+      "url": "https://nlujodhpur.ac.in/university/library-nluj",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "University library page"
+      ]
+    },
+    {
+      "id": "batch35-official-20",
+      "institutionSlug": "iim-bodh-gaya",
+      "publisher": "IIM Bodh Gaya Library",
+      "url": "https://library.iimbg.ac.in/index.php/Pages/faq",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Library FAQ"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "iiitdm-kancheepuram",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Mechanical Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch35-official-1"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Study at IIITDM · Undergraduate programme table",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "graphic-era-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering with specialization in Construction Management, GIS and RS",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch35-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Civil Engineering programmes · Specialization listing",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "tezpur-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch35-official-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department of Civil Engineering · B.Tech Programme",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-mandi",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Data Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch35-official-4"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Degree programmes · Bachelor of Technology",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-uttarakhand",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "batch35-official-5"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Civil Engineering department overview",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "st-johns-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch35-official-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Undergraduate MBBS programme",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "manipal-institute-of-technology",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "batch35-official-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Civil Engineering · programme duration",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "thapar-institute-of-engineering",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.E. in Civil Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch35-official-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Civil Engineering academic programmes",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "king-georges-medical-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch35-official-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses and Admission · MBBS",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "central-university-of-punjab",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.Sc. Chemistry",
+        "level": "PG"
+      },
+      "sourceIds": [
+        "batch35-official-10"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Postgraduate programmes · Department of Chemistry",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "ashoka-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.A. (Hons.) in Political Science with Field Research",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "batch35-official-11"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Undergraduate Political Science · Major and degree",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "anna-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.E. Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch35-official-12"
+      ],
+      "academicYear": "2023",
+      "evidenceLocation": "University Departments · Regulations 2023 · curriculum listing",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "sai-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.A. LL.B. (Hons.)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch35-official-13"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "School of Law · BA LLB (Hons) programme",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-palakkad",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch35-official-14"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Academics · B.Tech curricula · Civil Engineering",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "vellore-institute-of-technology",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Biotechnology",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch35-official-15"
+      ],
+      "academicYear": "2027",
+      "evidenceLocation": "Programmes Offered · Biotechnology · Vellore campus listing",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library",
+        "description": "The campus Central Library provides library services and electronic resources."
+      },
+      "sourceIds": [
+        "batch35-official-16"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Central Library · library services",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "malaviya-national-institute-of-technology",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library",
+        "description": "MNIT Jaipur operates a Central Library."
+      },
+      "sourceIds": [
+        "batch35-official-17"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Central Library homepage",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nlu-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Justice T.P.S. Chawla Library",
+        "description": "The university lists the Justice T.P.S. Chawla Library as its campus library."
+      },
+      "sourceIds": [
+        "batch35-official-18"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Justice T.P.S. Chawla Library",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nlu-jodhpur",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "University library",
+        "description": "The university maintains a library for its academic community."
+      },
+      "sourceIds": [
+        "batch35-official-19"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "University library page",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iim-bodh-gaya",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Institute library",
+        "description": "The institute provides a library with lending and reference services."
+      },
+      "sourceIds": [
+        "batch35-official-20"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Library FAQ",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ]
+}

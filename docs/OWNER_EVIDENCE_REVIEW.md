@@ -237,3 +237,52 @@ curl --fail --silent --show-error "http://127.0.0.1:3317/api/colleges/$college_s
 ```
 
 Then open the profile and check any supported projection in search, comparison and CollegeFit. Admission guidance and the cutoff explorer still require their own qualifying evidence. For a first publication check, use a genuinely approved, currently applicable claim from the existing 25-claim packet. Batch 029 requires separate staging authorization before any review can begin.
+
+## Decision-critical owner review shortlist
+
+These archived rows are navigation shortcuts into the existing owner review queue. Eligibility, fees and historical outcomes require separate decisions per claim. Check the institution and campus, exact period, applicant category, units, source locator and permitted use before deciding. Confirm whether a fee schedule is still valid for the intended intake. For placement counts, verify the denominator and whether the report counts eligible students or placements.
+
+### Current or upcoming intake · eligibility
+
+**Indian Institute of Management Calcutta** · 2027 · [Institution source](https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates)
+
+- MBA Programme (Batch 2027-29) · All domestic applicants. Page lines 100–113 states minimum bachelor’s degree marks by SC/ST/PwD category and notes final-year applicant conditions; lines 118–122 states CAT 2026, WAT/PI and that thresholds are for shortlisting, not automatic admission. [Open claim cmwm3rj7m000ihxtvcl5fvgh7](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm3rj7m000ihxtvcl5fvgh7)
+- MBA Programme (Batch 2027-29) · OPEN. Page lines 120–137, Table 1: category-specific minimum section-wise and overall CAT 2026 percentiles for consideration for PI/WAT shortlisting; source warns actual cut-offs may be higher. [Open claim cmwm3rj7r000khxtv48tci1x7](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm3rj7r000khxtv48tci1x7)
+
+**SP Jain Institute** · 2027 · [Institution source](https://www.spjimr.org/newsroom/press-release/spjimr-opens-applications-for-pgdm-and-pgdm-bm-programmes-for-2027-29/)
+
+- PGDM and PGDM (Business Management) · Indian applicants. 16-Sep-2026 release lines 123-128 and eligibility section of same release; application portal and deadline 27-Nov-2026. [Open claim cmwlpjrvq000tyttv85ztg0kv](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwlpjrvq000tyttv85ztg0kv)
+
+**CMI Chennai** · 2027 · [Institution source](https://www.cmi.ac.in/admissions/)
+
+- B.S. (Hons.) programmes · 2027-28 applicants. Eligibility and How to Apply sections; examination date 15 May 2027; applications expected around 1 March 2027, no deadline inferred. [Open claim cmwlqtg56000ngvtvlul6b04j](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwlqtg56000ngvtvlul6b04j)
+
+### Upcoming intake · tuition and residence
+
+**Woxsen University** · 2027 · [Institution source](https://woxsen.edu.in/fsd/b.sc%20%28hons.%29fee.pdf)
+
+- Tuition Fee, Part 2 Academic Fee · Year 1; Batch 2027-2031 · year. Official Woxsen PDF lines 10-16: tuition table, Year 1 Part 2 Academic Fee INR 185,000. This is one component, not the total tuition-inclusive fee; admission commitment and learning resources are separately charged. [Open claim cmwm8ey92000nfjtveiyxj031](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm8ey92000nfjtveiyxj031)
+- Accommodation charge (food excluded) · Year 1 standard plan; non-AC, triple sharing · year. Official Woxsen PDF lines 21-30: standard food/hostel plan, Year 1 non-AC triple-sharing accommodation INR 160,000. Food and sports facility charges are separate. Charges are payable to INFEZIC LLP, not Woxsen University; reviewer must preserve that distinction. [Open claim cmwm8ey9a000pfjtvekwzwuep](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm8ey9a000pfjtvekwzwuep)
+- Accommodation charge (food excluded) · Year 1 premium plan; AC, triple sharing · year. Official Woxsen PDF lines 32-39: premium food/hostel plan, Year 1 AC triple-sharing accommodation INR 223,500. Food and sports facility charges are separate. Charges are payable to INFEZIC LLP, not Woxsen University; reviewer must preserve that distinction. [Open claim cmwm8ey9f000rfjtv6rq6mxxv](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm8ey9f000rfjtv6rq6mxxv)
+
+### Earlier intake · tuition and residence
+
+**Christian Medical College** · 2026 · [Institution source](https://www.cmch-vellore.edu/wp-content/uploads/sites/14/2026/11/college-prospectus-2026-2027-revised.pdf)
+
+- Tuition fee · All MBBS candidates · year. Prospectus printed p.177, Annexure I MBBS fee table: Tuition fee (per year), INR 3,000. This is tuition only, not total cost. [Open claim cmwm4trd200073otvpjb30qsw](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm4trd200073otvpjb30qsw)
+- Hostel charges: deposits and advances · Men · one_time. Prospectus printed p.177, hostel charges table: deposits and advances, Men, INR 10,000. One-time deposit/advance; not an annual hostel tariff. [Open claim cmwm4trd800093otv75rxgw3y](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm4trd800093otv75rxgw3y)
+- Hostel charges: deposits and advances · Women · one_time. Prospectus printed p.177, hostel charges table: deposits and advances, Women, INR 10,000. One-time deposit/advance; not an annual hostel tariff. [Open claim cmwm4trde000b3otv3mxgmt8z](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm4trde000b3otv3mxgmt8z)
+
+**BITS Pilani** · 2026 · [Institution source](https://www.bitsadmission.com/FD/FD_fee.html)
+
+- Semester tuition fee · Domestic students admitted in AY 2026-27; Pilani Campus · semester. Official fee schedule lines 1-12 gives identical first/second semester amounts under the Pilani Campus column; tuition note lines 55-60 confirms INR 291,500 semester tuition for domestic students admitted in AY 2026-27. Excludes admission fee, annual fees and other charges. [Open claim cmwm68lb1000a3gtvjqdocyvn](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm68lb1000a3gtvjqdocyvn)
+- Hostel fee, first semester · On-campus students admitted in AY 2026-27; Pilani Campus · semester. Official fee schedule lines 21-28, Hostel fee (for on-campus students only), first semester amount in the Pilani Campus column. This is first-semester hostel fee only; mess/electricity advance and other charges are separate. [Open claim cmwm68lb7000c3gtvdx9j9lfg](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm68lb7000c3gtvdx9j9lfg)
+
+### Historical placement count and cohort
+
+**Motilal Nehru National Institute of Technology** · 2024 · [Institution source](https://mnnit.ac.in/images/newstories/2026/notices/Annual_Report_Audit_Report_for_the_year_2024-25_English.pdf)
+
+- B.Tech eligible students (all listed departments), 2024-25 report. Annual Report 2024-25, printed page 11, B.Tech Courses / Department-wise Placement Statistics, table rows for Total and Computer Science and Engineering; eligible and placed counts shown in separate columns. [Open claim cmwm3rj75000bhxtvbr105oe7](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm3rj75000bhxtvbr105oe7)
+- B.Tech Computer Science and Engineering eligible students, 2024-25 report. Annual Report 2024-25, printed page 11, B.Tech Courses / Department-wise Placement Statistics, table rows for Total and Computer Science and Engineering; eligible and placed counts shown in separate columns. [Open claim cmwm3rj78000dhxtvxa99f78a](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm3rj78000dhxtvxa99f78a)
+
+**Accreditation and recognition remain held for source reconciliation.** Tezpur University’s NBA notice could not be checked against the regulator register because the programme lookup returned HTTP 403. The NMC’s older St. John’s MBBS listing needs reconciliation against the current regulator search before the relevant approval period can be stated. [Tezpur notice](https://www.tezu.ernet.in/notice/2025/November/NBA-accreditation.pdf) · [NBA programme lookup](https://www.nbaind.org/accreditationprogram/AccreditedProgram) · [NMC current course register](https://nmc.org.in/information-desk-college-and-course-search)

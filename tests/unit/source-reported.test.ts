@@ -15,7 +15,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(62);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(103);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
@@ -46,6 +46,22 @@ describe('source-reported profile eligibility', () => {
       expect(eligibleSourceReported({ id: collegeId, slug }, now, [{ ...record, ref, collegeId, slug, sourceUrl, fingerprint: fingerprint! }])).toEqual([]);
     }
     expect(policy.records.some(({ ref }) => ledger.humanReviewManifest.heldClaims.some(({ evidenceId }) => evidenceId === ref))).toBe(false);
+  });
+
+  it('publishes only period-scoped admission summaries and retains historical labels', () => {
+    const item = policy.records.find(({ ref }) => ref === 'cmwln2r0c0013setvw8chejkh')!;
+    const identity = { id: item.collegeId, slug: item.slug };
+    const scoped = { ...item, basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const };
+    expect(eligibleSourceReported(identity, now, [scoped])).toMatchObject([
+      { value: { kind: 'admission', exam: 'CLAT 2026' }, historical: true, publisherPeriod: 'CLAT 2026' },
+    ]);
+    expect(eligibleSourceReported(identity, now, [{ ...scoped, publisherPeriod: undefined }])).toEqual([]);
+    const ref = 'cmwm3rj7r000khxtv48tci1x7';
+    const collegeId = archive.claims.find((claim) => claim.id === ref)!.collegeId;
+    const slug = 'indian-institute-of-management-calcutta';
+    expect(eligibleSourceReported({ id: collegeId, slug }, now, [{ ...scoped, ref, slug, collegeId,
+      sourceUrl: 'https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates',
+      publisherPeriod: '2027–29', fingerprint: sourceReportedFingerprint(ref)! }])).toEqual([]);
   });
 
   it('retains the publisher period for a historical listing and compares staged evidence within that year', () => {

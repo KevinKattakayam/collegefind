@@ -54,7 +54,7 @@ async function getSourceReported(college: College) {
   const facts = eligibleSourceReported(college);
   if (!facts.length) return [];
   const rows = await prisma.fieldEvidence.findMany({
-    where: { collegeId: college.id, isFixture: false, field: { in: [...new Set(facts.flatMap(({ value }) => value.kind === 'programme' ? ['structured.programme', 'courses'] : ['structured.facility']))] } },
+    where: { collegeId: college.id, isFixture: false, field: { in: [...new Set(facts.flatMap(({ value }) => value.kind === 'programme' ? ['structured.programme', 'courses'] : [`structured.${value.kind}`]))] } },
     select: {
       id: true, field: true, isFixture: true, value: true, academicYear: true, validFrom: true, validUntil: true, supersedesId: true,
       decisions: { orderBy: [{ createdAt: 'desc' }, { id: 'desc' }], take: 1, select: { status: true } },
@@ -189,6 +189,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
               </dl>
             ) : null}
             {renderFacts(contactFacts, ['contact'], null)}
+            {renderSourceReported(sourceReported, 'contact')}
             {sourceLinks.length > 0 ? <>
               <h3 className="mt-4 text-sm font-semibold">Official pages and documents</h3>
               <p className="mt-1 text-xs text-slate-600">Use the linked institution pages to check your programme, campus and intake. Each link is checked separately from the facts on it.</p>
@@ -203,7 +204,9 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
               <a href="https://dashboard.aishe.gov.in/" target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline">AISHE directory</a>.
             </p> : null}
             {!college.phone && !college.email && contactFacts.length === 0 &&
-              <p className="mt-3 text-xs text-slate-600">Phone and email details are not verified yet.</p>}
+              <p className="mt-3 text-xs text-slate-600">{sourceReported.some(({ value }) => value.kind === 'contact')
+                ? 'The contact listed above is source-reported and not independently verified; other contact details may be unavailable.'
+                : 'Phone and email details are not verified yet.'}</p>}
           </section>
         </aside>
         <div className="min-w-0 lg:col-span-2 space-y-8 lg:col-start-1 lg:row-start-1">
@@ -227,6 +230,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             {college.courses.length > 0 && <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">{college.courses.map((course) => <li key={course}>{course}</li>)}</ul>}
             {renderFacts(listCollege.structuredFacts ?? [], ['programme', 'admission'], college.courses.length ? 'Programme eligibility and admission routes are not verified yet.' : 'Programme details and admission routes are not verified yet.')}
             {renderSourceReported(sourceReported, 'programme')}
+            {renderSourceReported(sourceReported, 'admission')}
             {sectionSource(['admissions', 'programmes'])}
             <Link className="mt-3 block text-indigo-700 underline" href={`/predictor?college=${encodeURIComponent(college.slug)}`}>Open admission guidance</Link>
           </section>
@@ -331,26 +335,35 @@ function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: stri
   </ul>;
 }
 
-function renderSourceReported(facts: SourceReportedFact[], kind: 'programme' | 'facility') {
+function renderSourceReported(facts: SourceReportedFact[], kind: SourceReportedFact['value']['kind']) {
   const selected = facts.filter(({ value }) => value.kind === kind);
   if (!selected.length) return null;
-  return <ul className="mt-4 grid gap-4 sm:grid-cols-2" aria-label={kind === 'programme' ? 'Institution-reported programmes' : 'Institution-reported facilities'}>
+  return <ul className="mt-4 grid gap-4 sm:grid-cols-2" aria-label={`Institution-reported ${structuredLabels[kind].toLowerCase()}`}>
     {selected.map(({ ref, value, campus, publisher, url, evidenceLocation, sourceTitle, collectedAt, publicationDate, checkedAt, academicYear, validFrom, validUntil, historical, publisherPeriod }) => (
       <li key={ref} data-evidence-status="OFFICIAL_SOURCE_REPORTED" className="min-w-0 space-y-2 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-slate-800">
         <p className="text-xs font-semibold text-amber-950">Source-reported; not independently verified</p>
-        <h3 className="break-words font-semibold">{value.kind === 'programme' ? value.programme : value.facility}</h3>
+        <h3 className="break-words font-semibold">{value.kind === 'programme' || value.kind === 'admission' ? value.programme : value.kind === 'contact' ? value.office : value.facility}</h3>
         <p>{campus}</p>
         {value.kind === 'programme' ? <p>{factFieldValues.level[value.level]}
           {value.durationMonths && ` · ${value.durationMonths % 12 === 0 ? `${value.durationMonths / 12} ${value.durationMonths === 12 ? 'year' : 'years'}` : `${value.durationMonths} months`}`}
-        </p> : <p>{value.description}</p>}
+        </p> : value.kind === 'facility' ? <p>{value.description}</p> : value.kind === 'contact' ? (
+          <p>{value.channel === 'EMAIL' ? 'Email' : value.channel === 'PHONE' ? 'Phone' : 'Address'} · {value.contact}</p>
+        ) : (
+          <div className="space-y-1">
+            <p>{value.route}</p>
+            {value.exam && <p>Exam · {value.exam}</p>}
+            {value.counselling && <p>Counselling · {value.counselling}</p>}
+            <p>Applicant scope · {value.category}</p>
+          </div>
+        )}
         <div className="space-y-1 break-words border-t border-amber-200 pt-2 text-xs leading-5">
           <a href={url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-800 underline">{publisher} · {sourceTitle}</a>
           <p>Evidence location: {evidenceLocation}</p>
           <p>Collected <time dateTime={collectedAt}>{reviewedDate(collectedAt)}</time> · Checked <time dateTime={checkedAt}>{reviewedDate(checkedAt)}</time></p>
           {publicationDate && <p>Published {reviewedDate(publicationDate)}</p>}
-          {academicYear !== null && <p>{historical ? 'Historical programme listing' : 'Publisher’s programme period'} · {publisherPeriod ?? academicYear}. Check the source for intake availability.</p>}
+          {academicYear !== null && <p>{historical ? (kind === 'admission' ? 'Historical admission cycle' : 'Historical programme listing') : 'Publisher’s period'} · {publisherPeriod ?? academicYear}. Check the source for intake availability.</p>}
           {(validFrom || validUntil) && <p>Applicable period{validFrom ? ` from ${reviewedDate(validFrom)}` : ''}{validUntil ? ` through ${reviewedDate(validUntil)}` : ''}</p>}
-          {academicYear === null && !validFrom && !validUntil && <p>The institution does not specify an intake for this detail.</p>}
+          {kind === 'programme' && academicYear === null && !validFrom && !validUntil && <p>The institution does not specify an intake for this detail.</p>}
         </div>
       </li>
     ))}
