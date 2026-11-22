@@ -13,11 +13,12 @@ import batch50 from '../../data/pilot/substantive-research-batch-050.json';
 import batch51 from '../../data/pilot/substantive-research-batch-051.json';
 import batch52 from '../../data/pilot/substantive-research-batch-052.json';
 import batch56 from '../../data/pilot/substantive-research-batch-056.json';
+import batch57 from '../../data/pilot/substantive-research-batch-057.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
 import { structuredFact } from '../../src/server/ingest/structured-facts';
 
-const now = new Date('2026-11-22T21:00:00Z');
+const now = new Date('2026-11-22T23:02:00Z');
 const record = {
   ...policy.records.find(({ slug }) => slug === 'dit-university')!,
   basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const,
@@ -542,7 +543,7 @@ describe('source-reported profile eligibility', () => {
       ));
     const eligible = archive.collegeIdentity.flatMap((identity) => eligibleSourceReported(identity, now));
     const preBatch052 = eligible.filter(({ ref }) => !ref.startsWith('batch-52:') && !ref.startsWith('batch-53:') &&
-      !ref.startsWith('batch-54:') && !ref.startsWith('batch-55:') && !ref.startsWith('batch-56:'));
+      !ref.startsWith('batch-54:') && !ref.startsWith('batch-55:') && !ref.startsWith('batch-56:') && !ref.startsWith('batch-57:'));
     const unscopedSimulation = archive.collegeIdentity.flatMap((identity) =>
       suppressSourceReported(preBatch052.filter((fact) =>
         policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id), archivedRows, [], now));
@@ -560,9 +561,9 @@ describe('source-reported profile eligibility', () => {
         policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id),
       archivedRows.filter((row) => row.collegeId === identity.id), [], now));
 
-    expect(eligible).toHaveLength(500);
-    expect(visible).toHaveLength(500);
-    expect(new Set(visible.map(({ ref }) => ref)).size).toBe(500);
+    expect(eligible).toHaveLength(503);
+    expect(visible).toHaveLength(503);
+    expect(new Set(visible.map(({ ref }) => ref)).size).toBe(503);
     expect(visible.every(({ status }) => status === 'OFFICIAL_SOURCE_REPORTED')).toBe(true);
     expect(visible.some(({ ref }) => ref === 'batch-50:0')).toBe(true);
     expect(preBatch052).toHaveLength(414);
@@ -788,6 +789,50 @@ describe('source-reported profile eligibility', () => {
       archiveRows.filter((archived) => archived.collegeId === row.collegeId), [], now,
     ).filter(({ ref }) => ref === row.ref));
     expect(surviving.map(({ ref }) => ref).sort()).toEqual(facts.map(({ ref }) => ref).sort());
+  });
+
+  it('publishes only nonduplicate claims from the five-college structured admissions slice', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-57:'));
+    expect(rows).toHaveLength(3);
+    expect(batch57.candidateClaims).toHaveLength(4);
+    expect(new Set(rows.map(({ slug }) => slug)).size).toBe(3);
+    expect(rows.every(({ status, basis, fingerprint, ref }) =>
+      status === 'PUBLISH' && basis === 'ATTRIBUTED_INDIVIDUAL_FACT' && fingerprint === sourceReportedFingerprint(ref))).toBe(true);
+    expect(batch57.candidateClaims.filter(({ institutionSlug }) => institutionSlug !== 'christian-medical-college').every(({ status, reviewState, stageable }) =>
+      status === 'UNREVIEWED' && reviewState === 'UNREVIEWED' && stageable)).toBe(true);
+    expect(batch57.candidateClaims.find(({ institutionSlug }) => institutionSlug === 'christian-medical-college'))
+      .toMatchObject({ status: 'HELD', reviewState: 'HELD', stageable: false });
+    expect(batch57.heldFindings.some(({ institutionSlug, reason }) => institutionSlug === 'christian-medical-college' &&
+      reason.includes('cmwm4trcw00053otvyei1v0kf'))).toBe(true);
+
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    expect(facts).toHaveLength(3);
+    expect(rows.map(({ slug }) => slug).sort()).toEqual([
+      'indian-institute-of-management-ahmedabad',
+      'indian-institute-of-technology-bombay',
+      'national-law-school-of-india-university',
+    ]);
+    expect(facts.every(({ status, evidenceLocation, url, academicYear }) =>
+      status === 'OFFICIAL_SOURCE_REPORTED' && evidenceLocation.length > 0 && url.startsWith('https://') && academicYear)).toBe(true);
+    expect(facts.find(({ ref }) => ref === 'batch-57:0')).toMatchObject({
+      historical: true, academicYear: '2026-27', value: {
+        kind: 'admission',
+        programme: 'Undergraduate programmes (route varies by programme)',
+        exam: 'JEE (Advanced) 2026; Preparatory 2025; INMO 2026; UCEED 2026',
+      },
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-57:1')).toMatchObject({
+      historical: false, academicYear: '2027-29', value: { kind: 'admission', exam: 'CAT 2026' },
+    });
+    expect(facts.some(({ ref }) => ref === 'batch-57:2')).toBe(false);
+    expect(rows.some(({ ref }) => ref === 'batch-57:2')).toBe(false);
+    expect(facts.find(({ ref }) => ref === 'batch-57:3')).toMatchObject({
+      academicYear: '2027-28', value: { kind: 'admission', exam: 'CLAT' },
+    });
+    expect(facts.every(({ value }) => value.kind === 'admission' && value.eligibility === undefined && value.applicationUrl === undefined)).toBe(true);
+    expect(facts.find(({ ref }) => ref === 'batch-57:0')?.evidenceLocation)
+      .toContain('Information for UG New Entrants 2026–27');
   });
 
   it('retains the publisher period for a historical listing and compares staged evidence within that year', () => {

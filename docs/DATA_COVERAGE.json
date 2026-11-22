@@ -47607,25 +47607,25 @@
     ]
   },
   "sourceReportedPublicProjection": {
-    "asOf": "2026-11-22T21:00:00Z",
+    "asOf": "2026-11-22T23:01:00Z",
     "catalogueSize": 205,
     "profilesWithSubstantiveSourceReportedFacts": 205,
-    "sourceReportedFactsVisible": 500,
+    "sourceReportedFactsVisible": 503,
     "profilesWithTwoOrMoreSubstantiveCategories": 138,
     "basicIdentityOrNavigationOnlyProfiles": 0,
-    "newBatches": "056",
-    "newFactsReleased": 22,
+    "newBatches": "057",
+    "newFactsReleased": 3,
     "newProfilesCovered": 0,
     "newFactsByCategory": {
       "programmes": 0,
-      "facilities": 13,
-      "admissions": 4,
-      "contacts": 5
+      "facilities": 0,
+      "admissions": 3,
+      "contacts": 0
     },
     "countsByCategory": {
       "programmes": 278,
       "facilities": 86,
-      "admissions": 36,
+      "admissions": 39,
       "contacts": 100,
       "fees": 0,
       "scholarships": 0,
@@ -47665,7 +47665,8 @@
       "Batch 050 contributes two programme facts, one facilities listing, and three admissions-process facts. Source-reported facts are not human verified; all six remain outside the persistent owner-review database.",
       "The release register contains 406 policy-eligible individual facts at the stated as-of time. Page-level archive conflict suppression remains an additional runtime boundary; unit and browser tests validate newly added facts against archived rows.",
       "Batch 056 adds 22 attributed low-risk source-reported facts across 20 already-informative colleges: four admission-route facts, 13 facility facts and five contact facts. It adds no new colleges; multi-category profiles rise 118→138, with 67 one-category, 117 two-category and 21 three-or-more-category profiles. All 22 facts pass the current eligibility and per-college archive projection; evidence remains OFFICIAL_SOURCE_REPORTED, separate from human VERIFIED. No owner database write or review decision occurred. Source locations, historical labels, short expiry and unresolved access holds are in the Batch 056 manifest and per-college ledger. The FMS admissions contact is attributed to the official FMS homepage (not the historical MBA bulletin); the Loyola library phone has no academic-year scope.",
-      "Live Browser verification on 2026-11-23 confirmed all 205 profile routes and directly checked all 22 Batch 056 facts across 20 pages against their displayed values, evidence locations, source links and OFFICIAL_SOURCE_REPORTED labels; this supplements the prior browser verification of the 478-fact baseline. Desktop/mobile screenshots are in /tmp/cf-b056-screens. This is local verification, not human review or production acceptance."
+      "Live Browser verification on 2026-11-23 confirmed all 205 profile routes and directly checked all 22 Batch 056 facts across 20 pages against their displayed values, evidence locations, source links and OFFICIAL_SOURCE_REPORTED labels; this supplements the prior browser verification of the 478-fact baseline. Desktop/mobile screenshots are in /tmp/cf-b056-screens. This is local verification, not human review or production acceptance.",
+      "Batch 057 adds three nonduplicate source-reported admissions-process facts at IIT Bombay, IIM Ahmedabad and NLSIU. Its fourth candidate for CMC Vellore duplicates staged archive claim cmwm4trcw00053otvyei1v0kf and remains held; Delhi was checked using its already-published fact. Distribution after Batch 057: 67 profiles with one substantive category, 114 with two, 24 with three or more. No persistent evidence write or human decision occurred; reviewed fees, eligibility, placement and cutoff counts remain zero. Local Chromium desktop and Pixel 7 checks confirmed Batch 057 display on five sample profiles; the CMC duplicate remained absent. No owner database writes occurred."
     ],
     "baselineBeforeBatch050": {
       "profiles": 181,
@@ -47683,6 +47684,23 @@
         "placements": 0,
         "cutoffs": 0
       }
+    },
+    "profilesByCategory": {
+      "programmes": 174,
+      "admissions": 37,
+      "facilities": 72,
+      "contacts": 86,
+      "fees": 0,
+      "scholarships": 0,
+      "recognition": 0,
+      "placements": 0,
+      "cutoffs": 0
+    },
+    "profileCategoryDistribution": {
+      "one": 67,
+      "two": 114,
+      "threeOrMore": 24,
+      "identityOnly": 0
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-22T20:47:43.000Z",
+  "asOf": "2026-11-22T23:01:00.000Z",
   "baseline": {
     "colleges": 205,
     "stagedClaims": 377,
@@ -455,7 +455,7 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "PARTIALLY_INFORMATIVE",
+      "publicContentClass": "SUBSTANTIVE_SOURCE_REPORTED",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedFactsVisible": [
@@ -522,12 +522,36 @@
           "historical": false,
           "checkedAt": "2026-11-21T16:16:32.000Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-57:0",
+          "value": {
+            "kind": "admission",
+            "programme": "Undergraduate programmes (route varies by programme)",
+            "route": "IIT Bombay's 2026–27 UG entrants came through JEE (Advanced) 2026, Preparatory 2025, INMO 2026 and UCEED 2026; the applicable route varies by programme.",
+            "category": "UG entrants; programme-specific examination route",
+            "exam": "JEE (Advanced) 2026; Preparatory 2025; INMO 2026; UCEED 2026"
+          },
+          "campus": "IIT Bombay, Powai, Mumbai · undergraduate entrants, 2026–27",
+          "publisher": "Indian Institute of Technology Bombay, Academic Office",
+          "url": "https://acad.iitb.ac.in/information-ug-new-entrants-2026-27",
+          "evidenceLocation": "Information for UG New Entrants 2026–27, heading and opening paragraph, lines 7–11: new entrants and their listed examination routes to undergraduate programmes.",
+          "sourceTitle": "Information for UG New Entrants 2026–27",
+          "collectedAt": "2026-11-22T23:01:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "checkedAt": "2026-11-22T23:01:00.000Z",
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "Historical 2026–27 undergraduate entrant cycle; routes are programme-specific, not a current application notice."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 2,
         "facilities": 1,
-        "admissions": 0,
+        "admissions": 1,
         "contacts": 0,
         "fees": 0,
         "scholarships": 0,
@@ -546,7 +570,7 @@
         "contact": 0,
         "facilities": 1
       },
-      "substantiveSourceReportedCategoryCount": 2
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "indian-institute-of-technology-delhi",
@@ -3975,7 +3999,7 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "PARTIALLY_INFORMATIVE",
+      "publicContentClass": "SUBSTANTIVE_SOURCE_REPORTED",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedFactsVisible": [
@@ -4020,12 +4044,36 @@
           "validUntil": null,
           "historical": false,
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-57:1",
+          "value": {
+            "kind": "admission",
+            "programme": "Two-Year Post Graduate Programme in Management (PGP)",
+            "route": "CAT-2026 composite-score shortlisting; shortlisted applicants proceed to Analytical Writing Test and Personal Interview",
+            "category": "Domestic applicants, PGP 2027–29 batch",
+            "exam": "CAT 2026"
+          },
+          "campus": "IIMA Vastrapur, Ahmedabad · domestic PGP",
+          "publisher": "Indian Institute of Management Ahmedabad",
+          "url": "https://www.iima.ac.in/sites/default/files/2026-09/AdmissionProcedure_PGP_1109_2026.pdf",
+          "evidenceLocation": "Admission Policy for PGP 2027–29 Batch, domestic candidate policy: page 1 title; page 2, Admission/Selection Process paragraphs 1–3.",
+          "sourceTitle": "Admission Policy for PGP 2027–29 Batch — Domestic",
+          "collectedAt": "2026-11-22T23:01:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2027-29",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "checkedAt": "2026-11-22T23:01:00.000Z",
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "Domestic PGP 2027–29 admission process; not eligibility, cutoff or admission probability."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
         "facilities": 1,
-        "admissions": 0,
+        "admissions": 1,
         "contacts": 0,
         "fees": 0,
         "scholarships": 0,
@@ -4039,7 +4087,7 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 2,
+      "substantiveSourceReportedCategoryCount": 3,
       "newBatch055VisibleFacts": 1
     },
     {
@@ -10759,7 +10807,7 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "PARTIALLY_INFORMATIVE",
+      "publicContentClass": "SUBSTANTIVE_SOURCE_REPORTED",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedFactsVisible": [
@@ -10804,12 +10852,36 @@
           "validUntil": null,
           "historical": false,
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-57:3",
+          "value": {
+            "kind": "admission",
+            "programme": "Five-Year B.A., LL.B. (Hons.)",
+            "route": "Merit selection through the Common Law Admission Test administered by the Consortium of NLUs",
+            "category": "Five-year undergraduate BA LLB applicants, admissions page 2027–28",
+            "exam": "CLAT"
+          },
+          "campus": "NLSIU Bengaluru · five-year BA LLB (Hons.)",
+          "publisher": "National Law School of India University, Bengaluru",
+          "url": "https://www.nls.ac.in/admissions/",
+          "evidenceLocation": "NLSIU Admissions page, Admissions 2027–28 heading (line 63) and five-year B.A., LL.B. (Hons.) section (lines 102–108).",
+          "sourceTitle": "Admissions 2027–28",
+          "collectedAt": "2026-11-22T23:01:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2027-28",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "checkedAt": "2026-11-22T23:01:00.000Z",
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "NLSIU admissions page 2027–28; the page does not specify a separate CLAT exam year for this programme."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
         "facilities": 1,
-        "admissions": 0,
+        "admissions": 1,
         "contacts": 0,
         "fees": 0,
         "scholarships": 0,
@@ -10823,7 +10895,7 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 2,
+      "substantiveSourceReportedCategoryCount": 3,
       "newBatch055VisibleFacts": 1
     },
     {
@@ -42970,5 +43042,112 @@
       }
     ],
     "scopeNote": "The 22 facts survive the checked 377-claim archive projection in college-specific tests. They remain OFFICIAL_SOURCE_REPORTED, never human VERIFIED. Candidate manifests remain UNREVIEWED; no owner database writes occurred."
+  },
+  "contentDepthBatch057": {
+    "researchedAt": "2026-11-22T23:01:00.000Z",
+    "before": {
+      "informativeProfiles": 205,
+      "sourceReportedFacts": 500,
+      "multiCategoryProfiles": 138,
+      "basicOnlyProfiles": 0,
+      "categories": {
+        "programmes": 278,
+        "facilities": 86,
+        "admissions": 36,
+        "contacts": 100,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "after": {
+      "informativeProfiles": 205,
+      "sourceReportedFacts": 503,
+      "multiCategoryProfiles": 138,
+      "basicOnlyProfiles": 0,
+      "categories": {
+        "programmes": 278,
+        "facilities": 86,
+        "admissions": 39,
+        "contacts": 100,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "newSourceReportedFacts": 3,
+    "newProfilesWithNewFacts": 3,
+    "newDistinctCategories": {
+      "programmes": 0,
+      "admissions": 3,
+      "facilities": 0,
+      "contacts": 0
+    },
+    "profilesWithCategories": {
+      "one": 67,
+      "two": 114,
+      "threeOrMore": 24,
+      "basic": 0
+    },
+    "newlyPublishedClaims": [
+      {
+        "collegeId": "cmwlksxid000031tvrp3l436w",
+        "slug": "indian-institute-of-technology-bombay",
+        "ref": "batch-57:0",
+        "kind": "admission",
+        "programme": "Undergraduate programmes (route varies by programme)",
+        "academicYear": "2026-27",
+        "sourceUrl": "https://acad.iitb.ac.in/information-ug-new-entrants-2026-27",
+        "evidenceLocation": "Information for UG New Entrants 2026–27, heading and opening paragraph, lines 7–11: new entrants and their listed examination routes to undergraduate programmes.",
+        "historical": true
+      },
+      {
+        "collegeId": "cmwkyn9wo000efhtvhwch8vqy",
+        "slug": "indian-institute-of-management-ahmedabad",
+        "ref": "batch-57:1",
+        "kind": "admission",
+        "programme": "Two-Year Post Graduate Programme in Management (PGP)",
+        "academicYear": "2027-29",
+        "sourceUrl": "https://www.iima.ac.in/sites/default/files/2026-09/AdmissionProcedure_PGP_1109_2026.pdf",
+        "evidenceLocation": "Admission Policy for PGP 2027–29 Batch, domestic candidate policy: page 1 title; page 2, Admission/Selection Process paragraphs 1–3.",
+        "historical": false
+      },
+      {
+        "collegeId": "cmwkyn9wp001bfhtv7m7u08nc",
+        "slug": "national-law-school-of-india-university",
+        "ref": "batch-57:3",
+        "kind": "admission",
+        "programme": "Five-Year B.A., LL.B. (Hons.)",
+        "academicYear": "2027-28",
+        "sourceUrl": "https://www.nls.ac.in/admissions/",
+        "evidenceLocation": "NLSIU Admissions page, Admissions 2027–28 heading (line 63) and five-year B.A., LL.B. (Hons.) section (lines 102–108).",
+        "historical": false
+      }
+    ],
+    "withheldCandidates": [
+      {
+        "slug": "christian-medical-college",
+        "field": "structured.admission",
+        "reason": "The exact NEET-UG 2026 route and programme-specific eligibility are already present in the 377-claim owner-review archive (claim cmwm4trcw00053otvyei1v0kf) from this prospectus. Do not duplicate or publicly expose it; let the owner review the original claim individually."
+      },
+      {
+        "slug": "university-of-delhi",
+        "field": "fees",
+        "reason": "The reviewed sample retains the already published, explicitly scoped CUET/CSAS 2026–27 route. This bulletin is not reused to infer fees, eligibility beyond its own programme-specific rules, or programme availability. Admissions-cycle status must be checked separately before describing applications as open."
+      },
+      {
+        "slug": "indian-institute-of-technology-bombay",
+        "field": "fees",
+        "reason": "Official 2026–27 fee schedules are decision-critical and identify distinct academic fees, hostel fees, seat-acceptance credits and mess advance. Keep amounts out of source-reported publication; prepare/inspect as individual human-review evidence only."
+      }
+    ],
+    "newPersistentEvidenceClaims": 0,
+    "genuineHumanApprovals": 0,
+    "verifiedCutoffs": 0,
+    "scopeNote": "Three nonduplicate low-risk official admissions-route facts are source-reported; they are not human-verified. IIT Bombay route names are programme-specific and the entrant cycle is historical. CMC Vellore batch-57 candidate duplicates an exact staged claim and remains held. IIT Bombay fee schedules are high-impact and excluded from source-reported publication. The existing Delhi admissions fact was the fifth profile checked; it is not a new fact."
   }
 }

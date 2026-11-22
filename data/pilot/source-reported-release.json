@@ -8038,6 +8038,55 @@
       "status": "PUBLISH",
       "reason": "Direct official-source page inspected; presented as source-reported and not independently verified.",
       "publisherPeriod": "Institution contact page last updated 15 November 2026; verify before calling."
+    },
+    {
+      "ref": "batch-57:0",
+      "collegeId": "cmwlksxid000031tvrp3l436w",
+      "slug": "indian-institute-of-technology-bombay",
+      "campus": "IIT Bombay, Powai, Mumbai · undergraduate entrants, 2026–27",
+      "sourceTitle": "Information for UG New Entrants 2026–27",
+      "sourceUrl": "https://acad.iitb.ac.in/information-ug-new-entrants-2026-27",
+      "checkedAt": "2026-11-22T23:01:00.000Z",
+      "expiresAt": "2027-02-20T23:01:00.000Z",
+      "basis": "ATTRIBUTED_INDIVIDUAL_FACT",
+      "usageAssessment": "Single factual paraphrase from an accessible official Academic Office page; no page text, tables or source documents reproduced. No explicit bulk reuse is inferred.",
+      "fingerprint": "b84e83d62896c5721703f0d6d49a89e16b8ee6e80cf9729b3b834c21f4523632",
+      "status": "PUBLISH",
+      "reason": "Official IIT Bombay Academic Office lists 2026–27 undergraduate entrant routes and programmes; displayed with the completed-cycle and programme-specific limitations.",
+      "publisherPeriod": "Historical 2026–27 undergraduate entrant cycle; routes are programme-specific, not a current application notice.",
+      "historical": true
+    },
+    {
+      "ref": "batch-57:1",
+      "collegeId": "cmwkyn9wo000efhtvhwch8vqy",
+      "slug": "indian-institute-of-management-ahmedabad",
+      "campus": "IIMA Vastrapur, Ahmedabad · domestic PGP",
+      "sourceTitle": "Admission Policy for PGP 2027–29 Batch — Domestic",
+      "sourceUrl": "https://www.iima.ac.in/sites/default/files/2026-09/AdmissionProcedure_PGP_1109_2026.pdf",
+      "checkedAt": "2026-11-22T23:01:00.000Z",
+      "expiresAt": "2027-02-20T23:01:00.000Z",
+      "basis": "ATTRIBUTED_INDIVIDUAL_FACT",
+      "usageAssessment": "Single factual paraphrase from an official admissions policy; no eligibility thresholds, scores, table or PDF text reproduced. No bulk reuse is inferred.",
+      "fingerprint": "c6e24845da35bf115c508e39ffe69ce7dc4c9170cd4a4dc18cfac98a99b9a77c",
+      "status": "PUBLISH",
+      "reason": "Official policy explicitly identifies domestic PGP 2027–29 and CAT-2026 shortlisting followed by AWT/PI; eligibility values remain excluded.",
+      "publisherPeriod": "Domestic PGP 2027–29 admission process; not eligibility, cutoff or admission probability."
+    },
+    {
+      "ref": "batch-57:3",
+      "collegeId": "cmwkyn9wp001bfhtv7m7u08nc",
+      "slug": "national-law-school-of-india-university",
+      "campus": "NLSIU Bengaluru · five-year BA LLB (Hons.)",
+      "sourceTitle": "Admissions 2027–28",
+      "sourceUrl": "https://www.nls.ac.in/admissions/",
+      "checkedAt": "2026-11-22T23:01:00.000Z",
+      "expiresAt": "2027-02-20T23:01:00.000Z",
+      "basis": "ATTRIBUTED_INDIVIDUAL_FACT",
+      "usageAssessment": "Single factual programme-route paraphrase from the official university admissions page; no page prose or tables reproduced. No bulk reuse is inferred.",
+      "fingerprint": "6813725e41fc990b8265210c9b432e1f594a6857b458866e96848ba338f3515f",
+      "status": "PUBLISH",
+      "reason": "The current admissions page labels the 2027–28 cycle and states that five-year BA LLB selection is through CLAT; no eligibility or cutoff is shown.",
+      "publisherPeriod": "NLSIU admissions page 2027–28; the page does not specify a separate CLAT exam year for this programme."
     }
   ]
 }
