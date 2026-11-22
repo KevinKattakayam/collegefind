@@ -11,7 +11,7 @@ test('source-reported facts render in their sections with campus, scope and prov
   // The owner-stage scenario mutates these two institutions in its separate rehearsal.
   const main = page.getByRole('main');
   const newSlugs = new Set(policy.records.filter(({ ref }) =>
-    ref.startsWith('batch-45:') || ref.startsWith('batch-46:') || ref.startsWith('batch-47:') || ref.startsWith('batch-48:') || ref.startsWith('batch-49:')).map(({ slug }) => slug));
+    ref.startsWith('batch-45:') || ref.startsWith('batch-46:') || ref.startsWith('batch-47:') || ref.startsWith('batch-48:') || ref.startsWith('batch-49:') || ref.startsWith('batch-50:')).map(({ slug }) => slug));
   for (const college of ledger.institutions) {
     const response = await request.get(`/colleges/${college.slug}`);
     expect(response.ok(), `${college.slug} should render`).toBe(true);
@@ -146,13 +146,42 @@ test('source-reported facts render in their sections with campus, scope and prov
     await expect(resources).toContainText('The contact listed above is source-reported and not independently verified');
     await expect(resources).not.toContainText('Phone and email details are not verified yet');
     await resources.screenshot({ path: join(screenshotDir, `pes-contact-${suffix}.png`) });
+
+    await page.goto('/colleges/indian-institute-of-technology-kanpur#facilities');
+    const iitKanpurFacilities = main.locator('#facilities');
+    await expect(iitKanpurFacilities).toContainText('P. K. Kelkar Library');
+    await expect(iitKanpurFacilities.locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(1);
+    await expect(iitKanpurFacilities.getByRole('link', { name: /Centres and Facilities/ })).toBeVisible();
+    await iitKanpurFacilities.screenshot({ path: join(screenshotDir, `iit-kanpur-library-${suffix}.png`) });
+
+    await page.goto('/colleges/indian-school-of-business#programmes-and-admissions');
+    const isb = main.locator('#programmes-and-admissions');
+    await expect(isb).toContainText('Post Graduate Programme in Management (PGP)');
+    await expect(isb).toContainText('Postgraduate · 1 year');
+    await expect(isb).toContainText('Class of 2027 application cycle');
+    await expect(isb).toContainText('6 December 2026');
+    await isb.screenshot({ path: join(screenshotDir, `isb-pgp-admissions-${suffix}.png`) });
+
+    await page.goto('/colleges/st-johns-college#programmes-and-admissions');
+    const stJohns = main.locator('#programmes-and-admissions');
+    await expect(stJohns).toContainText('Bachelor of Arts');
+    await expect(stJohns).toContainText('DBRAU Samarth/University Web-Registration');
+    await expect(stJohns).toContainText('page title still says 2025–26');
+    await stJohns.screenshot({ path: join(screenshotDir, `st-johns-agra-ug-${suffix}.png`) });
+
+    await page.goto('/colleges/nit-srinagar#programmes-and-admissions');
+    const nitSrinagar = main.locator('#programmes-and-admissions');
+    await expect(nitSrinagar).toContainText('Historical admission cycle');
+    await expect(nitSrinagar).toContainText('MBA, admission cycle 2026');
+    await nitSrinagar.screenshot({ path: join(screenshotDir, `nit-srinagar-mba-2026-${suffix}.png`) });
   }
 
   await page.goto('/colleges/ashoka-university#fees');
   await expect(main.locator('#fees')).toContainText('Not verified yet');
   await expect(main.locator('#fees [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
   await page.goto('/colleges/indian-institute-of-technology-kanpur');
-  await expect(main.locator('[data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
+  await expect(main.locator('#facilities [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(1);
+  await expect(main.locator('#programmes-and-admissions [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
 });
 
 test('source-reported programmes stay outside comparison and CollegeFit', async ({ page }) => {

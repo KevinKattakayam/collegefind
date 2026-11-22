@@ -227,6 +227,14 @@ The dedicated owner staging command now supports read-only preview, batch hash a
 
 The scoped programme milestone adds a further 42 institutions through Batch 033 and explicitly attributed archive releases. Reuse the same evidence and release checks as the remaining colleges are researched. Scope each programme to the publisher’s period when supplied. Treat price, outcomes and admission decisions under the existing human review rules. [Coverage](DATA_COVERAGE.md#publication-of-programme-periods-and-facilities-batch-033)
 
+### Remaining-profile and owner-review continuation — Batch 050
+
+- [x] Research the remaining basic profiles against first-party sources; publish only directly opened, attributable, low-risk facts and record precise access, freshness, identity and scope holds for the rest.
+- [x] Reconcile profile coverage at a fixed policy timestamp: 181/205 to 185/205 informative profiles, 400 to 406 source-reported facts, 75 to 77 multi-category profiles, and 24 to 20 basic-only profiles.
+- [x] Keep the six priority staged fee/eligibility/placement claims ready for individual owner inspection in the existing `/admin/enrichment` workflow; make no persistent import or human decision.
+- [ ] Owner registers their own account, uses the guarded USER-to-ADMIN procedure for that exact account, and reviews each high-impact claim individually.
+- [ ] Continue source research for the 20 remaining basic profiles, preferring directly accessible official pages and resolving source identity, freshness and reuse blockers; do not count links or held candidates as content.
+
 ### Content depth follow-up — 2026-11-21
 
 - [x] Add source-reported admissions-route and institutional-contact cards to the existing profile sections while preserving the separate source label and keeping these facts out of verified-only APIs, search, comparison, CollegeFit and admission recommendations.

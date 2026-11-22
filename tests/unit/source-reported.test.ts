@@ -9,10 +9,11 @@ import batch46 from '../../data/pilot/substantive-research-batch-046.json';
 import batch47 from '../../data/pilot/substantive-research-batch-047.json';
 import batch48 from '../../data/pilot/substantive-research-batch-048.json';
 import batch49 from '../../data/pilot/substantive-research-batch-049.json';
+import batch50 from '../../data/pilot/substantive-research-batch-050.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
 
-const now = new Date('2026-11-22T03:52:00Z');
+const now = new Date('2026-11-22T04:40:00Z');
 const record = {
   ...policy.records.find(({ slug }) => slug === 'dit-university')!,
   basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const,
@@ -22,7 +23,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(181);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(185);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
@@ -397,6 +398,68 @@ describe('source-reported profile eligibility', () => {
     expect(batch49.researchHolds.some(({ institutionSlug, status }) =>
       institutionSlug === 'op-jindal-university' && status === 'RESEARCH_HOLD_IDENTITY_MISMATCH')).toBe(true);
     expect(rows.some(({ slug }) => ['st-johns-college', 'op-jindal-university', 'ict-mumbai'].includes(slug))).toBe(false);
+  });
+
+  it('reconciles Batch 050 direct-source facts, cycle scope and previously held evidence', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-50:'));
+    expect(batch50.candidateClaims).toHaveLength(6);
+    expect(rows).toHaveLength(6);
+    expect(new Set(rows.map(({ slug }) => slug)).size).toBe(4);
+    expect(rows.every(({ status, basis, fingerprint, ref }) => status === 'PUBLISH' &&
+      basis === 'ATTRIBUTED_INDIVIDUAL_FACT' && sourceReportedFingerprint(ref) === fingerprint)).toBe(true);
+
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    expect(facts).toHaveLength(6);
+    expect(facts.filter(({ value }) => value.kind === 'programme')).toHaveLength(2);
+    expect(facts.filter(({ value }) => value.kind === 'admission')).toHaveLength(3);
+    expect(facts.filter(({ value }) => value.kind === 'facility')).toHaveLength(1);
+    expect(facts.every(({ status, evidenceLocation, url }) => status === 'OFFICIAL_SOURCE_REPORTED' &&
+      evidenceLocation.length > 0 && url.startsWith('https://'))).toBe(true);
+
+    expect(facts.find(({ ref }) => ref === 'batch-50:0')).toMatchObject({
+      value: { kind: 'facility', facility: 'P. K. Kelkar Library' },
+      campus: expect.stringContaining('IIT Kanpur'),
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-50:1')).toMatchObject({
+      value: { kind: 'programme', durationMonths: 12 },
+      campus: expect.stringContaining('Hyderabad and Mohali'),
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-50:2')).toMatchObject({
+      academicYear: '2027', historical: false, validUntil: '2026-12-07T00:00:00.000Z',
+      value: { kind: 'admission', category: 'Class of 2027 application cycle' },
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-50:3')).toMatchObject({
+      academicYear: '2026-27', historical: false,
+      publisherPeriod: expect.stringContaining('page title still says 2025–26'),
+      value: { kind: 'admission' },
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-50:4')).toMatchObject({
+      academicYear: '2026', historical: true,
+      publisherPeriod: expect.stringContaining('Historical 2026'),
+      value: { kind: 'admission' },
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-50:5')).toMatchObject({
+      value: { kind: 'programme', programme: 'Bachelor of Arts', level: 'UG' },
+      publisherPeriod: expect.stringContaining('no explicit academic year'),
+    });
+
+    // Existing IIT Kanpur B.Tech/B.S and admission evidence remains held; the new release does not revive it.
+    const iitKanpur = archive.collegeIdentity.find(({ slug }) => slug === 'indian-institute-of-technology-kanpur')!;
+    const archivedRows = archive.claims.map((claim) => ({
+      id: claim.id, field: claim.field, value: claim.value, isFixture: claim.isFixture,
+      academicYear: claim.academicYear, validFrom: claim.validFrom ? new Date(claim.validFrom) : null,
+      validUntil: claim.validUntil ? new Date(claim.validUntil) : null, supersedesId: claim.supersedesId,
+      decisions: [],
+    }));
+    const projected = suppressSourceReported(eligibleSourceReported(iitKanpur, now), archivedRows, [], now);
+    expect(projected.some(({ ref }) => ref === 'batch-50:0')).toBe(true);
+    expect(batch50.candidateClaims.every(({ status, reviewState, stageable }) =>
+      status === 'UNREVIEWED' && reviewState === 'UNREVIEWED' && stageable)).toBe(true);
+    expect(batch50.reviewerSummary.ownerDatabaseWrites).toBe(0);
+    expect(batch50.reviewerSummary.genuineApprovals).toBe(0);
+    expect(batch50.researchHolds.some(({ institutionSlug, reason }) =>
+      institutionSlug === 'op-jindal-university' && reason.includes('Raigarh'))).toBe(true);
   });
 
   it('adds the Batch 040 breadth slice with distinct categories, source attribution and historical labels', () => {

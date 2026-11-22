@@ -1,6 +1,6 @@
 {
   "catalogueSize": 205,
-  "asOf": "2026-11-21T13:28:49Z",
+  "asOf": "2026-11-22T04:40:00Z",
   "verifiedRealClaims": 0,
   "phase4CutoffCoverage": {
     "checkedAt": "2026-11-19",
@@ -47607,25 +47607,25 @@
     ]
   },
   "sourceReportedPublicProjection": {
-    "asOf": "2026-11-22T03:52:00Z",
+    "asOf": "2026-11-22T04:40:00Z",
     "catalogueSize": 205,
-    "profilesWithSubstantiveSourceReportedFacts": 181,
-    "sourceReportedFactsVisible": 400,
-    "profilesWithTwoOrMoreSubstantiveCategories": 75,
-    "basicIdentityOrNavigationOnlyProfiles": 24,
-    "newBatches": "049",
-    "newFactsReleased": 20,
-    "newProfilesCovered": 8,
+    "profilesWithSubstantiveSourceReportedFacts": 185,
+    "sourceReportedFactsVisible": 406,
+    "profilesWithTwoOrMoreSubstantiveCategories": 77,
+    "basicIdentityOrNavigationOnlyProfiles": 20,
+    "newBatches": "050",
+    "newFactsReleased": 6,
+    "newProfilesCovered": 4,
     "newFactsByCategory": {
-      "programmes": 9,
-      "facilities": 3,
-      "admissions": 1,
-      "contacts": 7
+      "programmes": 2,
+      "facilities": 1,
+      "admissions": 3,
+      "contacts": 0
     },
     "countsByCategory": {
-      "programmes": 262,
-      "facilities": 59,
-      "admissions": 28,
+      "programmes": 264,
+      "facilities": 60,
+      "admissions": 31,
       "contacts": 51,
       "fees": 0,
       "scholarships": 0,
@@ -47660,7 +47660,27 @@
       "Runtime projection excludes future-dated, expired, held, conflicted, withdrawn and reviewer-superseded facts. Category and profile counts use distinct substantive kinds, not record count alone.",
       "Batch 049 adds no staged-evidence records and no human decisions. Existing 377 staged claims and owner-review data remain unchanged; genuine approvals remain zero and cutoff records remain zero.",
       "High-impact fees, eligibility thresholds, placements, scholarship conditions/amounts, accreditation validity, rankings and cutoffs remain outside the source-reported batch. The existing six-claim fee/eligibility/waiver/placement review priority remains staged for human inspection.",
-      "Official institutional material for ICT Mumbai, IIM Lucknow, IIT Jodhpur, Osmania and several NIT/CUSAT pages was inaccessible or ambiguous; exact holds are recorded in batch 049. Wrong-campus OP Jindal, wrong-institution St John’s Medical College and outdated Banasthali material were excluded."
-    ]
+      "Official institutional material for ICT Mumbai, IIM Lucknow, IIT Jodhpur, Osmania and several NIT/CUSAT pages was inaccessible or ambiguous; exact holds are recorded in batch 049. Wrong-campus OP Jindal, wrong-institution St John’s Medical College and outdated Banasthali material were excluded.",
+      "Batch 050 adds six time-limited, source-reported facts across four previously basic profiles; profile completeness increased to 185, multi-category coverage to 77, and basic-only profiles decreased to 20.",
+      "Batch 050 contributes two programme facts, one facilities listing, and three admissions-process facts. Source-reported facts are not human verified; all six remain outside the persistent owner-review database.",
+      "The release register contains 406 policy-eligible individual facts at the stated as-of time. Page-level archive conflict suppression remains an additional runtime boundary; unit and browser tests validate newly added facts against archived rows."
+    ],
+    "baselineBeforeBatch050": {
+      "profiles": 181,
+      "facts": 400,
+      "multi": 75,
+      "basic": 24,
+      "categories": {
+        "programmes": 262,
+        "facilities": 59,
+        "admissions": 28,
+        "contacts": 51,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    }
   }
 }
