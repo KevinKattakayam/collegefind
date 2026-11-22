@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-22T14:25:00.000Z",
+  "asOf": "2026-11-22T15:40:00.000Z",
   "baseline": {
     "colleges": 205,
     "stagedClaims": 377,
@@ -4574,7 +4574,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Wait for or locate the current official academic-year prospectus/notice; retain older items as historical only.",
       "priorResearchPointer": "https://iiml.ac.in/",
       "unimportedBatch028Candidates": 0,
@@ -4599,21 +4599,63 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
-        "facilities": 0,
+        "facilities": 1,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-53:0",
+          "value": {
+            "kind": "facility",
+            "facility": "Gyanodaya Library",
+            "description": "The Lucknow campus library provides management resources in multiple formats."
+          },
+          "campus": "IIM Lucknow, Lucknow campus",
+          "publisher": "IIM Lucknow",
+          "url": "https://iiml.ac.in/facilities/library",
+          "evidenceLocation": "Gyanodaya Library section before the separately headed Noida Campus Library section.",
+          "sourceTitle": "Library",
+          "collectedAt": "2026-11-22T15:40:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-53:1",
+          "value": {
+            "kind": "contact",
+            "office": "Lucknow campus",
+            "channel": "ADDRESS",
+            "contact": "Prabandh Nagar, IIM Road, Lucknow 226013"
+          },
+          "campus": "IIM Lucknow, Lucknow campus",
+          "publisher": "IIM Lucknow",
+          "url": "https://iiml.ac.in/facilities/library",
+          "evidenceLocation": "Institution footer, Lucknow Campus address.",
+          "sourceTitle": "Library",
+          "collectedAt": "2026-11-22T15:40:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
@@ -4625,7 +4667,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Official academic pages returned timeouts/cache misses during direct retrieval; search-indexed summaries were not used as factual proof."
-      ]
+      ],
+      "newBatch053VisibleFacts": 2
     },
     {
       "slug": "vellore-institute-of-technology",
@@ -21261,7 +21304,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Official academic programme pages returned timeout/cache-miss/502 responses on direct opening during this batch; search snippets were not used."
-      ]
+      ],
+      "batch053Hold": "Academic listing and alternate IITJ library/curriculum pages timed out on direct retrieval."
     },
     {
       "slug": "nit-jamshedpur",
@@ -21383,7 +21427,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Official admissions page remains a JavaScript shell; no search summary used as evidence."
-      ]
+      ],
+      "batch053Hold": "Department and library pages returned only the application shell on direct retrieval. The 2023–24 annual report exceeded the research browser size limit."
     },
     {
       "slug": "nit-kurukshetra",
@@ -21935,7 +21980,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Accessible official material found was undated or described an older admission cycle; no current programme/admission claim published."
-      ]
+      ],
+      "batch053Hold": "Central Library page timed out in the research browser and standard HTTP client."
     },
     {
       "slug": "nit-srinagar",
@@ -26258,7 +26304,7 @@
           "reference": "cmwkzfde0002imctvy9vnp1ao"
         }
       ],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Use an official programme catalogue, current admissions notice, dated fee schedule, accreditation register or institutional report matching the exact college/campus.",
       "priorResearchPointer": "https://www.kem.edu/",
       "unimportedBatch028Candidates": 0,
@@ -26283,12 +26329,12 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
-        "programmes": 0,
-        "facilities": 0,
+        "programmes": 1,
+        "facilities": 1,
         "admissions": 0,
         "contacts": 0,
         "fees": 0,
@@ -26297,13 +26343,56 @@
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-53:2",
+          "value": {
+            "kind": "facility",
+            "facility": "Medical college library",
+            "description": "The library identifies undergraduate and postgraduate sections. Confirm access arrangements with the college."
+          },
+          "campus": "Seth G. S. Medical College, Parel, Mumbai",
+          "publisher": "Seth G. S. Medical College and KEM Hospital",
+          "url": "https://www.kem.edu/library",
+          "evidenceLocation": "Library Facilities section, undergraduate and postgraduate sections.",
+          "sourceTitle": "Library",
+          "collectedAt": "2026-11-22T15:40:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-53:7",
+          "value": {
+            "kind": "programme",
+            "programme": "MBBS",
+            "level": "UG"
+          },
+          "campus": "Seth G. S. Medical College and KEM Hospital, Parel, Mumbai",
+          "publisher": "National Medical Commission",
+          "url": "https://nmc.org.in/whats-new/download/910",
+          "evidenceLocation": "MBBS seat matrix, PDF page 17, Maharashtra row 417. Programme listing only.",
+          "sourceTitle": "MBBS seat matrix as of 3 December 2025",
+          "collectedAt": "2026-11-22T15:40:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2025-26",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "NMC matrix dated 3 December 2025 for academic year 2025–26. Confirm the current offering with the institution."
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "newBatch053VisibleFacts": 2
     },
     {
       "slug": "lady-hardinge-medical-college",
@@ -26679,7 +26768,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Resolve canonical institution and campus scope from an official institutional/authority directory or governing notice before extracting campus-specific facts.",
       "priorResearchPointer": null,
       "unimportedBatch028Candidates": 0,
@@ -26704,11 +26793,11 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
-        "programmes": 0,
+        "programmes": 1,
         "facilities": 0,
         "admissions": 0,
         "contacts": 0,
@@ -26718,13 +26807,36 @@
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-53:3",
+          "value": {
+            "kind": "programme",
+            "programme": "MBBS",
+            "level": "UG"
+          },
+          "campus": "Bangalore Medical College and Research Institute, Bengaluru, Karnataka",
+          "publisher": "National Medical Commission",
+          "url": "https://nmc.org.in/whats-new/download/910",
+          "evidenceLocation": "MBBS seat matrix, PDF page 10, Karnataka row 208. Programme listing only.",
+          "sourceTitle": "MBBS seat matrix as of 3 December 2025",
+          "collectedAt": "2026-11-22T15:40:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2025-26",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "NMC matrix dated 3 December 2025 for academic year 2025–26. Confirm the current offering with the institution."
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "newBatch053VisibleFacts": 1
     },
     {
       "slug": "nlu-delhi",
@@ -28754,7 +28866,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "batch053Hold": "Disclosure returned HTTP 403. The alternate library page timed out, and stale handbook information remains held."
     },
     {
       "slug": "bms-college-of-engineering",
@@ -29713,7 +29826,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Official pages timed out/returned 502 during direct opening; search results were not used as proof."
-      ]
+      ],
+      "batch053Hold": "The Karaikal library page timed out in the research browser and standard HTTP client."
     },
     {
       "slug": "nit-andhra-pradesh",
@@ -30145,7 +30259,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Official admissions and programme URLs continued to time out/return 502 during prior direct checks; no snippet-derived facts published."
-      ]
+      ],
+      "batch053Hold": "University and departmental library pages timed out on direct retrieval. The main homepage returned 502."
     },
     {
       "slug": "visvesvaraya-technological-university",
@@ -30676,7 +30791,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "batch053Hold": "Kota Central Library returned HTTP 403. The Rajasthan government state-universities page did not corroborate the library detail."
     },
     {
       "slug": "punjab-technical-university",
@@ -32062,7 +32178,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Direct official postgraduate curriculum PDF is dated July 2019 and contains examination cycles through 2021; retained as historical source, not promoted as current offerings."
-      ]
+      ],
+      "batch053Hold": "Earlier 2019 curriculum remains held for freshness. No directly opened current institution-specific programme or facilities source was established."
     },
     {
       "slug": "lnmiit-jaipur",
@@ -32968,7 +33085,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "batch053Hold": "Library, JoSAA/CSAB and alternate 2024–25 annual report returned HTTP 403."
     },
     {
       "slug": "calcutta-university",
@@ -33712,7 +33830,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Use an official programme catalogue, current admissions notice, dated fee schedule, accreditation register or institutional report matching the exact college/campus.",
       "priorResearchPointer": null,
       "unimportedBatch028Candidates": 0,
@@ -33737,27 +33855,70 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
-        "facilities": 0,
+        "facilities": 1,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-53:4",
+          "value": {
+            "kind": "facility",
+            "facility": "University library reading room",
+            "description": "The university describes a ground-floor reading room for undergraduate and postgraduate students."
+          },
+          "campus": "Patna University campus, Ashok Rajpath, Patna",
+          "publisher": "Patna University",
+          "url": "https://pup.ac.in/PatnaUniversityLibrary.aspx",
+          "evidenceLocation": "Patna University Library section, description of the ground-floor reading room.",
+          "sourceTitle": "Patna University Library",
+          "collectedAt": "2026-11-22T15:40:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-53:5",
+          "value": {
+            "kind": "contact",
+            "office": "Patna University campus",
+            "channel": "ADDRESS",
+            "contact": "Ashok Rajpath, near Patna College, Patna, Bihar 800005"
+          },
+          "campus": "Patna University campus, Ashok Rajpath, Patna",
+          "publisher": "Patna University",
+          "url": "https://pup.ac.in/PatnaUniversityLibrary.aspx",
+          "evidenceLocation": "Institution footer, university campus address.",
+          "sourceTitle": "Patna University Library",
+          "collectedAt": "2026-11-22T15:40:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "newBatch053VisibleFacts": 2
     },
     {
       "slug": "gauhati-university",
@@ -36065,7 +36226,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "batch053Hold": "Library homepage opened but contained unrelated suspicious outbound links. The university contact directory and official library notice returned 502. No link or fact released from the affected homepage."
     },
     {
       "slug": "nagaland-university",
@@ -38312,7 +38474,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Use an official programme catalogue, current admissions notice, dated fee schedule, accreditation register or institutional report matching the exact college/campus.",
       "priorResearchPointer": null,
       "unimportedBatch028Candidates": 0,
@@ -38337,14 +38499,14 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -38357,7 +38519,29 @@
       "newBatch045HoldReasons": [
         "Official ICT Mumbai programme page returned HTTP 403; no search excerpt facts were used."
       ],
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-53:6",
+          "value": {
+            "kind": "contact",
+            "office": "ICT Mumbai campus",
+            "channel": "ADDRESS",
+            "contact": "Nathalal Parekh Marg, Matunga East, Mumbai 400019, Maharashtra"
+          },
+          "campus": "ICT Mumbai, Matunga East, Mumbai",
+          "publisher": "India Science, Technology & Innovation Portal",
+          "url": "https://www.indiascienceandtechnology.gov.in/allstinstitutions/institute-chemical-technology-0",
+          "evidenceLocation": "Institute of Chemical Technology directory entry, Address field.",
+          "sourceTitle": "Institute of Chemical Technology",
+          "collectedAt": "2026-11-22T15:40:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
@@ -38369,7 +38553,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Official programme page returned HTTP 403; no access-control bypass or snippet-derived claim was used."
-      ]
+      ],
+      "newBatch053VisibleFacts": 1
     },
     {
       "slug": "iiser-pune",
@@ -40455,5 +40640,102 @@
     "ownerDatabaseWrites": 0,
     "genuineHumanApprovals": 0,
     "note": "Programme listings are scoped to University College of Engineering, Osmania University, Hyderabad; they are not mapped to affiliated colleges. Facilities are scoped to the main campus. The brochure does not specify an applicable admission year; students are instructed to confirm current offerings. Contact entries and high-impact figures in the brochure were withheld pending corroboration/review."
+  },
+  "contentDepthBatch053": {
+    "researchedAt": "2026-11-22T15:40:00.000Z",
+    "before": {
+      "informativeProfiles": 190,
+      "sourceReportedFacts": 424,
+      "multiCategoryProfiles": 80,
+      "basicOnlyProfiles": 15,
+      "categories": {
+        "programmes": 275,
+        "facilities": 64,
+        "admissions": 31,
+        "contacts": 54,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "after": {
+      "informativeProfiles": 195,
+      "sourceReportedFacts": 432,
+      "multiCategoryProfiles": 83,
+      "basicOnlyProfiles": 10,
+      "categories": {
+        "programmes": 277,
+        "facilities": 67,
+        "admissions": 31,
+        "contacts": 57,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "newFactKinds": {
+      "programme": 2,
+      "facility": 3,
+      "admission": 0,
+      "contact": 3
+    },
+    "remainingBasicDispositions": [
+      {
+        "institutionSlug": "iit-jodhpur",
+        "sourceUrl": "https://iitj.ac.in/office-of-academics/en/list-of-academic-programs",
+        "reason": "Academic listing and alternate IITJ library/curriculum pages timed out on direct retrieval."
+      },
+      {
+        "institutionSlug": "nit-jamshedpur",
+        "sourceUrl": "https://nitjsr.ac.in/academic/Departments",
+        "reason": "Department and library pages returned only the application shell on direct retrieval. The 2023–24 annual report exceeded the research browser size limit."
+      },
+      {
+        "institutionSlug": "nit-raipur",
+        "sourceUrl": "https://www.nitrr.ac.in/dept-cl.php",
+        "reason": "Central Library page timed out in the research browser and standard HTTP client."
+      },
+      {
+        "institutionSlug": "rvce-bangalore",
+        "sourceUrl": "https://rvce.edu.in/sites/default/files/RVCE-Mandatory-Disclosure-2024.pdf",
+        "reason": "Disclosure returned HTTP 403. The alternate library page timed out, and stale handbook information remains held."
+      },
+      {
+        "institutionSlug": "nit-puducherry",
+        "sourceUrl": "https://nitpy.ac.in/library",
+        "reason": "The Karaikal library page timed out in the research browser and standard HTTP client."
+      },
+      {
+        "institutionSlug": "cochin-university",
+        "sourceUrl": "https://www.cusat.ac.in/library",
+        "reason": "University and departmental library pages timed out on direct retrieval. The main homepage returned 502."
+      },
+      {
+        "institutionSlug": "rajasthan-technical-university",
+        "sourceUrl": "https://rtu.ac.in/index/view_menudata.php?page=Central-Library117",
+        "reason": "Kota Central Library returned HTTP 403. The Rajasthan government state-universities page did not corroborate the library detail."
+      },
+      {
+        "institutionSlug": "banasthali-vidyapith",
+        "sourceUrl": "https://www.banasthali.org/",
+        "reason": "Earlier 2019 curriculum remains held for freshness. No directly opened current institution-specific programme or facilities source was established."
+      },
+      {
+        "institutionSlug": "iiit-sri-city",
+        "sourceUrl": "https://iiits.ac.in/admissions/b-tech-programme/josaa-csab/",
+        "reason": "Library, JoSAA/CSAB and alternate 2024–25 annual report returned HTTP 403."
+      },
+      {
+        "institutionSlug": "mizoram-university",
+        "sourceUrl": "https://lib.mzu.edu.in/",
+        "reason": "Library homepage opened but contained unrelated suspicious outbound links. The university contact directory and official library notice returned 502. No link or fact released from the affected homepage."
+      }
+    ],
+    "ownerDatabaseWrites": 0,
+    "genuineHumanApprovals": 0
   }
 }

@@ -4,6 +4,8 @@ import {PrismaPg} from '@prisma/adapter-pg';
 import pg from 'pg';
 import {hash} from 'bcryptjs';
 import {assertDisposableTestTarget} from '../integration/target';
+import {importOfficialFacts} from '../../src/server/ingest/official-facts';
+import {join} from 'node:path';
 let db:PrismaClient;let email:string;let memberEmail:string;let name:string;
 test.beforeAll(async()=>{
  db=new PrismaClient({adapter:new PrismaPg(new pg.Pool({connectionString:assertDisposableTestTarget()}))});
@@ -15,7 +17,7 @@ test.beforeAll(async()=>{
  for(let i=0;i<27;i++)await db.fieldEvidence.create({data:{collegeId:c.id,sourceId:source.id,field:'description',value:'Synthetic '+i,identityKey:name+i,isFixture:i>1,academicYear:2026}});
 });
 test.afterAll(async()=>{await db?.$disconnect();});
-test('review queue search, conflicts, decisions, pagination and fixture protection',async({page,request,browser})=>{
+test('review queue search, conflicts, decisions, pagination and fixture protection',async({page,request,browser,isMobile})=>{
  expect((await request.get('/api/admin/evidence')).status()).toBe(401);
  await page.goto('/admin/enrichment');await expect(page).toHaveURL(/\/login/);
  await page.goto('/login');await page.getByPlaceholder('Email address',{exact:true}).fill(email);await page.getByPlaceholder('Password',{exact:true}).fill('Browser fixture 6729!');await page.getByRole('button',{name:'Login',exact:true}).click();await expect.poll(()=>new URL(page.url()).pathname).not.toBe('/login');
@@ -35,7 +37,7 @@ test('review queue search, conflicts, decisions, pagination and fixture protecti
  await page.goto('/colleges/'+college.slug);await expect(page.getByRole('link',{name:'https://example.test/verified-synthetic',exact:true})).toHaveCount(0);
  const decide=async(status:string)=>page.request.post('/api/admin/evidence',{data:{kind:'field',id:website.id,status,reason:'SYNTHETIC publication test only'}});
  expect((await decide('APPROVED')).status()).toBe(200);
- await page.reload();await expect(page.getByRole('link',{name:'https://example.test/verified-synthetic',exact:true})).toBeVisible();await page.getByText('Sources and verification',{exact:true}).first().click();await expect(page.getByRole('link',{name:'SYNTHETIC TEST'}).first()).toBeVisible();await expect(page.getByText('Demo data',{exact:true}).first()).toBeVisible();
+ await page.reload();await expect(page.getByRole('link',{name:'https://example.test/verified-synthetic',exact:true})).toBeVisible();await page.getByText('Sources and verification',{exact:true}).first().click();await expect(page.getByRole('link',{name:'SYNTHETIC TEST'}).first()).toBeVisible();await expect(page.getByText('Demo data:',{exact:true}).first()).toBeVisible();
  expect((await decide('REJECTED')).status()).toBe(200);await page.reload();await expect(page.getByRole('link',{name:'https://example.test/verified-synthetic',exact:true})).toHaveCount(0);expect(await db.auditLog.count({where:{targetId:website.id,action:'evidence.review'}})).toBe(2);
  const programme=await db.fieldEvidence.create({data:{collegeId:college.id,sourceId:source.id,field:'structured.programme',programScope:'["synthetic engineering","ug"]',value:{kind:'programme',programme:'Synthetic Engineering',level:'UG',durationMonths:48},identityKey:name+'programme'}});
  await page.reload();
@@ -54,6 +56,68 @@ test('review queue search, conflicts, decisions, pagination and fixture protecti
  await expect(page.getByText('₹1,23,456',{exact:true}).first()).toBeVisible();
  await expect(page.getByRole('link',{name:'SYNTHETIC TEST'}).last()).toBeVisible();
  expect(await db.auditLog.count({where:{targetId:fee.id,action:'evidence.review'}})).toBe(1);
+ const feesCard = page.locator('#main #fees [data-evidence-status="VERIFIED"]').filter({hasText:'Synthetic tuition programme'});
+ await expect(feesCard).toContainText('Per semester');
+ const fixtures = [
+   {kind:'admission',programme:'Synthetic BBA',route:'Synthetic test and interview',category:'Domestic applicants',eligibility:'Synthetic school requirement'},
+   {kind:'scholarship',scheme:'Synthetic tuition waiver',eligibility:'Only tuition is waived. Other semester charges apply.',url:source.url},
+   {kind:'placement',metric:'PLACED_COUNT',cohort:'Synthetic B.Tech eligible students',denominator:844,value:703,definition:'Synthetic count of placed students in the eligible reporting cohort.'},
+ ] as const;
+ for (const value of fixtures) {
+   const academicYear = value.kind === 'placement' ? 2024 : 2026;
+   const evidenceLocator = 'Synthetic report, page 11, '+value.kind;
+   const sourceUrl = source.url+'/'+college.slug+'/'+value.kind;
+   const staged = await importOfficialFacts(db,{
+     scope:'RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES',
+     sources:[{id:'synthetic-source',institutionSlug:college.slug,publisher:source.publisher,url:sourceUrl,
+       publicationDate:null,academicYear:String(academicYear),retrievedAt:source.retrievedAt.toISOString(),
+       access:'PUBLIC_HTML_READ',reuseConditions:'Synthetic browser fixture',evidenceLocations:[evidenceLocator]}],
+     candidateClaims:[{institutionSlug:college.slug,field:'structured',value,sourceIds:['synthetic-source'],
+       academicYear:String(academicYear),evidenceLocation:evidenceLocator,status:'RESEARCHED_READY_FOR_UNREVIEWED_STAGING',
+       reviewState:'UNREVIEWED',stageable:true}],
+   },false);
+   const [{evidenceId}] = staged.claimResults;
+   const section = {admission:'programmes-and-admissions',scholarship:'fees',placement:'placements'}[value.kind];
+   const card=page.locator(`#main #${section} [data-evidence-status="VERIFIED"]`).filter({hasText:evidenceLocator});
+   await page.reload();
+   await expect(card).toHaveCount(0);
+   await page.goto('/admin/enrichment?status=ALL&q='+evidenceId);
+   const queued=page.locator('[data-claim-id="'+evidenceId+'"]');
+   await expect(queued.getByRole('link',{name:sourceUrl,exact:true})).toHaveAttribute('href',sourceUrl);
+   await expect(queued).toContainText(evidenceLocator);
+   await queued.getByLabel('Review reason').fill('Synthetic scoped evidence publication rehearsal');
+   const response=page.waitForResponse(r=>r.url().endsWith('/api/admin/evidence')&&r.request().method()==='POST');
+   await queued.getByRole('button',{name:'Approve',exact:true}).click();
+   expect((await response).status()).toBe(200);
+   await page.goto('/colleges/'+college.slug);
+   await expect(card).toContainText(String(academicYear));
+   await expect(card.getByRole('link',{name:'SYNTHETIC TEST'})).toHaveAttribute('href',sourceUrl);
+   if(value.kind==='admission') {
+     await expect(card).toContainText(value.programme);
+     await expect(card).toContainText(value.category);
+     await expect(card).toContainText(value.eligibility);
+   }
+   if(value.kind==='scholarship') await expect(card).toContainText(value.eligibility);
+   if(value.kind==='placement') {
+     await expect(card).toContainText('Students placed');
+     await expect(card).toContainText('703');
+     await expect(card).toContainText('Eligible cohort: 844');
+   }
+   if(process.env.CF_PROFILE_SCREENSHOTS) {
+     await card.screenshot({path:join(process.env.CF_PROFILE_SCREENSHOTS,`synthetic-reviewed-${value.kind}-${isMobile?'mobile':'desktop'}.png`)});
+   }
+   await page.goto('/admin/enrichment?status=ALL&q='+evidenceId);
+   await queued.getByLabel('Review reason').fill('Synthetic hold after publication');
+   const held=page.waitForResponse(r=>r.url().endsWith('/api/admin/evidence')&&r.request().method()==='POST');
+   await queued.getByRole('button',{name:'Hold',exact:true}).click();
+   expect((await held).status()).toBe(200);
+   await page.reload();
+   await queued.getByText('Reviewer decision history').click();
+   await expect(queued).toContainText('Synthetic hold after publication');
+   await page.goto('/colleges/'+college.slug);
+   await expect(card).toHaveCount(0);
+   expect(await db.auditLog.count({where:{targetId:evidenceId,action:'evidence.review'}})).toBe(2);
+ }
  await page.goto('/admin/enrichment?q='+name);
  await page.getByLabel('Search college, claim ID, field or programme',{exact:true}).fill('no-such-claim');await page.getByRole('button',{name:'Apply filters',exact:true}).click();await expect(page.getByText('No claims match these filters.')).toBeVisible();
  const memberPage=await browser.newPage();await memberPage.goto('/login');await memberPage.getByPlaceholder('Email address',{exact:true}).fill(memberEmail);await memberPage.getByPlaceholder('Password',{exact:true}).fill('Browser fixture 6729!');await memberPage.getByRole('button',{name:'Login',exact:true}).click();await expect.poll(()=>new URL(memberPage.url()).pathname).not.toBe('/login');await memberPage.goto('/admin/enrichment');await expect(memberPage.getByRole('heading',{name:'Access denied'})).toBeVisible();await expect(memberPage.getByText(name,{exact:true})).toHaveCount(0);await memberPage.close();

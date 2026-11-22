@@ -12,7 +12,7 @@ test('source-reported facts render in their sections with campus, scope and prov
   // The owner-stage scenario mutates these two institutions in its separate rehearsal.
   const main = page.getByRole('main');
   const newSlugs = new Set(policy.records.filter(({ ref }) =>
-    ref.startsWith('batch-45:') || ref.startsWith('batch-46:') || ref.startsWith('batch-47:') || ref.startsWith('batch-48:') || ref.startsWith('batch-49:') || ref.startsWith('batch-50:') || ref.startsWith('batch-51:') || ref.startsWith('batch-52:')).map(({ slug }) => slug));
+    ref.startsWith('batch-45:') || ref.startsWith('batch-46:') || ref.startsWith('batch-47:') || ref.startsWith('batch-48:') || ref.startsWith('batch-49:') || ref.startsWith('batch-50:') || ref.startsWith('batch-51:') || ref.startsWith('batch-52:') || ref.startsWith('batch-53:')).map(({ slug }) => slug));
   for (const college of ledger.institutions) {
     const response = await request.get(`/colleges/${college.slug}`);
     expect(response.ok(), `${college.slug} should render`).toBe(true);

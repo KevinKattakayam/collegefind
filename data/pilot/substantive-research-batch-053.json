@@ -1,0 +1,345 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 53,
+  "researchedAt": "2026-11-22T15:40:00.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b53-1",
+      "institutionSlug": "indian-institute-of-management-lucknow",
+      "publisher": "IIM Lucknow",
+      "title": "Library",
+      "url": "https://iiml.ac.in/facilities/library",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T15:40:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Gyanodaya Library section before the separately headed Noida Campus Library section."
+      ]
+    },
+    {
+      "id": "b53-2",
+      "institutionSlug": "indian-institute-of-management-lucknow",
+      "publisher": "IIM Lucknow",
+      "title": "Library",
+      "url": "https://iiml.ac.in/facilities/library",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T15:40:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Institution footer, Lucknow Campus address."
+      ]
+    },
+    {
+      "id": "b53-3",
+      "institutionSlug": "seth-gs-medical-college",
+      "publisher": "Seth G. S. Medical College and KEM Hospital",
+      "title": "Library",
+      "url": "https://www.kem.edu/library",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T15:40:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Library Facilities section, undergraduate and postgraduate sections."
+      ]
+    },
+    {
+      "id": "b53-4",
+      "institutionSlug": "bangalore-medical-college",
+      "publisher": "National Medical Commission",
+      "title": "MBBS seat matrix as of 3 December 2025",
+      "url": "https://nmc.org.in/whats-new/download/910",
+      "academicYear": "2025-26",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T15:40:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "MBBS seat matrix, PDF page 10, Karnataka row 208. Programme listing only."
+      ]
+    },
+    {
+      "id": "b53-5",
+      "institutionSlug": "patna-university",
+      "publisher": "Patna University",
+      "title": "Patna University Library",
+      "url": "https://pup.ac.in/PatnaUniversityLibrary.aspx",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T15:40:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Patna University Library section, description of the ground-floor reading room."
+      ]
+    },
+    {
+      "id": "b53-6",
+      "institutionSlug": "patna-university",
+      "publisher": "Patna University",
+      "title": "Patna University Library",
+      "url": "https://pup.ac.in/PatnaUniversityLibrary.aspx",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T15:40:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Institution footer, university campus address."
+      ]
+    },
+    {
+      "id": "b53-7",
+      "institutionSlug": "ict-mumbai",
+      "publisher": "India Science, Technology & Innovation Portal",
+      "title": "Institute of Chemical Technology",
+      "url": "https://www.indiascienceandtechnology.gov.in/allstinstitutions/institute-chemical-technology-0",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T15:40:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Institute of Chemical Technology directory entry, Address field."
+      ]
+    },
+    {
+      "id": "b53-8",
+      "institutionSlug": "seth-gs-medical-college",
+      "publisher": "National Medical Commission",
+      "title": "MBBS seat matrix as of 3 December 2025",
+      "url": "https://nmc.org.in/whats-new/download/910",
+      "academicYear": "2025-26",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T15:40:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "MBBS seat matrix, PDF page 17, Maharashtra row 417. Programme listing only."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-management-lucknow",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Gyanodaya Library",
+        "description": "The Lucknow campus library provides management resources in multiple formats."
+      },
+      "sourceIds": [
+        "b53-1"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Gyanodaya Library section before the separately headed Noida Campus Library section.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIM Lucknow, Lucknow campus",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-lucknow",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Lucknow campus",
+        "channel": "ADDRESS",
+        "contact": "Prabandh Nagar, IIM Road, Lucknow 226013"
+      },
+      "sourceIds": [
+        "b53-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Institution footer, Lucknow Campus address.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIM Lucknow, Lucknow campus",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "seth-gs-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Medical college library",
+        "description": "The library identifies undergraduate and postgraduate sections. Confirm access arrangements with the college."
+      },
+      "sourceIds": [
+        "b53-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Library Facilities section, undergraduate and postgraduate sections.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Seth G. S. Medical College, Parel, Mumbai",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "bangalore-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b53-4"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "MBBS seat matrix, PDF page 10, Karnataka row 208. Programme listing only.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Bangalore Medical College and Research Institute, Bengaluru, Karnataka",
+      "publisherPeriod": "NMC matrix dated 3 December 2025 for academic year 2025–26. Confirm the current offering with the institution.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "patna-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "University library reading room",
+        "description": "The university describes a ground-floor reading room for undergraduate and postgraduate students."
+      },
+      "sourceIds": [
+        "b53-5"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Patna University Library section, description of the ground-floor reading room.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Patna University campus, Ashok Rajpath, Patna",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "patna-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Patna University campus",
+        "channel": "ADDRESS",
+        "contact": "Ashok Rajpath, near Patna College, Patna, Bihar 800005"
+      },
+      "sourceIds": [
+        "b53-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Institution footer, university campus address.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Patna University campus, Ashok Rajpath, Patna",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "ict-mumbai",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "ICT Mumbai campus",
+        "channel": "ADDRESS",
+        "contact": "Nathalal Parekh Marg, Matunga East, Mumbai 400019, Maharashtra"
+      },
+      "sourceIds": [
+        "b53-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Institute of Chemical Technology directory entry, Address field.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "ICT Mumbai, Matunga East, Mumbai",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "seth-gs-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b53-8"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "MBBS seat matrix, PDF page 17, Maharashtra row 417. Programme listing only.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Seth G. S. Medical College and KEM Hospital, Parel, Mumbai",
+      "publisherPeriod": "NMC matrix dated 3 December 2025 for academic year 2025–26. Confirm the current offering with the institution.",
+      "historical": true
+    }
+  ],
+  "heldFindings": [
+    {
+      "institutionSlug": "iit-jodhpur",
+      "sourceUrl": "https://iitj.ac.in/office-of-academics/en/list-of-academic-programs",
+      "reason": "Academic listing and alternate IITJ library/curriculum pages timed out on direct retrieval."
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "sourceUrl": "https://nitjsr.ac.in/academic/Departments",
+      "reason": "Department and library pages returned only the application shell on direct retrieval. The 2023–24 annual report exceeded the research browser size limit."
+    },
+    {
+      "institutionSlug": "nit-raipur",
+      "sourceUrl": "https://www.nitrr.ac.in/dept-cl.php",
+      "reason": "Central Library page timed out in the research browser and standard HTTP client."
+    },
+    {
+      "institutionSlug": "rvce-bangalore",
+      "sourceUrl": "https://rvce.edu.in/sites/default/files/RVCE-Mandatory-Disclosure-2024.pdf",
+      "reason": "Disclosure returned HTTP 403. The alternate library page timed out, and stale handbook information remains held."
+    },
+    {
+      "institutionSlug": "nit-puducherry",
+      "sourceUrl": "https://nitpy.ac.in/library",
+      "reason": "The Karaikal library page timed out in the research browser and standard HTTP client."
+    },
+    {
+      "institutionSlug": "cochin-university",
+      "sourceUrl": "https://www.cusat.ac.in/library",
+      "reason": "University and departmental library pages timed out on direct retrieval. The main homepage returned 502."
+    },
+    {
+      "institutionSlug": "rajasthan-technical-university",
+      "sourceUrl": "https://rtu.ac.in/index/view_menudata.php?page=Central-Library117",
+      "reason": "Kota Central Library returned HTTP 403. The Rajasthan government state-universities page did not corroborate the library detail."
+    },
+    {
+      "institutionSlug": "banasthali-vidyapith",
+      "sourceUrl": "https://www.banasthali.org/",
+      "reason": "Earlier 2019 curriculum remains held for freshness. No directly opened current institution-specific programme or facilities source was established."
+    },
+    {
+      "institutionSlug": "iiit-sri-city",
+      "sourceUrl": "https://iiits.ac.in/admissions/b-tech-programme/josaa-csab/",
+      "reason": "Library, JoSAA/CSAB and alternate 2024–25 annual report returned HTTP 403."
+    },
+    {
+      "institutionSlug": "mizoram-university",
+      "sourceUrl": "https://lib.mzu.edu.in/",
+      "reason": "Library homepage opened but contained unrelated suspicious outbound links. The university contact directory and official library notice returned 502. No link or fact released from the affected homepage."
+    }
+  ]
+}

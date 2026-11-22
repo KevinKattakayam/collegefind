@@ -323,7 +323,8 @@ function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: stri
         <dl className="mt-2 space-y-1 break-words text-sm text-slate-700">
           {Object.entries(value).filter(([label]) => label !== 'kind').map(([label, item]) => (
             <div key={label}>
-              <dt className="inline font-medium capitalize">{factFieldLabels[label] ?? label.replace(/([A-Z])/g, ' $1')}: </dt>
+              <dt className="inline font-medium capitalize">{value.kind === 'placement' && value.metric === 'PLACED_COUNT' && label === 'denominator'
+                ? 'Eligible cohort' : factFieldLabels[label] ?? label.replace(/([A-Z])/g, ' $1')}: </dt>
               <dd className="inline">{label === 'amountInr' && typeof item === 'number' ? formatINR(item)
                 : label === 'durationMonths' && typeof item === 'number' ? (item % 12 === 0 ? `${item / 12} ${item === 12 ? 'year' : 'years'}` : `${item} months`)
                 : label === 'url' || label === 'applicationUrl' ? <a href={String(item)} target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline">Open official link</a>
@@ -334,6 +335,7 @@ function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: stri
         </dl>
         <p className="mt-3 border-t pt-2 text-xs leading-5 text-slate-600">
           Source: <a href={source.url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline">{source.publisher}</a><br />
+          {source.locator && <>Evidence location: {source.locator}<br /></>}
           Published: {reviewedDate(source.publishedAt)} · Collected: {reviewedDate(source.retrievedAt)} · Reviewed: {reviewedDate(source.reviewedAt)}
         </p>
       </li>

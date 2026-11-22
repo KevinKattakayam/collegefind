@@ -16,7 +16,7 @@ import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReport
 import { projectPublicCollege } from '../../src/server/public-evidence';
 import { structuredFact } from '../../src/server/ingest/structured-facts';
 
-const now = new Date('2026-11-22T15:00:00Z');
+const now = new Date('2026-11-22T16:00:00Z');
 const record = {
   ...policy.records.find(({ slug }) => slug === 'dit-university')!,
   basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const,
@@ -26,7 +26,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(190);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(195);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
@@ -540,7 +540,7 @@ describe('source-reported profile eligibility', () => {
         [], now,
       ));
     const eligible = archive.collegeIdentity.flatMap((identity) => eligibleSourceReported(identity, now));
-    const preBatch052 = eligible.filter(({ ref }) => !ref.startsWith('batch-52:'));
+    const preBatch052 = eligible.filter(({ ref }) => !ref.startsWith('batch-52:') && !ref.startsWith('batch-53:'));
     const unscopedSimulation = archive.collegeIdentity.flatMap((identity) =>
       suppressSourceReported(preBatch052.filter((fact) =>
         policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id), archivedRows, [], now));
@@ -558,9 +558,9 @@ describe('source-reported profile eligibility', () => {
         policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id),
       archivedRows.filter((row) => row.collegeId === identity.id), [], now));
 
-    expect(eligible).toHaveLength(424);
-    expect(visible).toHaveLength(424);
-    expect(new Set(visible.map(({ ref }) => ref)).size).toBe(424);
+    expect(eligible).toHaveLength(432);
+    expect(visible).toHaveLength(432);
+    expect(new Set(visible.map(({ ref }) => ref)).size).toBe(432);
     expect(visible.every(({ status }) => status === 'OFFICIAL_SOURCE_REPORTED')).toBe(true);
     expect(visible.some(({ ref }) => ref === 'batch-50:0')).toBe(true);
     expect(preBatch052).toHaveLength(414);

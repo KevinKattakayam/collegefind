@@ -10,6 +10,14 @@ import reviewBatch from '../../../../data/pilot/first-human-review-batch.json';
 export const dynamic = 'force-dynamic';
 
 type Search = Record<string, string | string[] | undefined>;
+const prioritySourceChecks: Record<string, string> = {
+  cmwlqtg7i001qgvtvfvd0j4ev: 'The linked All India admissions page describes the closed 2026 cycle. Inspect the school-location and board scope in the Eligibility section before deciding whether a historical claim is appropriate.',
+  cmwlpjrzh001syttvn05nz1d4: 'Keep on hold pending confirmation of the final applicable fee. The All India fee table describes tuition per semester and says the proposal is subject to appellate consideration and revision.',
+  cmwm4060u0003lftv8hj4ur0o: 'Inspect the U.G. I Year fee schedule, page 1. The Autumn and Spring tuition row applies to the named categories. The amount excludes other semester charges.',
+  cmwm406100005lftvhno5hr3x: 'Inspect the U.G. I Year fee schedule, page 1. The SC/ST/PwD row waives the tuition component in both semesters. Other charges still apply.',
+  cmwm3rj75000bhxtvbr105oe7: 'Keep on hold pending direct inspection of the complete report. Verify the B.Tech total row on printed page 11, including both the number placed and the eligible cohort.',
+  cmwm4trd200073otvpjb30qsw: 'Inspect the MBBS row in Annexure I of the revised 2026–27 prospectus, printed page 177. The amount covers annual tuition only.',
+};
 const date = (value: Date | null | undefined) => value ? value.toISOString().slice(0, 10) : 'Not recorded';
 function pageLink(page: number, filters: Record<string, string | number | undefined>) {
   const params = new URLSearchParams();
@@ -52,6 +60,7 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
           <p><strong>College location:</strong> {item.collegeCity}, {item.collegeState} · <strong>Campus check:</strong> {item.campusReviewQuestion}</p>
           <p><strong>Source:</strong> {item.sourcePublisher} · <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Open official source</a> · <strong>Published:</strong> {item.sourcePublishedAt ? date(new Date(item.sourcePublishedAt)) : 'Not recorded'} · <strong>Retrieved:</strong> {date(new Date(item.sourceRetrievedAt))}</p>
           <p><strong>Evidence location:</strong> {item.evidenceLocation ?? 'Not recorded'}</p>
+          {prioritySourceChecks[item.evidenceId] && <p role="note"><strong>Priority source check:</strong> {prioritySourceChecks[item.evidenceId]}</p>}
           <details><summary>Source access, reuse and collection notes</summary><p role="note"><strong>Source-use review:</strong> {item.sourceUseWarning}</p><p>{item.sourceNotes}</p></details>
           {item.freshnessWarning && <p role="note"><strong>Freshness review:</strong> {item.freshnessWarning}</p>}
           {item.conflictWarning && <p role="alert"><strong>Conflict warning:</strong> {item.conflictWarning} {item.conflictPeerIds.join(', ')}</p>}
@@ -101,6 +110,7 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
           <p><strong>Official source:</strong> {safeSource(claim.source.url)}</p>
           <p><strong>Access / reuse record:</strong> {claim.source.license ?? 'Not recorded'}{claim.source.notes ? ` · ${claim.source.notes}` : ''}</p>
           <p><strong>Evidence location:</strong> {claim.evidenceLocator ?? 'Not recorded'}</p>
+          {prioritySourceChecks[claim.id] && <p role="note"><strong>Priority source check:</strong> {prioritySourceChecks[claim.id]}</p>}
           {claim.evidenceSnippet && <blockquote className="border-l-2 pl-3">{claim.evidenceSnippet}</blockquote>}
           {hold && <p role="note"><strong>Manual hold:</strong> {hold}</p>}
           {claim.conflicts.length > 0 && <section aria-label="Conflicting evidence" className="my-3 border-l-4 border-amber-600 pl-3">

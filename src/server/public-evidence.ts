@@ -8,7 +8,7 @@ export const publicEvidenceSelect = {
 } as const;
 
 type Decision = { status: string; createdAt: Date };
-type Claim = { isFixture?: boolean; id: string; field: string; programScope?: string | null; value: unknown; academicYear: number | null; publishedAt: Date | null; validFrom: Date | null; validUntil: Date | null; supersedesId: string | null; decisions: Decision[]; source: { url: string; publisher: string; retrievedAt: Date } };
+type Claim = { isFixture?: boolean; id: string; field: string; programScope?: string | null; evidenceLocator?: string | null; value: unknown; academicYear: number | null; publishedAt: Date | null; validFrom: Date | null; validUntil: Date | null; supersedesId: string | null; decisions: Decision[]; source: { url: string; publisher: string; retrievedAt: Date } };
 const FIELDS = ['admissions', 'description', 'about', 'website', 'phone', 'email', 'naacGrade', 'establishedYear', 'totalStudents', 'courses', 'topRecruiters'];
 const UNDATED_FRESHNESS_DAYS: Record<string, number> = {
   admissions: 365, description: 1095, about: 1095, website: 365, phone: 180,
@@ -45,7 +45,7 @@ function projectStructuredFacts(claims: Claim[], now: Date) {
     const decision = [...claim.decisions].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())[0];
     return [{ key, value: structuredFact.parse(claim.value), academicYear: claim.academicYear,
       validUntil: claim.validUntil, source: { url: claim.source.url, publisher: claim.source.publisher,
-        publishedAt: claim.publishedAt, retrievedAt: claim.source.retrievedAt, reviewedAt: decision?.createdAt ?? null } }];
+        locator: claim.evidenceLocator ?? null, publishedAt: claim.publishedAt, retrievedAt: claim.source.retrievedAt, reviewedAt: decision?.createdAt ?? null } }];
   });
 }
 
