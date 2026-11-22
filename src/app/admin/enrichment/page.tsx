@@ -68,7 +68,21 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
       </ul>
     </nav>}
     {next && <p className="mt-4"><Link href={pageLink(1, { status: 'ALL', q: next.evidenceId })}>Next unreviewed packet claim: {next.institutionName} · {next.field}</Link></p>}
-    <details className="my-5 break-words border p-4" open={!reviewBatch.claimIds.includes(q)}>
+    <form className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4" action="/admin/enrichment">
+      <label>Review state<select name="status" defaultValue={status} className="block w-full">
+        {['STAGED', 'ALL', 'HELD', 'CONFLICTED', 'EXPIRED', 'NOT_YET_VALID', 'VERIFIED', 'REJECTED', 'DEMO'].map((value) => <option key={value}>{value}</option>)}
+      </select></label>
+      <label>Search college, claim ID, field or programme<input name="q" defaultValue={q} className="block w-full" /></label>
+      <label>College<input name="college" defaultValue={college} className="block w-full" /></label>
+      <label>Campus, city or state<input name="campus" defaultValue={campus} className="block w-full" /></label>
+      <label>Field<input name="field" defaultValue={field} className="block w-full" /></label>
+      <label>Academic year<input name="academicYear" inputMode="numeric" defaultValue={academicYear ?? ''} className="block w-full" /></label>
+      <label>Evidence freshness<select name="freshness" defaultValue={freshness} className="block w-full">
+        {['ALL', 'CURRENT', 'UNDATED', 'SOURCE_UNDATED', 'OLDER', 'EXPIRED', 'FUTURE'].map((value) => <option key={value}>{value}</option>)}
+      </select></label>
+      <div className="flex items-end gap-2"><button type="submit">Apply filters</button><a href="/admin/enrichment">Clear</a></div>
+    </form>
+    <details className="my-5 break-words border p-4" open={!/^c[a-z0-9]{24}$/i.test(q)}>
       <summary className="cursor-pointer font-semibold">First owner review batch · {reviewBatch.claims.length} claims · staged for inspection, not approval</summary>
       <p className="my-2">Review each source and institution/campus independently. These entries are a prioritized handoff; opening the source or passing automated checks is not approval.</p>
       <ol className="space-y-3">
@@ -88,20 +102,6 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
         </li>)}
       </ol>
     </details>
-    <form className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4" action="/admin/enrichment">
-      <label>Review state<select name="status" defaultValue={status} className="block w-full">
-        {['STAGED', 'ALL', 'HELD', 'CONFLICTED', 'EXPIRED', 'NOT_YET_VALID', 'VERIFIED', 'REJECTED', 'DEMO'].map((value) => <option key={value}>{value}</option>)}
-      </select></label>
-      <label>Search college, claim ID, field or programme<input name="q" defaultValue={q} className="block w-full" /></label>
-      <label>College<input name="college" defaultValue={college} className="block w-full" /></label>
-      <label>Campus, city or state<input name="campus" defaultValue={campus} className="block w-full" /></label>
-      <label>Field<input name="field" defaultValue={field} className="block w-full" /></label>
-      <label>Academic year<input name="academicYear" inputMode="numeric" defaultValue={academicYear ?? ''} className="block w-full" /></label>
-      <label>Evidence freshness<select name="freshness" defaultValue={freshness} className="block w-full">
-        {['ALL', 'CURRENT', 'UNDATED', 'SOURCE_UNDATED', 'OLDER', 'EXPIRED', 'FUTURE'].map((value) => <option key={value}>{value}</option>)}
-      </select></label>
-      <div className="flex items-end gap-2"><button type="submit">Apply filters</button><a href="/admin/enrichment">Clear</a></div>
-    </form>
     <nav aria-label="Review queue pages" className="my-5 flex items-center gap-4">
       {page > 1 ? <a href={pageLink(page - 1, filters)}>Previous page</a> : <span aria-disabled="true">Previous page</span>}
       <span>Page {page} of {pages} · {total} matching claims</span>
