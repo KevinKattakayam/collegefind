@@ -80,3 +80,12 @@ it('does not resurrect superseded values when their replacement expires', async 
  const decisions = [{status:'APPROVED',createdAt:new Date('2026-01-01')}];
  expect(resolveReviewedField([{id:'a',value:'Old',decisions},{id:'b',value:'New',decisions,supersedesId:'a',validUntil:new Date('2020-01-01')}]).status).toBe('UNKNOWN');
 });
+
+it('withdraws a previously approved replacement under a catalogue hold without reviving its predecessor', async () => {
+  const { resolveReviewedField } = await import('@/server/ingest/evidence');
+  const decisions = [{ status: 'APPROVED', createdAt: new Date('2026-01-01') }];
+  expect(resolveReviewedField([
+    { id: 'prior-fixture', value: 'Previous value', decisions },
+    { id: 'cmwlpjrzh001syttvn05nz1d4', value: 'Held replacement', supersedesId: 'prior-fixture', decisions },
+  ])).toEqual({ status: 'UNKNOWN', value: null });
+});

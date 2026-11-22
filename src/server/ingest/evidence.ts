@@ -1,3 +1,5 @@
+import { evidenceReviewHold } from '../review-holds';
+
 /** Pure validation helpers for staged, field-level source evidence. */
 export type EvidenceReviewState = 'UNREVIEWED' | 'APPROVED' | 'REJECTED';
 
@@ -64,7 +66,8 @@ export function activeReviewedClaims<T extends ReviewedClaim>(claims: T[], now: 
     return latest?.status === 'APPROVED' && !claim.decisions.some((d) => d.createdAt.getTime() === latest.createdAt.getTime() && d.status !== 'APPROVED');
   });
   const superseded = new Set(approved.map((claim) => claim.supersedesId).filter(Boolean));
-  return approved.filter((claim) => !superseded.has(claim.id) && (!claim.validFrom || claim.validFrom <= now) && (!claim.validUntil || claim.validUntil >= now));
+  return approved.filter((claim) => !evidenceReviewHold(claim.id) && !superseded.has(claim.id) &&
+    (!claim.validFrom || claim.validFrom <= now) && (!claim.validUntil || claim.validUntil >= now));
 }
 
 export function resolveReviewedField(claims: ReviewedClaim[], now = new Date()): { status: 'AVAILABLE' | 'CONFLICT' | 'UNKNOWN'; value: string | null } {

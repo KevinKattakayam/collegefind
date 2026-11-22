@@ -33,7 +33,7 @@ Use two fresh disposable databases on an independently verified, loopback-only P
 bash scripts/rehearse-release-recovery.sh
 ```
 
-The script tests a legacy upgrade, checks migration status, writes synthetic relational fixtures, runs `pg_dump --format=custom --no-owner --no-privileges` and verifies the archive using SHA-256. It restores into a fresh disposable destination using `pg_restore --single-transaction --exit-on-error --no-owner --no-privileges`, then compares counts and row digests for scoped tables. The test archive is removed when the script exits. This logical restore proves the checked schema and test relationships on PostgreSQL 16. It provides no timing or retention evidence for production.
+The script tests a legacy upgrade, checks migration status, writes synthetic relational fixtures, runs `pg_dump --format=custom --no-owner --no-privileges` and verifies the archive using SHA-256. It restores into a fresh disposable destination using `pg_restore --single-transaction --exit-on-error --no-owner --no-privileges`, then compares counts and row digests for scoped tables. The test archive is removed when the script exits. On hosts with multiple client versions, select the PostgreSQL 16 tools on `PATH` before rehearsing against PostgreSQL 16 and confirm with `pg_dump --version` and `pg_restore --version`. PostgreSQL 19 tools emitted a `transaction_timeout` setting that the 16 restore server rejected. This logical restore proves the checked schema and test relationships on PostgreSQL 16. It provides no timing or retention evidence for production.
 
 ## Owner production procedure
 
@@ -42,3 +42,11 @@ The script tests a legacy upgrade, checks migration status, writes synthetic rel
 3. With a backup and the approved direct migration connection injected securely, run `npx prisma migrate status` and `npx prisma migrate deploy` from the approved SHA as a separate release action. Release only once migration status is current and the candidate passed CI.
 4. Verify HTTPS readiness, expected seed refusal and representative public and signed-in flows. Log the release SHA and check outcomes with UTC timestamps.
 5. If an app-only regression occurs, restore the previous compatible build. Keep additive schema changes when compatible. If data recovery is required, pause writes, preserve the current database for investigation, restore into a clean approved target, validate data and replay permitted post-recovery writes before any owner-approved cutover.
+
+## Batch 054 candidate decision
+
+**Local engineering verified. Production NO-GO.** The complete owner-review archive and a separate legacy-upgrade database were restored in disposable PostgreSQL 16. This is local recovery evidence. Production retention, recovery point and restore duration still need evidence from an approved environment.
+
+Catalogue breadth is 205/205 profiles with an attributed record. The release register has 444 eligible source-reported facts. This does not satisfy the decision-content gate. Ownership and audit rows in persistent storage were inspected only through a read-only count query. There are 377 staged claims, zero genuine owner decisions and zero official cutoff records. Three priority claims are ready for human inspection and three carry explicit catalogue holds. Individual source permissions, freshness and programme applicability remain prerequisites for publishing critical facts.
+
+The remaining evidence requested in the release checklist still applies. This includes exact-SHA remote CI and branch protection, the historical credential and session remediation record, production HTTPS and Redis with trusted ingress, retention and approved recovery objectives, manual assistive-technology review, and a decision on provider-backed email verification and recovery. Authorization for a deployment remains separate.

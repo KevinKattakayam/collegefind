@@ -2,6 +2,9 @@
  * These are not decisions and do not alter evidence or its audit history.
  */
 const holds: Record<string, string> = {
+  cmwlqtg7i001qgvtvfvd0j4ev: 'The closed 2026 All India cycle limits the school location and equivalent qualifications. The staged summary omits those conditions. Reconcile the scope and mark the cycle historical before review.',
+  cmwlpjrzh001syttvn05nz1d4: 'The publisher describes the proposed 2026–27 tuition as subject to appellate consideration and revision. Confirm the final applicable schedule.',
+  cmwm3rj75000bhxtvbr105oe7: 'Inspect the complete 2024–25 annual report and reconcile the placed and eligible totals on printed page 11 before publishing.',
   cmwkzioa60002b9tvn4vb7p89: 'Institution mismatch: the archived OPJU domain belongs to the Raigarh university. This catalogue record is for O.P. Jindal Global University in Sonipat.',
   cmwkz9wpo0022fbtvxixkrfep: 'Institution mismatch: the archived OPJU domain belongs to the Raigarh university. This catalogue record is for O.P. Jindal Global University in Sonipat.',
   cmwlwwvdr0002zitvryebz8z9: 'Hold: IIT Kanpur DoAA Manual and undated UG programme page disagree about the programme list. Reconcile the controlling source before approval.',

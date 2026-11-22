@@ -320,6 +320,9 @@ function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: stri
       <li key={key} data-evidence-status="VERIFIED" className="min-w-0 rounded-lg border border-slate-200 p-4">
         <h3 className="font-semibold text-slate-900">{structuredLabels[value.kind]}{academicYear !== null ? ` · ${academicYear}` : ''}</h3>
         <p className="mt-1 text-xs font-semibold text-emerald-800">Independently reviewed</p>
+        {value.kind === 'placement' && academicYear !== null && <p className="mt-1 text-sm text-slate-600">
+          Results for this reporting cohort only.
+        </p>}
         <dl className="mt-2 space-y-1 break-words text-sm text-slate-700">
           {Object.entries(value).filter(([label]) => label !== 'kind').map(([label, item]) => (
             <div key={label}>

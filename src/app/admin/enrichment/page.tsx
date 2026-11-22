@@ -38,7 +38,10 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
     evidenceQueue(prisma, parsed.data),
     prisma.fieldEvidence.findMany({ where: { id: { in: reviewBatch.claimIds } }, select: { id: true, decisions: { take: 1, orderBy: [{ createdAt: 'desc' }, { id: 'desc' }], select: { status: true } } } }),
   ]);
-  const packetStates = new Map<string, string>(packetRows.map((row) => [row.id, row.decisions[0]?.status ?? 'UNREVIEWED']));
+  const packetStates = new Map<string, string>(packetRows.map((row) => [
+    row.id,
+    evidenceReviewHold(row.id) ? 'PENDING' : row.decisions[0]?.status ?? 'UNREVIEWED',
+  ]));
   const next = reviewBatch.claims.find(({ evidenceId }) => packetStates.get(evidenceId) === 'UNREVIEWED' && evidenceId !== parsed.data.q);
   const { page, pageSize, status, q, college, campus, field, academicYear, freshness, total, items } = result;
   const filters = { status, q, college, campus, field, academicYear, freshness };

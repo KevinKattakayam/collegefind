@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-22T15:40:00.000Z",
+  "asOf": "2026-11-22T16:05:00.000Z",
   "baseline": {
     "colleges": 205,
     "stagedClaims": 377,
@@ -545,7 +545,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "indian-institute-of-technology-delhi",
@@ -783,7 +784,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "indian-institute-of-technology-madras",
@@ -1032,7 +1034,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "indian-institute-of-technology-kanpur",
@@ -1207,7 +1210,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Existing archive contains held programme evidence and a conflicting/undated DoAA source. No new public fact is released until that scope and source conflict is resolved."
-      ]
+      ],
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "indian-institute-of-technology-kharagpur",
@@ -1379,7 +1383,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "indian-institute-of-technology-roorkee",
@@ -1839,7 +1844,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "indian-institute-of-technology-guwahati",
@@ -2020,7 +2026,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "indian-institute-of-technology-hyderabad",
@@ -2190,7 +2197,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "national-institute-of-technology-tiruchirappalli",
@@ -2507,7 +2515,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "national-institute-of-technology-karnataka",
@@ -2707,7 +2716,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "national-institute-of-technology-warangal",
@@ -2890,7 +2900,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "national-institute-of-technology-calicut",
@@ -3194,7 +3205,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "motilal-nehru-national-institute-of-technology",
@@ -3502,7 +3514,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "malaviya-national-institute-of-technology",
@@ -3695,7 +3708,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "indian-institute-of-management-ahmedabad",
@@ -3867,7 +3881,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "indian-institute-of-management-bangalore",
@@ -4174,7 +4189,8 @@
       },
       "newBatch049Candidates": 5,
       "newBatch049VisibleFacts": 5,
-      "newBatch049Holds": 0
+      "newBatch049Holds": 0,
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "indian-institute-of-management-calcutta",
@@ -4543,7 +4559,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "indian-institute-of-management-lucknow",
@@ -4668,7 +4685,8 @@
       "newBatch049HoldReasons": [
         "Official academic pages returned timeouts/cache misses during direct retrieval; search-indexed summaries were not used as factual proof."
       ],
-      "newBatch053VisibleFacts": 2
+      "newBatch053VisibleFacts": 2,
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "vellore-institute-of-technology",
@@ -4874,7 +4892,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "srm-institute-of-science-and-technology",
@@ -5059,7 +5078,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "manipal-institute-of-technology",
@@ -5197,7 +5217,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "bits-pilani",
@@ -5378,7 +5399,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "amity-university",
@@ -5596,7 +5618,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "lovely-professional-university",
@@ -5808,7 +5831,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "indian-school-of-business",
@@ -5968,7 +5992,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Official programme finder failed direct retrieval (cache miss); no search result was used as proof."
-      ]
+      ],
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "xlri-jamshedpur",
@@ -6169,7 +6194,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "management-development-institute",
@@ -6341,7 +6367,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "mica-ahmedabad",
@@ -6496,7 +6523,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "anna-university",
@@ -6715,7 +6743,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "university-of-mumbai",
@@ -6876,7 +6905,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "university-of-delhi",
@@ -7062,7 +7092,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "savitribai-phule-pune-university",
@@ -7262,7 +7293,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "jadavpur-university",
@@ -7399,7 +7431,8 @@
       },
       "newBatch049Candidates": 1,
       "newBatch049VisibleFacts": 1,
-      "newBatch049Holds": 0
+      "newBatch049Holds": 0,
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "osmania-university",
@@ -7719,7 +7752,8 @@
       "newBatch052HoldReasons": [
         "The brochure lists an admissions email and telephone number, but these contact details were not independently corroborated on a current official contact page; not released.",
         "No claims extracted; financial/outcome/accreditation details require separate provenance, year, scope and stronger human review."
-      ]
+      ],
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "birla-institute-of-technology-mesra",
@@ -7961,7 +7995,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "thapar-institute-of-engineering",
@@ -8131,7 +8166,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "psg-college-of-technology",
@@ -8300,7 +8336,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "No directly opened authoritative page with precise programme/campus facts was available in this batch."
-      ]
+      ],
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "symbiosis-international-university",
@@ -8444,7 +8481,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "kiit-university",
@@ -8617,7 +8655,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "shiv-nadar-university",
@@ -8773,7 +8812,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "chandigarh-university",
@@ -8999,7 +9039,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "all-india-institute-of-medical-sciences",
@@ -9338,7 +9379,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "christian-medical-college",
@@ -9622,7 +9664,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "armed-forces-medical-college",
@@ -9833,7 +9876,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "kasturba-medical-college",
@@ -9995,7 +10039,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "maulana-azad-medical-college",
@@ -10111,7 +10156,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "st-johns-medical-college",
@@ -10218,7 +10264,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "national-law-school-of-india-university",
@@ -10418,7 +10465,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "symbiosis-law-school",
@@ -10606,7 +10654,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "shri-ram-college-of-commerce",
@@ -10907,7 +10956,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "loyola-college",
@@ -11077,7 +11127,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "st-xaviers-college",
@@ -11365,7 +11416,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "fergusson-college",
@@ -11535,7 +11587,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "bennett-university",
@@ -11735,7 +11788,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "ashoka-university",
@@ -11913,7 +11967,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "plaksha-university",
@@ -12146,7 +12201,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "flame-university",
@@ -12292,7 +12348,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "woxsen-university",
@@ -12618,7 +12675,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "sai-university",
@@ -12755,7 +12813,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iit-bhu-varanasi",
@@ -12926,7 +12985,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iit-indore",
@@ -13123,7 +13183,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "iit-tirupati",
@@ -13243,7 +13304,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "iit-palakkad",
@@ -13413,7 +13475,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iit-dharwad",
@@ -13578,7 +13641,8 @@
       },
       "newBatch049Candidates": 2,
       "newBatch049VisibleFacts": 2,
-      "newBatch049Holds": 0
+      "newBatch049Holds": 0,
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "iit-bhilai",
@@ -13792,7 +13856,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 4
     },
     {
       "slug": "iit-jammu",
@@ -13925,7 +13990,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-rourkela",
@@ -14092,7 +14158,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-durgapur",
@@ -14284,7 +14351,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "nit-silchar",
@@ -14454,7 +14522,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-hamirpur",
@@ -14608,7 +14677,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "nit-agartala",
@@ -14780,7 +14850,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-meghalaya",
@@ -14973,7 +15044,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "iiit-hyderabad",
@@ -15150,7 +15222,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iiit-bangalore",
@@ -15399,7 +15472,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "iiit-allahabad",
@@ -15569,7 +15643,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iiit-delhi",
@@ -15713,7 +15788,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "delhi-technological-university",
@@ -16174,7 +16250,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "netaji-subhas-university-of-technology",
@@ -16348,7 +16425,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "pec-chandigarh",
@@ -16594,7 +16672,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iim-indore",
@@ -16732,7 +16811,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iim-kozhikode",
@@ -16904,7 +16984,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iim-shillong",
@@ -17042,7 +17123,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iim-ranchi",
@@ -17215,7 +17297,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "fms-delhi",
@@ -17382,7 +17465,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "jipmer-puducherry",
@@ -17515,7 +17599,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "king-georges-medical-university",
@@ -17622,7 +17707,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "grant-medical-college",
@@ -17747,7 +17833,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "bj-medical-college",
@@ -17922,7 +18009,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "manipal-academy-of-higher-education",
@@ -18202,7 +18290,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "amrita-vishwa-vidyapeetham",
@@ -18573,7 +18662,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "jamia-millia-islamia",
@@ -18786,7 +18876,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "banaras-hindu-university",
@@ -19001,7 +19092,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "aligarh-muslim-university",
@@ -19136,7 +19228,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "presidency-university",
@@ -19268,7 +19361,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "christ-university",
@@ -19418,7 +19512,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "nmims-mumbai",
@@ -19554,7 +19649,8 @@
       },
       "newBatch049Candidates": 2,
       "newBatch049VisibleFacts": 2,
-      "newBatch049Holds": 0
+      "newBatch049Holds": 0,
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "sp-jain-institute",
@@ -19753,7 +19849,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nalsar-university-of-law",
@@ -19975,7 +20072,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "nliu-bhopal",
@@ -20135,7 +20233,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "iit-mandi",
@@ -20305,7 +20404,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iit-ropar",
@@ -20485,7 +20585,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "iit-patna",
@@ -20679,7 +20780,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iit-bhubaneswar",
@@ -20812,7 +20914,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iit-gandhinagar",
@@ -21182,7 +21285,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "iit-jodhpur",
@@ -21247,7 +21351,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Review staged sources, then fill missing student information with current programme-specific material.",
       "priorResearchPointer": "https://www.iitj.ac.in/",
       "unimportedBatch028Candidates": 0,
@@ -21272,14 +21376,14 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -21292,7 +21396,30 @@
       "newBatch044HoldReasons": [
         "Official academic-programme page direct retrieval timed out twice. Search-index excerpts were not used as evidence."
       ],
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-54:0",
+          "value": {
+            "kind": "contact",
+            "office": "JEE office",
+            "channel": "EMAIL",
+            "contact": "office_jee@iitj.ac.in"
+          },
+          "campus": "IIT Jodhpur, Rajasthan",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 108, JEE office email.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 directory. Confirm contacts for a later intake with the institute."
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
@@ -21305,7 +21432,10 @@
       "newBatch049HoldReasons": [
         "Official academic programme pages returned timeout/cache-miss/502 responses on direct opening during this batch; search snippets were not used."
       ],
-      "batch053Hold": "Academic listing and alternate IITJ library/curriculum pages timed out on direct retrieval."
+      "batch053Hold": "Academic listing and alternate IITJ library/curriculum pages timed out on direct retrieval.",
+      "newBatch054VisibleFacts": 1,
+      "substantiveSourceReportedCategoryCount": 1,
+      "batch054Hold": "ISTI and JoSAA give different highway numbers and postal codes. Use the attributed JoSAA office inbox only. No campus postal address released."
     },
     {
       "slug": "nit-jamshedpur",
@@ -21370,7 +21500,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Review staged sources, then fill missing student information with current programme-specific material.",
       "priorResearchPointer": "https://www.nitjsr.ac.in/",
       "unimportedBatch028Candidates": 0,
@@ -21395,14 +21525,14 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
-        "programmes": 0,
+        "programmes": 1,
         "facilities": 0,
-        "admissions": 0,
-        "contacts": 0,
+        "admissions": 1,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -21415,7 +21545,73 @@
       "newBatch044HoldReasons": [
         "The official programmes page rendered a JavaScript-only shell; a large annual report could not be retrieved by the source viewer."
       ],
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-54:3",
+          "value": {
+            "kind": "contact",
+            "office": "Undergraduate admissions",
+            "channel": "EMAIL",
+            "contact": "ugadmission@nitjsr.ac.in"
+          },
+          "campus": "NIT Jamshedpur, Adityapur, Jharkhand",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 219, institutional UG admissions inbox.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 directory. Confirm contacts for a later intake with the institute."
+        },
+        {
+          "ref": "batch-54:4",
+          "value": {
+            "kind": "programme",
+            "programme": "B.Tech in Engineering and Computational Mechanics",
+            "level": "UG"
+          },
+          "campus": "NIT Jamshedpur, Adityapur, Jharkhand",
+          "publisher": "NIT Jamshedpur",
+          "url": "https://nitjsr.ac.in/backend/uploads/admissions/JoSAA_CSAB_DASA_admission25.pdf",
+          "evidenceLocation": "PDF page 1, Notice S-50/2025, physical reporting table, row 3.",
+          "sourceTitle": "Notice S-50/2025",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": "2025-08-18",
+          "academicYear": "2025-26",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "Physical reporting notice for the 2025 UG batch."
+        },
+        {
+          "ref": "batch-54:5",
+          "value": {
+            "kind": "admission",
+            "programme": "B.Tech",
+            "route": "Institute reporting after the applicable JoSAA, CSAB, DASA or Study in India allocation route",
+            "category": "2025 undergraduate intake"
+          },
+          "campus": "NIT Jamshedpur, Adityapur, Jharkhand",
+          "publisher": "NIT Jamshedpur",
+          "url": "https://nitjsr.ac.in/backend/uploads/admissions/JoSAA_CSAB_DASA_admission25.pdf",
+          "evidenceLocation": "PDF page 1, opening paragraph above the physical reporting table.",
+          "sourceTitle": "Notice S-50/2025",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": "2025-08-18",
+          "academicYear": "2025-26",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "Historical physical reporting notice for students already admitted in 2025. Check the current institute notice for your route."
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
@@ -21428,7 +21624,9 @@
       "newBatch049HoldReasons": [
         "Official admissions page remains a JavaScript shell; no search summary used as evidence."
       ],
-      "batch053Hold": "Department and library pages returned only the application shell on direct retrieval. The 2023–24 annual report exceeded the research browser size limit."
+      "batch053Hold": "Department and library pages returned only the application shell on direct retrieval. The 2023–24 annual report exceeded the research browser size limit.",
+      "newBatch054VisibleFacts": 3,
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "nit-kurukshetra",
@@ -21651,7 +21849,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "nit-patna",
@@ -21864,7 +22063,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-raipur",
@@ -21929,7 +22129,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Review staged sources, then fill missing student information with current programme-specific material.",
       "priorResearchPointer": "https://www.nitrr.ac.in/",
       "unimportedBatch028Candidates": 0,
@@ -21954,21 +22154,44 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-54:1",
+          "value": {
+            "kind": "contact",
+            "office": "NIT Raipur campus",
+            "channel": "ADDRESS",
+            "contact": "G.E. Road, Raipur, Chhattisgarh 492010"
+          },
+          "campus": "NIT Raipur, Chhattisgarh",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 216, campus address.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 directory. Confirm contacts for a later intake with the institute."
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
@@ -21981,7 +22204,9 @@
       "newBatch049HoldReasons": [
         "Accessible official material found was undated or described an older admission cycle; no current programme/admission claim published."
       ],
-      "batch053Hold": "Central Library page timed out in the research browser and standard HTTP client."
+      "batch053Hold": "Central Library page timed out in the research browser and standard HTTP client.",
+      "newBatch054VisibleFacts": 1,
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-srinagar",
@@ -22167,7 +22392,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Official website returned 502 during direct retrieval; search snippets were not used as proof."
-      ]
+      ],
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-goa",
@@ -22388,7 +22614,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "nit-uttarakhand",
@@ -22600,7 +22827,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-arunachal-pradesh",
@@ -22848,7 +23076,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-sikkim",
@@ -23170,7 +23399,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "nit-manipur",
@@ -23320,7 +23550,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "nit-mizoram",
@@ -23561,7 +23792,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-nagaland",
@@ -23826,7 +24058,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "vjti-mumbai",
@@ -24230,7 +24463,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "college-of-engineering-pune",
@@ -24427,7 +24661,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iisc-bangalore",
@@ -24604,7 +24839,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "indian-statistical-institute",
@@ -24755,7 +24991,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "cmi-chennai",
@@ -25007,7 +25244,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "iim-nagpur",
@@ -25186,7 +25424,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iim-amritsar",
@@ -25345,7 +25584,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "iim-bodh-gaya",
@@ -25540,7 +25780,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "iim-jammu",
@@ -25715,7 +25956,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iim-sambalpur",
@@ -25875,7 +26117,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "iim-sirmaur",
@@ -26072,7 +26315,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "madras-medical-college",
@@ -26234,7 +26478,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "seth-gs-medical-college",
@@ -26392,7 +26637,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "newBatch053VisibleFacts": 2
+      "newBatch053VisibleFacts": 2,
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "lady-hardinge-medical-college",
@@ -26516,7 +26762,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "stanley-medical-college",
@@ -26737,7 +26984,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "bangalore-medical-college",
@@ -26836,7 +27084,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "newBatch053VisibleFacts": 1
+      "newBatch053VisibleFacts": 1,
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nlu-delhi",
@@ -27043,7 +27292,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 4
     },
     {
       "slug": "nlu-jodhpur",
@@ -27240,7 +27490,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "gnlu-gandhinagar",
@@ -27434,7 +27685,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nujs-kolkata",
@@ -27568,7 +27820,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "rgnul-patiala",
@@ -27676,7 +27929,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "srm-ap",
@@ -27982,7 +28236,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "jain-university",
@@ -28144,7 +28399,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "upes-dehradun",
@@ -28351,7 +28607,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "kle-technological-university",
@@ -28525,7 +28782,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "dhirubhai-ambani-institute",
@@ -28790,7 +29048,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "rvce-bangalore",
@@ -28821,7 +29080,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Wait for or locate the current official academic-year prospectus/notice; retain older items as historical only.",
       "priorResearchPointer": null,
       "unimportedBatch028Candidates": 0,
@@ -28846,28 +29105,53 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 1,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-54:10",
+          "value": {
+            "kind": "contact",
+            "office": "RVCE Bengaluru campus",
+            "channel": "ADDRESS",
+            "contact": "R.V. Vidya Niketan Post, 8th Mile, Mysore Road, Bengaluru, Karnataka 560059"
+          },
+          "campus": "R.V. College of Engineering, Bengaluru",
+          "publisher": "University Grants Commission",
+          "url": "https://www.ugc.gov.in/colleges/Autonomous_Colleges_list",
+          "evidenceLocation": "Karnataka row 485, college name and campus address column. No status or accreditation validity inferred.",
+          "sourceTitle": "Autonomous colleges directory",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
       },
-      "batch053Hold": "Disclosure returned HTTP 403. The alternate library page timed out, and stale handbook information remains held."
+      "batch053Hold": "Disclosure returned HTTP 403. The alternate library page timed out, and stale handbook information remains held.",
+      "newBatch054VisibleFacts": 1,
+      "substantiveSourceReportedCategoryCount": 1,
+      "batch054Hold": "Institution contact page returned 502 and programme/profile sources returned 403 or timed out. The UGC directory supports only the released address."
     },
     {
       "slug": "bms-college-of-engineering",
@@ -29073,7 +29357,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "ms-ramaiah-institute",
@@ -29292,7 +29577,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "pes-university",
@@ -29573,7 +29859,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "iiitdm-kancheepuram",
@@ -29710,7 +29997,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-puducherry",
@@ -29775,7 +30063,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Review staged sources, then fill missing student information with current programme-specific material.",
       "priorResearchPointer": null,
       "unimportedBatch028Candidates": 0,
@@ -29800,21 +30088,44 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-54:2",
+          "value": {
+            "kind": "contact",
+            "office": "NIT Puducherry campus",
+            "channel": "ADDRESS",
+            "contact": "Thiruvettakudy, Karaikal, Puducherry 609609"
+          },
+          "campus": "NIT Puducherry, Karaikal",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 215, campus address.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 directory. Confirm contacts for a later intake with the institute."
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
@@ -29827,7 +30138,9 @@
       "newBatch049HoldReasons": [
         "Official pages timed out/returned 502 during direct opening; search results were not used as proof."
       ],
-      "batch053Hold": "The Karaikal library page timed out in the research browser and standard HTTP client."
+      "batch053Hold": "The Karaikal library page timed out in the research browser and standard HTTP client.",
+      "newBatch054VisibleFacts": 1,
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-andhra-pradesh",
@@ -30006,7 +30319,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nit-delhi",
@@ -30177,7 +30491,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "cochin-university",
@@ -30208,7 +30523,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Use an official programme catalogue, current admissions notice, dated fee schedule, accreditation register or institutional report matching the exact college/campus.",
       "priorResearchPointer": null,
       "unimportedBatch028Candidates": 0,
@@ -30233,21 +30548,44 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-54:6",
+          "value": {
+            "kind": "contact",
+            "office": "CUSAT campus address in the 2025 DSIR directory",
+            "channel": "ADDRESS",
+            "contact": "Cochin University P.O., Kochi, Kerala 682022"
+          },
+          "campus": "Cochin University of Science and Technology, Kochi",
+          "publisher": "Department of Scientific and Industrial Research",
+          "url": "https://www.dsir.gov.in/sites/default/files/2025-07/PFRI%20Directory%20JUNE%202025%20-Signed.pdf",
+          "evidenceLocation": "PDF page 10, entry 101, institution address.",
+          "sourceTitle": "DSIR institution directory, June 2025",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "June 2025 directory entry. Campus address only. Confirm current contact information."
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
@@ -30260,7 +30598,10 @@
       "newBatch049HoldReasons": [
         "Official admissions and programme URLs continued to time out/return 502 during prior direct checks; no snippet-derived facts published."
       ],
-      "batch053Hold": "University and departmental library pages timed out on direct retrieval. The main homepage returned 502."
+      "batch053Hold": "University and departmental library pages timed out on direct retrieval. The main homepage returned 502.",
+      "newBatch054VisibleFacts": 1,
+      "substantiveSourceReportedCategoryCount": 1,
+      "batch054Hold": "Current prospectus returned 502 and its alternate host timed out. DSIR supports a historical address only."
     },
     {
       "slug": "visvesvaraya-technological-university",
@@ -30401,7 +30742,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "gujarat-technological-university",
@@ -30536,7 +30878,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "jntu-hyderabad",
@@ -30715,7 +31058,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "rajasthan-technical-university",
@@ -30746,7 +31090,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Use an official programme catalogue, current admissions notice, dated fee schedule, accreditation register or institutional report matching the exact college/campus.",
       "priorResearchPointer": null,
       "unimportedBatch028Candidates": 0,
@@ -30771,28 +31115,53 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-54:11",
+          "value": {
+            "kind": "contact",
+            "office": "Rajasthan Technical University campus",
+            "channel": "ADDRESS",
+            "contact": "Rawatbhata Road, Kota, Rajasthan 324010"
+          },
+          "campus": "Rajasthan Technical University, Kota",
+          "publisher": "INFLIBNET Centre",
+          "url": "https://www.inflibnet.ac.in/universitydirectory/browse.php?alpha=R",
+          "evidenceLocation": "Rajasthan Technical University, Kota entry, street and postal address.",
+          "sourceTitle": "University directory, letter R",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
       },
-      "batch053Hold": "Kota Central Library returned HTTP 403. The Rajasthan government state-universities page did not corroborate the library detail."
+      "batch053Hold": "Kota Central Library returned HTTP 403. The Rajasthan government state-universities page did not corroborate the library detail.",
+      "newBatch054VisibleFacts": 1,
+      "substantiveSourceReportedCategoryCount": 1,
+      "batch054Hold": "The direct contact page and university teaching department report returned 403. INFLIBNET supplies the address. No current programme claim is inferred."
     },
     {
       "slug": "punjab-technical-university",
@@ -30985,7 +31354,8 @@
       },
       "newBatch049Candidates": 3,
       "newBatch049VisibleFacts": 3,
-      "newBatch049Holds": 0
+      "newBatch049Holds": 0,
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "siksha-o-anusandhan",
@@ -31126,7 +31496,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "kalasalingam-university",
@@ -31271,7 +31642,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "The 2026 brochure lists institution-wide programmes but does not attach each programme/facility to a campus; only its explicitly generic admissions contact is released."
-      ]
+      ],
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "vel-tech-university",
@@ -31449,7 +31821,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "sathyabama-institute",
@@ -31614,7 +31987,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "hindustan-university",
@@ -31798,7 +32172,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "saveetha-university",
@@ -31968,7 +32343,8 @@
       },
       "newBatch049Candidates": 4,
       "newBatch049VisibleFacts": 4,
-      "newBatch049Holds": 0
+      "newBatch049Holds": 0,
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "st-johns-college",
@@ -32096,7 +32472,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "The retrieved admissions notice belongs to St John’s Medical College, Bengaluru; catalogue record is St Johns College in Agra. Source rejected as wrong institution."
-      ]
+      ],
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "banasthali-vidyapith",
@@ -32127,7 +32504,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Use an official programme catalogue, current admissions notice, dated fee schedule, accreditation register or institutional report matching the exact college/campus.",
       "priorResearchPointer": null,
       "unimportedBatch028Candidates": 0,
@@ -32152,21 +32529,43 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-54:8",
+          "value": {
+            "kind": "contact",
+            "office": "Banasthali Vidyapith campus",
+            "channel": "ADDRESS",
+            "contact": "Banasthali Vidyapith, Rajasthan 304022"
+          },
+          "campus": "Banasthali Vidyapith, Tonk district, Rajasthan",
+          "publisher": "India Science, Technology & Innovation Portal",
+          "url": "https://www.indiascienceandtechnology.gov.in/allstinstitutions/banasthali-vidyapith-0",
+          "evidenceLocation": "Institution entry, Address field.",
+          "sourceTitle": "Banasthali Vidyapith",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
@@ -32179,7 +32578,9 @@
       "newBatch049HoldReasons": [
         "Direct official postgraduate curriculum PDF is dated July 2019 and contains examination cycles through 2021; retained as historical source, not promoted as current offerings."
       ],
-      "batch053Hold": "Earlier 2019 curriculum remains held for freshness. No directly opened current institution-specific programme or facilities source was established."
+      "batch053Hold": "Earlier 2019 curriculum remains held for freshness. No directly opened current institution-specific programme or facilities source was established.",
+      "newBatch054VisibleFacts": 1,
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "lnmiit-jaipur",
@@ -32287,7 +32688,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iiit-kottayam",
@@ -32486,7 +32888,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iiit-gwalior",
@@ -32771,7 +33174,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iiit-jabalpur",
@@ -33003,7 +33407,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iiit-sri-city",
@@ -33034,7 +33439,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Try a different legitimate official publication or authority-hosted document by normal access; do not retry blocked URLs aggressively or bypass controls.",
       "priorResearchPointer": null,
       "unimportedBatch028Candidates": 0,
@@ -33059,14 +33464,14 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -33079,14 +33484,38 @@
       "newBatch045HoldReasons": [
         "Official IIIT Sri City admissions and programme pages returned HTTP 403; public search excerpts were not used as factual proof."
       ],
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-54:9",
+          "value": {
+            "kind": "contact",
+            "office": "IIIT Sri City recruitment office",
+            "channel": "ADDRESS",
+            "contact": "630 Gnan Marg, Sri City, Tirupati District, Andhra Pradesh 517646"
+          },
+          "campus": "IIIT Sri City, Andhra Pradesh",
+          "publisher": "IIIT Sri City",
+          "url": "https://services.iiitk.ac.in/iiits/?q=contactus",
+          "evidenceLocation": "Institute recruitment contact page, postal address. The page uses Chittoor in the institute name and Tirupati District in the address.",
+          "sourceTitle": "Recruitment section contact",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
       },
-      "batch053Hold": "Library, JoSAA/CSAB and alternate 2024–25 annual report returned HTTP 403."
+      "batch053Hold": "Library, JoSAA/CSAB and alternate 2024–25 annual report returned HTTP 403.",
+      "newBatch054VisibleFacts": 1,
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "calcutta-university",
@@ -33262,7 +33691,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "madras-university",
@@ -33449,7 +33879,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "mysore-university",
@@ -33572,7 +34003,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "andhra-university",
@@ -33799,7 +34231,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "patna-university",
@@ -33918,7 +34351,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "newBatch053VisibleFacts": 2
+      "newBatch053VisibleFacts": 2,
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "gauhati-university",
@@ -34090,7 +34524,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "dibrugarh-university",
@@ -34255,7 +34690,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "tezpur-university",
@@ -34502,7 +34938,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "central-university-of-kerala",
@@ -34685,7 +35122,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "central-university-of-rajasthan",
@@ -34838,7 +35276,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "central-university-of-haryana",
@@ -35126,7 +35565,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "central-university-of-punjab",
@@ -35300,7 +35740,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "central-university-of-tamil-nadu",
@@ -35595,7 +36036,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "pondicherry-university",
@@ -35733,7 +36175,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "north-eastern-hill-university",
@@ -35980,7 +36423,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "tripura-university",
@@ -36113,7 +36557,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "mizoram-university",
@@ -36181,7 +36626,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Review staged sources, then fill missing student information with current programme-specific material.",
       "priorResearchPointer": null,
       "unimportedBatch028Candidates": 0,
@@ -36206,28 +36651,54 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-54:7",
+          "value": {
+            "kind": "contact",
+            "office": "Mizoram University address in the 2025 DSIR directory",
+            "channel": "ADDRESS",
+            "contact": "Tanhril, P.B. No. 190, Aizawl, Mizoram 796012"
+          },
+          "campus": "Mizoram University, Tanhril, Aizawl",
+          "publisher": "Department of Scientific and Industrial Research",
+          "url": "https://www.dsir.gov.in/sites/default/files/2025-07/PFRI%20Directory%20JUNE%202025%20-Signed.pdf",
+          "evidenceLocation": "PDF page 29, entry 350, institution address.",
+          "sourceTitle": "DSIR institution directory, June 2025",
+          "collectedAt": "2026-11-22T16:05:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "June 2025 directory entry. Campus address only. Confirm current contact information."
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
       },
-      "batch053Hold": "Library homepage opened but contained unrelated suspicious outbound links. The university contact directory and official library notice returned 502. No link or fact released from the affected homepage."
+      "batch053Hold": "Library homepage opened but contained unrelated suspicious outbound links. The university contact directory and official library notice returned 502. No link or fact released from the affected homepage.",
+      "newBatch054VisibleFacts": 1,
+      "substantiveSourceReportedCategoryCount": 1,
+      "batch054Hold": "Admission notice and prior prospectus returned 502. DSIR supports a historical address only. The library homepage remains withheld due to unrelated suspicious outbound links."
     },
     {
       "slug": "nagaland-university",
@@ -36392,7 +36863,8 @@
       },
       "newBatch049Candidates": 2,
       "newBatch049VisibleFacts": 2,
-      "newBatch049Holds": 0
+      "newBatch049Holds": 0,
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "sikkim-university",
@@ -36533,7 +37005,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "rajiv-gandhi-university",
@@ -36708,7 +37181,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "manipur-university",
@@ -36847,7 +37321,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "gitam-university",
@@ -37031,7 +37506,8 @@
         "facilities and hostel": 0,
         "contact": 1,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 3
     },
     {
       "slug": "centurion-university",
@@ -37165,7 +37641,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "Programme source spans multiple campuses without programme-campus applicability; contacts lacked verified exact values in the available source extraction."
-      ]
+      ],
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "gd-goenka-university",
@@ -37329,7 +37806,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "op-jindal-university",
@@ -37535,7 +38013,8 @@
       "newBatch049Holds": 1,
       "newBatch049HoldReasons": [
         "The retrieved OPJU source is for OP Jindal University, Raigarh, Chhattisgarh; catalogue record is the Sonipat, Haryana institution. Source rejected as wrong institution."
-      ]
+      ],
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "chitkara-university",
@@ -37700,7 +38179,8 @@
         "facilities and hostel": 0,
         "contact": 0,
         "facilities": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     },
     {
       "slug": "graphic-era-university",
@@ -37903,7 +38383,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "dit-university",
@@ -38049,7 +38530,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "galgotias-university",
@@ -38232,7 +38714,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "nirma-university",
@@ -38443,7 +38926,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "ict-mumbai",
@@ -38554,7 +39038,8 @@
       "newBatch049HoldReasons": [
         "Official programme page returned HTTP 403; no access-control bypass or snippet-derived claim was used."
       ],
-      "newBatch053VisibleFacts": 1
+      "newBatch053VisibleFacts": 1,
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iiser-pune",
@@ -38833,7 +39318,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iiser-kolkata",
@@ -38991,7 +39477,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "iiser-mohali",
@@ -39092,7 +39579,8 @@
         "admissions and eligibility": 1,
         "facilities and hostel": 0,
         "contact": 0
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 1
     },
     {
       "slug": "niser-bhubaneswar",
@@ -39327,7 +39815,8 @@
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 1
-      }
+      },
+      "substantiveSourceReportedCategoryCount": 2
     }
   ],
   "contentDepthBatch039": {
@@ -40737,5 +41226,155 @@
     ],
     "ownerDatabaseWrites": 0,
     "genuineHumanApprovals": 0
+  },
+  "contentDepthBatch054": {
+    "researchedAt": "2026-11-22T16:05:00.000Z",
+    "before": {
+      "informativeProfiles": 195,
+      "sourceReportedFacts": 432,
+      "multiCategoryProfiles": 83,
+      "basicOnlyProfiles": 10,
+      "categories": {
+        "programmes": 277,
+        "facilities": 67,
+        "admissions": 31,
+        "contacts": 57,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "after": {
+      "informativeProfiles": 205,
+      "sourceReportedFacts": 444,
+      "multiCategoryProfiles": 84,
+      "basicOnlyProfiles": 0,
+      "categories": {
+        "programmes": 278,
+        "facilities": 67,
+        "admissions": 32,
+        "contacts": 67,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "newFactKinds": {
+      "programme": 1,
+      "facility": 0,
+      "admission": 1,
+      "contact": 10
+    },
+    "depth": {
+      "basic": 0,
+      "one": 121,
+      "two": 65,
+      "threeOrMore": 19
+    },
+    "sourceHolds": [
+      {
+        "institutionSlug": "rvce-bangalore",
+        "sourceUrl": "https://oldback.rvce.edu.in/?q=node%2F39",
+        "reason": "Institution contact page returned 502 and programme/profile sources returned 403 or timed out. The UGC directory supports only the released address."
+      },
+      {
+        "institutionSlug": "rajasthan-technical-university",
+        "sourceUrl": "https://rtu.ac.in/index/viewdata.php?page=contact-us75",
+        "reason": "The direct contact page and university teaching department report returned 403. INFLIBNET supplies the address. No current programme claim is inferred."
+      },
+      {
+        "institutionSlug": "iit-jodhpur",
+        "sourceUrl": "https://www.indiascienceandtechnology.gov.in/organisations/centres-of-higher-learning/iits/indian-institute-technology-iit-jodhpur?language=en",
+        "reason": "ISTI and JoSAA give different highway numbers and postal codes. Use the attributed JoSAA office inbox only. No campus postal address released."
+      },
+      {
+        "institutionSlug": "cochin-university",
+        "sourceUrl": "https://admissions.cusat.ac.in/Prospectus/Prospectus2026.pdf",
+        "reason": "Current prospectus returned 502 and its alternate host timed out. DSIR supports a historical address only."
+      },
+      {
+        "institutionSlug": "mizoram-university",
+        "sourceUrl": "https://mzu.edu.in/admission-notice-for-2026-27-session/",
+        "reason": "Admission notice and prior prospectus returned 502. DSIR supports a historical address only. The library homepage remains withheld due to unrelated suspicious outbound links."
+      }
+    ],
+    "ownerDatabaseWrites": 0,
+    "genuineHumanApprovals": 0
+  },
+  "decisionUsefulnessAudit": {
+    "asOf": "2026-11-22T16:05:00.000Z",
+    "method": "Editorial research cohorts derived from stable catalogue names and slugs. Broad and ambiguous institutions are grouped as general or multidisciplinary. This is a research triage view, not a public institutional classification, accreditation claim or finding that profiles satisfy the criteria. Category depth counts distinct released kinds. A campus address alone improves navigation but leaves all programme and decision criteria open.",
+    "cohorts": {
+      "engineering": {
+        "profileCount": 79,
+        "categoryDepth": {
+          "none": 0,
+          "one": 51,
+          "two": 20,
+          "threeOrMore": 8
+        },
+        "humanVerifiedDecisionCriticalProfiles": 0,
+        "decisionUsefulnessCriteria": "Named branch and degree, duration and campus, applicable entrance/counselling pathway, branch-specific fees, laboratory and hostel information, cohort outcomes or scoped historical cutoffs where available."
+      },
+      "medical": {
+        "profileCount": 15,
+        "categoryDepth": {
+          "none": 0,
+          "one": 8,
+          "two": 6,
+          "threeOrMore": 1
+        },
+        "humanVerifiedDecisionCriticalProfiles": 0,
+        "decisionUsefulnessCriteria": "Exact degree and teaching campus, intake-specific recognition and eligibility, test and counselling authority, tuition and compulsory charges, clinical and hostel facilities, scoped historical cutoffs."
+      },
+      "law": {
+        "profileCount": 9,
+        "categoryDepth": {
+          "none": 0,
+          "one": 4,
+          "two": 4,
+          "threeOrMore": 1
+        },
+        "humanVerifiedDecisionCriticalProfiles": 0,
+        "decisionUsefulnessCriteria": "Exact law degree and duration, applicable admission test or counselling, intake eligibility and fee schedule, relevant recognition, legal clinic or library, and scoped outcomes."
+      },
+      "management": {
+        "profileCount": 20,
+        "categoryDepth": {
+          "none": 0,
+          "one": 12,
+          "two": 7,
+          "threeOrMore": 1
+        },
+        "humanVerifiedDecisionCriticalProfiles": 0,
+        "decisionUsefulnessCriteria": "Programme format and duration, test and selection method by category and intake, tuition and additional costs, scholarship conditions, and placement cohort or reporting period."
+      },
+      "artsCommerceScience": {
+        "profileCount": 12,
+        "categoryDepth": {
+          "none": 0,
+          "one": 6,
+          "two": 5,
+          "threeOrMore": 1
+        },
+        "humanVerifiedDecisionCriticalProfiles": 0,
+        "decisionUsefulnessCriteria": "Declared degree, specialization and duration, admission or merit route by intake, fee and aid information, and relevant departmental facilities."
+      },
+      "generalOrMultidisciplinary": {
+        "profileCount": 70,
+        "categoryDepth": {
+          "none": 0,
+          "one": 40,
+          "two": 23,
+          "threeOrMore": 7
+        },
+        "humanVerifiedDecisionCriticalProfiles": 0,
+        "decisionUsefulnessCriteria": "Programme, campus and department scope, degree duration, admissions and fees by intake and programme, recognition and contact sources, and category-specific outcome evidence where it exists."
+      }
+    }
   }
 }

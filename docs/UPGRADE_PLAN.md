@@ -294,3 +294,7 @@ Batch 052 adds a limited Osmania University source-reported slice from its Unive
 ## Batch 053 catalogue and owner review
 
 Five more institutions have source-reported content. The catalogue now has 195 informative profiles and 83 with multiple categories. Keep the ten unresolved institutions in the research ledger. Use the existing owner queue for fee, eligibility, waiver and placement decisions. Batch 053 adds the source checks to each priority claim and exercises audited publication in disposable storage.
+
+## Batch 054 release-readiness completion
+
+The 205-profile catalogue now has at least one eligible source-reported fact per profile. This satisfies breadth at the level of an attributed record. Decision usefulness is tracked separately by category depth and editorial institution cohort. The reviewed-content release remains gated on source reconciliation, individual owner decisions and production environment evidence. See the current release gate in [PRODUCTION_RELEASE.md](PRODUCTION_RELEASE.md).
