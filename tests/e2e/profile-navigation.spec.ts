@@ -4,6 +4,15 @@ test('sparse and sourced archive profiles guide students without leaking unrevie
   test.skip(process.env.COLLEGEFIND_OWNER_STAGE_BROWSER !== 'true' && process.env.COLLEGEFIND_REPORTED_BROWSER !== 'true',
     'Requires independently verified archive rehearsal');
   const main = page.locator('#main');
+  await page.goto('/colleges/banasthali-vidyapith');
+  await expect(main.getByText('Source-reported contacts available',{exact:true})).toBeVisible();
+  await expect(main.locator('#programmes-and-admissions')).toContainText('Programme details and admission routes are not verified yet.');
+
+  await page.goto('/colleges/christian-medical-college');
+  await expect(main.locator('#programmes-and-admissions')).toContainText('Programme-specific eligibility is awaiting independent review.');
+  await expect(main.locator('#facilities')).toContainText('Bagayam student hostels');
+  await expect(main.locator('#fees')).toContainText('Not verified yet');
+
   await page.goto('/colleges/psg-college-of-technology');
   await expect(main.getByRole('heading', { level: 1, name: /PSG/ })).toBeVisible();
   await expect(main.getByText('Catalogue identity', { exact: true }).first()).toBeVisible();

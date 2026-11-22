@@ -328,3 +328,23 @@ The account-specific promotion command above remains the authorized route. After
 Rechecked the official pages and documents listed in the priority table above. Start with IIT Roorkee page 1, then the waiver on the same schedule and the CMC MBBS row in Annexure I. Those three support individual human inspection of the tuition component for the stated intake and category.
 
 Nirma, DAU and MNNIT are now marked with claim-specific catalogue holds in the queue. These are policy safeguards and do not create reviewer decision or audit rows. Nirma's All India summary omits the Indian-school scope and Nirma's recognition requirement for equivalent qualifications. Prepare an explicitly historical, correctly scoped replacement before review. DAU's fee proposal is still expressly subject to State Appellate Committee consideration and revision. MNNIT's annual report again did not load as a complete PDF, and its placement archive did not corroborate the 2024–25 total. Require the complete source, including both count and cohort, before lifting the hold. The existing archive values and decision history are preserved.
+
+### Batch 055 first inspection
+
+The queue now places the following three undetermined tuition claims first. Inspect each original and its intended reuse, then record your own decision and reason.
+
+| Queue item | Source locator and scope question |
+| --- | --- |
+| [IIT Roorkee first-year tuition](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm4060u0003lftv8hj4ur0o) | UG I Year fee schedule page 1, session 2026–27, Autumn and Spring General/Gen-EWS/OBC/OCI/PIO tuition row. Confirm the ₹100,000 per-semester amount for the listed first-year programmes and distinguish it from total charges. |
+| [IIT Roorkee SC/ST/PwD waiver](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm406100005lftvhno5hr3x) | Same schedule, SC/ST/PwD tuition row. Confirm zero tuition in both semesters for the specified category and scope. Compulsory non-tuition charges remain separate. |
+| [CMC Vellore annual MBBS tuition](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm4trd200073otvpjb30qsw) | Revised 2026–27 prospectus, Annexure I, printed page 177, MBBS table. Confirm ₹3,000 per year for the tuition component. Check hostel, deposits and other course charges separately. |
+
+Nirma remains held pending a replacement scoped to the closed 2026 cycle. The original All India eligibility section confirms the 60% aggregate threshold, schooling in India and Nirma's recognition of equivalents. The replacement should tie the applicable IPMAT, interview and class XII components to that intake. The existing staged row is unchanged. DAU still labels the fee as submitted for appellate consideration. The MNNIT original PDF timed out after 6,895,667 of 8,052,266 bytes in the longer standard retrieval. Both the total and CSE cohort rows rely on that PDF. Both now remain held until the correct report page and denominators can be checked.
+
+Archive triage identified 32 structured fee claims, 59 structured admissions claims, seven scholarship or waiver claims and two historical placements. The archive contains no dedicated structured recognition or official cutoff claims. The staged NIRF rankings do not establish accreditation or admission cutoffs.
+
+After the first three decisions, the existing packet provides the following source checks without another import:
+
+- [IIT Roorkee first-year hostel electricity](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm4061e000dlftvq22cq4c6). Check the per-semester hostel schedule on page 1 of the same 2026–27 PDF. It is a resident charge under the stated accommodation scope, separate from tuition.
+- [CMI Chennai B.S. (Hons.) entry route](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwlqtg56000ngvtvlul6b04j). Check the 2027–28 announcement, Eligibility and How to Apply on the [official admissions page](https://www.cmi.ac.in/admissions/). Confirm applicability of the common test and check exceptions. The page also contains older reporting context. There is no published application deadline in the 2027 announcement.
+- [IIM Calcutta OPEN shortlisting criteria](http://127.0.0.1:3317/admin/enrichment?status=ALL&q=cmwm3rj7r000khxtv48tci1x7). Check Table 1 under Stage I and the subsequent Stage II text for the 2027–29 MBA intake. The minimum CAT 2026 table gates further consideration, with nonnegative raw scores required. Actual shortlisting also uses a composite score. [Official domestic procedure](https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates)

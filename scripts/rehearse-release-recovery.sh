@@ -23,6 +23,14 @@ test "$upgrade" != "$restore"
 for url in "$TEST_DATABASE_URL" "$RESTORE_TEST_DATABASE_URL"; do
   db=$(configured_db "$url")
   test "$(psql "$url" -XAtqc "SELECT current_database() || '|' || (SELECT count(*) FROM information_schema.tables WHERE table_schema='public')")" = "$db|0"
+  server_major=$(psql "$url" -XAtqc "SELECT current_setting('server_version_num')::integer / 10000")
+  for tool in pg_dump pg_restore; do
+    version=$("$tool" --version)
+    if [[ ! $version =~ PostgreSQL\)\ ([0-9]+) || ${BASH_REMATCH[1]} != "$server_major" ]]; then
+      printf 'Use PostgreSQL %s %s on PATH for this rehearsal. Found %s.\n' "$server_major" "$tool" "$version" >&2
+      exit 1
+    fi
+  done
 done
 
 export DATABASE_URL="$TEST_DATABASE_URL" DIRECT_URL="$TEST_DATABASE_URL"
@@ -57,7 +65,9 @@ pg_dump --dbname="$TEST_DATABASE_URL" --format=custom --no-owner --no-privileges
 sha256sum "$archive" > "$archive.sha256"
 sha256sum --check "$archive.sha256"
 printf 'Archive SHA-256: %s\n' "$(cut -d ' ' -f 1 "$archive.sha256")"
+restore_started=$(date +%s%N)
 pg_restore --dbname="$RESTORE_TEST_DATABASE_URL" --no-owner --no-privileges --single-transaction --exit-on-error "$archive"
+restore_finished=$(date +%s%N)
 
 # Canonical row digests compare values and foreign keys without printing records.
 for table in College User SavedCollege SavedComparison Source Program CutoffRecord AdmissionPlan PlanTask FieldEvidence EvidenceDecision AuditLog Question CommunityReport _prisma_migrations; do
@@ -66,3 +76,7 @@ for table in College User SavedCollege SavedComparison Source Program CutoffReco
   test "$original" = "$(dst -Atqc "$query")"
   printf '%s restored rows: %s\n' "$table" "${original%%|*}"
 done
+validation_finished=$(date +%s%N)
+printf 'Disposable restore elapsed: %d ms; row validation: %d ms\n' \
+  "$(( (restore_finished - restore_started) / 1000000 ))" \
+  "$(( (validation_finished - restore_finished) / 1000000 ))"

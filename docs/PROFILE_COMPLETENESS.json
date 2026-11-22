@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-22T16:05:00.000Z",
+  "asOf": "2026-11-22T16:27:00.000Z",
   "baseline": {
     "colleges": 205,
     "stagedClaims": 377,
@@ -1164,7 +1164,7 @@
         "programmes": 0,
         "facilities": 1,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -1196,6 +1196,28 @@
           "historical": false,
           "checkedAt": "2026-11-22T04:29:08.000Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:4",
+          "value": {
+            "kind": "contact",
+            "office": "JEE Office listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "JEE Office, DOAA Building, IIT Kanpur, Kalyanpur, Kanpur, Uttar Pradesh 208016, India"
+          },
+          "campus": "Indian Institute of Technology Kanpur · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 109, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -1211,7 +1233,8 @@
       "newBatch049HoldReasons": [
         "Existing archive contains held programme evidence and a conflicting/undated DoAA source. No new public fact is released until that scope and source conflict is resolved."
       ],
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "indian-institute-of-technology-kharagpur",
@@ -1365,13 +1388,35 @@
           "historical": false,
           "checkedAt": "2026-11-20T13:40:00Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:2",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Kharagpur West Bengal India - 721302"
+          },
+          "campus": "Indian Institute of Technology Kharagpur · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 106, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -1384,7 +1429,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "indian-institute-of-technology-roorkee",
@@ -2008,11 +2054,31 @@
           "historical": false,
           "checkedAt": "2026-11-20T14:56:57.470Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:32",
+          "value": {
+            "kind": "facility",
+            "facility": "Lakshminath Bezbaroa Central Library",
+            "description": "The library describes self-service kiosks for issuing, renewing and returning books."
+          },
+          "campus": "IIT Guwahati campus, Assam",
+          "publisher": "IIT Guwahati",
+          "url": "https://www.iitg.ac.in/lib/about.php",
+          "evidenceLocation": "Library circulation paragraph, self-checkout kiosks.",
+          "sourceTitle": "About the Lakshminath Bezbaroa Central Library",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
-        "facilities": 0,
+        "facilities": 1,
         "admissions": 0,
         "contacts": 0,
         "fees": 0,
@@ -2027,7 +2093,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "indian-institute-of-technology-hyderabad",
@@ -2179,13 +2246,35 @@
           "historical": false,
           "checkedAt": "2026-11-20T13:40:00Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:3",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Kandi-502284, Sangareddy, Telangana, India"
+          },
+          "campus": "Indian Institute of Technology Hyderabad · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 107, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -2198,7 +2287,9 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1,
+      "batch055Hold": "The library site returned 403 during direct inspection. Only the identified JoSAA address is released here."
     },
     {
       "slug": "national-institute-of-technology-tiruchirappalli",
@@ -2698,13 +2789,35 @@
           "historical": false,
           "checkedAt": "2026-11-20T14:56:57.470Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:12",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "P.O: Srinivasnagar , Mangalore - 575 025, Karnataka, India"
+          },
+          "campus": "National Institute of Technology Karnataka, Surathkal · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 211, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -2717,7 +2830,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "national-institute-of-technology-warangal",
@@ -3451,7 +3565,7 @@
         "programmes": 2,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -3503,6 +3617,28 @@
           "historical": true,
           "checkedAt": "2026-11-21T16:16:32.000Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:9",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Motilal Nehru National Institute of Technology Allahabad, Teliyarganj, Prayagraj, Uttar Pradesh, India. Pin Code:211004."
+          },
+          "campus": "Motilal Nehru National Institute of Technology Allahabad · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 204, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "newBatch046Candidates": 1,
@@ -3515,7 +3651,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "malaviya-national-institute-of-technology",
@@ -3863,11 +4000,31 @@
           "historical": false,
           "checkedAt": "2026-11-20T13:40:00Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:28",
+          "value": {
+            "kind": "facility",
+            "facility": "Vikram Sarabhai Library",
+            "description": "The library offers remote access to its resources for enrolled students and faculty."
+          },
+          "campus": "IIM Ahmedabad, Ahmedabad",
+          "publisher": "IIM Ahmedabad",
+          "url": "https://library.iima.ac.in/services.html",
+          "evidenceLocation": "Remote Access (MyLOFT) section.",
+          "sourceTitle": "Vikram Sarabhai Library services",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
-        "facilities": 0,
+        "facilities": 1,
         "admissions": 0,
         "contacts": 0,
         "fees": 0,
@@ -3882,7 +4039,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "indian-institute-of-management-bangalore",
@@ -7275,11 +7433,31 @@
           "historical": false,
           "checkedAt": "2026-11-20T14:56:57.470Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:31",
+          "value": {
+            "kind": "facility",
+            "facility": "Jayakar Knowledge Resource Centre",
+            "description": "The university describes a student internet centre in its central library."
+          },
+          "campus": "SPPU, Ganeshkhind Road, Pune",
+          "publisher": "Savitribai Phule Pune University",
+          "url": "https://lib.unipune.ac.in/about.php",
+          "evidenceLocation": "About Jayakar Knowledge Resource Centre, student internet centre entry.",
+          "sourceTitle": "About Jayakar Knowledge Resource Centre",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
-        "facilities": 0,
+        "facilities": 1,
         "admissions": 0,
         "contacts": 0,
         "fees": 0,
@@ -7294,7 +7472,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "jadavpur-university",
@@ -9646,11 +9825,32 @@
           "historical": false,
           "checkedAt": "2026-11-20T14:56:57.470Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:33",
+          "value": {
+            "kind": "facility",
+            "facility": "Bagayam student hostels",
+            "description": "The prospectus lists hostels for medical and allied health students at the College Campus. Check availability and allocation for your intake."
+          },
+          "campus": "CMC College Campus, Bagayam, Vellore",
+          "publisher": "Christian Medical College, Vellore",
+          "url": "https://www.cmch-vellore.edu/wp-content/uploads/sites/14/2026/11/college-prospectus-2026-2027-revised.pdf",
+          "evidenceLocation": "PDF page 16, College Campus description.",
+          "sourceTitle": "Revised 2026–27 college prospectus",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "2026–27 revised prospectus"
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
-        "facilities": 0,
+        "facilities": 1,
         "admissions": 0,
         "contacts": 0,
         "fees": 0,
@@ -9665,7 +9865,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "armed-forces-medical-college",
@@ -10138,11 +10339,31 @@
           "historical": false,
           "checkedAt": "2026-11-20T13:40:00Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:30",
+          "value": {
+            "kind": "facility",
+            "facility": "Central library and reading rooms",
+            "description": "The college describes separate student reading rooms and online journal access through its internal network."
+          },
+          "campus": "Maulana Azad Medical College, New Delhi",
+          "publisher": "Maulana Azad Medical College",
+          "url": "https://mamc.delhi.gov.in/mamc/library",
+          "evidenceLocation": "About Library and Central Library Rules: Membership.",
+          "sourceTitle": "Central Library",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
-        "facilities": 0,
+        "facilities": 1,
         "admissions": 0,
         "contacts": 0,
         "fees": 0,
@@ -10157,7 +10378,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "st-johns-medical-college",
@@ -10447,11 +10669,31 @@
           "historical": false,
           "checkedAt": "2026-11-20T13:40:00Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:29",
+          "value": {
+            "kind": "facility",
+            "facility": "Student hostels",
+            "description": "The university describes separate student hostels for men and women. Check current allocation with the university."
+          },
+          "campus": "NLSIU Bengaluru campus",
+          "publisher": "National Law School of India University",
+          "url": "https://www.nls.ac.in/campus/campus-life/",
+          "evidenceLocation": "Hostel Accommodation section.",
+          "sourceTitle": "Campus Life",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "status": "OFFICIAL_SOURCE_REPORTED"
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
-        "facilities": 0,
+        "facilities": 1,
         "admissions": 0,
         "contacts": 0,
         "fees": 0,
@@ -10466,7 +10708,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "symbiosis-law-school",
@@ -13440,7 +13683,7 @@
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -13468,6 +13711,28 @@
           "historical": false,
           "checkedAt": "2026-11-20T15:34:00.305Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:6",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Indian Institute of Technology Palakkad, Nila Campus, Kanjikode West, Palakkad 678623, Kerala"
+          },
+          "campus": "Indian Institute of Technology Palakkad · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 120, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -13476,7 +13741,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "iit-dharwad",
@@ -13954,7 +14220,7 @@
         "programmes": 0,
         "facilities": 1,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -13982,6 +14248,28 @@
           "historical": false,
           "checkedAt": "2026-11-20T15:34:00.305Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:7",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Indian Institute of Technology Jammu Jagti, PO Nagrota, NH-44 Jammu - 181 221 J&K, India"
+          },
+          "campus": "Indian Institute of Technology Jammu · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 122, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -13991,7 +14279,8 @@
         "contact": 0,
         "facilities": 1
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "nit-rourkela",
@@ -14122,7 +14411,7 @@
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -14151,6 +14440,28 @@
           "historical": false,
           "checkedAt": "2026-11-20T15:34:00.305Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:17",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "National Institute of Technology Rourkela - 769008"
+          },
+          "campus": "National Institute of Technology, Rourkela · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 223, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -14159,7 +14470,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "nit-durgapur",
@@ -14487,7 +14799,7 @@
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -14515,6 +14827,28 @@
           "historical": false,
           "checkedAt": "2026-11-20T15:34:00.305Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:18",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "National Institute of Technology Silchar Cachar, Assam. Pin Code: 788010"
+          },
+          "campus": "National Institute of Technology, Silchar · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 224, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -14523,7 +14857,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "nit-hamirpur",
@@ -14832,13 +15167,35 @@
           "historical": false,
           "checkedAt": "2026-11-20T14:56:57.470Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:10",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "P.O.:NATIONAL INSTITUTE OF TECHNOLOGY,AGARTALA Barjala, Jirania, TRIPURA (W) Pin: 799046"
+          },
+          "campus": "National Institute of Technology Agartala · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 205, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -14851,7 +15208,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "nit-meghalaya",
@@ -15625,13 +15983,35 @@
           "historical": false,
           "checkedAt": "2026-11-20T13:40:00Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:23",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Devghat, Jhalwa, Allahabad, Uttar Pradesh 211015"
+          },
+          "campus": "Indian Institute of Information Technology, Allahabad · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 309, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -15644,7 +16024,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "iiit-delhi",
@@ -16565,7 +16946,7 @@
         "programmes": 4,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -16664,6 +17045,28 @@
           "historical": false,
           "checkedAt": "2026-11-21T04:40:00.000Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:26",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Punjab Engineering College (Deemed to be University), Sector 12 Chandigarh 160012"
+          },
+          "campus": "Punjab Engineering College, Chandigarh · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 422, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "newBatch037SourceReportedFacts": 4,
@@ -16673,7 +17076,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "iim-indore",
@@ -20369,7 +20773,7 @@
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -20397,6 +20801,28 @@
           "historical": false,
           "checkedAt": "2026-11-20T15:34:00.305Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:1",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Kamand Campus, VPO Kamand, Distt. Mandi - 175075 Himachal Pradesh India"
+          },
+          "campus": "Indian Institute of Technology Mandi · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 103, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -20405,7 +20831,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "iit-ropar",
@@ -20762,13 +21189,35 @@
           "historical": false,
           "checkedAt": "2026-11-20T14:18:30Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:5",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Indian Institute of Technology Patna, Bihta, Patna - 801106 (Bihar)"
+          },
+          "campus": "Indian Institute of Technology Patna · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 112, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 2,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -20781,7 +21230,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "iit-bhubaneswar",
@@ -20878,7 +21328,7 @@
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -20907,6 +21357,28 @@
           "historical": true,
           "checkedAt": "2026-11-21T17:14:49.691Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:0",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Indian Institute of Technology Bhubaneswar (IITBBS), Argul, Khurda, Odisha, PIN: 752050"
+          },
+          "campus": "Indian Institute of Technology Bhubaneswar · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 101, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -20915,7 +21387,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "iit-gandhinagar",
@@ -21435,7 +21908,8 @@
       "batch053Hold": "Academic listing and alternate IITJ library/curriculum pages timed out on direct retrieval.",
       "newBatch054VisibleFacts": 1,
       "substantiveSourceReportedCategoryCount": 1,
-      "batch054Hold": "ISTI and JoSAA give different highway numbers and postal codes. Use the attributed JoSAA office inbox only. No campus postal address released."
+      "batch054Hold": "ISTI and JoSAA give different highway numbers and postal codes. Use the attributed JoSAA office inbox only. No campus postal address released.",
+      "batch055Hold": "Retain the existing address hold. The institutional directory and JoSAA give different highways and PIN codes."
     },
     {
       "slug": "nit-jamshedpur",
@@ -21985,7 +22459,7 @@
         "programmes": 3,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -22055,6 +22529,28 @@
           "historical": false,
           "checkedAt": "2026-11-21T04:40:00.000Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:14",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Ashok Rajpath, Patna, Bihar, PIN - 800005"
+          },
+          "campus": "National Institute of Technology Patna · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 214, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "newBatch037SourceReportedFacts": 3,
@@ -22064,7 +22560,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "nit-raipur",
@@ -22342,7 +22839,7 @@
         "programmes": 0,
         "facilities": 0,
         "admissions": 1,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -22379,6 +22876,28 @@
           "historical": true,
           "checkedAt": "2026-11-22T04:29:08.000Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:19",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "HAZRATBAL, SRINAGAR, JAMMU and KASHMIR 190006, INDIA"
+          },
+          "campus": "National Institute of Technology, Srinagar · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 225, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -22393,7 +22912,8 @@
       "newBatch049HoldReasons": [
         "Official website returned 502 during direct retrieval; search snippets were not used as proof."
       ],
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "nit-goa",
@@ -22791,7 +23311,7 @@
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -22820,6 +23340,28 @@
           "historical": false,
           "checkedAt": "2026-11-20T15:34:00.305Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:20",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "National Institute of Technology Uttarakhand-Srinagar Campus, Srinagar(Garwhal)- 246174"
+          },
+          "campus": "National Institute of Technology, Uttarakhand · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 227, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -22828,7 +23370,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "nit-arunachal-pradesh",
@@ -22995,7 +23538,7 @@
         "programmes": 3,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -23068,6 +23611,28 @@
           "historical": true,
           "checkedAt": "2026-11-21T17:35:50.000Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:15",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Jote, Papumpare, 791113"
+          },
+          "campus": "National Institute of Technology Arunachal Pradesh · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 218, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "lastContentEnrichmentBatch": 43,
@@ -23077,7 +23642,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "nit-sikkim",
@@ -23774,13 +24340,35 @@
           "historical": false,
           "checkedAt": "2026-11-20T14:56:57.470Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:16",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Chaltlang, Aizawl-796012, Mizoram, India"
+          },
+          "campus": "National Institute of Technology, Mizoram · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 222, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -23793,7 +24381,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "nit-nagaland",
@@ -24020,7 +24609,7 @@
         "programmes": 0,
         "facilities": 0,
         "admissions": 1,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -24051,6 +24640,28 @@
           "historical": true,
           "checkedAt": "2026-11-20T15:34:00.305Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:13",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Chumukedima, Dimapur, Nagaland - 797 103"
+          },
+          "campus": "National Institute of Technology Nagaland · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 213, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -24059,7 +24670,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "vjti-mumbai",
@@ -24821,13 +25433,35 @@
           "historical": false,
           "checkedAt": "2026-11-20T14:56:57.470Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:8",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "C V Raman Avenue Bangalore Karnataka Pin code 560012 India"
+          },
+          "campus": "Indian Institute of Science, Bangalore · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 124, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -24840,7 +25474,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "indian-statistical-institute",
@@ -30278,7 +30913,7 @@
         "programmes": 0,
         "facilities": 0,
         "admissions": 1,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -30309,6 +30944,28 @@
           "historical": true,
           "checkedAt": "2026-11-21T13:28:49.000Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:21",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Near National Highway No. 16, Kadakatla, Tadepalligudem – 534101, West Godavari District, Andhra Pradesh, India."
+          },
+          "campus": "National Institute of Technology, Andhra Pradesh · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 231, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "newBatch044Candidates": 1,
@@ -30320,7 +30977,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "nit-delhi",
@@ -30455,7 +31113,7 @@
         "programmes": 0,
         "facilities": 1,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -30483,6 +31141,28 @@
           "historical": false,
           "checkedAt": "2026-11-20T15:34:00.305Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:11",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "National Institute of Technology Delhi Plot No. FA7, Zone P1, GT Karnal Road, Delhi-110036"
+          },
+          "campus": "National Institute of Technology Delhi · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 207, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -30492,7 +31172,8 @@
         "contact": 0,
         "facilities": 1
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "cochin-university",
@@ -32870,13 +33551,35 @@
           "historical": false,
           "checkedAt": "2026-11-20T14:56:57.470Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:25",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Indian Institute of Information Technology Kottayam, Valavoor.P.O, Pala, Kottayam-686635, Kerala,India."
+          },
+          "campus": "Indian Institute of Information Technology(IIIT) Kottayam · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 318, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedCategoryCounts": {
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -32889,7 +33592,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "iiit-gwalior",
@@ -33132,7 +33836,7 @@
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -33161,6 +33865,28 @@
           "historical": true,
           "checkedAt": "2026-11-21T13:28:49.000Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:22",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Morena Link Road, 474015, Gwalior, Madhya Pradesh"
+          },
+          "campus": "Atal Bihari Vajpayee Indian Institute of Information Technology & Management Gwalior · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 301, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "newBatch044Candidates": 2,
@@ -33175,7 +33901,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "iiit-jabalpur",
@@ -33277,7 +34004,7 @@
         "programmes": 5,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -33399,6 +34126,28 @@
           "historical": false,
           "checkedAt": "2026-11-21T17:35:50.000Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:24",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "Dumna Airport Road, P.O.: Khamaria, Jabalpur - 482 005, Madhya Pradesh, India"
+          },
+          "campus": "Pt. Dwarka Prasad Mishra Indian Institute of Information Technology, Design & Manufacture Jabalpur · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 311, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "lastContentEnrichmentBatch": 43,
@@ -33408,7 +34157,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "iiit-sri-city",
@@ -35705,7 +36455,7 @@
         "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
@@ -35733,6 +36483,28 @@
           "historical": false,
           "checkedAt": "2026-11-20T15:34:00.305Z",
           "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-55:27",
+          "value": {
+            "kind": "contact",
+            "office": "Campus address listed by JoSAA",
+            "channel": "ADDRESS",
+            "contact": "VPO-Ghudda, Bathinda Punjab, India- 151401"
+          },
+          "campus": "Central University of Punjab, Bathinda · address listed for 2026–27",
+          "publisher": "Joint Seat Allocation Authority",
+          "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+          "evidenceLocation": "Academic year 2026–27, institute code 460, Address column.",
+          "sourceTitle": "JoSAA 2026 participating institute directory",
+          "collectedAt": "2026-11-22T16:27:00.000Z",
+          "publicationDate": null,
+          "academicYear": "2026-27",
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "status": "OFFICIAL_SOURCE_REPORTED",
+          "publisherPeriod": "JoSAA 2026–27 institute directory. Confirm the address before traveling and check the current notice for reporting instructions."
         }
       ],
       "sourceReportedPublicContentByDomain": {
@@ -35741,7 +36513,8 @@
         "facilities and hostel": 0,
         "contact": 0
       },
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 2,
+      "newBatch055VisibleFacts": 1
     },
     {
       "slug": "central-university-of-tamil-nadu",
@@ -36698,7 +37471,8 @@
       "batch053Hold": "Library homepage opened but contained unrelated suspicious outbound links. The university contact directory and official library notice returned 502. No link or fact released from the affected homepage.",
       "newBatch054VisibleFacts": 1,
       "substantiveSourceReportedCategoryCount": 1,
-      "batch054Hold": "Admission notice and prior prospectus returned 502. DSIR supports a historical address only. The library homepage remains withheld due to unrelated suspicious outbound links."
+      "batch054Hold": "Admission notice and prior prospectus returned 502. DSIR supports a historical address only. The library homepage remains withheld due to unrelated suspicious outbound links.",
+      "batch055Hold": "The roster PIN differs from the historical DSIR directory listing. Keep the dated older address and do not infer a current replacement."
     },
     {
       "slug": "nagaland-university",
@@ -39039,7 +39813,8 @@
         "Official programme page returned HTTP 403; no access-control bypass or snippet-derived claim was used."
       ],
       "newBatch053VisibleFacts": 1,
-      "substantiveSourceReportedCategoryCount": 1
+      "substantiveSourceReportedCategoryCount": 1,
+      "batch055Hold": "The JoSAA entry is for the Odisha campus, outside the Mumbai catalogue identity."
     },
     {
       "slug": "iiser-pune",
@@ -41306,15 +42081,15 @@
     "genuineHumanApprovals": 0
   },
   "decisionUsefulnessAudit": {
-    "asOf": "2026-11-22T16:05:00.000Z",
+    "asOf": "2026-11-22T16:27:00.000Z",
     "method": "Editorial research cohorts derived from stable catalogue names and slugs. Broad and ambiguous institutions are grouped as general or multidisciplinary. This is a research triage view, not a public institutional classification, accreditation claim or finding that profiles satisfy the criteria. Category depth counts distinct released kinds. A campus address alone improves navigation but leaves all programme and decision criteria open.",
     "cohorts": {
       "engineering": {
         "profileCount": 79,
         "categoryDepth": {
           "none": 0,
-          "one": 51,
-          "two": 20,
+          "one": 24,
+          "two": 47,
           "threeOrMore": 8
         },
         "humanVerifiedDecisionCriticalProfiles": 0,
@@ -41324,8 +42099,8 @@
         "profileCount": 15,
         "categoryDepth": {
           "none": 0,
-          "one": 8,
-          "two": 6,
+          "one": 6,
+          "two": 8,
           "threeOrMore": 1
         },
         "humanVerifiedDecisionCriticalProfiles": 0,
@@ -41335,8 +42110,8 @@
         "profileCount": 9,
         "categoryDepth": {
           "none": 0,
-          "one": 4,
-          "two": 4,
+          "one": 3,
+          "two": 5,
           "threeOrMore": 1
         },
         "humanVerifiedDecisionCriticalProfiles": 0,
@@ -41346,8 +42121,8 @@
         "profileCount": 20,
         "categoryDepth": {
           "none": 0,
-          "one": 12,
-          "two": 7,
+          "one": 11,
+          "two": 8,
           "threeOrMore": 1
         },
         "humanVerifiedDecisionCriticalProfiles": 0,
@@ -41357,8 +42132,8 @@
         "profileCount": 12,
         "categoryDepth": {
           "none": 0,
-          "one": 6,
-          "two": 5,
+          "one": 5,
+          "two": 6,
           "threeOrMore": 1
         },
         "humanVerifiedDecisionCriticalProfiles": 0,
@@ -41368,13 +42143,86 @@
         "profileCount": 70,
         "categoryDepth": {
           "none": 0,
-          "one": 40,
-          "two": 23,
+          "one": 38,
+          "two": 25,
           "threeOrMore": 7
         },
         "humanVerifiedDecisionCriticalProfiles": 0,
         "decisionUsefulnessCriteria": "Programme, campus and department scope, degree duration, admissions and fees by intake and programme, recognition and contact sources, and category-specific outcome evidence where it exists."
       }
     }
+  },
+  "contentDepthBatch055": {
+    "researchedAt": "2026-11-22T16:27:00.000Z",
+    "before": {
+      "informativeProfiles": 205,
+      "sourceReportedFacts": 444,
+      "multiCategoryProfiles": 84,
+      "basicOnlyProfiles": 0,
+      "categories": {
+        "programmes": 278,
+        "facilities": 67,
+        "admissions": 32,
+        "contacts": 67,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "after": {
+      "informativeProfiles": 205,
+      "sourceReportedFacts": 478,
+      "multiCategoryProfiles": 118,
+      "basicOnlyProfiles": 0,
+      "categories": {
+        "programmes": 278,
+        "facilities": 73,
+        "admissions": 32,
+        "contacts": 95,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "newFactKinds": {
+      "programme": 0,
+      "facility": 6,
+      "admission": 0,
+      "contact": 28
+    },
+    "depth": {
+      "basic": 0,
+      "one": 87,
+      "two": 99,
+      "threeOrMore": 19
+    },
+    "sourceHolds": [
+      {
+        "institutionSlug": "iit-jodhpur",
+        "sourceUrl": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+        "reason": "Retain the existing address hold. The institutional directory and JoSAA give different highways and PIN codes."
+      },
+      {
+        "institutionSlug": "mizoram-university",
+        "sourceUrl": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+        "reason": "The roster PIN differs from the historical DSIR directory listing. Keep the dated older address and do not infer a current replacement."
+      },
+      {
+        "institutionSlug": "ict-mumbai",
+        "sourceUrl": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+        "reason": "The JoSAA entry is for the Odisha campus, outside the Mumbai catalogue identity."
+      },
+      {
+        "institutionSlug": "indian-institute-of-technology-hyderabad",
+        "sourceUrl": "https://library.iith.ac.in/",
+        "reason": "The library site returned 403 during direct inspection. Only the identified JoSAA address is released here."
+      }
+    ],
+    "ownerDatabaseWrites": 0,
+    "genuineHumanApprovals": 0
   }
 }

@@ -21,6 +21,20 @@ test('review queue search, conflicts, decisions, pagination and fixture protecti
  expect((await request.get('/api/admin/evidence')).status()).toBe(401);
  await page.goto('/admin/enrichment');await expect(page).toHaveURL(/\/login/);
  await page.goto('/login');await page.getByPlaceholder('Email address',{exact:true}).fill(email);await page.getByPlaceholder('Password',{exact:true}).fill('Browser fixture 6729!');await page.getByRole('button',{name:'Login',exact:true}).click();await expect.poll(()=>new URL(page.url()).pathname).not.toBe('/login');
+ if(process.env.COLLEGEFIND_REPORTED_BROWSER==='true'){
+   await page.goto('/admin/enrichment');
+   const priority=page.getByRole('navigation',{name:'Priority tuition review'});
+   await expect(priority.getByRole('link')).toHaveCount(3);
+   await priority.getByRole('link',{name:'IIT Roorkee first-year tuition',exact:true}).click();
+   const tuition=page.locator('[data-claim-id="cmwm4060u0003lftv8hj4ur0o"]');
+   await expect(tuition).toContainText('Tuition fee');
+   await expect(tuition).toContainText('excludes other semester charges');
+   await page.goto('/admin/enrichment?status=ALL&q=cmwm3rj78000dhxtvxa99f78a');
+   const placement=page.locator('[data-claim-id="cmwm3rj78000dhxtvxa99f78a"]');
+   await expect(placement).toContainText('Manual hold');
+   await placement.getByLabel('Review reason').fill('Verify this disabled approval without recording a decision');
+   await expect(placement.getByRole('button',{name:'Approve',exact:true})).toBeDisabled();
+ }
  await page.goto('/admin/enrichment?status=ALL&q='+name);await expect(page.getByRole('heading',{name:'Enrichment review'})).toBeVisible();await expect(page.getByRole('article')).toHaveCount(25);
  const packet=page.getByText('First owner review batch · 25 claims · staged for inspection, not approval');await expect(packet).toBeVisible();
  const packetItem=page.locator('li').filter({hasText:'cmwlqtg56000ngvtvlul6b04j'});await expect(packetItem).toContainText('CMI Chennai');await expect(packetItem).toContainText('2027');await expect(packetItem).toContainText('College location: Chennai, Tamil Nadu');await expect(packetItem).toContainText('Source-use review:');await expect(packetItem).toContainText('publication date is not recorded');await expect(packetItem).toContainText('Reviewer question:');await expect(packetItem.getByRole('link',{name:'Open official source'})).toHaveAttribute('href','https://www.cmi.ac.in/admissions/');await expect(packetItem.getByRole('link',{name:'Open this claim in the queue'})).toHaveAttribute('href',/q=cmwlqtg56000ngvtvlul6b04j/);await packetItem.getByText('Source access, reuse and collection notes').click();await expect(packetItem).toContainText('explicit bulk reuse permission not established');

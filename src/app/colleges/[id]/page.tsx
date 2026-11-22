@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   if (!college) notFound();
   return {
     title: `${college.name}, ${college.city}`,
-    description: `${college.name} in ${college.city}, ${college.state}. View source-reviewed college information and historical admissions cutoffs where available.`,
+    description: `${college.name} in ${college.city}, ${college.state}. Find attributed college information and reviewed historical cutoffs where available.`,
     alternates: { canonical: `/colleges/${college.slug}` },
   };
 }
@@ -101,6 +101,8 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
     ['AVAILABLE', 'CONFLICT', 'OUTDATED'].includes(evidence.status));
   const contactFacts = (listCollege.structuredFacts ?? []).filter(({ value }) => value.kind === 'contact');
   const hasSourceReportedProgrammeDetails = sourceReported.some(({ value }) => value.kind === 'programme' || value.kind === 'admission');
+  const hasReviewedEligibility = listCollege.structuredFacts?.some(({ value }) => value.kind === 'admission' && value.eligibility);
+  const hasOnlyReportedContacts = sourceReported.length > 0 && sourceReported.every(({ value }) => value.kind === 'contact');
   const hasSourceReportedFacilities = sourceReported.some(({ value }) => value.kind === 'facility');
 
   const jsonLd = {
@@ -139,7 +141,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             {college.type === 'GOVERNMENT' ? <span className="badge-green">Government</span> : <span className="badge-purple">Private</span>}
             {college.naacGrade && <span className="badge-blue">NAAC {college.naacGrade}</span>}
             <span className="badge-blue">Catalogue identity</span>
-            <span className="text-xs text-slate-700">{hasReviewedDetails ? 'Reviewed facts are marked with sources' : sourceReported.length ? 'Institution-reported details available below' : 'Detailed facts awaiting verification'}</span>
+            <span className="text-xs text-slate-700">{hasReviewedDetails ? 'Reviewed facts are marked with sources' : hasOnlyReportedContacts ? 'Source-reported contacts available' : sourceReported.length ? 'Source-reported details available' : 'Detailed facts awaiting verification'}</span>
           </div>
           <CollegeActions college={listCollege} />
           <Link className="mt-3 inline-block text-indigo-700 underline" href={`/collegefit?location=${encodeURIComponent(college.state)}`}>Explore CollegeFit in {college.state}</Link>
@@ -235,6 +237,9 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
               : college.courses.length ? 'Programme eligibility and admission routes are not verified yet.' : 'Programme details and admission routes are not verified yet.')}
             {renderSourceReported(sourceReported, 'programme')}
             {renderSourceReported(sourceReported, 'admission')}
+            {hasSourceReportedProgrammeDetails && !hasReviewedEligibility && <p className="mt-3 text-sm text-slate-600">
+              Programme-specific eligibility is awaiting independent review. Check the official notice for your intake.
+            </p>}
             {sectionSource(['admissions', 'programmes'])}
             <Link className="mt-3 block text-indigo-700 underline" href={`/predictor?college=${encodeURIComponent(college.slug)}`}>Open admission guidance</Link>
           </section>

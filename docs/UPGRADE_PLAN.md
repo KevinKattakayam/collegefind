@@ -298,3 +298,7 @@ Five more institutions have source-reported content. The catalogue now has 195 i
 ## Batch 054 release-readiness completion
 
 The 205-profile catalogue now has at least one eligible source-reported fact per profile. This satisfies breadth at the level of an attributed record. Decision usefulness is tracked separately by category depth and editorial institution cohort. The reviewed-content release remains gated on source reconciliation, individual owner decisions and production environment evidence. See the current release gate in [PRODUCTION_RELEASE.md](PRODUCTION_RELEASE.md).
+
+## Batch 055 decision usefulness
+
+Category depth now reaches 118 profiles with two or more kinds of source-reported facts. Continue with genuine source inspection in the existing review queue. The three tuition claims now have direct priority links. Public programme sections explain when eligibility is still unreviewed. Keep finance, eligibility, recognition, placements and cutoffs behind their existing review and scope gates.

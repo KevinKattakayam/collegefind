@@ -10,6 +10,11 @@ import reviewBatch from '../../../../data/pilot/first-human-review-batch.json';
 export const dynamic = 'force-dynamic';
 
 type Search = Record<string, string | string[] | undefined>;
+const firstInspection = [
+  ['cmwm4060u0003lftv8hj4ur0o', 'IIT Roorkee first-year tuition'],
+  ['cmwm406100005lftvhno5hr3x', 'IIT Roorkee SC/ST/PwD tuition waiver'],
+  ['cmwm4trd200073otvpjb30qsw', 'CMC Vellore annual MBBS tuition'],
+] as const;
 const prioritySourceChecks: Record<string, string> = {
   cmwlqtg7i001qgvtvfvd0j4ev: 'The linked All India admissions page describes the closed 2026 cycle. Inspect the school-location and board scope in the Eligibility section before deciding whether a historical claim is appropriate.',
   cmwlpjrzh001syttvn05nz1d4: 'Keep on hold pending confirmation of the final applicable fee. The All India fee table describes tuition per semester and says the proposal is subject to appellate consideration and revision.',
@@ -42,7 +47,9 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
     row.id,
     evidenceReviewHold(row.id) ? 'PENDING' : row.decisions[0]?.status ?? 'UNREVIEWED',
   ]));
-  const next = reviewBatch.claims.find(({ evidenceId }) => packetStates.get(evidenceId) === 'UNREVIEWED' && evidenceId !== parsed.data.q);
+  const priorityId = firstInspection.find(([id]) => packetStates.get(id) === 'UNREVIEWED' && id !== parsed.data.q)?.[0];
+  const next = reviewBatch.claims.find(({ evidenceId }) => evidenceId === priorityId) ??
+    reviewBatch.claims.find(({ evidenceId }) => packetStates.get(evidenceId) === 'UNREVIEWED' && evidenceId !== parsed.data.q);
   const { page, pageSize, status, q, college, campus, field, academicYear, freshness, total, items } = result;
   const filters = { status, q, college, campus, field, academicYear, freshness };
   const pages = Math.max(1, Math.ceil(total / pageSize));
@@ -51,6 +58,15 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
   return <main className="container-page min-w-0 overflow-x-hidden py-8">
     <h1>Enrichment review</h1>
     <p>Retrieval is not verification. Only an authorized reviewer decision can publish evidence. Fixture claims are never publishable.</p>
+    {firstInspection.some(([id]) => packetStates.has(id)) && <nav aria-label="Priority tuition review" className="my-4">
+      <h2>Inspect the tuition evidence first</h2>
+      <ul className="list-disc space-y-1 pl-5">
+        {firstInspection.filter(([id]) => packetStates.has(id)).map(([id, label]) => <li key={id}>
+          <Link href={pageLink(1, { status: 'ALL', q: id })}>{label}</Link>
+          {' · '}{packetStates.get(id) === 'UNREVIEWED' ? 'Awaiting review' : packetStates.get(id) === 'PENDING' ? 'Held' : packetStates.get(id)}
+        </li>)}
+      </ul>
+    </nav>}
     {next && <p className="mt-4"><Link href={pageLink(1, { status: 'ALL', q: next.evidenceId })}>Next unreviewed packet claim: {next.institutionName} · {next.field}</Link></p>}
     <details className="my-5 break-words border p-4" open={!reviewBatch.claimIds.includes(q)}>
       <summary className="cursor-pointer font-semibold">First owner review batch · {reviewBatch.claims.length} claims · staged for inspection, not approval</summary>

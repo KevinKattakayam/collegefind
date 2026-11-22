@@ -16,7 +16,7 @@ import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReport
 import { projectPublicCollege } from '../../src/server/public-evidence';
 import { structuredFact } from '../../src/server/ingest/structured-facts';
 
-const now = new Date('2026-11-22T16:10:00Z');
+const now = new Date('2026-11-22T16:32:00Z');
 const record = {
   ...policy.records.find(({ slug }) => slug === 'dit-university')!,
   basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const,
@@ -87,7 +87,7 @@ describe('source-reported profile eligibility', () => {
     });
     expect(facts.every(({ status }) => status === 'OFFICIAL_SOURCE_REPORTED')).toBe(true);
     const pec = policy.records.filter(({ slug }) => slug === 'pec-chandigarh');
-    expect(eligibleSourceReported({ id: pec[0].collegeId, slug: pec[0].slug }, now)).toHaveLength(4);
+    expect(eligibleSourceReported({ id: pec[0].collegeId, slug: pec[0].slug }, now).filter(({ ref }) => !ref.startsWith('batch-55:'))).toHaveLength(4);
     const dtu = policy.records.filter(({ slug }) => slug === 'delhi-technological-university');
     expect(eligibleSourceReported({ id: dtu[0].collegeId, slug: dtu[0].slug }, now)).toHaveLength(14);
     const dtuFacts = eligibleSourceReported({ id: dtu[0].collegeId, slug: dtu[0].slug }, now);
@@ -540,7 +540,7 @@ describe('source-reported profile eligibility', () => {
         [], now,
       ));
     const eligible = archive.collegeIdentity.flatMap((identity) => eligibleSourceReported(identity, now));
-    const preBatch052 = eligible.filter(({ ref }) => !ref.startsWith('batch-52:') && !ref.startsWith('batch-53:') && !ref.startsWith('batch-54:'));
+    const preBatch052 = eligible.filter(({ ref }) => !ref.startsWith('batch-52:') && !ref.startsWith('batch-53:') && !ref.startsWith('batch-54:') && !ref.startsWith('batch-55:'));
     const unscopedSimulation = archive.collegeIdentity.flatMap((identity) =>
       suppressSourceReported(preBatch052.filter((fact) =>
         policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id), archivedRows, [], now));
@@ -558,9 +558,9 @@ describe('source-reported profile eligibility', () => {
         policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id),
       archivedRows.filter((row) => row.collegeId === identity.id), [], now));
 
-    expect(eligible).toHaveLength(444);
-    expect(visible).toHaveLength(444);
-    expect(new Set(visible.map(({ ref }) => ref)).size).toBe(444);
+    expect(eligible).toHaveLength(478);
+    expect(visible).toHaveLength(478);
+    expect(new Set(visible.map(({ ref }) => ref)).size).toBe(478);
     expect(visible.every(({ status }) => status === 'OFFICIAL_SOURCE_REPORTED')).toBe(true);
     expect(visible.some(({ ref }) => ref === 'batch-50:0')).toBe(true);
     expect(preBatch052).toHaveLength(414);
