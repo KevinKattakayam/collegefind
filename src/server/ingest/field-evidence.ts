@@ -39,7 +39,7 @@ export async function reviewFieldEvidence(db: PrismaClient, input: {
     // Share the importer lock so a review cannot race a same-scope import.
     await tx.$executeRaw`SELECT pg_advisory_xact_lock(180231, 3)`;
     const reviewer = await tx.user.findUniqueOrThrow({ where: { id: input.reviewerId } });
-    if (reviewer.role !== 'ADMIN') throw new Error('Reviewer access required');
+    if (reviewer.role !== 'ADMIN' || reviewer.deactivatedAt) throw new ApiError(403, 'FORBIDDEN', 'Reviewer access required');
     const claim = await tx.fieldEvidence.findUniqueOrThrow({ where: { id: input.evidenceId } });
     if (input.expectedDecisionId !== undefined) {
       const latest = await tx.evidenceDecision.findFirst({ where: { evidenceId: claim.id }, orderBy: [{ createdAt: 'desc' }, { id: 'desc' }], select: { id: true } });
@@ -88,7 +88,7 @@ export async function reviewTypedRecord(db: PrismaClient, input: {
   return db.$transaction(async (tx) => {
     await tx.$queryRaw<Array<{ locked: boolean; }>>`SELECT pg_advisory_xact_lock(180231, 4) IS NULL AS locked`;
     const reviewer = await tx.user.findUniqueOrThrow({ where: { id: input.reviewerId } });
-    if (reviewer.role !== 'ADMIN') throw new Error('Reviewer access required');
+    if (reviewer.role !== 'ADMIN' || reviewer.deactivatedAt) throw new ApiError(403, 'FORBIDDEN', 'Reviewer access required');
     const target = { [`${input.kind}Id`]: input.recordId };
     if (input.expectedDecisionId !== undefined) {
       const where = input.kind === 'cutoff' ? { cutoffId: input.recordId } : input.kind === 'fees' ? { feesId: input.recordId } : input.kind === 'placement' ? { placementId: input.recordId } : { rankingId: input.recordId };

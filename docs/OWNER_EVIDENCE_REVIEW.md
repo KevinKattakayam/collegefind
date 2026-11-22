@@ -158,6 +158,13 @@ These are existing claims from the 25-item packet, not new evidence, approvals o
 
 All six remain `STAGED_UNREVIEWED`. No packet order, persistent row, source archive or review decision was changed for this handoff. Approval/rejection/hold must still be performed one item at a time by the authorized human reviewer with a reason.
 
+
+#### Current source recheck (2026-11-22)
+
+The original official references were re-opened where available. IIT Roorkee's 2026–27 UG-I fee PDF supports the listed ₹100,000 per-semester tuition row and the SC/ST/PwD tuition-only waiver row; the grand total includes other charges, so the waiver must not be described as zero total cost. The revised CMC Vellore 2026–27 prospectus supports ₹3,000 annual MBBS tuition at printed page 177; other charges are separate. These three are suitable for individual source inspection, subject to the owner checking exact row, scope and source-use terms. DAU's ₹192,500 per-semester B.Tech figure is explicitly subject to appellate consideration and revision, so remains held. Nirma's 2026 admission cycle is closed and remains historical/scope-held. MNNIT's 2024–25 placement PDF could not be directly reopened in this check; its denominator remains unconfirmed and both related claims remain held. None has been approved. The source-reported Batch 056 facts do not change this review state.
+
+Read-only local app check on 2026-11-23 returned registration 200, anonymous `/admin/enrichment` redirect 307, and anonymous evidence API 401. A read-only query returned 205 colleges, 269 sources, 377 staged claims, zero users and zero evidence decisions. The app did not create accounts or change review data. These checks confirm route/authorization boundaries only; an owner still must register and personally inspect each source.
+
 ## Preserve and restore owner progress
 
 Once a human has registered, the database contains private account identifiers and reviewer decisions. Back up the **whole owner-review database**, not the staged-evidence JSON exporter. Use the encrypted, access-controlled backup location, mode-600 `.pgpass` and backup passphrase file, and no shell tracing. Never upload plaintext dumps or print connection strings. GPG is available locally; `age` is not. The initial empty-review-state archive was validated (encrypted file checksum is recorded in `UPGRADE_STATUS.md`):

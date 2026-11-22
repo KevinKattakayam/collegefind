@@ -46,23 +46,24 @@ describe('admin evidence review endpoint', () => {
     expect(await result(await POST(request({ kind: 'field', id: 'claim-1', status: 'APPROVED', reason: 'Checked' }, 'https://attacker.test')))).toMatchObject({ status: 403 });
     expect(await result(await POST(request({ kind: 'field', id: 'bad/id', status: 'APPROVED', reason: 'Checked' })))).toMatchObject({ status: 400 });
     expect(await result(await POST(request({ kind: 'field', id: 'claim-1', status: 'APPROVED', reason: 'ok', extra: true })))).toMatchObject({ status: 400 });
+    expect(await result(await POST(request({ kind: 'field', id: 'claim-1', status: 'APPROVED', reason: 'Missing last decision' })))).toMatchObject({ status: 400 });
     expect(mocks.reviewFieldEvidence).not.toHaveBeenCalled();
     expect(mocks.reviewTypedRecord).not.toHaveBeenCalled();
   });
 
   it('routes field and typed decisions through the audited service and returns no-store', async () => {
-    const field = await POST(request({ kind: 'field', id: 'claim-1', status: 'APPROVED', reason: 'Official page checked' }));
+    const field = await POST(request({ kind: 'field', id: 'claim-1', status: 'APPROVED', reason: 'Official page checked', expectedDecisionId: null }));
     expect(await result(field)).toMatchObject({ status: 200, body: { decisionId: 'decision-1' } });
     expect(field.headers.get('cache-control')).toBe('no-store');
     expect(mocks.enforceRateLimit).toHaveBeenCalledWith('moderation', 'admin-1');
     expect(mocks.reviewFieldEvidence).toHaveBeenCalledWith({}, {
-      evidenceId: 'claim-1', reviewerId: 'admin-1', status: 'APPROVED', reason: 'Official page checked',
+      evidenceId: 'claim-1', reviewerId: 'admin-1', status: 'APPROVED', reason: 'Official page checked', expectedDecisionId: null,
     });
 
-    const typed = await POST(request({ kind: 'cutoff', id: 'cutoff-1', status: 'REJECTED', reason: 'Wrong academic year' }));
+    const typed = await POST(request({ kind: 'cutoff', id: 'cutoff-1', status: 'REJECTED', reason: 'Wrong academic year', expectedDecisionId: 'previous' }));
     expect(await result(typed)).toMatchObject({ status: 200, body: { decisionId: 'decision-2' } });
     expect(mocks.reviewTypedRecord).toHaveBeenCalledWith({}, {
-      kind: 'cutoff', recordId: 'cutoff-1', reviewerId: 'admin-1', status: 'REJECTED', reason: 'Wrong academic year',
+      kind: 'cutoff', recordId: 'cutoff-1', reviewerId: 'admin-1', status: 'REJECTED', reason: 'Wrong academic year', expectedDecisionId: 'previous',
     });
   });
 

@@ -1,6 +1,7 @@
 import { afterAll, beforeEach, expect, it } from 'vitest';
 import { resetDb, testDb } from './db';
 import { stageFieldEvidence, reviewFieldEvidence } from '@/server/ingest/field-evidence';
+import { projectPublicCollege, publicEvidenceSelect } from '@/server/public-evidence';
 const db = testDb();
 beforeEach(resetDb);
 afterAll(() => db.$disconnect());
@@ -16,9 +17,17 @@ it('preserves existing college/saved relationships through reviewed supersession
  await expect(reviewFieldEvidence(db,{evidenceId:original.id,reviewerId:user.id,status:'APPROVED',reason:'Fixture checked'})).rejects.toThrow(/Reviewer access/);
  await reviewFieldEvidence(db,{evidenceId:original.id,reviewerId:admin.id,status:'APPROVED',reason:'Fixture checked'});
  const replacement = await stageFieldEvidence(db,{collegeId:college.id,sourceId:source.id,draft:{...draft,value:'Updated'},supersedesId:original.id});
- await reviewFieldEvidence(db,{evidenceId:replacement.id,reviewerId:admin.id,status:'APPROVED',reason:'Updated publication'});
+ const decision = await reviewFieldEvidence(db,{evidenceId:replacement.id,reviewerId:admin.id,status:'APPROVED',reason:'Updated publication',expectedDecisionId:null});
  expect(await db.fieldEvidence.count()).toBe(2);
  expect(await db.auditLog.count({where:{action:'evidence.review'}})).toBe(2);
  expect(await db.savedCollege.count()).toBe(1);
  expect((await db.college.findUniqueOrThrow({where:{id:college.id}})).slug).toBe('preserved');
+ const projected = async () => projectPublicCollege(await db.college.findUniqueOrThrow({where:{id:college.id},include:publicEvidenceSelect}));
+ expect((await projected()).description).toBe('Updated');
+ await expect(reviewFieldEvidence(db,{evidenceId:replacement.id,reviewerId:admin.id,status:'REJECTED',reason:'Outdated queue view',expectedDecisionId:null})).rejects.toMatchObject({status:409});
+ await reviewFieldEvidence(db,{evidenceId:replacement.id,reviewerId:admin.id,status:'PENDING',reason:'Source withdrawn',expectedDecisionId:decision.id});
+ expect((await projected()).description).toBeNull();
+ await db.user.update({where:{id:admin.id},data:{deactivatedAt:new Date()}});
+ await expect(reviewFieldEvidence(db,{evidenceId:replacement.id,reviewerId:admin.id,status:'REJECTED',reason:'Deactivated reviewer'})).rejects.toMatchObject({status:403});
+ expect(await db.auditLog.count({where:{action:'evidence.review'}})).toBe(3);
 });

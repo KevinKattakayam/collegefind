@@ -75,7 +75,9 @@ test('staged official candidate requires review and publishes across student vie
         component: 'Synthetic fee', period: 'SEMESTER', amountInr: 12345 },
     } });
     const decision = { kind: 'field', id: fee.id, reason: 'Synthetic fee presentation test on disposable archive only' };
-    expect((await page.request.post('/api/admin/evidence', { data: { ...decision, status: 'APPROVED' } })).status()).toBe(200);
+    const published = await page.request.post('/api/admin/evidence', { data: { ...decision, status: 'APPROVED', expectedDecisionId: null } });
+    expect(published.status()).toBe(200);
+    const { decisionId } = await published.json();
 
     await page.goto(profile);
     const fees = main.locator('#fees');
@@ -84,7 +86,7 @@ test('staged official candidate requires review and publishes across student vie
     await expect(fees.getByText('₹12,345', { exact: true })).toBeVisible();
     await expect(fees.getByText('Rehearsal cohort', { exact: true })).toBeVisible();
     await expect(fees.getByRole('link', { name: claim.source.publisher, exact: true })).toHaveAttribute('href', claim.source.url);
-    expect((await page.request.post('/api/admin/evidence', { data: { ...decision, status: 'REJECTED' } })).status()).toBe(200);
+    expect((await page.request.post('/api/admin/evidence', { data: { ...decision, status: 'REJECTED', expectedDecisionId: decisionId } })).status()).toBe(200);
     const programmes = main.locator('#programmes-and-admissions [data-evidence-status="VERIFIED"]');
     await expect(main.locator('#programmes-and-admissions [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
     await expect(programmes.getByText(programme, { exact: true })).toBeVisible();

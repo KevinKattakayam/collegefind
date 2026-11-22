@@ -22,6 +22,12 @@ export default function ReviewDecision({
         body: JSON.stringify({ kind: 'field', id, status, reason, expectedDecisionId: currentDecisionId }),
       });
       if (!response.ok) {
+        if (response.status === 409 && (await response.json().catch(() => null))?.code === 'REVIEW_CHANGED') {
+          setReason('');
+          setMessage('Another review was recorded. The evidence has been refreshed. Read the decision history before trying again.');
+          router.refresh();
+          return;
+        }
         setMessage(response.status === 401 || response.status === 403
           ? 'Decision denied. An authorized reviewer is required.'
           : 'Decision not recorded. Review the claim state and reason, then try again.');

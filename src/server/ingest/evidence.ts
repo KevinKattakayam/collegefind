@@ -65,7 +65,9 @@ export function activeReviewedClaims<T extends ReviewedClaim>(claims: T[], now: 
     const latest = [...claim.decisions].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())[0];
     return latest?.status === 'APPROVED' && !claim.decisions.some((d) => d.createdAt.getTime() === latest.createdAt.getTime() && d.status !== 'APPROVED');
   });
-  const superseded = new Set(approved.map((claim) => claim.supersedesId).filter(Boolean));
+  // A withdrawal removes the replacement without republishing its retired predecessor.
+  const superseded = new Set(claims.filter((claim) => claim.decisions.some(({ status }) => status === 'APPROVED'))
+    .map((claim) => claim.supersedesId).filter(Boolean));
   return approved.filter((claim) => !evidenceReviewHold(claim.id) && !superseded.has(claim.id) &&
     (!claim.validFrom || claim.validFrom <= now) && (!claim.validUntil || claim.validUntil >= now));
 }

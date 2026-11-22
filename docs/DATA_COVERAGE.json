@@ -47607,26 +47607,26 @@
     ]
   },
   "sourceReportedPublicProjection": {
-    "asOf": "2026-11-22T04:40:00Z",
+    "asOf": "2026-11-22T21:00:00Z",
     "catalogueSize": 205,
-    "profilesWithSubstantiveSourceReportedFacts": 185,
-    "sourceReportedFactsVisible": 406,
-    "profilesWithTwoOrMoreSubstantiveCategories": 77,
-    "basicIdentityOrNavigationOnlyProfiles": 20,
-    "newBatches": "050",
-    "newFactsReleased": 6,
-    "newProfilesCovered": 4,
+    "profilesWithSubstantiveSourceReportedFacts": 205,
+    "sourceReportedFactsVisible": 500,
+    "profilesWithTwoOrMoreSubstantiveCategories": 138,
+    "basicIdentityOrNavigationOnlyProfiles": 0,
+    "newBatches": "056",
+    "newFactsReleased": 22,
+    "newProfilesCovered": 0,
     "newFactsByCategory": {
-      "programmes": 2,
-      "facilities": 1,
-      "admissions": 3,
-      "contacts": 0
+      "programmes": 0,
+      "facilities": 13,
+      "admissions": 4,
+      "contacts": 5
     },
     "countsByCategory": {
-      "programmes": 264,
-      "facilities": 60,
-      "admissions": 31,
-      "contacts": 51,
+      "programmes": 278,
+      "facilities": 86,
+      "admissions": 36,
+      "contacts": 100,
       "fees": 0,
       "scholarships": 0,
       "recognition": 0,
@@ -47663,7 +47663,9 @@
       "Official institutional material for ICT Mumbai, IIM Lucknow, IIT Jodhpur, Osmania and several NIT/CUSAT pages was inaccessible or ambiguous; exact holds are recorded in batch 049. Wrong-campus OP Jindal, wrong-institution St John’s Medical College and outdated Banasthali material were excluded.",
       "Batch 050 adds six time-limited, source-reported facts across four previously basic profiles; profile completeness increased to 185, multi-category coverage to 77, and basic-only profiles decreased to 20.",
       "Batch 050 contributes two programme facts, one facilities listing, and three admissions-process facts. Source-reported facts are not human verified; all six remain outside the persistent owner-review database.",
-      "The release register contains 406 policy-eligible individual facts at the stated as-of time. Page-level archive conflict suppression remains an additional runtime boundary; unit and browser tests validate newly added facts against archived rows."
+      "The release register contains 406 policy-eligible individual facts at the stated as-of time. Page-level archive conflict suppression remains an additional runtime boundary; unit and browser tests validate newly added facts against archived rows.",
+      "Batch 056 adds 22 attributed low-risk source-reported facts across 20 already-informative colleges: four admission-route facts, 13 facility facts and five contact facts. It adds no new colleges; multi-category profiles rise 118→138, with 67 one-category, 117 two-category and 21 three-or-more-category profiles. All 22 facts pass the current eligibility and per-college archive projection; evidence remains OFFICIAL_SOURCE_REPORTED, separate from human VERIFIED. No owner database write or review decision occurred. Source locations, historical labels, short expiry and unresolved access holds are in the Batch 056 manifest and per-college ledger. The FMS admissions contact is attributed to the official FMS homepage (not the historical MBA bulletin); the Loyola library phone has no academic-year scope.",
+      "Live Browser verification on 2026-11-23 confirmed all 205 profile routes and directly checked all 22 Batch 056 facts across 20 pages against their displayed values, evidence locations, source links and OFFICIAL_SOURCE_REPORTED labels; this supplements the prior browser verification of the 478-fact baseline. Desktop/mobile screenshots are in /tmp/cf-b056-screens. This is local verification, not human review or production acceptance."
     ],
     "baselineBeforeBatch050": {
       "profiles": 181,

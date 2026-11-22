@@ -12,11 +12,12 @@ import batch49 from '../../data/pilot/substantive-research-batch-049.json';
 import batch50 from '../../data/pilot/substantive-research-batch-050.json';
 import batch51 from '../../data/pilot/substantive-research-batch-051.json';
 import batch52 from '../../data/pilot/substantive-research-batch-052.json';
+import batch56 from '../../data/pilot/substantive-research-batch-056.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
 import { structuredFact } from '../../src/server/ingest/structured-facts';
 
-const now = new Date('2026-11-22T16:32:00Z');
+const now = new Date('2026-11-22T21:00:00Z');
 const record = {
   ...policy.records.find(({ slug }) => slug === 'dit-university')!,
   basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const,
@@ -540,7 +541,8 @@ describe('source-reported profile eligibility', () => {
         [], now,
       ));
     const eligible = archive.collegeIdentity.flatMap((identity) => eligibleSourceReported(identity, now));
-    const preBatch052 = eligible.filter(({ ref }) => !ref.startsWith('batch-52:') && !ref.startsWith('batch-53:') && !ref.startsWith('batch-54:') && !ref.startsWith('batch-55:'));
+    const preBatch052 = eligible.filter(({ ref }) => !ref.startsWith('batch-52:') && !ref.startsWith('batch-53:') &&
+      !ref.startsWith('batch-54:') && !ref.startsWith('batch-55:') && !ref.startsWith('batch-56:'));
     const unscopedSimulation = archive.collegeIdentity.flatMap((identity) =>
       suppressSourceReported(preBatch052.filter((fact) =>
         policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id), archivedRows, [], now));
@@ -558,9 +560,9 @@ describe('source-reported profile eligibility', () => {
         policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id),
       archivedRows.filter((row) => row.collegeId === identity.id), [], now));
 
-    expect(eligible).toHaveLength(478);
-    expect(visible).toHaveLength(478);
-    expect(new Set(visible.map(({ ref }) => ref)).size).toBe(478);
+    expect(eligible).toHaveLength(500);
+    expect(visible).toHaveLength(500);
+    expect(new Set(visible.map(({ ref }) => ref)).size).toBe(500);
     expect(visible.every(({ status }) => status === 'OFFICIAL_SOURCE_REPORTED')).toBe(true);
     expect(visible.some(({ ref }) => ref === 'batch-50:0')).toBe(true);
     expect(preBatch052).toHaveLength(414);
@@ -730,6 +732,62 @@ describe('source-reported profile eligibility', () => {
     expect(eligibleSourceReported({ id: collegeId, slug }, now, [{ ...scoped, ref, slug, collegeId,
       sourceUrl: 'https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates',
       publisherPeriod: '2027–29', fingerprint: sourceReportedFingerprint(ref)! }])).toEqual([]);
+  });
+
+  it('supports official two-year cohort periods without losing historical or expiry scope', () => {
+    const spj = policy.records.find(({ ref }) => ref === 'batch-56:1')!;
+    const spjCollege = { id: spj.collegeId, slug: spj.slug };
+    expect(eligibleSourceReported(spjCollege, now).find(({ ref }) => ref === spj.ref)).toMatchObject({
+      academicYear: '2027-29', status: 'OFFICIAL_SOURCE_REPORTED', historical: false,
+    });
+    expect(eligibleSourceReported(spjCollege, new Date('2026-11-29T00:00:00Z'))).not.toContainEqual(
+      expect.objectContaining({ ref: spj.ref }),
+    );
+    const fms = policy.records.find(({ ref }) => ref === 'batch-56:2')!;
+    expect(eligibleSourceReported({ id: fms.collegeId, slug: fms.slug }, now).find(({ ref }) => ref === fms.ref)).toMatchObject({
+      ref: fms.ref, academicYear: '2026-28', historical: true, status: 'OFFICIAL_SOURCE_REPORTED',
+    });
+  });
+
+  it('publishes Batch 056 as attributed, low-risk source-reported facts across one-category profiles', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-56:'));
+    expect(rows).toHaveLength(22);
+    expect(batch56.candidateClaims).toHaveLength(22);
+    expect(new Set(rows.map(({ slug }) => slug)).size).toBe(20);
+    expect(rows.every(({ status, basis, usageAssessment, fingerprint, ref }) =>
+      status === 'PUBLISH' && basis === 'ATTRIBUTED_INDIVIDUAL_FACT' && usageAssessment.length > 30 &&
+      fingerprint === sourceReportedFingerprint(ref))).toBe(true);
+    expect(rows.some(({ status }) => status === 'VERIFIED')).toBe(false);
+    expect(batch56.candidateClaims.every(({ status, reviewState, stageable }) =>
+      status === 'UNREVIEWED' && reviewState === 'UNREVIEWED' && stageable)).toBe(true);
+    expect(batch56.sources.every(({ url, retrievedAt, reuseConditions }) =>
+      url.startsWith('https://') && retrievedAt === batch56.researchedAt && reuseConditions.length > 30)).toBe(true);
+
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    expect(facts).toHaveLength(22);
+    expect(facts.every(({ status, url, evidenceLocation, publisher, sourceTitle }) =>
+      status === 'OFFICIAL_SOURCE_REPORTED' && url.startsWith('https://') && evidenceLocation.length > 0 &&
+      publisher.length > 0 && sourceTitle.length > 0)).toBe(true);
+    expect(facts.filter(({ value }) => value.kind === 'admission')).toHaveLength(4);
+    expect(facts.filter(({ value }) => value.kind === 'facility')).toHaveLength(13);
+    expect(facts.filter(({ value }) => value.kind === 'contact')).toHaveLength(5);
+    expect(facts.filter(({ value }) => value.kind === 'programme')).toHaveLength(0);
+    expect(facts.every(({ value }) => !['fee', 'placement', 'recognition', 'nirfRanking', 'scholarship'].includes(value.kind))).toBe(true);
+
+    const archiveRows = archive.claims.map((claim) => ({
+      collegeId: claim.collegeId,
+      id: claim.id, field: claim.field, value: claim.value, isFixture: claim.isFixture,
+      academicYear: typeof claim.academicYear === 'number' ? claim.academicYear : null,
+      validFrom: claim.validFrom ? new Date(claim.validFrom) : null,
+      validUntil: claim.validUntil ? new Date(claim.validUntil) : null,
+      supersedesId: claim.supersedesId, decisions: [],
+    }));
+    const surviving = rows.flatMap((row) => suppressSourceReported(
+      eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now).filter(({ ref }) => ref.startsWith('batch-56:')),
+      archiveRows.filter((archived) => archived.collegeId === row.collegeId), [], now,
+    ).filter(({ ref }) => ref === row.ref));
+    expect(surviving.map(({ ref }) => ref).sort()).toEqual(facts.map(({ ref }) => ref).sort());
   });
 
   it('retains the publisher period for a historical listing and compares staged evidence within that year', () => {
