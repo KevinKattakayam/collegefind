@@ -8,10 +8,11 @@ import batch45 from '../../data/pilot/substantive-research-batch-045.json';
 import batch46 from '../../data/pilot/substantive-research-batch-046.json';
 import batch47 from '../../data/pilot/substantive-research-batch-047.json';
 import batch48 from '../../data/pilot/substantive-research-batch-048.json';
+import batch49 from '../../data/pilot/substantive-research-batch-049.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
 
-const now = new Date('2026-11-21T18:00:00Z');
+const now = new Date('2026-11-22T03:52:00Z');
 const record = {
   ...policy.records.find(({ slug }) => slug === 'dit-university')!,
   basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const,
@@ -21,7 +22,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(173);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(181);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
@@ -348,6 +349,54 @@ describe('source-reported profile eligibility', () => {
       expect(batch48.researchHolds.some(({ institutionSlug }) => institutionSlug === slug)).toBe(true);
       expect(rows.some(({ slug: published }) => published === slug)).toBe(false);
     }
+  });
+
+  it('reconciles Batch 049 source-reported facts, temporal labels and institution scope', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-49:'));
+    expect(batch49.candidateClaims).toHaveLength(20);
+    expect(rows).toHaveLength(20);
+    expect(new Set(rows.map(({ slug }) => slug)).size).toBe(8);
+    expect(rows.every(({ status, basis, fingerprint, ref }) => status === 'PUBLISH' &&
+      basis === 'ATTRIBUTED_INDIVIDUAL_FACT' && sourceReportedFingerprint(ref) === fingerprint)).toBe(true);
+    expect(rows.every(({ status }) => status !== 'VERIFIED')).toBe(true);
+
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    expect(facts).toHaveLength(20);
+    expect(facts.filter(({ value }) => value.kind === 'programme')).toHaveLength(9);
+    expect(facts.filter(({ value }) => value.kind === 'admission')).toHaveLength(1);
+    expect(facts.filter(({ value }) => value.kind === 'facility')).toHaveLength(3);
+    expect(facts.filter(({ value }) => value.kind === 'contact')).toHaveLength(7);
+    expect(facts.every(({ status, evidenceLocation, url }) => status === 'OFFICIAL_SOURCE_REPORTED' &&
+      evidenceLocation.length > 0 && url.startsWith('https://'))).toBe(true);
+
+    expect(facts.find(({ ref }) => ref === 'batch-49:2')).toMatchObject({
+      academicYear: '2027', historical: false, value: { kind: 'admission', category: 'Domestic applicants, 2027–31 cohort' },
+      publisherPeriod: expect.stringContaining('test held 15 Nov 2026'),
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-49:5')).toMatchObject({
+      academicYear: '2024-25', historical: true,
+      publisherPeriod: expect.stringContaining('Historical 2024–25'),
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-49:8')).toMatchObject({
+      academicYear: '2026-27', campus: expect.stringContaining('Amritsar constituent campus'),
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-49:11')).toMatchObject({
+      value: { kind: 'programme', durationMonths: 24 }, campus: expect.stringContaining('Kohima Campus'),
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-49:13')).toMatchObject({
+      value: { kind: 'programme', durationMonths: 24 }, campus: expect.stringContaining('campus not stated'),
+    });
+    expect(facts.find(({ ref }) => ref === 'batch-49:17')).toMatchObject({
+      academicYear: '2026-27', campus: expect.stringContaining('Mumbai campus'),
+    });
+    expect(batch49.candidateClaims.every(({ status, reviewState, stageable }) =>
+      status === 'UNREVIEWED' && reviewState === 'UNREVIEWED' && stageable)).toBe(true);
+    expect(batch49.researchHolds.some(({ institutionSlug, status }) =>
+      institutionSlug === 'st-johns-college' && status === 'RESEARCH_HOLD_IDENTITY_MISMATCH')).toBe(true);
+    expect(batch49.researchHolds.some(({ institutionSlug, status }) =>
+      institutionSlug === 'op-jindal-university' && status === 'RESEARCH_HOLD_IDENTITY_MISMATCH')).toBe(true);
+    expect(rows.some(({ slug }) => ['st-johns-college', 'op-jindal-university', 'ict-mumbai'].includes(slug))).toBe(false);
   });
 
   it('adds the Batch 040 breadth slice with distinct categories, source attribution and historical labels', () => {

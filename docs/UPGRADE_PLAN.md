@@ -261,3 +261,7 @@ Seven previously identity/link-only profiles now display 27 source-attributed de
 ## Verified-content continuation note — Batch 044
 
 The content workstream now has 161/205 profiles with substantive source-reported facts (327 facts), 56 profiles with two or more source categories, and 44 identity/navigation-only profiles. Batch 044 contributes 31 attributed, unreviewed source-reported facts across 19 previously basic profiles. This is not human verification or catalogue completion: staged archive claims remain separately governed, human approvals remain zero, and high-impact fields and official cutoffs remain unavailable until appropriate review/source evidence exists. See the dated Batch 044 evidence in `UPGRADE_STATUS.md` and `DATA_COVERAGE.md`.
+
+## Verified content continuation — Batch 049
+
+The source-reported content milestone advanced from 173 informative profiles / 380 facts / 70 multi-category / 32 basic-only at the prior snapshot to 181 / 400 / 75 / 24 at `2026-11-22T03:52:00Z`. This adds 20 individually sourced facts across eight previously basic institutions, with the correct institutional/campus/year scope and a clear not-independently-verified label. This is a measured content increment, not completion: 24 profiles remain basic-only, human approvals remain zero, and high-impact fees/eligibility/aid/recognition-validity/outcomes/cutoffs remain gated for genuine owner review. See Batch 049 in `docs/DATA_COVERAGE.md` and the per-college ledger; continue official-source work breadth-first and retain explicit source-access dispositions.

@@ -47607,56 +47607,60 @@
     ]
   },
   "sourceReportedPublicProjection": {
-    "asOf": "2026-11-21T17:54:26.858Z",
+    "asOf": "2026-11-22T03:52:00Z",
     "catalogueSize": 205,
-    "profilesWithSubstantiveSourceReportedFacts": 173,
-    "sourceReportedFactsVisible": 380,
-    "profilesWithTwoOrMoreSubstantiveCategories": 70,
-    "basicIdentityOrNavigationOnlyProfiles": 32,
-    "newBatches": "045–048",
-    "newFactsReleased": 53,
-    "newProfilesCovered": 12,
+    "profilesWithSubstantiveSourceReportedFacts": 181,
+    "sourceReportedFactsVisible": 400,
+    "profilesWithTwoOrMoreSubstantiveCategories": 75,
+    "basicIdentityOrNavigationOnlyProfiles": 24,
+    "newBatches": "049",
+    "newFactsReleased": 20,
+    "newProfilesCovered": 8,
     "newFactsByCategory": {
-      "programmes": 18,
-      "facilities": 15,
-      "admissions": 6,
-      "contacts": 14
+      "programmes": 9,
+      "facilities": 3,
+      "admissions": 1,
+      "contacts": 7
     },
     "countsByCategory": {
-      "programmes": 253,
-      "facilities": 56,
-      "admissions": 27,
-      "contacts": 44,
+      "programmes": 262,
+      "facilities": 59,
+      "admissions": 28,
+      "contacts": 51,
       "fees": 0,
       "scholarships": 0,
       "recognition": 0,
       "placements": 0,
       "cutoffs": 0
     },
-    "baselineBeforeBatch045": {
-      "profiles": 161,
-      "facts": 327,
-      "multi": 56,
-      "basic": 44,
+    "baselineBeforeBatch049": {
+      "profiles": 173,
+      "facts": 380,
+      "multi": 70,
+      "basic": 32,
       "categories": {
-        "programmes": 235,
-        "facilities": 41,
-        "admissions": 21,
-        "contacts": 30
+        "programmes": 253,
+        "facilities": 56,
+        "admissions": 27,
+        "contacts": 44,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
       }
     },
     "genuinelyHumanApprovedClaims": 0,
     "stagedEvidenceClaims": 377,
     "verifiedOfficialCutoffRecords": 0,
-    "sourceUse": "Short individually attributed facts only; no blanket copying/republication rights inferred. Higher-impact claims remain behind stronger review requirements.",
+    "sourceUse": "Individual short facts retain attribution; no blanket reuse rights inferred. Decision-critical values remain out of the source-reported publication layer and require stronger review.",
     "notes": [
-      "As-of snapshot is time-dependent and uses the application runtime eligibility/suppression policy; future-dated, expired, held, conflicted, withdrawn and reviewer-superseded records are excluded.",
-      "Batch 045 added 15 facts across five newly informative profiles.",
-      "Batch 046 added 22 facts across nine already-informative profiles (depth only); earlier static report incorrectly called these nine newly covered.",
-      "Batch 047 added nine facts across four newly informative profiles.",
-      "Batch 048 added seven facts across Central University of Rajasthan, University of Mysore and JAIN University; one obfuscated JAIN email candidate remains held rather than normalized.",
-      "All added facts remain OFFICIAL_SOURCE_REPORTED and outside verified-only search, comparison, CollegeFit and admissions scoring. No owner-review database writes or human decisions occurred.",
-      "Fees, scholarship amounts, eligibility thresholds, placement outcomes, accreditation validity, rankings and cutoffs remain zero in source-reported facts."
+      "Baseline reconciles: Batch 044 contributed 31 facts and 19 new profiles; Batches 045–048 contributed 53 facts and 12 new profiles; together they explain the earlier 296→380 and 142→173 change.",
+      "Batch 049 adds 20 source-reported facts across eight previously basic profiles. It adds nine programme facts, one cycle-scoped admissions route, three qualitative facilities facts, and seven institutional contacts.",
+      "Runtime projection excludes future-dated, expired, held, conflicted, withdrawn and reviewer-superseded facts. Category and profile counts use distinct substantive kinds, not record count alone.",
+      "Batch 049 adds no staged-evidence records and no human decisions. Existing 377 staged claims and owner-review data remain unchanged; genuine approvals remain zero and cutoff records remain zero.",
+      "High-impact fees, eligibility thresholds, placements, scholarship conditions/amounts, accreditation validity, rankings and cutoffs remain outside the source-reported batch. The existing six-claim fee/eligibility/waiver/placement review priority remains staged for human inspection.",
+      "Official institutional material for ICT Mumbai, IIM Lucknow, IIT Jodhpur, Osmania and several NIT/CUSAT pages was inaccessible or ambiguous; exact holds are recorded in batch 049. Wrong-campus OP Jindal, wrong-institution St John’s Medical College and outdated Banasthali material were excluded."
     ]
   }
 }
