@@ -371,7 +371,7 @@ function renderSourceReported(facts: SourceReportedFact[], kind: SourceReportedF
           {publicationDate && <p>Published {reviewedDate(publicationDate)}</p>}
           {(historical || academicYear !== null) && <p>{historical
             ? (kind === 'admission' ? 'Historical admission cycle' : kind === 'programme' ? 'Historical programme listing' : 'Historical source information')
-            : 'Publisher’s period'} · {publisherPeriod ?? academicYear ?? 'publisher-dated source context'}. Check the source for current availability.</p>}
+            : 'Publisher’s period'} · {publisherPeriod ?? academicYear ?? 'publisher-dated source context'}{typeof publisherPeriod === 'string' && /[.!?]$/.test(publisherPeriod) ? '' : '.'} Check the source for current availability.</p>}
           {(validFrom || validUntil) && <p>Applicable period{validFrom ? ` from ${reviewedDate(validFrom)}` : ''}{validUntil ? ` through ${reviewedDate(validUntil)}` : ''}</p>}
           {kind === 'programme' && academicYear === null && !validFrom && !validUntil && <p>The institution does not specify an intake for this detail.</p>}
         </div>

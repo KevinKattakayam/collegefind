@@ -12,7 +12,7 @@ test('source-reported facts render in their sections with campus, scope and prov
   // The owner-stage scenario mutates these two institutions in its separate rehearsal.
   const main = page.getByRole('main');
   const newSlugs = new Set(policy.records.filter(({ ref }) =>
-    ref.startsWith('batch-45:') || ref.startsWith('batch-46:') || ref.startsWith('batch-47:') || ref.startsWith('batch-48:') || ref.startsWith('batch-49:') || ref.startsWith('batch-50:') || ref.startsWith('batch-51:')).map(({ slug }) => slug));
+    ref.startsWith('batch-45:') || ref.startsWith('batch-46:') || ref.startsWith('batch-47:') || ref.startsWith('batch-48:') || ref.startsWith('batch-49:') || ref.startsWith('batch-50:') || ref.startsWith('batch-51:') || ref.startsWith('batch-52:')).map(({ slug }) => slug));
   for (const college of ledger.institutions) {
     const response = await request.get(`/colleges/${college.slug}`);
     expect(response.ok(), `${college.slug} should render`).toBe(true);
@@ -101,6 +101,7 @@ test('source-reported facts render in their sections with campus, scope and prov
       'indian-institute-of-technology-roorkee', 'chandigarh-university', 'manipal-academy-of-higher-education',
       'amrita-vishwa-vidyapeetham', 'nlu-delhi', 'shri-ram-college-of-commerce', 'armed-forces-medical-college',
       'andhra-university', 'loyola-college',
+      'osmania-university',
       'nit-kurukshetra', 'madras-medical-college', 'stanley-medical-college',
     ].includes(slug))) {
       const suffix = isMobile ? 'mobile' : 'desktop';
@@ -181,7 +182,19 @@ test('source-reported facts render in their sections with campus, scope and prov
     await expect(psg).toContainText('1951');
     await expect(psg).toContainText('Hostel');
     await expect(psg).toContainText('Source-reported; not independently verified');
+    await expect(psg).not.toContainText('asserted..');
     await psg.screenshot({ path: join(screenshotDir, `psg-facilities-${suffix}.png`) });
+
+    await page.goto('/colleges/osmania-university#programmes-and-admissions');
+    const osmaniaProgrammes = main.locator('#programmes-and-admissions');
+    await expect(osmaniaProgrammes).toContainText('Bachelor of Engineering in Civil Engineering');
+    await expect(osmaniaProgrammes).toContainText('University College of Engineering');
+    await expect(osmaniaProgrammes).toContainText('Source-reported; not independently verified');
+    await expect(osmaniaProgrammes).toContainText('The institution does not specify an intake for this detail.');
+    await osmaniaProgrammes.screenshot({ path: join(screenshotDir, `osmania-programmes-${suffix}.png`) });
+    const osmaniaFacilities = main.locator('#facilities');
+    await expect(osmaniaFacilities).toContainText('Central library');
+    await expect(osmaniaFacilities).toContainText('Student hostels');
 
     await page.goto('/colleges/rajiv-gandhi-university#programmes-and-admissions');
     const rgu = main.locator('#programmes-and-admissions');

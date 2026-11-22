@@ -11,11 +11,12 @@ import batch48 from '../../data/pilot/substantive-research-batch-048.json';
 import batch49 from '../../data/pilot/substantive-research-batch-049.json';
 import batch50 from '../../data/pilot/substantive-research-batch-050.json';
 import batch51 from '../../data/pilot/substantive-research-batch-051.json';
+import batch52 from '../../data/pilot/substantive-research-batch-052.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
 import { structuredFact } from '../../src/server/ingest/structured-facts';
 
-const now = new Date('2026-11-22T06:00:00Z');
+const now = new Date('2026-11-22T15:00:00Z');
 const record = {
   ...policy.records.find(({ slug }) => slug === 'dit-university')!,
   basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const,
@@ -25,7 +26,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(189);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(190);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
@@ -521,6 +522,85 @@ describe('source-reported profile eligibility', () => {
         .filter(({ ref }) => ref === row.ref);
     });
     expect(visibleCandidates.map(({ ref }) => ref).sort()).toEqual(rows.map(({ ref }) => ref).sort());
+  });
+
+  it('suppresses archived evidence only within its own college identity', () => {
+    const archivedRows = archive.claims.map((claim) => ({
+      collegeId: claim.collegeId,
+      id: claim.id, field: claim.field, value: claim.value, isFixture: claim.isFixture,
+      academicYear: typeof claim.academicYear === 'number' ? claim.academicYear : null,
+      validFrom: claim.validFrom ? new Date(claim.validFrom) : null,
+      validUntil: claim.validUntil ? new Date(claim.validUntil) : null,
+      supersedesId: claim.supersedesId, decisions: [],
+    }));
+    const visible = archive.collegeIdentity.flatMap((identity) =>
+      suppressSourceReported(
+        eligibleSourceReported(identity, now),
+        archivedRows.filter((row) => row.collegeId === identity.id),
+        [], now,
+      ));
+    const eligible = archive.collegeIdentity.flatMap((identity) => eligibleSourceReported(identity, now));
+    const preBatch052 = eligible.filter(({ ref }) => !ref.startsWith('batch-52:'));
+    const unscopedSimulation = archive.collegeIdentity.flatMap((identity) =>
+      suppressSourceReported(preBatch052.filter((fact) =>
+        policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id), archivedRows, [], now));
+    const falseSuppressedRefs = new Set(preBatch052.map(({ ref }) => ref)
+      .filter((ref) => !unscopedSimulation.some((fact) => fact.ref === ref)));
+    const identityBySlug = new Map(archive.collegeIdentity.map(({ id, slug }) => [slug, id]));
+    const foreignSuppressorsByRef = new Map([...falseSuppressedRefs].map((ref) => {
+      const fact = preBatch052.find((row) => row.ref === ref)!;
+      const ownerCollegeId = identityBySlug.get(policy.records.find((row) => row.ref === ref)!.slug);
+      return [ref, archivedRows.filter((row) => row.collegeId !== ownerCollegeId &&
+        suppressSourceReported([fact], [row], [], now).length === 0)];
+    }));
+    const correctlyScopedPreBatch052 = archive.collegeIdentity.flatMap((identity) =>
+      suppressSourceReported(preBatch052.filter((fact) =>
+        policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id),
+      archivedRows.filter((row) => row.collegeId === identity.id), [], now));
+
+    expect(eligible).toHaveLength(424);
+    expect(visible).toHaveLength(424);
+    expect(new Set(visible.map(({ ref }) => ref)).size).toBe(424);
+    expect(visible.every(({ status }) => status === 'OFFICIAL_SOURCE_REPORTED')).toBe(true);
+    expect(visible.some(({ ref }) => ref === 'batch-50:0')).toBe(true);
+    expect(preBatch052).toHaveLength(414);
+    expect(unscopedSimulation).toHaveLength(360);
+    expect(falseSuppressedRefs).toHaveLength(54);
+    expect(foreignSuppressorsByRef.size).toBe(54);
+    expect([...foreignSuppressorsByRef.values()].every((rows) => rows.length > 0)).toBe(true);
+    expect(new Set([...foreignSuppressorsByRef.values()].flat().map(({ id }) => id))).toEqual(new Set([
+      'cmwlwwvdr0002zitvryebz8z9',
+      'cmwlrawje0007fhtvqqvjgda6',
+      'cmwlrawjq000afhtvue218xes',
+      'cmwlshl7l000ow7tvb5hejcu8',
+      'cmwlrawjw000dfhtv7eh9z0vu',
+      'cmwlpjrxo0018yttvxlruoj99',
+    ]));
+    expect(correctlyScopedPreBatch052).toHaveLength(414);
+  });
+
+  it('publishes the Osmania University brochure facts only with named campus scope and attribution', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-52:'));
+    expect(batch52.candidateClaims).toHaveLength(10);
+    expect(rows).toHaveLength(10);
+    expect(rows.every(({ status, fingerprint, ref }) => status === 'PUBLISH' &&
+      sourceReportedFingerprint(ref) === fingerprint)).toBe(true);
+    const facts = eligibleSourceReported({ id: rows[0].collegeId, slug: 'osmania-university' }, now)
+      .filter(({ ref }) => ref.startsWith('batch-52:'));
+    expect(facts).toHaveLength(10);
+    expect(facts.filter(({ value }) => value.kind === 'programme')).toHaveLength(8);
+    expect(facts.filter(({ value }) => value.kind === 'facility')).toHaveLength(2);
+    expect(facts.every(({ academicYear, status, url, evidenceLocation, publisherPeriod }) =>
+      academicYear === null && status === 'OFFICIAL_SOURCE_REPORTED' &&
+      url === 'https://www.osmania.ac.in/OU%20Brochure%202026.pdf' &&
+      evidenceLocation.length > 0 && !!publisherPeriod)).toBe(true);
+    expect(facts.filter(({ value }) => value.kind === 'programme').every(({ publisherPeriod }) =>
+      publisherPeriod?.includes('does not state an applicable intake year'))).toBe(true);
+    expect(facts.filter(({ value }) => value.kind === 'programme').every(({ campus }) =>
+      campus.includes('University College of Engineering') && campus.includes('not mapped to every'))).toBe(true);
+    expect(facts.filter(({ value }) => value.kind === 'facility').every(({ campus }) =>
+      campus.includes('main campus'))).toBe(true);
+    expect(batch52.researchHolds.some(({ field, reason }) => field === 'contact' && reason.includes('not independently corroborated'))).toBe(true);
   });
 
   it('preserves source-reported semester duration without silently converting units', () => {

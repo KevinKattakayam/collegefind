@@ -257,6 +257,21 @@ Then open the profile and check any supported projection in search, comparison a
 
 These archived rows are navigation shortcuts into the existing owner review queue. Eligibility, fees and historical outcomes require separate decisions per claim. Check the institution and campus, exact period, applicant category, units, source locator and permitted use before deciding. Confirm whether a fee schedule is still valid for the intended intake. For placement counts, verify the denominator and whether the report counts eligible students or placements.
 
+### Source recheck before first decisions — 2026-11-22
+
+The following is source inspection guidance, not a decision. The six claims remain individually `STAGED_UNREVIEWED`; no genuine decision has been recorded.
+
+| Claim ID | Recheck result | Reviewer action / hold |
+| --- | --- | --- |
+| `cmwlqtg7i001qgvtvfvd0j4ev` — Nirma BBA (Hons.) | The official [BBA Honours admissions page](https://management.nirmauni.ac.in/admission-aid/undergraduate/bba-honours-admissions/) currently states an IPMAT 2026 route, All India 10+2 threshold, selection weights and 2026–27 fee heading; the application cycle is marked closed. | Inspect the source sections directly. Treat as a historical 2026–27 selection claim unless its cycle scope is explicitly accepted; do not imply applications remain open. The source does not clearly date every eligibility paragraph independently. |
+| `cmwlpjrzh001syttvn05nz1d4` — DAU B.Tech fee | The official [All India undergraduate admissions page](https://daiict.ac.in/undergraduate-admissions-all-india-category) lists tuition at ₹192,500 per semester for 2026–27 and says the proposal is subject to State Appellate Committee consideration and annual revision. It identifies DAU as formerly DA-IICT. | Hold until the final applicable amount and catalogue alias are confirmed. If reviewed, describe tuition per semester only, not total cost. |
+| `cmwm4060u0003lftv8hj4ur0o` — IIT Roorkee tuition | The official [2026–27 UG I Year fee PDF](https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf), page 1, shows ₹100,000 tuition per semester for Gen/Gen-EWS/OBC/OCI/PIO. | Check each category and first-year scope against the fee row. Tuition is not total semester cost; no broad reuse licence is established. |
+| `cmwm406100005lftvhno5hr3x` — IIT Roorkee tuition waiver | The same fee row shows the tuition component as nil for SC/ST/PwD categories. | Verify the exact group/category mapping. A nil tuition component is not a zero total cost or a separate scholarship. |
+| `cmwm3rj75000bhxtvbr105oe7` — MNNIT placement count | The [2024–25 annual report PDF](https://mnnit.ac.in/images/newstories/2026/notices/Annual_Report_Audit_Report_for_the_year_2024-25_English.pdf), printed page 11, is the locator in the packet, but direct PDF text retrieval timed out in this recheck. | Do not decide from the packet transcription alone. Open the PDF and inspect the B.Tech department-wise total and denominator; retain as historical, not a placement rate or guarantee. |
+| `cmwm4trd200073otvpjb30qsw` — CMC Vellore MBBS tuition | The [revised 2026–27 prospectus](https://www.cmch-vellore.edu/wp-content/uploads/sites/14/2026/11/college-prospectus-2026-2027-revised.pdf), printed page 177, Annexure I, lists MBBS tuition at ₹3,000 per year. | Confirm Vellore/MBBS/year/unit and distinguish tuition from total fees. The prospectus has no explicit reuse licence; do not republish the table/document. |
+
+These source checks do not change the evidence state or public projection. Approval requires the authorized reviewer to inspect the original source and record an individual reasoned action in `/admin/enrichment`.
+
 ### Current or upcoming intake · eligibility
 
 **Indian Institute of Management Calcutta** · 2027 · [Institution source](https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates)
