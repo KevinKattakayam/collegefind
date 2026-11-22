@@ -9,7 +9,7 @@ const link = z.url().refine((value) => {
 });
 
 export const structuredFact = z.discriminatedUnion('kind', [
-  z.strictObject({ kind: z.literal('programme'), programme: name, level: z.enum(['UG', 'PG', 'DOCTORAL', 'DIPLOMA']), durationMonths: z.number().int().min(1).max(144).optional() }),
+  z.strictObject({ kind: z.literal('programme'), programme: name, level: z.enum(['UG', 'PG', 'DOCTORAL', 'DIPLOMA']), durationMonths: z.number().int().min(1).max(144).optional(), durationSemesters: z.number().int().min(1).max(24).optional() }),
   z.strictObject({ kind: z.literal('admission'), programme: name, route: name, category: name, exam: name.optional(), counselling: name.optional(), eligibility: detail.optional(), applicationUrl: link.optional() }),
   z.strictObject({ kind: z.literal('fee'), programme: name, category: name, component: name, feeType: z.enum(['TUITION', 'HOSTEL']), period: z.enum(['SEMESTER', 'YEAR', 'MONTH', 'ONE_TIME']), amountInr: positive }),
   z.strictObject({ kind: z.literal('scholarship'), scheme: name, eligibility: detail.optional(), url: link }),
@@ -19,6 +19,9 @@ export const structuredFact = z.discriminatedUnion('kind', [
   z.strictObject({ kind: z.literal('contact'), office: name, channel: z.enum(['PHONE', 'EMAIL', 'ADDRESS']), contact: name }),
   z.strictObject({ kind: z.literal('facility'), facility: name, description: detail }),
 ]).superRefine((fact, ctx) => {
+  if (fact.kind === 'programme' && fact.durationMonths !== undefined && fact.durationSemesters !== undefined) {
+    ctx.addIssue({ code: 'custom', message: 'Programme duration must use one source-reported unit' });
+  }
   if (fact.kind === 'placement' && fact.metric === 'PLACED_COUNT' && fact.value > fact.denominator) {
     ctx.addIssue({ code: 'custom', message: 'Placed count exceeds cohort denominator' });
   }

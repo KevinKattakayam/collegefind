@@ -25,7 +25,7 @@ interface Metric {
 
 function factText(fact: StructuredFact): string {
   switch (fact.kind) {
-    case 'programme': return `${fact.level} · ${fact.programme}${fact.durationMonths ? ` · ${fact.durationMonths} months` : ''}`;
+    case 'programme': return `${fact.level} · ${fact.programme}${fact.durationMonths ? ` · ${fact.durationMonths} months` : ''}${fact.durationSemesters ? ` · ${fact.durationSemesters} semesters` : ''}`;
     case 'admission': return `${fact.programme} · ${fact.route} · ${fact.category}${fact.exam ? ` · ${fact.exam}` : ''}${fact.eligibility ? ` · Eligibility: ${fact.eligibility}` : ''}`;
     case 'fee': return `${fact.programme} · ${fact.category} · ${fact.component}: ₹${fact.amountInr.toLocaleString('en-IN')} per ${fact.period.toLowerCase()} (${fact.feeType.toLowerCase()})`;
     case 'scholarship': return `${fact.scheme}${fact.eligibility ? ` · ${fact.eligibility}` : ''}`;

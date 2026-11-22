@@ -235,6 +235,17 @@ The scoped programme milestone adds a further 42 institutions through Batch 033 
 - [ ] Owner registers their own account, uses the guarded USER-to-ADMIN procedure for that exact account, and reviews each high-impact claim individually.
 - [ ] Continue source research for the 20 remaining basic profiles, preferring directly accessible official pages and resolving source identity, freshness and reuse blockers; do not count links or held candidates as content.
 
+### Remaining-profile and owner-review continuation — Batch 051
+
+- [x] Recheck the ISB PGP source and St John's College Agra title/body cycle discrepancy; retain the correct PGP scope and visible St John's warning.
+- [x] Resolve four of the 20 then-basic profiles using exact first-party sources: PSG College of Technology, Rajiv Gandhi University, Centurion University (Bhubaneswar-specific BBA listing), and O.P. Jindal Global University (Sonipat/JGU identity).
+- [x] Add 8 fingerprinted `OFFICIAL_SOURCE_REPORTED` facts: 3 programmes, 2 facilities and 3 contacts. Keep duration in the source's semester unit; add no invented academic year.
+- [x] Keep all high-impact facts behind the existing owner review process; provide direct review guidance for the six staged priority items without writing to the owner database or making decisions.
+- [ ] Research the remaining 16 basic profiles as official sources become directly readable and appropriately scoped; preserve 403, timeout, stale, authority and identity holds.
+- [ ] Owner registers and promotes only their own account using the guarded local process, then makes genuine individual evidence decisions.
+
+Coverage at the fixed 2026-11-22 06:00 UTC evaluation time: 189/205 source-reported profiles, 414 eligible facts, 79 multi-category profiles, and 16 basic-only profiles. A separate static archive suppression rehearsal retains 360 eligible facts; this is not the persistent owner database and does not replace the release-register count. See [Batch 051 coverage and source dispositions](DATA_COVERAGE.md#content-completion-and-source-recheck--batch-051-2026-11-22), [the completeness ledger](PROFILE_COMPLETENESS.json), and [the research manifest](../data/pilot/substantive-research-batch-051.json).
+
 ### Content depth follow-up — 2026-11-21
 
 - [x] Add source-reported admissions-route and institutional-contact cards to the existing profile sections while preserving the separate source label and keeping these facts out of verified-only APIs, search, comparison, CollegeFit and admission recommendations.

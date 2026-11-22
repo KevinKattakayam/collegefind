@@ -8,10 +8,11 @@ test('source-reported facts render in their sections with campus, scope and prov
   test.skip(process.env.COLLEGEFIND_REPORTED_BROWSER !== 'true', 'Requires the isolated catalogue archive rehearsal');
   test.setTimeout(240_000);
   const browserCheckDate = new Date();
+  const screenshotDir = process.env.CF_PROFILE_SCREENSHOTS;
   // The owner-stage scenario mutates these two institutions in its separate rehearsal.
   const main = page.getByRole('main');
   const newSlugs = new Set(policy.records.filter(({ ref }) =>
-    ref.startsWith('batch-45:') || ref.startsWith('batch-46:') || ref.startsWith('batch-47:') || ref.startsWith('batch-48:') || ref.startsWith('batch-49:') || ref.startsWith('batch-50:')).map(({ slug }) => slug));
+    ref.startsWith('batch-45:') || ref.startsWith('batch-46:') || ref.startsWith('batch-47:') || ref.startsWith('batch-48:') || ref.startsWith('batch-49:') || ref.startsWith('batch-50:') || ref.startsWith('batch-51:')).map(({ slug }) => slug));
   for (const college of ledger.institutions) {
     const response = await request.get(`/colleges/${college.slug}`);
     expect(response.ok(), `${college.slug} should render`).toBe(true);
@@ -94,7 +95,7 @@ test('source-reported facts render in their sections with campus, scope and prov
         await expect(card).toContainText(item.scopeVerification.evidenceLocation);
       }
     }
-    if (process.env.CF_PROFILE_SCREENSHOTS && (newSlugs.has(slug) || [
+    if (screenshotDir && (newSlugs.has(slug) || [
       'all-india-institute-of-medical-sciences', 'university-of-delhi', 'amity-university', 'madras-university',
       'lovely-professional-university', 'jipmer-puducherry', 'university-of-mumbai', 'srm-institute-of-science-and-technology',
       'indian-institute-of-technology-roorkee', 'chandigarh-university', 'manipal-academy-of-higher-education',
@@ -103,12 +104,12 @@ test('source-reported facts render in their sections with campus, scope and prov
       'nit-kurukshetra', 'madras-medical-college', 'stanley-medical-college',
     ].includes(slug))) {
       const suffix = isMobile ? 'mobile' : 'desktop';
-      await main.locator('#programmes-and-admissions').screenshot({ path: join(process.env.CF_PROFILE_SCREENSHOTS, `${slug}-programmes-${suffix}.png`) });
+      await main.locator('#programmes-and-admissions').screenshot({ path: join(screenshotDir, `${slug}-programmes-${suffix}.png`) });
       if (expected.some(({ value }) => value.kind === 'facility')) {
-        await main.locator('#facilities').screenshot({ path: join(process.env.CF_PROFILE_SCREENSHOTS, `${slug}-facilities-${suffix}.png`) });
+        await main.locator('#facilities').screenshot({ path: join(screenshotDir, `${slug}-facilities-${suffix}.png`) });
       }
       if (expected.some(({ value }) => value.kind === 'contact')) {
-        await main.locator('#official-resources').screenshot({ path: join(process.env.CF_PROFILE_SCREENSHOTS, `${slug}-contacts-${suffix}.png`) });
+        await main.locator('#official-resources').screenshot({ path: join(screenshotDir, `${slug}-contacts-${suffix}.png`) });
       }
     }
   }
@@ -117,7 +118,6 @@ test('source-reported facts render in their sections with campus, scope and prov
   await expect(section).toContainText('Undergraduate · 4 years');
   await expect(section.locator('[data-evidence-status="VERIFIED"]')).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-  const screenshotDir = process.env.CF_PROFILE_SCREENSHOTS;
   if (screenshotDir) await section.screenshot({ path: join(screenshotDir, isMobile ? 'after-mobile.png' : 'after-desktop.png') });
   const profile = await request.get('/api/colleges/indian-institute-of-technology-kharagpur');
   expect(profile.ok()).toBe(true);
@@ -174,6 +174,36 @@ test('source-reported facts render in their sections with campus, scope and prov
     await expect(nitSrinagar).toContainText('Historical admission cycle');
     await expect(nitSrinagar).toContainText('MBA, admission cycle 2026');
     await nitSrinagar.screenshot({ path: join(screenshotDir, `nit-srinagar-mba-2026-${suffix}.png`) });
+
+    await page.goto('/colleges/psg-college-of-technology#facilities');
+    const psg = main.locator('#facilities');
+    await expect(psg).toContainText('College library');
+    await expect(psg).toContainText('1951');
+    await expect(psg).toContainText('Hostel');
+    await expect(psg).toContainText('Source-reported; not independently verified');
+    await psg.screenshot({ path: join(screenshotDir, `psg-facilities-${suffix}.png`) });
+
+    await page.goto('/colleges/rajiv-gandhi-university#programmes-and-admissions');
+    const rgu = main.locator('#programmes-and-admissions');
+    await expect(rgu).toContainText('Master of Technology in Electronics and Communication Engineering');
+    await expect(rgu).toContainText('4 semesters');
+    await expect(rgu).toContainText('does not specify the programme\'s physical campus');
+    await rgu.screenshot({ path: join(screenshotDir, `rgu-mtech-${suffix}.png`) });
+
+    await page.goto('/colleges/centurion-university#programmes-and-admissions');
+    const centurion = main.locator('#programmes-and-admissions');
+    await expect(centurion).toContainText('BBA Healthcare Management');
+    await expect(centurion).toContainText('Bhubaneswar campus only');
+    await centurion.screenshot({ path: join(screenshotDir, `centurion-bba-${suffix}.png`) });
+
+    await page.goto('/colleges/op-jindal-university#programmes-and-admissions');
+    const jgu = main.locator('#programmes-and-admissions');
+    await expect(jgu).toContainText('BBA (Hons.) Marketing/HR/Finance');
+    await expect(jgu).toContainText('Sonipat');
+    await jgu.screenshot({ path: join(screenshotDir, `jgu-bba-${suffix}.png`) });
+    const jguResources = main.locator('#official-resources');
+    await expect(jguResources).toContainText('admissions@jgu.edu.in');
+    await jguResources.screenshot({ path: join(screenshotDir, `jgu-contact-${suffix}.png`) });
   }
 
   await page.goto('/colleges/ashoka-university#fees');

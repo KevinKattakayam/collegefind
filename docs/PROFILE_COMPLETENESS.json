@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-22T04:40:00Z",
+  "asOf": "2026-11-22T06:00:00.000Z",
   "baseline": {
     "colleges": 205,
     "stagedClaims": 377,
@@ -7893,7 +7893,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Start targeted official research at the institution academic catalogue/admissions office and relevant government/recognition directory; validate source identity first.",
       "priorResearchPointer": "https://www.psgtech.edu/",
       "unimportedBatch028Candidates": 0,
@@ -7918,26 +7918,113 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
         "programmes": 0,
-        "facilities": 0,
+        "facilities": 2,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 2,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-51:0",
+          "value": {
+            "kind": "facility",
+            "facility": "College library",
+            "description": "The institution's Campus Highlights page lists its library and states that it was established in 1951. Current service hours, access rules and collection size are not stated in this fact."
+          },
+          "campus": "PSG College of Technology campus, Peelamedu, Coimbatore; campus highlights section.",
+          "publisher": "PSG College of Technology",
+          "url": "https://www.psgtech.edu/",
+          "evidenceLocation": "Campus Highlights, lines 142–147. Page lists Library and states it was established in 1951.",
+          "sourceTitle": "Campus Highlights",
+          "collectedAt": "2026-11-22T05:30:35.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": true,
+          "checkedAt": "2026-11-22T05:30:35.000Z",
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-51:1",
+          "value": {
+            "kind": "facility",
+            "facility": "Hostel",
+            "description": "The institution lists hostel facilities among its campus highlights. Availability, eligibility, capacity and charges are not specified here."
+          },
+          "campus": "PSG College of Technology campus, Peelamedu, Coimbatore.",
+          "publisher": "PSG College of Technology",
+          "url": "https://www.psgtech.edu/",
+          "evidenceLocation": "Campus Highlights, lines 148–150: Hostel is listed as a campus facility.",
+          "sourceTitle": "Campus Highlights",
+          "collectedAt": "2026-11-22T05:30:35.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "checkedAt": "2026-11-22T05:30:35.000Z",
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-51:2",
+          "value": {
+            "kind": "contact",
+            "office": "PSG College of Technology main office",
+            "channel": "ADDRESS",
+            "contact": "Post Box No. 1611, Peelamedu, Coimbatore - 641004"
+          },
+          "campus": "Main office, Peelamedu, Coimbatore.",
+          "publisher": "PSG College of Technology",
+          "url": "https://www.psgtech.edu/index.php",
+          "evidenceLocation": "Administrative Departments and contact footer, lines 139–152.",
+          "sourceTitle": "Administrative Departments and Contact",
+          "collectedAt": "2026-11-22T05:30:35.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "checkedAt": "2026-11-22T05:30:35.000Z",
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-51:3",
+          "value": {
+            "kind": "contact",
+            "office": "PSG College of Technology main office",
+            "channel": "PHONE",
+            "contact": "0422-2572177"
+          },
+          "campus": "Main office, PSG College of Technology, Coimbatore.",
+          "publisher": "PSG College of Technology",
+          "url": "https://www.psgtech.edu/index.php",
+          "evidenceLocation": "Administrative Departments and contact footer, lines 139–152; first telephone number listed.",
+          "sourceTitle": "Administrative Departments and Contact",
+          "collectedAt": "2026-11-22T05:30:35.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "checkedAt": "2026-11-22T05:30:35.000Z",
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
         "programmes": 0,
         "admissions and eligibility": 0,
-        "facilities and hostel": 0,
-        "contact": 0
+        "facilities and hostel": 2,
+        "contact": 2
       },
       "newBatch049Candidates": 0,
       "newBatch049VisibleFacts": 0,
@@ -36165,7 +36252,7 @@
           "reference": "cmwkz9wov001qfbtvuzfueknw"
         }
       ],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Review staged sources, then fill missing student information with current programme-specific material.",
       "priorResearchPointer": "https://rgu.ac.in/",
       "unimportedBatch028Candidates": 0,
@@ -36190,11 +36277,11 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
-        "programmes": 0,
+        "programmes": 1,
         "facilities": 0,
         "admissions": 0,
         "contacts": 0,
@@ -36204,9 +36291,32 @@
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-51:4",
+          "value": {
+            "kind": "programme",
+            "programme": "Master of Technology in Electronics and Communication Engineering",
+            "level": "PG",
+            "durationSemesters": 4
+          },
+          "campus": "Institution-level programme listing at Rajiv Gandhi University; the source does not specify the programme's physical campus.",
+          "publisher": "Rajiv Gandhi University",
+          "url": "https://www.rgu.ac.in/courses-offered",
+          "evidenceLocation": "Programmes Offered, lines 498–510: postgraduate classification, named M.Tech programme, four semesters and Department of Electronics & Communication.",
+          "sourceTitle": "Programmes Offered",
+          "collectedAt": "2026-11-22T05:30:35.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "checkedAt": "2026-11-22T05:30:35.000Z",
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
-        "programmes": 0,
+        "programmes": 1,
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
@@ -36594,7 +36704,7 @@
         "reviewed institutional links"
       ],
       "officialReadingLinks": [],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Start targeted official research at the institution academic catalogue/admissions office and relevant government/recognition directory; validate source identity first.",
       "priorResearchPointer": "https://cutm.ac.in/",
       "unimportedBatch028Candidates": 0,
@@ -36619,11 +36729,11 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
-        "programmes": 0,
+        "programmes": 1,
         "facilities": 0,
         "admissions": 0,
         "contacts": 0,
@@ -36633,9 +36743,31 @@
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-51:5",
+          "value": {
+            "kind": "programme",
+            "programme": "BBA Healthcare Management",
+            "level": "UG"
+          },
+          "campus": "Bhubaneswar campus only, as stated for this BBA Healthcare Management listing; not an institute-wide programme mapping.",
+          "publisher": "Centurion University, School of Management",
+          "url": "https://cutm.ac.in/schools/som/",
+          "evidenceLocation": "School of Management, Programmes Offered, lines 170–175: BBA Healthcare Management listed as UG at Bhubaneswar.",
+          "sourceTitle": "School of Management — Programmes Offered",
+          "collectedAt": "2026-11-22T05:30:35.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "checkedAt": "2026-11-22T05:30:35.000Z",
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
-        "programmes": 0,
+        "programmes": 1,
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
         "contact": 0
@@ -36920,7 +37052,7 @@
           "reference": "Institution homepage and admissions pages directly opened; Sonipat identity checked"
         }
       ],
-      "materiallyInformativeFromPublishedFacts": false,
+      "materiallyInformativeFromPublishedFacts": true,
       "nextResearch": "Start targeted official research at the institution academic catalogue/admissions office and relevant government/recognition directory; validate source identity first.",
       "priorResearchPointer": "https://www.opju.ac.in/",
       "unimportedBatch028Candidates": 0,
@@ -36945,26 +37077,70 @@
       },
       "newBatch030Candidates": 0,
       "newBatch030Holds": 0,
-      "publicContentClass": "BASIC_IDENTITY_AND_LINKS_ONLY",
+      "publicContentClass": "PARTIALLY_INFORMATIVE",
       "newBatch031Candidates": 0,
       "newBatch031Holds": 0,
       "sourceReportedCategoryCounts": {
-        "programmes": 0,
+        "programmes": 1,
         "facilities": 0,
         "admissions": 0,
-        "contacts": 0,
+        "contacts": 1,
         "fees": 0,
         "scholarships": 0,
         "recognition": 0,
         "placements": 0,
         "cutoffs": 0
       },
-      "sourceReportedFactsVisible": [],
+      "sourceReportedFactsVisible": [
+        {
+          "ref": "batch-51:6",
+          "value": {
+            "kind": "programme",
+            "programme": "BBA (Hons.) Marketing/HR/Finance",
+            "level": "UG"
+          },
+          "campus": "O.P. Jindal Global University, Sonipat; Jindal Global Business School. Catalogue short name JGU and Sonipat location match this institution, not O.P. Jindal University in Raigarh.",
+          "publisher": "O.P. Jindal Global University, Jindal Global Business School",
+          "url": "https://jgu.edu.in/jgbs/admissions",
+          "evidenceLocation": "Jindal Global Business School Admissions, lines 12–13; BBA (Hons.) Marketing/HR/Finance listing.",
+          "sourceTitle": "Jindal Global Business School Admissions",
+          "collectedAt": "2026-11-22T05:30:35.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "checkedAt": "2026-11-22T05:30:35.000Z",
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        },
+        {
+          "ref": "batch-51:7",
+          "value": {
+            "kind": "contact",
+            "office": "Jindal Global Business School admissions",
+            "channel": "EMAIL",
+            "contact": "admissions@jgu.edu.in"
+          },
+          "campus": "Admissions contact listed on Jindal Global Business School page for O.P. Jindal Global University, Sonipat.",
+          "publisher": "O.P. Jindal Global University, Jindal Global Business School",
+          "url": "https://jgu.edu.in/jgbs/admissions",
+          "evidenceLocation": "Jindal Global Business School Admissions, lines 35–40: Sonipat campus and admissions email.",
+          "sourceTitle": "Jindal Global Business School Admissions",
+          "collectedAt": "2026-11-22T05:30:35.000Z",
+          "publicationDate": null,
+          "academicYear": null,
+          "validFrom": null,
+          "validUntil": null,
+          "historical": false,
+          "checkedAt": "2026-11-22T05:30:35.000Z",
+          "status": "OFFICIAL_SOURCE_REPORTED"
+        }
+      ],
       "sourceReportedPublicContentByDomain": {
-        "programmes": 0,
+        "programmes": 1,
         "admissions and eligibility": 0,
         "facilities and hostel": 0,
-        "contact": 0
+        "contact": 1
       },
       "newBatch049Candidates": 0,
       "newBatch049VisibleFacts": 0,
@@ -39655,6 +39831,343 @@
       "St John's College Agra source identity is correct; the current-page title still references 2025–26 while its body shows a 2026–27 session, so the admissions fact preserves that warning and the B.A. course listing has no academic year.",
       "NIT Srinagar MBA notices are historical for 2026; the source does not establish notice order or criteria.",
       "No owner-review database data, staged archive records, decisions, or catalogue identities were changed."
+    ]
+  },
+  "contentDepthBatch051": {
+    "asOf": "2026-11-22T06:00:00.000Z",
+    "totalProfiles": 205,
+    "before": {
+      "profilesWithSubstantiveContent": 185,
+      "sourceReportedFacts": 406,
+      "multiCategoryProfiles": 77,
+      "basicOnlyProfiles": 20,
+      "categories": {
+        "programmes": 264,
+        "facilities": 60,
+        "admissions": 31,
+        "contacts": 51
+      }
+    },
+    "after": {
+      "profilesWithSubstantiveContent": 189,
+      "sourceReportedFacts": 414,
+      "multiCategoryProfiles": 79,
+      "basicOnlyProfiles": 16,
+      "categories": {
+        "programmes": 267,
+        "facilities": 62,
+        "admissions": 31,
+        "contacts": 54,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "newSourceReportedFacts": 8,
+    "newlyCoveredBasicProfiles": [
+      "psg-college-of-technology",
+      "rajiv-gandhi-university",
+      "centurion-university",
+      "op-jindal-university"
+    ],
+    "newlyMultiCategoryProfiles": [
+      "psg-college-of-technology",
+      "op-jindal-university"
+    ],
+    "newFactsByCategory": {
+      "programmes": 3,
+      "facilities": 2,
+      "admissions": 0,
+      "contacts": 3
+    },
+    "newFacts": [
+      {
+        "ref": "batch-51:0",
+        "value": {
+          "kind": "facility",
+          "facility": "College library",
+          "description": "The institution's Campus Highlights page lists its library and states that it was established in 1951. Current service hours, access rules and collection size are not stated in this fact."
+        },
+        "campus": "PSG College of Technology campus, Peelamedu, Coimbatore; campus highlights section.",
+        "publisher": "PSG College of Technology",
+        "url": "https://www.psgtech.edu/",
+        "evidenceLocation": "Campus Highlights, lines 142–147. Page lists Library and states it was established in 1951.",
+        "sourceTitle": "Campus Highlights",
+        "collectedAt": "2026-11-22T05:30:35.000Z",
+        "publicationDate": null,
+        "academicYear": null,
+        "validFrom": null,
+        "validUntil": null,
+        "publisherPeriod": "Checked 22 Nov 2026. The establishment date is historical (1951); the current homepage lists the library under Campus Highlights. No current hours, access rules or collection statistics are asserted.",
+        "historical": true,
+        "checkedAt": "2026-11-22T05:30:35.000Z",
+        "status": "OFFICIAL_SOURCE_REPORTED"
+      },
+      {
+        "ref": "batch-51:1",
+        "value": {
+          "kind": "facility",
+          "facility": "Hostel",
+          "description": "The institution lists hostel facilities among its campus highlights. Availability, eligibility, capacity and charges are not specified here."
+        },
+        "campus": "PSG College of Technology campus, Peelamedu, Coimbatore.",
+        "publisher": "PSG College of Technology",
+        "url": "https://www.psgtech.edu/",
+        "evidenceLocation": "Campus Highlights, lines 148–150: Hostel is listed as a campus facility.",
+        "sourceTitle": "Campus Highlights",
+        "collectedAt": "2026-11-22T05:30:35.000Z",
+        "publicationDate": null,
+        "academicYear": null,
+        "validFrom": null,
+        "validUntil": null,
+        "publisherPeriod": "Page checked 22 Nov 2026; no academic year, access conditions, student eligibility, capacity or fee is specified.",
+        "historical": false,
+        "checkedAt": "2026-11-22T05:30:35.000Z",
+        "status": "OFFICIAL_SOURCE_REPORTED"
+      },
+      {
+        "ref": "batch-51:2",
+        "value": {
+          "kind": "contact",
+          "office": "PSG College of Technology main office",
+          "channel": "ADDRESS",
+          "contact": "Post Box No. 1611, Peelamedu, Coimbatore - 641004"
+        },
+        "campus": "Main office, Peelamedu, Coimbatore.",
+        "publisher": "PSG College of Technology",
+        "url": "https://www.psgtech.edu/index.php",
+        "evidenceLocation": "Administrative Departments and contact footer, lines 139–152.",
+        "sourceTitle": "Administrative Departments and Contact",
+        "collectedAt": "2026-11-22T05:30:35.000Z",
+        "publicationDate": null,
+        "academicYear": null,
+        "validFrom": null,
+        "validUntil": null,
+        "publisherPeriod": "First-party page checked 22 Nov 2026; page footer shows 2026 copyright. Address is a postal contact, not a claim about a student service location.",
+        "historical": false,
+        "checkedAt": "2026-11-22T05:30:35.000Z",
+        "status": "OFFICIAL_SOURCE_REPORTED"
+      },
+      {
+        "ref": "batch-51:3",
+        "value": {
+          "kind": "contact",
+          "office": "PSG College of Technology main office",
+          "channel": "PHONE",
+          "contact": "0422-2572177"
+        },
+        "campus": "Main office, PSG College of Technology, Coimbatore.",
+        "publisher": "PSG College of Technology",
+        "url": "https://www.psgtech.edu/index.php",
+        "evidenceLocation": "Administrative Departments and contact footer, lines 139–152; first telephone number listed.",
+        "sourceTitle": "Administrative Departments and Contact",
+        "collectedAt": "2026-11-22T05:30:35.000Z",
+        "publicationDate": null,
+        "academicYear": null,
+        "validFrom": null,
+        "validUntil": null,
+        "publisherPeriod": "First-party page checked 22 Nov 2026; page footer shows 2026 copyright. Confirm before relying on this number for urgent communication.",
+        "historical": false,
+        "checkedAt": "2026-11-22T05:30:35.000Z",
+        "status": "OFFICIAL_SOURCE_REPORTED"
+      },
+      {
+        "ref": "batch-51:4",
+        "value": {
+          "kind": "programme",
+          "programme": "Master of Technology in Electronics and Communication Engineering",
+          "level": "PG",
+          "durationSemesters": 4
+        },
+        "campus": "Institution-level programme listing at Rajiv Gandhi University; the source does not specify the programme's physical campus.",
+        "publisher": "Rajiv Gandhi University",
+        "url": "https://www.rgu.ac.in/courses-offered",
+        "evidenceLocation": "Programmes Offered, lines 498–510: postgraduate classification, named M.Tech programme, four semesters and Department of Electronics & Communication.",
+        "sourceTitle": "Programmes Offered",
+        "collectedAt": "2026-11-22T05:30:35.000Z",
+        "publicationDate": null,
+        "academicYear": null,
+        "validFrom": null,
+        "validUntil": null,
+        "publisherPeriod": "Page checked 22 Nov 2026; the programme listing provides no academic year. Check current admission materials and physical campus before applying.",
+        "historical": false,
+        "checkedAt": "2026-11-22T05:30:35.000Z",
+        "status": "OFFICIAL_SOURCE_REPORTED"
+      },
+      {
+        "ref": "batch-51:5",
+        "value": {
+          "kind": "programme",
+          "programme": "BBA Healthcare Management",
+          "level": "UG"
+        },
+        "campus": "Bhubaneswar campus only, as stated for this BBA Healthcare Management listing; not an institute-wide programme mapping.",
+        "publisher": "Centurion University, School of Management",
+        "url": "https://cutm.ac.in/schools/som/",
+        "evidenceLocation": "School of Management, Programmes Offered, lines 170–175: BBA Healthcare Management listed as UG at Bhubaneswar.",
+        "sourceTitle": "School of Management — Programmes Offered",
+        "collectedAt": "2026-11-22T05:30:35.000Z",
+        "publicationDate": null,
+        "academicYear": null,
+        "validFrom": null,
+        "validUntil": null,
+        "publisherPeriod": "Page checked 22 Nov 2026; no academic year appears beside this programme, so confirm the current intake before applying.",
+        "historical": false,
+        "checkedAt": "2026-11-22T05:30:35.000Z",
+        "status": "OFFICIAL_SOURCE_REPORTED"
+      },
+      {
+        "ref": "batch-51:6",
+        "value": {
+          "kind": "programme",
+          "programme": "BBA (Hons.) Marketing/HR/Finance",
+          "level": "UG"
+        },
+        "campus": "O.P. Jindal Global University, Sonipat; Jindal Global Business School. Catalogue short name JGU and Sonipat location match this institution, not O.P. Jindal University in Raigarh.",
+        "publisher": "O.P. Jindal Global University, Jindal Global Business School",
+        "url": "https://jgu.edu.in/jgbs/admissions",
+        "evidenceLocation": "Jindal Global Business School Admissions, lines 12–13; BBA (Hons.) Marketing/HR/Finance listing.",
+        "sourceTitle": "Jindal Global Business School Admissions",
+        "collectedAt": "2026-11-22T05:30:35.000Z",
+        "publicationDate": null,
+        "academicYear": null,
+        "validFrom": null,
+        "validUntil": null,
+        "publisherPeriod": "Page checked 22 Nov 2026; programme listing has no academic year. Check the current admissions page before applying.",
+        "historical": false,
+        "checkedAt": "2026-11-22T05:30:35.000Z",
+        "status": "OFFICIAL_SOURCE_REPORTED"
+      },
+      {
+        "ref": "batch-51:7",
+        "value": {
+          "kind": "contact",
+          "office": "Jindal Global Business School admissions",
+          "channel": "EMAIL",
+          "contact": "admissions@jgu.edu.in"
+        },
+        "campus": "Admissions contact listed on Jindal Global Business School page for O.P. Jindal Global University, Sonipat.",
+        "publisher": "O.P. Jindal Global University, Jindal Global Business School",
+        "url": "https://jgu.edu.in/jgbs/admissions",
+        "evidenceLocation": "Jindal Global Business School Admissions, lines 35–40: Sonipat campus and admissions email.",
+        "sourceTitle": "Jindal Global Business School Admissions",
+        "collectedAt": "2026-11-22T05:30:35.000Z",
+        "publicationDate": null,
+        "academicYear": null,
+        "validFrom": null,
+        "validUntil": null,
+        "publisherPeriod": "Page checked 22 Nov 2026; contact email is publisher-listed, but verify with the current programme page before sending personal information.",
+        "historical": false,
+        "checkedAt": "2026-11-22T05:30:35.000Z",
+        "status": "OFFICIAL_SOURCE_REPORTED"
+      }
+    ],
+    "archiveSuppressionRehearsal": {
+      "archiveClaimRows": 377,
+      "eligibleFacts": 414,
+      "visibleFacts": 360,
+      "withheldFacts": 54,
+      "newBatchFactsVisible": 8,
+      "sourceReportedKindCounts": {
+        "facility": 62,
+        "programme": 216,
+        "contact": 54,
+        "admission": 28
+      },
+      "note": "Static archived-claim suppression simulation, separate from release-register eligibility totals; this is not a read or write to the persistent owner-review database."
+    },
+    "researchHolds": [
+      {
+        "institutionSlug": "indian-institute-of-management-lucknow",
+        "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+        "reason": "The official page was re-opened in this pass but timed out; search results were not treated as claim evidence."
+      },
+      {
+        "institutionSlug": "osmania-university",
+        "status": "RESEARCH_HOLD_FRESHNESS",
+        "reason": "The available official admissions page still exposes a 2022 footer; current programme and contact facts need a dated official source."
+      },
+      {
+        "institutionSlug": "iit-jodhpur",
+        "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+        "reason": "The official programmes page timed out in the previous direct-source attempt; indexed excerpts were not used."
+      },
+      {
+        "institutionSlug": "nit-jamshedpur",
+        "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+        "reason": "The direct official academic/admissions response was a JavaScript-required shell; no snippet-derived fact used."
+      },
+      {
+        "institutionSlug": "nit-raipur",
+        "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+        "reason": "Official institutional/admissions pages timed out in the prior direct attempt; no snippet-derived fact used."
+      },
+      {
+        "institutionSlug": "seth-gs-medical-college",
+        "status": "RESEARCH_HOLD_SOURCE_AUTHORITY",
+        "reason": "The accessible KEM page expressly disclaims official status; it is not used as factual evidence."
+      },
+      {
+        "institutionSlug": "bangalore-medical-college",
+        "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+        "reason": "No directly opened current first-party or government source was established for a specific programme in this pass."
+      },
+      {
+        "institutionSlug": "rvce-bangalore",
+        "status": "RESEARCH_HOLD_FRESHNESS",
+        "reason": "The previously accessible official notice lacks a sufficiently clear current programme/admission period."
+      },
+      {
+        "institutionSlug": "nit-puducherry",
+        "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+        "reason": "Official pages returned 502/timeouts in the prior direct attempt; snippets were not used."
+      },
+      {
+        "institutionSlug": "cochin-university",
+        "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+        "reason": "Official programme pages returned server errors or timed out in the prior direct attempt."
+      },
+      {
+        "institutionSlug": "rajasthan-technical-university",
+        "status": "RESEARCH_HOLD_ACCESS_RESTRICTION",
+        "reason": "The official page returned HTTP 403; no alternate-access bypass was attempted."
+      },
+      {
+        "institutionSlug": "banasthali-vidyapith",
+        "status": "RESEARCH_HOLD_FRESHNESS",
+        "reason": "The available official curriculum material is dated 2019 and is not represented as current."
+      },
+      {
+        "institutionSlug": "iiit-sri-city",
+        "status": "RESEARCH_HOLD_ACCESS_RESTRICTION",
+        "reason": "The official site returned HTTP 403; no restriction bypass was attempted."
+      },
+      {
+        "institutionSlug": "patna-university",
+        "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+        "reason": "The official undergraduate courses page timed out on direct open; search-index content was not used as fact."
+      },
+      {
+        "institutionSlug": "mizoram-university",
+        "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+        "reason": "Official pages returned server errors in the prior direct attempt; no snippet-derived facts used."
+      },
+      {
+        "institutionSlug": "ict-mumbai",
+        "status": "RESEARCH_HOLD_ACCESS_RESTRICTION",
+        "reason": "Official pages returned HTTP 403; no restriction bypass was attempted."
+      }
+    ],
+    "ownerDatabaseWrites": 0,
+    "genuineHumanApprovals": 0,
+    "stagedClaimsUnchanged": 377,
+    "verifiedOfficialCutoffs": 0,
+    "notes": [
+      "Source-reported facts remain distinct from human-VERIFIED evidence.",
+      "Undated programme, facility and contact facts have no invented academic year; current availability should be confirmed with the institution.",
+      "Decision-critical fees, eligibility thresholds, scholarships, accreditation validity, placements and cutoffs remain outside automatic publication."
     ]
   }
 }

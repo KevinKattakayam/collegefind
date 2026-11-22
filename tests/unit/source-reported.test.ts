@@ -10,10 +10,12 @@ import batch47 from '../../data/pilot/substantive-research-batch-047.json';
 import batch48 from '../../data/pilot/substantive-research-batch-048.json';
 import batch49 from '../../data/pilot/substantive-research-batch-049.json';
 import batch50 from '../../data/pilot/substantive-research-batch-050.json';
+import batch51 from '../../data/pilot/substantive-research-batch-051.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
+import { structuredFact } from '../../src/server/ingest/structured-facts';
 
-const now = new Date('2026-11-22T04:40:00Z');
+const now = new Date('2026-11-22T06:00:00Z');
 const record = {
   ...policy.records.find(({ slug }) => slug === 'dit-university')!,
   basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const,
@@ -23,7 +25,7 @@ const facts = eligibleSourceReported(college, now);
 
 describe('source-reported profile eligibility', () => {
   it('reconciles source, value, college and provenance for every published record', () => {
-    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(185);
+    expect(new Set(policy.records.map(({ slug }) => slug)).size).toBe(189);
     for (const row of policy.records) {
       const projected = suppressSourceReported(eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now), [], [], now);
       expect(projected.find(({ ref }) => ref === row.ref)).toMatchObject({
@@ -460,6 +462,72 @@ describe('source-reported profile eligibility', () => {
     expect(batch50.reviewerSummary.genuineApprovals).toBe(0);
     expect(batch50.researchHolds.some(({ institutionSlug, reason }) =>
       institutionSlug === 'op-jindal-university' && reason.includes('Raigarh'))).toBe(true);
+  });
+
+  it('publishes Batch 051 only with exact institution/campus scopes and source-reported status', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-51:'));
+    expect(batch51.candidateClaims).toHaveLength(8);
+    expect(rows).toHaveLength(8);
+    expect(new Set(rows.map(({ slug }) => slug))).toEqual(new Set([
+      'psg-college-of-technology', 'rajiv-gandhi-university', 'centurion-university', 'op-jindal-university',
+    ]));
+    expect(rows.every(({ status, basis, fingerprint, ref }) => status === 'PUBLISH' &&
+      basis === 'ATTRIBUTED_INDIVIDUAL_FACT' && sourceReportedFingerprint(ref) === fingerprint)).toBe(true);
+
+    const facts = rows.flatMap((row) => eligibleSourceReported({ id: row.collegeId, slug: row.slug }, now)
+      .filter(({ ref }) => ref === row.ref));
+    expect(facts).toHaveLength(8);
+    expect(facts.every(({ status, academicYear, url, evidenceLocation }) => status === 'OFFICIAL_SOURCE_REPORTED' &&
+      academicYear === null && url.startsWith('https://') && evidenceLocation.length > 0)).toBe(true);
+    const byRef = (ref: string) => facts.find((fact) => fact.ref === ref)!;
+    expect(byRef('batch-51:0')).toMatchObject({
+      value: { kind: 'facility', facility: 'College library' }, historical: true,
+      campus: expect.stringContaining('Coimbatore'), publisherPeriod: expect.stringContaining('1951'),
+    });
+    expect(byRef('batch-51:1')).toMatchObject({ value: { kind: 'facility', facility: 'Hostel' }, historical: false });
+    expect(byRef('batch-51:2')).toMatchObject({ value: { kind: 'contact', channel: 'ADDRESS' }, campus: expect.stringContaining('Peelamedu') });
+    expect(byRef('batch-51:3')).toMatchObject({ value: { kind: 'contact', channel: 'PHONE', contact: '0422-2572177' } });
+    expect(byRef('batch-51:4')).toMatchObject({
+      value: { kind: 'programme', level: 'PG', durationSemesters: 4 },
+      campus: expect.stringContaining('does not specify the programme\'s physical campus'),
+    });
+    expect(byRef('batch-51:5')).toMatchObject({
+      value: { kind: 'programme', programme: 'BBA Healthcare Management', level: 'UG' },
+      campus: expect.stringContaining('Bhubaneswar campus only'),
+    });
+    expect(byRef('batch-51:6')).toMatchObject({
+      value: { kind: 'programme', programme: 'BBA (Hons.) Marketing/HR/Finance', level: 'UG' },
+      campus: expect.stringContaining('Sonipat'),
+    });
+    expect(byRef('batch-51:7')).toMatchObject({
+      value: { kind: 'contact', channel: 'EMAIL', contact: 'admissions@jgu.edu.in' },
+      campus: expect.stringContaining('Sonipat'),
+    });
+    expect(batch51.candidateClaims.every(({ status, reviewState, stageable }) =>
+      status === 'UNREVIEWED' && reviewState === 'UNREVIEWED' && stageable)).toBe(true);
+    expect(batch51.reviewerSummary.ownerDatabaseWrites).toBe(0);
+    expect(batch51.reviewerSummary.genuineApprovals).toBe(0);
+    expect(batch51.researchHolds).toHaveLength(16);
+
+    const archivedRows = archive.claims.map((claim) => ({
+      id: claim.id, field: claim.field, value: claim.value, isFixture: claim.isFixture,
+      academicYear: claim.academicYear, validFrom: claim.validFrom ? new Date(claim.validFrom) : null,
+      validUntil: claim.validUntil ? new Date(claim.validUntil) : null, supersedesId: claim.supersedesId,
+      decisions: [],
+    }));
+    const visibleCandidates = rows.flatMap((row) => {
+      const identity = archive.collegeIdentity.find(({ slug }) => slug === row.slug)!;
+      return suppressSourceReported(eligibleSourceReported(identity, now), archivedRows, [], now)
+        .filter(({ ref }) => ref === row.ref);
+    });
+    expect(visibleCandidates.map(({ ref }) => ref).sort()).toEqual(rows.map(({ ref }) => ref).sort());
+  });
+
+  it('preserves source-reported semester duration without silently converting units', () => {
+    expect(structuredFact.parse({ kind: 'programme', programme: 'Example M.Tech', level: 'PG', durationSemesters: 4 }))
+      .toMatchObject({ durationSemesters: 4 });
+    expect(structuredFact.safeParse({ kind: 'programme', programme: 'Example M.Tech', level: 'PG', durationMonths: 24, durationSemesters: 4 }).success)
+      .toBe(false);
   });
 
   it('adds the Batch 040 breadth slice with distinct categories, source attribution and historical labels', () => {

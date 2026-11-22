@@ -352,6 +352,7 @@ function renderSourceReported(facts: SourceReportedFact[], kind: SourceReportedF
         <p>{campus}</p>
         {value.kind === 'programme' ? <p>{factFieldValues.level[value.level]}
           {value.durationMonths && ` · ${value.durationMonths % 12 === 0 ? `${value.durationMonths / 12} ${value.durationMonths === 12 ? 'year' : 'years'}` : `${value.durationMonths} months`}`}
+          {value.durationSemesters && ` · ${value.durationSemesters} semesters`}
         </p> : value.kind === 'facility' ? <p>{value.description}</p> : value.kind === 'contact' ? (
           <p>{value.channel === 'EMAIL' ? 'Email' : value.channel === 'PHONE' ? 'Phone' : 'Address'} · {value.contact}</p>
         ) : (
