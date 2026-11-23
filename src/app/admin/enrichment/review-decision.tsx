@@ -4,13 +4,13 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function ReviewDecision({
-  id, currentDecisionId, fixture, held, expired, future, conflicted,
-}: { id: string; currentDecisionId: string | null; fixture: boolean; held: boolean; expired: boolean; future: boolean; conflicted: boolean }) {
+  id, currentDecisionId, fixture, held, expired, future, conflicted, sourceUseRequired, sourceUseStatus,
+}: { id: string; currentDecisionId: string | null; fixture: boolean; held: boolean; expired: boolean; future: boolean; conflicted: boolean; sourceUseRequired: boolean; sourceUseStatus: string }) {
   const router = useRouter();
   const [reason, setReason] = useState('');
   const [message, setMessage] = useState('');
   const [pending, setPending] = useState(false);
-  const cannotApprove = fixture || held || expired || future || conflicted;
+  const cannotApprove = fixture || held || expired || future || conflicted || (sourceUseRequired && sourceUseStatus !== 'CLEARED');
 
   async function submit(status: 'APPROVED' | 'REJECTED' | 'PENDING') {
     if (pending) return;
@@ -45,7 +45,7 @@ export default function ReviewDecision({
   return <div className="flex flex-col gap-3">
     <label>Review reason<input className="block w-full" value={reason} onChange={(event) => setReason(event.target.value)} /></label>
     <p>Enter why the source, institution/campus, scope, year and freshness support this decision.</p>
-    {cannotApprove && <p role="note">Approval is blocked while this claim is a fixture, held, expired, not yet valid or conflicted. Rejection remains available.</p>}
+    {cannotApprove && <p role="note">Approval is blocked while this claim is a fixture, held, expired, not yet valid, conflicted, or has unresolved/restricted source use. Rejection and hold remain available.</p>}
     <div className="flex flex-wrap gap-2">
       <button disabled={pending || reason.trim().length < 3 || cannotApprove} onClick={() => submit('APPROVED')}>Approve</button>
       <button disabled={pending || reason.trim().length < 3} onClick={() => submit('REJECTED')}>Reject</button>

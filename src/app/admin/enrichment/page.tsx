@@ -5,6 +5,8 @@ import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import ReviewDecision from './review-decision';
+import SourceUseAssessment from './source-use-assessment';
+import { sourceRequiresExplicitUseAssessment } from '@/server/source-use-review';
 import reviewBatch from '../../../../data/pilot/first-human-review-batch.json';
 
 export const dynamic = 'force-dynamic';
@@ -50,8 +52,8 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
   const priorityId = firstInspection.find(([id]) => packetStates.get(id) === 'UNREVIEWED' && id !== parsed.data.q)?.[0];
   const next = reviewBatch.claims.find(({ evidenceId }) => evidenceId === priorityId) ??
     reviewBatch.claims.find(({ evidenceId }) => packetStates.get(evidenceId) === 'UNREVIEWED' && evidenceId !== parsed.data.q);
-  const { page, pageSize, status, q, college, campus, field, academicYear, freshness, total, items } = result;
-  const filters = { status, q, college, campus, field, academicYear, freshness };
+  const { page, pageSize, status, q, batch, college, campus, program, source, field, factType, historical, sourceUse, academicYear, freshness, total, items, placementCohorts } = result;
+  const filters = { status, q, batch, college, campus, program, source, field, factType, historical, sourceUse, academicYear, freshness };
   const pages = Math.max(1, Math.ceil(total / pageSize));
   const runs = await prisma.importRun.findMany({ orderBy: [{ startedAt: 'desc' }, { id: 'desc' }], take: 10 });
 
@@ -69,17 +71,24 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
     </nav>}
     {next && <p className="mt-4"><Link href={pageLink(1, { status: 'ALL', q: next.evidenceId })}>Next unreviewed packet claim: {next.institutionName} · {next.field}</Link></p>}
     <form className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4" action="/admin/enrichment">
+      <label>Research batch<select name="batch" defaultValue={batch} className="block w-full"><option value="ALL">All batches</option><option value="060">Batch 060 · supplied PDFs</option></select></label>
       <label>Review state<select name="status" defaultValue={status} className="block w-full">
         {['STAGED', 'ALL', 'HELD', 'CONFLICTED', 'EXPIRED', 'NOT_YET_VALID', 'VERIFIED', 'REJECTED', 'DEMO'].map((value) => <option key={value}>{value}</option>)}
       </select></label>
+      <label>Page size<select name="pageSize" defaultValue={String(pageSize)} className="block w-full">{[25, 50, 100].map((size) => <option key={size}>{size}</option>)}</select></label>
       <label>Search college, claim ID, field or programme<input name="q" defaultValue={q} className="block w-full" /></label>
       <label>College<input name="college" defaultValue={college} className="block w-full" /></label>
       <label>Campus, city or state<input name="campus" defaultValue={campus} className="block w-full" /></label>
+      <label>Programme or cohort<input name="program" defaultValue={program} className="block w-full" /></label>
+      <label>Source / publisher / domain<input name="source" defaultValue={source} className="block w-full" /></label>
       <label>Field<input name="field" defaultValue={field} className="block w-full" /></label>
+      <label>Fact type<select name="factType" defaultValue={factType} className="block w-full">{['ALL', 'programme', 'admission', 'seatIntake', 'fee', 'placement'].map((value) => <option key={value} value={value}>{value === 'ALL' ? 'All fact types' : value}</option>)}</select></label>
       <label>Academic year<input name="academicYear" inputMode="numeric" defaultValue={academicYear ?? ''} className="block w-full" /></label>
       <label>Evidence freshness<select name="freshness" defaultValue={freshness} className="block w-full">
         {['ALL', 'CURRENT', 'UNDATED', 'SOURCE_UNDATED', 'OLDER', 'EXPIRED', 'FUTURE'].map((value) => <option key={value}>{value}</option>)}
       </select></label>
+      <label>Time scope<select name="historical" defaultValue={historical} className="block w-full"><option value="ALL">All time scopes</option><option value="HISTORICAL">Historical</option><option value="CURRENT">Not marked historical</option></select></label>
+      <label>Source-use clearance<select name="sourceUse" defaultValue={sourceUse} className="block w-full">{['ALL', 'UNASSESSED', 'CLEARED', 'RESTRICTED', 'UNRESOLVED'].map((value) => <option key={value}>{value}</option>)}</select></label>
       <div className="flex items-end gap-2"><button type="submit">Apply filters</button><a href="/admin/enrichment">Clear</a></div>
     </form>
     <details className="my-5 break-words border p-4" open={!/^c[a-z0-9]{24}$/i.test(q)}>
@@ -108,6 +117,27 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
       {page < pages ? <a href={pageLink(page + 1, filters)}>Next page</a> : <span aria-disabled="true">Next page</span>}
     </nav>
     <h2>Claims for review</h2>
+    {placementCohorts.length > 0 && <section aria-label="Placement cohort grouping" className="my-4 rounded border p-4">
+      <details>
+        <summary className="cursor-pointer font-semibold">Batch 060 placement cohorts · {placementCohorts.length} matching source/cohort groups</summary>
+        <p className="my-2">Grouped by exact college, recorded cohort/programme scope, reporting year and source. Each metric remains an individual claim and needs its own accuracy decision. NIRF denominators here are not placement-eligible counts; no placement percentage is calculated.</p>
+        <div className="overflow-x-auto"><table className="min-w-full border-collapse text-left text-sm">
+          <thead><tr><th className="border p-2">College / campus</th><th className="border p-2">Cohort / year</th><th className="border p-2">Metrics captured</th><th className="border p-2">Source / use status</th><th className="border p-2">Review</th></tr></thead>
+          <tbody>{placementCohorts.map((group) => <tr key={`${group.collegeId}-${group.sourceId}-${group.programScope}-${group.academicYear}-${group.cohort}`}>
+            <td className="border p-2">{group.collegeName} ({group.collegeSlug})<br />{group.campusScope ?? 'Campus scope not recorded'}</td>
+            <td className="border p-2">{group.cohort}<br />Reporting year: {group.academicYear ?? 'not recorded'} · {group.publisherPeriod ?? 'publisher period not recorded'}</td>
+            <td className="border p-2"><ul className="space-y-2">{group.claims.map((claim) => <li key={claim.id}>
+              <strong>{claim.metric}</strong>: {claim.value.toLocaleString('en-IN')}{claim.metric === 'MEDIAN' ? ' INR/year' : ''} · denominator {claim.denominator.toLocaleString('en-IN')} · <strong>{claim.reviewState}</strong>
+              <p>{claim.definition}</p><p>{claim.evidenceLocation ?? 'Evidence location not recorded'}</p>
+              {claim.holdReason && <p role="note"><strong>Hold:</strong> {claim.holdReason}</p>}
+              <Link href={pageLink(1, { status: 'ALL', batch: '060', factType: 'placement', q: claim.id })}>Open claim {claim.id}</Link>
+            </li>)}</ul></td>
+            <td className="border p-2"><a href={group.sourceUrl} target="_blank" rel="noopener noreferrer">{group.sourcePublisher}</a><br />Retrieved {date(group.sourceRetrievedAt)}<br />Source-use: {group.sourceUseStatus}</td>
+            <td className="border p-2">{group.claims.length < 3 ? 'Incomplete metric group; no missing value inferred.' : 'Three candidate metrics present.'}<br /><Link href={pageLink(1, { status: 'ALL', batch: '060', factType: 'placement', college: group.collegeSlug, program: group.cohort, academicYear: group.academicYear ?? undefined, sourceUse: group.sourceUseStatus })}>Filter this cohort’s claims</Link></td>
+          </tr>)}</tbody>
+        </table></div>
+      </details>
+    </section>}
     {items.length === 0 && <p>No claims match these filters.</p>}
     <div className="space-y-4">
       {items.map((claim) => {
@@ -123,11 +153,13 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
           <p><strong>Stable institution:</strong> {claim.college.slug} · {claim.college.city}, {claim.college.state}</p>
           <p><strong>Campus identity:</strong> {campusAliases.length ? campusAliases.map((alias) => `${alias.campus} (${alias.namespace}: ${alias.value}; valid ${date(alias.validFrom)} to ${date(alias.validUntil)})`).join('; ') : 'No campus alias recorded; confirm the source applies to this institution/campus.'}</p>
           <p><strong>Field:</strong> {claim.field}{claim.programScope ? ` · ${claim.programScope}` : ''}</p>
+          {claim.value && typeof claim.value === 'object' && !Array.isArray(claim.value) && 'kind' in claim.value && <p><strong>Fact type:</strong> {String(claim.value.kind)}{claim.historical ? ' · Historical' : ''}</p>}
           <p><strong>Proposed value:</strong> <code className="whitespace-pre-wrap">{JSON.stringify(claim.value)}</code>{claim.unit ? ` ${claim.unit}` : ''}</p>
           <p><strong>Academic year:</strong> {claim.academicYear ?? 'Not recorded'} · <strong>Validity:</strong> {date(claim.validFrom)} to {date(claim.validUntil)}</p>
           <p><strong>Publisher:</strong> {claim.source.publisher} · <strong>Published:</strong> {date(claim.publishedAt ?? claim.source.publishedAt)} · <strong>Retrieved:</strong> {date(claim.source.retrievedAt)}</p>
           <p><strong>Official source:</strong> {safeSource(claim.source.url)}</p>
           <p><strong>Access / reuse record:</strong> {claim.source.license ?? 'Not recorded'}{claim.source.notes ? ` · ${claim.source.notes}` : ''}</p>
+          {claim.historical && <p role="note"><strong>Historical scope:</strong> {claim.applicablePeriod ?? claim.publisherPeriod ?? claim.academicYear ?? 'Period not recorded'} · do not present as current.</p>}
           <p><strong>Evidence location:</strong> {claim.evidenceLocator ?? 'Not recorded'}</p>
           {prioritySourceChecks[claim.id] && <p role="note"><strong>Priority source check:</strong> {prioritySourceChecks[claim.id]}</p>}
           {claim.evidenceSnippet && <blockquote className="border-l-2 pl-3">{claim.evidenceSnippet}</blockquote>}
@@ -138,10 +170,11 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
               {peer.id} · {JSON.stringify(peer.value)} · year {peer.academicYear ?? 'not recorded'} · published {date(peer.source.publishedAt)} · {peer.source.publisher} · {safeSource(peer.source.url, 'Open conflicting source')}
             </p>)}
           </section>}
+          <SourceUseAssessment sourceId={claim.sourceId} required={sourceRequiresExplicitUseAssessment(claim.source)} status={claim.sourceUseStatus} assessment={claim.sourceUseAssessment} />
           <details className="my-3"><summary>Reviewer decision history</summary>
             {claim.decisions.length ? <ol>{claim.decisions.map((decision) => <li key={decision.id}>{decision.status} by {decision.reviewer.name ?? decision.reviewerId} on {date(decision.createdAt)} — {decision.reason}</li>)}</ol> : <p>No reviewer decisions recorded.</p>}
           </details>
-          <ReviewDecision id={claim.id} currentDecisionId={claim.decisions[0]?.id ?? null} fixture={claim.isFixture} held={Boolean(hold)} expired={state === 'EXPIRED'} future={state === 'NOT_YET_VALID'} conflicted={state === 'CONFLICTED'} />
+          <ReviewDecision id={claim.id} currentDecisionId={claim.decisions[0]?.id ?? null} fixture={claim.isFixture} held={Boolean(hold)} expired={state === 'EXPIRED'} future={state === 'NOT_YET_VALID'} conflicted={state === 'CONFLICTED'} sourceUseRequired={sourceRequiresExplicitUseAssessment(claim.source)} sourceUseStatus={claim.sourceUseStatus} />
         </article>;
       })}
     </div>
@@ -149,6 +182,7 @@ export default async function Enrichment({ searchParams }: { searchParams: Promi
     <details className="mt-8"><summary>Recent import runs</summary>{runs.map((run) => <p key={run.id}>{run.id}: {run.status} {JSON.stringify(run.summary)}</p>)}</details>
   </main>;
 }
+
 
 function safeSource(url: string, label = url) {
   try {

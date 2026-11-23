@@ -4,6 +4,7 @@ import { PrismaPg } from '@prisma/adapter-pg';
 import pg from 'pg';
 import { projectPublicCollege } from '../src/server/public-evidence';
 import { reviewFieldEvidence } from '../src/server/ingest/field-evidence';
+import { latestSourceUseAssessments, recordSourceUseAssessment } from '../src/server/source-use-review';
 import { assertDisposableTestTarget } from '../tests/integration/target';
 
 const DB = 'collegefind_pdf_research_test';
@@ -30,9 +31,11 @@ async function main() {
     const selected = [
       find('indian-institute-of-technology-delhi', 'placement', 'MEDIAN'),
       find('indian-institute-of-technology-kanpur', 'placement', 'MEDIAN'),
+      find('indian-institute-of-technology-madras', 'admission'),
+      find('indian-institute-of-management-lucknow', 'programme'),
       find('national-law-school-of-india-university', 'fee'),
     ];
-    if (selected.some((row) => !row)) throw new Error('Required staged placement/fee examples are absent');
+    if (selected.some((row) => !row)) throw new Error('Required staged engineering placement, admission, programme and fee examples are absent');
 
     // Verify staged values remain unavailable before any synthetic test decisions.
     const before = await db.college.findUniqueOrThrow({
@@ -46,6 +49,10 @@ async function main() {
       name: 'Disposable PDF pipeline reviewer', email: `pdf-pipeline-${Date.now()}@collegefind.test`,
       password: 'synthetic-test-only-not-a-real-credential', role: 'ADMIN',
     } });
+    const sourceIds = [...new Set(selected.map((row) => row!.sourceId))];
+    for (const sourceId of sourceIds) {
+      await recordSourceUseAssessment(db, { sourceId, reviewerId: reviewer.id, status: 'CLEARED', reason: 'Synthetic disposable test only; no legal or owner clearance is asserted', basisUrl: 'https://example.test/synthetic-source-use-terms' });
+    }
     for (const row of selected) {
       await reviewFieldEvidence(db, {
         evidenceId: row!.id, reviewerId: reviewer.id, status: 'APPROVED',
@@ -54,10 +61,12 @@ async function main() {
     }
 
     const checks: Array<{ slug: string; facts: Array<{ kind: string; value: unknown; academicYear: number | null; url: string; locator: string | null }> }> = [];
-    for (const slug of ['indian-institute-of-technology-delhi', 'indian-institute-of-technology-kanpur', 'national-law-school-of-india-university']) {
+    const assessments = await latestSourceUseAssessments(db, sourceIds);
+    for (const slug of ['indian-institute-of-technology-delhi', 'indian-institute-of-technology-kanpur', 'indian-institute-of-technology-madras', 'indian-institute-of-management-lucknow', 'national-law-school-of-india-university']) {
       const college = await db.college.findUniqueOrThrow({
         where: { slug }, include: { evidence: { include: { source: true, decisions: true } } },
       });
+      for (const claim of college.evidence) (claim.source as typeof claim.source & { sourceUseStatus?: string }).sourceUseStatus = assessments.get(claim.sourceId)?.status ?? 'UNASSESSED';
       const projected = projectPublicCollege(college as unknown as Record<string, unknown>, new Date('2026-11-23T00:00:00.000Z'));
       const facts = (projected.structuredFacts as Array<{ value: { kind: string }; academicYear: number | null; source: { url: string; locator: string | null } }>).map((fact) => ({
         kind: fact.value.kind, value: fact.value, academicYear: fact.academicYear, url: fact.source.url, locator: fact.source.locator,
@@ -65,13 +74,21 @@ async function main() {
       if (!facts.length || facts.some((fact) => !fact.url.startsWith('https://') || !fact.locator)) throw new Error(`Approved data or provenance missing from ${slug} projection`);
       checks.push({ slug, facts });
     }
+    const restrictedSourceId = selected[2]!.sourceId;
+    await recordSourceUseAssessment(db, { sourceId: restrictedSourceId, reviewerId: reviewer.id, status: 'RESTRICTED', reason: 'Synthetic withdrawal check only; not a source-rights finding', basisUrl: 'https://example.test/synthetic-source-use-terms' });
+    const restrictedCollege = await db.college.findUniqueOrThrow({ where: { slug: 'indian-institute-of-technology-madras' }, include: { evidence: { include: { source: true, decisions: true } } } });
+    const restrictedAssessment = await latestSourceUseAssessments(db, [restrictedSourceId]);
+    for (const claim of restrictedCollege.evidence) (claim.source as typeof claim.source & { sourceUseStatus?: string }).sourceUseStatus = restrictedAssessment.get(claim.sourceId)?.status ?? 'UNASSESSED';
+    const restrictedProjection = projectPublicCollege(restrictedCollege as unknown as Record<string, unknown>, new Date('2026-11-23T00:00:00.000Z'));
+    if ((restrictedProjection.structuredFacts as unknown[]).length !== 0) throw new Error('Restricted source remained in the structured public projection');
     const decisions = await db.evidenceDecision.count();
     const audits = await db.auditLog.count({ where: { action: 'evidence.review' } });
-    if (decisions !== 3 || audits !== 3) throw new Error('Synthetic review audit history did not persist exactly once per example');
+    const sourceUseAudits = await db.auditLog.count({ where: { action: 'source.use.assessment' } });
+    if (decisions !== 5 || audits !== 5 || sourceUseAudits !== sourceIds.length + 1) throw new Error('Synthetic review/source-use audit history did not persist exactly once per example');
     process.stdout.write(`${JSON.stringify({
       status: 'DISPOSABLE_REVIEW_PROJECTION_VERIFIED',
       beforeDecision: { stagedRows: rows.length, publicStructuredFacts: (hidden.structuredFacts as unknown[]).length },
-      afterSyntheticDecisions: { decisions, auditRows: audits, colleges: checks },
+      afterSyntheticDecisions: { decisions, accuracyAuditRows: audits, sourceUseAuditRows: sourceUseAudits, restrictedSourceProjectionFacts: 0, colleges: checks },
       syntheticOnly: true, genuineHumanApprovals: 0, persistentOwnerDatabase: 'NOT CONNECTED',
     }, null, 2)}\n`);
   } finally {

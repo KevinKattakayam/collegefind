@@ -3,6 +3,7 @@ import { checksum } from './identity';
 import { validateEvidenceDraft, type EvidenceDraft } from './evidence';
 import { evidenceReviewHold } from '@/server/review-holds';
 import { ApiError } from '@/lib/http';
+import { assertSourceUseAllowsApproval } from '@/server/source-use-review';
 
 // Monetary/cutoff/ranking records retain their dedicated typed tables.
 const PROFILE_FIELDS = new Set(['description', 'about', 'website', 'phone', 'email', 'naacGrade', 'establishedYear', 'totalStudents', 'courses', 'topRecruiters', 'scholarships', 'facilities', 'admissions']);
@@ -49,6 +50,8 @@ export async function reviewFieldEvidence(db: PrismaClient, input: {
       if (claim.isFixture) throw new ApiError(409, 'FIXTURE_NOT_PUBLISHABLE', 'Fixture evidence cannot be published');
       const held = evidenceReviewHold(claim.id);
       if (held) throw new ApiError(409, 'EVIDENCE_ON_HOLD', held);
+      const source = await tx.source.findUniqueOrThrow({ where: { id: claim.sourceId }, select: { id: true, license: true, notes: true } });
+      await assertSourceUseAllowsApproval(tx, source);
       const now = new Date();
       if (claim.validUntil && claim.validUntil < now) throw new ApiError(409, 'EVIDENCE_EXPIRED', 'Expired evidence cannot be published; obtain a current source or reject it');
       if (claim.validFrom && claim.validFrom > now) throw new ApiError(409, 'EVIDENCE_NOT_YET_VALID', 'Future-valid evidence cannot be published yet');

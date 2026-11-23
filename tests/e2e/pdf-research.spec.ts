@@ -4,17 +4,23 @@ test('disposable PDF pipeline facts render on engineering and law profiles with 
   await page.goto('/colleges/indian-institute-of-technology-delhi');
   await expect(page.getByRole('heading', { level: 1, name: 'Indian Institute of Technology Delhi' })).toBeVisible();
   await expect(page.getByRole('note').filter({ hasText: 'Development demo catalogue' })).toBeVisible();
-  await expect(page.getByText('Median annual salary (INR)', { exact: false }).first()).toBeVisible();
-  await expect(page.getByText('₹20,00,000', { exact: false }).first()).toBeVisible();
-  await expect(page.getByText('NIRF graduating cohort 2024-25', { exact: false })).toBeVisible();
-  await expect(page.getByText(/Ministry of Education, Government of India/)).toBeVisible();
+  const placementCard = page.locator('#placements [data-evidence-status="VERIFIED"]');
+  await expect(placementCard).toHaveCount(1);
+  await expect(placementCard).toContainText('Median annual salary (INR)');
+  await expect(placementCard).toContainText('₹20,00,000');
+  await expect(placementCard).toContainText('NIRF graduating cohort 2024-25');
+  await expect(placementCard).toContainText('Ministry of Education, Government of India');
+  await expect(placementCard).toContainText('Source:');
   await page.screenshot({ path: testInfo.outputPath('pdf-research-engineering-profile.png'), fullPage: true });
 
   await page.goto('/colleges/national-law-school-of-india-university');
   await expect(page.getByRole('heading', { level: 1, name: 'National Law School of India University' })).toBeVisible();
-  await expect(page.getByText('Tuition and facilities (combined)', { exact: false })).toBeVisible();
-  await expect(page.getByText('₹3,18,200', { exact: false })).toBeVisible();
-  await expect(page.getByText('Full programme period', { exact: false })).toHaveCount(0);
+  const fees = page.locator('#fees');
+  const feeCard = fees.locator('[data-evidence-status="VERIFIED"]');
+  await expect(feeCard).toHaveCount(1);
+  await expect(feeCard).toContainText('Tuition and facilities (combined)');
+  await expect(feeCard).toContainText('₹3,18,200');
+  await expect(feeCard).not.toContainText('Full programme period');
   await page.screenshot({ path: testInfo.outputPath('pdf-research-law-profile.png'), fullPage: true });
 });
 

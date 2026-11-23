@@ -1,5 +1,7 @@
 import { activeReviewedClaims, resolveReviewedField } from './ingest/evidence';
 import { structuredFact } from './ingest/structured-facts';
+import { sourceRequiresExplicitUseAssessment } from './source-use-review';
+import { evidenceReviewHold } from './review-holds';
 
 export const publicEvidenceSelect = {
   reviews: { where: { status: 'APPROVED' as const }, select: { rating: true } },
@@ -8,7 +10,7 @@ export const publicEvidenceSelect = {
 } as const;
 
 type Decision = { status: string; createdAt: Date };
-type Claim = { isFixture?: boolean; id: string; field: string; programScope?: string | null; evidenceLocator?: string | null; value: unknown; academicYear: number | null; publishedAt: Date | null; validFrom: Date | null; validUntil: Date | null; supersedesId: string | null; decisions: Decision[]; source: { url: string; publisher: string; retrievedAt: Date } };
+type Claim = { isFixture?: boolean; id: string; field: string; programScope?: string | null; evidenceLocator?: string | null; value: unknown; academicYear: number | null; publishedAt: Date | null; validFrom: Date | null; validUntil: Date | null; supersedesId: string | null; decisions: Decision[]; source: { url: string; publisher: string; retrievedAt: Date; license: string | null; notes: string | null; sourceUseStatus?: string } };
 const FIELDS = ['admissions', 'description', 'about', 'website', 'phone', 'email', 'naacGrade', 'establishedYear', 'totalStudents', 'courses', 'topRecruiters'];
 const UNDATED_FRESHNESS_DAYS: Record<string, number> = {
   admissions: 365, description: 1095, about: 1095, website: 365, phone: 180,
@@ -17,12 +19,15 @@ const UNDATED_FRESHNESS_DAYS: Record<string, number> = {
 function officialSource(source: Claim['source'], now: Date) {
   try { const url = new URL(source.url); return url.protocol === 'https:' && !url.username && !url.password && !!source.publisher.trim() && source.retrievedAt <= now; } catch { return false; }
 }
+function sourceUseAllowsPublicDisplay(source: Claim['source']) {
+  return !sourceRequiresExplicitUseAssessment(source) || source.sourceUseStatus === 'CLEARED';
+}
 
 function projectStructuredFacts(claims: Claim[], now: Date) {
   const groups = new Map<string, Claim[]>();
   for (const claim of claims) {
-    if (claim.isFixture || !claim.field.startsWith('structured.') || !claim.programScope ||
-        !officialSource(claim.source, now) || (claim.publishedAt && claim.publishedAt > now) ||
+    if (claim.isFixture || evidenceReviewHold(claim.id) || !claim.field.startsWith('structured.') || !claim.programScope ||
+        !officialSource(claim.source, now) || !sourceUseAllowsPublicDisplay(claim.source) || (claim.publishedAt && claim.publishedAt > now) ||
         (claim.academicYear !== null && claim.academicYear > now.getUTCFullYear())) continue;
     const fact = structuredFact.safeParse(claim.value);
     if (!fact.success || claim.field !== `structured.${fact.data.kind}`) continue;
@@ -56,7 +61,7 @@ export function projectPublicCollege<T extends Record<string, unknown>>(college:
   out.structuredFacts = projectStructuredFacts(claims, now);
   const fieldEvidence: Record<string, unknown> = {};
   for (const field of FIELDS) {
-    const candidates = claims.filter((c) => !c.isFixture && c.field === field && officialSource(c.source, now) && (!c.publishedAt || c.publishedAt <= now));
+    const candidates = claims.filter((c) => !c.isFixture && !evidenceReviewHold(c.id) && c.field === field && officialSource(c.source, now) && sourceUseAllowsPublicDisplay(c.source) && (!c.publishedAt || c.publishedAt <= now));
     const eligible = candidates.map((c) => {
       if (c.validUntil || field === 'establishedYear') return c;
       if (c.academicYear !== null) return c.academicYear >= now.getUTCFullYear() - 1 ? c : { ...c, validUntil: new Date(0) };

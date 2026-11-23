@@ -2,6 +2,7 @@
  * These are not decisions and do not alter evidence or its audit history.
  */
 const holds: Record<string, string> = {
+  cmwthl2rj007a7etvt5e1xc96: 'BATCH060_SCOPE_REVIEW: The official NIT Tiruchirappalli 2026 admission-batch PDF heading includes OPEN/OPEN-EWS/OBC-NCL/ICCR/DASA (CIWG), while this extracted category records only OPEN/EWS/OBC-NCL. Reconcile the fee-category scope against the original table before any accuracy decision.',
   cmwlqtg7i001qgvtvfvd0j4ev: 'The closed 2026 All India cycle limits the school location and equivalent qualifications. The staged summary omits those conditions. Reconcile the scope and mark the cycle historical before review.',
   cmwlpjrzh001syttvn05nz1d4: 'The publisher describes the proposed 2026–27 tuition as subject to appellate consideration and revision. Confirm the final applicable schedule.',
   cmwm3rj75000bhxtvbr105oe7: 'Inspect the complete 2024–25 annual report and reconcile the placed and eligible totals on printed page 11 before publishing.',
@@ -22,4 +23,8 @@ const holds: Record<string, string> = {
 
 export function evidenceReviewHold(evidenceId: string): string | null {
   return Object.hasOwn(holds, evidenceId) ? holds[evidenceId] : null;
+}
+
+export function reviewHoldIds(): string[] {
+  return Object.keys(holds);
 }
