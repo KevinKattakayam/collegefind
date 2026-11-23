@@ -5,7 +5,7 @@ import { Prisma, PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import pg from 'pg';
 import { assertOwnerReviewTarget } from '../src/server/owner-review-target';
-import { exactJsonEqual, validateOwnerReviewArchive, type OwnerReviewManifest, type OwnerReviewRow as Row, type OwnerReviewSnapshot as Snapshot } from './owner-review-archive';
+import { exactJsonEqual, normalizeArchivedRowForSchema, validateOwnerReviewArchive, type OwnerReviewManifest, type OwnerReviewRow as Row, type OwnerReviewSnapshot as Snapshot } from './owner-review-archive';
 
 const snapshotFile = 'data/pilot/staged-evidence-after-batch-027.json';
 const manifestFile = 'data/pilot/staged-evidence-after-batch-027-manifest.json';
@@ -27,13 +27,13 @@ async function assertRestoredRows(db: PrismaClient | Prisma.TransactionClient, s
     throw new Error('Post-restore row counts differ from the source manifest; inspect the owner target before proceeding.');
   }
   const exactRows = [
-    [snapshot.sources, await db.source.findMany({ orderBy: { id: 'asc' } }), ['publishedAt', 'retrievedAt', 'createdAt']],
-    [snapshot.claims, await db.fieldEvidence.findMany({ orderBy: { id: 'asc' } }), ['publishedAt', 'validFrom', 'validUntil', 'createdAt']],
-    [snapshot.runs, await db.importRun.findMany({ orderBy: { id: 'asc' } }), ['startedAt', 'finishedAt']],
-    [snapshot.audits, await db.auditLog.findMany({ orderBy: { id: 'asc' } }), ['createdAt']],
+    ['Source', snapshot.sources, await db.source.findMany({ orderBy: { id: 'asc' } }), ['publishedAt', 'retrievedAt', 'createdAt']],
+    ['FieldEvidence', snapshot.claims, await db.fieldEvidence.findMany({ orderBy: { id: 'asc' } }), ['publishedAt', 'validFrom', 'validUntil', 'createdAt']],
+    ['ImportRun', snapshot.runs, await db.importRun.findMany({ orderBy: { id: 'asc' } }), ['startedAt', 'finishedAt']],
+    ['AuditLog', snapshot.audits, await db.auditLog.findMany({ orderBy: { id: 'asc' } }), ['createdAt']],
   ] as const;
-  for (const [archived, actualRows, dateFields] of exactRows) {
-    const normalizedArchive = archived.map((row) => dated(row, [...dateFields]));
+  for (const [table, archived, actualRows, dateFields] of exactRows) {
+    const normalizedArchive = archived.map((row) => normalizeArchivedRowForSchema(table, dated(row, [...dateFields])));
     if (!exactJsonEqual(actualRows, normalizedArchive)) throw new Error('Post-restore provenance or audit read-back differs from the checksummed snapshot.');
   }
   const actualIdentities = (await db.college.findMany({ select: { id: true, slug: true } })).sort((a,b) => a.slug.localeCompare(b.slug));

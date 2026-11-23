@@ -77,3 +77,16 @@ export function exactJsonEqual(left: unknown, right: unknown) {
   };
   return isDeepStrictEqual(canonical(left), canonical(right));
 }
+
+/** Normalize legacy archive rows to nullable/defaulted columns added by later migrations. */
+export function normalizeArchivedRowForSchema(table: 'Source' | 'FieldEvidence' | 'ImportRun' | 'AuditLog', row: Record<string, unknown>) {
+  if (table !== 'FieldEvidence') return row;
+  return {
+    campusScope: null,
+    applicablePeriod: null,
+    publisherPeriod: null,
+    historical: false,
+    sourceReportedRef: null,
+    ...row,
+  };
+}

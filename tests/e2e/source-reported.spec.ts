@@ -12,7 +12,7 @@ test('source-reported facts render in their sections with campus, scope and prov
   // The owner-stage scenario mutates these two institutions in its separate rehearsal.
   const main = page.getByRole('main');
   const newSlugs = new Set(policy.records.filter(({ ref }) =>
-    ref.startsWith('batch-45:') || ref.startsWith('batch-46:') || ref.startsWith('batch-47:') || ref.startsWith('batch-48:') || ref.startsWith('batch-49:') || ref.startsWith('batch-50:') || ref.startsWith('batch-51:') || ref.startsWith('batch-52:') || ref.startsWith('batch-53:') || ref.startsWith('batch-54:') || ref.startsWith('batch-55:')).map(({ slug }) => slug));
+    ref.startsWith('batch-45:') || ref.startsWith('batch-46:') || ref.startsWith('batch-47:') || ref.startsWith('batch-48:') || ref.startsWith('batch-49:') || ref.startsWith('batch-50:') || ref.startsWith('batch-51:') || ref.startsWith('batch-52:') || ref.startsWith('batch-53:') || ref.startsWith('batch-54:') || ref.startsWith('batch-55:') || ref.startsWith('batch-59:')).map(({ slug }) => slug));
   for (const college of ledger.institutions) {
     const response = await request.get(`/colleges/${college.slug}`);
     expect(response.ok(), `${college.slug} should render`).toBe(true);
@@ -90,7 +90,7 @@ test('source-reported facts render in their sections with campus, scope and prov
       await expect(card.getByRole('link', { name: item.publisher + ' · ' + item.sourceTitle, exact: true })).toHaveAttribute('href', item.url);
       if (item.scopeVerification) {
         await expect(card).toContainText('Campus scope cross-check');
-        await expect(card.getByRole('link', { name: item.scopeVerification.title, exact: false }))
+        await expect(card.getByRole('link', { name: item.scopeVerification.title, exact: true }))
           .toHaveAttribute('href', item.scopeVerification.url);
         await expect(card).toContainText(item.scopeVerification.evidenceLocation);
       }
@@ -227,11 +227,30 @@ test('source-reported facts render in their sections with campus, scope and prov
   await expect(main.locator('#programmes-and-admissions [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
 });
 
-test('source-reported programmes stay outside comparison and CollegeFit', async ({ page }) => {
+test('held CUSAT fee and eligibility candidates remain unavailable publicly', async ({ page }) => {
+  test.skip(process.env.COLLEGEFIND_REPORTED_BROWSER !== 'true', 'Requires the isolated catalogue archive rehearsal');
+  const main = page.getByRole('main');
+  await page.goto('/colleges/cochin-university#fees');
+  await expect(main.locator('#fees [data-evidence-status="OFFICIAL_SOURCE_REPORTED"]')).toHaveCount(0);
+  await expect(main.locator('#fees')).toContainText('Not verified yet');
+  await expect(main.locator('#fees')).not.toContainText('28,800');
+  await expect(main.locator('#fees')).not.toContainText('55,000');
+  await expect(main.locator('#programmes-and-admissions')).toContainText('Programme-specific eligibility is awaiting independent review.');
+});
+
+test('source-reported programmes are attributed in comparison but excluded from CollegeFit scoring', async ({ page, isMobile }) => {
   test.skip(process.env.COLLEGEFIND_REPORTED_BROWSER !== 'true', 'Requires the isolated catalogue archive rehearsal');
   await page.goto('/compare?colleges=iit-ropar,iit-bhubaneswar');
   await expect(page.getByRole('region', { name: 'Comparison slot for IIT Ropar' })).toBeVisible();
-  await expect(page.getByText(/Digital Agriculture/)).toHaveCount(0);
+  await expect(page.getByText('UG · B.Tech in Digital Agriculture', { exact: true })).toBeVisible();
+  const reported = page.getByRole('listitem').filter({ hasText: 'Digital Agriculture' });
+  await expect(reported).toContainText('Source-reported; not independently verified');
+  await expect(reported.getByRole('link', { name: 'Open cited official source' })).toHaveAttribute('href', /iitrpr\.ac\.in/);
+  if (process.env.CF_PROFILE_SCREENSHOTS) {
+    await page.getByRole('main').screenshot({
+      path: join(process.env.CF_PROFILE_SCREENSHOTS, `iit-ropar-iit-bhubaneswar-compare-${isMobile ? 'mobile' : 'desktop'}.png`),
+    });
+  }
 
   await page.goto('/collegefit?programme=Digital%20Agriculture&location=Rupnagar');
   const result = page.getByRole('article').filter({ has: page.getByRole('link', { name: 'IIT Ropar', exact: true }) });

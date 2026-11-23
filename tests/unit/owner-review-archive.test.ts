@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { exactJsonEqual, validateOwnerReviewArchive, type OwnerReviewManifest, type OwnerReviewSnapshot } from '../../scripts/owner-review-archive';
+import { exactJsonEqual, normalizeArchivedRowForSchema, validateOwnerReviewArchive, type OwnerReviewManifest, type OwnerReviewSnapshot } from '../../scripts/owner-review-archive';
 
 const snapshotBytes = readFileSync('data/pilot/staged-evidence-after-batch-027.json');
 const snapshot = JSON.parse(snapshotBytes.toString('utf8')) as OwnerReviewSnapshot;
@@ -54,5 +54,15 @@ describe('persistent owner-review archive validation', () => {
   it('compares archived structured rows independent of object reference identity', () => {
     expect(exactJsonEqual({ id: 'x', date: new Date('2026-01-01'), value: { amount: 3, currency: 'INR' } },
       { value: { currency: 'INR', amount: 3 }, date: '2026-01-01T00:00:00.000Z', id: 'x' })).toBe(true);
+  });
+
+  it('normalizes only additive FieldEvidence defaults when reading older snapshots through the current schema', () => {
+    const archived = snapshot.claims[0];
+    const normalized = normalizeArchivedRowForSchema('FieldEvidence', archived as unknown as Record<string, unknown>);
+    expect(normalized).toMatchObject({ campusScope: null, applicablePeriod: null, publisherPeriod: null,
+      historical: false, sourceReportedRef: null });
+    expect(exactJsonEqual(normalized, { ...archived, campusScope: null, applicablePeriod: null,
+      publisherPeriod: null, historical: false, sourceReportedRef: null })).toBe(true);
+    expect(normalizeArchivedRowForSchema('Source', { id: 'source' })).toEqual({ id: 'source' });
   });
 });

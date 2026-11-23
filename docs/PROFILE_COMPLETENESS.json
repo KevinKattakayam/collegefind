@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-22T23:01:00.000Z",
+  "asOf": "2026-11-23T10:09:00Z",
   "baseline": {
     "colleges": 205,
     "stagedClaims": 377,
@@ -41530,7 +41530,7 @@
     "note": "Corrected runtime finding: these nine institutions gained additional category depth but zero new profile coverage."
   },
   "runtimeSourceReportedReconciliation": {
-    "asOf": "2026-11-21T17:54:26.858Z",
+    "asOf": "2026-11-23T09:28:04Z",
     "method": "eligibleSourceReported plus suppressSourceReported using the application policy and current UTC clock; future-dated, expired, held, conflicted, withdrawn and reviewer-superseded records are excluded",
     "baselineBeforeBatch045": {
       "profiles": 161,
@@ -41596,7 +41596,19 @@
     "genuinelyHumanVerifiedClaimsVisible": 0,
     "stagedArchiveClaims": 377,
     "verifiedOfficialCutoffRecords": 0,
-    "note": "Time-dependent runtime snapshot; re-evaluate before treating counts as current. Source-reported is not human-verified."
+    "note": "Batch 059 policy-time snapshot; includes 8 CUSAT facts. Source-reported remains distinct from human verification; re-evaluate expiries and holds at request time.",
+    "afterBatch059": {
+      "profiles": 205,
+      "facts": 511,
+      "multi": 139,
+      "basic": 0,
+      "categories": {
+        "programme": 284,
+        "facility": 86,
+        "admission": 41,
+        "contact": 100
+      }
+    }
   },
   "contentDepthBatch045": {
     "batch": 45,
@@ -43149,5 +43161,126 @@
     "genuineHumanApprovals": 0,
     "verifiedCutoffs": 0,
     "scopeNote": "Three nonduplicate low-risk official admissions-route facts are source-reported; they are not human-verified. IIT Bombay route names are programme-specific and the entrant cycle is historical. CMC Vellore batch-57 candidate duplicates an exact staged claim and remains held. IIT Bombay fee schedules are high-impact and excluded from source-reported publication. The existing Delhi admissions fact was the fifth profile checked; it is not a new fact."
+  },
+  "contentDepthBatch059": {
+    "researchedAt": "2026-11-23T10:09:00Z",
+    "before": {
+      "informativeProfiles": 205,
+      "sourceReportedFacts": 503,
+      "multiCategoryProfiles": 138,
+      "basicOnlyProfiles": 0,
+      "categories": {
+        "programmes": 278,
+        "facilities": 86,
+        "admissions": 39,
+        "contacts": 100,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "after": {
+      "informativeProfiles": 205,
+      "sourceReportedFacts": 511,
+      "multiCategoryProfiles": 139,
+      "basicOnlyProfiles": 0,
+      "categories": {
+        "programmes": 284,
+        "facilities": 86,
+        "admissions": 41,
+        "contacts": 100,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "baselineBeforeBatch059": {
+      "informativeProfiles": 205,
+      "sourceReportedFacts": 503,
+      "multiCategoryProfiles": 138,
+      "basicOnlyProfiles": 0,
+      "categories": {
+        "programmes": 278,
+        "facilities": 86,
+        "admissions": 39,
+        "contacts": 100,
+        "fees": 0,
+        "scholarships": 0,
+        "recognition": 0,
+        "placements": 0,
+        "cutoffs": 0
+      }
+    },
+    "newSourceReportedFacts": 8,
+    "newProfilesWithNewFacts": 1,
+    "newProfilesFirstCovered": 0,
+    "newDistinctCategories": {
+      "programmes": 6,
+      "admissions": 2,
+      "facilities": 0,
+      "contacts": 0
+    },
+    "profilesByCategory": {
+      "one": 66,
+      "two": 114,
+      "threeOrMore": 25,
+      "basic": 0
+    },
+    "college": {
+      "id": "cmwlksxzm001l31tv4tu3arpw",
+      "slug": "cochin-university",
+      "name": "Cochin University",
+      "publishedRefs": [
+        "batch-59:0",
+        "batch-59:1",
+        "batch-59:2",
+        "batch-59:3",
+        "batch-59:4",
+        "batch-59:5",
+        "batch-59:6",
+        "batch-59:7"
+      ],
+      "publishedProgrammeFacts": 6,
+      "publishedAdmissionsFacts": 2,
+      "priorContactFact": "batch-54:6",
+      "categoriesBefore": 1,
+      "categoriesAfter": 3
+    },
+    "heldCandidateFacts": [
+      {
+        "index": 8,
+        "kind": "fee",
+        "programme": "B.Tech (SOE/CUCEK)",
+        "category": "State Merit",
+        "amountInr": 28800,
+        "unit": "INR per semester",
+        "academicYear": "2026-27",
+        "reason": "Official schedule is marked tentative and subject to change/revision; other compulsory charges are separate."
+      },
+      {
+        "index": 9,
+        "kind": "fee",
+        "programme": "B.Tech (SOE/CUCEK)",
+        "category": "All India Merit",
+        "amountInr": 55000,
+        "unit": "INR per semester",
+        "academicYear": "2026-27",
+        "reason": "Official schedule is marked tentative and subject to change/revision; other compulsory charges are separate."
+      },
+      {
+        "index": 10,
+        "kind": "admission eligibility",
+        "programme": "MBA Full-Time and Evening-Regular",
+        "academicYear": "2026-27",
+        "reason": "Historical cycle closed 30 April 2026; eligibility thresholds are decision-critical and require individual review."
+      }
+    ],
+    "sourceUse": "Official CUSAT 2026 prospectus and fee schedule; exact citations/evidence locators in Batch 059. Individual attributed facts only; no bulk reuse permission inferred.",
+    "genuineHumanApprovals": 0,
+    "persistentDatabaseWrites": 0
   }
 }

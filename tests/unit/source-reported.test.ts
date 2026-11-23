@@ -14,11 +14,12 @@ import batch51 from '../../data/pilot/substantive-research-batch-051.json';
 import batch52 from '../../data/pilot/substantive-research-batch-052.json';
 import batch56 from '../../data/pilot/substantive-research-batch-056.json';
 import batch57 from '../../data/pilot/substantive-research-batch-057.json';
+import batch59 from '../../data/pilot/substantive-research-batch-059.json';
 import { eligibleSourceReported, sourceReportedFingerprint, suppressSourceReported } from '../../src/server/source-reported';
 import { projectPublicCollege } from '../../src/server/public-evidence';
 import { structuredFact } from '../../src/server/ingest/structured-facts';
 
-const now = new Date('2026-11-22T23:02:00Z');
+const now = new Date('2026-11-23T09:25:00Z');
 const record = {
   ...policy.records.find(({ slug }) => slug === 'dit-university')!,
   basis: 'ATTRIBUTED_INDIVIDUAL_FACT' as const, status: 'PUBLISH' as const,
@@ -543,7 +544,8 @@ describe('source-reported profile eligibility', () => {
       ));
     const eligible = archive.collegeIdentity.flatMap((identity) => eligibleSourceReported(identity, now));
     const preBatch052 = eligible.filter(({ ref }) => !ref.startsWith('batch-52:') && !ref.startsWith('batch-53:') &&
-      !ref.startsWith('batch-54:') && !ref.startsWith('batch-55:') && !ref.startsWith('batch-56:') && !ref.startsWith('batch-57:'));
+      !ref.startsWith('batch-54:') && !ref.startsWith('batch-55:') && !ref.startsWith('batch-56:') &&
+      !ref.startsWith('batch-57:') && !ref.startsWith('batch-59:'));
     const unscopedSimulation = archive.collegeIdentity.flatMap((identity) =>
       suppressSourceReported(preBatch052.filter((fact) =>
         policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id), archivedRows, [], now));
@@ -561,9 +563,9 @@ describe('source-reported profile eligibility', () => {
         policy.records.find((row) => row.ref === fact.ref)?.collegeId === identity.id),
       archivedRows.filter((row) => row.collegeId === identity.id), [], now));
 
-    expect(eligible).toHaveLength(503);
-    expect(visible).toHaveLength(503);
-    expect(new Set(visible.map(({ ref }) => ref)).size).toBe(503);
+    expect(eligible).toHaveLength(511);
+    expect(visible).toHaveLength(511);
+    expect(new Set(visible.map(({ ref }) => ref)).size).toBe(511);
     expect(visible.every(({ status }) => status === 'OFFICIAL_SOURCE_REPORTED')).toBe(true);
     expect(visible.some(({ ref }) => ref === 'batch-50:0')).toBe(true);
     expect(preBatch052).toHaveLength(414);
@@ -580,6 +582,36 @@ describe('source-reported profile eligibility', () => {
       'cmwlpjrxo0018yttvxlruoj99',
     ]));
     expect(correctlyScopedPreBatch052).toHaveLength(414);
+  });
+
+  it('publishes CUSAT programme and historical admissions facts while keeping tentative fees and eligibility held', () => {
+    const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-59:'));
+    expect(rows).toHaveLength(8);
+    expect(rows.every(({ status, basis, fingerprint, ref }) => status === 'PUBLISH' &&
+      basis === 'ATTRIBUTED_INDIVIDUAL_FACT' && fingerprint === sourceReportedFingerprint(ref))).toBe(true);
+    expect(rows.every(({ sourceUrl, campus, sourceTitle }) =>
+      sourceUrl === 'https://www.admissions.cusat.ac.in/Prospectus/Prospectus2026.pdf' &&
+      campus.includes('Campus 1') && sourceTitle.includes('Prospectus'))).toBe(true);
+
+    const collegeId = rows[0].collegeId;
+    const facts = eligibleSourceReported({ id: collegeId, slug: 'cochin-university' }, now)
+      .filter(({ ref }) => ref.startsWith('batch-59:'));
+    expect(facts).toHaveLength(8);
+    expect(facts.filter(({ value }) => value.kind === 'programme')).toHaveLength(6);
+    expect(facts.filter(({ value }) => value.kind === 'admission')).toHaveLength(2);
+    expect(facts.every(({ status, academicYear, url, evidenceLocation }) => status === 'OFFICIAL_SOURCE_REPORTED' &&
+      academicYear === '2026-27' && url === rows[0].sourceUrl && evidenceLocation.length > 0)).toBe(true);
+    expect(facts.filter(({ value }) => value.kind === 'admission').every(({ historical, publisherPeriod }) =>
+      historical && publisherPeriod?.includes('2026-27'))).toBe(true);
+
+    const feeAndEligibilityCandidates = batch59.candidateClaims.filter(({ value }) =>
+      value.kind === 'fee' || (value.kind === 'admission' && 'eligibility' in value));
+    expect(feeAndEligibilityCandidates).toHaveLength(3);
+    expect(feeAndEligibilityCandidates.every(({ reviewState, stageable }) =>
+      reviewState === 'UNREVIEWED' && stageable)).toBe(true);
+    expect(feeAndEligibilityCandidates.some(({ value }) => value.kind === 'fee' && value.amountInr === 28800)).toBe(true);
+    expect(feeAndEligibilityCandidates.some(({ value }) => value.kind === 'fee' && value.amountInr === 55000)).toBe(true);
+    expect(rows.some(({ status }) => status === 'VERIFIED')).toBe(false);
   });
 
   it('publishes the Osmania University brochure facts only with named campus scope and attribution', () => {
