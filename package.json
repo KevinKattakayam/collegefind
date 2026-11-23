@@ -22,7 +22,8 @@
     "ingest:josaa": "tsx scripts/ingest-josaa.ts",
     "ingest:official-facts": "tsx scripts/ingest-official-facts.ts",
     "ingest:pdf-research:disposable": "node --import tsx scripts/import-pdf-research-disposable.ts",
-    "verify:pdf-research:disposable": "node --import tsx scripts/verify-pdf-research-disposable-projection.ts"
+    "verify:pdf-research:disposable": "node --import tsx scripts/verify-pdf-research-disposable-projection.ts",
+    "stage:pdf-research:owner": "node --import tsx scripts/stage-pdf-research-owner.ts"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.10.0",
