@@ -645,6 +645,25 @@ describe('source-reported profile eligibility', () => {
       .toBe(false);
   });
 
+  it('preserves explicit NIRF zero counts and historical sanctioned intake without inventing placement rates', () => {
+    expect(structuredFact.parse({
+      kind: 'placement', cohort: 'UG 5-year medical, 2023-24', metric: 'PLACED_COUNT',
+      denominator: 103, value: 0, definition: 'NIRF submission explicitly records zero campus placements; this does not mean zero employment.',
+    })).toMatchObject({ metric: 'PLACED_COUNT', denominator: 103, value: 0 });
+    expect(structuredFact.parse({
+      kind: 'placement', cohort: 'PG 2-year management, 2024-25', metric: 'HIGHER_STUDIES_COUNT',
+      denominator: 585, value: 0, definition: 'NIRF submission explicitly reports no graduates proceeding to higher studies.',
+    })).toMatchObject({ metric: 'HIGHER_STUDIES_COUNT', denominator: 585, value: 0 });
+    expect(structuredFact.safeParse({
+      kind: 'placement', cohort: 'PG 2-year management, 2024-25', metric: 'MEDIAN',
+      denominator: 0, value: 2_000_000, definition: 'Invalid: no placed graduates.',
+    }).success).toBe(false);
+    expect(structuredFact.parse({
+      kind: 'seatIntake', programme: 'UG [4 Years Program(s)]', seats: 1210,
+      measure: 'NIRF_SANCTIONED_APPROVED_INTAKE',
+    })).toMatchObject({ seats: 1210, measure: 'NIRF_SANCTIONED_APPROVED_INTAKE' });
+  });
+
   it('adds the Batch 040 breadth slice with distinct categories, source attribution and historical labels', () => {
     const rows = policy.records.filter(({ ref }) => ref.startsWith('batch-40:'));
     expect(rows).toHaveLength(36);

@@ -131,6 +131,9 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             <span className="badge-blue">Catalogue identity</span>
             <span className="text-xs text-slate-700">{hasReviewedDetails ? 'Reviewed facts are marked with sources' : hasOnlyReportedContacts ? 'Source-reported contacts available' : sourceReported.length ? 'Source-reported details available' : 'Detailed facts awaiting verification'}</span>
           </div>
+          {college.dataStatus === 'DEMO' && <p role="note" className="mb-4 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950">
+            Development demo catalogue: legacy summary values and any test review decisions are synthetic. Each evidence card keeps its own source and review label; these test decisions are not genuine college verification.
+          </p>}
           <CollegeActions college={listCollege} />
           <Link className="mt-3 inline-block text-indigo-700 underline" href={`/collegefit?location=${encodeURIComponent(college.state)}`}>Explore CollegeFit in {college.state}</Link>
           <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
@@ -220,7 +223,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
             <h2 className="text-xl font-black text-slate-800">Programmes and admissions</h2>
             {listCollege.admissions && <a href={listCollege.admissions} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-indigo-700 underline">Official admissions information</a>}
             {college.courses.length > 0 && <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">{college.courses.map((course) => <li key={course}>{course}</li>)}</ul>}
-            {renderFacts(listCollege.structuredFacts ?? [], ['programme', 'admission'], hasSourceReportedProgrammeDetails
+            {renderFacts(listCollege.structuredFacts ?? [], ['programme', 'admission', 'seatIntake'], hasSourceReportedProgrammeDetails
               ? 'Official pages report the details below; CollegeFind has not independently verified them.'
               : college.courses.length ? 'Programme eligibility and admission routes are not verified yet.' : 'Programme details and admission routes are not verified yet.')}
             {renderSourceReported(sourceReported, 'programme')}
@@ -295,14 +298,15 @@ function reviewedDate(value: Date | string | null | undefined) {
 
 const factFieldLabels: Record<string, string> = {
   amountInr: 'Amount (INR)', durationMonths: 'Duration', feeType: 'Fee type',
-  applicationUrl: 'Application page', url: 'Official page', denominator: 'Cohort size',
+  applicationUrl: 'Application page', url: 'Official page', denominator: 'Cohort size', seats: 'Approved seats',
 };
 
 const factFieldValues: Record<string, Record<string, string>> = {
   level: { UG: 'Undergraduate', PG: 'Postgraduate', DOCTORAL: 'Doctoral', DIPLOMA: 'Diploma' },
-  period: { SEMESTER: 'Per semester', YEAR: 'Per year', MONTH: 'Per month', ONE_TIME: 'One-time payment' },
-  feeType: { TUITION: 'Tuition', HOSTEL: 'Hostel or residence' },
-  metric: { MEDIAN: 'Median', MEAN: 'Mean', HIGHEST: 'Highest', PLACED_COUNT: 'Students placed' },
+  period: { SEMESTER: 'Per semester', YEAR: 'Per year', MONTH: 'Per month', ONE_TIME: 'One-time payment', PROGRAMME: 'Full programme period', PER_TEST: 'Per test' },
+  feeType: { TUITION: 'Tuition', HOSTEL: 'Hostel or residence', INSTITUTE: 'Institution fee', APPLICATION: 'Application fee', PROGRAMME_TOTAL: 'Total programme fee', DEPOSIT: 'Deposit', OTHER: 'Other published charge' },
+  metric: { MEDIAN: 'Median annual salary (INR)', MEAN: 'Mean annual salary (INR)', HIGHEST: 'Highest annual salary (INR)', PLACED_COUNT: 'Students reported placed', HIGHER_STUDIES_COUNT: 'Students reported in higher studies' },
+  measure: { NIRF_SANCTIONED_APPROVED_INTAKE: 'NIRF sanctioned (approved) intake' },
 };
 
 function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: string[], unavailable: string | null = 'Not verified yet. Check the institution for current details.') {
@@ -314,14 +318,18 @@ function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: stri
         <h3 className="font-semibold text-slate-900">{structuredLabels[value.kind]}{academicYear !== null ? ` · ${academicYear}` : ''}</h3>
         <p className="mt-1 text-xs font-semibold text-emerald-800">Independently reviewed</p>
         {value.kind === 'placement' && academicYear !== null && <p className="mt-1 text-sm text-slate-600">
-          Results for this reporting cohort only.
+          Historical results for this reporting cohort only. Counts do not establish a placement rate or outcomes for other cohorts.
         </p>}
         <dl className="mt-2 space-y-1 break-words text-sm text-slate-700">
           {Object.entries(value).filter(([label]) => label !== 'kind').map(([label, item]) => (
             <div key={label}>
-              <dt className="inline font-medium capitalize">{value.kind === 'placement' && value.metric === 'PLACED_COUNT' && label === 'denominator'
-                ? 'Eligible cohort' : factFieldLabels[label] ?? label.replace(/([A-Z])/g, ' $1')}: </dt>
-              <dd className="inline">{label === 'amountInr' && typeof item === 'number' ? formatINR(item)
+              <dt className="inline font-medium capitalize">{value.kind === 'placement' && label === 'denominator'
+                ? value.metric === 'PLACED_COUNT' ? 'Graduated in stipulated time (not placement-eligible cohort)'
+                  : value.metric === 'HIGHER_STUDIES_COUNT' ? 'Graduated in stipulated time'
+                    : 'Students placed in reported cohort'
+                : factFieldLabels[label] ?? label.replace(/([A-Z])/g, ' $1')}: </dt>
+              <dd className="inline">{value.kind === 'placement' && ['MEDIAN', 'MEAN', 'HIGHEST'].includes(value.metric) && label === 'value' && typeof item === 'number' ? formatINR(item)
+                : label === 'amountInr' && typeof item === 'number' ? formatINR(item)
                 : label === 'durationMonths' && typeof item === 'number' ? (item % 12 === 0 ? `${item / 12} ${item === 12 ? 'year' : 'years'}` : `${item} months`)
                 : label === 'url' || label === 'applicationUrl' ? <a href={String(item)} target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline">Open official link</a>
                 : (factFieldValues[label]?.[String(item)] ?? String(item))}</dd>
@@ -339,7 +347,7 @@ function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: stri
   </ul>;
 }
 
-function renderSourceReported(facts: SourceReportedFact[], kind: SourceReportedFact['value']['kind']) {
+function renderSourceReported(facts: SourceReportedFact[], kind: 'programme' | 'admission' | 'contact' | 'facility') {
   const selected = facts.filter(({ value }) => value.kind === kind);
   if (!selected.length) return null;
   return <ul className="mt-4 grid gap-4 sm:grid-cols-2" aria-label={`Institution-reported ${structuredLabels[kind].toLowerCase()}`}>

@@ -27,11 +27,12 @@ function factText(fact: StructuredFact): string {
   switch (fact.kind) {
     case 'programme': return `${fact.level} · ${fact.programme}${fact.durationMonths ? ` · ${fact.durationMonths} months` : ''}${fact.durationSemesters ? ` · ${fact.durationSemesters} semesters` : ''}`;
     case 'admission': return `${fact.programme} · ${fact.route} · ${fact.category}${fact.exam ? ` · ${fact.exam}` : ''}${fact.eligibility ? ` · Eligibility: ${fact.eligibility}` : ''}`;
-    case 'fee': return `${fact.programme} · ${fact.category} · ${fact.component}: ₹${fact.amountInr.toLocaleString('en-IN')} per ${fact.period.toLowerCase()} (${fact.feeType.toLowerCase()})`;
+    case 'fee': return `${fact.programme} · ${fact.category} · ${fact.component}: ${formatINR(fact.amountInr)} · ${fact.period === 'PROGRAMME' ? 'full programme period' : fact.period === 'PER_TEST' ? 'per test' : fact.period === 'ONE_TIME' ? 'one-time' : `per ${fact.period.toLowerCase()}`} (${fact.feeType.toLowerCase().replaceAll('_', ' ')})`;
     case 'scholarship': return `${fact.scheme}${fact.eligibility ? ` · ${fact.eligibility}` : ''}`;
     case 'recognition': return `${fact.authority} · ${fact.credential} · ${fact.coverage}: ${fact.result}`;
     case 'nirfRanking': return `${fact.category}: rank ${fact.rank}`;
-    case 'placement': return `${fact.metric.toLowerCase()} · ${fact.cohort} · ${fact.value.toLocaleString('en-IN')} (cohort denominator ${fact.denominator.toLocaleString('en-IN')}) · ${fact.definition}`;
+    case 'placement': return `${fact.metric === 'MEDIAN' ? 'Median annual salary' : fact.metric === 'MEAN' ? 'Mean annual salary' : fact.metric === 'HIGHEST' ? 'Highest annual salary' : fact.metric === 'PLACED_COUNT' ? 'Students reported placed' : 'Students reported in higher studies'} · ${fact.cohort} · ${['MEDIAN', 'MEAN', 'HIGHEST'].includes(fact.metric) ? formatINR(fact.value) : fact.value.toLocaleString('en-IN')} · cohort denominator ${fact.denominator.toLocaleString('en-IN')} · ${fact.definition}`;
+    case 'seatIntake': return `${fact.programme} · NIRF historical approved intake · ${fact.seats.toLocaleString('en-IN')} seats`;
     case 'contact': return `${fact.office} · ${fact.channel.toLowerCase()}: ${fact.contact}`;
     case 'facility': return `${fact.facility} · ${fact.description}`;
   }
