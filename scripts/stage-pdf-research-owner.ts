@@ -182,7 +182,7 @@ async function main() {
       planned: Object.fromEntries(['ADD_UNREVIEWED', 'REUSE', 'DUPLICATE_IN_BATCH'].map((action) =>
         [action, appliedChanges.filter((change) => change.action === action).length])),
       inserted: result.staged, reused: stagedRows.length - result.staged, createdSources: result.createdSources, createdRuns: result.createdRuns,
-      insertedEvidenceWithoutDecision: insertedDecisionCount, heldCandidatesExcluded: heldDispositionCount, preservedArchiveHoldsUntouched: archiveHoldCount,
+      decisionsOnInsertedEvidence: insertedDecisionCount, heldCandidatesExcluded: heldDispositionCount, preservedArchiveHoldsUntouched: archiveHoldCount,
       sourceUse, backup: backup ? { created: true, sha256: backup.sha256, archiveReadabilityVerified: true } : { created: false, reason: 'No additions were required; database was a no-op.' },
       decisionsAndUsersChanged: false, publicPublication: 0 }, null, 2)}\n`);
   } finally {
