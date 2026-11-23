@@ -3,6 +3,8 @@ import { ownerStagingTarget, requireApprovedBatch, validateOwnerStageBatch } fro
 import { assertDisposableTestTarget } from '../integration/target';
 import batch from '../../data/pilot/substantive-research-batch-029.json';
 import heldBatch from '../../data/pilot/substantive-research-batch-028.json';
+import archive from '../../data/pilot/staged-evidence-after-batch-027.json';
+import { sourceReportedImportManifest } from '@/server/source-reported';
 
 const url = 'postgresql://cf_owner_review@127.0.0.1:35441/collegefind_owner_review_main';
 const env = { NODE_ENV: 'test' as const, OWNER_REVIEW_DATABASE_URL: url, COLLEGEFIND_OWNER_REVIEW_DATABASE_CONFIRMED: 'true' };
@@ -31,6 +33,18 @@ describe('owner review staging boundaries', () => {
     const injected = structuredClone(batch);
     Object.assign(injected.candidateClaims[0], { reviewState: 'APPROVED' });
     expect(() => validateOwnerStageBatch(bytes(injected))).toThrow();
+  });
+
+  it('validates bounded owner-review bundles as a whole and rejects repeated release references', () => {
+    const firstCollege = archive.collegeIdentity.find(({ slug }) => slug === 'indian-institute-of-technology-bombay')!;
+    const manifest = { ...sourceReportedImportManifest([firstCollege]), ownerStagingReady: true };
+    const bundle = { ownerStagingReady: true, batches: [manifest] };
+    expect(validateOwnerStageBatch(bytes(bundle))).toHaveLength(manifest.candidateClaims.length);
+    expect(() => validateOwnerStageBatch(bytes({ ownerStagingReady: true, batches: Array.from({ length: 26 }, () => manifest) }))).toThrow('between 1 and 25');
+    expect(() => validateOwnerStageBatch(bytes({ ownerStagingReady: true, batches: [manifest, manifest] }))).toThrow('duplicate source-reported release references');
+    const conflictingSource = structuredClone(manifest);
+    conflictingSource.sources[0].title += ' altered';
+    expect(() => validateOwnerStageBatch(bytes({ ownerStagingReady: true, batches: [manifest, conflictingSource] }))).toThrow('conflicting provenance');
   });
 });
 

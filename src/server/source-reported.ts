@@ -177,6 +177,42 @@ export function eligibleSourceReported(college: Identity, now = new Date(), reco
   });
 }
 
+/** Converts only facts that already pass the release register's complete policy gate into
+ * existing FieldEvidence importer records. This is a persistence mirror, not an approval.
+ */
+export function sourceReportedImportManifest(colleges: Identity[]) {
+  const claims: Array<Record<string, unknown>> = [];
+  const sourceByKey = new Map<string, Record<string, unknown>>();
+  const releases = new Map(policy.records.map((record) => [record.ref, record]));
+  for (const college of colleges) {
+    for (const fact of eligibleSourceReported(college)) {
+      const releaseRecord = releases.get(fact.ref)!;
+      const academicYear = fact.academicYear === null ? null : String(fact.academicYear);
+      const sourceId = createHash('sha256').update(JSON.stringify([
+        college.slug, fact.url, fact.publisher, fact.sourceTitle, fact.collectedAt, fact.publicationDate, releaseRecord.usageAssessment,
+      ])).digest('hex');
+      sourceByKey.set(sourceId, {
+        id: sourceId, institutionSlug: college.slug, publisher: fact.publisher, title: fact.sourceTitle,
+        url: fact.url, publicationDate: fact.publicationDate?.slice(0, 10) ?? null,
+        academicYear: null, retrievedAt: fact.collectedAt,
+        access: 'REGISTERED_INDIVIDUAL_FACT_RELEASE', reuseConditions: releaseRecord.usageAssessment,
+        evidenceLocations: [fact.evidenceLocation],
+      });
+      claims.push({
+        institutionSlug: college.slug, sourceIds: [sourceId], field: 'structured', value: fact.value,
+        academicYear, evidenceLocation: fact.evidenceLocation,
+        status: 'RESEARCHED_READY_FOR_UNREVIEWED_STAGING', reviewState: 'UNREVIEWED', stageable: true,
+        campusScope: fact.campus, applicablePeriod: fact.publisherPeriod ?? (academicYear ? `Academic year ${academicYear}` : 'Current at source check'),
+        ...(fact.publisherPeriod ? { publisherPeriod: fact.publisherPeriod } : {}), historical: fact.historical,
+        ...(fact.validFrom ? { validFrom: fact.validFrom.slice(0, 10) } : {}),
+        ...(fact.validUntil ? { validUntil: fact.validUntil.slice(0, 10) } : {}),
+        sourceReportedRef: fact.ref,
+      });
+    }
+  }
+  return { scope: 'RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES', sources: [...sourceByKey.values()], candidateClaims: claims };
+}
+
 export type SourceReportedFact = ReturnType<typeof eligibleSourceReported>[number];
 
 type EvidenceRow = {

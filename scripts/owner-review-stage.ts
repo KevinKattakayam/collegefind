@@ -105,5 +105,42 @@ export async function loadOwnerBatch(file: string) {
 export function validateOwnerStageBatch(payload: Buffer) {
   const manifest = JSON.parse(payload.toString());
   if (manifest?.ownerStagingReady !== true) throw new Error('Manifest is not designated for owner staging. Resolve all candidate holds before preparing a staging manifest.');
+  if (Array.isArray(manifest.batches)) {
+    if (manifest.batches.length < 1 || manifest.batches.length > 25) throw new Error('Owner staging bundle must contain between 1 and 25 bounded manifests.');
+    const rows: OfficialFactRows = [];
+    const sourceMetadata = new Map<string, string>();
+    const semanticClaims = new Set<string>();
+    const releaseRefs = new Set<string>();
+    for (const batch of manifest.batches as unknown[]) {
+      if (!batch || typeof batch !== 'object' || (batch as { ownerStagingReady?: unknown }).ownerStagingReady !== true) {
+        throw new Error('Every manifest in an owner staging bundle must be explicitly marked ownerStagingReady.');
+      }
+      const batchRows = validateOfficialFacts(batch);
+      for (const row of batchRows) {
+        const sourceSignature = JSON.stringify([
+          row.source.institutionSlug, row.source.publisher, row.source.title ?? null, new URL(row.source.url).href,
+          row.source.publicationDate, row.source.academicYear, row.source.retrievedAt, row.source.access, row.source.reuseConditions,
+        ]);
+        const previousSource = sourceMetadata.get(row.source.id);
+        if (previousSource && previousSource !== sourceSignature) throw new Error('Owner staging bundle reuses a source ID with conflicting provenance.');
+        sourceMetadata.set(row.source.id, sourceSignature);
+        const claim = row.claim;
+        if (claim.field === 'structured' && claim.sourceReportedRef) {
+          if (releaseRefs.has(claim.sourceReportedRef)) throw new Error('Owner staging bundle contains duplicate source-reported release references.');
+          releaseRefs.add(claim.sourceReportedRef);
+        }
+        const semanticKey = JSON.stringify([
+          claim.institutionSlug, row.field, claim.value, row.academicYear ?? null, row.scope,
+          new URL(row.source.url).href,
+          claim.field === 'structured' ? [claim.validFrom ?? null, claim.validUntil ?? null, claim.campusScope ?? null, claim.applicablePeriod ?? null, claim.publisherPeriod ?? null, claim.historical ?? false] : null,
+        ]);
+        if (semanticClaims.has(semanticKey)) throw new Error('Owner staging bundle contains a duplicate semantic claim.');
+        semanticClaims.add(semanticKey);
+      }
+      rows.push(...batchRows);
+    }
+    if (rows.length > 625) throw new Error('Owner staging bundle exceeds the 625-claim safety limit.');
+    return rows;
+  }
   return validateOfficialFacts(manifest);
 }

@@ -7,11 +7,12 @@ const sourceSchema = z.object({
   id: z.string().min(1),
   institutionSlug: z.string().min(1),
   publisher: z.string().trim().min(1),
+  title: z.string().trim().min(1).optional(),
   url: z.url().startsWith('https://'),
   publicationDate: z.iso.date().nullable(),
   academicYear: z.string().nullable(),
   retrievedAt: z.iso.datetime(),
-  access: z.enum(['PUBLIC_HTML_READ', 'PUBLIC_PDF_READ']),
+  access: z.enum(['PUBLIC_HTML_READ', 'PUBLIC_PDF_READ', 'REGISTERED_INDIVIDUAL_FACT_RELEASE']),
   reuseConditions: z.string().trim().min(1),
   evidenceLocations: z.array(z.string().trim().min(1)).min(1),
 }).strict();
@@ -33,6 +34,11 @@ const claimSchema = z.union([
   claimBase.extend({
     field: z.literal('structured'), value: structuredFact,
     validFrom: z.iso.date().optional(), validUntil: z.iso.date().optional(),
+  campusScope: z.string().trim().min(1).optional(),
+  applicablePeriod: z.string().trim().min(1).optional(),
+  publisherPeriod: z.string().trim().min(1).optional(),
+  historical: z.boolean().optional(),
+  sourceReportedRef: z.string().trim().min(1).optional(),
   }),
 ]);
 
@@ -65,11 +71,17 @@ export function validateOfficialFacts(input: unknown, now = new Date()) {
   const manifest = officialFactsManifestSchema.parse(input);
   const sources = new Map(manifest.sources.map((source) => [source.id, source]));
   if (sources.size !== manifest.sources.length) throw new Error('Duplicate source identifiers in manifest');
+  const releaseRefs = new Set<string>();
+  const semanticClaims = new Set<string>();
   for (const source of manifest.sources) {
     const url = new URL(source.url);
     if (url.username || url.password || new Date(source.retrievedAt) > now) throw new Error('Invalid source identity or collection time');
   }
   return manifest.candidateClaims.map((claim) => {
+    if (claim.field === 'structured' && claim.sourceReportedRef) {
+      if (releaseRefs.has(claim.sourceReportedRef)) throw new Error('Duplicate source-reported release reference in manifest');
+      releaseRefs.add(claim.sourceReportedRef);
+    }
     const source = sources.get(claim.sourceIds[0]);
     if (!source || source.institutionSlug !== claim.institutionSlug) throw new Error('Claim/source institution mismatch');
     const academicYear = yearNumber(claim.academicYear);
@@ -88,6 +100,9 @@ export function validateOfficialFacts(input: unknown, now = new Date()) {
           (kind === 'recognition' && (!claim.validFrom || !claim.validUntil))) throw new Error('Invalid structured validity period');
       if (source.publicationDate && source.publicationDate > source.retrievedAt.slice(0, 10)) throw new Error('Publication after collection');
       const scope = JSON.stringify(structuredScope(claim.value).map((part) => part.normalize('NFKC').replace(/\s+/g, ' ').toLowerCase()));
+      const semanticKey = checksum([claim.institutionSlug, `structured.${kind}`, claim.value, academicYear ?? null, scope, new URL(source.url).href]);
+      if (semanticClaims.has(semanticKey)) throw new Error('Duplicate semantic fact in manifest');
+      semanticClaims.add(semanticKey);
       return { claim, source, academicYear, field: `structured.${kind}`, scope };
     }
     return { claim, source, academicYear, field: claim.field, scope: claim.academicYear ? `Academic year ${claim.academicYear}` : null };
@@ -117,31 +132,68 @@ export async function importOfficialFacts(
 
 export type OfficialFactRows = ReturnType<typeof validateOfficialFacts>;
 
+function sourceFingerprint(source: OfficialFactRows[number]['source']) {
+  return checksum(['official-fact-source-v1', source.publisher, source.title ?? null, new URL(source.url).href, source.retrievedAt, source.publicationDate, source.reuseConditions]);
+}
+
 export async function stageOfficialFactRows(db: PrismaClient, rows: OfficialFactRows, ownerPlan?: (tx: Prisma.TransactionClient, rows: OfficialFactRows) => Promise<OfficialFactRows>): Promise<OfficialFactsImportResult> {
   return db.$transaction(async (tx) => {
     // Serialize this bounded importer so concurrent retries cannot duplicate audit events.
     await tx.$executeRaw`SELECT pg_advisory_xact_lock(180231, 3)`;
-    const selectedRows = ownerPlan ? await ownerPlan(tx, rows) : rows;
+    const plannedRows = ownerPlan ? await ownerPlan(tx, rows) : rows;
     const collegeBySlug = new Map<string, { id: string }>();
-    for (const slug of new Set(selectedRows.map(({ claim }) => claim.institutionSlug))) {
+    for (const slug of new Set(plannedRows.map(({ claim }) => claim.institutionSlug))) {
       collegeBySlug.set(slug, await tx.college.findUniqueOrThrow({ where: { slug }, select: { id: true } }));
+    }
+    const selectedRows: OfficialFactRows = [];
+    const reusedClaims: Array<{ institutionSlug: string; field: string; evidenceId: string; sourceId: string; sourceUrl: string; status: 'REUSED' }> = [];
+    for (const row of plannedRows) {
+      const { claim, source, field, academicYear, scope } = row;
+      const college = collegeBySlug.get(claim.institutionSlug)!;
+      const sourceKey = sourceFingerprint(source);
+      const validity = claim.field === 'structured' ? [claim.validFrom ?? null, claim.validUntil ?? null] : [];
+      const identityKey = checksum([college.id, field, claim.value, sourceKey, academicYear ?? null, claim.academicYear, ...validity, claim.field === 'structured' ? claim.sourceReportedRef ?? null : null]);
+      const priorRelease = claim.field === 'structured' && claim.sourceReportedRef
+        ? await tx.fieldEvidence.findUnique({ where: { sourceReportedRef: claim.sourceReportedRef }, select: { id: true, identityKey: true, sourceId: true } })
+        : null;
+      const releaseRef = claim.field === 'structured' ? claim.sourceReportedRef : undefined;
+      if (priorRelease && priorRelease.identityKey !== identityKey) {
+        throw new Error(`Source-reported release ${releaseRef} already exists with different data; preserve the prior record and review a correction separately`);
+      }
+      const existing = await tx.fieldEvidence.findUnique({ where: { identityKey }, select: { id: true, sourceId: true } });
+      const duplicate = existing ?? (claim.field === 'structured'
+        ? await tx.fieldEvidence.findFirst({
+          where: {
+            collegeId: college.id, field, value: { equals: claim.value as Prisma.InputJsonValue },
+            academicYear: academicYear ?? null, programScope: scope,
+            source: { is: { url: source.url } },
+          },
+          select: { id: true, sourceId: true },
+          orderBy: [{ createdAt: 'asc' }, { id: 'asc' }],
+        })
+        : null);
+      if (duplicate) {
+        reusedClaims.push({ institutionSlug: claim.institutionSlug, field, evidenceId: duplicate.id, sourceId: duplicate.sourceId, sourceUrl: source.url, status: 'REUSED' });
+      } else selectedRows.push(row);
     }
     const sourceIds = new Map<string, string>();
     const sourceKeys = new Map<string, string>();
     let createdSources = 0;
     for (const { source } of selectedRows) {
       if (sourceIds.has(source.id)) continue;
-      const sourceKey = checksum(['official-fact-source-v1', source.publisher, new URL(source.url).href, source.retrievedAt, source.publicationDate, source.reuseConditions]);
+      const sourceKey = sourceFingerprint(source);
       const priorSource = await tx.source.findUnique({ where: { identityKey: sourceKey }, select: { id: true } });
       const stored = await tx.source.upsert({
         where: { identityKey: sourceKey },
         update: {},
         create: {
           identityKey: sourceKey,
-          name: `Official source facts (${source.institutionSlug})`,
+          name: source.title ?? `Official source facts (${source.institutionSlug})`,
           publisher: source.publisher,
           url: source.url,
-          license: 'Short factual extraction with attribution and source link only; explicit bulk reuse permission not established',
+          license: source.access === 'REGISTERED_INDIVIDUAL_FACT_RELEASE'
+            ? 'Individual factual attribution release recorded in the source-reported register; no bulk source text or tables stored'
+            : 'Short factual extraction with attribution and source link only; explicit bulk reuse permission not established',
           retrievedAt: new Date(source.retrievedAt),
           publishedAt: source.publicationDate ? new Date(`${source.publicationDate}T00:00:00.000Z`) : null,
           notes: `${source.access}; ${source.reuseConditions}; no document or source prose stored`,
@@ -161,7 +213,7 @@ export async function stageOfficialFactRows(db: PrismaClient, rows: OfficialFact
     let reused = rows.length - selectedRows.length;
     let createdRuns = 0;
     let repairedRuns = 0;
-    const claimResults: Array<{ institutionSlug: string; field: string; evidenceId: string; sourceId: string; sourceUrl: string; status: 'STAGED' | 'REUSED' }> = [];
+    const claimResults: Array<{ institutionSlug: string; field: string; evidenceId: string; sourceId: string; sourceUrl: string; status: 'STAGED' | 'REUSED' }> = [...reusedClaims];
     for (const [sourceManifestId, sourceRows] of claimsBySource) {
       let sourceStaged = 0;
       let sourceReused = 0;
@@ -170,7 +222,11 @@ export async function stageOfficialFactRows(db: PrismaClient, rows: OfficialFact
       const runChecksum = checksum(sourceRows.map(({ claim, academicYear }) => ({
         slug: claim.institutionSlug, field: claim.field, value: claim.value,
         academicYear, evidenceLocation: claim.evidenceLocation,
-        ...(claim.field === 'structured' ? { validFrom: claim.validFrom, validUntil: claim.validUntil } : {}),
+        ...(claim.field === 'structured' ? {
+          validFrom: claim.validFrom, validUntil: claim.validUntil, campusScope: claim.campusScope,
+          applicablePeriod: claim.applicablePeriod, publisherPeriod: claim.publisherPeriod,
+          historical: claim.historical, sourceReportedRef: claim.sourceReportedRef,
+        } : {}),
       })));
       const runKey = checksum(['official-fact-import-v1', sourceKey, runChecksum]);
       const priorRun = await tx.importRun.findUnique({ where: { identityKey: runKey }, select: { id: true, startedAt: true, finishedAt: true } });
@@ -184,7 +240,13 @@ export async function stageOfficialFactRows(db: PrismaClient, rows: OfficialFact
         const college = collegeBySlug.get(claim.institutionSlug)!;
         const value = claim.value;
         const validity = claim.field === 'structured' ? [claim.validFrom ?? null, claim.validUntil ?? null] : [];
-        const identityKey = checksum([college.id, field, value, sourceKey, academicYear ?? null, claim.academicYear, ...validity]);
+        const identityKey = checksum([college.id, field, value, sourceKey, academicYear ?? null, claim.academicYear, ...validity, claim.field === 'structured' ? claim.sourceReportedRef ?? null : null]);
+        if (claim.field === 'structured' && claim.sourceReportedRef) {
+          const priorRelease = await tx.fieldEvidence.findUnique({ where: { sourceReportedRef: claim.sourceReportedRef }, select: { id: true, identityKey: true } });
+          if (priorRelease && priorRelease.identityKey !== identityKey) {
+            throw new Error(`Source-reported release ${claim.sourceReportedRef} already exists with different data; preserve the prior record and review a correction separately`);
+          }
+        }
         const existing = await tx.fieldEvidence.findUnique({ where: { identityKey }, select: { id: true } });
         const evidence = await tx.fieldEvidence.upsert({
           where: { identityKey },
@@ -197,6 +259,13 @@ export async function stageOfficialFactRows(db: PrismaClient, rows: OfficialFact
             value,
             academicYear: academicYear ?? null,
             programScope: scope,
+            ...(claim.field === 'structured' ? {
+              campusScope: claim.campusScope ?? null,
+              applicablePeriod: claim.applicablePeriod ?? null,
+              publisherPeriod: claim.publisherPeriod ?? null,
+              historical: claim.historical ?? false,
+              sourceReportedRef: claim.sourceReportedRef ?? null,
+            } : {}),
             ...(claim.field === 'structured' ? {
               validFrom: claim.validFrom ? new Date(claim.validFrom) : null,
               validUntil: claim.validUntil ? new Date(`${claim.validUntil}T23:59:59.999Z`) : null,
@@ -216,7 +285,15 @@ export async function stageOfficialFactRows(db: PrismaClient, rows: OfficialFact
         await tx.auditLog.create({
           data: {
             action: 'official.fact.stage', targetType: 'FieldEvidence', targetId: evidence.id,
-            metadata: { importRunId: run.id, reviewState: 'UNREVIEWED', sourceManifestId },
+            metadata: {
+              importRunId: run.id,
+              reviewState: 'UNREVIEWED',
+              publicationStatus: claim.field === 'structured' && claim.sourceReportedRef
+                ? 'SOURCE_REPORTED_REGISTERED'
+                : 'UNREVIEWED_CANDIDATE',
+              sourceManifestId,
+              sourceReportedRef: claim.field === 'structured' ? claim.sourceReportedRef ?? null : null,
+            },
           },
         });
         staged += 1;

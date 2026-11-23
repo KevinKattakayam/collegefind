@@ -102,6 +102,7 @@ function ComparePage() {
     if (k >= 0) out.push(`Highest listed average package: ${compareList[k].shortName} (${formatLPA(compareList[k].avgPackage)})`);
     return out;
   };
+  const verdicts = generateVerdict();
 
   const handleShareComparison = () => {
     const names = compareList.map(c => c.shortName).join(' vs ');
@@ -274,7 +275,7 @@ function ComparePage() {
       )}
 
       {/* Verdict */}
-      {compareList.length >= 2 && (
+      {compareList.length >= 2 && (verdicts.length > 0 || hasDemo) && (
         <div className="card-premium p-6 mb-8">
           <h3 className="font-bold text-lg text-[#1E293B] mb-4 flex items-center gap-2">
             At a glance
@@ -285,7 +286,7 @@ function ComparePage() {
             </p>
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {generateVerdict().map((v, i) => (
+            {verdicts.map((v, i) => (
               <div key={i} className="bg-[#F8FAFC] rounded-lg p-3 text-sm text-[#475569]">
                 {v}
               </div>

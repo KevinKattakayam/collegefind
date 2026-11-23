@@ -68,6 +68,9 @@ test('a clean browser and refresh load current records from a shared URL', async
  await page.reload();
  await expect(page.getByRole('region', { name: 'Comparison slot for Current beta' }).getByRole('heading',{name:'Current beta',exact:true})).toBeVisible();
  await expect(page.getByText('Lowest listed annual fees:')).toHaveCount(0);
+ await expect(page.getByText('Verified numeric metrics are not available for these colleges yet. Source-reported details are compared below.')).toBeVisible();
+ await expect(page.locator('canvas[aria-label^="Radar comparison chart"]')).toHaveCount(0);
+ await expect(page.getByRole('heading', { name: 'At a glance' })).toHaveCount(0);
 });
 test('comparison keeps source-reported admissions facts separate from reviewed facts', async ({page}) => {
  const sourceReported = {

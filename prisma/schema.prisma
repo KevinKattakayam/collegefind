@@ -518,28 +518,33 @@ model AuditLog {
 
 // Profile claims only; financial/admission values stay in their existing typed tables.
 model FieldEvidence {
-  isFixture       Boolean            @default(false)
-  evidenceLocator String?
-  evidenceSnippet String?
-  publishedAt     DateTime?
-  id              String             @id @default(cuid())
-  collegeId       String
-  field           String
-  value           Json
-  unit            String?
-  programScope    String?
-  academicYear    Int?
-  validFrom       DateTime?
-  validUntil      DateTime?
-  sourceId        String
-  identityKey     String             @unique
-  supersedesId    String?
-  createdAt       DateTime           @default(now())
-  college         College            @relation(fields: [collegeId], references: [id], onDelete: Restrict)
-  source          Source             @relation(fields: [sourceId], references: [id], onDelete: Restrict)
-  supersedes      FieldEvidence?     @relation("EvidenceHistory", fields: [supersedesId], references: [id], onDelete: Restrict)
-  successors      FieldEvidence[]    @relation("EvidenceHistory")
-  decisions       EvidenceDecision[]
+  isFixture         Boolean            @default(false)
+  campusScope       String?
+  applicablePeriod  String?
+  publisherPeriod   String?
+  historical        Boolean            @default(false)
+  sourceReportedRef String?            @unique
+  evidenceLocator   String?
+  evidenceSnippet   String?
+  publishedAt       DateTime?
+  id                String             @id @default(cuid())
+  collegeId         String
+  field             String
+  value             Json
+  unit              String?
+  programScope      String?
+  academicYear      Int?
+  validFrom         DateTime?
+  validUntil        DateTime?
+  sourceId          String
+  identityKey       String             @unique
+  supersedesId      String?
+  createdAt         DateTime           @default(now())
+  college           College            @relation(fields: [collegeId], references: [id], onDelete: Restrict)
+  source            Source             @relation(fields: [sourceId], references: [id], onDelete: Restrict)
+  supersedes        FieldEvidence?     @relation("EvidenceHistory", fields: [supersedesId], references: [id], onDelete: Restrict)
+  successors        FieldEvidence[]    @relation("EvidenceHistory")
+  decisions         EvidenceDecision[]
 
   @@index([collegeId, field])
   @@index([createdAt(sort: Desc), id(sort: Desc)])

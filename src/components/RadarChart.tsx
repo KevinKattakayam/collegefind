@@ -22,6 +22,9 @@ const COLORS = [
 
 export default function RadarChart({ colleges }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const hasVerifiedMetrics = colleges.some((college) => METRICS.some((metric) =>
+    college.fieldEvidence?.[metric.key]?.status === 'AVAILABLE' && college[metric.key] !== null,
+  ));
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -139,6 +142,15 @@ export default function RadarChart({ colleges }: Props) {
   }, [colleges]);
 
   if (colleges.length < 2) return null;
+
+  if (!hasVerifiedMetrics) {
+    return (
+      <section className="bg-white rounded-lg border border-[#E2E8F0] p-6" aria-labelledby="comparison-metrics-title">
+        <h3 id="comparison-metrics-title" className="font-bold text-lg text-[#1E293B] mb-2">Verified metric comparison</h3>
+        <p className="text-sm text-slate-600">Verified numeric metrics are not available for these colleges yet. Source-reported details are compared below.</p>
+      </section>
+    );
+  }
 
   return (
     <div className="bg-white rounded-lg border border-[#E2E8F0] p-6">
