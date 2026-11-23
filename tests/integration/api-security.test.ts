@@ -20,6 +20,7 @@ vi.mock('next-auth', () => ({
 }));
 
 const { resetRateLimitsForTests } = await import('@/lib/rate-limit');
+const { authOptions } = await import('@/lib/auth');
 const seedRoute = await import('@/app/api/seed/route');
 const registerRoute = await import('@/app/api/auth/register/route');
 const savedRoute = await import('@/app/api/saved/route');
@@ -139,11 +140,45 @@ describe('seed endpoint (was: public and destructive)', () => {
 describe('registration', () => {
   const body = (o: object) => ({ method: 'POST', body: JSON.stringify(o) });
 
-  it('creates a user and never returns the password hash', async () => {
+  it('creates an unverified normal USER, permits credentials login, and never returns the password hash', async () => {
     const res = await json(await registerRoute.POST(req('/api/auth/register', body({ name: 'Asha', email: 'asha@example.com', password: 'correct horse battery' }))));
     expect(res.status).toBe(201);
     expect(JSON.stringify(res.body)).not.toContain('$2');
     expect(res.body.user.email).toBe('asha@example.com');
+    const stored = await db.user.findUniqueOrThrow({ where: { email: 'asha@example.com' } });
+    expect(stored.role).toBe('USER');
+    expect(stored.emailVerified).toBeNull();
+    const credentialsProvider = authOptions.providers[0] as unknown as { options: { authorize: (credentials: unknown, request?: { headers?: Record<string, unknown> }) => Promise<unknown> } };
+    const signedInUser = await credentialsProvider.options.authorize({ email: 'asha@example.com', password: 'correct horse battery' }, { headers: { 'x-forwarded-for': '203.0.113.12' } });
+    expect(signedInUser).toMatchObject({ id: stored.id, email: 'asha@example.com', role: 'USER' });
+    expect((await db.user.findUniqueOrThrow({ where: { id: stored.id } })).emailVerified).toBeNull();
+  });
+
+  it('fails closed before database access when production has no distributed rate-limit provider', async () => {
+    const previous = {
+      nodeEnv: process.env.NODE_ENV,
+      confirmed: process.env.COLLEGEFIND_TEST_DATABASE_CONFIRMED,
+      redisUrl: process.env.UPSTASH_REDIS_REST_URL,
+      redisToken: process.env.UPSTASH_REDIS_REST_TOKEN,
+      nextAuthUrl: process.env.NEXTAUTH_URL,
+    };
+    try {
+      Reflect.set(process.env, 'NODE_ENV', 'production');
+      process.env.COLLEGEFIND_TEST_DATABASE_CONFIRMED = 'false';
+      process.env.UPSTASH_REDIS_REST_URL = '';
+      process.env.UPSTASH_REDIS_REST_TOKEN = '';
+      process.env.NEXTAUTH_URL = ORIGIN;
+      const res = await json(await registerRoute.POST(req('/api/auth/register', body({ name: 'Disposable', email: 'must-not-write@example.test', password: 'correct horse battery' }))));
+      expect(res).toMatchObject({ status: 503, body: { code: 'RATE_LIMIT_UNAVAILABLE' } });
+      expect(await db.user.count()).toBe(0);
+    } finally {
+      const restore = (key: string, value: string | undefined) => value === undefined ? Reflect.deleteProperty(process.env, key) : Reflect.set(process.env, key, value);
+      restore('NODE_ENV', previous.nodeEnv);
+      restore('COLLEGEFIND_TEST_DATABASE_CONFIRMED', previous.confirmed);
+      restore('UPSTASH_REDIS_REST_URL', previous.redisUrl);
+      restore('UPSTASH_REDIS_REST_TOKEN', previous.redisToken);
+      restore('NEXTAUTH_URL', previous.nextAuthUrl);
+    }
   });
 
   it('rejects weak passwords with field-level errors', async () => {

@@ -91,6 +91,10 @@ export UPSTASH_REDIS_REST_URL='' UPSTASH_REDIS_REST_TOKEN='' ADMIN_SEED_TOKEN=''
 npm run dev -- --hostname 127.0.0.1 --port 3317
 ```
 
+Use this local development command for the owner workflow when Redis credentials are intentionally blank. Do not launch `npm start`/`next start` in that configuration: it runs with `NODE_ENV=production`, and registration, login, and other sensitive rate-limited actions correctly fail closed with `503 RATE_LIMIT_UNAVAILABLE` when the distributed Upstash limiter is not configured. Development uses the existing in-process limiter (5 registration attempts per IP per hour); this is suitable only for the single loopback owner-review process, not production or multi-instance abuse protection. No rate-limit guard is disabled.
+
+There is currently no mail provider or provider-backed email-verification flow. Registration stores `emailVerified = NULL`; it does not mark the address verified, and the current credentials login accepts the resulting account. Password recovery and email changes remain unavailable. Treat this as a documented local account limitation, not evidence of a verified email identity or production-ready account recovery.
+
 To start PostgreSQL after a host reboot, use `docker start collegefind-owner-review-postgres`. To stop it safely without deleting its data, use `docker stop collegefind-owner-review-postgres`; the named volume remains. Stop the app with Ctrl+C in the terminal where it was started. If it is running as the managed local process, identify and stop only the Next server bound to port 3317:
 
 ```bash
