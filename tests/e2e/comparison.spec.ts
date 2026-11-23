@@ -69,6 +69,27 @@ test('a clean browser and refresh load current records from a shared URL', async
  await expect(page.getByRole('region', { name: 'Comparison slot for Current beta' }).getByRole('heading',{name:'Current beta',exact:true})).toBeVisible();
  await expect(page.getByText('Lowest listed annual fees:')).toHaveCount(0);
 });
+test('comparison keeps source-reported admissions facts separate from reviewed facts', async ({page}) => {
+ const sourceReported = {
+  ref: 'comparison-source-fixture',
+  value: { kind: 'admission', programme: 'B.Tech', route: 'JoSAA counselling', category: 'UG', exam: 'JEE Advanced' },
+  campus: 'Main campus', publisher: 'Official fixture source', url: 'https://example.edu/admissions',
+  evidenceLocation: 'Admissions page, undergraduate section', sourceTitle: 'Fixture admissions route',
+  collectedAt: '2026-01-02T00:00:00.000Z', publicationDate: null, academicYear: '2026-27',
+  publisherPeriod: '2026-27 intake', historical: true, checkedAt: '2026-01-03T00:00:00.000Z',
+  status: 'OFFICIAL_SOURCE_REPORTED',
+ };
+ await page.route('**/api/colleges/alpha', route => route.fulfill({json:{college:{...fixture('alpha'),sourceReportedFacts:[sourceReported]}}}));
+ await page.route('**/api/colleges/beta', route => route.fulfill({json:{college:fixture('beta')}}));
+ await page.goto('/compare?colleges=alpha,beta');
+ const table = page.getByRole('table', {name:/Source-reported programmes/});
+ await expect(table).toBeVisible();
+ await expect(table.getByText('B.Tech · JoSAA counselling · UG · JEE Advanced')).toBeVisible();
+ await expect(table.getByText(/Source-reported; not independently verified · Main campus · Academic year 2026-27 · Historical/)).toBeVisible();
+ await expect(table.getByRole('link', {name:'Open cited official source'})).toHaveAttribute('href','https://example.edu/admissions');
+ await expect(page.getByRole('region', {name:'Reviewed information for Current alpha'}).getByText('No current reviewed structured facts available.')).toBeVisible();
+ await expect(table.getByText('Not available').first()).toBeVisible();
+});
 test('invalid duplicate and missing identifiers do not retain stale comparisons', async ({page}) => {
  await page.goto('/compare?colleges=alpha,alpha');
  await expect(page.getByText('This comparison link is invalid.')).toBeVisible();

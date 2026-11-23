@@ -8,6 +8,22 @@ export type ViewMode = 'grid' | 'list';
 
 /** Matches `collegeListSelect` in src/server/colleges.ts. Null means "unknown". */
 export interface College {
+  sourceReportedFacts?: {
+    ref: string;
+    value: StructuredFact;
+    campus: string;
+    publisher: string;
+    url: string;
+    evidenceLocation: string;
+    sourceTitle: string;
+    collectedAt: Date | string;
+    publicationDate: Date | string | null;
+    academicYear: string | number | null;
+    publisherPeriod?: string;
+    historical: boolean;
+    checkedAt: Date | string;
+    status: 'OFFICIAL_SOURCE_REPORTED';
+  }[];
   structuredFacts?: { key: string; value: StructuredFact; academicYear: number | null; validUntil: Date | string | null; source: { url: string; publisher: string; locator?: string | null; publishedAt: Date | string | null; retrievedAt: Date | string; reviewedAt: Date | string | null } }[];
   admissions?: string | null;
   fieldEvidence?: Record<string, {status: string; year?: number | null; sources?: { url: string; publisher: string; publishedAt?: Date | string | null; retrievedAt: Date | string; reviewedAt?: Date | string | null }[]}>;

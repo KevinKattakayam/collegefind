@@ -16,7 +16,8 @@ import { structuredLabels } from '@/server/ingest/structured-facts';
 import { listPublicCutoffs } from '@/server/cutoffs';
 import { collegeSourceLinks } from '@/server/college-source-links';
 import { logger, errorFields } from '@/lib/logger';
-import { eligibleSourceReported, suppressSourceReported, type SourceReportedFact } from '@/server/source-reported';
+import { publicSourceReportedFacts } from '@/server/source-reported-public';
+import type { SourceReportedFact } from '@/server/source-reported';
 
 export const dynamic = 'force-dynamic';
 
@@ -50,19 +51,6 @@ async function getSimilar(college: { id: string; state: string; type: 'GOVERNMEN
   });
 }
 
-async function getSourceReported(college: College) {
-  const facts = eligibleSourceReported(college);
-  if (!facts.length) return [];
-  const rows = await prisma.fieldEvidence.findMany({
-    where: { collegeId: college.id, isFixture: false, field: { in: [...new Set(facts.flatMap(({ value }) => value.kind === 'programme' ? ['structured.programme', 'courses'] : [`structured.${value.kind}`]))] } },
-    select: {
-      id: true, field: true, isFixture: true, value: true, academicYear: true, validFrom: true, validUntil: true, supersedesId: true,
-      decisions: { orderBy: [{ createdAt: 'desc' }, { id: 'desc' }], take: 1, select: { status: true } },
-    },
-  });
-  return suppressSourceReported(facts, rows, college.structuredFacts ?? []);
-}
-
 export default async function CollegeDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const key = (await params).id;
   const college = await getCollege(key);
@@ -81,7 +69,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
       logger.warn('college_profile_related_unavailable', errorFields(error));
       return [];
     }),
-    getSourceReported(listCollege).catch((error: unknown) => {
+    publicSourceReportedFacts(listCollege).catch((error: unknown) => {
       logger.warn('college_profile_source_reported_unavailable', errorFields(error));
       return [];
     }),

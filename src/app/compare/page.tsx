@@ -61,6 +61,7 @@ function bestIndex(list: College[], m: Metric): number {
 
 function ComparePage() {
   const searchParams = useSearchParams();
+  const sharedCollegeList = searchParams.get('colleges');
   const { compareList, removeFromCompare, clearCompare, replaceCompare, replaceCompareAt } = useCompare();
   const router = useRouter();
   const [modalSlot, setModalSlot] = useState<number | null>(null);
@@ -69,9 +70,8 @@ function ComparePage() {
   const hasDemo = compareList.some((c) => c.dataStatus === 'DEMO');
 
   useEffect(() => {
-    const raw = searchParams.get('colleges');
-    if (!raw) return;
-    const slugs = comparisonSlugs(raw.split(','));
+    if (!sharedCollegeList) return;
+    const slugs = comparisonSlugs(sharedCollegeList.split(','));
     if (!slugs) { clearCompare(); toast.error('This comparison link is invalid.'); return; }
     let active = true;
     Promise.all(slugs.map((slug) => apiJson<{ college: College }>(`/api/colleges/${encodeURIComponent(slug)}`)))
@@ -80,7 +80,7 @@ function ComparePage() {
     return () => { active = false; };
   // A shared URL is the canonical source when present; local storage remains the editable draft otherwise.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchParams]);
+  }, [sharedCollegeList]);
 
   const getBestIndex = (key: string) => {
     const m = METRICS.find((x) => x.key === key);
@@ -234,6 +234,41 @@ function ComparePage() {
                 <Link href={`/cutoffs?college=${encodeURIComponent(college.slug)}`} className="mt-4 inline-block text-sm text-indigo-700 underline">Explore reviewed cutoff history</Link>
               </section>
             ))}
+          </div>
+        </section>
+      )}
+
+      {compareList.length >= 2 && (
+        <section aria-labelledby="source-reported-comparison-title" className="mb-8">
+          <h2 id="source-reported-comparison-title" className="text-xl font-bold text-slate-900 mb-2">Source-reported college details</h2>
+          <p className="text-sm text-slate-600 mb-4">These factual details are attributed to official institution sources and have not been independently verified. Scope and year may differ; use each source before relying on a detail. On smaller screens, scroll the table horizontally to compare each college.</p>
+          <div tabIndex={0} role="region" aria-label="Scrollable source-reported college comparison" className="overflow-x-auto rounded-xl border border-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-700">
+            <table className="min-w-[900px] border-collapse text-left text-sm">
+              <caption className="sr-only">Source-reported programmes, admissions routes, facilities and contacts for the selected colleges</caption>
+              <thead className="bg-slate-50">
+                <tr><th scope="col" className="p-3 font-semibold">Information category</th>
+                  {compareList.map((college) => <th scope="col" key={college.id} className="min-w-64 p-3 font-semibold">{college.name}<span className="block text-xs font-normal text-slate-600">{college.city}, {college.state}</span></th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {(['programme', 'admission', 'facility', 'contact'] as const).map((kind) => (
+                  <tr key={kind} className="border-t align-top">
+                    <th scope="row" className="p-3 font-medium">{{ programme: 'Programmes and degrees', admission: 'Admission routes', facility: 'Facilities', contact: 'Contacts' }[kind]}</th>
+                    {compareList.map((college) => {
+                      const facts = (college.sourceReportedFacts ?? []).filter((fact) => fact.value.kind === kind);
+                      return <td key={college.id} className="p-3">
+                        {facts.length ? <ul className="space-y-3">{facts.map((fact) => <li key={fact.ref}>
+                          <p className="font-medium">{factText(fact.value)}</p>
+                          <p className="mt-1 text-xs text-slate-600">Source-reported; not independently verified · {fact.campus} · {fact.academicYear ? `Academic year ${fact.academicYear}` : 'Year not specified'}{fact.historical ? ' · Historical' : ''}</p>
+                          <p className="mt-1 text-xs text-slate-600">{fact.publisher} · Retrieved {new Date(fact.collectedAt).toLocaleDateString('en-IN')}{fact.evidenceLocation ? ` · ${fact.evidenceLocation}` : ''}</p>
+                          <a className="mt-1 inline-block break-all text-xs text-indigo-700 underline" href={fact.url} target="_blank" rel="noopener noreferrer">Open cited official source</a>
+                        </li>)}</ul> : <span className="text-slate-500">Not available</span>}
+                      </td>;
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
       )}
