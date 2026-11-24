@@ -1,0 +1,401 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchedAt": "2026-11-17T18:14:23Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "access": "Official pages and documents listed below were read through their public URLs without authentication, CAPTCHA bypass, or automated crawling.",
+    "reuse": "Provider-specific permissions for automated collection, persistent evidence snippets, document storage, and bulk redistribution were not established. This pass records short factual statements, exact links, publisher attribution, and evidence locations only. No source document or substantial prose is stored. Do not treat this as blanket republication permission; obtain any provider approval required before scale-up.",
+    "review": "All fact candidates are unreviewed and not imported. Retrieval is not human verification."
+  },
+  "sources": [
+    {
+      "id": "iitb-ug-programmes",
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "publisher": "Indian Institute of Technology Bombay, Academic Office",
+      "url": "https://acad.iitb.ac.in/admissions/bachelors",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-17T18:14:23Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "No explicit reuse licence identified on the reviewed page; factual values with attribution/link only for this manual research record. No bulk reuse or copying of prose authorised.",
+      "evidenceLocations": [
+        "Bachelors' Programmes; lines 18-31, 33-35, 59-62"
+      ]
+    },
+    {
+      "id": "iitb-fee-circular-2026-27",
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "publisher": "Indian Institute of Technology Bombay, Academic Office",
+      "url": "https://acad.iitb.ac.in/sites/default/files/Final%20SignedFee_circular_2026-27.pdf",
+      "publicationDate": "2026-05-05",
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-17T18:14:23Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Publicly accessible signed fee notice; no bulk document storage or redistribution. Factual breakdown retained as a candidate with source citation only; source-specific reuse terms not established.",
+      "evidenceLocations": [
+        "UG New Entrants (Autumn Semester 2026-27), sections I(A)-I(C), PDF lines 68-89"
+      ]
+    },
+    {
+      "id": "iitd-ug-admissions-2026-27",
+      "institutionSlug": "indian-institute-of-technology-delhi",
+      "publisher": "Indian Institute of Technology Delhi, Academics",
+      "url": "https://academics.iitd.ac.in/ug-admissions/",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-17T18:14:23Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "No explicit reuse licence identified on the reviewed page; factual summary and link only. No bulk reuse or prose copying authorised.",
+      "evidenceLocations": [
+        "UG Admissions; Class of 2026-27; lines 27-34"
+      ]
+    },
+    {
+      "id": "nitt-academic-programmes",
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "publisher": "National Institute of Technology Tiruchirappalli",
+      "url": "https://www.nitt.edu/home/academics/programmes/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-17T18:14:23Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "No explicit reuse licence identified on the reviewed page; factual summary and link only. No bulk reuse or prose copying authorised.",
+      "evidenceLocations": [
+        "Academic Programmes; Undergraduate Programmes; B.Tech (8 semesters), B.Arch. (10 semesters)"
+      ]
+    },
+    {
+      "id": "nitt-btech-admissions-2026-27",
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "publisher": "National Institute of Technology Tiruchirappalli",
+      "url": "https://www.nitt.edu/home/admissions/btech/",
+      "publicationDate": "2026-08-17",
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-17T18:14:23Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public admissions page; no explicit reuse licence identified. Cite and link the factual process only; do not store or redistribute linked notices in bulk.",
+      "evidenceLocations": [
+        "Admission Notice; JoSAA/CSAB/DASA 2026-27; updated 17.08.2026; lines 133-149"
+      ]
+    },
+    {
+      "id": "cuh-admissions-2026-27",
+      "institutionSlug": "central-university-of-haryana",
+      "publisher": "Central University of Haryana",
+      "url": "https://cuh.ac.in/admission.aspx",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-17T18:14:23Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "No explicit reuse licence identified on the reviewed page; factual summary and link only. Linked application and notice documents are not copied or redistributed.",
+      "evidenceLocations": [
+        "Admissions 2026-27; linked B.Tech, CUET UG, BBA and other programme admissions; lines 183-190"
+      ]
+    },
+    {
+      "id": "cuh-ug-admissions-2026-27",
+      "institutionSlug": "central-university-of-haryana",
+      "publisher": "Central University of Haryana",
+      "url": "https://www.cuh.ac.in/cucetUG.aspx",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-17T18:14:23Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Page links to third-party Samarth application and university notices; no permission inferred for bulk document reuse. Link and short factual summary only.",
+      "evidenceLocations": [
+        "CUET UG 2026 admission links and notices; lines 181-185"
+      ]
+    },
+    {
+      "id": "vit-programmes-2027-28",
+      "institutionSlug": "vellore-institute-of-technology",
+      "publisher": "Vellore Institute of Technology, Admissions",
+      "url": "https://vit.ac.in/admissions/programmes-offered",
+      "publicationDate": null,
+      "academicYear": "2027-28",
+      "retrievedAt": "2026-11-17T18:14:23Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "This is a multi-campus VIT Group page; only programme entries explicitly listing Vellore may be attributed to this Vellore catalogue row. No explicit bulk reuse licence identified; link and factual details only.",
+      "evidenceLocations": [
+        "Programmes Offered 2027-28; B.Tech programme entries and Offered Location; lines 251-303"
+      ]
+    },
+    {
+      "id": "geu-admissions-2026-27",
+      "institutionSlug": "graphic-era-university",
+      "publisher": "Graphic Era (Deemed to be University), Dehradun",
+      "url": "https://geu.ac.in/admissions/admissions-overview",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-17T18:14:23Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Institution-specific admissions page was publicly readable; no explicit reuse licence identified. Keep only short factual summary, attribution, and source link.",
+      "evidenceLocations": [
+        "Admissions 2026; application process and programmes; lines 332-341"
+      ]
+    },
+    {
+      "id": "nitmz-btech-admissions-2026",
+      "institutionSlug": "nit-mizoram",
+      "publisher": "National Institute of Technology Mizoram",
+      "url": "https://nitmz.ac.in/admissions/b-tech-admissions/",
+      "publicationDate": null,
+      "academicYear": "2026",
+      "retrievedAt": "2026-11-17T18:14:23Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official page openly readable; no explicit reuse licence identified. Store a cited factual summary only; do not copy or redistribute linked brochures.",
+      "evidenceLocations": [
+        "B.Tech Admissions (2026); route through JoSAA/CSAB; page body below heading"
+      ]
+    },
+    {
+      "id": "nitmz-programmes",
+      "institutionSlug": "nit-mizoram",
+      "publisher": "National Institute of Technology Mizoram",
+      "url": "https://nitmz.ac.in/academics/programmes/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-17T18:14:23Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official programme table openly readable; no explicit reuse licence identified. Short attributed facts only, no bulk table republication.",
+      "evidenceLocations": [
+        "Programmes; B.Tech programme table (course, intake, duration)"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "field": "courses",
+      "value": [
+        "B.Tech \u2014 Aerospace Engineering",
+        "B.Tech \u2014 Chemical Engineering",
+        "B.Tech \u2014 Civil Engineering",
+        "B.Tech \u2014 Computer Science & Engineering",
+        "B.Tech \u2014 Electrical Engineering",
+        "B.Tech \u2014 Environmental Science and Engineering",
+        "B.Tech \u2014 Energy Science and Engineering",
+        "B.Tech \u2014 Industrial Engineering & Operations Research",
+        "B.Tech \u2014 Mechanical Engineering",
+        "B.Tech \u2014 Metallurgical Engineering & Materials Science",
+        "B.Tech \u2014 Engineering Physics",
+        "Dual Degree (B.Tech.+M.Tech.) \u2014 five years"
+      ],
+      "sourceIds": [
+        "iitb-ug-programmes"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Bachelors' Programmes, B.Tech list, Dual Degree description and admission routes, lines 18-35 and 59-62",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-delhi",
+      "field": "admissions",
+      "value": "The IIT Delhi page for the Class of 2026-27 describes entrants admitted through JEE (Advanced) 2026, Preparatory 2025 and UCEED 2026 across B.Tech., B.Tech.+M.Tech., B.Des. and B.S. programmes. This describes the named entering cohort and should not be generalized to other years.",
+      "sourceIds": [
+        "iitd-ug-admissions-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "UG Admissions; Class of 2026-27; lines 27-34",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "field": "courses",
+      "value": [
+        "B.Tech \u2014 Chemical Engineering (8 semesters)",
+        "B.Tech \u2014 Civil Engineering (8 semesters)",
+        "B.Tech \u2014 Computer Science and Engineering (8 semesters)",
+        "B.Tech \u2014 Electrical and Electronics Engineering (8 semesters)",
+        "B.Tech \u2014 Electronics and Communication Engineering (8 semesters)",
+        "B.Tech \u2014 Instrumentation and Control Engineering (8 semesters)",
+        "B.Tech \u2014 Mechanical Engineering (8 semesters)",
+        "B.Tech \u2014 Metallurgical and Materials Engineering (8 semesters)",
+        "B.Tech \u2014 Production Engineering (8 semesters)",
+        "B.Arch. (10 semesters)"
+      ],
+      "sourceIds": [
+        "nitt-academic-programmes"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Academic Programmes page, Undergraduate Programmes headings and duration lists",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "field": "admissions",
+      "value": "For academic year 2026-27, NIT Tiruchirappalli identifies JoSAA, CSAB and DASA admission routes for undergraduate entrants; its page says reporting details and fee payment instructions are provided in the linked notices.",
+      "sourceIds": [
+        "nitt-btech-admissions-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Admission Notice, lines 133-149",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "admissions",
+      "value": "The University lists UG and B.Tech admissions for 2026-27 and CUET UG 2026 admission notices, application instructions and programme notices. Individual programme eligibility must be taken from the linked programme notice, not inferred from this index page.",
+      "sourceIds": [
+        "cuh-ug-admissions-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Admissions 2026-27 and UG 2026 notice list, lines 183-190 and 181-185",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "phone",
+      "value": "+91 9416793397 (general admission helpline shown on the CUH admissions index)",
+      "sourceIds": [
+        "cuh-admissions-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "General Admission Helpline List, admissions.aspx page",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "email",
+      "value": "admissions@cuh.ac.in (general admission contact shown on the CUH admissions index)",
+      "sourceIds": [
+        "cuh-admissions-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "General Admission Helpline List, admissions.aspx page",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "vellore-institute-of-technology",
+      "field": "courses",
+      "value": [
+        "B.Tech \u2014 Biotechnology (Vellore, Chennai and VIT-AP campuses; 2027-28 page)"
+      ],
+      "sourceIds": [
+        "vit-programmes-2027-28"
+      ],
+      "academicYear": "2027-28",
+      "evidenceLocation": "Programmes Offered 2027-28, B.Tech Biotechnology Offered Location; lines 251-288",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "graphic-era-university",
+      "field": "admissions",
+      "value": "Graphic Era (Deemed to be University) describes 2026 admissions as merit-based on the qualifying examination and says the admission process is completed online. The page describes more than 85 UG, PG and doctoral programmes in aggregate; this is not a programme-level eligibility rule.",
+      "sourceIds": [
+        "geu-admissions-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Admissions 2026 overview and application process, lines 332-341",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-mizoram",
+      "field": "courses",
+      "value": [
+        "B.Tech \u2014 Civil Engineering (4 years)",
+        "B.Tech \u2014 Computer Science & Engineering (4 years)",
+        "B.Tech \u2014 Electrical Engineering (4 years)",
+        "B.Tech \u2014 Electronics & Communication Engineering (4 years)",
+        "B.Tech \u2014 Mechanical Engineering (4 years)",
+        "B.Tech \u2014 Mathematics & Computing (4 years)",
+        "B.Tech \u2014 Chemical Science & Technology (4 years)"
+      ],
+      "sourceIds": [
+        "nitmz-programmes"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programmes page, B.Tech table columns Name of course and Duration",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-mizoram",
+      "field": "admissions",
+      "value": "NIT Mizoram states that B.Tech admissions in 2026 are through seats allocated by JoSAA and CSAB; the page links to the counselling authorities.",
+      "sourceIds": [
+        "nitmz-btech-admissions-2026"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "B.Tech Admissions (2026) page, admission route paragraph",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchAttemptsWithoutSupportedClaim": [
+    {
+      "institutionSlug": "national-institute-of-technology-warangal",
+      "sourceUrl": "https://www.nitw.ac.in/adm/",
+      "publisher": "National Institute of Technology Warangal",
+      "result": "Blocked for direct readable evidence: the page responded with a JavaScript-required shell; search-result excerpts were not used as import evidence.",
+      "action": "Find a readable official notice or page before staging."
+    },
+    {
+      "institutionSlug": "central-university-of-kerala",
+      "sourceUrl": "https://www.cukerala.ac.in/Admissions/Admissions_CUK_Admissions",
+      "publisher": "Central University of Kerala",
+      "result": "The currently readable index points to a 2026-27 prospectus but the visible admissions links were legacy 2020-21/2021; no current programme eligibility or fee claim was staged.",
+      "action": "Locate and read the linked official current prospectus and programme-specific notices; verify applicable year before recording facts."
+    }
+  ],
+  "counts": {
+    "catalogueSize": 205,
+    "collegesWithSubstantiveOfficialFactsResearched": 7,
+    "collegesWithGenuinelyVerifiedSubstantiveClaims": 0,
+    "sourceReferencesReviewed": 11,
+    "importableByCurrentOfficialReferenceAdapter": 0,
+    "typedFeeCandidatesRequiringTypedImporter": 1,
+    "candidateClaimsReadyForFieldEvidenceImporter": 11,
+    "candidateClaimsStagedInDisposableDatabase": 0
+  },
+  "typedResearchFindings": [
+    {
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "field": "fees",
+      "value": {
+        "applicability": "UG new entrants, Autumn Semester 2026-27; B.Tech., B.Tech.+M.Tech., B.Des. and B.S.",
+        "indianNationals": {
+          "oneTimeAtAdmissionInr": 16000,
+          "perSemesterAcademicFeesInr": 108150,
+          "refundableDepositsAtAdmissionInr": 10000,
+          "listedAdmissionTotalInr": 134150
+        },
+        "foreignNationals": {
+          "oneTimeAtAdmissionInr": 16000,
+          "perSemesterAcademicFeesInr": 308150,
+          "refundableDepositsAtAdmissionInr": 10000,
+          "listedAdmissionTotalInr": 334150
+        },
+        "tuitionExemption": "SC, ST and PwD students are exempted from the listed tuition fee component.",
+        "caveat": "This is the source's initial admission total and per-semester schedule, not annual cost or total cost of attendance; hostel/mess not included. Do not flatten category/component distinctions."
+      },
+      "sourceIds": [
+        "iitb-fee-circular-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Signed fee circular, UG New Entrants (Autumn Semester 2026-27), I(A)-I(C) and footnote, PDF lines 68-89",
+      "status": "RESEARCHED_NOT_STAGED_SCHEMA_CANNOT_REPRESENT_CATEGORY_BREAKDOWN_SAFELY",
+      "reviewState": "UNREVIEWED"
+    }
+  ]
+}

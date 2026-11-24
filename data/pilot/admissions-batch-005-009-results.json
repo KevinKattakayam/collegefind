@@ -1,0 +1,100 @@
+[
+  {
+    "slug": "op-jindal-university",
+    "claimId": "cmwkzioa60002b9tvn4vb7p89",
+    "sourceId": "cmwkzio9t0000b9tv4yb744r8",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "nlu-jodhpur",
+    "claimId": "cmwkzioat0006b9tvh644yf0g",
+    "sourceId": "cmwkzioam0004b9tvuwxnntjh",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "graphic-era-university",
+    "claimId": "cmwkziob5000ab9tve55z1sfx",
+    "sourceId": "cmwkziob00008b9tv6wve246s",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "jntu-hyderabad",
+    "claimId": "cmwkziobh000eb9tvnm7xyf8x",
+    "sourceId": "cmwkziobc000cb9tvnus7ikv9",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "galgotias-university",
+    "claimId": "cmwkziobv000ib9tvutov5hwi",
+    "sourceId": "cmwkziobp000gb9tv0znamr5f",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "central-university-of-kerala",
+    "claimId": "cmwkzioca000mb9tv7acfed3a",
+    "sourceId": "cmwkzioc4000kb9tvet2blifm",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "kle-technological-university",
+    "claimId": "cmwkzioco000qb9tvy7fwidn1",
+    "sourceId": "cmwkzioch000ob9tvbvscs0uq",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "stanley-medical-college",
+    "claimId": "cmwkziod5000ub9tvqllxjm47",
+    "sourceId": "cmwkziocx000sb9tvhvbgo0vp",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "vel-tech-university",
+    "claimId": "cmwkziodk000yb9tvth53l82g",
+    "sourceId": "cmwkziode000wb9tv81ua4xmy",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "central-university-of-punjab",
+    "claimId": "cmwkziody0012b9tvdgwql8em",
+    "sourceId": "cmwkziodt0010b9tv87w1lkys",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "pes-university",
+    "claimId": "cmwkzioe80016b9tvwwo71v2a",
+    "sourceId": "cmwkzioe40014b9tvswkatbux",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "srm-ap",
+    "claimId": "cmwkzioeg001ab9tve0bn10si",
+    "sourceId": "cmwkzioec0018b9tvffq35efs",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "bj-medical-college",
+    "claimId": "cmwkzioep001eb9tvzv3uuuc6",
+    "sourceId": "cmwkzioel001cb9tv8bbdrgst",
+    "status": "STAGED",
+    "field": "admissions"
+  },
+  {
+    "slug": "nit-mizoram",
+    "claimId": "cmwkzioew001ib9tvfgx2hzro",
+    "sourceId": "cmwkzioet001gb9tvf95ucaml",
+    "status": "STAGED",
+    "field": "admissions"
+  }
+]

@@ -1,0 +1,974 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 29,
+  "ownerStagingReady": true,
+  "researchedAt": "2026-11-19T17:03:54Z",
+  "sourceUsePolicy": "Manual reading and attribution of individually recorded factual information. No source prose, tables or documents retained. Bulk extraction and redistribution rights are not established. Confirm source-specific terms, scope and freshness before staging or publication.",
+  "selectedInstitutions": [
+    {
+      "institutionSlug": "dit-university",
+      "name": "DIT University",
+      "type": "PRIVATE",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 1,
+      "heldFindings": 0
+    },
+    {
+      "institutionSlug": "galgotias-university",
+      "name": "Galgotias University",
+      "type": "PRIVATE",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 1,
+      "heldFindings": 0
+    },
+    {
+      "institutionSlug": "rgnul-patiala",
+      "name": "RGNUL Patiala",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 1,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "gnlu-gandhinagar",
+      "name": "GNLU Gandhinagar",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 1,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "flame-university",
+      "name": "Flame University",
+      "type": "PRIVATE",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 1,
+      "heldFindings": 0
+    },
+    {
+      "institutionSlug": "jipmer-puducherry",
+      "name": "JIPMER Puducherry",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 1,
+      "heldFindings": 0
+    },
+    {
+      "institutionSlug": "iiit-sri-city",
+      "name": "IIIT Sri City",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 0,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "lnmiit-jaipur",
+      "name": "LNMIIT Jaipur",
+      "type": "PRIVATE",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 1,
+      "heldFindings": 0
+    },
+    {
+      "institutionSlug": "rvce-bangalore",
+      "name": "RVCE Bangalore",
+      "type": "PRIVATE",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 0,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "cochin-university",
+      "name": "Cochin University",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 0,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "iiser-mohali",
+      "name": "IISER Mohali",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 1,
+      "heldFindings": 0
+    },
+    {
+      "institutionSlug": "st-johns-medical-college",
+      "name": "St Johns Medical College",
+      "type": "PRIVATE",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 0,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "nliu-bhopal",
+      "name": "NLIU Bhopal",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 0,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "nujs-kolkata",
+      "name": "NUJS Kolkata",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 0,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "nlu-jodhpur",
+      "name": "NLU Jodhpur",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 0,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "central-university-of-kerala",
+      "name": "Central University of Kerala",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 1,
+      "heldFindings": 0
+    },
+    {
+      "institutionSlug": "central-university-of-rajasthan",
+      "name": "Central University of Rajasthan",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 0,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "nlu-delhi",
+      "name": "NLU Delhi",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 0,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "ict-mumbai",
+      "name": "ICT Mumbai",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 0,
+      "heldFindings": 1
+    },
+    {
+      "institutionSlug": "iiit-bangalore",
+      "name": "IIIT Bangalore",
+      "type": "GOVERNMENT",
+      "substantiveStagedBefore": 0,
+      "missingPriorityFields": [
+        "programmes and durations",
+        "admissions and entrance routes",
+        "eligibility",
+        "tuition by programme/year/category",
+        "hostel fees",
+        "scholarships",
+        "accreditation and recognition validity",
+        "placements with cohort and metric definition",
+        "rankings with year/category",
+        "official contact",
+        "facilities"
+      ],
+      "candidateFacts": 0,
+      "heldFindings": 1
+    }
+  ],
+  "sources": [
+    {
+      "id": "dit-university-1",
+      "institutionSlug": "dit-university",
+      "publisher": "DIT University",
+      "url": "https://www.dituniversity.edu.in/ug-courses/btech-civil-engineering",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manual reading and attribution of individually recorded factual information. No source prose, tables or documents retained. Bulk extraction and redistribution rights are not established. Confirm source-specific terms, scope and freshness before staging or publication.",
+      "evidenceLocations": [
+        "Course and Duration headings"
+      ]
+    },
+    {
+      "id": "galgotias-university-2",
+      "institutionSlug": "galgotias-university",
+      "publisher": "Galgotias University",
+      "url": "https://www.galgotiasuniversity.edu.in/p/program/under-graduate/department-of-computing-science-and-engineering/btech-in-computer-science-and-engineering",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manual reading and attribution of individually recorded factual information. No source prose, tables or documents retained. Bulk extraction and redistribution rights are not established. Confirm source-specific terms, scope and freshness before staging or publication.",
+      "evidenceLocations": [
+        "FAQ: programme duration"
+      ]
+    },
+    {
+      "id": "rgnul-patiala-3",
+      "institutionSlug": "rgnul-patiala",
+      "publisher": "RGNUL Patiala",
+      "url": "https://www.rgnul.ac.in/63/ballb-hons-admission",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manual reading and attribution of individually recorded factual information. No source prose, tables or documents retained. Bulk extraction and redistribution rights are not established. Confirm source-specific terms, scope and freshness before staging or publication.",
+      "evidenceLocations": [
+        "Five Year Integrated Course heading"
+      ]
+    },
+    {
+      "id": "gnlu-gandhinagar-4",
+      "institutionSlug": "gnlu-gandhinagar",
+      "publisher": "GNLU Gandhinagar",
+      "url": "https://gnlu.ac.in/GNLU/Under-Graduate-Programme",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manual reading and attribution of individually recorded factual information. No source prose, tables or documents retained. Bulk extraction and redistribution rights are not established. Confirm source-specific terms, scope and freshness before staging or publication.",
+      "evidenceLocations": [
+        "Under Graduate Programme heading (campus review required)"
+      ]
+    },
+    {
+      "id": "flame-university-5",
+      "institutionSlug": "flame-university",
+      "publisher": "Flame University",
+      "url": "https://www.flame.edu.in/academics/ug",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manual reading and attribution of individually recorded factual information. No source prose, tables or documents retained. Bulk extraction and redistribution rights are not established. Confirm source-specific terms, scope and freshness before staging or publication.",
+      "evidenceLocations": [
+        "4-year Undergraduate degrees subsection"
+      ]
+    },
+    {
+      "id": "jipmer-puducherry-6",
+      "institutionSlug": "jipmer-puducherry",
+      "publisher": "JIPMER Puducherry",
+      "url": "https://jipmer.edu.in/sites/default/files/Courses%20in%20JIPMER.pdf",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Manual reading and attribution of individually recorded factual information. No source prose, tables or documents retained. Bulk extraction and redistribution rights are not established. Confirm source-specific terms, scope and freshness before staging or publication.",
+      "evidenceLocations": [
+        "JIPMER Puducherry, Professional Courses, Medical/Dental"
+      ]
+    },
+    {
+      "id": "lnmiit-jaipur-7",
+      "institutionSlug": "lnmiit-jaipur",
+      "publisher": "LNMIIT Jaipur",
+      "url": "https://lnmiit.ac.in/admissions/ug/",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manual reading and attribution of individually recorded factual information. No source prose, tables or documents retained. Bulk extraction and redistribution rights are not established. Confirm source-specific terms, scope and freshness before staging or publication.",
+      "evidenceLocations": [
+        "UG Admissions 2026–27, Programmes, integrated degree"
+      ]
+    },
+    {
+      "id": "iiser-mohali-8",
+      "institutionSlug": "iiser-mohali",
+      "publisher": "IISER Mohali",
+      "url": "https://www.iisermohali.ac.in/home/academics",
+      "publicationDate": null,
+      "academicYear": "2026",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manual reading and attribution of individually recorded factual information. No source prose, tables or documents retained. Bulk extraction and redistribution rights are not established. Confirm source-specific terms, scope and freshness before staging or publication.",
+      "evidenceLocations": [
+        "Academics, Information for the candidates, item 1"
+      ]
+    },
+    {
+      "id": "central-university-of-kerala-9",
+      "institutionSlug": "central-university-of-kerala",
+      "publisher": "Central University of Kerala",
+      "url": "https://cukerala.ac.in/Admissions/Admissions_CUK_PG_2026_27",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manual reading and attribution of individually recorded factual information. No source prose, tables or documents retained. Bulk extraction and redistribution rights are not established. Confirm source-specific terms, scope and freshness before staging or publication.",
+      "evidenceLocations": [
+        "PG Admissions 2026–27, programme list row 27"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "dit-university",
+      "sourceIds": [
+        "dit-university-1"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Course and Duration headings",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "level": "UG",
+        "programme": "B.Tech in Civil Engineering",
+        "durationMonths": 48
+      },
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "galgotias-university",
+      "sourceIds": [
+        "galgotias-university-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "FAQ: programme duration",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "level": "UG",
+        "programme": "B.Tech in Computer Science and Engineering",
+        "durationMonths": 48
+      },
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "rgnul-patiala",
+      "sourceIds": [
+        "rgnul-patiala-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Five Year Integrated Course heading",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "level": "UG",
+        "programme": "Integrated B.A. LL.B. (Hons.)",
+        "durationMonths": 60
+      },
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "gnlu-gandhinagar",
+      "sourceIds": [
+        "gnlu-gandhinagar-4"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Under Graduate Programme heading (campus review required)",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "level": "UG",
+        "programme": "B.A. LL.B. (Hons.)",
+        "durationMonths": 60
+      },
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "flame-university",
+      "sourceIds": [
+        "flame-university-5"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "4-year Undergraduate degrees subsection",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "level": "UG",
+        "programme": "BBA (Hons.)",
+        "durationMonths": 48
+      },
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "jipmer-puducherry",
+      "sourceIds": [
+        "jipmer-puducherry-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "JIPMER Puducherry, Professional Courses, Medical/Dental",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "level": "UG",
+        "programme": "MBBS",
+        "durationMonths": 66
+      },
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "lnmiit-jaipur",
+      "sourceIds": [
+        "lnmiit-jaipur-7"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "UG Admissions 2026–27, Programmes, integrated degree",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "level": "UG",
+        "programme": "Integrated B.Tech.–M.Tech. in Computer Science and Engineering",
+        "durationMonths": 60
+      },
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iiser-mohali",
+      "sourceIds": [
+        "iiser-mohali-8"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Academics, Information for the candidates, item 1",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "BS–MS",
+        "route": "IISER Aptitude Test",
+        "category": "2026 intake",
+        "exam": "IAT 2026"
+      },
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "central-university-of-kerala",
+      "sourceIds": [
+        "central-university-of-kerala-9"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "PG Admissions 2026–27, programme list row 27",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.Sc. Microbiology",
+        "level": "PG"
+      },
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "heldFindings": [
+    {
+      "institutionSlug": "iiit-sri-city",
+      "publisher": "IIIT Sri City",
+      "url": "https://iiits.ac.in/academics/b-tech-programme/regulations/",
+      "evidenceLocation": "B.Tech Regulations, normal duration",
+      "academicYear": null,
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Regulations are undated and the newer institution reporting page returned 403. Confirm the regulations still apply before staging.",
+      "value": {
+        "kind": "programme",
+        "level": "UG",
+        "programme": "B.Tech",
+        "durationMonths": 48
+      }
+    },
+    {
+      "institutionSlug": "rvce-bangalore",
+      "publisher": "RVCE Bangalore",
+      "url": "https://rvce.edu.in/sites/default/files/Handbook_2025-26-28-08-2025-final.pdf",
+      "evidenceLocation": "Hand Book for General Information, Table 3.7.1, printed page 19",
+      "academicYear": "2025-26",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Prior-cycle handbook. Confirm current duration against the next handbook.",
+      "value": {
+        "kind": "programme",
+        "level": "UG",
+        "programme": "B.E. (regular entry)",
+        "durationMonths": 48
+      }
+    },
+    {
+      "institutionSlug": "cochin-university",
+      "publisher": "Cochin University",
+      "url": "https://www.admissions.cusat.ac.in/Prospectus/Prospectus2026.pdf",
+      "evidenceLocation": "Chapter 1, §1.1.1, regular B.Tech list, printed page 10",
+      "academicYear": "2026",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Prospectus confirms programme but the chapter does not resolve campus for this catalogue record. Check programme location table.",
+      "value": {
+        "kind": "programme",
+        "level": "UG",
+        "programme": "Regular B.Tech in Computer Science & Engineering",
+        "durationMonths": 48
+      }
+    },
+    {
+      "institutionSlug": "st-johns-medical-college",
+      "publisher": "St Johns Medical College",
+      "url": "https://www.stjohns.in/medicalcollege/courses/undergraduate---mbbs",
+      "evidenceLocation": "MBBS page, counselling paragraph",
+      "academicYear": null,
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Undated route statement beside 2025–26 intake. Confirm against the applicable KEA cycle.",
+      "value": {
+        "kind": "admission",
+        "programme": "MBBS",
+        "route": "Karnataka Examination Authority counselling",
+        "category": "MBBS applicants"
+      }
+    },
+    {
+      "institutionSlug": "nliu-bhopal",
+      "publisher": "Consortium of National Law Universities",
+      "url": "https://clat2027.consortiumofnlus.ac.in/clat-2027/participating_universities.html",
+      "evidenceLocation": "Participating universities, NLIU Bhopal",
+      "academicYear": "2027",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Participation is confirmed by the authority list. Confirm programme and category from the institution brochure before using as programme-level guidance.",
+      "value": {
+        "kind": "admission",
+        "programme": "CLAT-participating law admissions",
+        "route": "Listed as CLAT 2027 participant",
+        "category": "Programme and seat category to be checked in institutional brochure",
+        "exam": "CLAT 2027"
+      }
+    },
+    {
+      "institutionSlug": "nujs-kolkata",
+      "publisher": "Consortium of National Law Universities",
+      "url": "https://clat2027.consortiumofnlus.ac.in/clat-2027/participating_universities.html",
+      "evidenceLocation": "Participating universities, WBNUJS Kolkata",
+      "academicYear": "2027",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Participation is confirmed by the authority list. Confirm programme and category from the institution brochure before using as programme-level guidance.",
+      "value": {
+        "kind": "admission",
+        "programme": "CLAT-participating law admissions",
+        "route": "Listed as CLAT 2027 participant",
+        "category": "Programme and seat category to be checked in institutional brochure",
+        "exam": "CLAT 2027"
+      }
+    },
+    {
+      "institutionSlug": "nlu-jodhpur",
+      "publisher": "Consortium of National Law Universities",
+      "url": "https://clat2027.consortiumofnlus.ac.in/clat-2027/participating_universities.html",
+      "evidenceLocation": "Participating universities, NLU Jodhpur",
+      "academicYear": "2027",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Participation is confirmed by the authority list. Confirm programme and category from the institution brochure before using as programme-level guidance.",
+      "value": {
+        "kind": "admission",
+        "programme": "CLAT-participating law admissions",
+        "route": "Listed as CLAT 2027 participant",
+        "category": "Programme and seat category to be checked in institutional brochure",
+        "exam": "CLAT 2027"
+      }
+    },
+    {
+      "institutionSlug": "rgnul-patiala",
+      "publisher": "Consortium of National Law Universities",
+      "url": "https://clat2027.consortiumofnlus.ac.in/clat-2027/participating_universities.html",
+      "evidenceLocation": "Participating universities, RGNUL Punjab",
+      "academicYear": "2027",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Participation is confirmed by the authority list. Confirm programme and category from the institution brochure before using as programme-level guidance.",
+      "value": {
+        "kind": "admission",
+        "programme": "CLAT-participating law admissions",
+        "route": "Listed as CLAT 2027 participant",
+        "category": "Programme and seat category to be checked in institutional brochure",
+        "exam": "CLAT 2027"
+      }
+    },
+    {
+      "institutionSlug": "gnlu-gandhinagar",
+      "publisher": "Consortium of National Law Universities",
+      "url": "https://clat2027.consortiumofnlus.ac.in/clat-2027/participating_universities.html",
+      "evidenceLocation": "Participating universities, GNLU Gandhinagar (separate from Silvassa)",
+      "academicYear": "2027",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Participation is confirmed by the authority list. Confirm programme and category from the institution brochure before using as programme-level guidance.",
+      "value": {
+        "kind": "admission",
+        "programme": "CLAT-participating law admissions",
+        "route": "Listed as CLAT 2027 participant",
+        "category": "Programme and seat category to be checked in institutional brochure",
+        "exam": "CLAT 2027"
+      }
+    },
+    {
+      "institutionSlug": "central-university-of-rajasthan",
+      "publisher": "Central University of Rajasthan",
+      "url": "https://www.curaj.ac.in/sites/default/files/Admission%20Newsletter%202025-26.pdf",
+      "evidenceLocation": "ADMISSION 2026–27, CUET paragraph",
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "The displayed cycle differs from the filename, and this is general UG/PG information. Confirm with a programme-specific notice."
+    },
+    {
+      "institutionSlug": "nlu-delhi",
+      "publisher": "NLU Delhi",
+      "url": "https://nludelhi.ac.in/wp-content/uploads/2024/07/Prospectus_2024.pdf",
+      "evidenceLocation": "B.A. LL.B. (Hons.), Duration",
+      "academicYear": "2024",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Historical 2024 prospectus. Confirm against the applicable AILET cycle.",
+      "value": {
+        "kind": "programme",
+        "level": "UG",
+        "programme": "Integrated B.A. LL.B. (Hons.)",
+        "durationMonths": 60
+      }
+    },
+    {
+      "institutionSlug": "ict-mumbai",
+      "publisher": "ICT Mumbai",
+      "url": "https://ictmumbai.edu.in/DisplayDeptPage.aspx?ItemID=caako&nDeptID=ca&page=caaci",
+      "evidenceLocation": "Department programme details",
+      "academicYear": null,
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Confirm exact named degree, campus scope and applicable intake before staging."
+    },
+    {
+      "institutionSlug": "iiit-bangalore",
+      "publisher": "IIIT Bangalore",
+      "url": "https://www.iiitb.ac.in/includefiles/userfiles/files/IIIT-B%20Integrated%20M_Tech_%202025%20%281%29.pdf",
+      "evidenceLocation": "2025 brochure, About Integrated M.Tech. Programmes",
+      "academicYear": "2025",
+      "retrievedAt": "2026-11-19T17:03:54Z",
+      "reviewState": "HELD_RESEARCH_ONLY",
+      "reason": "Prior-cycle brochure. Check whether the current intake offers the same integrated degree and routes."
+    }
+  ],
+  "publicReadingLinks": {
+    "dit-university": [
+      {
+        "url": "https://www.dituniversity.edu.in/ug-courses/btech-civil-engineering",
+        "label": "DIT University Civil Engineering programme"
+      }
+    ],
+    "galgotias-university": [
+      {
+        "url": "https://www.galgotiasuniversity.edu.in/p/program/under-graduate/department-of-computing-science-and-engineering/btech-in-computer-science-and-engineering",
+        "label": "Galgotias University CSE programme"
+      }
+    ],
+    "rgnul-patiala": [
+      {
+        "url": "https://www.rgnul.ac.in/63/ballb-hons-admission",
+        "label": "RGNUL undergraduate admissions"
+      }
+    ],
+    "gnlu-gandhinagar": [
+      {
+        "url": "https://gnlu.ac.in/GNLU/Under-Graduate-Programme",
+        "label": "GNLU undergraduate programmes"
+      }
+    ],
+    "flame-university": [
+      {
+        "url": "https://www.flame.edu.in/academics/ug",
+        "label": "FLAME University undergraduate programmes"
+      }
+    ],
+    "jipmer-puducherry": [
+      {
+        "url": "https://jipmer.edu.in/sites/default/files/Courses%20in%20JIPMER.pdf",
+        "label": "JIPMER academic courses"
+      }
+    ],
+    "lnmiit-jaipur": [
+      {
+        "url": "https://lnmiit.ac.in/admissions/ug/",
+        "label": "LNMIIT 2026–27 undergraduate information"
+      }
+    ],
+    "st-johns-medical-college": [
+      {
+        "url": "https://www.stjohns.in/medicalcollege/courses/undergraduate---mbbs",
+        "label": "St John’s Medical College MBBS information"
+      }
+    ],
+    "central-university-of-kerala": [
+      {
+        "url": "https://cukerala.ac.in/Admissions/Admissions_CUK_PG_2026_27",
+        "label": "Central University of Kerala 2026–27 postgraduate information"
+      }
+    ]
+  }
+}

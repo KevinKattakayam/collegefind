@@ -1,0 +1,15 @@
+{
+  "file": "current-staged-evidence-snapshot.json",
+  "sha256": "6bb088a1933df664e3aaf7ae772b327704f032d0c380ec49ee078e3938f73006",
+  "counts": {
+    "colleges": 205,
+    "sources": 175,
+    "claims": 182,
+    "runs": 175,
+    "audits": 182,
+    "decisions": 0,
+    "users": 0,
+    "fixtures": 0
+  },
+  "collegeSlugsSha256": "f309a7a6098a2efa5a00ef3368498b54a562dae71e8ea54507322a784f985059"
+}

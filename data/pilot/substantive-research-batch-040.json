@@ -1,0 +1,956 @@
+{
+  "scope": "RESEARCH_WITH_SOURCE_REPORTED_CANDIDATES_AND_HIGH_IMPACT_HOLDS",
+  "batch": 40,
+  "researchedAt": "2026-11-21T09:52:52Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b40-iitr-chemical",
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "publisher": "Indian Institute of Technology Roorkee, Department of Chemical Engineering",
+      "url": "https://www.iitr.ac.in/Departments/Chemical%20Engineering%20Department/Academics/Academic%20Programmes.html",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Concise individually normalized facts with direct attribution only; no prose or tables copied. The page does not state a current intake year; JEE admissions route is held pending an applicable-cycle source.",
+      "evidenceLocations": [
+        "Programmes · B.Tech Chemical Engineering and four-year/eight-semester statement, lines 123–129",
+        "High Computational Research Lab (HCRL), line 146",
+        "Official page footer · Registrar phone/email, lines 155–159"
+      ]
+    },
+    {
+      "id": "b40-cu-international",
+      "institutionSlug": "chandigarh-university",
+      "publisher": "Chandigarh University, International Programs",
+      "url": "https://www.cuchd.in/international/international-students/programs/bachelor-of-engineering.php",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Only listed B.E. programme names and stated four-year duration normalized. This is the international-programmes page; no teaching campus or admission year is stated on this page. International fee/scholarship figures are held from public projection pending independent review of category, period and terms.",
+      "evidenceLocations": [
+        "International Programs · Bachelor of Engineering programme list, lines 21–48",
+        "Header telephone number, lines 0–13"
+      ]
+    },
+    {
+      "id": "b40-mahe-msce",
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "publisher": "Manipal Academy of Higher Education, Manipal School of Commerce and Economics",
+      "url": "https://admissions.manipal.edu/manipal/bba-bcom/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Short individual programme and facility facts normalized with attribution only. The page explicitly identifies Manipal School of Commerce and Economics at MAHE Manipal. No broad reuse licence inferred. Placement, scholarship and recognition claims on the page are held for cohort/validity and source-use review.",
+      "evidenceLocations": [
+        "School identity and campus, lines 32–36",
+        "Programme headings, lines 58–94",
+        "AV-enabled lecture halls and collaborative spaces, lines 158–166",
+        "MUTBI Incubation Centre access, lines 168–173"
+      ]
+    },
+    {
+      "id": "b40-amrita-aero",
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "publisher": "Amrita Vishwa Vidyapeetham, School of Engineering",
+      "url": "https://www.amrita.edu/program/btech-aero-space-engineering/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Only programme name, degree level and stated duration summarized with attribution. Page specifically identifies the Coimbatore campus for this offering. Its admissions section contains an incomplete year string; no admission route, eligibility, fee or scholarship details from that section are released.",
+      "evidenceLocations": [
+        "Programme heading and Coimbatore campus label, lines 734–742",
+        "Four-year undergraduate programme statement, lines 752–756"
+      ]
+    },
+    {
+      "id": "b40-amrita-coimbatore",
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "publisher": "Amrita Vishwa Vidyapeetham, Coimbatore Campus",
+      "url": "https://www.amrita.edu/campus/coimbatore/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "One public institutional contact normalized with direct attribution. The page identifies the Coimbatore campus and its contact address/phone. The separately displayed 2023–24 hostel fee link is not treated as current and is not published.",
+      "evidenceLocations": [
+        "Coimbatore campus contact block, lines 869–878"
+      ]
+    },
+    {
+      "id": "b40-nlud-ballb",
+      "institutionSlug": "nlu-delhi",
+      "publisher": "National Law University Delhi",
+      "url": "https://nludelhi.ac.in/academics/b-a-ll-b-hons/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Programme title and admissions-enquiry phone normalized individually. Current page identifies the exact institution and Dwarka campus. No admission criteria inferred from curriculum content.",
+      "evidenceLocations": [
+        "B.A.LL.B. (Hons.) curriculum page and batch marker, programme section",
+        "Admissions Enquiries phone, lines 283–313"
+      ]
+    },
+    {
+      "id": "b40-nlud-ailet",
+      "institutionSlug": "nlu-delhi",
+      "publisher": "National Law University Delhi",
+      "url": "https://nludelhi.ac.in/wp-content/uploads/2025/07/Revised-Notification-AILET-AIET-2026.pdf",
+      "publicationDate": "2025-07-22",
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "Historical admission route summarized with exact programme, exam and academic year; no eligibility threshold, application fee or deadline reproduced. Cycle dates have passed.",
+      "evidenceLocations": [
+        "Revised AILET/AIET notification, page 1, lines 3–8"
+      ]
+    },
+    {
+      "id": "b40-srcc-prospectus",
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "publisher": "Shri Ram College of Commerce",
+      "url": "https://www.srcc.edu/sites/default/files/Prospectus%202026.pdf",
+      "publicationDate": null,
+      "academicYear": "2026",
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "Short programme names and qualitative campus facility availability summarized with attribution from the 2026 GBO prospectus. No placement outcomes, fees or accreditation grade are released. The source is a GBO prospectus with an institutional overview, not a complete catalogue.",
+      "evidenceLocations": [
+        "Institution overview · campus facilities and hostels, page 5, lines 98–105; prospectus cover identifies 2026 at page 4, lines 89–98"
+      ]
+    },
+    {
+      "id": "b40-srcc-facilities",
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "publisher": "Shri Ram College of Commerce",
+      "url": "https://www.srcc.edu/infrastructure-and-facilities",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Only concise facility availability facts are normalized. Numeric accommodation capacity, charges and performance/outcome claims are excluded.",
+      "evidenceLocations": [
+        "Sports infrastructure · swimming pool, lines 463–477",
+        "Residential infrastructure · boys and girls hostels, lines 453–461"
+      ]
+    },
+    {
+      "id": "b40-afmc-course",
+      "institutionSlug": "armed-forces-medical-college",
+      "publisher": "Armed Forces Medical College, Pune",
+      "url": "https://afmc.nic.in/mbbs-courses",
+      "publicationDate": "2024-06-13",
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Historical MBBS course listing and duration only, with the source update date disclosed. Current admission applicability is not inferred from the 2024 course page. Eligibility, seats and service obligations are not published through this record.",
+      "evidenceLocations": [
+        "Introduction, affiliation/recognition and course duration, lines 77–84; footer last updated 13 June 2024, lines 138–145"
+      ]
+    },
+    {
+      "id": "b40-afmc-admission",
+      "institutionSlug": "armed-forces-medical-college",
+      "publisher": "Armed Forces Medical College, Pune, Admissions",
+      "url": "https://afmc.nic.in/MBBSAdmission",
+      "publicationDate": null,
+      "academicYear": "2026",
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Historical 2026 MBBS admission route only; source page lists screening/admission through NEET UG 2026. The 2026 cycle is past. No eligibility, seat count or selection prediction released.",
+      "evidenceLocations": [
+        "MBBS admission notice list and AFMC Pune/NEET UG 2026 wording, lines 77–92"
+      ]
+    },
+    {
+      "id": "b40-andhra-law",
+      "institutionSlug": "andhra-university",
+      "publisher": "Andhra University, Directorate of Admissions",
+      "url": "https://audoa.andhrauniversity.edu.in/documents/Admission%20Into%205%20Year%20LL.B.%20%203%20Year%20LL.B.%20%202%20Year%20PG%20LL.M.%20Courses%20(Self-Support)%20%20in%20%20Andhra%20University%20Campus-2026.pdf",
+      "publicationDate": "2026-10-13",
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-21T09:52:52Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "Historical degree listings and entrance route only. Source precisely scopes the programmes to Dr. B.R. Ambedkar College of Law, Andhra University Campus, Visakhapatnam, self-support category. Fee and eligibility table is held for human review because period/category interpretation and high-impact applicability require inspection; no table reproduced.",
+      "evidenceLocations": [
+        "Press note and campus/college scope, page 1 lines 1–14; named programmes and durations, lines 15–38; APLAWCET-2026 and schedule, page 1–2 lines 79–90"
+      ]
+    },
+    {
+      "id": "b40-loyola-course",
+      "institutionSlug": "loyola-college",
+      "publisher": "Loyola College, Chennai",
+      "url": "https://www.loyolacollege.edu//admission/courses-offered",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Reused from Batch 031 checked official course list; exact Shift I/Shift II names only. No year or intake asserted. No source text or course table copied.",
+      "evidenceLocations": [
+        "Courses Offered · Shift I B.Sc. Statistics; Shift II M.Sc. Data Science, Batch 031 candidate evidence locator"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. Chemical Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b40-iitr-chemical"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programmes and duration statement, lines 123–129; new programme structure marked 2023–24 onward",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Department of Chemical Engineering, IIT Roorkee",
+      "publisherPeriod": "Department page marks the new programme structure 2023–24 onward; page does not specify the current intake cycle"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.Tech. Chemical Engineering",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "b40-iitr-chemical"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "M.Tech. programme duration and start context, lines 141–145",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Department of Chemical Engineering, IIT Roorkee",
+      "publisherPeriod": "Department page says the programme started July 2018 and states two-year duration; current intake year not specified",
+      "historical": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "High Computational Research Lab (HCRL)",
+        "description": "The Department of Chemical Engineering identifies a High Computational Research Lab."
+      },
+      "sourceIds": [
+        "b40-iitr-chemical"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department programmes page, facility reference, line 146",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Department of Chemical Engineering, IIT Roorkee"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Registrar",
+        "channel": "PHONE",
+        "contact": "+91-1332-285311"
+      },
+      "sourceIds": [
+        "b40-iitr-chemical"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Official department page footer, line 157",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Indian Institute of Technology Roorkee"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Registrar",
+        "channel": "EMAIL",
+        "contact": "registrar@iitr.ac.in"
+      },
+      "sourceIds": [
+        "b40-iitr-chemical"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Official department page footer, line 159",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Indian Institute of Technology Roorkee"
+    },
+    {
+      "institutionSlug": "chandigarh-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.E. Computer Science Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b40-cu-international"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "International Programs · Bachelor of Engineering programme list and duration, lines 21–48",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "International-programmes page; source does not state teaching campus or academic year"
+    },
+    {
+      "institutionSlug": "chandigarh-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.E. Information Technology Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b40-cu-international"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "International Programs · Bachelor of Engineering programme list and duration, lines 21–48",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "International-programmes page; source does not state teaching campus or academic year"
+    },
+    {
+      "institutionSlug": "chandigarh-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.E. Electrical Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b40-cu-international"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "International Programs · Bachelor of Engineering programme list and duration, lines 21–48",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "International-programmes page; source does not state teaching campus or academic year"
+    },
+    {
+      "institutionSlug": "chandigarh-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.E. Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b40-cu-international"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "International Programs · Bachelor of Engineering programme list and duration, lines 21–48",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "International-programmes page; source does not state teaching campus or academic year"
+    },
+    {
+      "institutionSlug": "chandigarh-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "International Programs page contact",
+        "channel": "PHONE",
+        "contact": "+91-81466-51606"
+      },
+      "sourceIds": [
+        "b40-cu-international"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "International Programs page header contact number, lines 0–13",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "International-programmes enquiry; campus office not specified"
+    },
+    {
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Com. / B.Com. (Hons.) (Professional) with ACCA",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b40-mahe-msce"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Manipal School of Commerce and Economics · programme heading, lines 58–94",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Manipal School of Commerce and Economics, MAHE Manipal; programme page states no academic year"
+    },
+    {
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Com. / B.Com. (Hons.) in Capital Markets",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b40-mahe-msce"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Manipal School of Commerce and Economics · programme heading, lines 58–94",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Manipal School of Commerce and Economics, MAHE Manipal; programme page states no academic year"
+    },
+    {
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "BBA / BBA (Hons.)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b40-mahe-msce"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Manipal School of Commerce and Economics · programme heading, lines 58–94",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Manipal School of Commerce and Economics, MAHE Manipal; programme page states no academic year"
+    },
+    {
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Com. / B.Com. (Hons.) in Fintech and Data Analytics",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b40-mahe-msce"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Manipal School of Commerce and Economics · programme heading, lines 58–94",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Manipal School of Commerce and Economics, MAHE Manipal; programme page states no academic year"
+    },
+    {
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Audio-visual lecture halls and collaborative learning spaces",
+        "description": "The MSCE page lists AV-enabled lecture halls and collaborative spaces."
+      },
+      "sourceIds": [
+        "b40-mahe-msce"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Infrastructure and Learning Environment, lines 158–166",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Manipal School of Commerce and Economics, MAHE Manipal"
+    },
+    {
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "MUTBI Incubation Centre access",
+        "description": "The MSCE page lists student access to the MUTBI Incubation Centre."
+      },
+      "sourceIds": [
+        "b40-mahe-msce"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Professional Development Support, lines 168–173",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Manipal School of Commerce and Economics, MAHE Manipal"
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. in Aerospace Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b40-amrita-aero"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programme heading, campus offering and stated duration, lines 734–756",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Coimbatore campus; programme page explicitly lists Coimbatore as the offering campus",
+      "publisherPeriod": "Programme page does not state an academic year; the malformed year in its admissions section is excluded"
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Coimbatore Campus",
+        "channel": "PHONE",
+        "contact": "+91 422-2685000"
+      },
+      "sourceIds": [
+        "b40-amrita-coimbatore"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Coimbatore Campus contact block, lines 869–878",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Amrita Vishwa Vidyapeetham, Coimbatore Campus"
+    },
+    {
+      "institutionSlug": "nlu-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Five-year B.A., LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "b40-nlud-ballb"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programme name corroborated by curriculum page; five-year duration stated in the official AILET notification for AY 2026–27",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Sector 14, Dwarka, New Delhi",
+      "publisherPeriod": "Official AILET notification for academic year 2026–27; historical listing",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nlu-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Five-year B.A., LL.B. (Hons.)",
+        "route": "All India Law Entrance Test",
+        "category": "Undergraduate programme, academic year 2026–27",
+        "exam": "AILET 2026"
+      },
+      "sourceIds": [
+        "b40-nlud-ailet"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official revised notification, page 1, lines 3–8",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "National Law University Delhi, Sector 14, Dwarka",
+      "publisherPeriod": "AILET 2026 for AY 2026–27; examination scheduled 14 December 2025; cycle closed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nlu-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Admissions Enquiries",
+        "channel": "PHONE",
+        "contact": "011-28034257"
+      },
+      "sourceIds": [
+        "b40-nlud-ballb"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "B.A.LL.B. (Hons.) page, Admissions Enquiries, lines 307–310",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "National Law University Delhi"
+    },
+    {
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.A. (Hons.) Economics",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b40-srcc-prospectus"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Institution overview and course list, prospectus page 5, lines 104–105",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Shri Ram College of Commerce, University of Delhi North Campus",
+      "publisherPeriod": "2026 GBO prospectus; course overview appears in institution introduction"
+    },
+    {
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.Com.",
+        "level": "PG"
+      },
+      "sourceIds": [
+        "b40-srcc-prospectus"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Institution overview and course list, prospectus page 5, lines 104–105",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Shri Ram College of Commerce, University of Delhi North Campus",
+      "publisherPeriod": "2026 GBO prospectus; course overview appears in institution introduction"
+    },
+    {
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Post Graduate Diploma in Global Business Operations (GBO)",
+        "level": "DIPLOMA"
+      },
+      "sourceIds": [
+        "b40-srcc-prospectus"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Institution overview and course list, prospectus page 5, lines 104–105",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Shri Ram College of Commerce, University of Delhi North Campus",
+      "publisherPeriod": "2026 GBO prospectus; course overview appears in institution introduction"
+    },
+    {
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Separate boys’ and girls’ hostels",
+        "description": "The 2026 prospectus lists separate hostels for male and female students."
+      },
+      "sourceIds": [
+        "b40-srcc-prospectus"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Institution overview and infrastructure, prospectus page 5, lines 101–103",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Shri Ram College of Commerce, University of Delhi North Campus",
+      "publisherPeriod": "2026 prospectus"
+    },
+    {
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Swimming pool",
+        "description": "The College facilities page identifies a swimming-pool facility and says it opens during the summer season."
+      },
+      "sourceIds": [
+        "b40-srcc-facilities"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Sports infrastructure · swimming pool, lines 463–477",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Shri Ram College of Commerce, University of Delhi North Campus"
+    },
+    {
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "In-campus boys’ and girls’ hostels",
+        "description": "The College facilities page identifies separate in-campus hostels for boys and girls."
+      },
+      "sourceIds": [
+        "b40-srcc-facilities"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Residential infrastructure · boys’ and girls’ hostels, lines 453–461",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Shri Ram College of Commerce, University of Delhi North Campus"
+    },
+    {
+      "institutionSlug": "armed-forces-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b40-afmc-course"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "MBBS course page introduction and course title, lines 77–84",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Armed Forces Medical College, Wanowrie, Pune",
+      "publisherPeriod": "Course page states last updated 13 June 2024; current cycle is not established here",
+      "historical": true
+    },
+    {
+      "institutionSlug": "armed-forces-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBBS",
+        "route": "Screening/admission through NEET UG",
+        "category": "MBBS admission cycle 2026",
+        "exam": "NEET UG 2026"
+      },
+      "sourceIds": [
+        "b40-afmc-admission"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "MBBS Admission page · 2026 notices, lines 77–92",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Armed Forces Medical College, Pune",
+      "publisherPeriod": "AFMC Pune MBBS 2026 notice; historical cycle",
+      "historical": true
+    },
+    {
+      "institutionSlug": "armed-forces-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "AFMC Admission Cell",
+        "channel": "PHONE",
+        "contact": "02029950170"
+      },
+      "sourceIds": [
+        "b40-afmc-admission"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Admissions page · admission query phone and helpline, lines 98–109; page footer last updated 13 June 2024",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Armed Forces Medical College, Pune",
+      "publisherPeriod": "Phone number shown on a page last updated 13 June 2024; reconfirm before use",
+      "historical": true
+    },
+    {
+      "institutionSlug": "andhra-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "5-year LL.B. (Self-Support)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "b40-andhra-law"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official press note, Andhra University Campus scope and 5-year LL.B. listing, page 1, lines 10–19",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Dr. B.R. Ambedkar College of Law, Andhra University Campus, Visakhapatnam; Self-Support category",
+      "publisherPeriod": "Admission notice dated 13 October 2026; application and counseling schedule has passed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "andhra-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "3-year LL.B. (Self-Support)",
+        "level": "UG",
+        "durationMonths": 36
+      },
+      "sourceIds": [
+        "b40-andhra-law"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official press note, 3-year LL.B. listing, page 1, lines 10–14 and 28–36",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Dr. B.R. Ambedkar College of Law, Andhra University Campus, Visakhapatnam; Self-Support category",
+      "publisherPeriod": "Admission notice dated 13 October 2026; application and counseling schedule has passed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "andhra-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "2-year PG LL.M. (Self-Support)",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "b40-andhra-law"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official press note, 2-year PG LL.M. listing, page 1, lines 10–14 and 37–54",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Dr. B.R. Ambedkar College of Law, Andhra University Campus, Visakhapatnam; Self-Support category",
+      "publisherPeriod": "Admission notice dated 13 October 2026; application and counseling schedule has passed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "andhra-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "5-year LL.B. (Self-Support)",
+        "route": "Counseling restricted to APLAWCET-2026 rank holders",
+        "category": "Self-Support category, academic year 2026–27",
+        "exam": "APLAWCET 2026"
+      },
+      "sourceIds": [
+        "b40-andhra-law"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official press note, page 2, APLAWCET-2026 rank-holder/counseling requirement, lines 79–90",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "publisherPeriod": "Admissions notice dated 13 October 2026; 2026 counseling cycle closed",
+      "historical": true,
+      "campusScope": "Dr. B.R. Ambedkar College of Law, Andhra University Campus, Visakhapatnam"
+    },
+    {
+      "institutionSlug": "andhra-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "3-year LL.B. (Self-Support)",
+        "route": "Counseling restricted to APLAWCET-2026 rank holders",
+        "category": "Self-Support category, academic year 2026–27",
+        "exam": "APLAWCET 2026"
+      },
+      "sourceIds": [
+        "b40-andhra-law"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official press note, page 2, APLAWCET-2026 rank-holder/counseling requirement, lines 79–90",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "publisherPeriod": "Admissions notice dated 13 October 2026; 2026 counseling cycle closed",
+      "historical": true,
+      "campusScope": "Dr. B.R. Ambedkar College of Law, Andhra University Campus, Visakhapatnam"
+    },
+    {
+      "institutionSlug": "andhra-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "2-year PG LL.M. (Self-Support)",
+        "route": "Counseling restricted to APLAWCET-2026 rank holders",
+        "category": "Self-Support category, academic year 2026–27",
+        "exam": "APLAWCET 2026"
+      },
+      "sourceIds": [
+        "b40-andhra-law"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official press note, page 2, APLAWCET-2026 rank-holder/counseling requirement, lines 79–90",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "publisherPeriod": "Admissions notice dated 13 October 2026; 2026 counseling cycle closed",
+      "historical": true,
+      "campusScope": "Dr. B.R. Ambedkar College of Law, Andhra University Campus, Visakhapatnam"
+    }
+  ],
+  "holds": [
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "sourceId": "b40-iitr-chemical",
+      "field": "admissions",
+      "reason": "The official departmental page describes JEE-based intake but does not identify an applicable academic cycle; no current route is published."
+    },
+    {
+      "institutionSlug": "chandigarh-university",
+      "sourceId": "b40-cu-international",
+      "field": "fees/scholarships",
+      "reason": "International fee and scholarship values are present, but high-impact category, award terms and period require human review; withheld from public source-reported projection."
+    },
+    {
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "sourceId": "b40-mahe-msce",
+      "field": "placements/scholarships/recognition",
+      "reason": "Page contains promotional placement, scholarship and accreditation claims without sufficient programme/cohort or validity scope for publication; held for human evidence review."
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "sourceId": "b40-amrita-aero",
+      "field": "admissions/eligibility/fees",
+      "reason": "Admission section contains a malformed year string and decision-critical thresholds/amounts; excluded. The page provides a separate unambiguous programme listing and Coimbatore campus scope."
+    },
+    {
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "sourceId": "b40-srcc-prospectus",
+      "field": "recognition/placements",
+      "reason": "The prospectus states an NAAC grade and generic placement claims, but accreditation validity and outcome cohort/metric definitions are not established; held for stronger review."
+    },
+    {
+      "institutionSlug": "armed-forces-medical-college",
+      "sourceId": "b40-afmc-course",
+      "field": "eligibility/seats/service-liability",
+      "reason": "High-impact eligibility, intake and service-liability details are not published; the course page is last updated 2024 and is used only as historical MBBS context."
+    },
+    {
+      "institutionSlug": "andhra-university",
+      "sourceId": "b40-andhra-law",
+      "field": "fees/eligibility",
+      "reason": "The 2026 official notice contains category-specific eligibility thresholds and proposed fees, but the fee period and current applicability need human review. The 2026-27 cycle is closed; no values published."
+    },
+    {
+      "institutionSlug": "gnlu-gandhinagar",
+      "sourceUrl": "https://www.gnlu.ac.in/academics/programs/undergraduate-programs",
+      "field": "programmes",
+      "reason": "Existing candidate source has an unresolved campus match; remains withheld pending a direct source/campus reconciliation."
+    }
+  ]
+}

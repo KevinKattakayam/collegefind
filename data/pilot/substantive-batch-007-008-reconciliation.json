@@ -1,0 +1,214 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "sources": [
+    {
+      "id": "iit-indore-ug-guidelines-2026-11",
+      "institutionSlug": "iit-indore",
+      "publisher": "Indian Institute of Technology Indore",
+      "url": "https://www.iiti.ac.in/admissions/ug_info/btech/guidelines",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:01:25Z",
+      "access": "PUBLIC_HTML_READ",
+      "evidenceLocations": [
+        "Lines 162-176: undergraduate programme labels and B.Tech duration stated as four years.",
+        "Lines 177-195: special admission routes and their specific criteria; these are not generalized as the ordinary admission eligibility.",
+        "Lines 205-215: institutional address, administrative email and phone numbers; not extracted in this batch."
+      ],
+      "reuseConditions": "Public first-party admissions page opened directly. Manual independently expressed programme facts and exact attribution only. No page prose, full branch list, layout or files copied. Relevant institute policies do not establish terms for public factual reuse. No automated collection or wider republication assessed."
+    },
+    {
+      "id": "iit-bhubaneswar-btech-admission-2026-11",
+      "institutionSlug": "iit-bhubaneswar",
+      "publisher": "Indian Institute of Technology Bhubaneswar",
+      "url": "https://www.iitbbs.ac.in/index.php/home/academics/admission-b-tech/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T04:01:25Z",
+      "access": "PUBLIC_HTML_READ",
+      "evidenceLocations": [
+        "Lines 520-529: eight named B.Tech disciplines and programme duration of four years/eight semesters.",
+        "Lines 531-534: page states admission is through JEE and links applicants to jeeadv.ac.in for application details; the manifest preserves the page's wording without broadening it.",
+        "Lines 535-539: institution and campus contact block; not extracted in this batch."
+      ],
+      "reuseConditions": "Public first-party admissions page opened directly. Manual independently expressed programme facts and exact attribution only. No page prose, full branch list, layout or files copied. Relevant institute policies do not establish terms for public factual reuse. No automated collection or wider republication assessed."
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "iit-indore",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "iit-indore-ug-guidelines-2026-11"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Undergraduate admissions guidelines, B.Tech heading and duration, lines 170–172.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-bhubaneswar",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "iit-bhubaneswar-btech-admission-2026-11"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "B.Tech Admissions, programme duration and Civil Engineering listing, lines 520–522.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "heldCandidates": [
+    {
+      "institutionSlug": "iit-indore",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "iit-bhu-varanasi",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "iit-bhubaneswar",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "jadavpur-university",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "iit-mandi",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "iit-jodhpur",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "thapar-institute-of-engineering",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "iit-ropar",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "malaviya-national-institute-of-technology",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "nit-durgapur",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "nit-silchar",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "birla-institute-of-technology-mesra",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "nit-patna",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "iiit-delhi",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "iit-palakkad",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "nit-delhi",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "nit-meghalaya",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "nit-raipur",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "nit-hamirpur",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "nit-puducherry",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "iit-jammu",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "iit-dharwad",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "status": "NOT_STAGED",
+      "reason": "Direct ranking HTML and PDF requests returned HTTP 403. Original row and campus ID could not be independently rechecked. Aggregate reuse of this selected ranking subset remains unresolved."
+    },
+    {
+      "institutionSlug": "iit-bhubaneswar",
+      "field": "admission",
+      "reason": "Page refers to JEE and links JEE Advanced. No applicable intake year or route category stated. Use a year-specific institute notice or official JoSAA applicable rules."
+    },
+    {
+      "institutionSlug": "iit-bhu-varanasi",
+      "field": "programme",
+      "reason": "Placement-cell overview is undated. Prefer a current academic-office catalogue to establish exact offerings and campus scope."
+    }
+  ],
+  "partialCandidateNotes": "Selected IIT Indore B.Tech and IIT Bhubaneswar Civil Engineering B.Tech durations only. The other IIT Indore degree labels and IIT Bhubaneswar branches remain in batch 008 notes and were not imported.",
+  "recheckedOn": "2026-11-18"
+}

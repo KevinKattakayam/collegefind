@@ -1,0 +1,857 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 56,
+  "researchedAt": "2026-11-22T20:47:43.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b56-1",
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "publisher": "Indian Institute of Management Calcutta",
+      "title": "Admission Policy for the MBA Programme (Batch 2027–29)",
+      "url": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates",
+      "academicYear": "2027-29",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Policy heading and domestic candidate selection sections; CAT 2026 shortlisting and PI/WAT stages."
+      ]
+    },
+    {
+      "id": "b56-2",
+      "institutionSlug": "sp-jain-institute",
+      "publisher": "Bharatiya Vidya Bhavan’s S.P. Jain Institute of Management and Research",
+      "title": "SPJIMR opens applications for PGDM and PGDM (BM) programmes for 2027–29",
+      "url": "https://www.spjimr.org/newsroom/press-release/spjimr-opens-applications-for-pgdm-and-pgdm-bm-programmes-for-2027-29",
+      "academicYear": "2027-29",
+      "publicationDate": "2026-09-16",
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Press release dated 16 September 2026; paragraphs on one application with programme preferences, CAT/GMAT, and application deadline."
+      ]
+    },
+    {
+      "id": "b56-3",
+      "institutionSlug": "fms-delhi",
+      "publisher": "Faculty of Management Studies, University of Delhi",
+      "title": "FMS Information Bulletin: MBA Full-Time Programme 2026–28",
+      "url": "https://www.fms.edu/static/programmes/MBA_2026.pdf",
+      "academicYear": "2026-28",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "PDF printed page 7 (PDF page 6), CAT 2025 shortlisting and selection process for the 2026–28 full-time MBA."
+      ]
+    },
+    {
+      "id": "b56-4",
+      "institutionSlug": "vellore-institute-of-technology",
+      "publisher": "Vellore Institute of Technology, Academic Office",
+      "title": "Library",
+      "url": "https://vit.ac.in/academics/library",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Periyar EVR Central Library description; Vellore-Campus heading and resources “as on 08.10.2026”."
+      ]
+    },
+    {
+      "id": "b56-5",
+      "institutionSlug": "vellore-institute-of-technology",
+      "publisher": "Vellore Institute of Technology",
+      "title": "VIT Engineering Entrance Examination 2027 — B.Tech Admissions",
+      "url": "https://viteee.vit.ac.in/",
+      "academicYear": "2027-28",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "VITEEE 2027 page, “Admission Guidelines” and counselling choices, plus “Our Campuses” list."
+      ]
+    },
+    {
+      "id": "b56-6",
+      "institutionSlug": "fergusson-college",
+      "publisher": "Fergusson College (Autonomous), Deccan Education Society",
+      "title": "Bai Jerbai Wadia Library — About",
+      "url": "https://fergusson.edu/about-library",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Library sections list: competitive-exam section, computer section, OPAC search, student reading hall, and Saathi enabling/Braille book section."
+      ]
+    },
+    {
+      "id": "b56-7",
+      "institutionSlug": "loyola-college",
+      "publisher": "Loyola College (Autonomous), Chennai",
+      "title": "Library Resources and Contact",
+      "url": "https://www.loyolacollege.edu/library/resources.php",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Contact block identifies Central Library, Loyola College, Chennai 600034, telephone and extensions."
+      ]
+    },
+    {
+      "id": "b56-8",
+      "institutionSlug": "ashoka-university",
+      "publisher": "Ashoka University",
+      "title": "Campus Tour",
+      "url": "https://www.ashoka.edu.in/campus-tour/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "“Location: Ashoka University, Sonipat”; “Classrooms and library” description of 24/7 HDFC Library and study spaces."
+      ]
+    },
+    {
+      "id": "b56-9",
+      "institutionSlug": "gnlu-gandhinagar",
+      "publisher": "Gujarat National Law University",
+      "title": "GNLU Library Home",
+      "url": "https://gnlu.ac.in/library/Home",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Library home banner: “Opening of the GNLU Library 24×7 w.e.f. 5 September 2026”."
+      ]
+    },
+    {
+      "id": "b56-10",
+      "institutionSlug": "iim-ranchi",
+      "publisher": "Indian Institute of Management Ranchi",
+      "title": "Library",
+      "url": "https://iimranchi.ac.in/library/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Library services paragraph describes remote access to subscribed electronic resources and the remote access portal."
+      ]
+    },
+    {
+      "id": "b56-11",
+      "institutionSlug": "iim-shillong",
+      "publisher": "Indian Institute of Management Shillong",
+      "title": "Campus Tour",
+      "url": "https://www.iimshillong.ac.in/campus-tour/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Residential section identifies the Umsawli campus and describes hostel facilities including sports, recreation and dining."
+      ]
+    },
+    {
+      "id": "b56-12",
+      "institutionSlug": "bennett-university",
+      "publisher": "Bennett University Learning Resource Centre",
+      "title": "Learning Resource Centre",
+      "url": "https://library.bennett.edu.in/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Current LRC page lists Central Library & Law Library and LRC hours; circulation service hours are separately listed."
+      ]
+    },
+    {
+      "id": "b56-13",
+      "institutionSlug": "presidency-university",
+      "publisher": "Presidency University, Kolkata",
+      "title": "About Library",
+      "url": "https://www.presiuniv.ac.in/web/library/aboutlibrary.php",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "About Library section: University Library comprises Arts Library, Science Library and individual departmental libraries."
+      ]
+    },
+    {
+      "id": "b56-14",
+      "institutionSlug": "iim-jammu",
+      "publisher": "Indian Institute of Management Jammu",
+      "title": "IIM Jammu Library — NALANDA",
+      "url": "https://www.iimj.ac.in/institute/library.php",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Library description names NALANDA and lists discussion rooms, collaborative rooms, informal reading area and campus-wide digital resource access."
+      ]
+    },
+    {
+      "id": "b56-15",
+      "institutionSlug": "college-of-engineering-pune",
+      "publisher": "COEP Technological University (COEP Tech)",
+      "title": "Library Facilities (Web OPAC)",
+      "url": "https://www.coeptech.ac.in/facilities/knowledge-resource-center/library-facilities/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Library Facilities (Web OPAC): OPAC operates on Internet and Intranet and permits searching/reserving library materials."
+      ]
+    },
+    {
+      "id": "b56-16",
+      "institutionSlug": "iim-indore",
+      "publisher": "Indian Institute of Management Indore",
+      "title": "Facilities: An Overview",
+      "url": "https://iimidr.ac.in/facilities/facilities-an-overview/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Residential Infrastructure section: residential facilities include hostels for students and quarters for staff/faculty."
+      ]
+    },
+    {
+      "id": "b56-17",
+      "institutionSlug": "manipal-institute-of-technology",
+      "publisher": "Manipal Institute of Technology, Manipal Academy of Higher Education",
+      "title": "MIT Central Library",
+      "url": "https://www.manipal.edu/life-at-mahe/libraries/mit-central-library-manipal",
+      "academicYear": "2026-27",
+      "publicationDate": "2026-07-15",
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "MIT Central Library facilities list, including Web OPAC, RFID self-check kiosk and Open Library (24/7 Study Area)."
+      ]
+    },
+    {
+      "id": "b56-18",
+      "institutionSlug": "kiit-university",
+      "publisher": "KIIT Deemed to be University",
+      "title": "Hostel Facility",
+      "url": "https://kiit.ac.in/campuslife/hostel/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Hostel Facility page states every hostel has a 24-hour reading room and lists internet/intranet and indoor/outdoor games."
+      ]
+    },
+    {
+      "id": "b56-19",
+      "institutionSlug": "iit-bhu-varanasi",
+      "publisher": "Joint Seat Allocation Authority",
+      "title": "JoSAA 2026 participating institute directory",
+      "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "2026–27 institute directory, institute code 116, Indian Institute of Technology (BHU) Varanasi row, academic contact email field."
+      ]
+    },
+    {
+      "id": "b56-20",
+      "institutionSlug": "iiitdm-kancheepuram",
+      "publisher": "Joint Seat Allocation Authority",
+      "title": "JoSAA 2026 participating institute directory",
+      "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "2026–27 institute directory, institute code 310, IIITDM Kancheepuram row, official office email listed in institutional contact block."
+      ]
+    },
+    {
+      "id": "b56-21",
+      "institutionSlug": "iim-kozhikode",
+      "publisher": "Indian Institute of Management Kozhikode",
+      "title": "Contact Us",
+      "url": "https://www.iimk.ac.in/contact-us",
+      "academicYear": null,
+      "publicationDate": "2026-11-15",
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This candidate is a concise factual paraphrase with direct source attribution; no source prose, tables, fee figures or outcomes are reproduced. Recheck applicable terms before broader reuse.",
+      "evidenceLocations": [
+        "Official contact section identifies IIMK Campus P.O., Kozhikode, and institute phone; page last updated 15 November 2026."
+      ]
+    },
+    {
+      "id": "b56-22",
+      "institutionSlug": "fms-delhi",
+      "publisher": "Faculty of Management Studies, University of Delhi",
+      "title": "FMS Delhi — official homepage, admissions contact block",
+      "url": "https://www.fms.edu/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T20:47:43.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence was located. This is a concise factual contact listing with direct attribution; do not send sensitive documents without independently confirming the contact. No source text is copied.",
+      "evidenceLocations": [
+        "Official homepage, “Connect With Us” block: admissions@fms.edu."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "collegeId": "cmwkyn9wo000gfhtvendndlep",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA",
+        "route": "CAT-based shortlisting followed by Personal Interview and Writing Ability Test stages",
+        "category": "Domestic applicants, 2027–29 batch",
+        "exam": "CAT 2026"
+      },
+      "sourceIds": [
+        "b56-1"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Policy heading (MBA batch 2027–29); domestic-candidate sections on CAT 2026 shortlisting and selection stages.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Joka, Kolkata; domestic MBA admissions policy",
+      "publisherPeriod": "IIM Calcutta policy for MBA batch 2027–29; route only, not eligibility or selection thresholds.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "sp-jain-institute",
+      "collegeId": "cmwkyn9wt002ofhtv12h6yfjx",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "PGDM and PGDM (BM)",
+        "route": "A single application allows applicants to indicate programme preferences",
+        "category": "2027–29 applicants",
+        "exam": "CAT 2026 or GMAT"
+      },
+      "sourceIds": [
+        "b56-2"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Press release dated 16 September 2026, paragraphs on the 2027–29 batch and application process.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "SPJIMR, Mumbai; source is programme-level and identifies its 2027–29 batch",
+      "publisherPeriod": "Application window stated to close 27 November 2026; check the portal before applying. Not an eligibility or selection guarantee.",
+      "historical": false,
+      "validUntil": "2026-11-28",
+      "sourceExpiry": "2026-11-28T00:00:00.000Z"
+    },
+    {
+      "institutionSlug": "fms-delhi",
+      "collegeId": "cmwkyn9wt002bfhtvcnsdburt",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA Full-Time (2026–28 cohort)",
+        "route": "Past cycle used CAT 2025 for shortlisting, followed by statement-of-purpose discussion, extempore and interview",
+        "category": "Historical 2026–28 full-time cohort",
+        "exam": "CAT 2025"
+      },
+      "sourceIds": [
+        "b56-3"
+      ],
+      "academicYear": "2026-28",
+      "evidenceLocation": "FMS Information Bulletin, PDF page 7 (printed page 7), CAT 2025 shortlisting and selection-process sections.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Faculty of Management Studies, University of Delhi, Delhi",
+      "publisherPeriod": "Historical 2026–28 bulletin; not current admissions guidance.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "fms-delhi",
+      "collegeId": "cmwkyn9wt002bfhtvcnsdburt",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Admissions Office",
+        "channel": "EMAIL",
+        "contact": "admissions@fms.edu"
+      },
+      "sourceIds": [
+        "b56-22"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Official homepage, “Connect With Us” block: admissions@fms.edu.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "FMS, University of Delhi, Malkaganj Marg, Kamla Nagar, New Delhi",
+      "publisherPeriod": "Current institutional contact block; confirm before sending sensitive documents.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "vellore-institute-of-technology",
+      "collegeId": "cmwkyn9wo000ifhtva8o95590",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Periyar EVR Central Library",
+        "description": "The Vellore-campus page describes a web OPAC, online renewals and RFID self-issue/return facilities."
+      },
+      "sourceIds": [
+        "b56-4"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Periyar EVR Central Library description and “Learning Resources (as on 08.10.2026) — Vellore-Campus” heading.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "VIT Vellore campus",
+      "publisherPeriod": "Resource table explicitly dated 8 October 2026; facilities paraphrased, no collection counts copied.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "vellore-institute-of-technology",
+      "collegeId": "cmwkyn9wo000ifhtva8o95590",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech programmes across the VIT Group",
+        "route": "VITEEE 2027 rank-based counselling; campus and programme options are chosen during counselling subject to rank and availability",
+        "category": "2027–28 applicants",
+        "exam": "VITEEE 2027",
+        "counselling": "Group-wide process lists Vellore, Chennai, AP and Bhopal campuses; campus/programme availability varies by rank"
+      },
+      "sourceIds": [
+        "b56-5"
+      ],
+      "academicYear": "2027-28",
+      "evidenceLocation": "VITEEE 2027 page, “Admission Guidelines”, FAQ on campus choice during counselling, and “Our Campuses” list.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "VIT Group of Institutions; source expressly covers multiple campuses, including Vellore",
+      "publisherPeriod": "2027–28 admission cycle. Eligibility thresholds and tentative exam dates are intentionally not restated.",
+      "historical": false,
+      "sourceExpiry": "2027-02-20T20:47:43.000Z"
+    },
+    {
+      "institutionSlug": "fergusson-college",
+      "collegeId": "cmwkyn9wq001gfhtvbz1savxr",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Bai Jerbai Wadia Library",
+        "description": "The college lists a student reading hall, OPAC search area, computer section and Saathi enabling/Braille book section."
+      },
+      "sourceIds": [
+        "b56-6"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "“Library Sections” headings for Computer Section, OPAC Search area, Reading Hall for Students and Saathi Enabling Centre/Braille Book Section.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Fergusson College, Pune",
+      "publisherPeriod": "Institutional library page; collection counts and staff contacts omitted.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "loyola-college",
+      "collegeId": "cmwlksxnz000n31tvk7nb5prz",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Central Library",
+        "channel": "PHONE",
+        "contact": "+91 44-28178341"
+      },
+      "sourceIds": [
+        "b56-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "“Contact” block: Central Library, Loyola College (Autonomous), Chennai 600034; telephone and library extensions.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Loyola College, Chennai",
+      "publisherPeriod": "Page includes 2026–27 prospectus navigation; library phone shown in its contact block. Verify before calling.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "ashoka-university",
+      "collegeId": "cmwlksxoe000o31tv88ia0k82",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "HDFC Library and study spaces",
+        "description": "The Sonipat campus page describes the HDFC Library as open 24/7, with individual and collaborative study spaces."
+      },
+      "sourceIds": [
+        "b56-8"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Campus Tour, “Location” and “Classrooms and library” sections.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Ashoka University, Sonipat",
+      "publisherPeriod": "Current campus-tour page retrieved 2026-11-22; published hours can change, check university notices.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "gnlu-gandhinagar",
+      "collegeId": "cmwkyn9wu003rfhtvkaum8ktl",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "GNLU Library opening hours",
+        "description": "A library notice announces 24×7 opening effective 5 September 2026; confirm holiday and current access rules before visiting."
+      },
+      "sourceIds": [
+        "b56-9"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "GNLU Library home page banner announcing 24×7 opening effective 5 September 2026.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "GNLU Gandhinagar campus",
+      "publisherPeriod": "Dated opening notice effective 5 September 2026; this is an hours announcement, not a guarantee of unrestricted access.",
+      "historical": false,
+      "validFrom": "2026-09-05"
+    },
+    {
+      "institutionSlug": "iim-ranchi",
+      "collegeId": "cmwkyn9wt002afhtvys1zshf7",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Library remote access",
+        "description": "The library describes remote access to its subscribed electronic resources through a remote-access interface."
+      },
+      "sourceIds": [
+        "b56-10"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Library services paragraph on remote access to subscribed electronic resources; Remote Access link.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIM Ranchi; library page does not specify a single campus for this service",
+      "publisherPeriod": "Undated service description retrieved 2026-11-22; access is limited to subscribed resources and applicable users.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iim-shillong",
+      "collegeId": "cmwkyn9wt0029fhtvtc5iaar8",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Residential campus services",
+        "description": "The Umsawli campus page describes hostel facilities that include sports, recreation and dining."
+      },
+      "sourceIds": [
+        "b56-11"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Campus Tour, “Residential” section; campus identified as Umsawli.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIM Shillong, Umsawli campus",
+      "publisherPeriod": "Undated campus page retrieved 2026-11-22; does not establish hostel availability, allocation or charges.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "bennett-university",
+      "collegeId": "cmwkyn9wq001hfhtvxf4x9eux",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Learning Resource Centre and libraries",
+        "description": "The LRC page lists a Central Library, Law Library and Learning Resource Centre; it separately lists the book issue/renewal counter schedule."
+      },
+      "sourceIds": [
+        "b56-12"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Library Working Hours section listing Central Library & Law Library, LRC and circulation service.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Bennett University; campus not separately stated on this LRC page",
+      "publisherPeriod": "Schedule retrieved 2026-11-22; opening/circulation hours may change and do not imply individual eligibility.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "presidency-university",
+      "collegeId": "cmwlksxtm001331tvcq90jdsz",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "University Library units",
+        "description": "The university describes an Arts Library, a Science Library and individual departmental libraries."
+      },
+      "sourceIds": [
+        "b56-13"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "“About Library” section describing the Arts Library, Science Library and departmental libraries.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Presidency University, Kolkata",
+      "publisherPeriod": "Current library page includes 2026 notices; the statement is organizational and no collection figures are reproduced.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iim-jammu",
+      "collegeId": "cmwkyn9wu003hfhtvo20axo5n",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "NALANDA Library",
+        "description": "IIM Jammu describes NALANDA with discussion, collaborative and informal reading spaces, plus campus-wide access to subscribed digital resources."
+      },
+      "sourceIds": [
+        "b56-14"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "IIM Jammu Library description paragraph naming NALANDA and describing reading spaces and digital resource access.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIM Jammu; source says campus-wide service but does not distinguish campus locations",
+      "publisherPeriod": "Undated page retrieved 2026-11-22; digital access is subscription based.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "college-of-engineering-pune",
+      "collegeId": "cmwkyn9wt003afhtvsq4i1sz9",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Knowledge Resource Centre OPAC",
+        "description": "The university says its library OPAC operates on Internet and Intranet and lets users search and reserve library materials."
+      },
+      "sourceIds": [
+        "b56-15"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "“Library Facilities (Web OPAC)” section on catalogue operation and search/reservation.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "COEP Technological University, Pune",
+      "publisherPeriod": "Current university page; no holdings count or book-bank conditions reproduced.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iim-indore",
+      "collegeId": "cmwkyn9wq0027fhtv6czaixhh",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Residential infrastructure",
+        "description": "IIM Indore describes student hostels and separate residential quarters for staff and faculty."
+      },
+      "sourceIds": [
+        "b56-16"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "“Residential Infrastructure” section, opening sentence.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIM Indore campus",
+      "publisherPeriod": "Undated overview page retrieved 2026-11-22; this does not confirm current room availability, assignment or charges.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "manipal-institute-of-technology",
+      "collegeId": "cmwkyn9wo000kfhtvyiyers6h",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "MIT Central Library study and search facilities",
+        "description": "The Manipal-campus library page lists an Open Library 24/7 study area, Web OPAC and RFID self-check-out/check-in kiosk."
+      },
+      "sourceIds": [
+        "b56-17"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "MIT Central Library, “Facilities” list and “Open Library (24/7 Study Area)” item.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Manipal Institute of Technology, Manipal campus",
+      "publisherPeriod": "MAHE page last updated 15 July 2026; current hours and campus access conditions can change.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "kiit-university",
+      "collegeId": "cmwkyn9wp0012fhtvg5nihw25",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Hostel study and recreation spaces",
+        "description": "The hostel page describes 24-hour reading rooms in each hostel, internet/intranet and indoor/outdoor games."
+      },
+      "sourceIds": [
+        "b56-18"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Hostel Facility page opening paragraph and 24-hour Reading Room / indoor and outdoor games bullets.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "KIIT Deemed to be University, Bhubaneswar; page describes the institution hostel system",
+      "publisherPeriod": "Undated hostel page retrieved 2026-11-22; does not imply room availability, allocation or inclusion in fees.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iit-bhu-varanasi",
+      "collegeId": "cmwkyn9wq001nfhtvsvxk1g62",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Dean of Academic Affairs",
+        "channel": "EMAIL",
+        "contact": "doaa@iitbhu.ac.in"
+      },
+      "sourceIds": [
+        "b56-19"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "JoSAA 2026 directory, IIT (BHU) Varanasi row (institute code 116), contact email field.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT (BHU) Varanasi",
+      "publisherPeriod": "2026–27 admissions directory contact; recheck the institute office before sending sensitive information.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iiitdm-kancheepuram",
+      "collegeId": "cmwkyn9wu0043fhtv28j5gvew",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Institute office",
+        "channel": "EMAIL",
+        "contact": "office@iiitdm.ac.in"
+      },
+      "sourceIds": [
+        "b56-20"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "JoSAA 2026 directory, institute code 310, IIITDM Kancheepuram row, institutional contact block.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIITDM Kancheepuram, Vandalur-Kelambakkam Road, Chennai 600127",
+      "publisherPeriod": "2026–27 admissions directory entry; recheck before sending sensitive information.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iim-kozhikode",
+      "collegeId": "cmwkyn9wt0028fhtv2773evcc",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Institute contact",
+        "channel": "PHONE",
+        "contact": "+91-495-2809100"
+      },
+      "sourceIds": [
+        "b56-21"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "“Contact Us” section lists the institute phone and IIMK Campus P.O., Kozhikode; footer reports last updated 15-11-2026.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIM Kozhikode, Kunnamangalam, Kozhikode",
+      "publisherPeriod": "Institution contact page last updated 15 November 2026; verify before calling.",
+      "historical": false
+    }
+  ],
+  "heldFindings": [
+    {
+      "institutionSlug": "iit-jodhpur",
+      "sourceUrl": "https://iitj.ac.in/office-of-academics/en/list-of-academic-programs",
+      "reason": "Official IIT Jodhpur academic programme page and alternate Academic Affairs pages timed out on direct open. Search-result text was not used as evidence; no fact published."
+    },
+    {
+      "institutionSlug": "university-of-mumbai",
+      "sourceUrl": "https://www.mu.ac.in/sub.php?name=Contact",
+      "reason": "Official University of Mumbai contact page timed out on direct open. Search-result text was not used as evidence; no contact published."
+    },
+    {
+      "institutionSlug": "gnlu-gandhinagar",
+      "sourceUrl": "https://gnlu.ac.in/library/Home",
+      "reason": "Library hours notice is presented as an announcement; source has not stated holiday exceptions or ongoing access restrictions. Published narrowly with recheck warning and 90-day expiry."
+    },
+    {
+      "institutionSlug": "bennett-university",
+      "sourceUrl": "https://library.bennett.edu.in/",
+      "reason": "Opening hours are dynamic and the page does not identify a campus in its hours block. Published only as a directory of named facilities, with no guaranteed access claim."
+    },
+    {
+      "institutionSlug": "kiit-university",
+      "sourceUrl": "https://kiit.ac.in/campuslife/hostel/",
+      "reason": "Hostel services are described by an undated page; no allocation, room availability or fee inclusion is inferred."
+    },
+    {
+      "institutionSlug": "sp-jain-institute",
+      "sourceUrl": "https://www.spjimr.org/newsroom/press-release/spjimr-opens-applications-for-pgdm-and-pgdm-bm-programmes-for-2027-29/",
+      "reason": "Application deadline 27 November 2026 is imminent; route claim expires after the stated deadline and must not be interpreted as an open application thereafter."
+    },
+    {
+      "institutionSlug": "fms-delhi",
+      "sourceUrl": "https://www.fms.edu/static/programmes/MBA_2026.pdf",
+      "reason": "Admission process describes a historical 2026–28 cohort; displayed as past-cycle information only, not current guidance."
+    }
+  ]
+}

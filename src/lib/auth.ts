@@ -3,14 +3,15 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import { compare } from 'bcryptjs';
 import { prisma } from './prisma';
 import { loginSchema } from './validation';
-import { checkRateLimit } from './rate-limit';
+import { checkRateLimit, isRateLimitUnavailable } from './rate-limit';
 import { clientIpFromHeaders } from './http';
-import { logger } from './logger';
+import { logger, errorFields } from './logger';
 
 // bcrypt hash of a random string. Compared against when the email does not
 // exist so that "no such user" and "wrong password" take the same time.
 const DUMMY_HASH = '$2b$12$6GzIT.fv9BNkILiaSNxMf.wc/NzLpEMg9pyGC1kIHZuz2pB3WjlLe';
 
+export const SIGN_IN_UNAVAILABLE = 'SignInUnavailable';
 export const TOO_MANY_ATTEMPTS = 'TooManyAttempts';
 
 export const authOptions: NextAuthOptions = {
@@ -30,22 +31,29 @@ export const authOptions: NextAuthOptions = {
         const [byIp, byAccount] = await Promise.all([
           checkRateLimit('loginIp', ip),
           checkRateLimit('login', `${ip}:${email}`),
-        ]);
+        ]).catch((error: unknown) => {
+          if (isRateLimitUnavailable(error)) throw new Error(SIGN_IN_UNAVAILABLE);
+          throw error;
+        });
         if (!byIp.success || !byAccount.success) {
-          logger.warn('login_rate_limited', { ip });
+          logger.warn('login_rate_limited');
           throw new Error(TOO_MANY_ATTEMPTS);
         }
 
-        // Case-insensitive lookup keeps accounts created before emails were
-        // normalised to lowercase working.
-        const user = await prisma.user.findFirst({
-          where: { email: { equals: email, mode: 'insensitive' } },
-          select: { id: true, email: true, name: true, password: true, role: true },
-        });
-        const ok = await compare(password, user?.password ?? DUMMY_HASH);
-        if (!user || !ok) return null;
-
-        return { id: user.id, email: user.email, name: user.name, role: user.role };
+        try {
+          // Preserve access for accounts created before email normalization.
+          const user = await prisma.user.findFirst({
+            where: { email: { equals: email, mode: 'insensitive' }, deactivatedAt: null },
+            select: { id: true, email: true, name: true, password: true, role: true },
+          });
+          const ok = await compare(password, user?.password ?? DUMMY_HASH);
+          if (!user || !ok) return null;
+          return { id: user.id, email: user.email, name: user.name, role: user.role };
+        } catch (error) {
+          logger.error('credentials_lookup_failed', errorFields(error));
+          // NextAuth may surface a thrown credentials error as a callback parameter.
+          throw new Error(SIGN_IN_UNAVAILABLE);
+        }
       },
     }),
   ],
@@ -68,4 +76,9 @@ export const authOptions: NextAuthOptions = {
   },
   pages: { signIn: '/login' },
   secret: process.env.NEXTAUTH_SECRET,
+  logger: {
+    error(code) { logger.error('nextauth_error', { code }); },
+    warn(code) { logger.warn('nextauth_warning', { code }); },
+    debug() { /* No authentication metadata in logs. */ },
+  },
 };

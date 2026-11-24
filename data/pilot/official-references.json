@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "indian-institute-of-technology-bombay",
+    "publisher": "Indian Institute of Technology Bombay",
+    "url": "https://www.iitb.ac.in/",
+    "collectedAt": "2026-11-17T17:13:12Z",
+    "publishedAt": null,
+    "locator": "Official HTML page identity/header observed via read-only browser; website URL only, no copied document or prose",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "indian-institute-of-technology-madras",
+    "publisher": "Indian Institute of Technology Madras",
+    "url": "https://www.iitm.ac.in/",
+    "collectedAt": "2026-11-17T17:13:12Z",
+    "publishedAt": null,
+    "locator": "Official HTML page identity/header observed via read-only browser; website URL only, no copied document or prose",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "indian-institute-of-technology-delhi",
+    "publisher": "Indian Institute of Technology Delhi",
+    "url": "https://home.iitd.ac.in/",
+    "collectedAt": "2026-11-17T17:13:12Z",
+    "publishedAt": null,
+    "locator": "Official HTML page identity/header observed via read-only browser; website URL only, no copied document or prose",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "national-institute-of-technology-tiruchirappalli",
+    "publisher": "National Institute of Technology Tiruchirappalli",
+    "url": "https://www.nitt.edu/home/",
+    "collectedAt": "2026-11-17T17:13:12Z",
+    "publishedAt": null,
+    "locator": "Official HTML page identity/header observed via read-only browser; website URL only, no copied document or prose",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "vellore-institute-of-technology",
+    "publisher": "Vellore Institute of Technology",
+    "url": "https://vit.ac.in/",
+    "collectedAt": "2026-11-17T17:13:12Z",
+    "publishedAt": null,
+    "locator": "Official HTML page identity/header observed via read-only browser; website URL only, no copied document or prose",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "manipal-academy-of-higher-education",
+    "publisher": "Manipal Academy of Higher Education",
+    "url": "https://www.manipal.edu/",
+    "collectedAt": "2026-11-17T17:13:12Z",
+    "publishedAt": null,
+    "locator": "Official HTML page identity/header observed via read-only browser; website URL only, no copied document or prose",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "amrita-vishwa-vidyapeetham",
+    "publisher": "Amrita Vishwa Vidyapeetham",
+    "url": "https://www.amrita.edu/",
+    "collectedAt": "2026-11-17T17:13:12Z",
+    "publishedAt": null,
+    "locator": "Official HTML page identity/header observed via read-only browser; website URL only, no copied document or prose",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "birla-institute-of-technology-mesra",
+    "publisher": "Birla Institute of Technology Mesra",
+    "url": "https://bitmesra.ac.in/",
+    "collectedAt": "2026-11-17T17:13:12Z",
+    "publishedAt": null,
+    "locator": "Official HTML page identity/header observed via read-only browser; website URL only, no copied document or prose",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  }
+]

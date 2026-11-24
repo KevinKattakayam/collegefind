@@ -1,0 +1,109 @@
+{
+  "status": "STAGED",
+  "facts": 12,
+  "reviewState": "UNREVIEWED",
+  "staged": 12,
+  "reused": 0,
+  "createdSources": 10,
+  "createdRuns": 10,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "indian-institute-of-technology-kharagpur",
+      "field": "structured.programme",
+      "evidenceId": "cmwln2qye000bsetvqutx6gon",
+      "sourceId": "cmwln2qxi0000setvru2myigf",
+      "sourceUrl": "https://civil.iitkgp.ac.in/academics_new.html",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-hyderabad",
+      "field": "structured.programme",
+      "evidenceId": "cmwln2qyo000esetvpeu1biej",
+      "sourceId": "cmwln2qxn0001setv6d3tjyfx",
+      "sourceUrl": "https://www.iith.ac.in/academics/under-graduate/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-ahmedabad",
+      "field": "structured.programme",
+      "evidenceId": "cmwln2qyt000hsetvsue3av9m",
+      "sourceId": "cmwln2qxq0002setv2p4ydz1x",
+      "sourceUrl": "https://iima.ac.in/academics/mba",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "management-development-institute",
+      "field": "structured.programme",
+      "evidenceId": "cmwln2qyx000ksetvnqgy94k7",
+      "sourceId": "cmwln2qxt0003setvraqn1jzy",
+      "sourceUrl": "https://mdi.ac.in/programmes/post-graduate-diploma-in-management-banking-financial-services-pgdm-bfs",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "mica-ahmedabad",
+      "field": "structured.programme",
+      "evidenceId": "cmwln2qzd000nsetvqndlsdl3",
+      "sourceId": "cmwln2qxw0004setvdddeqpmo",
+      "sourceUrl": "https://www.mica.ac.in/admissions/pgdm-c/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "national-law-school-of-india-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwln2qzj000qsetvnz9rm5ds",
+      "sourceId": "cmwln2qxz0005setvwnxy94hs",
+      "sourceUrl": "https://www.nls.ac.in/programme/ba-llb-hons/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "national-law-school-of-india-university",
+      "field": "structured.fee",
+      "evidenceId": "cmwln2qzm000ssetvl2a40tfr",
+      "sourceId": "cmwln2qxz0005setvwnxy94hs",
+      "sourceUrl": "https://www.nls.ac.in/programme/ba-llb-hons/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "iit-patna",
+      "field": "structured.programme",
+      "evidenceId": "cmwln2qzu000vsetvuaxs6q6y",
+      "sourceId": "cmwln2qy10006setvjyex5iwp",
+      "sourceUrl": "https://iitp.ac.in/departments/computer-science-engineering",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "iim-kozhikode",
+      "field": "structured.programme",
+      "evidenceId": "cmwln2r01000ysetv0kvsr8v5",
+      "sourceId": "cmwln2qy20007setvucc2i8np",
+      "sourceUrl": "https://iimk.ac.in/ir-programs-offered",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "nalsar-university-of-law",
+      "field": "structured.programme",
+      "evidenceId": "cmwln2r080011setv9qcvqhyx",
+      "sourceId": "cmwln2qy40008setvocg49k6s",
+      "sourceUrl": "https://nalsar.ac.in/programmes/undergraduate-study-in-law/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "nalsar-university-of-law",
+      "field": "structured.admission",
+      "evidenceId": "cmwln2r0c0013setvw8chejkh",
+      "sourceId": "cmwln2qy40008setvocg49k6s",
+      "sourceUrl": "https://nalsar.ac.in/programmes/undergraduate-study-in-law/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "iim-ranchi",
+      "field": "structured.programme",
+      "evidenceId": "cmwln2r0l0016setv8ri4dre4",
+      "sourceId": "cmwln2qy50009setvzzrny32y",
+      "sourceUrl": "https://iimranchi.ac.in/media/2026/04/Admission-Criteria-2026.pdf",
+      "status": "STAGED"
+    }
+  ],
+  "databaseChanged": true
+}

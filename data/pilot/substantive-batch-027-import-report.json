@@ -1,0 +1,101 @@
+{
+  "status": "STAGED",
+  "facts": 11,
+  "reviewState": "UNREVIEWED",
+  "staged": 11,
+  "reused": 0,
+  "createdSources": 5,
+  "createdRuns": 5,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured.programme",
+      "evidenceId": "cmwma2oed0006gotvmk5ytxt9",
+      "sourceId": "cmwma2odr0000gotviv1ni5lo",
+      "sourceUrl": "https://www.amrita.edu/program/b-sc-psychology-hons/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured.admission",
+      "evidenceId": "cmwma2oei0008gotvepd3n84q",
+      "sourceId": "cmwma2odr0000gotviv1ni5lo",
+      "sourceUrl": "https://www.amrita.edu/program/b-sc-psychology-hons/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured.fee",
+      "evidenceId": "cmwma2oel000agotv1ofrml8a",
+      "sourceId": "cmwma2odr0000gotviv1ni5lo",
+      "sourceUrl": "https://www.amrita.edu/program/b-sc-psychology-hons/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured.fee",
+      "evidenceId": "cmwma2oeo000cgotv8214w601",
+      "sourceId": "cmwma2odr0000gotviv1ni5lo",
+      "sourceUrl": "https://www.amrita.edu/program/b-sc-psychology-hons/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured.fee",
+      "evidenceId": "cmwma2oer000egotv7ju4vsgc",
+      "sourceId": "cmwma2odr0000gotviv1ni5lo",
+      "sourceUrl": "https://www.amrita.edu/program/b-sc-psychology-hons/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured.fee",
+      "evidenceId": "cmwma2oet000ggotvf09oub2h",
+      "sourceId": "cmwma2odr0000gotviv1ni5lo",
+      "sourceUrl": "https://www.amrita.edu/program/b-sc-psychology-hons/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "nit-agartala",
+      "field": "structured.programme",
+      "evidenceId": "cmwma2of4000jgotvys9iz88k",
+      "sourceId": "cmwma2ody0001gotvd5sam0pu",
+      "sourceUrl": "https://nita.ac.in/Department/DisplayDeptPage.aspx?ItemID=eoi&nDeptID=caasa&page=e",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "nit-srinagar",
+      "field": "structured.programme",
+      "evidenceId": "cmwma2ofc000mgotva6cdrw6w",
+      "sourceId": "cmwma2oe00002gotvrrasqufr",
+      "sourceUrl": "https://filetrack.nitsri.ac.in/uploaded_files/UG_MANUAL.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "bennett-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwma2ofh000pgotvrc380lex",
+      "sourceId": "cmwma2oe20003gotvkna57fbk",
+      "sourceUrl": "https://www.bennett.edu.in/programs/b-tech-artificial-intelligence/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "bennett-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwma2ofj000rgotvv5ngokh7",
+      "sourceId": "cmwma2oe20003gotvkna57fbk",
+      "sourceUrl": "https://www.bennett.edu.in/programs/b-tech-artificial-intelligence/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "calcutta-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwma2ofp000ugotvzpku5x41",
+      "sourceId": "cmwma2oe30004gotvc06qn9mc",
+      "sourceUrl": "https://s3.ap-south-1.amazonaws.com/caluniv/admission/BTech-ChemTech-Notice.pdf",
+      "status": "STAGED"
+    }
+  ],
+  "databaseChanged": true
+}

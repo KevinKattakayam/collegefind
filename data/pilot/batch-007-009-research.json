@@ -1,0 +1,805 @@
+[
+  {
+    "slug": "iim-jammu",
+    "url": "https://www.iimj.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "iisc-bangalore",
+    "url": "https://www.iisc.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "st-johns-medical-college",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Candidate domain unavailable to the read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "cochin-university",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request timed out in the available read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "college-of-engineering-pune",
+    "url": "https://www.coeptech.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "north-eastern-hill-university",
+    "url": "https://nehu.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "iim-sambalpur",
+    "url": "https://iimsambalpur.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "pondicherry-university",
+    "url": "https://www.pondiuni.edu.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "rgnul-patiala",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request timed out in the available read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "rajasthan-technical-university",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request returned 403",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "stanley-medical-college",
+    "url": "https://stanleymedicalcollege.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "vel-tech-university",
+    "url": "https://www.veltech.edu.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "jntu-hyderabad",
+    "url": "https://jntuh.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "st-johns-college",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Candidate domain unavailable to the read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "dit-university",
+    "url": "https://www.dituniversity.edu.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "indian-statistical-institute",
+    "url": "https://www.isical.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "andhra-university",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request timed out in the available read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "tezpur-university",
+    "url": "https://www.tezu.ernet.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "patna-university",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request timed out in the available read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "gujarat-technological-university",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request returned 403",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "bangalore-medical-college",
+    "url": null,
+    "outcome": "SOURCE_CONFLICT",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Candidate bmcri.org redirects to an unrelated gambling website; suspected compromised/incorrect domain, rejected and not staged",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "iiit-kottayam",
+    "url": "https://www.iiitkottayam.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "iiit-gwalior",
+    "url": "https://iiitm.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "iim-nagpur",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request returned 403",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "niser-bhubaneswar",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request timed out in the available read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "punjab-technical-university",
+    "url": "https://ptu.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "central-university-of-rajasthan",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request timed out in the available read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "iiitdm-kancheepuram",
+    "url": "https://iiitdm.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "sathyabama-institute",
+    "url": "https://www.sathyabama.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "galgotias-university",
+    "url": "https://www.galgotiasuniversity.edu.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "nujs-kolkata",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Candidate official URL unavailable to the read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "visvesvaraya-technological-university",
+    "url": "https://vtu.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "jain-university",
+    "url": "https://www.jainuniversity.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "central-university-of-kerala",
+    "url": "https://www.cukerala.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "iiit-jabalpur",
+    "url": "https://iiitdmj.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "seth-gs-medical-college",
+    "url": "https://www.kem.edu/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "central-university-of-punjab",
+    "url": "https://cup.edu.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "madras-university",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request returned 403",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "hindustan-university",
+    "url": "https://hindustanuniv.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "calcutta-university",
+    "url": "https://www.caluniv.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "mysore-university",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request timed out in the available read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "kle-technological-university",
+    "url": "https://www.kletech.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "ict-mumbai",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request returned 403",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "iiser-mohali",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request timed out in the available read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "central-university-of-tamil-nadu",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request timed out in the available read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "saveetha-university",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Candidate official URL unavailable to the read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "iiser-kolkata",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request timed out in the available read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "lady-hardinge-medical-college",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request timed out in the available read-only browser",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "rvce-bangalore",
+    "url": null,
+    "outcome": "ACCESS_BLOCKED_OR_UNREADABLE",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Official-source candidate checked; no claim staged",
+    "reason": "Official-domain request returned 403",
+    "permissions": {
+      "factualLink": "Not verified in this pass",
+      "automatedRetrieval": "Not established",
+      "documentStorage": "None",
+      "bulkRedistribution": "Not established"
+    }
+  },
+  {
+    "slug": "iiser-pune",
+    "url": "https://www.iiserpune.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "nlu-delhi",
+    "url": "https://nludelhi.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "bms-college-of-engineering",
+    "url": "https://bmsce.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "nit-delhi",
+    "url": "https://nitdelhi.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "ms-ramaiah-institute",
+    "url": "https://www.msrit.edu/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  },
+  {
+    "slug": "pes-university",
+    "url": "https://pes.edu/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17T17:44:09Z",
+    "scope": "Institution-level official homepage reference only; no substantive field research in this attempt",
+    "campusMatch": "PENDING_HUMAN_REVIEW",
+    "permissions": {
+      "factualLink": "Observed public page; source link only",
+      "automatedRetrieval": "Not established; no automated crawl performed",
+      "attribution": "Publisher and exact URL retained",
+      "documentStorage": "No document stored",
+      "bulkRedistribution": "No bulk reproduction permission assumed"
+    }
+  }
+]

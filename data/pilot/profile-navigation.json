@@ -1,0 +1,1670 @@
+{
+  "all-india-institute-of-medical-sciences": [
+    {
+      "url": "https://www.aiims.edu/index.php/en",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr5g0022p0tv9fx3fjsy"
+    }
+  ],
+  "amrita-vishwa-vidyapeetham": [
+    {
+      "url": "https://www.amrita.edu/admissions/",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynirj000alvtv7qzzkmcx"
+    },
+    {
+      "url": "https://www.amrita.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwlksz85002y31tv0gf6zkgc"
+    }
+  ],
+  "andhra-university": [
+    {
+      "url": "https://audoa.andhrauniversity.edu.in/",
+      "label": "Directorate of Admissions notices",
+      "category": "admissions",
+      "scope": "Andhra University · check the notice for campus and intake",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 030: directly opened institutional page or document"
+    }
+  ],
+  "anna-university": [
+    {
+      "url": "https://www.annauniv.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr3y001ep0tv75hvinnm"
+    }
+  ],
+  "banaras-hindu-university": [
+    {
+      "url": "https://www.bhu.ac.in/Site/Home/1_2_7047_Main-Site",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvwc000ibbtvn7fmsl0a"
+    }
+  ],
+  "bennett-university": [
+    {
+      "url": "https://www.bennett.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkza4zx000ei7tvhnlai5q3"
+    }
+  ],
+  "birla-institute-of-technology-mesra": [
+    {
+      "url": "https://bitmesra.ac.in/admission/1/department/11",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynir50006lvtvew8exr1p"
+    },
+    {
+      "url": "https://bitmesra.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwlksz8s003231tvi9kenz98"
+    }
+  ],
+  "bj-medical-college": [
+    {
+      "url": "https://bjmcabd.edu.in/admission-process/",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzioep001eb9tvzv3uuuc6"
+    },
+    {
+      "url": "https://bjmcabd.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wkk000efbtvx58sz1cp"
+    }
+  ],
+  "bms-college-of-engineering": [
+    {
+      "url": "https://bmsce.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzflm3000ip2tvy0rqmaak"
+    }
+  ],
+  "calcutta-university": [
+    {
+      "url": "https://www.caluniv.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzflkj0002p2tvoxf936kn"
+    }
+  ],
+  "central-university-of-haryana": [
+    {
+      "url": "https://www.cuh.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wpg001yfbtvj59kewh2"
+    }
+  ],
+  "central-university-of-kerala": [
+    {
+      "url": "https://www.cukerala.ac.in/Admissions/Admissions_CUK_Admissions",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzioca000mb9tv7acfed3a"
+    },
+    {
+      "url": "https://www.cukerala.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfddm002amctvuckkyyxq"
+    },
+    {
+      "url": "https://cukerala.ac.in/Admissions/Admissions_CUK_PG_2026_27",
+      "label": "Central University of Kerala 2026–27 postgraduate information",
+      "category": "admissions",
+      "scope": "Read the institution page for programme and campus scope",
+      "checkedAt": "2026-11-19",
+      "reference": "Batch 029 editorial navigation"
+    }
+  ],
+  "central-university-of-punjab": [
+    {
+      "url": "https://www.cup.edu.in/admission-2026-27",
+      "label": "Admission notices (2026–27 reference)",
+      "category": "admissions",
+      "scope": "Central University of Punjab, Bathinda · 2026–27 notices",
+      "checkedAt": "2026-11-20",
+      "reference": "Directly opened dated institution page after archived admissions endpoint returned HTTP 503"
+    },
+    {
+      "url": "https://cup.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfde8002mmctvmwul3ay0"
+    }
+  ],
+  "chandigarh-university": [
+    {
+      "url": "https://www.cuchd.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr57001yp0tvdnylm3jq"
+    }
+  ],
+  "chitkara-university": [
+    {
+      "url": "https://www.chitkara.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wqx002mfbtv0nku4qlj"
+    }
+  ],
+  "christian-medical-college": [
+    {
+      "url": "https://www.cmch-vellore.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr5n0026p0tveg8wfw9o"
+    }
+  ],
+  "cmi-chennai": [
+    {
+      "url": "https://www.cmi.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wnd0016fbtvsze4knm1"
+    }
+  ],
+  "college-of-engineering-pune": [
+    {
+      "url": "https://www.coeptech.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfd83000amctvkom358bd"
+    }
+  ],
+  "delhi-technological-university": [
+    {
+      "url": "https://dtu.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnnk001m9gtvsz3xuttw"
+    }
+  ],
+  "dhirubhai-ambani-institute": [
+    {
+      "url": "https://www.daiict.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wl0000ifbtvufi751k9"
+    }
+  ],
+  "dibrugarh-university": [
+    {
+      "url": "https://www.dibru.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkza50t000mi7tv2lcwproq"
+    }
+  ],
+  "dit-university": [
+    {
+      "url": "https://www.dituniversity.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdar0012mctvrx89pjrg"
+    },
+    {
+      "url": "https://www.dituniversity.edu.in/ug-courses/btech-civil-engineering",
+      "label": "DIT University Civil Engineering programme",
+      "category": "programmes",
+      "scope": "Read the institution page for programme and campus scope",
+      "checkedAt": "2026-11-19",
+      "reference": "Batch 029 editorial navigation"
+    }
+  ],
+  "fergusson-college": [
+    {
+      "url": "https://fergusson.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr6q002qp0tv0sl2yu2q"
+    }
+  ],
+  "flame-university": [
+    {
+      "url": "https://www.flame.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnjc00069gtvxaxgokez"
+    },
+    {
+      "url": "https://www.flame.edu.in/academics/ug",
+      "label": "FLAME University undergraduate programmes",
+      "category": "programmes",
+      "scope": "Read the institution page for programme and campus scope",
+      "checkedAt": "2026-11-19",
+      "reference": "Batch 029 editorial navigation"
+    }
+  ],
+  "fms-delhi": [
+    {
+      "url": "https://www.fms.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvw0000ebbtvy3w09qjo"
+    }
+  ],
+  "galgotias-university": [
+    {
+      "url": "https://www.galgotiasuniversity.edu.in/p/admission/admission-procedure",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkziobv000ib9tvutov5hwi"
+    },
+    {
+      "url": "https://www.galgotiasuniversity.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdcv001ymctviijmjfev"
+    },
+    {
+      "url": "https://www.galgotiasuniversity.edu.in/p/program/under-graduate/department-of-computing-science-and-engineering/btech-in-computer-science-and-engineering",
+      "label": "Galgotias University CSE programme",
+      "category": "programmes",
+      "scope": "Read the institution page for programme and campus scope",
+      "checkedAt": "2026-11-19",
+      "reference": "Batch 029 editorial navigation"
+    }
+  ],
+  "gauhati-university": [
+    {
+      "url": "https://gauhati.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wp5001ufbtv908pwbap"
+    }
+  ],
+  "gd-goenka-university": [
+    {
+      "url": "https://www.gdgoenkauniversity.com/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wlh000mfbtvrwhtasyt"
+    }
+  ],
+  "gitam-university": [
+    {
+      "url": "https://www.gitam.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9woi001mfbtvsn4ckrsm"
+    }
+  ],
+  "gnlu-gandhinagar": [
+    {
+      "url": "https://www.gnlu.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkza51m000ui7tvqj8w5iu0"
+    },
+    {
+      "url": "https://gnlu.ac.in/GNLU/Under-Graduate-Programme",
+      "label": "GNLU undergraduate programmes",
+      "category": "programmes",
+      "scope": "Read the institution page for programme and campus scope",
+      "checkedAt": "2026-11-19",
+      "reference": "Batch 029 editorial navigation"
+    }
+  ],
+  "graphic-era-university": [
+    {
+      "url": "https://geu.ac.in/admissions/admissions-overview",
+      "label": "Admissions information (2026 reference)",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkziob5000ab9tve55z1sfx"
+    },
+    {
+      "url": "https://geu.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkza50e000ii7tvb6zk3gfo"
+    }
+  ],
+  "hindustan-university": [
+    {
+      "url": "https://hindustanuniv.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdeg002qmctvmatn3841"
+    }
+  ],
+  "iiit-allahabad": [
+    {
+      "url": "https://www.iiita.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnna001i9gtvb643f5js"
+    }
+  ],
+  "iiit-bangalore": [
+    {
+      "url": "https://www.iiitb.ac.in/courses/btech-integrated-mtech",
+      "label": "B.Tech and integrated M.Tech admissions, fees and aid (2026–27 reference)",
+      "category": "admissions",
+      "scope": "IIIT Bangalore · 2026–27 closed intake",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 030: directly opened institutional page or document"
+    },
+    {
+      "url": "https://www.iiitb.ac.in/academics/integrated-programmes/integrated-mtech-computer-science-and-engineering",
+      "label": "Integrated M.Tech in Computer Science and Engineering",
+      "category": "programmes",
+      "scope": "IIIT Bangalore · programme page",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 030: directly opened institutional page or document"
+    },
+    {
+      "url": "https://www.iiitb.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnn2001e9gtv3esbyq7f"
+    }
+  ],
+  "iiit-gwalior": [
+    {
+      "url": "https://iiitm.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdbs001imctvz0af90ib"
+    }
+  ],
+  "iiit-jabalpur": [
+    {
+      "url": "https://iiitdmj.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdds002emctvs3kxpn0j"
+    }
+  ],
+  "iiit-kottayam": [
+    {
+      "url": "https://www.iiitkottayam.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdbk001emctvj60xi971"
+    }
+  ],
+  "iiitdm-kancheepuram": [
+    {
+      "url": "https://iiitdm.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdcd001qmctvfbscngmo"
+    }
+  ],
+  "iim-bodh-gaya": [
+    {
+      "url": "https://iimbg.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkza518000qi7tv5otp5fjx"
+    }
+  ],
+  "iim-indore": [
+    {
+      "url": "https://iimidr.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqno6001u9gtvwh0o3fyr"
+    }
+  ],
+  "iim-jammu": [
+    {
+      "url": "https://www.iimj.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfd760002mctvd1yzi86d"
+    }
+  ],
+  "iim-kozhikode": [
+    {
+      "url": "https://iimk.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvus0002bbtvcg05b779"
+    }
+  ],
+  "iim-ranchi": [
+    {
+      "url": "https://iimranchi.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvvn000abbtvpmz7idd2"
+    }
+  ],
+  "iim-sambalpur": [
+    {
+      "url": "https://iimsambalpur.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfd8v000imctvd0i1de4h"
+    }
+  ],
+  "iim-shillong": [
+    {
+      "url": "https://www.iimshillong.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvvd0006bbtvu07azbe8"
+    }
+  ],
+  "iim-sirmaur": [
+    {
+      "url": "https://www.iimsirmaur.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkza520000yi7tva8rlq8o4"
+    }
+  ],
+  "iisc-bangalore": [
+    {
+      "url": "https://www.iisc.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfd7s0006mctvc92ttr6u"
+    }
+  ],
+  "iiser-pune": [
+    {
+      "url": "https://www.iiserpune.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfllg000ap2tvkwbzxu7p"
+    }
+  ],
+  "iit-bhu-varanasi": [
+    {
+      "url": "https://iitbhu.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnke000i9gtvtk3u0ltg"
+    }
+  ],
+  "iit-gandhinagar": [
+    {
+      "url": "https://iitgn.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvyn001abbtv1fp02bhs"
+    }
+  ],
+  "iit-indore": [
+    {
+      "url": "https://www.iiti.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnkr000m9gtv9uog1u8x"
+    }
+  ],
+  "iit-mandi": [
+    {
+      "url": "https://iitmandi.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvy20012bbtvm93qrdtu"
+    }
+  ],
+  "iit-palakkad": [
+    {
+      "url": "https://iitpkd.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnl9000q9gtvjiuk8j5n"
+    }
+  ],
+  "iit-patna": [
+    {
+      "url": "https://www.iitp.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvye0016bbtvp7srivjn"
+    }
+  ],
+  "indian-institute-of-management-ahmedabad": [
+    {
+      "url": "https://www.iima.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr2k000up0tvpgz3logm"
+    }
+  ],
+  "indian-institute-of-management-calcutta": [
+    {
+      "url": "https://www.iimcal.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr2x000yp0tvz5b09xwt"
+    }
+  ],
+  "indian-institute-of-technology-bombay": [
+    {
+      "url": "https://www.iitb.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwlksz4h002a31tvesf8nc00"
+    }
+  ],
+  "indian-institute-of-technology-delhi": [
+    {
+      "url": "https://home.iitd.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwlksz5s002i31tvztdujr7v"
+    }
+  ],
+  "indian-institute-of-technology-guwahati": [
+    {
+      "url": "https://www.iitg.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr0g000ap0tvzzbolcit"
+    }
+  ],
+  "indian-institute-of-technology-hyderabad": [
+    {
+      "url": "https://www.iith.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr0u000ep0tvyb98q520"
+    }
+  ],
+  "indian-institute-of-technology-kharagpur": [
+    {
+      "url": "https://www.iitkgp.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynqzf0002p0tvtf8i3th6"
+    }
+  ],
+  "indian-institute-of-technology-madras": [
+    {
+      "url": "https://www.iitm.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwlksz55002e31tvipo0415p"
+    },
+    {
+      "url": "https://www.iitm.ac.in/contact",
+      "label": "Institute contact page",
+      "category": "contact",
+      "scope": "IIT Madras, Chennai",
+      "checkedAt": "2026-11-20",
+      "reference": "First-party navigation followed and destination opened"
+    }
+  ],
+  "indian-institute-of-technology-roorkee": [
+    {
+      "url": "https://www.iitr.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr020006p0tvhrdsj8xm"
+    }
+  ],
+  "jain-university": [
+    {
+      "url": "https://www.jainuniversity.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfddc0026mctvr9tyscc6"
+    }
+  ],
+  "jipmer-puducherry": [
+    {
+      "url": "https://jipmer.edu.in/sites/default/files/Courses%20in%20JIPMER.pdf",
+      "label": "JIPMER academic courses",
+      "category": "programmes",
+      "scope": "Read the institution page for programme and campus scope",
+      "checkedAt": "2026-11-19",
+      "reference": "Batch 029 editorial navigation"
+    }
+  ],
+  "jntu-hyderabad": [
+    {
+      "url": "https://jntuh.ac.in/admissions",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkziobh000eb9tvnm7xyf8x"
+    },
+    {
+      "url": "https://jntuh.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdad000ymctv1pncsvgo"
+    }
+  ],
+  "kalasalingam-university": [
+    {
+      "url": "https://www.kalasalingam.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkza4zm000ai7tv543t0grd"
+    }
+  ],
+  "kiit-university": [
+    {
+      "url": "https://kiit.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr4q001qp0tvoyq2ifrs"
+    }
+  ],
+  "king-georges-medical-university": [
+    {
+      "url": "https://kgmu.org/download/SSR-21-06-2025.pdf",
+      "label": "2025 institutional self-study report (PDF)",
+      "category": "facilities",
+      "scope": "KGMU Lucknow · historical report",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 030: directly opened institutional page or document"
+    }
+  ],
+  "kle-technological-university": [
+    {
+      "url": "https://www.kletech.ac.in/admission/domestic-admission/under-graduate-program",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzioco000qb9tvy7fwidn1"
+    },
+    {
+      "url": "https://www.kletech.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfll50006p2tvg8x9fi12"
+    }
+  ],
+  "lnmiit-jaipur": [
+    {
+      "url": "https://lnmiit.ac.in/admissions/ug/",
+      "label": "LNMIIT 2026–27 undergraduate information",
+      "category": "admissions",
+      "scope": "Read the institution page for programme and campus scope",
+      "checkedAt": "2026-11-19",
+      "reference": "Batch 029 editorial navigation"
+    }
+  ],
+  "madras-medical-college": [
+    {
+      "url": "https://mmc.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkza4z90006i7tv5zybdw9b"
+    }
+  ],
+  "madras-university": [
+    {
+      "url": "https://www.unom.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "University of Madras",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 030: directly opened institutional page or document"
+    },
+    {
+      "url": "https://www.unom.ac.in/index.php?route=contacts/admissions",
+      "label": "Admissions office contact page",
+      "category": "contact",
+      "scope": "Chepauk, Chennai",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 030: directly opened institutional page or document"
+    }
+  ],
+  "malaviya-national-institute-of-technology": [
+    {
+      "url": "https://mnit.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr26000qp0tv2elo4brn"
+    }
+  ],
+  "management-development-institute": [
+    {
+      "url": "https://mdi.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr3r001ap0tvjdv5f5iu"
+    }
+  ],
+  "manipal-academy-of-higher-education": [
+    {
+      "url": "https://www.manipal.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwlksz7k002u31tv19v9wehd"
+    }
+  ],
+  "manipal-institute-of-technology": [
+    {
+      "url": "https://www.manipal.edu/mit-manipal",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wly000qfbtv25bhgjpr"
+    }
+  ],
+  "motilal-nehru-national-institute-of-technology": [
+    {
+      "url": "https://www.mnnit.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr1o000mp0tv4ffpj1wr"
+    }
+  ],
+  "ms-ramaiah-institute": [
+    {
+      "url": "https://www.msrit.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzflmv000qp2tvvswhbp27"
+    }
+  ],
+  "nagaland-university": [
+    {
+      "url": "https://nagalanduniversity.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wqg002efbtv4t95zof7"
+    }
+  ],
+  "nalsar-university-of-law": [
+    {
+      "url": "https://nalsar.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvxg000ubbtvpzk7wz7m"
+    }
+  ],
+  "national-institute-of-technology-calicut": [
+    {
+      "url": "https://nitc.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr1a000ip0tv8cu72lg2"
+    }
+  ],
+  "national-institute-of-technology-tiruchirappalli": [
+    {
+      "url": "https://www.nitt.edu/home/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwlksz6e002m31tv4g8ri2ak"
+    },
+    {
+      "url": "https://www.nitt.edu/home/students/facilitiesnservices/tp/",
+      "label": "Training and placement office",
+      "category": "placements",
+      "scope": "NIT Tiruchirappalli",
+      "checkedAt": "2026-11-20",
+      "reference": "First-party navigation followed and destination opened"
+    },
+    {
+      "url": "https://www.nitt.edu/home/academics/departments/",
+      "label": "Academic departments",
+      "category": "programmes",
+      "scope": "NIT Tiruchirappalli",
+      "checkedAt": "2026-11-20",
+      "reference": "First-party navigation followed and destination opened"
+    },
+    {
+      "url": "https://www.nitt.edu/home/academics/fees_section//",
+      "label": "Institute fee schedules",
+      "category": "fees",
+      "scope": "NIT Tiruchirappalli · check year and student category",
+      "checkedAt": "2026-11-20",
+      "reference": "First-party navigation followed and destination opened"
+    },
+    {
+      "url": "https://www.nitt.edu/home/academics/scholarship_section/",
+      "label": "Institute scholarships",
+      "category": "scholarships",
+      "scope": "NIT Tiruchirappalli · check year and student category",
+      "checkedAt": "2026-11-20",
+      "reference": "First-party navigation followed and destination opened"
+    },
+    {
+      "url": "https://www.nitt.edu/home/students/facilitiesnservices/hostelsnmess/",
+      "label": "Hostels and mess",
+      "category": "facilities",
+      "scope": "NIT Tiruchirappalli · check year and student category",
+      "checkedAt": "2026-11-20",
+      "reference": "First-party navigation followed and destination opened"
+    }
+  ],
+  "national-law-school-of-india-university": [
+    {
+      "url": "https://www.nls.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr62002ep0tvdro51ian"
+    }
+  ],
+  "nit-agartala": [
+    {
+      "url": "https://www.nita.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnml00169gtvf9ubpgmo"
+    }
+  ],
+  "nit-arunachal-pradesh": [
+    {
+      "url": "https://www.nitap.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wjn0006fbtv6nynephl"
+    }
+  ],
+  "nit-delhi": [
+    {
+      "url": "https://nitdelhi.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzflmh000mp2tvzdmgzjl0"
+    }
+  ],
+  "nit-durgapur": [
+    {
+      "url": "https://nitdgp.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnly000y9gtv2fdr73j7"
+    }
+  ],
+  "nit-goa": [
+    {
+      "url": "https://www.nitgoa.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wk2000afbtvge6zyzv1"
+    }
+  ],
+  "nit-meghalaya": [
+    {
+      "url": "https://nitm.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnmv001a9gtvj7qk5brj"
+    }
+  ],
+  "nit-mizoram": [
+    {
+      "url": "https://nitmz.ac.in/admissions/b-tech-admissions/",
+      "label": "Admissions information (2026 reference)",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzioew001ib9tvfgx2hzro"
+    },
+    {
+      "url": "https://nitmz.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wma000ufbtv9vlljex9"
+    }
+  ],
+  "nit-nagaland": [
+    {
+      "url": "https://www.nitnagaland.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wmo000yfbtvtldzvcsc"
+    }
+  ],
+  "nit-patna": [
+    {
+      "url": "https://www.nitp.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvyx001ebbtv0ijxp367"
+    }
+  ],
+  "nit-rourkela": [
+    {
+      "url": "https://www.nitrkl.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnll000u9gtvtfp266ka"
+    }
+  ],
+  "nit-sikkim": [
+    {
+      "url": "https://nitsikkim.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wn20012fbtvcjyaforu"
+    }
+  ],
+  "nit-silchar": [
+    {
+      "url": "https://www.nits.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnma00129gtvw6aoo3ga"
+    }
+  ],
+  "nit-srinagar": [
+    {
+      "url": "https://nitsri.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wpx0026fbtvjr4b963g"
+    }
+  ],
+  "nit-uttarakhand": [
+    {
+      "url": "https://nituk.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wny001efbtvfk2rys9b"
+    }
+  ],
+  "nliu-bhopal": [
+    {
+      "url": "https://nliu.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvxr000ybbtv2l4ba37e"
+    }
+  ],
+  "nlu-delhi": [
+    {
+      "url": "https://nludelhi.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfllr000ep2tv14b9nowq"
+    }
+  ],
+  "nlu-jodhpur": [
+    {
+      "url": "https://nlujodhpur.ac.in/university/admission-policy",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzioat0006b9tvh644yf0g"
+    },
+    {
+      "url": "https://nlujodhpur.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wr7002qfbtvrpo0idn6"
+    }
+  ],
+  "north-eastern-hill-university": [
+    {
+      "url": "https://nehu.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfd8f000emctvnh62ruc4"
+    }
+  ],
+  "op-jindal-university": [
+    {
+      "url": "https://jgu.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "O.P. Jindal Global University, Sonipat",
+      "checkedAt": "2026-11-20",
+      "reference": "Institution homepage and admissions pages directly opened; Sonipat identity checked"
+    },
+    {
+      "url": "https://jgu.edu.in/admissions/",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "O.P. Jindal Global University, Sonipat",
+      "checkedAt": "2026-11-20",
+      "reference": "Institution homepage and admissions pages directly opened; Sonipat identity checked"
+    }
+  ],
+  "pec-chandigarh": [
+    {
+      "url": "https://pec.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnnv001q9gtv5c9gemcn"
+    }
+  ],
+  "pes-university": [
+    {
+      "url": "https://pes.edu/admissions/",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzioe80016b9tvwwo71v2a"
+    },
+    {
+      "url": "https://pes.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfln7000up2tv32g4rcv3"
+    }
+  ],
+  "plaksha-university": [
+    {
+      "url": "https://plaksha.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnit00029gtvzf40si9i"
+    }
+  ],
+  "pondicherry-university": [
+    {
+      "url": "https://www.pondiuni.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfd99000mmctvkib3bt1o"
+    }
+  ],
+  "punjab-technical-university": [
+    {
+      "url": "https://ptu.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdc1001mmctvud79g5kf"
+    }
+  ],
+  "rajiv-gandhi-university": [
+    {
+      "url": "https://rgu.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wov001qfbtvuzfueknw"
+    }
+  ],
+  "rgnul-patiala": [
+    {
+      "url": "https://www.rgnul.ac.in/63/ballb-hons-admission",
+      "label": "RGNUL undergraduate admissions",
+      "category": "admissions",
+      "scope": "Read the institution page for programme and campus scope",
+      "checkedAt": "2026-11-19",
+      "reference": "Batch 029 editorial navigation"
+    }
+  ],
+  "sai-university": [
+    {
+      "url": "https://www.saiuniversity.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnk2000e9gtvx38zt6fh"
+    }
+  ],
+  "sathyabama-institute": [
+    {
+      "url": "https://www.sathyabama.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdcn001umctvuyb81rpk"
+    }
+  ],
+  "savitribai-phule-pune-university": [
+    {
+      "url": "https://www.unipune.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr48001ip0tvyqfu9w4t"
+    }
+  ],
+  "seth-gs-medical-college": [
+    {
+      "url": "https://www.kem.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfde0002imctvy9vnp1ao"
+    }
+  ],
+  "shri-ram-college-of-commerce": [
+    {
+      "url": "https://www.srcc.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr69002ip0tvbdme915w"
+    }
+  ],
+  "sikkim-university": [
+    {
+      "url": "https://cus.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkza4yl0002i7tviq4jx29q"
+    }
+  ],
+  "sp-jain-institute": [
+    {
+      "url": "https://www.spjimr.org/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqvx5000qbbtv3yzs1y9u"
+    }
+  ],
+  "srm-ap": [
+    {
+      "url": "https://www.srmap.edu.in/admission/",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzioeg001ab9tve0bn10si"
+    },
+    {
+      "url": "https://www.srmap.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wiz0002fbtvheoq081m"
+    }
+  ],
+  "st-johns-medical-college": [
+    {
+      "url": "https://www.stjohns.in/medicalcollege/courses/undergraduate---mbbs",
+      "label": "St John’s Medical College MBBS information",
+      "category": "programmes",
+      "scope": "Read the institution page for programme and campus scope",
+      "checkedAt": "2026-11-19",
+      "reference": "Batch 029 editorial navigation"
+    }
+  ],
+  "st-xaviers-college": [
+    {
+      "url": "https://xaviers.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr6h002mp0tv5u5wri5u"
+    }
+  ],
+  "stanley-medical-college": [
+    {
+      "url": "https://stanleymedicalcollege.ac.in/page/admissions",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkziod5000ub9tvqllxjm47"
+    },
+    {
+      "url": "https://stanleymedicalcollege.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfd9m000qmctv2lyms51j"
+    }
+  ],
+  "tezpur-university": [
+    {
+      "url": "https://www.tezu.ernet.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdbc001amctv7s1pjup2"
+    }
+  ],
+  "thapar-institute-of-engineering": [
+    {
+      "url": "https://www.thapar.edu/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr4h001mp0tvqdequoxg"
+    }
+  ],
+  "upes-dehradun": [
+    {
+      "url": "https://www.upes.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wo8001ifbtvlz0cy4ms"
+    }
+  ],
+  "vel-tech-university": [
+    {
+      "url": "https://www.veltech.edu.in/admissions/",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkziodk000yb9tvth53l82g"
+    },
+    {
+      "url": "https://www.veltech.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfd9z000umctvj9n5xflb"
+    }
+  ],
+  "vellore-institute-of-technology": [
+    {
+      "url": "https://viteee.vit.ac.in/",
+      "label": "Institution admissions information",
+      "category": "admissions",
+      "scope": "Institution portal · check campus and intake",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyniqq0002lvtvycj5jpqg"
+    },
+    {
+      "url": "https://vit.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwlksz6z002q31tv21i78nxy"
+    }
+  ],
+  "visvesvaraya-technological-university": [
+    {
+      "url": "https://vtu.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkzfdd50022mctvw7z1j3lr"
+    }
+  ],
+  "vjti-mumbai": [
+    {
+      "url": "https://vjti.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkz9wq8002afbtvgclhz99y"
+    }
+  ],
+  "woxsen-university": [
+    {
+      "url": "https://woxsen.edu.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkyqnjo000a9gtvrr5naxh8"
+    }
+  ],
+  "xlri-jamshedpur": [
+    {
+      "url": "https://www.xlri.ac.in/",
+      "label": "Institution website",
+      "category": "website",
+      "scope": "Institution-wide",
+      "checkedAt": "2026-11-17",
+      "reference": "cmwkynr3h0016p0tv5jq0gtkn"
+    }
+  ],
+  "ashoka-university": [
+    {
+      "url": "https://www.ashoka.edu.in/admissions/undergraduate-students/",
+      "label": "Undergraduate admissions and first-year fees (August 2027)",
+      "category": "admissions",
+      "scope": "Ashoka University, Sonipat · 2027 intake",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "niser-bhubaneswar": [
+    {
+      "url": "https://niser.ac.in/acad/admission",
+      "label": "Integrated MSc and other admissions",
+      "category": "admissions",
+      "scope": "NISER, Jatni · check programme and cycle",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    },
+    {
+      "url": "https://niser.ac.in/hostels/",
+      "label": "Hostels and rules",
+      "category": "facilities",
+      "scope": "NISER, Jatni",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "loyola-college": [
+    {
+      "url": "https://www.loyolacollege.edu//admission/courses-offered",
+      "label": "Programmes by shift",
+      "category": "programmes",
+      "scope": "Loyola College, Chennai",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    },
+    {
+      "url": "https://www.loyolacollege.edu//services/mens-hostel",
+      "label": "Men’s hostel",
+      "category": "facilities",
+      "scope": "Loyola College, Chennai",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "iim-nagpur": [
+    {
+      "url": "https://www.iimnagpur.ac.in/programmes/mba/about-mba/",
+      "label": "Full-time MBA programme",
+      "category": "programmes",
+      "scope": "Main Nagpur MBA, separate from the Pune executive programme",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    },
+    {
+      "url": "https://www.iimnagpur.ac.in/admissions/mba/fees-financial-aid-scholarship/",
+      "label": "MBA fees and financial aid (2026–28 reference)",
+      "category": "scholarships",
+      "scope": "IIM Nagpur full-time MBA · 2026–28 batch",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "nirma-university": [
+    {
+      "url": "https://law.nirmauni.ac.in/admission-aid/frequently-asked-questions/",
+      "label": "Institute of Law programmes and CLAT 2027 information",
+      "category": "admissions",
+      "scope": "Institute of Law, Nirma University, Ahmedabad",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "maulana-azad-medical-college": [
+    {
+      "url": "https://mamc.delhi.gov.in/",
+      "label": "College website and notices",
+      "category": "website",
+      "scope": "MAMC, New Delhi, Government of NCT of Delhi",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    },
+    {
+      "url": "https://mamc.delhi.gov.in/mamc/undergraduate-admission",
+      "label": "Undergraduate programme information",
+      "category": "programmes",
+      "scope": "MAMC, New Delhi · check dated notices for current admissions",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "bits-pilani": [
+    {
+      "url": "https://www.bits-pilani.ac.in/pilani/",
+      "label": "Pilani campus and integrated first-degree programmes",
+      "category": "website",
+      "scope": "BITS Pilani, Pilani campus, Rajasthan",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    },
+    {
+      "url": "https://www.bits-pilani.ac.in/academics/integrated-first-degree/b-e-computer-science/",
+      "label": "B.E. Computer Science programme",
+      "category": "programmes",
+      "scope": "Use the Pilani campus catalogue for campus-specific availability",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ],
+  "nujs-kolkata": [
+    {
+      "url": "https://clat2027.consortiumofnlus.ac.in/clat-2027/participating_universities.html",
+      "label": "CLAT 2027 participating universities: WBNUJS Kolkata",
+      "category": "admissions",
+      "scope": "Consortium of NLUs · authority reference, CLAT 2027",
+      "checkedAt": "2026-11-20",
+      "reference": "Batch 031: directly opened scoped publisher page"
+    }
+  ]
+}

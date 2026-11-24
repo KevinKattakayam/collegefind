@@ -1,0 +1,77 @@
+{
+  "status": "STAGED",
+  "facts": 8,
+  "reviewState": "UNREVIEWED",
+  "staged": 8,
+  "reused": 0,
+  "createdSources": 2,
+  "createdRuns": 2,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured.fee",
+      "evidenceId": "cmwm4060u0003lftv8hj4ur0o",
+      "sourceId": "cmwm4060b0000lftvd47jg4j3",
+      "sourceUrl": "https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured.scholarship",
+      "evidenceId": "cmwm406100005lftvhno5hr3x",
+      "sourceId": "cmwm4060b0000lftvd47jg4j3",
+      "sourceUrl": "https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured.scholarship",
+      "evidenceId": "cmwm406150007lftvti86auzl",
+      "sourceId": "cmwm4060b0000lftvd47jg4j3",
+      "sourceUrl": "https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured.scholarship",
+      "evidenceId": "cmwm406190009lftvzbgcv6hr",
+      "sourceId": "cmwm4060b0000lftvd47jg4j3",
+      "sourceUrl": "https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured.fee",
+      "evidenceId": "cmwm4061c000blftviepy1v3v",
+      "sourceId": "cmwm4060b0000lftvd47jg4j3",
+      "sourceUrl": "https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured.fee",
+      "evidenceId": "cmwm4061e000dlftvq22cq4c6",
+      "sourceId": "cmwm4060b0000lftvd47jg4j3",
+      "sourceUrl": "https://iitr.ac.in/Academics/static/Institute_Fee/2026-27/UGIst.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured.admission",
+      "evidenceId": "cmwm4061n000glftveab50o4u",
+      "sourceId": "cmwm4060h0001lftv0gt96i45",
+      "sourceUrl": "https://www.iitr.ac.in/Academics/static/Regulation/UG/UG_Ordinance_BoG_2025.pdf",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-roorkee",
+      "field": "structured.admission",
+      "evidenceId": "cmwm4061q000ilftv4isezscb",
+      "sourceId": "cmwm4060h0001lftv0gt96i45",
+      "sourceUrl": "https://www.iitr.ac.in/Academics/static/Regulation/UG/UG_Ordinance_BoG_2025.pdf",
+      "status": "STAGED"
+    }
+  ],
+  "databaseChanged": true
+}

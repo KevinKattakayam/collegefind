@@ -11,7 +11,8 @@ const querySchema = z.object({
 /** Official NIRF ranks imported from nirfindia.org — never computed by us. */
 export const GET = withErrorHandling(async (request: Request) => {
   const q = readQuery(request, querySchema);
-  const available = await prisma.nirfRanking.groupBy({ by: ['category', 'year'], orderBy: [{ year: 'desc' }] });
+  const reviewed = await prisma.nirfRanking.findMany({ select: { category: true, year: true }, orderBy: { year: 'desc' } });
+    const available = [...new Map(reviewed.map((row) => [JSON.stringify([row.category, row.year]), row])).values()];
   const year = q.year ?? available.find((a) => a.category === q.category)?.year;
   const rankings = year
     ? await prisma.nirfRanking.findMany({

@@ -23,12 +23,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 async function collegesOffering(filter: string): Promise<College[] | null> {
   try {
     const rows = await prisma.college.findMany({
-      where: { courses: { has: filter } },
       select: collegeListSelect,
       orderBy: [{ dataStatus: 'desc' }, { name: 'asc' }],
-      take: 9,
     });
-    return rows as College[];
+    return rows.filter((row) => row.courses.includes(filter)).slice(0, 9) as College[];
   } catch {
     return null; // DB unavailable at build/render time: page still renders its content
   }

@@ -1,0 +1,700 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 49,
+  "researchedAt": "2026-11-22T03:30:00.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b49-iimb-program",
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "publisher": "Indian Institute of Management Bangalore, Dorabji Tata School of Undergraduate Studies",
+      "title": "UG Admissions Process 2026 — B.Sc. (Hons) cohort 2027–31",
+      "url": "https://ug.iimb.ac.in/wp-content/uploads/2026/10/UG-Admissions-Process_2026.pdf",
+      "academicYear": "2027",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T03:30:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "Only individual programme titles/duration are stated with direct attribution; eligibility thresholds and test cut-offs are excluded. No table or prose is republished and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "PDF p.1 lines 1–16: separate B.Sc. (Hons.) Data Science and B.Sc. (Hons.) Economics degrees, four-year full-time residential programmes, cohort 2027–31."
+      ]
+    },
+    {
+      "id": "b49-iimb-admissions",
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "publisher": "Indian Institute of Management Bangalore, UG Admissions",
+      "title": "UG Admissions 2027",
+      "url": "https://ug.iimb.ac.in/ug-admissions-2027/",
+      "academicYear": "2027",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T03:30:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only cycle-specific process dates, public campus location and admissions-office contacts are candidates. Application status and test date are explicitly dated; no eligibility or cut-off value is repeated. Copyright notice applies; no broad reproduction.",
+      "evidenceLocations": [
+        "Page lines 37–40: domestic 2027 application window marked closed, test 15 Nov 2026, tentative interview in Jan 2027 and tentative offers in Feb 2027.",
+        "Page lines 69–74: IIMB UG Campus postal location, admissions email and switchboard phone."
+      ]
+    },
+    {
+      "id": "b49-ju-annual",
+      "institutionSlug": "jadavpur-university",
+      "publisher": "Jadavpur University",
+      "title": "Annual Report 2024–2025",
+      "url": "https://jadavpuruniversity.in/storage/2026/02/Annual-Report-2024-2025.pdf",
+      "academicYear": "2024-25",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:00:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "One historical degree title from the university annual report, with period and page locator; no table or document content reproduced. No blanket redistribution rights inferred.",
+      "evidenceLocations": [
+        "Annual Report 2024–25, printed page 21, undergraduate courses list, lines 644–665: Bachelor of Architecture is listed."
+      ]
+    },
+    {
+      "id": "b49-iitdh-annual",
+      "institutionSlug": "iit-dharwad",
+      "publisher": "Indian Institute of Technology Dharwad",
+      "title": "Annual Report 2024–25",
+      "url": "https://iitdh.ac.in/sites/default/files/2025-12/Annual%20Report%202024-25%20%28With%20cover%20pages%29_compressed.pdf",
+      "academicYear": "2024-25",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:00:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "One historical programme title and one qualitative department facility fact with attribution. No table or broad document text is reproduced; no blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Annual Report 2024–25, undergraduate programme section, lines 804–812: B.Tech. Computer Science and Engineering listed.",
+        "Annual Report 2024–25, Computer Science department section, lines 1562–1570: department describes computing facilities and laboratories for academic/research activity."
+      ]
+    },
+    {
+      "id": "b49-ptu-program",
+      "institutionSlug": "punjab-technical-university",
+      "publisher": "I.K. Gujral Punjab Technical University, Registrar Office",
+      "title": "Academic Programs offered at IKGPTU Main Campus and Constituent Campuses during Admission Session 2026–27",
+      "url": "https://ptu.ac.in/wp-content/uploads/2026/02/232-Academic-Programs-offered-at-IKGPTU-Main-Campus-and-Its-Constituent-Campuses-during-Admission-Sesiion-2026-27.pdf",
+      "academicYear": "2026-27",
+      "publicationDate": "2026-02-10T00:00:00.000Z",
+      "retrievedAt": "2026-11-22T03:30:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "Only one campus-identified programme title is extracted; the intake and fee/eligibility tables are excluded. Source is an official registrar notification; no blanket reproduction rights inferred.",
+      "evidenceLocations": [
+        "Notification dated 10 Feb 2026, PDF p.1 lines 49–58: IKGPTU Amritsar constituent campus and B.Tech. Computer Science and Engineering listing."
+      ]
+    },
+    {
+      "id": "b49-ptu-contact",
+      "institutionSlug": "punjab-technical-university",
+      "publisher": "I.K. Gujral Punjab Technical University, Admission Cell",
+      "title": "I.K. Gujral Punjab Technical University Admission Portal",
+      "url": "https://admissions.ptu.ac.in/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T03:30:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Public institutional Admission Cell contact only; no personal information or inferred service hours. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Admission Portal lines 6–10: Admission Cell email and listed phone numbers; lines 131–139 show the university address and repeat the admission contact."
+      ]
+    },
+    {
+      "id": "b49-nu-management",
+      "institutionSlug": "nagaland-university",
+      "publisher": "Nagaland University, Department of Management, Kohima Campus",
+      "title": "Department of Management",
+      "url": "https://kohima.nagalanduniversity.ac.in/management",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T03:30:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "One programme fact and departmental contact from the institution’s Kohima Campus subsite. The source gives no academic cycle, so the fact is not represented as an intake or admission guarantee. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Page lines 89–91: Department of Management lists a two-year MBA and states the department functions from the permanent Kohima Campus since July 2016.",
+        "Page lines 110–122: departmental contact email and Kohima Campus address."
+      ]
+    },
+    {
+      "id": "b49-saveetha-mba",
+      "institutionSlug": "saveetha-university",
+      "publisher": "Saveetha School of Management, SIMATS",
+      "title": "MBA — Admission and Programme Information",
+      "url": "https://www.ssm.saveetha.com/admission",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T03:30:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only programme duration and named school facilities are candidates; all fee amounts, eligibility thresholds and ranking claims on the page are excluded. Campus scope is stated as the Saveetha School of Management under SIMATS; no broad reproduction rights inferred.",
+      "evidenceLocations": [
+        "Page lines 29–39: MBA programme and two-year duration; fee line is deliberately excluded.",
+        "Page lines 67–72: school page describes a two-year full-time MBA and trimester pattern."
+      ]
+    },
+    {
+      "id": "b49-saveetha-facilities",
+      "institutionSlug": "saveetha-university",
+      "publisher": "Saveetha School of Management, SIMATS",
+      "title": "Saveetha School of Management",
+      "url": "https://www.ssm.saveetha.com/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T03:30:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Qualitative named facilities only; promotional statistics, rankings, fees and outcomes are not reused. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Page lines 95–106: Software Lab and Written & Oral Communication Lab are named, with brief descriptions in image text."
+      ]
+    },
+    {
+      "id": "b49-saveetha-contact",
+      "institutionSlug": "saveetha-university",
+      "publisher": "Saveetha Institute of Medical and Technical Sciences (SIMATS), Admissions",
+      "title": "Admission @ SIMATS — All College Admissions contact",
+      "url": "https://www.saveetha.com/admission2",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T03:30:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Public central admissions office email/telephone only; page contains undated financial tables which are excluded. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Page lines 366–376: SIMATS / All College Admissions, central admissions telephone and email."
+      ]
+    },
+    {
+      "id": "b49-nmims-mumbai-program",
+      "institutionSlug": "nmims-mumbai",
+      "publisher": "SVKM’s NMIMS, School of Business Management, Mumbai",
+      "title": "Full-Time Programs at SBM",
+      "url": "https://sbm.nmims.edu/fulltime-programs",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T03:30:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Two individual degree titles/duration facts from the Mumbai School of Business Management listing; admissions eligibility, fees, outcomes and rankings are excluded. Home page labels the program list 2026–27. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Page lines 79–90: full-time MBA and MBA (Human Resource) listed; each described as two years, six trimesters. Parent SBM home page labels Programs 2026–27 at lines 94–100."
+      ]
+    },
+    {
+      "id": "b49-kalasalingam-contact",
+      "institutionSlug": "kalasalingam-university",
+      "publisher": "Kalasalingam Academy of Research and Education",
+      "title": "A4 Brochure 2026",
+      "url": "https://www.kalasalingam.ac.in/wp-content/uploads/2025/12/Brochure2026.pdf",
+      "academicYear": "2026",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T03:30:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "Only the brochure’s generic admission-contact phone is recorded. Programme lists and facilities omitted because the source does not identify campus applicability; rankings, outcomes and all numeric performance claims are excluded. No blanket PDF reuse inferred.",
+      "evidenceLocations": [
+        "PDF p.3 lines 256–259: “Admission Contact” lists 7397 760 760; the brochure does not state a campus-specific scope for this contact."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. (Hons.) Data Science",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b49-iimb-program"
+      ],
+      "academicYear": "2027",
+      "evidenceLocation": "B.Sc. Data Science programme, four-year full-time residential, 2027–31 cohort, PDF p.1 lines 1–10.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIMB UG Campus, Mahanthalingapura Village, Jigani Hobli, Anekal Taluk, Bengaluru; source cohort 2027–31.",
+      "publisherPeriod": "Historical cohort listing 2027–31; not an admission guarantee.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. (Hons.) Economics",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b49-iimb-program"
+      ],
+      "academicYear": "2027",
+      "evidenceLocation": "B.Sc. Economics programme, four-year full-time residential, 2027–31 cohort, PDF p.1 lines 1–5 and 11–16.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIMB UG Campus, Mahanthalingapura Village, Jigani Hobli, Anekal Taluk, Bengaluru; source cohort 2027–31.",
+      "publisherPeriod": "Historical cohort listing 2027–31; not an admission guarantee.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Sc. (Hons.) Data Science and B.Sc. (Hons.) Economics, cohort 2027–31",
+        "route": "Domestic 2027 cycle: IIMB UG Admission Test followed by interview; application window is closed and the test date has passed.",
+        "category": "Domestic applicants, 2027–31 cohort",
+        "exam": "IIMB UG Admission Test"
+      },
+      "sourceIds": [
+        "b49-iimb-admissions"
+      ],
+      "academicYear": "2027",
+      "evidenceLocation": "Page lines 37–40: application window marked closed, test date and tentative later steps; do not treat as currently open.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIMB UG Campus, Bengaluru; domestic admissions only.",
+      "publisherPeriod": "As checked 22 Nov 2026: domestic application window closed 17 Oct 2026; test held 15 Nov 2026; interviews tentatively 2nd/3rd week Jan 2027 and offers tentatively 3rd week Feb 2027.",
+      "historical": "false"
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "IIMB UG Admissions",
+        "channel": "EMAIL",
+        "contact": "ugadmissions@iimb.ac.in"
+      },
+      "sourceIds": [
+        "b49-iimb-admissions"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "UG Admissions 2027 page lines 67–74.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIMB UG Campus, Bengaluru; admissions-office mailbox.",
+      "publisherPeriod": "Official admissions page checked 22 Nov 2026; no academic year applies.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "IIMB UG Admissions",
+        "channel": "PHONE",
+        "contact": "+91-80-26993000"
+      },
+      "sourceIds": [
+        "b49-iimb-admissions"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "UG Admissions 2027 page lines 67–74.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIMB UG Campus, Bengaluru; public admissions-office switchboard.",
+      "publisherPeriod": "Official admissions page checked 22 Nov 2026; no academic year applies.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "jadavpur-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Architecture (B.Arch.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "b49-ju-annual"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Annual Report 2024–25, undergraduate courses list, printed page 21, lines 644–665.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Jadavpur University, undergraduate course listing; report identity is Jadavpur University.",
+      "publisherPeriod": "Historical 2024–25 annual report; current offering must be confirmed with the University.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "iit-dharwad",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. Computer Science and Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b49-iitdh-annual"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Annual Report 2024–25 lines 804–812 lists the B.Tech. programme.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Dharwad, undergraduate programme listing.",
+      "publisherPeriod": "Historical 2024–25 annual report; current offering must be confirmed with the Institute.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "iit-dharwad",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Computer Science department computing facilities and laboratories",
+        "description": "The annual report describes computing facilities and laboratories supporting the department’s academic and research activities."
+      },
+      "sourceIds": [
+        "b49-iitdh-annual"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Annual Report 2024–25 Computer Science department section, lines 1562–1570.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Dharwad, Computer Science department; campus-specific department scope.",
+      "publisherPeriod": "Historical 2024–25 annual report; no current capacity or equipment claim is made.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "punjab-technical-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b49-ptu-program"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "PDF p.1 lines 49–58 name IKGPTU Amritsar and list B.Tech. Computer Science and Engineering; intake omitted.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "I.K. Gujral Punjab Technical University, Amritsar constituent campus; not the Jalandhar administrative address.",
+      "publisherPeriod": "Admission session 2026–27, Registrar notification dated 10 Feb 2026; not a future intake guarantee.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "punjab-technical-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "IKGPTU Admission Cell",
+        "channel": "EMAIL",
+        "contact": "campuses.admissions@ptu.ac.in"
+      },
+      "sourceIds": [
+        "b49-ptu-contact"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Admission Portal lines 6–10 and 131–139.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University Admission Cell; campus-wide contact.",
+      "publisherPeriod": "Official Admission Portal checked 22 Nov 2026; no academic year applies.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "punjab-technical-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "IKGPTU Admission Cell",
+        "channel": "PHONE",
+        "contact": "+91-94780-98012"
+      },
+      "sourceIds": [
+        "b49-ptu-contact"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Admission Portal lines 6–10 and 131–139; one published Admission Cell telephone selected.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University Admission Cell; campus-wide contact.",
+      "publisherPeriod": "Official Admission Portal checked 22 Nov 2026; no academic year applies.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nagaland-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Master of Business Administration (MBA)",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "b49-nu-management"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department of Management page lines 89–91; page identifies permanent Kohima Campus.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Nagaland University, Kohima Campus, Meriema; Department of Management, School of Management Studies.",
+      "publisherPeriod": "The page lists a two-year MBA but states no academic cycle; this does not indicate a current application window.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nagaland-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Department of Management",
+        "channel": "EMAIL",
+        "contact": "departmentmgmt@nagalanduniversity.ac.in"
+      },
+      "sourceIds": [
+        "b49-nu-management"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department of Management page lines 110–122.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Nagaland University Kohima Campus, Department of Management.",
+      "publisherPeriod": "Official departmental page checked 22 Nov 2026; no academic year applies.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "saveetha-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Master of Business Administration (MBA)",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "b49-saveetha-mba"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "MBA Admission page lines 29–39 and 67–72.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Saveetha School of Management (SSM), SIMATS; school-specific scope, campus not stated on cited programme page.",
+      "publisherPeriod": "Source gives duration but no applicable intake year; not represented as a current application schedule. Fee values excluded.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "saveetha-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Software lab, Saveetha School of Management",
+        "description": "The school page names a Software Lab and describes technical proficiency work in report preparation and analysis software."
+      },
+      "sourceIds": [
+        "b49-saveetha-facilities"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Saveetha School of Management page lines 95–97.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Saveetha School of Management (SSM), SIMATS; source does not state a separate campus.",
+      "publisherPeriod": "Official school page checked 22 Nov 2026; no academic year or lab capacity stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "saveetha-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Written and Oral Communication Lab, Saveetha School of Management",
+        "description": "The school page names a Written and Oral Communication Lab for business communication skills."
+      },
+      "sourceIds": [
+        "b49-saveetha-facilities"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Saveetha School of Management page lines 101–106.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Saveetha School of Management (SSM), SIMATS; source does not state a separate campus.",
+      "publisherPeriod": "Official school page checked 22 Nov 2026; no academic year or lab capacity stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "saveetha-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "SIMATS All College Admissions",
+        "channel": "EMAIL",
+        "contact": "admissions.simats@saveetha.com"
+      },
+      "sourceIds": [
+        "b49-saveetha-contact"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "SIMATS admission page lines 366–376.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "SIMATS central admissions office; institution-wide contact, not a college-specific counsellor.",
+      "publisherPeriod": "Official admissions page checked 22 Nov 2026; no academic year applies.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nmims-mumbai",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Master of Business Administration (MBA), School of Business Management",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "b49-nmims-mumbai-program"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Full-Time Programs page lines 79–82; parent SBM home page lines 94–100 labels Programs 2026–27.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "SVKM’s NMIMS, School of Business Management, Mumbai campus.",
+      "publisherPeriod": "Programmes page labels the program list 2026–27; source describes the general MBA as two-year full-time over six trimesters.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nmims-mumbai",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBA (Human Resource), School of Business Management",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "b49-nmims-mumbai-program"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Full-Time Programs page lines 87–90; parent SBM home page lines 94–100 labels Programs 2026–27.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "SVKM’s NMIMS, School of Business Management, Mumbai campus.",
+      "publisherPeriod": "Programmes page labels the program list 2026–27; source describes MBA (Human Resource) as two-year full-time over six trimesters.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "kalasalingam-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Kalasalingam Academy Admissions",
+        "channel": "PHONE",
+        "contact": "7397 760 760"
+      },
+      "sourceIds": [
+        "b49-kalasalingam-contact"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "2026 brochure p.3 lines 256–259, Admission Contact.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Institution-wide admissions contact; brochure does not assign it to one campus.",
+      "publisherPeriod": "2026 brochure contact; no campus-specific phone applicability or current service hours is claimed.",
+      "historical": false
+    }
+  ],
+  "researchHolds": [
+    {
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "status": "RESEARCH_HOLD_ARCHIVED_SOURCE_CONFLICT",
+      "reason": "Existing archive contains held programme evidence and a conflicting/undated DoAA source. No new public fact is released until that scope and source conflict is resolved."
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-lucknow",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official academic pages returned timeouts/cache misses during direct retrieval; search-indexed summaries were not used as factual proof."
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official academic programme pages timed out or returned 502 during direct retrieval; search results were not used as proof."
+    },
+    {
+      "institutionSlug": "iit-jodhpur",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official academic programme pages returned timeout/cache-miss/502 responses on direct opening during this batch; search snippets were not used."
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official admissions page remains a JavaScript shell; no search summary used as evidence."
+    },
+    {
+      "institutionSlug": "nit-raipur",
+      "status": "RESEARCH_HOLD_FRESHNESS",
+      "reason": "Accessible official material found was undated or described an older admission cycle; no current programme/admission claim published."
+    },
+    {
+      "institutionSlug": "nit-srinagar",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official website returned 502 during direct retrieval; search snippets were not used as proof."
+    },
+    {
+      "institutionSlug": "cochin-university",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official admissions and programme URLs continued to time out/return 502 during prior direct checks; no snippet-derived facts published."
+    },
+    {
+      "institutionSlug": "nit-puducherry",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official pages timed out/returned 502 during direct opening; search results were not used as proof."
+    },
+    {
+      "institutionSlug": "ict-mumbai",
+      "status": "RESEARCH_HOLD_ACCESS_RESTRICTION",
+      "reason": "Official programme page returned HTTP 403; no access-control bypass or snippet-derived claim was used."
+    },
+    {
+      "institutionSlug": "psg-college-of-technology",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "No directly opened authoritative page with precise programme/campus facts was available in this batch."
+    },
+    {
+      "institutionSlug": "banasthali-vidyapith",
+      "status": "RESEARCH_HOLD_FRESHNESS",
+      "reason": "Direct official postgraduate curriculum PDF is dated July 2019 and contains examination cycles through 2021; retained as historical source, not promoted as current offerings."
+    },
+    {
+      "institutionSlug": "indian-school-of-business",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official programme finder failed direct retrieval (cache miss); no search result was used as proof."
+    },
+    {
+      "institutionSlug": "st-johns-college",
+      "status": "RESEARCH_HOLD_IDENTITY_MISMATCH",
+      "reason": "The retrieved admissions notice belongs to St John’s Medical College, Bengaluru; catalogue record is St Johns College in Agra. Source rejected as wrong institution."
+    },
+    {
+      "institutionSlug": "op-jindal-university",
+      "status": "RESEARCH_HOLD_IDENTITY_MISMATCH",
+      "reason": "The retrieved OPJU source is for OP Jindal University, Raigarh, Chhattisgarh; catalogue record is the Sonipat, Haryana institution. Source rejected as wrong institution."
+    },
+    {
+      "institutionSlug": "centurion-university",
+      "status": "RESEARCH_HOLD_SCOPE",
+      "reason": "Programme source spans multiple campuses without programme-campus applicability; contacts lacked verified exact values in the available source extraction."
+    },
+    {
+      "institutionSlug": "kalasalingam-university",
+      "status": "RESEARCH_HOLD_SCOPE",
+      "reason": "The 2026 brochure lists institution-wide programmes but does not attach each programme/facility to a campus; only its explicitly generic admissions contact is released."
+    }
+  ],
+  "candidateHolds": [],
+  "sourceUseNotes": "No blanket licence or unrestricted redistribution rights are inferred. Individual programme, facility and institutional contact facts are short, directly attributed extractions. High-impact fees, eligibility thresholds, rankings, cutoffs and placement statistics are excluded from source-reported publication. Sources without precise current cycle, campus or institution match are held."
+}

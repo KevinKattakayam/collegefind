@@ -9,7 +9,7 @@ export const revalidate = 86400;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
-  const staticPaths = ['', '/colleges', '/compare', '/predictor', '/rankings', '/exams', '/courses', '/articles'];
+  const staticPaths = ['', '/colleges', '/compare', '/collegefit', '/predictor', '/rankings', '/exams', '/courses', '/articles'];
   const entries: MetadataRoute.Sitemap = [
     ...staticPaths.map((p) => ({ url: `${SITE_URL}${p}`, lastModified: now })),
     ...COURSE_SLUGS.map((s) => ({ url: `${SITE_URL}/courses/${s}`, lastModified: now })),

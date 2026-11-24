@@ -1,0 +1,782 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "sources": [
+    {
+      "id": "nirf-engineering-2025-iit-indore",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2681; reported institute name: IIT Indore; rank 12."
+      ],
+      "institutionSlug": "iit-indore",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-iit-bhu-varanasi",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2679; reported institute name: IIT BHU Varanasi; rank 10."
+      ],
+      "institutionSlug": "iit-bhu-varanasi",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-iit-bhubaneswar",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2718; reported institute name: IIT Bhubaneswar; rank 39."
+      ],
+      "institutionSlug": "iit-bhubaneswar",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-jadavpur-university",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2687; reported institute name: Jadavpur University; rank 18."
+      ],
+      "institutionSlug": "jadavpur-university",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-iit-mandi",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2695; reported institute name: IIT Mandi; rank 26."
+      ],
+      "institutionSlug": "iit-mandi",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-iit-jodhpur",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2696; reported institute name: IIT Jodhpur; rank 27."
+      ],
+      "institutionSlug": "iit-jodhpur",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-thapar-institute-of-engineering",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2698; reported institute name: Thapar Institute of Engineering; rank 29."
+      ],
+      "institutionSlug": "thapar-institute-of-engineering",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-iit-ropar",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2701; reported institute name: IIT Ropar; rank 32."
+      ],
+      "institutionSlug": "iit-ropar",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-malaviya-national-institute-of-technology",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2721; reported institute name: Malaviya National Institute of Technology; rank 42."
+      ],
+      "institutionSlug": "malaviya-national-institute-of-technology",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-nit-durgapur",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2728; reported institute name: NIT Durgapur; rank 49."
+      ],
+      "institutionSlug": "nit-durgapur",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-nit-silchar",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2729; reported institute name: NIT Silchar; rank 50."
+      ],
+      "institutionSlug": "nit-silchar",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-birla-institute-of-technology-mesra",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2730; reported institute name: Birla Institute of Technology Mesra; rank 51."
+      ],
+      "institutionSlug": "birla-institute-of-technology-mesra",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-nit-patna",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2732; reported institute name: NIT Patna; rank 53."
+      ],
+      "institutionSlug": "nit-patna",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-iiit-delhi",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2742; reported institute name: IIIT Delhi; rank 63."
+      ],
+      "institutionSlug": "iiit-delhi",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-iit-palakkad",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2743; reported institute name: IIT Palakkad; rank 64."
+      ],
+      "institutionSlug": "iit-palakkad",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-nit-delhi",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2744; reported institute name: NIT Delhi; rank 65."
+      ],
+      "institutionSlug": "nit-delhi",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-nit-jamshedpur",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2764; reported institute name: NIT Jamshedpur; rank 82."
+      ],
+      "institutionSlug": "nit-jamshedpur",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-nit-meghalaya",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2765; reported institute name: NIT Meghalaya; rank 83."
+      ],
+      "institutionSlug": "nit-meghalaya",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-nit-kurukshetra",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2767; reported institute name: NIT Kurukshetra; rank 85."
+      ],
+      "institutionSlug": "nit-kurukshetra",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-nit-raipur",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2768; reported institute name: NIT Raipur; rank 86."
+      ],
+      "institutionSlug": "nit-raipur",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-nit-hamirpur",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2779; reported institute name: NIT Hamirpur; rank 97."
+      ],
+      "institutionSlug": "nit-hamirpur",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-nit-puducherry",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2781; reported institute name: NIT Puducherry; rank 99."
+      ],
+      "institutionSlug": "nit-puducherry",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-iit-jammu",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2735; reported institute name: IIT Jammu; rank 56."
+      ],
+      "institutionSlug": "iit-jammu",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-iit-dharwad",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2759; reported institute name: IIT Dharwad; rank 77."
+      ],
+      "institutionSlug": "iit-dharwad",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    },
+    {
+      "id": "nirf-engineering-2025-iit-bhilai",
+      "publisher": "Ministry of Education, Government of India — National Institutional Ranking Framework",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Report/IR2025_Report.pdf",
+      "publicationDate": null,
+      "academicYear": "2025",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Prior batch 007 manually opened the official public PDF. Only individual rank/category/year facts and exact row locators are retained, with attribution and link; no report prose, scores, chart or PDF is copied. No explicit bulk-reuse licence was found. This bounded factual staging is internal and does not establish permission for bulk republication; reviewer must check intended public use before approval.",
+      "evidenceLocations": [
+        "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2751; reported institute name: IIT Bhilai; rank 72."
+      ],
+      "institutionSlug": "iit-bhilai",
+      "retrievedAt": "2026-11-18T03:56:21Z"
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "iit-indore",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 12
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-iit-indore"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2681; reported institute name: IIT Indore; rank 12.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-bhu-varanasi",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 10
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-iit-bhu-varanasi"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2679; reported institute name: IIT BHU Varanasi; rank 10.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-bhubaneswar",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 39
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-iit-bhubaneswar"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2718; reported institute name: IIT Bhubaneswar; rank 39.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "jadavpur-university",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 18
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-jadavpur-university"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2687; reported institute name: Jadavpur University; rank 18.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-mandi",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 26
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-iit-mandi"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2695; reported institute name: IIT Mandi; rank 26.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-jodhpur",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 27
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-iit-jodhpur"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2696; reported institute name: IIT Jodhpur; rank 27.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "thapar-institute-of-engineering",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 29
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-thapar-institute-of-engineering"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2698; reported institute name: Thapar Institute of Engineering; rank 29.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-ropar",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 32
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-iit-ropar"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2701; reported institute name: IIT Ropar; rank 32.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "malaviya-national-institute-of-technology",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 42
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-malaviya-national-institute-of-technology"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2721; reported institute name: Malaviya National Institute of Technology; rank 42.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-durgapur",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 49
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-nit-durgapur"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2728; reported institute name: NIT Durgapur; rank 49.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-silchar",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 50
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-nit-silchar"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2729; reported institute name: NIT Silchar; rank 50.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "birla-institute-of-technology-mesra",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 51
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-birla-institute-of-technology-mesra"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2730; reported institute name: Birla Institute of Technology Mesra; rank 51.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-patna",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 53
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-nit-patna"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2732; reported institute name: NIT Patna; rank 53.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iiit-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 63
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-iiit-delhi"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2742; reported institute name: IIIT Delhi; rank 63.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-palakkad",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 64
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-iit-palakkad"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2743; reported institute name: IIT Palakkad; rank 64.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 65
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-nit-delhi"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2744; reported institute name: NIT Delhi; rank 65.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 82
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-nit-jamshedpur"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2764; reported institute name: NIT Jamshedpur; rank 82.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-meghalaya",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 83
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-nit-meghalaya"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2765; reported institute name: NIT Meghalaya; rank 83.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-kurukshetra",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 85
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-nit-kurukshetra"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2767; reported institute name: NIT Kurukshetra; rank 85.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-raipur",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 86
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-nit-raipur"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2768; reported institute name: NIT Raipur; rank 86.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-hamirpur",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 97
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-nit-hamirpur"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2779; reported institute name: NIT Hamirpur; rank 97.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-puducherry",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 99
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-nit-puducherry"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2781; reported institute name: NIT Puducherry; rank 99.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-jammu",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 56
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-iit-jammu"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2735; reported institute name: IIT Jammu; rank 56.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-dharwad",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 77
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-iit-dharwad"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2759; reported institute name: IIT Dharwad; rank 77.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "field": "structured",
+      "value": {
+        "kind": "nirfRanking",
+        "category": "Engineering",
+        "rank": 72
+      },
+      "sourceIds": [
+        "nirf-engineering-2025-iit-bhilai"
+      ],
+      "academicYear": "2025",
+      "evidenceLocation": "NIRF India Rankings 2025 report, section 9.10 Engineering top-100 table, row at parser line 2751; reported institute name: IIT Bhilai; rank 72.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ]
+}

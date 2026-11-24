@@ -2,6 +2,7 @@
 import { useState } from 'react';
 
 interface FilterValues {
+  city: string;
   state: string;
   type: string;
   minFees: string;
@@ -9,6 +10,9 @@ interface FilterValues {
   naac: string[];
   minRating: string;
   courses: string[];
+  programme: string;
+  degrees: string[];
+  eligibility: string;
   exams: string[];
   established: string;
 }
@@ -35,6 +39,7 @@ const ESTABLISHED_OPTIONS = [
   { label: '1990–2010', value: '1990_2010' },
   { label: 'After 2010', value: 'after_2010' },
 ];
+const DEGREE_OPTIONS = ['UG', 'PG', 'DOCTORAL', 'DIPLOMA'];
 
 
 interface SectionProps {
@@ -74,16 +79,20 @@ function Section({ id, title, children, count, open, onToggle }: SectionProps) {
 
 export default function FilterSidebar({ values, onChange, onClear, states }: Props) {
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
-    state: true, type: true, fees: true, naac: true, courses: true, exams: false, established: false,
+    state: true, type: true, fees: true, naac: true, courses: true, programmes: true, exams: false, established: false,
   });
 
   const activeFilters: { label: string; key: string; value: string }[] = [];
+  if (values.city) activeFilters.push({ label: values.city, key: 'city', value: '' });
   if (values.state) activeFilters.push({ label: values.state, key: 'state', value: '' });
   if (values.type) activeFilters.push({ label: values.type === 'GOVERNMENT' ? 'Government' : 'Private', key: 'type', value: '' });
   if (values.minFees) activeFilters.push({ label: `Min ₹${Number(values.minFees).toLocaleString('en-IN')}`, key: 'minFees', value: '' });
   if (values.maxFees) activeFilters.push({ label: `Max ₹${Number(values.maxFees).toLocaleString('en-IN')}`, key: 'maxFees', value: '' });
   values.naac.forEach(g => activeFilters.push({ label: `NAAC ${g}`, key: 'naac', value: g }));
   values.courses.forEach(c => activeFilters.push({ label: c, key: 'courses', value: c }));
+  if (values.programme) activeFilters.push({ label: values.programme, key: 'programme', value: '' });
+  values.degrees.forEach(degree => activeFilters.push({ label: `Degree ${degree}`, key: 'degrees', value: degree }));
+  if (values.eligibility) activeFilters.push({ label: values.eligibility, key: 'eligibility', value: '' });
   values.exams.forEach(e => activeFilters.push({ label: EXAM_OPTIONS.find(o => o.value === e)?.label || e, key: 'exams', value: e }));
   if (values.established) activeFilters.push({ label: ESTABLISHED_OPTIONS.find(o => o.value === values.established)?.label || values.established, key: 'established', value: '' });
 
@@ -103,6 +112,7 @@ export default function FilterSidebar({ values, onChange, onClear, states }: Pro
   const removeFilter = (key: string, value: string) => {
     if (key === 'naac') update({ naac: values.naac.filter(v => v !== value) });
     else if (key === 'courses') update({ courses: values.courses.filter(v => v !== value) });
+    else if (key === 'degrees') update({ degrees: values.degrees.filter(v => v !== value) });
     else if (key === 'exams') update({ exams: values.exams.filter(v => v !== value) });
     else update({ [key]: '' } as Partial<FilterValues>);
   };
@@ -134,11 +144,25 @@ export default function FilterSidebar({ values, onChange, onClear, states }: Pro
       )}
 
       <Section id="state" open={!!openSections.state} onToggle={toggleSection} title="State / Location" count={values.state ? 1 : 0}>
+        <label htmlFor="filter-city" className="sr-only">City</label>
+        <input id="filter-city" aria-label="City" type="search" value={values.city} onChange={e => update({ city: e.target.value })} placeholder="City" className="input-field !h-[36px] text-sm !rounded-lg mb-2" />
         <select aria-label="State" value={values.state} onChange={e => update({ state: e.target.value })}
           className="input-field !h-[36px] text-sm !rounded-lg">
           <option value="">All States</option>
           {states.map(s => <option key={s} value={s}>{s}</option>)}
         </select>
+      </Section>
+
+      <Section id="programmes" open={!!openSections.programmes} onToggle={toggleSection} title="Programmes and eligibility" count={(values.programme ? 1 : 0) + values.degrees.length + (values.eligibility ? 1 : 0)}>
+        <label htmlFor="filter-programme" className="sr-only">Verified programme</label>
+        <input id="filter-programme" type="search" aria-label="Verified programme" value={values.programme} onChange={e => update({ programme: e.target.value })} placeholder="Programme name" className="input-field !h-[36px] text-sm !rounded-lg mb-2" />
+        <label htmlFor="filter-eligibility" className="sr-only">Verified eligibility</label>
+        <input id="filter-eligibility" type="search" aria-label="Verified eligibility" value={values.eligibility} onChange={e => update({ eligibility: e.target.value })} placeholder="Eligibility text" className="input-field !h-[36px] text-sm !rounded-lg mb-2" />
+        {DEGREE_OPTIONS.map(degree => <label key={degree} className="flex items-center gap-2.5 text-sm text-slate-600 mb-1.5 cursor-pointer">
+          <input type="checkbox" checked={values.degrees.includes(degree)} onChange={() => update({ degrees: toggleArray(values.degrees, degree) })} className="w-4 h-4 rounded" />
+          {degree}
+        </label>)}
+        <p className="mt-2 text-xs text-slate-500">Only reviewed programme and admission evidence matches these filters. Unknown colleges are not assumed to lack the programme.</p>
       </Section>
 
       <Section id="type" open={!!openSections.type} onToggle={toggleSection} title="College Type" count={values.type ? 1 : 0}>

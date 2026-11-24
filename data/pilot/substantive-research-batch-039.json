@@ -1,0 +1,394 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 39,
+  "researchedAt": "2026-11-21T05:44:08.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "batch39-lpu-civil",
+      "institutionSlug": "lovely-professional-university",
+      "publisher": "Lovely Professional University, School of Civil Engineering",
+      "url": "https://www.lpu.in/lpu-assets/download/program-search/civil-engineering.pdf",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T05:44:08.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "Only concise individual programme and facility facts are normalized with attribution from this official brochure; no prose or tables reproduced. The brochure has no explicit academic year and includes dated 2025/2026 examples; no blanket reuse licence is inferred. Programme availability should be reconfirmed.",
+      "evidenceLocations": [
+        "School of Civil Engineering brochure · page 3 · Programs Offered, lines 105–121",
+        "School of Civil Engineering brochure · page 7 · Laboratories - Civil, lines 207–215"
+      ]
+    },
+    {
+      "id": "batch39-jipmer-2025",
+      "institutionSlug": "jipmer-puducherry",
+      "publisher": "Jawaharlal Institute of Postgraduate Medical Education and Research (JIPMER)",
+      "url": "https://www.jipmer.edu.in/sites/default/files/2025%20MBBS%20PROSPECTUS.pdf",
+      "publicationDate": null,
+      "academicYear": "2025-26",
+      "retrievedAt": "2026-11-21T05:44:08.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "Historical 2025-26 MBBS prospectus facts summarized individually with page attribution. No fees, seat counts, eligibility thresholds, tables or prospectus text are reproduced. The prospectus explicitly treats Puducherry and Karaikal as separate entities; this item is scoped to Puducherry and identifies the shared route only as historical.",
+      "evidenceLocations": [
+        "MBBS Prospectus 2025-26 · page 7 · course title and duration, lines 215–217",
+        "MBBS Prospectus 2025-26 · page 4 · NEET 2025 score and MCC counselling, lines 123–141"
+      ]
+    },
+    {
+      "id": "batch39-mumbai-english",
+      "institutionSlug": "university-of-mumbai",
+      "publisher": "University of Mumbai, Department of English (UMED)",
+      "url": "https://www.english.mu.ac.in/programmes",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T05:44:08.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Only individually named programme facts summarized from the official Department of English programme page. The page links a CC BY-NC-ND journal, not a stated sitewide licence; no permission for bulk reproduction is inferred. Physical teaching campus and academic year are not stated on the page.",
+      "evidenceLocations": [
+        "Programmes · Undergraduate · Fourth Year B.A. (Honours) in English Studies, lines 15–21",
+        "Programmes · Postgraduate · M.A. (English Studies), lines 23–25",
+        "Programmes · Doctoral · Ph.D. in English, line 27–29"
+      ]
+    },
+    {
+      "id": "batch39-srm-law",
+      "institutionSlug": "srm-institute-of-science-and-technology",
+      "publisher": "SRM School of Law, SRM Institute of Science and Technology",
+      "url": "https://law.srmist.edu.in/admission-procedure/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T05:44:08.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Only individual programme names and durations are normalized with attribution. No eligibility thresholds, admission probabilities, page prose or tables are reproduced. The current programme page does not specify an academic year; it advertises an incoming cohort. Campus identity is separately supported by the School faculty page footer, which names Kattankulathur.",
+      "evidenceLocations": [
+        "Admission Procedure · undergraduate eligibility table · programme and duration rows, lines 272–280",
+        "Admission Procedure · undergraduate programme list, lines 166–180"
+      ],
+      "scopeEvidence": {
+        "url": "https://law.srmist.edu.in/faculties/",
+        "title": "SRM School of Law faculty/contact page",
+        "evidenceLocation": "Page footer lines 190–195 and 261–267: SRM School of Law, SRMIST, Kattankulathur, Chennai, Tamil Nadu 603203."
+      }
+    },
+    {
+      "id": "batch39-srm-law-campus",
+      "institutionSlug": "srm-institute-of-science-and-technology",
+      "publisher": "SRM School of Law, SRM Institute of Science and Technology",
+      "url": "https://law.srmist.edu.in/faculties/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-21T05:44:08.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "Used only to verify the School of Law location stated on the faculty/contact page footer; no faculty/person details collected or reproduced.",
+      "evidenceLocations": [
+        "Page footer lines 190–195 and 261–267: SRM School of Law, SRMIST, Kattankulathur, Chennai, Tamil Nadu 603203."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "lovely-professional-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "batch39-lpu-civil"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "School of Civil Engineering brochure · page 3 · Programs Offered, lines 105–110; campus scope cross-check: Programme or facility locator; the brochure cover/contact block (PDF lines 255–257) gives the institution address in Phagwara.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "publisherPeriod": "Undated official brochure; page includes 2025/2026 examples; current intake is not confirmed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "lovely-professional-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.Tech. Structural Engineering",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "batch39-lpu-civil"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "School of Civil Engineering brochure · page 3 · Programs Offered, lines 116–119; campus scope cross-check: Programme or facility locator; the brochure cover/contact block (PDF lines 255–257) gives the institution address in Phagwara.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "publisherPeriod": "Undated official brochure; page includes 2025/2026 examples; current intake is not confirmed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "lovely-professional-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Environmental Laboratory",
+        "description": "Named in the School of Civil Engineering facilities list."
+      },
+      "sourceIds": [
+        "batch39-lpu-civil"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "School of Civil Engineering brochure · page 7 · Laboratories - Civil, lines 207–215; campus scope cross-check: Programme or facility locator; the brochure cover/contact block (PDF lines 255–257) gives the institution address in Phagwara.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "publisherPeriod": "Undated official brochure; current facility availability is not confirmed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "lovely-professional-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Transportation Laboratory",
+        "description": "Named in the School of Civil Engineering facilities list."
+      },
+      "sourceIds": [
+        "batch39-lpu-civil"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "School of Civil Engineering brochure · page 7 · Laboratories - Civil, lines 207–215; campus scope cross-check: Programme or facility locator; the brochure cover/contact block (PDF lines 255–257) gives the institution address in Phagwara.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "publisherPeriod": "Undated official brochure; current facility availability is not confirmed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "lovely-professional-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Soil Mechanics Laboratory",
+        "description": "Named in the School of Civil Engineering facilities list."
+      },
+      "sourceIds": [
+        "batch39-lpu-civil"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "School of Civil Engineering brochure · page 7 · Laboratories - Civil, lines 207–215; campus scope cross-check: Programme or facility locator; the brochure cover/contact block (PDF lines 255–257) gives the institution address in Phagwara.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "publisherPeriod": "Undated official brochure; current facility availability is not confirmed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "lovely-professional-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Building Material Laboratory",
+        "description": "Named in the School of Civil Engineering facilities list."
+      },
+      "sourceIds": [
+        "batch39-lpu-civil"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "School of Civil Engineering brochure · page 7 · Laboratories - Civil, lines 207–215; campus scope cross-check: Programme or facility locator; the brochure cover/contact block (PDF lines 255–257) gives the institution address in Phagwara.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "publisherPeriod": "Undated official brochure; current facility availability is not confirmed",
+      "historical": true
+    },
+    {
+      "institutionSlug": "jipmer-puducherry",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch39-jipmer-2025"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "MBBS Prospectus 2025-26 · page 7 · MBBS course section, lines 215–217",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "publisherPeriod": "Historical academic year 2025-26; prospectus also covers JIPMER Karaikal",
+      "historical": true
+    },
+    {
+      "institutionSlug": "jipmer-puducherry",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBBS",
+        "route": "Admission based on NTA NEET 2025 All-India scores; counselling by MCC",
+        "category": "2025-26 MBBS admission cycle",
+        "exam": "NTA NEET 2025",
+        "counselling": "Medical Counselling Committee (MCC)"
+      },
+      "sourceIds": [
+        "batch39-jipmer-2025"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "MBBS Prospectus 2025-26 · page 4 · Important Information; campus separation note, lines 123–141",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "publisherPeriod": "Historical 2025-26 route; Puducherry and Karaikal admissions are treated as separate entities",
+      "historical": true
+    },
+    {
+      "institutionSlug": "university-of-mumbai",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Fourth Year B.A. (Honours) in English Studies",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch39-mumbai-english"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programmes · Undergraduate, lines 15–19",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "university-of-mumbai",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Fourth Year B.A. (Honours with Research) in English Studies",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch39-mumbai-english"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programmes · Undergraduate, lines 17–21",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "university-of-mumbai",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.A. (English Studies)",
+        "level": "PG"
+      },
+      "sourceIds": [
+        "batch39-mumbai-english"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programmes · Postgraduate, lines 23–25",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "university-of-mumbai",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Ph.D. in English",
+        "level": "DOCTORAL"
+      },
+      "sourceIds": [
+        "batch39-mumbai-english"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programmes · Doctoral, lines 27–29",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "srm-institute-of-science-and-technology",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.A., LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "batch39-srm-law"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Admission Procedure · undergraduate eligibility table, line 274",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "srm-institute-of-science-and-technology",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Com., LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "batch39-srm-law"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Admission Procedure · undergraduate eligibility table, lines 276–277",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "srm-institute-of-science-and-technology",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.B.A., LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "batch39-srm-law"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Admission Procedure · undergraduate eligibility table, lines 278–279",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "srm-institute-of-science-and-technology",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 36
+      },
+      "sourceIds": [
+        "batch39-srm-law"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Admission Procedure · undergraduate eligibility table, line 280",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "holds": [
+    {
+      "institutionSlug": "jadavpur-university",
+      "sourceUrl": "https://jadavpuruniversity.in/students-landing-page/foreign-students/",
+      "reason": "Official search result described a programme/duration table, but direct opening returned HTTP 502. Search-result text was not used as evidence; retry through normal access later."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "status": "STAGED",
+  "facts": 8,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 8,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "university-of-delhi",
+      "field": "structured.admission",
+      "evidenceId": "cmwlo6rlv0009c4tvrf82dd8q",
+      "sourceId": "cmwlo6rkr0000c4tvz5eggazj",
+      "sourceUrl": "https://admission.uod.ac.in/userfiles/downloads/2026/31052026_BTech-BOI.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "kiit-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwlo6rmb000cc4tvmyt5wszw",
+      "sourceId": "cmwlo6rky0001c4tvwuwqpyhf",
+      "sourceUrl": "https://kiitee.kiit.ac.in/courses-available/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "armed-forces-medical-college",
+      "field": "structured.programme",
+      "evidenceId": "cmwlo6rmk000fc4tv1szlnyjf",
+      "sourceId": "cmwlo6rl10002c4tvpys5fu0u",
+      "sourceUrl": "https://afmc.nic.in/mbbs-courses",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "shri-ram-college-of-commerce",
+      "field": "structured.programme",
+      "evidenceId": "cmwlo6rms000ic4tv7lhwk5gg",
+      "sourceId": "cmwlo6rl30003c4tvkhbydu36",
+      "sourceUrl": "https://srcc.edu/academics/time-table/room-wise-time-table",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "fergusson-college",
+      "field": "structured.programme",
+      "evidenceId": "cmwlo6rn2000lc4tvy45n85hs",
+      "sourceId": "cmwlo6rl60004c4tvgo05epdv",
+      "sourceUrl": "https://fergusson.edu/under-graduate-programmes",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "presidency-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwlo6rna000oc4tvca1y6642",
+      "sourceId": "cmwlo6rl80005c4tvcaleyiwu",
+      "sourceUrl": "https://presiuniv.ac.in/web/ugprogramme.php",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "st-xaviers-college",
+      "field": "structured.programme",
+      "evidenceId": "cmwlo6rnl000rc4tv6fku9ldm",
+      "sourceId": "cmwlo6rlb0006c4tvdrhg5fep",
+      "sourceUrl": "https://xaviers.ac/files/Handbook%202025-2026.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiit-allahabad",
+      "field": "structured.programme",
+      "evidenceId": "cmwlo6rnt000uc4tvmwr3czpq",
+      "sourceId": "cmwlo6rle0007c4tvpbq4pz4o",
+      "sourceUrl": "https://www.iiita.ac.in/department-information-technology/program",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

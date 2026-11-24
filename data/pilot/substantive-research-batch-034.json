@@ -1,0 +1,643 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 34,
+  "researchedAt": "2026-11-20T15:34:00.305Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "batch34-official-1",
+      "institutionSlug": "indian-institute-of-technology-delhi",
+      "publisher": "IIT Delhi",
+      "url": "https://curriculum.iitd.ac.in/view_program.php?program_code=CS1",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "CS1 programme curriculum"
+      ]
+    },
+    {
+      "id": "batch34-official-2",
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "publisher": "MNNIT Allahabad",
+      "url": "https://www.mnnit.ac.in/images/stories/acaddocs/Ordinances_for_Bachelors_Programme.pdf",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Bachelor’s Programme Ordinances, p. 4, undergraduate degrees"
+      ]
+    },
+    {
+      "id": "batch34-official-3",
+      "institutionSlug": "malaviya-national-institute-of-technology",
+      "publisher": "MNIT Jaipur",
+      "url": "https://examination.mnit.ac.in/academics/faq",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Academic FAQ · UG Programs"
+      ]
+    },
+    {
+      "id": "batch34-official-4",
+      "institutionSlug": "iit-bhu-varanasi",
+      "publisher": "IIT (BHU) Varanasi",
+      "url": "https://www.iitbhu.ac.in/dept/min",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Mining Engineering department · Degree programmes"
+      ]
+    },
+    {
+      "id": "batch34-official-5",
+      "institutionSlug": "iit-tirupati",
+      "publisher": "IIT Tirupati",
+      "url": "https://iittp.ac.in/b-tech-admission",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "B-Tech admission · Degree disciplines"
+      ]
+    },
+    {
+      "id": "batch34-official-6",
+      "institutionSlug": "nit-rourkela",
+      "publisher": "NIT Rourkela",
+      "url": "https://www.nitrkl.ac.in/CE/AcademicProgram/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Civil Engineering · Academic Programme"
+      ]
+    },
+    {
+      "id": "batch34-official-7",
+      "institutionSlug": "nit-durgapur",
+      "publisher": "NIT Durgapur",
+      "url": "https://nitdgp.ac.in/department/mechanical-engineering/ug-10",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Mechanical Engineering · Undergraduate programme"
+      ]
+    },
+    {
+      "id": "batch34-official-8",
+      "institutionSlug": "nit-silchar",
+      "publisher": "NIT Silchar",
+      "url": "https://ce.nits.ac.in/civil-academics/admission",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Civil Engineering · Admission"
+      ]
+    },
+    {
+      "id": "batch34-official-9",
+      "institutionSlug": "nit-hamirpur",
+      "publisher": "NIT Hamirpur",
+      "url": "https://web.nith.ac.in/page/civil-engineering",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Civil Engineering · Department overview"
+      ]
+    },
+    {
+      "id": "batch34-official-10",
+      "institutionSlug": "nit-meghalaya",
+      "publisher": "NIT Meghalaya",
+      "url": "https://www.nitm.ac.in/department_course.php?dept=civil-engineering",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Civil Engineering · B.Tech programme and duration"
+      ]
+    },
+    {
+      "id": "batch34-official-11",
+      "institutionSlug": "iim-indore",
+      "publisher": "IIM Indore",
+      "url": "https://iimidr.ac.in/programmes/academic-programmes/five-year-integrated-programme-in-management-ipm/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Integrated Programme in Management overview"
+      ]
+    },
+    {
+      "id": "batch34-official-12",
+      "institutionSlug": "iim-shillong",
+      "publisher": "IIM Shillong",
+      "url": "https://www.iimshillong.ac.in/pgp/faq",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "PGP FAQ · Two-year full-time programme"
+      ]
+    },
+    {
+      "id": "batch34-official-13",
+      "institutionSlug": "fms-delhi",
+      "publisher": "Faculty of Management Studies, University of Delhi",
+      "url": "https://www.fms.edu/programmes/mba-full-time",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "MBA Full Time programme overview"
+      ]
+    },
+    {
+      "id": "batch34-official-14",
+      "institutionSlug": "nliu-bhopal",
+      "publisher": "National Law Institute University Bhopal",
+      "url": "https://nliu.ac.in/b-a-ll-b-hons/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "B.A. LL.B. (Hons.) curriculum"
+      ]
+    },
+    {
+      "id": "batch34-official-15",
+      "institutionSlug": "nlu-jodhpur",
+      "publisher": "National Law University Jodhpur",
+      "url": "https://nlujodhpur.ac.in/university/under-graduate",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Under Graduate · Five-year integrated degrees"
+      ]
+    },
+    {
+      "id": "batch34-official-16",
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "publisher": "Dhirubhai Ambani University",
+      "url": "https://www.daiict.ac.in/index.php/btech-ict",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "B.Tech (ICT) · Programme overview"
+      ]
+    },
+    {
+      "id": "batch34-official-17",
+      "institutionSlug": "kle-technological-university",
+      "publisher": "KLE Technological University",
+      "url": "https://www.kletech.ac.in/hubballi/undergraduate-programs",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Hubballi undergraduate programmes · Architecture"
+      ]
+    },
+    {
+      "id": "batch34-official-18",
+      "institutionSlug": "iim-bodh-gaya",
+      "publisher": "IIM Bodh Gaya",
+      "url": "https://iimbg.ac.in/programs/mba/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Master of Business Administration programme page"
+      ]
+    },
+    {
+      "id": "batch34-official-19",
+      "institutionSlug": "iim-sambalpur",
+      "publisher": "IIM Sambalpur",
+      "url": "https://iimsambalpur.ac.in/programmes/mba",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "MBA · Duration and programme overview"
+      ]
+    },
+    {
+      "id": "batch34-official-20",
+      "institutionSlug": "iim-sirmaur",
+      "publisher": "IIM Sirmaur",
+      "url": "https://www.iimsirmaur.ac.in/master-business-administration",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T15:34:00.305Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public institutional source read for an individual fact with attribution. Original prose and tables omitted. No bulk reuse inferred.",
+      "evidenceLocations": [
+        "Master of Business Administration overview"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch34-official-1"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "CS1 programme curriculum",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "batch34-official-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Bachelor’s Programme Ordinances, p. 4, undergraduate degrees",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "malaviya-national-institute-of-technology",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Architecture",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "batch34-official-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Academic FAQ · UG Programs",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-bhu-varanasi",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Mining Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "batch34-official-4"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Mining Engineering department · Degree programmes",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iit-tirupati",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch34-official-5"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "B-Tech admission · Degree disciplines",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-rourkela",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "batch34-official-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Civil Engineering · Academic Programme",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-durgapur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Mechanical Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch34-official-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Mechanical Engineering · Undergraduate programme",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-silchar",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch34-official-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Civil Engineering · Admission",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-hamirpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch34-official-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Civil Engineering · Department overview",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-meghalaya",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "batch34-official-10"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Civil Engineering · B.Tech programme and duration",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iim-indore",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Integrated Programme in Management",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "batch34-official-11"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Integrated Programme in Management overview",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iim-shillong",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Post Graduate Programme in Management",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "batch34-official-12"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "PGP FAQ · Two-year full-time programme",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "fms-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBA (Full Time)",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "batch34-official-13"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "MBA Full Time programme overview",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nliu-bhopal",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.A. LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "batch34-official-14"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "B.A. LL.B. (Hons.) curriculum",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nlu-jodhpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Integrated B.A. LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "batch34-official-15"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Under Graduate · Five-year integrated degrees",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Information and Communication Technology",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "batch34-official-16"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "B.Tech (ICT) · Programme overview",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "kle-technological-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Architecture",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "batch34-official-17"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Hubballi undergraduate programmes · Architecture",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iim-bodh-gaya",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Master of Business Administration",
+        "level": "PG"
+      },
+      "sourceIds": [
+        "batch34-official-18"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Master of Business Administration programme page",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iim-sambalpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Master of Business Administration",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "batch34-official-19"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "MBA · Duration and programme overview",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "iim-sirmaur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Master of Business Administration",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "batch34-official-20"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Master of Business Administration overview",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ]
+}

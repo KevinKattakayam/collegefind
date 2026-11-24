@@ -1,0 +1,190 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 23,
+  "researchedAt": "2026-11-18T13:41:00Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": "Direct manual reading of publicly accessible primary institutional pages/PDFs only. Store concise factual claims, attribution, exact URL, academic/reporting year where stated, and page/section locator; do not store or republish source documents or expressive prose. No blanket licence for automated collection or bulk redistribution is inferred. Each staged fact remains unreviewed and source-use review is required before publication.",
+  "sources": [
+    {
+      "id": "nit-warangal-cds-profile-2026",
+      "institutionSlug": "national-institute-of-technology-warangal",
+      "publisher": "National Institute of Technology Warangal, Department of Computational & Data Science",
+      "url": "https://nitw.ac.in/api/static/files/cd_profile_2026-10-22-10-56-18.pdf",
+      "publicationDate": null,
+      "academicYear": "2026",
+      "retrievedAt": "2026-11-18T13:41:00Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official 2026 department profile publicly opened and manually read. No express licence for extraction, storage or redistribution identified. Only a concise factual programme name and locator are staged; no document or prose is stored. Human reviewer must confirm CollegeFind's intended use before publication; no bulk retrieval or republication permission is inferred.",
+      "evidenceLocations": ["PDF printed p.5 (web page 5), heading Programmes Offered: B.Tech Mathematics & Computing; department identity on PDF cover and p.5."]
+    },
+    {
+      "id": "bits-pilani-integrated-fees-2026-27",
+      "institutionSlug": "bits-pilani",
+      "publisher": "BITS Pilani, Admissions Office",
+      "url": "https://www.bitsadmission.com/FD/FD_fee.html",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-18T13:41:00Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official publicly accessible fee schedule manually read. No express extraction/republication licence identified. Claims are limited to the Pilani campus row and stated fee components; no bulk extraction or source-content reproduction is inferred. Human source-use review required before public display.",
+      "evidenceLocations": ["Fee schedule lines 1-3 and Pilani Campus column lines 6-12; on-campus hostel fee lines 21-28; tuition notes lines 55-60."]
+    },
+    {
+      "id": "xlri-jamshedpur-prospectus-2027",
+      "institutionSlug": "xlri-jamshedpur",
+      "publisher": "XLRI - Xavier School of Management",
+      "url": "https://cloud-server.xlri.ac.in/file/6ae1febe65cd3e58180bb565",
+      "publicationDate": null,
+      "academicYear": "2027-29",
+      "retrievedAt": "2026-11-18T13:41:00Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official 2027 admission prospectus publicly opened and manually read. No explicit licence for extracted facts, storage or bulk reuse identified. Only concise factual values and page/section locators are staged; the PDF/prose is not stored or republished. Human source-use review required before publication.",
+      "evidenceLocations": ["Prospectus printed pp.14-15 (web PDF pp.9-10), section Academic Programmes (XLRI Jamshedpur), lines 1196-1201: BM/HRM two-year full-time programmes; eligibility lines 1258-1268; admission procedure lines 1032-1042."]
+    },
+    {
+      "id": "sppu-pucsd-admissions-2026-27",
+      "institutionSlug": "savitribai-phule-pune-university",
+      "publisher": "Savitribai Phule Pune University, Department of Computer Science (PUCSD)",
+      "url": "https://unipune.ac.in/pucsd/pages/admissions.html",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-18T13:41:00Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official department admissions page publicly opened and manually read. No express licence for extracted facts or bulk reuse identified. Claims are explicitly scoped to the PUCSD department and 2026-27 cycle, not all SPPU departments. Fee information is behind CCEP login and was not accessed. Human review required before publication.",
+      "evidenceLocations": ["Page headings Admissions 2026-27 and MCA; lines 25-33 provide MCA duration, eligibility and application link; lines 35-43 outline application, examination-if-applicable and counselling steps."]
+    },
+    {
+      "id": "loyola-courses-offered",
+      "institutionSlug": "loyola-college",
+      "publisher": "Loyola College, Chennai",
+      "url": "https://www.loyolacollege.edu/admission/courses-offered",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T13:41:00Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official College course listing publicly opened and manually read; page carries a 2026 copyright footer and links a 2026-27 prospectus but does not date the list itself. No express extraction/republication licence identified. Only a concise course name and campus/shift locator are staged; no prose or page content copied. Human reviewer must confirm the listing remains current and intended use before publication.",
+      "evidenceLocations": ["UG Shift II: Self Supporting, Commerce, lines 172-184 lists B.B.A.; College contact/address lines 293-302 identify Nungambakkam, Chennai campus."]
+    },
+    {
+      "id": "pec-ug-admission-brochure-2026-27",
+      "institutionSlug": "pec-chandigarh",
+      "publisher": "Punjab Engineering College (Deemed to be University), Chandigarh",
+      "url": "https://pec.ac.in/sites/default/files/2026-06/Admission-Brochure-UG-2026.pdf",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-18T13:41:00Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official AY 2026-27 admission brochure publicly opened and manually read. The document is for four reserved admission categories; the hostel table notes that accommodation is unavailable for Chandigarh Quota. No express extraction/republication licence identified. Only one table component and locator are staged; no document/table reproduction. Human reviewer must confirm applicability and source-use basis before publication.",
+      "evidenceLocations": ["Printed p.18 (web PDF page 19), Annual Hostel Fee additional table for admitting session 2026-27; lines 662-687. Hostel Fee & Mess Establishment charge is one component; total additional hostel sum is separately stated and not substituted for this component."]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "national-institute-of-technology-warangal",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "B.Tech Mathematics & Computing (Department of Computational & Data Science)", "level": "UG" },
+      "sourceIds": ["nit-warangal-cds-profile-2026"],
+      "academicYear": "2026",
+      "evidenceLocation": "Official NIT Warangal Department of Computational & Data Science Profile 2026, printed p.5, Programmes Offered. The PDF identifies NIT Warangal and the department; it states the named B.Tech programme. Intake figure is deliberately omitted because the current schema does not model seats.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "bits-pilani",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "Integrated First Degree programmes (B.E., M.Sc., B.Pharm.), Pilani Campus", "category": "Domestic students admitted in AY 2026-27; Pilani Campus", "component": "Semester tuition fee", "feeType": "TUITION", "period": "SEMESTER", "amountInr": 291500 },
+      "sourceIds": ["bits-pilani-integrated-fees-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official fee schedule lines 1-12 gives identical first/second semester amounts under the Pilani Campus column; tuition note lines 55-60 confirms INR 291,500 semester tuition for domestic students admitted in AY 2026-27. Excludes admission fee, annual fees and other charges.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "bits-pilani",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "Integrated First Degree programmes (B.E., M.Sc., B.Pharm.), Pilani Campus", "category": "On-campus students admitted in AY 2026-27; Pilani Campus", "component": "Hostel fee, first semester", "feeType": "HOSTEL", "period": "SEMESTER", "amountInr": 36000 },
+      "sourceIds": ["bits-pilani-integrated-fees-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official fee schedule lines 21-28, Hostel fee (for on-campus students only), first semester amount in the Pilani Campus column. This is first-semester hostel fee only; mess/electricity advance and other charges are separate.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "xlri-jamshedpur",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "Postgraduate Diploma in Management (Business Management and Human Resource Management), XLRI Jamshedpur", "level": "PG", "durationMonths": 24 },
+      "sourceIds": ["xlri-jamshedpur-prospectus-2027"],
+      "academicYear": "2027-29",
+      "evidenceLocation": "2027 Admission Prospectus, printed pp.14-15, heading Academic Programmes (XLRI Jamshedpur), lines 1196-1201: identifies the Jamshedpur campus, both programme specializations and two-year duration.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "xlri-jamshedpur",
+      "field": "structured",
+      "value": { "kind": "admission", "programme": "PGDM Business Management and Human Resource Management, XLRI Jamshedpur (2027 intake)", "route": "XAT 2027 score-based shortlisting for interview; XLRI applications through XAT registration", "category": "Applicants to BM/HRM programmes", "exam": "XAT 2027", "eligibility": "Three-year bachelor's degree or equivalent in any discipline recognized by a university or deemed university; candidates completing final examinations by 11 June 2027 may apply.", "applicationUrl": "https://xatonline.in/" },
+      "sourceIds": ["xlri-jamshedpur-prospectus-2027"],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Prospectus printed p.14 (web PDF p.9), admission procedure lines 1032-1042 states XAT 2027 date and score-based BM/HRM interview shortlisting; printed pp.14-15, lines 1258-1268 states programme eligibility and final examination date. The supplied application URL is named in the prospectus on p.14; verify it resolves to the official portal during review.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "savitribai-phule-pune-university",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "M.C.A. (Master of Computer Applications), Department of Computer Science (PUCSD)", "level": "PG", "durationMonths": 24 },
+      "sourceIds": ["sppu-pucsd-admissions-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official PUCSD Admissions 2026-27 page, lines 25-30: MCA, postgraduate, 2 years/4 semesters. This is a department-level offering, not a claim about every SPPU campus or affiliated college.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "savitribai-phule-pune-university",
+      "field": "structured",
+      "value": { "kind": "admission", "programme": "M.C.A., Department of Computer Science (PUCSD), AY 2026-27", "route": "Apply through CCEP; entrance examination if applicable, followed by document verification and counselling under SPPU Ordinance 181", "category": "Science graduates, including B.C.A. under Science Faculty", "eligibility": "Any Science Graduate (including B.C.A. under Science Faculty) with Mathematics at 10+2 level.", "applicationUrl": "https://cetcell.mahacet.org/" },
+      "sourceIds": ["sppu-pucsd-admissions-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official PUCSD page lines 25-33 gives programme-specific eligibility and application link; lines 35-43 describes CCEP application, examination if applicable, document verification and counselling. Page lines 55-70 say programme fees require CCEP login; no logged-in content was accessed. The page includes dated 2026 admission notices, so treat this as cycle-specific and recheck freshness.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "loyola-college",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "B.B.A. (Shift II, Self-Supporting), Loyola College Chennai", "level": "UG" },
+      "sourceIds": ["loyola-courses-offered"],
+      "academicYear": null,
+      "evidenceLocation": "Official Loyola College course listing, UG Shift II: Self Supporting, Commerce, lines 172-184, includes B.B.A. College address at lines 293-302 identifies the Nungambakkam, Chennai campus. The list itself does not state the academic cycle; reviewer must confirm current applicability before approval.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "pec-chandigarh",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "B.Tech hostel residents (eligible non-Chandigarh-Quota students)", "category": "Admitting session 2026-27; hostel residents; not Chandigarh Quota", "component": "Annual hostel fee and mess establishment charges (one table component only)", "feeType": "HOSTEL", "period": "YEAR", "amountInr": 62000 },
+      "sourceIds": ["pec-ug-admission-brochure-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official UG admission brochure printed p.18 (web PDF page 19), lines 650-687. The table explicitly labels annual hostel charges for admitting session 2026-27; hostel fee and mess establishment component is INR 62,000. The separately stated total additional hostel sum is INR 81,500; Chandigarh Quota students are not provided hostel accommodation. Do not present this one component as the complete hostel cost.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchDispositions": [
+    { "institutionSlug": "national-institute-of-technology-warangal", "status": "STAGED_CANDIDATE", "note": "NITW official 2026 CDS profile supports one programme name. Current intake count is omitted because the schema does not have a seat-count field." },
+    { "institutionSlug": "bits-pilani", "status": "STAGED_CANDIDATE", "note": "Official 2026-27 fee table directly supports Pilani first-degree semester tuition and on-campus first-semester hostel fee; other campuses and charges excluded." },
+    { "institutionSlug": "xlri-jamshedpur", "status": "STAGED_CANDIDATE", "note": "Official 2027 prospectus identifies XLRI Jamshedpur programmes, duration, eligibility, and XAT 2027 process. No fee candidate staged because the fee is approximate and includes other charges." },
+    { "institutionSlug": "savitribai-phule-pune-university", "status": "STAGED_CANDIDATE", "note": "Official SPPU PUCSD page supports department-scoped MCA duration, eligibility and process for AY 2026-27; exact fee requires login and was not accessed. Recheck cycle freshness before approval." },
+    { "institutionSlug": "loyola-college", "status": "STAGED_CANDIDATE", "note": "Official Loyola College course list supports BBA in Shift II; page does not assign an academic year, so no year or duration is inferred." },
+    { "institutionSlug": "pec-chandigarh", "status": "STAGED_CANDIDATE", "note": "Official AY 2026-27 reserved-category B.Tech brochure supports one annual hostel component; hostel total is separately labelled and Chandigarh Quota hostel exclusion is retained." }
+  ]
+}

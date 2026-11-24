@@ -1,0 +1,231 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 51,
+  "researchedAt": "2026-11-22T05:30:35.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b51-psg-campus",
+      "institutionSlug": "psg-college-of-technology",
+      "publisher": "PSG College of Technology",
+      "title": "Campus Highlights",
+      "url": "https://www.psgtech.edu/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T05:30:35.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The homepage is first-party and displays current 2026 news; no explicit reuse licence was established. Only separately stated, concise facts with attribution are considered. No bulk text, collection statistics, access rules or housing eligibility are copied or inferred.",
+      "evidenceLocations": [
+        "Campus Highlights, lines 142–150: Library listed; source says it was established in 1951; Hostel listed as a campus facility."
+      ]
+    },
+    {
+      "id": "b51-psg-contact",
+      "institutionSlug": "psg-college-of-technology",
+      "publisher": "PSG College of Technology",
+      "title": "Administrative Departments and Contact",
+      "url": "https://www.psgtech.edu/index.php",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T05:30:35.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The page footer shows 2026 copyright. Short institutional address and main-office phone only; no explicit reuse licence or bulk republication permission established.",
+      "evidenceLocations": [
+        "Administrative Departments and footer, lines 139–152: Main Office listing, Post Box 1611, Peelamedu, Coimbatore 641004 and telephone numbers."
+      ]
+    },
+    {
+      "id": "b51-rgu-programmes",
+      "institutionSlug": "rajiv-gandhi-university",
+      "publisher": "Rajiv Gandhi University",
+      "title": "Programmes Offered",
+      "url": "https://www.rgu.ac.in/courses-offered",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T05:30:35.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Institutional programme page directly read; no explicit reuse licence established. Record one programme title and its stated semester duration only, with attribution; no unrelated admission or eligibility claim inferred.",
+      "evidenceLocations": [
+        "Programmes Offered, lines 498–510: Post Graduate listing; Master of Technology in Electronics and Communication Engineering; four semesters; Department of Electronics & Communication. The page does not state an academic year or physical campus for each programme."
+      ]
+    },
+    {
+      "id": "b51-centurion-som",
+      "institutionSlug": "centurion-university",
+      "publisher": "Centurion University, School of Management",
+      "title": "School of Management — Programmes Offered",
+      "url": "https://cutm.ac.in/schools/som/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T05:30:35.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "First-party programme page; no explicit reuse licence established. Only programme identity and campus explicitly named in the listing are used. Avoid marketing, outcome, eligibility and campus-wide claims.",
+      "evidenceLocations": [
+        "School of Management, Programmes Offered, lines 170–175: BBA Healthcare Management is listed as an undergraduate programme at Bhubaneswar. The page provides no academic year for the listing."
+      ]
+    },
+    {
+      "id": "b51-jgu-jgbs",
+      "institutionSlug": "op-jindal-university",
+      "publisher": "O.P. Jindal Global University, Jindal Global Business School",
+      "title": "Jindal Global Business School Admissions",
+      "url": "https://jgu.edu.in/jgbs/admissions",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T05:30:35.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "First-party page states O.P. Jindal Global University and the Sonipat campus, resolving the catalogue's Sonipat/JGU identity (not the separate Raigarh university). Copyright is present; no explicit reuse licence established. Only individual attributed programme/contact facts are used.",
+      "evidenceLocations": [
+        "JGBS admissions, lines 12–22: BBA (Hons.) programme listings; lines 35–40: campus location Sonipat Narela Road and admissions email. No academic year is specified for the programme list."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "psg-college-of-technology",
+      "field": "structured",
+      "value": { "kind": "facility", "facility": "College library", "description": "The institution's Campus Highlights page lists its library and states that it was established in 1951. Current service hours, access rules and collection size are not stated in this fact." },
+      "sourceIds": ["b51-psg-campus"],
+      "academicYear": null,
+      "evidenceLocation": "Campus Highlights, lines 142–147. Page lists Library and states it was established in 1951.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "PSG College of Technology campus, Peelamedu, Coimbatore; campus highlights section.",
+      "publisherPeriod": "Checked 22 Nov 2026. The establishment date is historical (1951); the current homepage lists the library under Campus Highlights. No current hours, access rules or collection statistics are asserted.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "psg-college-of-technology",
+      "field": "structured",
+      "value": { "kind": "facility", "facility": "Hostel", "description": "The institution lists hostel facilities among its campus highlights. Availability, eligibility, capacity and charges are not specified here." },
+      "sourceIds": ["b51-psg-campus"],
+      "academicYear": null,
+      "evidenceLocation": "Campus Highlights, lines 148–150: Hostel is listed as a campus facility.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "PSG College of Technology campus, Peelamedu, Coimbatore.",
+      "publisherPeriod": "Page checked 22 Nov 2026; no academic year, access conditions, student eligibility, capacity or fee is specified.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "psg-college-of-technology",
+      "field": "structured",
+      "value": { "kind": "contact", "office": "PSG College of Technology main office", "channel": "ADDRESS", "contact": "Post Box No. 1611, Peelamedu, Coimbatore - 641004" },
+      "sourceIds": ["b51-psg-contact"],
+      "academicYear": null,
+      "evidenceLocation": "Administrative Departments and contact footer, lines 139–152.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Main office, Peelamedu, Coimbatore.",
+      "publisherPeriod": "First-party page checked 22 Nov 2026; page footer shows 2026 copyright. Address is a postal contact, not a claim about a student service location.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "psg-college-of-technology",
+      "field": "structured",
+      "value": { "kind": "contact", "office": "PSG College of Technology main office", "channel": "PHONE", "contact": "0422-2572177" },
+      "sourceIds": ["b51-psg-contact"],
+      "academicYear": null,
+      "evidenceLocation": "Administrative Departments and contact footer, lines 139–152; first telephone number listed.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Main office, PSG College of Technology, Coimbatore.",
+      "publisherPeriod": "First-party page checked 22 Nov 2026; page footer shows 2026 copyright. Confirm before relying on this number for urgent communication.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "rajiv-gandhi-university",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "Master of Technology in Electronics and Communication Engineering", "level": "PG", "durationSemesters": 4 },
+      "sourceIds": ["b51-rgu-programmes"],
+      "academicYear": null,
+      "evidenceLocation": "Programmes Offered, lines 498–510: postgraduate classification, named M.Tech programme, four semesters and Department of Electronics & Communication.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Institution-level programme listing at Rajiv Gandhi University; the source does not specify the programme's physical campus.",
+      "publisherPeriod": "Page checked 22 Nov 2026; the programme listing provides no academic year. Check current admission materials and physical campus before applying.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "centurion-university",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "BBA Healthcare Management", "level": "UG" },
+      "sourceIds": ["b51-centurion-som"],
+      "academicYear": null,
+      "evidenceLocation": "School of Management, Programmes Offered, lines 170–175: BBA Healthcare Management listed as UG at Bhubaneswar.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Bhubaneswar campus only, as stated for this BBA Healthcare Management listing; not an institute-wide programme mapping.",
+      "publisherPeriod": "Page checked 22 Nov 2026; no academic year appears beside this programme, so confirm the current intake before applying.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "op-jindal-university",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "BBA (Hons.) Marketing/HR/Finance", "level": "UG" },
+      "sourceIds": ["b51-jgu-jgbs"],
+      "academicYear": null,
+      "evidenceLocation": "Jindal Global Business School Admissions, lines 12–13; BBA (Hons.) Marketing/HR/Finance listing.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "O.P. Jindal Global University, Sonipat; Jindal Global Business School. Catalogue short name JGU and Sonipat location match this institution, not O.P. Jindal University in Raigarh.",
+      "publisherPeriod": "Page checked 22 Nov 2026; programme listing has no academic year. Check the current admissions page before applying.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "op-jindal-university",
+      "field": "structured",
+      "value": { "kind": "contact", "office": "Jindal Global Business School admissions", "channel": "EMAIL", "contact": "admissions@jgu.edu.in" },
+      "sourceIds": ["b51-jgu-jgbs"],
+      "academicYear": null,
+      "evidenceLocation": "Jindal Global Business School Admissions, lines 35–40: Sonipat campus and admissions email.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Admissions contact listed on Jindal Global Business School page for O.P. Jindal Global University, Sonipat.",
+      "publisherPeriod": "Page checked 22 Nov 2026; contact email is publisher-listed, but verify with the current programme page before sending personal information.",
+      "historical": false
+    }
+  ],
+  "researchHolds": [
+    { "institutionSlug": "indian-institute-of-management-lucknow", "status": "RESEARCH_HOLD_SOURCE_ACCESS", "reason": "The official page was re-opened in this pass but timed out; search results were not treated as claim evidence." },
+    { "institutionSlug": "osmania-university", "status": "RESEARCH_HOLD_FRESHNESS", "reason": "The available official admissions page still exposes a 2022 footer; current programme and contact facts need a dated official source." },
+    { "institutionSlug": "iit-jodhpur", "status": "RESEARCH_HOLD_SOURCE_ACCESS", "reason": "The official programmes page timed out in the previous direct-source attempt; indexed excerpts were not used." },
+    { "institutionSlug": "nit-jamshedpur", "status": "RESEARCH_HOLD_SOURCE_ACCESS", "reason": "The direct official academic/admissions response was a JavaScript-required shell; no snippet-derived fact used." },
+    { "institutionSlug": "nit-raipur", "status": "RESEARCH_HOLD_SOURCE_ACCESS", "reason": "Official institutional/admissions pages timed out in the prior direct attempt; no snippet-derived fact used." },
+    { "institutionSlug": "seth-gs-medical-college", "status": "RESEARCH_HOLD_SOURCE_AUTHORITY", "reason": "The accessible KEM page expressly disclaims official status; it is not used as factual evidence." },
+    { "institutionSlug": "bangalore-medical-college", "status": "RESEARCH_HOLD_SOURCE_ACCESS", "reason": "No directly opened current first-party or government source was established for a specific programme in this pass." },
+    { "institutionSlug": "rvce-bangalore", "status": "RESEARCH_HOLD_FRESHNESS", "reason": "The previously accessible official notice lacks a sufficiently clear current programme/admission period." },
+    { "institutionSlug": "nit-puducherry", "status": "RESEARCH_HOLD_SOURCE_ACCESS", "reason": "Official pages returned 502/timeouts in the prior direct attempt; snippets were not used." },
+    { "institutionSlug": "cochin-university", "status": "RESEARCH_HOLD_SOURCE_ACCESS", "reason": "Official programme pages returned server errors or timed out in the prior direct attempt." },
+    { "institutionSlug": "rajasthan-technical-university", "status": "RESEARCH_HOLD_ACCESS_RESTRICTION", "reason": "The official page returned HTTP 403; no alternate-access bypass was attempted." },
+    { "institutionSlug": "banasthali-vidyapith", "status": "RESEARCH_HOLD_FRESHNESS", "reason": "The available official curriculum material is dated 2019 and is not represented as current." },
+    { "institutionSlug": "iiit-sri-city", "status": "RESEARCH_HOLD_ACCESS_RESTRICTION", "reason": "The official site returned HTTP 403; no restriction bypass was attempted." },
+    { "institutionSlug": "patna-university", "status": "RESEARCH_HOLD_SOURCE_ACCESS", "reason": "The official undergraduate courses page timed out on direct open; search-index content was not used as fact." },
+    { "institutionSlug": "mizoram-university", "status": "RESEARCH_HOLD_SOURCE_ACCESS", "reason": "Official pages returned server errors in the prior direct attempt; no snippet-derived facts used." },
+    { "institutionSlug": "ict-mumbai", "status": "RESEARCH_HOLD_ACCESS_RESTRICTION", "reason": "Official pages returned HTTP 403; no restriction bypass was attempted." }
+  ],
+  "reviewerSummary": {
+    "candidateClaims": 8,
+    "sourceReportedEligible": 8,
+    "ownerDatabaseWrites": 0,
+    "genuineApprovals": 0,
+    "stagedClaimsUnchanged": 377,
+    "remainingBasicProfilesAtBaseline": 20
+  },
+  "sourceUse": "Each released item is one concise attributed fact from a directly opened first-party institutional page. No blanket licence or bulk reuse right is inferred. The facts remain source-reported, not independently verified; decision-critical facts remain behind human review. No search result was used as factual proof.",
+  "notes": [
+    "Batch 050 ISB records were rechecked against the official /admissions/pgplp/ page: it explicitly names the Post Graduate Programme in Management (PGP), gives a 12-month duration, lists Hyderabad and Mohali, and describes the Class of 2027 admissions process. The source and programme match; the 6 Dec 2026 Round 2 deadline is time-sensitive and is not represented as historical as of 22 Nov 2026.",
+    "Batch 050 St John's College Agra page title still says 2025-26 while the body welcomes 2026-27 applicants. The admissions card retains the warning; the B.A. course listing has no explicit academic year. No deadline is promoted as current.",
+    "The Sonipat catalogue identity's short name JGU and official O.P. Jindal Global University campus/address match; this is distinct from the similarly named O.P. Jindal University in Raigarh. The source does not support transferring Raigarh facts to this catalogue row.",
+    "All 8 new candidates were directly checked against their official page excerpts. Undated programme/contact/facility facts carry no invented academic year and explicitly direct students to recheck current availability. RGU's source lists semester duration, retained as semesters without conversion to months.",
+    "Sixteen prior basic profiles remain held for source access, authority, freshness or identity reasons; the per-institution reasons above are carried forward, not presented as fresh retrievals unless explicitly noted. No persistent owner-review database was accessed or changed."
+  ]
+}

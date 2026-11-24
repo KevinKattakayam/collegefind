@@ -1,0 +1,177 @@
+[
+  {
+    "slug": "indian-institute-of-technology-kharagpur",
+    "claimId": "cmwkynqzf0002p0tvtf8i3th6",
+    "sourceId": "cmwkynqz20000p0tvqz1xs0ko",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "indian-institute-of-technology-roorkee",
+    "claimId": "cmwkynr020006p0tvhrdsj8xm",
+    "sourceId": "cmwkynqzv0004p0tvax41nqlt",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "indian-institute-of-technology-guwahati",
+    "claimId": "cmwkynr0g000ap0tvzzbolcit",
+    "sourceId": "cmwkynr090008p0tvhnu3cis3",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "indian-institute-of-technology-hyderabad",
+    "claimId": "cmwkynr0u000ep0tvyb98q520",
+    "sourceId": "cmwkynr0o000cp0tvy6o4f80c",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "national-institute-of-technology-calicut",
+    "claimId": "cmwkynr1a000ip0tv8cu72lg2",
+    "sourceId": "cmwkynr13000gp0tvu3kykgo3",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "motilal-nehru-national-institute-of-technology",
+    "claimId": "cmwkynr1o000mp0tv4ffpj1wr",
+    "sourceId": "cmwkynr1i000kp0tve99tv9hu",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "malaviya-national-institute-of-technology",
+    "claimId": "cmwkynr26000qp0tv2elo4brn",
+    "sourceId": "cmwkynr1y000op0tvd98z5feg",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "indian-institute-of-management-ahmedabad",
+    "claimId": "cmwkynr2k000up0tvpgz3logm",
+    "sourceId": "cmwkynr2e000sp0tvv5dpd6gh",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "indian-institute-of-management-calcutta",
+    "claimId": "cmwkynr2x000yp0tvz5b09xwt",
+    "sourceId": "cmwkynr2s000wp0tv0n7hyrj1",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "indian-school-of-business",
+    "claimId": "cmwkynr370012p0tv2pnf2nuh",
+    "sourceId": "cmwkynr330010p0tvc1rnej0f",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "xlri-jamshedpur",
+    "claimId": "cmwkynr3h0016p0tv5jq0gtkn",
+    "sourceId": "cmwkynr3d0014p0tv7vc8hc2g",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "management-development-institute",
+    "claimId": "cmwkynr3r001ap0tvjdv5f5iu",
+    "sourceId": "cmwkynr3n0018p0tvtnqhiyks",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "anna-university",
+    "claimId": "cmwkynr3y001ep0tv75hvinnm",
+    "sourceId": "cmwkynr3v001cp0tvdgbx3z6f",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "savitribai-phule-pune-university",
+    "claimId": "cmwkynr48001ip0tvyqfu9w4t",
+    "sourceId": "cmwkynr43001gp0tvavdr9aqp",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "thapar-institute-of-engineering",
+    "claimId": "cmwkynr4h001mp0tvqdequoxg",
+    "sourceId": "cmwkynr4d001kp0tvqyjqxrw3",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "kiit-university",
+    "claimId": "cmwkynr4q001qp0tvoyq2ifrs",
+    "sourceId": "cmwkynr4m001op0tvg4eu7bee",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "shiv-nadar-university",
+    "claimId": "cmwkynr4z001up0tvyfjll4bd",
+    "sourceId": "cmwkynr4v001sp0tvl1uymb8s",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "chandigarh-university",
+    "claimId": "cmwkynr57001yp0tvdnylm3jq",
+    "sourceId": "cmwkynr53001wp0tvwnlfyjc1",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "all-india-institute-of-medical-sciences",
+    "claimId": "cmwkynr5g0022p0tv9fx3fjsy",
+    "sourceId": "cmwkynr5c0020p0tv48d36ahf",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "christian-medical-college",
+    "claimId": "cmwkynr5n0026p0tveg8wfw9o",
+    "sourceId": "cmwkynr5k0024p0tvevvv877k",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "armed-forces-medical-college",
+    "claimId": "cmwkynr5w002ap0tvrh89i2j0",
+    "sourceId": "cmwkynr5t0028p0tvisl5qr4t",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "national-law-school-of-india-university",
+    "claimId": "cmwkynr62002ep0tvdro51ian",
+    "sourceId": "cmwkynr5z002cp0tv22sixjp2",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "shri-ram-college-of-commerce",
+    "claimId": "cmwkynr69002ip0tvbdme915w",
+    "sourceId": "cmwkynr65002gp0tvy9ma2tar",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "st-xaviers-college",
+    "claimId": "cmwkynr6h002mp0tv5u5wri5u",
+    "sourceId": "cmwkynr6d002kp0tvv48rr3ov",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "fergusson-college",
+    "claimId": "cmwkynr6q002qp0tv0sl2yu2q",
+    "sourceId": "cmwkynr6m002op0tvizd6hl7v",
+    "status": "STAGED",
+    "field": "website"
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "sources": [
+    {
+      "id": "nirf-2025-iitb-engineering",
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "publisher": "National Institutional Ranking Framework, Ministry of Education, Government of India; institution-submitted data",
+      "title": "India Rankings 2025: IIT Bombay Engineering institution data",
+      "url": "https://www.nirfindia.org/nirfpdfcdn/2025/pdf/Engineering/IR-E-U-0306.pdf",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-23T00:00:00.000Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Two individual factual values extracted for human review. No table or prose copied. Bulk redistribution rights and dataset licence have not been independently established; do not publish automatically.",
+      "evidenceLocations": [
+        "PDF page containing section 'Placement & Higher Studies', table e3, UG [4 Years Program(s)], row for first-year intake 2020-21; graduating academic year 2023-24: 990 graduated in minimum stipulated time, 731 placed, median salary INR 1,961,000 per annum.",
+        "PDF lines 111-124 (table headings) and 151-160 (2023-24 outcome row) in the text extraction."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "sourceIds": ["nirf-2025-iitb-engineering"],
+      "field": "structured",
+      "value": {
+        "kind": "placement",
+        "cohort": "UG [4 Years Program(s)] graduates in minimum stipulated time, graduating academic year 2023-24",
+        "metric": "PLACED_COUNT",
+        "denominator": 990,
+        "value": 731,
+        "definition": "Count placed among students graduating in minimum stipulated time, as reported in the institution-submitted NIRF 2025 data. This aggregate is not a placement rate and does not identify individual degrees."
+      },
+      "academicYear": "2023-24",
+      "evidenceLocation": "Placement & Higher Studies, table e3, UG [4 Years Program(s)], row whose intake year is 2020-21 and graduating academic year is 2023-24; columns 'No. of students graduating in minimum stipulated time' and 'No. of students placed'.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Bombay, Powai campus; institution-level NIRF submission, UG four-year programmes aggregated.",
+      "applicablePeriod": "Historical graduating cohort, academic year 2023-24; report edition 2025.",
+      "publisherPeriod": "Historical graduating cohort, academic year 2023-24; report edition 2025.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "sourceIds": ["nirf-2025-iitb-engineering"],
+      "field": "structured",
+      "value": {
+        "kind": "placement",
+        "cohort": "UG [4 Years Program(s)] graduates in minimum stipulated time, graduating academic year 2023-24",
+        "metric": "MEDIAN",
+        "denominator": 731,
+        "value": 1961000,
+        "definition": "Median annual salary in INR for placed graduates in the institution-submitted NIRF 2025 cohort. Denominator is the 731 placed graduates; aggregate across UG four-year programmes, not a guarantee or a degree-specific outcome."
+      },
+      "academicYear": "2023-24",
+      "evidenceLocation": "Placement & Higher Studies, table e3, UG [4 Years Program(s)], row whose intake year is 2020-21 and graduating academic year is 2023-24; 'Median salary of placed graduates per annum' column.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Bombay, Powai campus; institution-level NIRF submission, UG four-year programmes aggregated.",
+      "applicablePeriod": "Historical graduating cohort, academic year 2023-24; report edition 2025.",
+      "publisherPeriod": "Historical graduating cohort, academic year 2023-24; report edition 2025.",
+      "historical": true
+    }
+  ]
+}

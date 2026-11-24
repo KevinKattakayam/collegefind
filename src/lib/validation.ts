@@ -40,13 +40,6 @@ function optionalNumber(min: number, max: number) {
   return z.preprocess(emptyToUndefined, z.coerce.number().finite().min(min).max(max).optional());
 }
 
-function queryBool(defaultValue: boolean) {
-  return z.preprocess(
-    (v) => (v === 'true' || v === '1' ? true : v === 'false' || v === '0' ? false : emptyToUndefined(v)),
-    z.boolean().default(defaultValue),
-  );
-}
-
 function csv<T extends z.ZodType>(item: T, maxItems = 10) {
   return z.preprocess(
     (v) =>
@@ -115,7 +108,10 @@ export const moderationSchema = z.object({
 
 // ---------- saved items ----------
 
-export const saveCollegeSchema = z.object({ collegeId: idSchema });
+export const saveCollegeSchema = z.union([
+  z.strictObject({ collegeId: idSchema }),
+  z.strictObject({ collegeKeys: z.array(collegeKeySchema).min(1).max(200) }).refine(({ collegeKeys }) => new Set(collegeKeys).size === collegeKeys.length, 'Colleges must be different'),
+]);
 
 export const comparisonCreateSchema = z.object({
   collegeIds: z
@@ -134,6 +130,8 @@ export const SORTS = ['name', 'fees_asc', 'fees_desc', 'newest', 'rating'] as co
 export const collegesQuerySchema = z
   .object({
     search: z.string().trim().max(100).optional(),
+    slugs: csv(collegeKeySchema, 25).refine((slugs) => !slugs || new Set(slugs.map((slug) => slug.toLowerCase())).size === slugs.length, 'College slugs must be unique'),
+    city: z.string().trim().max(80).optional(),
     state: z.string().trim().max(60).optional(),
     type: z.enum(['GOVERNMENT', 'PRIVATE']).optional().or(z.literal('').transform(() => undefined)),
     minFees: optionalInt(0, 100_000_000),
@@ -141,6 +139,9 @@ export const collegesQuerySchema = z
     naac: csv(z.enum(NAAC_GRADES), NAAC_GRADES.length),
     minRating: optionalNumber(0, 5),
     courses: csv(z.string().max(30), 15),
+    programme: z.string().trim().max(140).optional(),
+    degrees: csv(z.enum(['UG', 'PG', 'DOCTORAL', 'DIPLOMA']), 4),
+    eligibility: z.string().trim().max(140).optional(),
     exams: csv(z.enum(EXAMS), EXAMS.length),
     established: z
       .enum(['before_1960', '1960_1990', '1990_2010', 'after_2010'])
@@ -158,48 +159,6 @@ export const collegesQuerySchema = z
 
 export type CollegesQuery = z.infer<typeof collegesQuerySchema>;
 
-// ---------- predictor ----------
+// ---------- admission guidance ----------
 
-export const SEAT_CATEGORIES = ['OPEN', 'EWS', 'OBC_NCL', 'SC', 'ST'] as const;
-export const GENDERS = ['FEMALE', 'MALE', 'OTHER', 'UNSPECIFIED'] as const;
-
-export const predictQuerySchema = z
-  .object({
-    exam: z.enum(EXAMS, { error: 'Choose an exam' }),
-    rank: optionalInt(1, 3_000_000), // CRL / AIR
-    categoryRank: optionalInt(1, 3_000_000),
-    pwdRank: optionalInt(1, 3_000_000),
-    score: optionalNumber(0, 1000), // CAT percentile (0-100) or GATE score (0-1000)
-    category: z.enum(SEAT_CATEGORIES).default('OPEN'),
-    isPwd: queryBool(false),
-    gender: z.enum(GENDERS).default('UNSPECIFIED'),
-    homeState: z.string().trim().max(60).optional(),
-    states: csv(z.string().trim().max(60), 10),
-    branches: csv(z.string().trim().max(60), 10),
-    maxFees: optionalInt(0, 100_000_000),
-    includeUnknownFees: queryBool(true),
-    round: optionalInt(1, 10),
-    includeUnlikely: queryBool(false),
-    limit: z.preprocess(emptyToUndefined, z.coerce.number().int().min(1).max(100).default(50)),
-  })
-  .superRefine((q, ctx) => {
-    const rankExam = q.exam === 'JEE_MAIN' || q.exam === 'JEE_ADVANCED' || q.exam === 'NEET';
-    if (rankExam && q.rank === undefined) {
-      ctx.addIssue({ code: 'custom', path: ['rank'], message: 'Enter your rank (CRL / All India Rank)' });
-    }
-    if (!rankExam && q.score === undefined) {
-      ctx.addIssue({
-        code: 'custom',
-        path: ['score'],
-        message: q.exam === 'CAT' ? 'Enter your CAT percentile' : 'Enter your GATE score',
-      });
-    }
-    if (q.exam === 'CAT' && q.score !== undefined && q.score > 100) {
-      ctx.addIssue({ code: 'custom', path: ['score'], message: 'CAT percentile must be between 0 and 100' });
-    }
-    if (q.isPwd && rankExam && q.pwdRank === undefined) {
-      ctx.addIssue({ code: 'custom', path: ['pwdRank'], message: 'Enter your PwD rank to include PwD seats' });
-    }
-  });
-
-export type PredictQuery = z.infer<typeof predictQuerySchema>;
+export const guidanceQuerySchema = z.object({ cutoff: idSchema });

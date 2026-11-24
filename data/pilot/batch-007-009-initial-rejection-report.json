@@ -1,0 +1,152 @@
+[
+  {
+    "row": 1,
+    "slug": "iim-jammu",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 2,
+    "slug": "iisc-bangalore",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 3,
+    "slug": "college-of-engineering-pune",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 4,
+    "slug": "north-eastern-hill-university",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 5,
+    "slug": "iim-sambalpur",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 6,
+    "slug": "pondicherry-university",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 7,
+    "slug": "stanley-medical-college",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 8,
+    "slug": "vel-tech-university",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 9,
+    "slug": "jntu-hyderabad",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 10,
+    "slug": "dit-university",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 11,
+    "slug": "indian-statistical-institute",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 12,
+    "slug": "tezpur-university",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 13,
+    "slug": "iiit-kottayam",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 14,
+    "slug": "iiit-gwalior",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 15,
+    "slug": "punjab-technical-university",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 16,
+    "slug": "iiitdm-kancheepuram",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 17,
+    "slug": "sathyabama-institute",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 18,
+    "slug": "galgotias-university",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 19,
+    "slug": "visvesvaraya-technological-university",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 20,
+    "slug": "jain-university",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 21,
+    "slug": "central-university-of-kerala",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 22,
+    "slug": "iiit-jabalpur",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 23,
+    "slug": "seth-gs-medical-college",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 24,
+    "slug": "central-university-of-punjab",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  },
+  {
+    "row": 25,
+    "slug": "hindustan-university",
+    "status": "REJECTED",
+    "reason": "Importer correctly rejected future-dated collectedAt metadata before writing; the corrected timestamp was then imported successfully."
+  }
+]

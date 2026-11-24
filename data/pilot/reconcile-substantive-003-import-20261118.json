@@ -1,0 +1,37 @@
+{
+  "status": "STAGED",
+  "facts": 3,
+  "reviewState": "UNREVIEWED",
+  "staged": 3,
+  "reused": 0,
+  "createdSources": 3,
+  "createdRuns": 3,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "iisc-bangalore",
+      "field": "courses",
+      "evidenceId": "cmwlkvuyt0004jetvjjqxwjby",
+      "sourceId": "cmwlkvuy10000jetv6n7sp8gb",
+      "sourceUrl": "https://ug.iisc.ac.in/",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "field": "courses",
+      "evidenceId": "cmwlkvuzb0007jetv00ecletq",
+      "sourceId": "cmwlkvuy70001jetv96z5q6nf",
+      "sourceUrl": "https://nitc.ac.in/ug-programmes",
+      "status": "STAGED"
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "field": "admissions",
+      "evidenceId": "cmwlkvuzq000ajetvzonpgn1u",
+      "sourceId": "cmwlkvuyc0002jetvsj1yuvfj",
+      "sourceUrl": "https://nitc.ac.in/admissions-ug",
+      "status": "STAGED"
+    }
+  ],
+  "databaseChanged": true
+}

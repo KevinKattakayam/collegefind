@@ -4,15 +4,20 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import { cache } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CollegeCard from '@/components/CollegeCard';
-import DataStatusBadge from '@/components/DataStatusBadge';
 import CollegeActions from '@/components/college/CollegeActions';
-import CutoffHistory from '@/components/college/CutoffHistory';
+import CutoffTable from '@/components/college/CutoffTable';
 import QuestionsAndAnswers from '@/components/college/QuestionsAndAnswers';
 import { prisma } from '@/lib/prisma';
 import { collegeDetailSelect, collegeListSelect } from '@/server/colleges';
 import { formatCount, formatINR, formatLPA, formatPct } from '@/lib/utils';
 import { SITE_URL } from '@/lib/site';
-import type { College, CutoffRow } from '@/types';
+import type { College } from '@/types';
+import { structuredLabels } from '@/server/ingest/structured-facts';
+import { listPublicCutoffs } from '@/server/cutoffs';
+import { collegeSourceLinks } from '@/server/college-source-links';
+import { logger, errorFields } from '@/lib/logger';
+import { publicSourceReportedFacts } from '@/server/source-reported-public';
+import type { SourceReportedFact } from '@/server/source-reported';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,37 +33,18 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   if (!college) notFound();
   return {
     title: `${college.name}, ${college.city}`,
-    description: `${college.name} in ${college.city}, ${college.state}: courses, fees, official cutoff history and questions from students.`,
+    description: `${college.name} in ${college.city}, ${college.state}. Find attributed college information and reviewed historical cutoffs where available.`,
     alternates: { canonical: `/colleges/${college.slug}` },
   };
 }
 
-async function getCutoffs(collegeId: string): Promise<CutoffRow[]> {
-  const records = await prisma.cutoffRecord.findMany({
-    where: { program: { collegeId }, isPwd: false },
-    select: {
-      exam: true, year: true, round: true, quota: true, category: true, seatPool: true, metric: true,
-      openingValue: true, closingValue: true, isPreparatory: true,
-      program: { select: { id: true, name: true, branch: true } },
-      source: { select: { name: true, publisher: true, url: true, retrievedAt: true } },
-    },
-    orderBy: [{ year: 'desc' }, { round: 'desc' }, { category: 'asc' }],
-    take: 1000,
-  });
-  const seen = new Set<string>();
-  return records
-    .filter((r) => {
-      const k = [r.program.id, r.exam, r.year, r.quota, r.category, r.seatPool].join('|');
-      if (seen.has(k)) return false;
-      seen.add(k);
-      return true;
-    })
-    .map((r) => ({ ...r, source: { ...r.source, retrievedAt: r.source.retrievedAt.toISOString() } }));
+async function getCutoffs(collegeSlug: string) {
+  return listPublicCutoffs(prisma, { college: collegeSlug, page: 1, pageSize: 8 });
 }
 
 async function getSimilar(college: { id: string; state: string; type: 'GOVERNMENT' | 'PRIVATE' }) {
   return prisma.college.findMany({
-    where: { state: college.state, type: college.type, id: { not: college.id } },
+    where: { state: college.state, type: college.type, id: { not: college.id }, dataStatus: { not: 'DEMO' } },
     select: collegeListSelect,
     orderBy: { name: 'asc' },
     take: 3,
@@ -72,9 +58,40 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
   // Old links used the database id; send them to the canonical slug URL.
   if (key !== college.slug) permanentRedirect(`/colleges/${college.slug}`);
 
-  const [cutoffs, similar] = await Promise.all([getCutoffs(college.id), getSimilar(college)]);
-  const isDemo = college.dataStatus === 'DEMO';
+  // Optional queries must not make the institution identity and source links unavailable.
   const listCollege: College = { ...college };
+  const [cutoffs, similar, sourceReported] = await Promise.all([
+    getCutoffs(college.slug).catch((error: unknown) => {
+      logger.warn('college_profile_cutoffs_unavailable', errorFields(error));
+      return null;
+    }),
+    getSimilar(college).catch((error: unknown) => {
+      logger.warn('college_profile_related_unavailable', errorFields(error));
+      return [];
+    }),
+    publicSourceReportedFacts(listCollege).catch((error: unknown) => {
+      logger.warn('college_profile_source_reported_unavailable', errorFields(error));
+      return [];
+    }),
+  ]);
+  const sourceLinks = collegeSourceLinks(college.slug);
+  const sectionSource = (categories: string[]) => {
+    const index = sourceLinks.findIndex(({ category }) => categories.includes(category));
+    if (index === -1) return null;
+    return <a className="mt-3 inline-block text-sm text-indigo-700 underline" href={`#official-source-${index}`}>
+      Source guide: {sourceLinks[index].label}
+    </a>;
+  };
+  const website = college.website ?? sourceLinks.find(({ category }) => category === 'website')?.url;
+  const hasReviewedSummary = Object.values(listCollege.fieldEvidence ?? {}).some(({ status }) => status === 'AVAILABLE');
+  const hasReviewedDetails = hasReviewedSummary || Boolean(listCollege.structuredFacts?.length);
+  const reviewedFields = Object.entries(listCollege.fieldEvidence ?? {}).filter(([, evidence]) =>
+    ['AVAILABLE', 'CONFLICT', 'OUTDATED'].includes(evidence.status));
+  const contactFacts = (listCollege.structuredFacts ?? []).filter(({ value }) => value.kind === 'contact');
+  const hasSourceReportedProgrammeDetails = sourceReported.some(({ value }) => value.kind === 'programme' || value.kind === 'admission');
+  const hasReviewedEligibility = listCollege.structuredFacts?.some(({ value }) => value.kind === 'admission' && value.eligibility);
+  const hasOnlyReportedContacts = sourceReported.length > 0 && sourceReported.every(({ value }) => value.kind === 'contact');
+  const hasSourceReportedFacilities = sourceReported.some(({ value }) => value.kind === 'facility');
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -86,12 +103,15 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
   };
 
   const metrics = [
-    { label: 'Annual fees', value: formatINR(college.annualFees) },
-    { label: 'Placement rate', value: formatPct(college.placementPct) },
-    { label: 'Average package', value: formatLPA(college.avgPackage) },
-    { label: 'Highest package', value: formatLPA(college.highestPackage) },
-    { label: 'Students', value: formatCount(college.totalStudents) },
-    { label: 'Established', value: college.establishedYear ? String(college.establishedYear) : 'Not available' },
+    { label: 'Placement rate', value: college.placementPct == null ? null : formatPct(college.placementPct) },
+    { label: 'Average package', value: college.avgPackage == null ? null : formatLPA(college.avgPackage) },
+    { label: 'Highest package', value: college.highestPackage == null ? null : formatLPA(college.highestPackage) },
+    { label: 'Students', value: college.totalStudents == null ? null : formatCount(college.totalStudents) },
+  ].filter(({ value }) => value !== null);
+  const sections = [
+    ['overview', 'Overview'], ['programmes-and-admissions', 'Programmes & admissions'],
+    ['fees', 'Fees & aid'], ['recognition', 'Recognition'], ['placements', 'Placements'], ['facilities', 'Hostels & facilities'],
+    ['historical-cutoffs', 'Cutoffs'], ['official-resources', 'Contacts & sources'],
   ];
 
   return (
@@ -108,80 +128,49 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
           <div className="flex items-center gap-2 mb-5 flex-wrap">
             {college.type === 'GOVERNMENT' ? <span className="badge-green">Government</span> : <span className="badge-purple">Private</span>}
             {college.naacGrade && <span className="badge-blue">NAAC {college.naacGrade}</span>}
-            <DataStatusBadge status={college.dataStatus} />
+            <span className="badge-blue">Catalogue identity</span>
+            <span className="text-xs text-slate-700">{hasReviewedDetails ? 'Reviewed facts are marked with sources' : hasOnlyReportedContacts ? 'Source-reported contacts available' : sourceReported.length ? 'Source-reported details available' : 'Detailed facts awaiting verification'}</span>
           </div>
+          {college.dataStatus === 'DEMO' && <p role="note" className="mb-4 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950">
+            Development demo catalogue: legacy summary values and any test review decisions are synthetic. Each evidence card keeps its own source and review label; these test decisions are not genuine college verification.
+          </p>}
           <CollegeActions college={listCollege} />
+          <Link className="mt-3 inline-block text-indigo-700 underline" href={`/collegefit?location=${encodeURIComponent(college.state)}`}>Explore CollegeFit in {college.state}</Link>
+          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {website &&
+              <a className="text-indigo-700 underline" href={website} target="_blank" rel="noopener noreferrer">Official institution website</a>}
+            <a className="text-indigo-700 underline" href="#official-resources">Find programmes, admissions and contact sources</a>
+          </div>
+          <nav aria-label="On this college profile" className="mt-5">
+            <ul className="flex flex-wrap gap-x-5 gap-y-3 text-sm">
+              {sections.map(([id, label]) => <li key={id}><a className="text-indigo-700 underline underline-offset-4" href={`#${id}`}>{label}</a></li>)}
+            </ul>
+          </nav>
+          <details className="mt-4 text-sm">
+            <summary className="cursor-pointer font-semibold">Sources and verification</summary>
+            <p className="mt-2">Fields are reviewed individually. Missing, conflicting or outdated values are withheld.</p>
+            {sourceReported.length > 0 && <p className="mt-2">Source-reported details come from a named institution page. Use the linked source to check the applicable intake.</p>}
+            {reviewedFields.length === 0 && <p className="mt-2">No reviewed profile summary fields are available yet. Source details for reviewed programme records appear with each record.</p>}
+            <ul className="mt-2 space-y-2">
+              {reviewedFields.map(([field, evidence]) => (
+                <li key={field}>
+                  <span className="font-medium">{({ annualFees: 'Annual fees', naacGrade: 'NAAC grade', establishedYear: 'Established', totalStudents: 'Students', topRecruiters: 'Recruiters', description: 'Description', about: 'About', admissions: 'Admissions link', website: 'Website', phone: 'Phone', email: 'Email', courses: 'Courses' } as Record<string,string>)[field] ?? field}</span>
+                  {': '}{evidence.status === 'AVAILABLE' ? 'Reviewed' : evidence.status === 'CONFLICT' ? 'Conflicting sources' : evidence.status === 'OUTDATED' ? 'Outdated' : 'Not yet verified'}
+                  {(evidence.sources ?? []).map((source, index) => <p key={index} className="mt-1 break-words text-xs text-slate-600">
+                    <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline">{source.publisher}</a>
+                    {' · Published '}{reviewedDate(source.publishedAt)}{' · Reviewed '}{reviewedDate(source.reviewedAt)}
+                  </p>)}
+                </li>
+              ))}
+            </ul>
+          </details>
         </div>
       </section>
 
       <section className="container-main py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 space-y-8">
-          <div className="card-enterprise p-6">
-            <h2 className="text-xl font-black text-slate-800 mb-1">Key numbers</h2>
-            {isDemo ? (
-              <p role="note" className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
-                These are <strong>demo values</strong> entered for testing, not figures from the college. Check the
-                college&rsquo;s official website and NIRF data before relying on any of them.
-              </p>
-            ) : (
-              <p className="text-sm text-slate-600 mb-4">{college.metricsYear ? `Figures for ${college.metricsYear}.` : 'Year not recorded.'}</p>
-            )}
-            <dl className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {metrics.map((m) => (
-                <div key={m.label} className="bg-slate-50 rounded-xl p-3">
-                  <dt className="text-xs text-slate-600">{m.label}{isDemo ? ' (demo)' : ''}</dt>
-                  <dd className="font-bold text-slate-900">{m.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-
-          {college.about && (
-            <div className="card-enterprise p-6">
-              <h2 className="text-xl font-black text-slate-800 mb-3">About</h2>
-              <p className="text-slate-700 leading-relaxed">{college.about}</p>
-            </div>
-          )}
-
-          {college.courses.length > 0 && (
-            <div className="card-enterprise p-6">
-              <h2 className="text-xl font-black text-slate-800 mb-3">Courses listed</h2>
-              <ul className="flex flex-wrap gap-2">
-                {college.courses.map((c) => (
-                  <li key={c} className="bg-slate-100 text-slate-800 px-3 py-1.5 rounded-lg text-sm font-medium">{c}</li>
-                ))}
-              </ul>
-              <p className="text-xs text-slate-500 mt-3">Course-wise fees and durations are not yet available. Confirm on the college website.</p>
-            </div>
-          )}
-
-          {college.topRecruiters.length > 0 && (
-            <div className="card-enterprise p-6">
-              <h2 className="text-xl font-black text-slate-800 mb-3">Recruiters{isDemo ? ' (demo list)' : ''}</h2>
-              <p className="text-slate-700">{college.topRecruiters.join(', ')}</p>
-            </div>
-          )}
-
-          <div className="card-enterprise p-6">
-            <h2 className="text-xl font-black text-slate-800 mb-1">Official cutoff history</h2>
-            <p className="text-sm text-slate-600 mb-4">Last-round closing ranks published by the counselling authority.</p>
-            <CutoffHistory rows={cutoffs} />
-            {cutoffs.length > 0 && (
-              <Link href="/predictor" className="inline-block mt-4 font-semibold text-indigo-700">Estimate my chances</Link>
-            )}
-          </div>
-
-          <div className="card-enterprise p-6">
-            <h2 className="text-xl font-black text-slate-800 mb-1">Student reviews</h2>
-            <p className="text-slate-600 text-sm">
-              We only publish reviews from verified students after moderation, and none have been published for this college yet.
-            </p>
-          </div>
-        </div>
-
-        <aside className="space-y-6">
-          <div className="detail-sidebar-card lg:sticky lg:top-24">
-            <h2 className="font-bold text-base text-slate-800 mb-4">Contact</h2>
+        <aside className="min-w-0 space-y-6 lg:col-start-3 lg:row-start-1">
+          <section id="official-resources" className="detail-sidebar-card scroll-mt-24">
+            <h2 className="font-bold text-base text-slate-800 mb-4">Contacts and official sources</h2>
             {college.website || college.phone || college.email ? (
               <dl className="space-y-3 text-sm">
                 {college.website && (
@@ -193,17 +182,99 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
                 {college.phone && (<div><dt className="text-xs text-slate-500">Phone</dt><dd>{college.phone}</dd></div>)}
                 {college.email && (<div><dt className="text-xs text-slate-500">Email</dt><dd className="break-all">{college.email}</dd></div>)}
               </dl>
-            ) : (
-              <p className="text-sm text-slate-600">
-                We have not verified contact details for this college. Search for its official website, or find it in the{' '}
-                <a href="https://aishe.gov.in" target="_blank" rel="noopener noreferrer" className="text-indigo-700">AISHE directory</a>.
-              </p>
-            )}
-            <p className="text-xs text-slate-500 mt-4">
-              Last updated {new Date(college.updatedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
-            </p>
-          </div>
+            ) : null}
+            {renderFacts(contactFacts, ['contact'], null)}
+            {renderSourceReported(sourceReported, 'contact')}
+            {sourceLinks.length > 0 ? <>
+              <h3 className="mt-4 text-sm font-semibold">Official pages and documents</h3>
+              <p className="mt-1 text-xs text-slate-600">Use the linked institution pages to check your programme, campus and intake. Each link is checked separately from the facts on it.</p>
+              <ul className="mt-3 divide-y divide-slate-200 text-sm">
+                {sourceLinks.map(({ url, label, scope, checkedAt }, index) => <li key={url} id={`official-source-${index}`} className="scroll-mt-24 py-2">
+                  <a className="break-words text-indigo-700 underline underline-offset-4" href={url} target="_blank" rel="noopener noreferrer">{label}</a>
+                  <p className="mt-1 text-xs text-slate-600">{scope} · Link checked <time dateTime={checkedAt}>{reviewedDate(checkedAt)}</time></p>
+                </li>)}
+              </ul>
+            </> : !website && !listCollege.admissions ? <p className="text-sm text-slate-600">
+              An institution-specific source link is not available yet. Look up the institution by name and state in the{' '}
+              <a href="https://dashboard.aishe.gov.in/" target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline">AISHE directory</a>.
+            </p> : null}
+            {!college.phone && !college.email && contactFacts.length === 0 &&
+              <p className="mt-3 text-xs text-slate-600">{sourceReported.some(({ value }) => value.kind === 'contact')
+                ? 'The contact listed above is source-reported and not independently verified; other contact details may be unavailable.'
+                : 'Phone and email details are not verified yet.'}</p>}
+          </section>
         </aside>
+        <div className="min-w-0 lg:col-span-2 space-y-8 lg:col-start-1 lg:row-start-1">
+          <section id="overview" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
+            <h2 className="text-xl font-black text-slate-800">Overview</h2>
+            <dl className="mt-3 grid gap-3 text-sm sm:grid-cols-2">
+              <div><dt className="font-medium">Catalogue location</dt><dd>{college.city}, {college.state}</dd></div>
+              <div><dt className="font-medium">Catalogue name</dt><dd>{college.shortName}</dd></div>
+              <div><dt className="font-medium">Institution type</dt><dd>{college.type === 'GOVERNMENT' ? 'Government' : 'Private'}</dd></div>
+            </dl>
+            <p className="mt-4 text-sm leading-relaxed text-slate-700">{college.about ?? college.description ?? 'For campus-specific information, check the institution’s pages or contact its admissions office.'}</p>
+            {metrics.length > 0 && <dl className="mt-4 grid gap-3 sm:grid-cols-2">
+              {metrics.map(({ label, value }) => <div key={label} className="rounded-lg bg-slate-50 p-3">
+                <dt className="text-sm">{label}</dt><dd className="font-semibold">{value}</dd>
+              </div>)}
+            </dl>}
+          </section>
+          <section id="programmes-and-admissions" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
+            <h2 className="text-xl font-black text-slate-800">Programmes and admissions</h2>
+            {listCollege.admissions && <a href={listCollege.admissions} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-indigo-700 underline">Official admissions information</a>}
+            {college.courses.length > 0 && <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">{college.courses.map((course) => <li key={course}>{course}</li>)}</ul>}
+            {renderFacts(listCollege.structuredFacts ?? [], ['programme', 'admission', 'seatIntake'], hasSourceReportedProgrammeDetails
+              ? 'Official pages report the details below; CollegeFind has not independently verified them.'
+              : college.courses.length ? 'Programme eligibility and admission routes are not verified yet.' : 'Programme details and admission routes are not verified yet.')}
+            {renderSourceReported(sourceReported, 'programme')}
+            {renderSourceReported(sourceReported, 'admission')}
+            {hasSourceReportedProgrammeDetails && !hasReviewedEligibility && <p className="mt-3 text-sm text-slate-600">
+              Programme-specific eligibility is awaiting independent review. Check the official notice for your intake.
+            </p>}
+            {sectionSource(['admissions', 'programmes'])}
+            <Link className="mt-3 block text-indigo-700 underline" href={`/predictor?college=${encodeURIComponent(college.slug)}`}>Open admission guidance</Link>
+          </section>
+          <section id="fees" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
+            <h2 className="text-xl font-black text-slate-800">Fees and scholarships</h2>
+            {college.annualFees != null && <div className="mt-3 text-sm">
+              <p><strong>Annual tuition</strong>{college.metricsYear ? ` · ${college.metricsYear}` : ''}: {formatINR(college.annualFees)}</p>
+              {(listCollege.fieldEvidence?.annualFees?.sources ?? []).map(({ url, publisher }) => <a
+                className="mr-3 text-indigo-700 underline" key={url} href={url} target="_blank" rel="noopener noreferrer">{publisher}</a>)}
+            </div>}
+            {renderFacts(listCollege.structuredFacts ?? [], ['fee', 'scholarship'],
+              college.annualFees != null ? 'Programme-level fees and scholarship details are not verified yet.' : 'Not verified yet. Ask for the fee schedule and aid rules for your intake.')}
+            {sectionSource(['fees', 'scholarships'])}
+          </section>
+          <section id="recognition" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
+            <h2 className="text-xl font-black text-slate-800">Recognition and rankings</h2>
+            {college.naacGrade && <p className="mt-3 text-sm">NAAC grade {college.naacGrade}</p>}
+            {renderFacts(listCollege.structuredFacts ?? [], ['recognition', 'nirfRanking'], 'Detailed recognition and ranking records are not verified yet.')}
+            {sectionSource(['recognition', 'accreditation'])}
+          </section>
+          <section id="placements" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
+            <h2 className="text-xl font-black text-slate-800">Placements and career outcomes</h2>
+            {renderFacts(listCollege.structuredFacts ?? [], ['placement'], 'Placement figures are not verified yet. Look for a report that specifies the graduating class and reporting year.')}
+            {sectionSource(['placements'])}
+            {college.topRecruiters.length > 0 && <p className="mt-3 text-sm">Reported recruiters: {college.topRecruiters.join(', ')}</p>}
+          </section>
+          <section id="facilities" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
+            <h2 className="text-xl font-black text-slate-800">Hostels and facilities</h2>
+            {renderFacts(listCollege.structuredFacts ?? [], ['facility'], hasSourceReportedFacilities
+              ? 'Official pages report the facilities below; CollegeFind has not independently verified them. Hostel availability may need separate confirmation.'
+              : 'Hostel availability and campus facilities are not verified yet. Check with the institution for your campus.')}
+            {renderSourceReported(sourceReported, 'facility')}
+            {sectionSource(['facilities'])}
+          </section>
+          <section id="historical-cutoffs" className="card-enterprise scroll-mt-24 p-4 sm:p-6">
+            <h2 className="text-xl font-black text-slate-800 mb-1">Reviewed historical cutoffs</h2>
+            <p className="text-sm text-slate-600 mb-4">Official records are shown with counselling system, rank definition, category, quota, seat pool, round and source. Historical cutoffs are not admission predictions.</p>
+            {cutoffs ? <CutoffTable rows={cutoffs.items} /> : <p className="text-sm text-slate-600">Cutoff history could not load. You can retry in the cutoff explorer.</p>}
+            <Link href={`/cutoffs?college=${encodeURIComponent(college.slug)}`} className="mt-4 inline-block font-semibold text-indigo-700 underline">
+              {cutoffs && cutoffs.total > cutoffs.items.length ? `Explore all ${cutoffs.total.toLocaleString('en-IN')} reviewed cutoff records for this college` : 'Open the cutoff explorer for this college'}
+            </Link>
+          </section>
+        </div>
+
       </section>
 
       {similar.length > 0 && (
@@ -218,4 +289,99 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
       <QuestionsAndAnswers collegeId={college.id} collegeSlug={college.slug} />
     </div>
   );
+}
+
+function reviewedDate(value: Date | string | null | undefined) {
+  if (!value) return 'Not recorded';
+  return new Intl.DateTimeFormat('en-IN', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value));
+}
+
+const factFieldLabels: Record<string, string> = {
+  amountInr: 'Amount (INR)', durationMonths: 'Duration', feeType: 'Fee type',
+  applicationUrl: 'Application page', url: 'Official page', denominator: 'Cohort size', seats: 'Approved seats',
+};
+
+const factFieldValues: Record<string, Record<string, string>> = {
+  level: { UG: 'Undergraduate', PG: 'Postgraduate', DOCTORAL: 'Doctoral', DIPLOMA: 'Diploma' },
+  period: { SEMESTER: 'Per semester', YEAR: 'Per year', MONTH: 'Per month', ONE_TIME: 'One-time payment', PROGRAMME: 'Full programme period', PER_TEST: 'Per test' },
+  feeType: { TUITION: 'Tuition', HOSTEL: 'Hostel or residence', INSTITUTE: 'Institution fee', APPLICATION: 'Application fee', PROGRAMME_TOTAL: 'Total programme fee', DEPOSIT: 'Deposit', OTHER: 'Other published charge' },
+  metric: { MEDIAN: 'Median annual salary (INR)', MEAN: 'Mean annual salary (INR)', HIGHEST: 'Highest annual salary (INR)', PLACED_COUNT: 'Students reported placed', HIGHER_STUDIES_COUNT: 'Students reported in higher studies' },
+  measure: { NIRF_SANCTIONED_APPROVED_INTAKE: 'NIRF sanctioned (approved) intake' },
+};
+
+function renderFacts(facts: NonNullable<College['structuredFacts']>, kinds: string[], unavailable: string | null = 'Not verified yet. Check the institution for current details.') {
+  const selected = facts.filter(({ value }) => kinds.includes(value.kind));
+  if (!selected.length) return unavailable && <p className="mt-3 text-sm text-slate-600">{unavailable}</p>;
+  return <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+    {selected.map(({ key, value, academicYear, validUntil, source }) => (
+      <li key={key} data-evidence-status="VERIFIED" className="min-w-0 rounded-lg border border-slate-200 p-4">
+        <h3 className="font-semibold text-slate-900">{structuredLabels[value.kind]}{academicYear !== null ? ` · ${academicYear}` : ''}</h3>
+        <p className="mt-1 text-xs font-semibold text-emerald-800">Independently reviewed</p>
+        {value.kind === 'placement' && academicYear !== null && <p className="mt-1 text-sm text-slate-600">
+          Historical results for this reporting cohort only. Counts do not establish a placement rate or outcomes for other cohorts.
+        </p>}
+        <dl className="mt-2 space-y-1 break-words text-sm text-slate-700">
+          {Object.entries(value).filter(([label]) => label !== 'kind').map(([label, item]) => (
+            <div key={label}>
+              <dt className="inline font-medium capitalize">{value.kind === 'placement' && label === 'denominator'
+                ? value.metric === 'PLACED_COUNT' ? 'Graduated in stipulated time (not placement-eligible cohort)'
+                  : value.metric === 'HIGHER_STUDIES_COUNT' ? 'Graduated in stipulated time'
+                    : 'Students placed in reported cohort'
+                : factFieldLabels[label] ?? label.replace(/([A-Z])/g, ' $1')}: </dt>
+              <dd className="inline">{value.kind === 'placement' && ['MEDIAN', 'MEAN', 'HIGHEST'].includes(value.metric) && label === 'value' && typeof item === 'number' ? formatINR(item)
+                : label === 'amountInr' && typeof item === 'number' ? formatINR(item)
+                : label === 'durationMonths' && typeof item === 'number' ? (item % 12 === 0 ? `${item / 12} ${item === 12 ? 'year' : 'years'}` : `${item} months`)
+                : label === 'url' || label === 'applicationUrl' ? <a href={String(item)} target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline">Open official link</a>
+                : (factFieldValues[label]?.[String(item)] ?? String(item))}</dd>
+            </div>
+          ))}
+          {validUntil && <div><dt className="inline font-medium">Valid through: </dt><dd className="inline">{reviewedDate(validUntil)}</dd></div>}
+        </dl>
+        <p className="mt-3 border-t pt-2 text-xs leading-5 text-slate-600">
+          Source: <a href={source.url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline">{source.publisher}</a><br />
+          {source.locator && <>Evidence location: {source.locator}<br /></>}
+          Published: {reviewedDate(source.publishedAt)} · Collected: {reviewedDate(source.retrievedAt)} · Reviewed: {reviewedDate(source.reviewedAt)}
+        </p>
+      </li>
+    ))}
+  </ul>;
+}
+
+function renderSourceReported(facts: SourceReportedFact[], kind: 'programme' | 'admission' | 'contact' | 'facility') {
+  const selected = facts.filter(({ value }) => value.kind === kind);
+  if (!selected.length) return null;
+  return <ul className="mt-4 grid gap-4 sm:grid-cols-2" aria-label={`Institution-reported ${structuredLabels[kind].toLowerCase()}`}>
+    {selected.map(({ ref, value, campus, publisher, url, evidenceLocation, sourceTitle, collectedAt, publicationDate, checkedAt, academicYear, validFrom, validUntil, historical, publisherPeriod, scopeVerification }) => (
+      <li key={ref} data-evidence-status="OFFICIAL_SOURCE_REPORTED" className="min-w-0 space-y-2 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-slate-800">
+        <p className="text-xs font-semibold text-amber-950">Source-reported; not independently verified</p>
+        <h3 className="break-words font-semibold">{value.kind === 'programme' || value.kind === 'admission' ? value.programme : value.kind === 'contact' ? value.office : value.facility}</h3>
+        <p>{campus}</p>
+        {value.kind === 'programme' ? <p>{factFieldValues.level[value.level]}
+          {value.durationMonths && ` · ${value.durationMonths % 12 === 0 ? `${value.durationMonths / 12} ${value.durationMonths === 12 ? 'year' : 'years'}` : `${value.durationMonths} months`}`}
+          {value.durationSemesters && ` · ${value.durationSemesters} semesters`}
+        </p> : value.kind === 'facility' ? <p>{value.description}</p> : value.kind === 'contact' ? (
+          <p>{value.channel === 'EMAIL' ? 'Email' : value.channel === 'PHONE' ? 'Phone' : 'Address'} · {value.contact}</p>
+        ) : (
+          <div className="space-y-1">
+            <p>{value.route}</p>
+            {value.exam && <p>Exam · {value.exam}</p>}
+            {value.counselling && <p>Counselling · {value.counselling}</p>}
+            <p>Applicant scope · {value.category}</p>
+          </div>
+        )}
+        <div className="space-y-1 break-words border-t border-amber-200 pt-2 text-xs leading-5">
+          <a href={url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-800 underline">{publisher} · {sourceTitle}</a>
+          <p>Evidence location: {evidenceLocation}</p>
+          {scopeVerification && <p>Campus scope cross-check: <a href={scopeVerification.url} target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-800 underline">{scopeVerification.title}</a> · {scopeVerification.evidenceLocation}</p>}
+          <p>Collected <time dateTime={collectedAt}>{reviewedDate(collectedAt)}</time> · Checked <time dateTime={checkedAt}>{reviewedDate(checkedAt)}</time></p>
+          {publicationDate && <p>Published {reviewedDate(publicationDate)}</p>}
+          {(historical || academicYear !== null) && <p>{historical
+            ? (kind === 'admission' ? 'Historical admission cycle' : kind === 'programme' ? 'Historical programme listing' : 'Historical source information')
+            : 'Publisher’s period'} · {publisherPeriod ?? academicYear ?? 'publisher-dated source context'}{typeof publisherPeriod === 'string' && /[.!?]$/.test(publisherPeriod) ? '' : '.'} Check the source for current availability.</p>}
+          {(validFrom || validUntil) && <p>Applicable period{validFrom ? ` from ${reviewedDate(validFrom)}` : ''}{validUntil ? ` through ${reviewedDate(validUntil)}` : ''}</p>}
+          {kind === 'programme' && academicYear === null && !validFrom && !validUntil && <p>The institution does not specify an intake for this detail.</p>}
+        </div>
+      </li>
+    ))}
+  </ul>;
 }

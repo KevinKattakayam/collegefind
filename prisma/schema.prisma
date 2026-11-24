@@ -73,6 +73,23 @@ enum SeatPool {
   FEMALE_ONLY
 }
 
+enum CounsellingSystem {
+  UNSPECIFIED
+  JOSAA
+  CSAB
+  MCC
+  STATE
+  OTHER
+}
+
+enum CutoffRankType {
+  UNSPECIFIED
+  CRL
+  CATEGORY
+  PWD_CATEGORY
+  MERIT
+}
+
 model College {
   id              String      @id @default(cuid())
   slug            String      @unique
@@ -112,7 +129,12 @@ model College {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  aliases          InstitutionAlias[]
+  evidence         FieldEvidence[]
   savedBy          SavedCollege[]
+  planChoices      PlanChoice[]
+  planApplications PlanApplication[]
+  planTasks        PlanTask[]
   questions        Question[]
   programs         Program[]
   feesRecords      FeesRecord[]
@@ -142,6 +164,7 @@ model Program {
   cutoffs          CutoffRecord[]
   feesRecords      FeesRecord[]
   placementRecords PlacementRecord[]
+  planChoices      PlanChoice[]
 
   @@unique([collegeId, name])
   @@index([collegeId])
@@ -149,6 +172,11 @@ model Program {
 }
 
 model Source {
+  identityKey String?         @unique
+  publishedAt DateTime?
+  evidence    FieldEvidence[]
+  importRuns  ImportRun[]
+
   id          String   @id @default(cuid())
   name        String // e.g. "JoSAA 2025 Opening & Closing Ranks, Round 6"
   publisher   String // e.g. "Joint Seat Allocation Authority"
@@ -167,33 +195,38 @@ model Source {
 }
 
 model CutoffRecord {
-  id            String       @id @default(cuid())
-  programId     String
-  exam          Exam
-  year          Int
-  round         Int
-  quota         String // JoSAA: AI, HS, OS, GO, JK, LA. MCC: published quota name.
-  category      SeatCategory
-  isPwd         Boolean      @default(false)
-  seatPool      SeatPool
-  metric        CutoffMetric @default(RANK)
-  openingValue  Float?
-  closingValue  Float
-  isPreparatory Boolean      @default(false) // JoSAA 'P' suffix
-  sourceId      String
-  createdAt     DateTime     @default(now())
+  decisions         EvidenceDecision[]
+  id                String             @id @default(cuid())
+  programId         String
+  exam              Exam
+  counsellingSystem CounsellingSystem  @default(UNSPECIFIED)
+  rankType          CutoffRankType     @default(UNSPECIFIED)
+  year              Int
+  round             Int
+  quota             String // JoSAA: AI, HS, OS, GO, JK, LA. MCC: published quota name.
+  category          SeatCategory
+  isPwd             Boolean            @default(false)
+  seatPool          SeatPool
+  metric            CutoffMetric       @default(RANK)
+  openingValue      Float?
+  closingValue      Float
+  isPreparatory     Boolean            @default(false) // JoSAA 'P' suffix
+  evidenceLocator   String? // Imported table row or document page/table reference; never treated as a human review.
+  sourceId          String
+  createdAt         DateTime           @default(now())
 
   program Program @relation(fields: [programId], references: [id], onDelete: Cascade)
   source  Source  @relation(fields: [sourceId], references: [id], onDelete: Restrict)
 
-  @@unique([programId, exam, year, round, quota, category, isPwd, seatPool], name: "naturalKey", map: "CutoffRecord_natural_key")
+  @@unique([programId, exam, year, round, quota, category, counsellingSystem, isPwd, seatPool], name: "naturalKey", map: "CutoffRecord_natural_key")
   @@index([exam, category, seatPool, year])
   @@index([programId])
   @@index([sourceId])
 }
 
 model FeesRecord {
-  id        String   @id @default(cuid())
+  decisions EvidenceDecision[]
+  id        String             @id @default(cuid())
   collegeId String
   programId String?
   year      Int
@@ -201,7 +234,7 @@ model FeesRecord {
   feeType   String // e.g. "TUITION_PER_YEAR", "TOTAL_FIRST_YEAR"
   notes     String?
   sourceId  String
-  createdAt DateTime @default(now())
+  createdAt DateTime           @default(now())
 
   college College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
   program Program? @relation(fields: [programId], references: [id], onDelete: Cascade)
@@ -213,7 +246,8 @@ model FeesRecord {
 }
 
 model PlacementRecord {
-  id              String   @id @default(cuid())
+  decisions       EvidenceDecision[]
+  id              String             @id @default(cuid())
   collegeId       String
   programId       String?
   year            Int
@@ -221,7 +255,7 @@ model PlacementRecord {
   placed          Int?
   medianSalaryInr Int?
   sourceId        String
-  createdAt       DateTime @default(now())
+  createdAt       DateTime           @default(now())
 
   college College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
   program Program? @relation(fields: [programId], references: [id], onDelete: Cascade)
@@ -233,14 +267,15 @@ model PlacementRecord {
 }
 
 model NirfRanking {
-  id        String   @id @default(cuid())
+  decisions EvidenceDecision[]
+  id        String             @id @default(cuid())
   collegeId String
   year      Int
   category  String // NIRF category name, e.g. "Overall", "Engineering"
   rank      Int
   score     Float?
   sourceId  String
-  createdAt DateTime @default(now())
+  createdAt DateTime           @default(now())
 
   college College @relation(fields: [collegeId], references: [id], onDelete: Cascade)
   source  Source  @relation(fields: [sourceId], references: [id], onDelete: Restrict)
@@ -259,13 +294,19 @@ model User {
   emailVerified DateTime?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @default(now()) @updatedAt
+  deactivatedAt DateTime?
+  timeZone      String?
 
-  saved       SavedCollege[]
-  comparisons SavedComparison[]
-  questions   Question[]
-  answers     Answer[]
-  reviews     Review[]
-  auditLogs   AuditLog[]
+  evidenceDecisions EvidenceDecision[]
+  saved             SavedCollege[]
+  comparisons       SavedComparison[]
+  questions         Question[]
+  answers           Answer[]
+  reviews           Review[]
+  auditLogs         AuditLog[]
+  admissionPlans    AdmissionPlan[]
+  reportsMade       CommunityReport[]  @relation("ReportReporter")
+  reportsResolved   CommunityReport[]  @relation("ReportResolver")
 }
 
 model SavedCollege {
@@ -293,33 +334,153 @@ model SavedComparison {
   @@index([userId])
 }
 
-model Question {
-  id        String           @id @default(cuid())
-  text      String
-  userId    String
-  collegeId String
-  status    ModerationStatus @default(VISIBLE)
-  createdAt DateTime         @default(now())
-  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  college   College          @relation(fields: [collegeId], references: [id], onDelete: Cascade)
-  answers   Answer[]
+model AdmissionPlan {
+  id           String            @id @default(cuid())
+  userId       String
+  name         String
+  cycle        String
+  authority    String?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  user         User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  choices      PlanChoice[]
+  applications PlanApplication[]
+  tasks        PlanTask[]
 
+  @@unique([userId, name, cycle])
+  @@index([userId, updatedAt(sort: Desc), id])
+}
+
+model PlanChoice {
+  id              String           @id @default(cuid())
+  planId          String
+  collegeId       String?
+  programId       String?
+  cycle           String
+  label           String
+  position        Int
+  note            String?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  plan            AdmissionPlan    @relation(fields: [planId], references: [id], onDelete: Cascade)
+  college         College?         @relation(fields: [collegeId], references: [id], onDelete: SetNull)
+  program         Program?         @relation(fields: [programId], references: [id], onDelete: SetNull)
+  planApplication PlanApplication?
+
+  @@unique([planId, cycle, label])
+  @@unique([planId, position])
+  @@index([planId, cycle, position])
+}
+
+model PlanApplication {
+  id                 String        @id @default(cuid())
+  planId             String
+  choiceId           String?       @unique
+  version            Int           @default(0)
+  collegeId          String?
+  institutionName    String?
+  programName        String?
+  counsellingDetails String?
+  status             String        @default("INTERESTED")
+  cycle              String
+  submittedAt        DateTime?
+  nextAction         String?
+  note               String?
+  reference          String?
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+  plan               AdmissionPlan @relation(fields: [planId], references: [id], onDelete: Cascade)
+  choice             PlanChoice?   @relation(fields: [choiceId], references: [id], onDelete: SetNull)
+  college            College?      @relation(fields: [collegeId], references: [id], onDelete: SetNull)
+  tasks              PlanTask[]
+
+  @@index([planId, status, updatedAt(sort: Desc)])
+  @@index([planId, collegeId, status])
+}
+
+model PlanTask {
+  id            String           @id @default(cuid())
+  planId        String
+  applicationId String?
+  collegeId     String?
+  version       Int              @default(0)
+  title         String
+  description   String?
+  kind          String
+  dueAt         DateTime?
+  timeZone      String
+  completedAt   DateTime?
+  note          String?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  plan          AdmissionPlan    @relation(fields: [planId], references: [id], onDelete: Cascade)
+  application   PlanApplication? @relation(fields: [applicationId], references: [id], onDelete: SetNull)
+  college       College?         @relation(fields: [collegeId], references: [id], onDelete: SetNull)
+
+  @@index([planId, completedAt, dueAt])
+  @@index([planId, applicationId])
+  @@index([planId, collegeId])
+}
+
+model Question {
+  id          String            @id @default(cuid())
+  text        String
+  contentHash String?
+  userId      String
+  collegeId   String
+  status      ModerationStatus  @default(VISIBLE)
+  createdAt   DateTime          @default(now())
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  college     College           @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+  answers     Answer[]
+  reports     CommunityReport[]
+
+  @@unique([userId, collegeId, contentHash])
   @@index([collegeId])
+  @@index([collegeId, status, createdAt(sort: Desc), id])
   @@index([userId])
 }
 
 model Answer {
-  id         String           @id @default(cuid())
-  text       String
-  userId     String
-  questionId String
-  status     ModerationStatus @default(VISIBLE)
-  createdAt  DateTime         @default(now())
-  user       User             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  question   Question         @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  id          String            @id @default(cuid())
+  text        String
+  contentHash String?
+  userId      String
+  questionId  String
+  status      ModerationStatus  @default(VISIBLE)
+  createdAt   DateTime          @default(now())
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question    Question          @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  reports     CommunityReport[]
 
+  @@unique([userId, questionId, contentHash])
   @@index([questionId])
+  @@index([questionId, status, createdAt, id])
   @@index([userId])
+}
+
+model CommunityReport {
+  id               String    @id @default(cuid())
+  reporterId       String
+  questionId       String?
+  answerId         String?
+  reason           String
+  status           String    @default("OPEN")
+  resolutionReason String?
+  resolvedAt       DateTime?
+  resolvedById     String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  reporter         User      @relation("ReportReporter", fields: [reporterId], references: [id], onDelete: Cascade)
+  question         Question? @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  answer           Answer?   @relation(fields: [answerId], references: [id], onDelete: Cascade)
+  resolvedBy       User?     @relation("ReportResolver", fields: [resolvedById], references: [id], onDelete: SetNull)
+
+  @@unique([reporterId, questionId])
+  @@unique([reporterId, answerId])
+  @@index([status, createdAt, id])
+  @@index([questionId, status])
+  @@index([answerId, status])
 }
 
 // Schema is ready; the submission UI is deliberately not shipped yet (see docs/ROADMAP.md).
@@ -353,4 +514,93 @@ model AuditLog {
 
   @@index([createdAt])
   @@index([actorId])
+}
+
+// Profile claims only; financial/admission values stay in their existing typed tables.
+model FieldEvidence {
+  isFixture         Boolean            @default(false)
+  campusScope       String?
+  applicablePeriod  String?
+  publisherPeriod   String?
+  historical        Boolean            @default(false)
+  sourceReportedRef String?            @unique
+  evidenceLocator   String?
+  evidenceSnippet   String?
+  publishedAt       DateTime?
+  id                String             @id @default(cuid())
+  collegeId         String
+  field             String
+  value             Json
+  unit              String?
+  programScope      String?
+  academicYear      Int?
+  validFrom         DateTime?
+  validUntil        DateTime?
+  sourceId          String
+  identityKey       String             @unique
+  supersedesId      String?
+  createdAt         DateTime           @default(now())
+  college           College            @relation(fields: [collegeId], references: [id], onDelete: Restrict)
+  source            Source             @relation(fields: [sourceId], references: [id], onDelete: Restrict)
+  supersedes        FieldEvidence?     @relation("EvidenceHistory", fields: [supersedesId], references: [id], onDelete: Restrict)
+  successors        FieldEvidence[]    @relation("EvidenceHistory")
+  decisions         EvidenceDecision[]
+
+  @@index([collegeId, field])
+  @@index([createdAt(sort: Desc), id(sort: Desc)])
+}
+
+// Append-only decisions; no college-wide status promotion on import.
+model EvidenceDecision {
+  cutoffId    String?
+  feesId      String?
+  placementId String?
+  rankingId   String?
+  cutoff      CutoffRecord?    @relation(fields: [cutoffId], references: [id], onDelete: Restrict)
+  fees        FeesRecord?      @relation(fields: [feesId], references: [id], onDelete: Restrict)
+  placement   PlacementRecord? @relation(fields: [placementId], references: [id], onDelete: Restrict)
+  ranking     NirfRanking?     @relation(fields: [rankingId], references: [id], onDelete: Restrict)
+  id          String           @id @default(cuid())
+  evidenceId  String?
+  reviewerId  String
+  status      ReviewStatus
+  reason      String
+  createdAt   DateTime         @default(now())
+  evidence    FieldEvidence?   @relation(fields: [evidenceId], references: [id], onDelete: Restrict)
+  reviewer    User             @relation(fields: [reviewerId], references: [id], onDelete: Restrict)
+
+  @@index([evidenceId, createdAt])
+  @@index([evidenceId, createdAt(sort: Desc), id(sort: Desc)])
+  @@index([cutoffId, createdAt(sort: Desc), id(sort: Desc)])
+}
+
+model ImportRun {
+  id          String    @id @default(cuid())
+  identityKey String    @unique
+  checksum    String
+  sourceId    String
+  status      String    @default("STAGED")
+  startedAt   DateTime  @default(now())
+  finishedAt  DateTime?
+  summary     Json?
+  issues      Json?
+  source      Source    @relation(fields: [sourceId], references: [id], onDelete: Restrict)
+
+  @@index([status, startedAt])
+}
+
+// Alternate names are campus-scoped; codes are never guessed from names.
+model InstitutionAlias {
+  id         String    @id @default(cuid())
+  collegeId  String
+  namespace  String
+  value      String
+  campus     String
+  validFrom  DateTime?
+  validUntil DateTime?
+  sourceUrl  String
+  college    College   @relation(fields: [collegeId], references: [id], onDelete: Restrict, onUpdate: NoAction)
+
+  @@unique([namespace, value, campus, collegeId])
+  @@index([namespace, value])
 }

@@ -1,0 +1,179 @@
+{
+  "scope": "Five-college structured admissions slice: engineering, management, medicine, general university and law. Short factual paraphrases from directly inspected official pages; no page prose, tables, source PDFs or bulk data are reproduced.",
+  "batch": 57,
+  "researchedAt": "2026-11-22T23:01:00.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b57-1",
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "publisher": "Indian Institute of Technology Bombay, Academic Office",
+      "title": "Information for UG New Entrants 2026–27",
+      "url": "https://acad.iitb.ac.in/information-ug-new-entrants-2026-27",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T23:01:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "A single factual paraphrase from the official Academic Office page; no source wording or tables reproduced. Route names apply across relevant UG programmes, not as interchangeable exams for every programme. The page concerns completed 2026–27 entrants.",
+      "evidenceLocations": [
+        "Heading and opening paragraph, lines 7–11: 2026–27 entrants admitted through JEE (Advanced) 2026, Preparatory 2025, INMO 2026 and UCEED 2026 to undergraduate programmes (B.Tech., B.Tech.+M.Tech., B.Des. and B.S.)."
+      ]
+    },
+    {
+      "id": "b57-2",
+      "institutionSlug": "indian-institute-of-management-ahmedabad",
+      "publisher": "Indian Institute of Management Ahmedabad",
+      "title": "Admission Policy for PGP 2027–29 Batch — Domestic",
+      "url": "https://www.iima.ac.in/sites/default/files/2026-09/AdmissionProcedure_PGP_1109_2026.pdf",
+      "academicYear": "2027-29",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T23:01:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "One attributed admission-process fact only; no eligibility thresholds, score cutoffs, tables or PDF text reproduced. The PDF's stated 2027–29 domestic PGP scope is retained.",
+      "evidenceLocations": [
+        "PDF page 1 title and page 2, Admission/Selection Process, paragraphs 1–3: CAT-2026 applicant pool and composite-score shortlisting for AWT/PI."
+      ]
+    },
+    {
+      "id": "b57-3",
+      "institutionSlug": "christian-medical-college",
+      "publisher": "Christian Medical College Vellore",
+      "title": "Prospectus 2026–2027",
+      "url": "https://www.cmcvellore.ac.in/wp-content/uploads/sites/14/2026/06/course-prospectus-final-01-06-26.pdf",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T23:01:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "One attributed admissions-route paraphrase only; no prospectus prose, seat tables or fee values reproduced. The prospectus says to consult the current admission bulletin for later process updates.",
+      "evidenceLocations": [
+        "Prospectus printed page 17, section 1.13 admissions calendar (MBBS / NEET-UG 2026); printed page 24, section 2.1 MBBS, Basis of Admission and quota paragraphs."
+      ]
+    },
+    {
+      "id": "b57-4",
+      "institutionSlug": "national-law-school-of-india-university",
+      "publisher": "National Law School of India University, Bengaluru",
+      "title": "Admissions 2027–28",
+      "url": "https://www.nls.ac.in/admissions/",
+      "academicYear": "2027-28",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T23:01:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "One attributed programme-specific route fact only; no source prose or table reproduced. The page separately labels admissions 2027–28 and names CLAT for the five-year BA LLB programme; no eligibility or cutoff is included.",
+      "evidenceLocations": [
+        "Admissions 2027–28 heading and five-year B.A., LL.B. (Hons.) section, lines 63 and 102–108."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "collegeId": "cmwlksxid000031tvrp3l436w",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Undergraduate programmes (route varies by programme)",
+        "route": "IIT Bombay's 2026–27 UG entrants came through JEE (Advanced) 2026, Preparatory 2025, INMO 2026 and UCEED 2026; the applicable route varies by programme.",
+        "category": "UG entrants; programme-specific examination route",
+        "exam": "JEE (Advanced) 2026; Preparatory 2025; INMO 2026; UCEED 2026"
+      },
+      "sourceIds": [
+        "b57-1"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Information for UG New Entrants 2026–27, heading and opening paragraph, lines 7–11: new entrants and their listed examination routes to undergraduate programmes.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Bombay, Powai campus; UG entrant routes vary by programme.",
+      "publisherPeriod": "Historical 2026–27 undergraduate entrant cycle. The listed routes are programme-specific and do not describe a current application window.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-ahmedabad",
+      "collegeId": "cmwkyn9wo000efhtvhwch8vqy",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Two-Year Post Graduate Programme in Management (PGP)",
+        "route": "CAT-2026 composite-score shortlisting; shortlisted applicants proceed to Analytical Writing Test and Personal Interview",
+        "category": "Domestic applicants, PGP 2027–29 batch",
+        "exam": "CAT 2026"
+      },
+      "sourceIds": [
+        "b57-2"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Admission Policy for PGP 2027–29 Batch, domestic candidate policy: page 1 title; page 2, Admission/Selection Process paragraphs 1–3.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIMA Vastrapur, Ahmedabad; domestic two-year PGP applicant route.",
+      "publisherPeriod": "IIMA domestic PGP 2027–29 policy; process route only, not eligibility thresholds, CAT cutoffs or admission likelihood.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "christian-medical-college",
+      "collegeId": "cmwkyn9wp0016fhtvs5ln7sn2",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBBS",
+        "route": "NEET-UG 2026 rank is used; the prospectus describes distinct management and government quota selection, with the current admission bulletin controlling updates",
+        "category": "MBBS applicants, CMC Vellore prospectus 2026–27; quota-specific selection applies",
+        "exam": "NEET-UG 2026"
+      },
+      "sourceIds": [
+        "b57-3"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Prospectus printed page 17, section 1.13 admissions calendar (MBBS / NEET-UG 2026); printed page 24, section 2.1 MBBS, Basis of Admission and quota paragraphs.",
+      "status": "HELD",
+      "reviewState": "HELD",
+      "stageable": false,
+      "campusScope": "Christian Medical College Vellore MBBS; prospectus identifies Vellore; quota details are summarized, not seat counts.",
+      "publisherPeriod": "Prospectus for 2026–27. Consult the linked live admissions portal/current bulletin for any changed process or application status.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "national-law-school-of-india-university",
+      "collegeId": "cmwkyn9wp001bfhtv7m7u08nc",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Five-Year B.A., LL.B. (Hons.)",
+        "route": "Merit selection through the Common Law Admission Test administered by the Consortium of NLUs",
+        "category": "Five-year undergraduate BA LLB applicants, admissions page 2027–28",
+        "exam": "CLAT"
+      },
+      "sourceIds": [
+        "b57-4"
+      ],
+      "academicYear": "2027-28",
+      "evidenceLocation": "NLSIU Admissions page, Admissions 2027–28 heading (line 63) and five-year B.A., LL.B. (Hons.) section (lines 102–108).",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NLSIU Bengaluru campus; five-year BA LLB (Hons.) programme.",
+      "publisherPeriod": "NLSIU page labels the admissions cycle 2027–28; BA LLB route is CLAT. The page does not state a separate CLAT exam year for this programme.",
+      "historical": false
+    }
+  ],
+  "heldFindings": [
+    {
+      "institutionSlug": "christian-medical-college",
+      "field": "structured.admission",
+      "reason": "The exact NEET-UG 2026 route and programme-specific eligibility are already present in the 377-claim owner-review archive (claim cmwm4trcw00053otvyei1v0kf) from this prospectus. Do not duplicate or publicly expose it; let the owner review the original claim individually."
+    },
+    {
+      "institutionSlug": "university-of-delhi",
+      "field": "fees",
+      "reason": "The reviewed sample retains the already published, explicitly scoped CUET/CSAS 2026–27 route. This bulletin is not reused to infer fees, eligibility beyond its own programme-specific rules, or programme availability. Admissions-cycle status must be checked separately before describing applications as open."
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "field": "fees",
+      "reason": "Official 2026–27 fee schedules are decision-critical and identify distinct academic fees, hostel fees, seat-acceptance credits and mess advance. Keep amounts out of source-reported publication; prepare/inspect as individual human-review evidence only."
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "status": "STAGED",
+  "facts": 11,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 11,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "indian-institute-of-technology-bombay",
+      "field": "courses",
+      "evidenceId": "cmwl0ygm2000bmxtvsgf2ngfk",
+      "sourceId": "cmwl0ygkr0000mxtvt4sw908d",
+      "sourceUrl": "https://acad.iitb.ac.in/admissions/bachelors",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-delhi",
+      "field": "admissions",
+      "evidenceId": "cmwl0ygmm000emxtvdgskpu7u",
+      "sourceId": "cmwl0ygkx0001mxtvohote0zu",
+      "sourceUrl": "https://academics.iitd.ac.in/ug-admissions/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "field": "courses",
+      "evidenceId": "cmwl0ygmu000hmxtvreqco659",
+      "sourceId": "cmwl0ygl00002mxtvxr593gpj",
+      "sourceUrl": "https://www.nitt.edu/home/academics/programmes/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-tiruchirappalli",
+      "field": "admissions",
+      "evidenceId": "cmwl0ygn5000kmxtvdrzbfx5s",
+      "sourceId": "cmwl0ygl40003mxtvron2qtr4",
+      "sourceUrl": "https://www.nitt.edu/home/admissions/btech/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "admissions",
+      "evidenceId": "cmwl0ygng000nmxtv4v5e7732",
+      "sourceId": "cmwl0ygl70004mxtvvdhfs6io",
+      "sourceUrl": "https://www.cuh.ac.in/cucetUG.aspx",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "phone",
+      "evidenceId": "cmwl0ygnq000qmxtvkwx1buaz",
+      "sourceId": "cmwl0ygl90005mxtvefs56t8c",
+      "sourceUrl": "https://cuh.ac.in/admission.aspx",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "email",
+      "evidenceId": "cmwl0ygnx000smxtvzd8qhujz",
+      "sourceId": "cmwl0ygl90005mxtvefs56t8c",
+      "sourceUrl": "https://cuh.ac.in/admission.aspx",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "vellore-institute-of-technology",
+      "field": "courses",
+      "evidenceId": "cmwl0ygo9000vmxtv2rg57exv",
+      "sourceId": "cmwl0yglb0006mxtv5wugdvk3",
+      "sourceUrl": "https://vit.ac.in/admissions/programmes-offered",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "graphic-era-university",
+      "field": "admissions",
+      "evidenceId": "cmwl0ygoh000ymxtvvfikperl",
+      "sourceId": "cmwl0ygle0007mxtv869tqbi3",
+      "sourceUrl": "https://geu.ac.in/admissions/admissions-overview",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-mizoram",
+      "field": "courses",
+      "evidenceId": "cmwl0ygon0011mxtv30v5ponn",
+      "sourceId": "cmwl0yglh0008mxtvjvkwmyj5",
+      "sourceUrl": "https://nitmz.ac.in/academics/programmes/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-mizoram",
+      "field": "admissions",
+      "evidenceId": "cmwl0ygoy0014mxtvii0xbv2g",
+      "sourceId": "cmwl0ygll0009mxtv0b7vjd2a",
+      "sourceUrl": "https://nitmz.ac.in/admissions/b-tech-admissions/",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

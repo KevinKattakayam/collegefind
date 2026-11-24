@@ -1,0 +1,21 @@
+{
+  "status": "STAGED",
+  "facts": 1,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 1,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "manipal-academy-of-higher-education",
+      "field": "courses",
+      "evidenceId": "cmwl2mo6p0002nltvriwwmnz0",
+      "sourceId": "cmwl2mo6b0000nltvzpynujr7",
+      "sourceUrl": "https://admissions.manipal.edu/manipal/",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

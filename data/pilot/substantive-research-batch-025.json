@@ -1,0 +1,171 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 25,
+  "researchedAt": "2026-11-18T14:56:24Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": "Manual reading of accessible official pages only. Stage concise factual extracts with exact source URL and locator; do not store source documents, tables, or expressive prose. A visible public page is not blanket permission for automated extraction or bulk redistribution. Keep all claims UNREVIEWED; reviewer/source-use assessment is required before publication.",
+  "sources": [
+    {
+      "id": "amu-guide-admissions-2026-27",
+      "institutionSlug": "aligarh-muslim-university",
+      "publisher": "Aligarh Muslim University, Office of the Controller of Examinations",
+      "url": "https://amucontrollerexams.com/uploads/files/e97cf6112508c8e79149275de5ae1cb3.pdf",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-18T14:56:24Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official 2026-27 admission guide was publicly opened and manually inspected; no express factual-extraction/republication licence was established in this research. Only one concise programme/duration fact is proposed with attribution and exact locator; no PDF, table, or prose is stored. Reviewer must assess source-use basis before publication; no bulk extraction or redistribution is authorized.",
+      "evidenceLocations": [
+        "Guide labeled A.11, lines 3446-3450 identify B.Sc. (Hons.); lines 3450-3503 give major rows including Physics and an eight-semester duration; lines 3505-3507 state qualifying-subject/marks requirements. The admission cycle is AY 2026-27; no current 2027 admission claim is made."
+      ]
+    },
+    {
+      "id": "ashoka-political-science-programme",
+      "institutionSlug": "ashoka-university",
+      "publisher": "Ashoka University, Department of Political Science",
+      "url": "https://www.ashoka.edu.in/programme/undergraduate-programme-in-political-science/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T14:56:24Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official department page was directly opened and manually read. Page bears Ashoka copyright; no blanket extracted-fact reuse or bulk collection licence was found. Only a short programme/duration fact is staged with a link and locator, not source prose. Reviewer to confirm present scope and source-use basis before publication.",
+      "evidenceLocations": [
+        "Page lines 810-838 identifies the undergraduate Political Science programme, 4-year BA Honours options and duration; campus footer lines 1020-1022 identifies Sonipat, Haryana."
+      ]
+    },
+    {
+      "id": "ashoka-ug-admissions-calendar-2027",
+      "institutionSlug": "ashoka-university",
+      "publisher": "Ashoka University, Undergraduate Admissions",
+      "url": "https://www.ashoka.edu.in/undergraduate-admissions-timelines/",
+      "publicationDate": null,
+      "academicYear": "2027",
+      "retrievedAt": "2026-11-18T14:56:24Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official admissions calendar was directly opened and manually read. No express extracted-fact reuse licence was located; only cycle status, a direct official application link and exact locator are recorded. Review current dates again before publication; do not automate or bulk republish page content.",
+      "evidenceLocations": [
+        "Lines 794-805 state the 2027 intake is open and show Round 1 application deadline 23 November 2026; lines 807-824 show assessments and later timeline. The linked official portal was opened at https://apply.ashoka.edu.in/ and its page labels the Undergraduate applicants route."
+      ]
+    },
+    {
+      "id": "nit-manipur-cse-btech-department-page",
+      "institutionSlug": "nit-manipur",
+      "publisher": "National Institute of Technology Manipur, Department of Computer Science and Engineering",
+      "url": "https://nitmanipur.ac.in/DisplayDeptPage.aspx?ItemID=76&nDeptID=5&page=ei",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T14:56:24Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official department page opened directly; the visible footer is copyright 2017, so currency is uncertain. No factual-extraction or bulk-reuse licence was established. Keep the specific B.Tech fact research-only until a current department or 2026-27 notice corroborates it; no value from the page is staged in this batch.",
+      "evidenceLocations": [
+        "Page lines 23-26 identify the B.Tech department and state a four-year programme/JEE Main rank route; page footer line 32 says Copyright 2017. Held from import because current programme/route currency is not established."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "aligarh-muslim-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. (Hons.) Physics, Faculty of Science",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "amu-guide-admissions-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official AMU Guide to Admissions 2026-27, section A.11, lines 3446-3503: B.Sc. (Hons.) major table lists Physics and gives eight semesters. This is the named 2026-27 guide scope, not a statement that the 2027-28 cycle is open.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "ashoka-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Undergraduate Political Science, B.A. (Hons.)",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "ashoka-political-science-programme"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Official Ashoka University Department of Political Science page, lines 810-838: lists four-year B.A. (Hons.) with and without research and explicitly states four-year duration. Campus footer identifies Sonipat, Haryana. Page does not specify an intake year.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "ashoka-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Ashoka University undergraduate programme, August 2027 intake",
+        "route": "Online undergraduate application; application rounds with mandatory assessments",
+        "category": "UG applicants for 2027 intake, Round 1",
+        "applicationUrl": "https://apply.ashoka.edu.in/"
+      },
+      "sourceIds": [
+        "ashoka-ug-admissions-calendar-2027"
+      ],
+      "academicYear": "2027",
+      "evidenceLocation": "Official calendar lines 794-805 states 2027 application is open and lists the Round 1 deadline as 23 November 2026; lines 807-824 list assessment and later round dates. The official application portal was opened and labels an Undergraduate applicants link. Confirm the round is still open at review time; this record does not assert applicant eligibility or admission likelihood.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchDispositions": [
+    {
+      "institutionSlug": "aligarh-muslim-university",
+      "status": "STAGED_CANDIDATE",
+      "note": "Direct official 2026-27 Guide to Admissions opened; one B.Sc. (Hons.) Physics four-year programme fact is proposed. Admission eligibility/test details are cycle-specific and not staged; source-use review remains required."
+    },
+    {
+      "institutionSlug": "ashoka-university",
+      "status": "STAGED_CANDIDATE",
+      "note": "Direct official department page supports a four-year BA (Hons.) Political Science; current official admissions calendar states 2027 intake is open and gives dated rounds, and its application portal was opened. No fees or scholarship facts staged because the fee/scholarship page returned 403 in this check."
+    },
+    {
+      "institutionSlug": "nit-manipur",
+      "status": "RESEARCH_ONLY_SOURCE_STALE",
+      "note": "Official CSE department page says four-year B.Tech and JEE Main, but its visible copyright is 2017 and no publication/validity date is shown. Do not stage until corroborated by a current department notice; the current home page lists 2026 JoSAA/CSAB notices but linked programme PDF resolved only to a JavaScript shell in this access path."
+    },
+    {
+      "institutionSlug": "king-georges-medical-university",
+      "status": "RESEARCH_ONLY_COMPONENT_UNCLEAR",
+      "note": "Official fee portal updated 12-Sep-2026 lists quota/category amount rows but does not identify the fee component in the accessed table. Do not call it tuition or total cost without an official fee notice that defines the amount."
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "status": "HISTORICAL_NOT_STAGED",
+      "sourceUrl": "https://admission.jmi.ac.in/application/assets/pdfFile/prospectus/UniversityProspectus/University_Prospectus_2026_2027.pdf",
+      "note": "Official 2026-27 prospectus directly opened, but visible programme entrance dates are mostly Apr-Jun 2026 and the admission cycle is historical as of retrieval. No current-cycle admissions claims are staged; revisit only against a 2027-28 source."
+    },
+    {
+      "institutionSlug": "lnmiit-jaipur",
+      "status": "BLOCKED_DIRECT_RETRIEVAL",
+      "sourceUrls": [
+        "https://lnmiit.ac.in/admissions/ug/board-toppers/",
+        "https://lnmiit.ac.in/admissions/ug/lateral-entry/"
+      ],
+      "note": "Search results surfaced official pages but direct open returned 502 in this access path. Search excerpts are not accepted as import evidence; do not retry or bypass until ordinary direct access works."
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "status": "BLOCKED_DIRECT_RETRIEVAL",
+      "sourceUrl": "https://www.osmania.ac.in/admissions/",
+      "note": "Official Directorate of Admissions page appeared in search, but direct open timed out (HTTP 400 from the retrieval service). No claim staged from the search result."
+    },
+    {
+      "institutionSlug": "symbiosis-international-university",
+      "status": "BLOCKED_DIRECT_RETRIEVAL",
+      "sourceUrl": "https://admissionsie.siu.edu.in/",
+      "note": "Official SIU-affiliated admissions page showed a specific PG diploma in search results, but direct open returned 502; no snippet-derived claim staged. It also requires institute-level identity resolution before attributing to SIU."
+    }
+  ]
+}

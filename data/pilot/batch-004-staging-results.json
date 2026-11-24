@@ -1,0 +1,93 @@
+[
+  {
+    "slug": "iim-kozhikode",
+    "claimId": "cmwkyqvus0002bbtvcg05b779",
+    "sourceId": "cmwkyqvuf0000bbtvevka5krg",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iim-shillong",
+    "claimId": "cmwkyqvvd0006bbtvu07azbe8",
+    "sourceId": "cmwkyqvv70004bbtvgivegp2l",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iim-ranchi",
+    "claimId": "cmwkyqvvn000abbtvpmz7idd2",
+    "sourceId": "cmwkyqvvj0008bbtvzv8oq9kr",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "fms-delhi",
+    "claimId": "cmwkyqvw0000ebbtvy3w09qjo",
+    "sourceId": "cmwkyqvvu000cbbtvnyfgg0nk",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "banaras-hindu-university",
+    "claimId": "cmwkyqvwc000ibbtvn7fmsl0a",
+    "sourceId": "cmwkyqvw7000gbbtvw0se4n7w",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "christ-university",
+    "claimId": "cmwkyqvws000mbbtvy6zype5i",
+    "sourceId": "cmwkyqvwk000kbbtvh19bsmx8",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "sp-jain-institute",
+    "claimId": "cmwkyqvx5000qbbtv3yzs1y9u",
+    "sourceId": "cmwkyqvwy000obbtv3vri1mur",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nalsar-university-of-law",
+    "claimId": "cmwkyqvxg000ubbtvpzk7wz7m",
+    "sourceId": "cmwkyqvxb000sbbtvsklat9jv",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nliu-bhopal",
+    "claimId": "cmwkyqvxr000ybbtv2l4ba37e",
+    "sourceId": "cmwkyqvxm000wbbtv6uuu84k8",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iit-mandi",
+    "claimId": "cmwkyqvy20012bbtvm93qrdtu",
+    "sourceId": "cmwkyqvxy0010bbtvxvt39yld",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iit-patna",
+    "claimId": "cmwkyqvye0016bbtvp7srivjn",
+    "sourceId": "cmwkyqvy90014bbtvlhlw1hck",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iit-gandhinagar",
+    "claimId": "cmwkyqvyn001abbtv1fp02bhs",
+    "sourceId": "cmwkyqvyj0018bbtvlwc0ibdt",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-patna",
+    "claimId": "cmwkyqvyx001ebbtv0ijxp367",
+    "sourceId": "cmwkyqvyt001cbbtv8n28qh46",
+    "status": "STAGED",
+    "field": "website"
+  }
+]

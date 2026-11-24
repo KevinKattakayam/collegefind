@@ -1,0 +1,69 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchedAt": "2026-11-17T18:51:32Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "access": "The official IIT Madras HTML page was directly read through its public HTTPS URL without authentication, CAPTCHA bypass or automated crawling.",
+    "reuse": "No explicit bulk-extraction or redistribution grant was established. This record stores concise factual summaries, attribution, URL and line locator only; no page prose, source table or linked document is copied.",
+    "review": "Candidates are STAGED only after the controlled import; they remain UNREVIEWED pending an authorized human decision."
+  },
+  "sources": [
+    {
+      "id": "iitm-undergraduate-programmes-current",
+      "institutionSlug": "indian-institute-of-technology-madras",
+      "publisher": "Indian Institute of Technology Madras, Academics",
+      "url": "https://www.iitm.ac.in/academics/study-at-iitm/undergraduate-programmes",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-17T18:51:32Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official institute page; page footer says website last updated 16 November 2026, which is a site-update marker and not a publication/claim date. No explicit bulk reuse licence identified. Short attributed facts and link only.",
+      "evidenceLocations": ["Programme categories, durations and entrance route; lines 194-205", "Page last-updated marker; lines 418-423"]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-madras",
+      "field": "courses",
+      "value": [
+        "B.Tech — engineering disciplines (4 years; institute states twelve disciplines on this page)",
+        "Dual Degree — B.Tech and M.Tech in selected engineering/science disciplines (5 years)",
+        "Dual Degree — BS and MS in Biological Sciences and Physics (duration not stated on this page)"
+      ],
+      "sourceIds": ["iitm-undergraduate-programmes-current"],
+      "academicYear": null,
+      "evidenceLocation": "Official undergraduate programmes page, lines 194-205. This is a concise category summary, not a complete branch catalogue; exact branch-wise names require a current official curriculum/admission notice.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-madras",
+      "field": "admissions",
+      "value": "The institute's undergraduate programmes page says B.Tech and B.Tech–M.Tech dual-degree entry is through JEE Main and JEE Advanced; the Joint Admission Committee decides the branch. The page does not specify a current cycle, dates, category thresholds or detailed eligibility requirements.",
+      "sourceIds": ["iitm-undergraduate-programmes-current"],
+      "academicYear": null,
+      "evidenceLocation": "Official undergraduate programmes page, lines 197-202. Scope limited to the routes stated there; no cycle-specific rule inferred.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchAttemptsWithoutSupportedClaim": [
+    {
+      "institutionSlug": "bits-pilani",
+      "sourceUrl": "https://admissions.bits-pilani.ac.in/FD/FD_brochure.html",
+      "publisher": "BITS Pilani Admissions",
+      "result": "The official admissions page returned HTTP 502 on direct access. Search-indexed results were not treated as claim evidence.",
+      "action": "Retry a direct public page or obtain an official contact/permission path before extraction."
+    }
+  ],
+  "notStagedFindings": [
+    {
+      "institutionSlug": "indian-institute-of-technology-madras",
+      "field": "course branch names / current admissions year",
+      "sourceUrl": "https://www.iitm.ac.in/academics/study-at-iitm/undergraduate-programmes",
+      "reason": "This page does not show its branch list or a current admission year. A 2026 admission PDF was opened, but its dates were already past at collection time and it was not used as current-cycle guidance."
+    }
+  ]
+}

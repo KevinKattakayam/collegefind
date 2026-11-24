@@ -75,14 +75,31 @@ const DEFAULT_MAX_BODY_BYTES = 16 * 1024;
  */
 export async function readJson<T>(request: Request, schema: ZodType<T>, maxBytes = DEFAULT_MAX_BODY_BYTES): Promise<T> {
   const contentType = request.headers.get('content-type') ?? '';
-  if (!contentType.toLowerCase().startsWith('application/json')) {
+  if (contentType.split(';', 1)[0].trim().toLowerCase() !== 'application/json') {
     throw new ApiError(415, 'UNSUPPORTED_MEDIA_TYPE', 'Content-Type must be application/json');
   }
-  const declared = Number(request.headers.get('content-length') ?? '0');
-  if (declared > maxBytes) throw new ApiError(413, 'PAYLOAD_TOO_LARGE', 'Request body too large');
-  const text = await request.text();
-  if (new TextEncoder().encode(text).length > maxBytes) {
-    throw new ApiError(413, 'PAYLOAD_TOO_LARGE', 'Request body too large');
+  const tooLarge = () => new ApiError(413, 'PAYLOAD_TOO_LARGE', 'Request body too large');
+  if (Number(request.headers.get('content-length')) > maxBytes) throw tooLarge();
+  const reader = request.body?.getReader();
+  let text = '';
+  if (reader) {
+    const decoder = new TextDecoder();
+    let bytes = 0;
+    try {
+      for (;;) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        bytes += value.byteLength;
+        if (bytes > maxBytes) {
+          void reader.cancel().catch(() => {});
+          throw tooLarge();
+        }
+        text += decoder.decode(value, { stream: true });
+      }
+      text += decoder.decode();
+    } finally {
+      reader.releaseLock();
+    }
   }
   let raw: unknown;
   try {
@@ -102,38 +119,19 @@ export function readQuery<T>(request: Request, schema: ZodType<T>): T {
   return schema.parse(obj);
 }
 
-/**
- * CSRF defence in depth for cookie-authenticated mutations. Browsers always send
- * `Origin` on cross-site POST/DELETE; if it is present it must match this host.
- * Session cookies are also SameSite=Lax (NextAuth default).
- */
+/** Cookie-authenticated mutations trust the configured origin in production. */
 export function assertSameOrigin(request: Request) {
   const origin = request.headers.get('origin');
-  if (!origin) return;
-  let originHost: string;
+  if (!origin && request.headers.get('sec-fetch-site') !== 'cross-site') return;
   try {
-    originHost = new URL(origin).host;
+    const configured = process.env.NEXTAUTH_URL;
+    const expected = configured ? new URL(configured).origin
+      : process.env.NODE_ENV === 'production' ? null : new URL(request.url).origin;
+    if (origin && expected && origin === expected) return;
   } catch {
-    throw new ApiError(403, 'BAD_ORIGIN', 'Cross-origin request rejected');
+    // Invalid configuration or origin is rejected without logging its contents.
   }
-  const allowed = new Set<string>();
-  const host = request.headers.get('x-forwarded-host') ?? request.headers.get('host');
-  if (host) allowed.add(host);
-  try {
-    allowed.add(new URL(request.url).host);
-  } catch {
-    /* ignore */
-  }
-  if (process.env.NEXTAUTH_URL) {
-    try {
-      allowed.add(new URL(process.env.NEXTAUTH_URL).host);
-    } catch {
-      /* ignore */
-    }
-  }
-  if (!allowed.has(originHost)) {
-    throw new ApiError(403, 'BAD_ORIGIN', 'Cross-origin request rejected');
-  }
+  throw new ApiError(403, 'BAD_ORIGIN', 'Cross-origin request rejected');
 }
 
 /**
@@ -147,6 +145,7 @@ export function clientIpFromHeaders(headers: Headers | Record<string, unknown> |
     const v = (headers as Record<string, unknown>)[name];
     return Array.isArray(v) ? String(v[0]) : typeof v === 'string' ? v : undefined;
   };
+  if (process.env.VERCEL === '1') return get('x-vercel-forwarded-for')?.trim() || 'unknown';
   const xff = get('x-forwarded-for');
   if (xff) return xff.split(',')[0].trim() || 'unknown';
   return get('x-real-ip') ?? 'unknown';

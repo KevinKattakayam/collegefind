@@ -1,0 +1,456 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 31,
+  "ownerStagingReady": false,
+  "researchedAt": "2026-11-20T13:12:27.858Z",
+  "sourceUsePolicy": "Short factual notes from directly opened public first-party material. No source text, table or dataset stored. Individual link attribution only. Check source-specific publication rights, exact scope and freshness before publishing.",
+  "sources": [
+    {
+      "id": "batch031-ashoka-university-0",
+      "institutionSlug": "ashoka-university",
+      "publisher": "Ashoka University",
+      "url": "https://www.ashoka.edu.in/admissions/undergraduate-students/",
+      "academicYear": "2027-28",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Short factual notes from directly opened public first-party material. No source text, table or dataset stored. Individual link attribution only. Check source-specific publication rights, exact scope and freshness before publishing.",
+      "evidenceLocations": [
+        "Undergraduate Fee Structure, first-year tuition and residence rows"
+      ]
+    },
+    {
+      "id": "batch031-niser-bhubaneswar-1",
+      "institutionSlug": "niser-bhubaneswar",
+      "publisher": "National Institute of Science Education and Research",
+      "url": "https://niser.ac.in/hostels/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Short factual notes from directly opened public first-party material. No source text, table or dataset stored. Individual link attribution only. Check source-specific publication rights, exact scope and freshness before publishing.",
+      "evidenceLocations": [
+        "Halls of Residence introduction and hostel navigation"
+      ]
+    },
+    {
+      "id": "batch031-loyola-college-2",
+      "institutionSlug": "loyola-college",
+      "publisher": "Loyola College, Chennai",
+      "url": "https://www.loyolacollege.edu//admission/courses-offered",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Short factual notes from directly opened public first-party material. No source text, table or dataset stored. Individual link attribution only. Check source-specific publication rights, exact scope and freshness before publishing.",
+      "evidenceLocations": [
+        "Courses Offered, Shift I undergraduate science list and Shift II postgraduate science list"
+      ]
+    },
+    {
+      "id": "batch031-iim-nagpur-3",
+      "institutionSlug": "iim-nagpur",
+      "publisher": "IIM Nagpur",
+      "url": "https://www.iimnagpur.ac.in/admissions/mba/fees-financial-aid-scholarship/",
+      "academicYear": "2026",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Short factual notes from directly opened public first-party material. No source text, table or dataset stored. Individual link attribution only. Check source-specific publication rights, exact scope and freshness before publishing.",
+      "evidenceLocations": [
+        "Sections 7.1, Need-cum-Merit criteria and tuition waiver"
+      ]
+    },
+    {
+      "id": "batch031-nirma-university-4",
+      "institutionSlug": "nirma-university",
+      "publisher": "Institute of Law, Nirma University",
+      "url": "https://law.nirmauni.ac.in/admission-aid/frequently-asked-questions/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Short factual notes from directly opened public first-party material. No source text, table or dataset stored. Individual link attribution only. Check source-specific publication rights, exact scope and freshness before publishing.",
+      "evidenceLocations": [
+        "Question on undergraduate programmes and five-year durations"
+      ]
+    },
+    {
+      "id": "batch031-nirma-university-5",
+      "institutionSlug": "nirma-university",
+      "publisher": "Institute of Law, Nirma University",
+      "url": "https://law.nirmauni.ac.in/admission-aid/frequently-asked-questions/",
+      "academicYear": "2027",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Short factual notes from directly opened public first-party material. No source text, table or dataset stored. Individual link attribution only. Check source-specific publication rights, exact scope and freshness before publishing.",
+      "evidenceLocations": [
+        "Questions on admissions procedure and whether CLAT is a prerequisite"
+      ]
+    },
+    {
+      "id": "batch031-maulana-azad-medical-college-6",
+      "institutionSlug": "maulana-azad-medical-college",
+      "publisher": "Maulana Azad Medical College, Government of NCT of Delhi",
+      "url": "https://mamc.delhi.gov.in/mamc/undergraduate-admission",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Short factual notes from directly opened public first-party material. No source text, table or dataset stored. Individual link attribution only. Check source-specific publication rights, exact scope and freshness before publishing.",
+      "evidenceLocations": [
+        "MBBS overview and Duration line"
+      ]
+    },
+    {
+      "id": "batch031-bits-pilani-7",
+      "institutionSlug": "bits-pilani",
+      "publisher": "BITS Pilani",
+      "url": "https://www.bits-pilani.ac.in/pilani/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Short factual notes from directly opened public first-party material. No source text, table or dataset stored. Individual link attribution only. Check source-specific publication rights, exact scope and freshness before publishing.",
+      "evidenceLocations": [
+        "Pilani Campus, Integrated First Degree list, B.E. (Computer Science)"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "ashoka-university",
+      "sourceIds": [
+        "batch031-ashoka-university-0"
+      ],
+      "academicYear": "2027-28",
+      "evidenceLocation": "Undergraduate Fee Structure, first-year tuition and residence rows",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "Undergraduate programme, first year",
+        "category": "August 2027 intake, general published schedule",
+        "component": "Tuition",
+        "feeType": "TUITION",
+        "period": "YEAR",
+        "amountInr": 1122000
+      }
+    },
+    {
+      "institutionSlug": "ashoka-university",
+      "sourceIds": [
+        "batch031-ashoka-university-0"
+      ],
+      "academicYear": "2027-28",
+      "evidenceLocation": "Undergraduate Fee Structure, first-year tuition and residence rows",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "Undergraduate programme, first year",
+        "category": "August 2027 intake, general published schedule",
+        "component": "Residence",
+        "feeType": "HOSTEL",
+        "period": "YEAR",
+        "amountInr": 228000
+      }
+    },
+    {
+      "institutionSlug": "niser-bhubaneswar",
+      "sourceIds": [
+        "batch031-niser-bhubaneswar-1"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Halls of Residence introduction and hostel navigation",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Halls of residence",
+        "description": "NISER lists on-campus hostel halls and publishes hostel rules through its Halls of Residence office."
+      }
+    },
+    {
+      "institutionSlug": "loyola-college",
+      "sourceIds": [
+        "batch031-loyola-college-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses Offered, Shift I undergraduate science list and Shift II postgraduate science list",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. Statistics (Shift I, government-supported)",
+        "level": "UG"
+      }
+    },
+    {
+      "institutionSlug": "loyola-college",
+      "sourceIds": [
+        "batch031-loyola-college-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses Offered, Shift I undergraduate science list and Shift II postgraduate science list",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.Sc. Data Science (Shift II, self-supporting)",
+        "level": "PG"
+      }
+    },
+    {
+      "institutionSlug": "iim-nagpur",
+      "sourceIds": [
+        "batch031-iim-nagpur-3"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Sections 7.1, Need-cum-Merit criteria and tuition waiver",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "scholarship",
+        "scheme": "IIM Nagpur Need-cum-Merit Scholarship",
+        "eligibility": "The MBA fee and aid page lists family income below ₹8 lakh. Selected recipients receive a tuition waiver; selection and the published policy apply.",
+        "url": "https://www.iimnagpur.ac.in/admissions/mba/fees-financial-aid-scholarship/"
+      }
+    },
+    {
+      "institutionSlug": "nirma-university",
+      "sourceIds": [
+        "batch031-nirma-university-4"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Question on undergraduate programmes and five-year durations",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Integrated B.A., LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      }
+    },
+    {
+      "institutionSlug": "nirma-university",
+      "sourceIds": [
+        "batch031-nirma-university-5"
+      ],
+      "academicYear": "2027",
+      "evidenceLocation": "Questions on admissions procedure and whether CLAT is a prerequisite",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Five-year integrated law programmes",
+        "route": "CLAT rank and a separate Institute of Law application",
+        "category": "General category, CLAT 2027",
+        "exam": "CLAT 2027"
+      }
+    },
+    {
+      "institutionSlug": "maulana-azad-medical-college",
+      "sourceIds": [
+        "batch031-maulana-azad-medical-college-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "MBBS overview and Duration line",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS (including compulsory internship)",
+        "level": "UG",
+        "durationMonths": 66
+      }
+    },
+    {
+      "institutionSlug": "bits-pilani",
+      "sourceIds": [
+        "batch031-bits-pilani-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Pilani Campus, Integrated First Degree list, B.E. (Computer Science)",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.E. Computer Science",
+        "level": "UG"
+      }
+    }
+  ],
+  "candidateContext": [
+    {
+      "collegeId": "cmwlksxoe000o31tv88ia0k82",
+      "institutionSlug": "ashoka-university",
+      "sourceId": "batch031-ashoka-university-0",
+      "title": "Undergraduate Students",
+      "scope": "Sonipat campus; first year of the August 2027 undergraduate intake; general schedule before aid",
+      "freshness": "Upcoming intake. Fee components are separate; no later-year or aid-adjusted price asserted.",
+      "conflictStatus": "No identical candidate found in archived evidence for this fact and scope. Human conflict and rights checks pending."
+    },
+    {
+      "collegeId": "cmwlksxoe000o31tv88ia0k82",
+      "institutionSlug": "ashoka-university",
+      "sourceId": "batch031-ashoka-university-0",
+      "title": "Undergraduate Students",
+      "scope": "Sonipat campus; first year of the August 2027 undergraduate intake; general schedule before aid",
+      "freshness": "Upcoming intake. Fee components are separate; no later-year or aid-adjusted price asserted.",
+      "conflictStatus": "No identical candidate found in archived evidence for this fact and scope. Human conflict and rights checks pending."
+    },
+    {
+      "collegeId": "cmwlksy6p002731tvvqp8kvp7",
+      "institutionSlug": "niser-bhubaneswar",
+      "sourceId": "batch031-niser-bhubaneswar-1",
+      "title": "Hostels, Halls of Residence",
+      "scope": "NISER Jatni campus; housing provision only",
+      "freshness": "Undated. Room allocation, availability and fees unknown.",
+      "conflictStatus": "No identical candidate found in archived evidence for this fact and scope. Human conflict and rights checks pending."
+    },
+    {
+      "collegeId": "cmwlksxnz000n31tvk7nb5prz",
+      "institutionSlug": "loyola-college",
+      "sourceId": "batch031-loyola-college-2",
+      "title": "Courses Offered",
+      "scope": "Chennai; Shift I government-supported and Shift II self-supporting",
+      "freshness": "Undated programme list. No intake, eligibility or duration claimed.",
+      "conflictStatus": "No identical candidate found in archived evidence for this fact and scope. Human conflict and rights checks pending."
+    },
+    {
+      "collegeId": "cmwlksxnz000n31tvk7nb5prz",
+      "institutionSlug": "loyola-college",
+      "sourceId": "batch031-loyola-college-2",
+      "title": "Courses Offered",
+      "scope": "Chennai; Shift I government-supported and Shift II self-supporting",
+      "freshness": "Undated programme list. No intake, eligibility or duration claimed.",
+      "conflictStatus": "No identical candidate found in archived evidence for this fact and scope. Human conflict and rights checks pending."
+    },
+    {
+      "collegeId": "cmwlksxx4001c31tv6nr24u57",
+      "institutionSlug": "iim-nagpur",
+      "sourceId": "batch031-iim-nagpur-3",
+      "title": "Fees, Financial Aid & Scholarship",
+      "scope": "Full-time two-year MBA, Nagpur; fee page identifies MBA batch 2026–28",
+      "freshness": "Recheck the released scheme rules. Income threshold is a condition, not an award guarantee.",
+      "conflictStatus": "No identical candidate found in archived evidence for this fact and scope. Human conflict and rights checks pending."
+    },
+    {
+      "collegeId": "cmwlksy65002331tvb2t52xgc",
+      "institutionSlug": "nirma-university",
+      "sourceId": "batch031-nirma-university-4",
+      "title": "Frequently Asked Questions",
+      "scope": "Institute of Law, Ahmedabad; integrated law programme",
+      "freshness": "Programme description undated. No seats, fees or accreditation status claimed.",
+      "conflictStatus": "No identical candidate found in archived evidence for this fact and scope. Human conflict and rights checks pending."
+    },
+    {
+      "collegeId": "cmwlksy65002331tvb2t52xgc",
+      "institutionSlug": "nirma-university",
+      "sourceId": "batch031-nirma-university-5",
+      "title": "Frequently Asked Questions",
+      "scope": "Institute of Law, Ahmedabad, General category, five-year integrated programmes",
+      "freshness": "Upcoming CLAT 2027 cycle. Separate NRI provisions apply.",
+      "conflictStatus": "No identical candidate found in archived evidence for this fact and scope. Human conflict and rights checks pending."
+    },
+    {
+      "collegeId": "cmwlksxne000k31tvc9mqhk4u",
+      "institutionSlug": "maulana-azad-medical-college",
+      "sourceId": "batch031-maulana-azad-medical-college-6",
+      "title": "Undergraduate admission",
+      "scope": "Maulana Azad Medical College, New Delhi; duration includes one year of internship",
+      "freshness": "Stable programme duration. Older admissions and regulatory language on the same page was excluded.",
+      "conflictStatus": "No identical candidate found in archived evidence for this fact and scope. Human conflict and rights checks pending."
+    },
+    {
+      "collegeId": "cmwlksxl3000a31tvjulmjhh4",
+      "institutionSlug": "bits-pilani",
+      "sourceId": "batch031-bits-pilani-7",
+      "title": "BITS Pilani, Pilani Campus",
+      "scope": "Pilani campus only; integrated first-degree offering",
+      "freshness": "Undated campus catalogue. No duration or exam cutoff inferred.",
+      "conflictStatus": "No identical candidate found in archived evidence for this fact and scope. Human conflict and rights checks pending."
+    }
+  ],
+  "heldFindings": [
+    {
+      "institutionSlug": "loyola-college",
+      "collegeId": "cmwlksxnz000n31tvk7nb5prz",
+      "url": "https://www.loyolacollege.edu/docs/Prospectus2026-27.html",
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "reason": "2026–27 prospectus returned HTTP 403. No cycle-specific requirements extracted."
+    },
+    {
+      "institutionSlug": "nujs-kolkata",
+      "collegeId": "cmwlksxy7001g31tvay9wu13h",
+      "url": "https://www.nujs.edu/",
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "reason": "Institution site timed out; CLAT brochure exceeded retrieval limit. Only Consortium identity and participation link retained; admissions and programme facts remain on hold."
+    },
+    {
+      "institutionSlug": "iiit-delhi",
+      "collegeId": "cmwlksxqf000v31tv9a1rs73n",
+      "url": "https://iiitd.ac.in/admission/btech/2026",
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "reason": "Direct admissions overview returned 502; department programme page timed out. No candidate based on snippets."
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "collegeId": "cmwlksxpc000r31tv6htip20r",
+      "url": "https://www.iitbhilai.ac.in/",
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "reason": "Direct institution homepage timed out."
+    },
+    {
+      "institutionSlug": "iit-dharwad",
+      "collegeId": "cmwlksxp8000q31tvu1n366ii",
+      "url": "https://www.iitdh.ac.in/",
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "reason": "Direct institution homepage returned 502."
+    },
+    {
+      "institutionSlug": "iit-jammu",
+      "collegeId": "cmwlksxpg000s31tvrhv0r85d",
+      "url": "https://www.iitj.ac.in/",
+      "retrievedAt": "2026-11-20T13:12:27.858Z",
+      "reason": "Direct institution homepage timed out."
+    }
+  ],
+  "researchedInstitutionSlugs": [
+    "ashoka-university",
+    "niser-bhubaneswar",
+    "loyola-college",
+    "iim-nagpur",
+    "nirma-university",
+    "maulana-azad-medical-college",
+    "bits-pilani",
+    "nujs-kolkata",
+    "iiit-delhi",
+    "iit-bhilai",
+    "iit-dharwad",
+    "iit-jammu"
+  ]
+}

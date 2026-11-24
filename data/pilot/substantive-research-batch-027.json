@@ -1,0 +1,206 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 27,
+  "researchedAt": "2026-11-18T15:27:00Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": "Manual reading of directly accessible first-party institutional pages/publications. Stage only concise factual observations with exact source link and evidence locator. Do not store or republish source documents, source tables, or expressive prose. Public visibility is not blanket authorization for automated collection or bulk redistribution. Rights/reuse uncertainty remains visible for human review. Admissions-cycle material that has closed is not represented as currently open. All claims remain UNREVIEWED.",
+  "sources": [
+    {
+      "id": "amrita-psychology-hons-programme-fees-2026",
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "publisher": "Amrita Vishwa Vidyapeetham, Directorate of Admissions and Academic Outreach",
+      "url": "https://www.amrita.edu/program/b-sc-psychology-hons/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T15:27:00Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official public programme page directly opened and manually read. It displays two campus-specific fee sections and a 2026 admissions label. No express fact-reuse or bulk extraction licence was established. Store only individual factual amounts/programme details with attribution and source URL; do not reproduce the page/table. Human reviewer must confirm programme/campus attribution and current applicability before publication. Coimbatore hostel/mess amounts are explicitly AY 2026-27; tuition headings say programme fee for year 2026, semester-wise.",
+      "evidenceLocations": [
+        "Page lines 734-764 name B.Sc. Psychology (Hons.) with Research, four-year undergraduate programme, Coimbatore and Nagercoil campuses; line 738 displays 2026 admission open.",
+        "Lines 779-800 give 12th/equivalent with 50% minimum, duration four years and exit options.",
+        "Lines 824-835 identify Coimbatore-Ettimadai tuition ₹30,000 under 'Program Fee for the Year 2026 (Semester Wise)' and hostel ₹52,000/year and mess ₹62,500/year for AY 2026-27.",
+        "Lines 841-847 identify Nagercoil tuition ₹25,000 under the 2026 semester-wise fee heading and state a ₹50,000 full-year tuition payment."
+      ]
+    },
+    {
+      "id": "nit-agartala-cse-programmes-page",
+      "institutionSlug": "nit-agartala",
+      "publisher": "National Institute of Technology Agartala, Department of Computer Science and Engineering",
+      "url": "https://nita.ac.in/Department/DisplayDeptPage.aspx?ItemID=eoi&nDeptID=caasa&page=e",
+      "publicationDate": "2026-10-01",
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T15:27:00Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official NIT Agartala department page directly opened and manually read; footer says last updated 01/10/2026. No express factual extraction/republication licence was identified. Stage a concise programme fact with attribution and exact locator, not page prose. Reviewer must verify the page continues to represent the current CSE programme and provider reuse basis.",
+      "evidenceLocations": [
+        "Lines 145-153 identify NIT Agartala's CSE department and state B.Tech in Computer Science & Engineering (4 years). Lines 175-179 identify NIT Agartala/Jirania, West Tripura and lines 224-228 show copyright/last-updated footer."
+      ]
+    },
+    {
+      "id": "nit-srinagar-undergraduate-manual",
+      "institutionSlug": "nit-srinagar",
+      "publisher": "National Institute of Technology Srinagar, Senate Undergraduate Committee",
+      "url": "https://filetrack.nitsri.ac.in/uploaded_files/UG_MANUAL.pdf",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T15:27:00Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official NIT Srinagar undergraduate manual was publicly accessible and directly opened. No explicit factual extraction or document redistribution licence was established. Only one concise programme-list/duration fact and a page locator are proposed; source document/table is not copied. Reviewer should confirm the manual remains in effect and assess source-use before publication.",
+      "evidenceLocations": [
+        "PDF lines 272-293 (printed page 3) describe the institute's B.Tech as four years/eight semesters and list Chemical, Civil, CSE, Electrical, ECE, IT, Mechanical, and Metallurgical & Material Engineering."
+      ]
+    },
+    {
+      "id": "bennett-btech-artificial-intelligence-2027",
+      "institutionSlug": "bennett-university",
+      "publisher": "Bennett University, School of Artificial Intelligence",
+      "url": "https://www.bennett.edu.in/programs/b-tech-artificial-intelligence/",
+      "publicationDate": null,
+      "academicYear": "2027",
+      "retrievedAt": "2026-11-18T15:27:00Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official Bennett University programme page directly opened and manually read. Page has mixed-version material: programme start date is August 2027, while an embedded fee/scholarship table is explicitly labelled 2025. Only the 2027 programme and eligibility details are staged; the 2025 fee/scholarship and placement figures are not staged. No express fact-reuse/bulk permission was found; no page prose copied. Human review should verify cycle and source-use basis.",
+      "evidenceLocations": [
+        "Lines 851-859 describe B.Tech Artificial Intelligence as a four-year undergraduate programme and state start date August 2027.",
+        "Lines 963-974 state domestic eligibility (Class XII with Physics, Mathematics and a non-vocational third subject, minimum 60%, or specified IB credits) and selection by Class XII best-of-three score."
+      ]
+    },
+    {
+      "id": "calcutta-chemical-technology-vacancy-notice-2026",
+      "institutionSlug": "calcutta-university",
+      "publisher": "University of Calcutta, University College of Science, Technology and Agriculture",
+      "url": "https://s3.ap-south-1.amazonaws.com/caluniv/admission/BTech-ChemTech-Notice.pdf",
+      "publicationDate": null,
+      "academicYear": "2026",
+      "retrievedAt": "2026-11-18T15:27:00Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "The 2-page official notice was linked from the University of Calcutta's official admission index and directly opened. Its stated application deadline (7 October 2026) has passed. Only the programme title/duration fact is staged, not a current admission route. No explicit fact-reuse/republication or bulk permission was identified; no PDF/table copied. Reviewer must confirm constituent-college scope, programme remains active, and source-use basis.",
+      "evidenceLocations": [
+        "PDF page 1 lines 0-7: University of Calcutta notice identifies four-year B.Tech in Chemical Technology, including Ceramic Engineering, Oil Technology, Petrochemical & Petroleum Refinery Engineering, and Pharmaceutical and Fine Chemicals. Lines 13-15 show the application deadline was 07-10-2026."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "B.Sc. Psychology (Honours with Research), Coimbatore and Nagercoil campuses", "level": "UG", "durationMonths": 48 },
+      "sourceIds": ["amrita-psychology-hons-programme-fees-2026"],
+      "academicYear": "2026",
+      "evidenceLocation": "Official programme page lines 734-764 identifies the four-year B.Sc. Psychology (Hons.) programme and lists Coimbatore and Nagercoil campuses; line 738 labels 2026 admission. Campus-specific facts remain separately scoped below.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING", "reviewState": "UNREVIEWED", "stageable": true
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured",
+      "value": { "kind": "admission", "programme": "B.Sc. Psychology (Honours with Research)", "route": "Online application through the Directorate of Admissions, followed by educational document verification and eligibility confirmation", "category": "Domestic applicants, 2026 intake; confirm campus-specific opening", "eligibility": "12th standard or equivalent with at least 50% aggregate from CBSE, a State Board, or ICSE.", "applicationUrl": "https://applyug.amrita.edu/" },
+      "sourceIds": ["amrita-psychology-hons-programme-fees-2026"],
+      "academicYear": "2026",
+      "evidenceLocation": "Official page lines 738-750 shows 2026 admission status, official Apply Now links, Coimbatore and Nagercoil campus links and a note that Nagercoil admissions are opening soon; lines 779-788 state 12th/equivalent and minimum 50% from CBSE/State Board/ICSE plus document verification/eligibility confirmation. Verify current status before publication.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING", "reviewState": "UNREVIEWED", "stageable": true
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "B.Sc. Psychology (Honours with Research)", "category": "Coimbatore - Ettimadai campus", "component": "Tuition fee", "feeType": "TUITION", "period": "SEMESTER", "amountInr": 30000 },
+      "sourceIds": ["amrita-psychology-hons-programme-fees-2026"],
+      "academicYear": "2026",
+      "evidenceLocation": "Official programme page lines 824-829: Coimbatore-Ettimadai campus, 'Program Fee for the Year 2026 (Semester Wise)', tuition ₹30,000. The page does not identify a scholarship or discount in this row.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING", "reviewState": "UNREVIEWED", "stageable": true
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "B.Sc. Psychology (Honours with Research)", "category": "Nagercoil campus", "component": "Tuition fee", "feeType": "TUITION", "period": "SEMESTER", "amountInr": 25000 },
+      "sourceIds": ["amrita-psychology-hons-programme-fees-2026"],
+      "academicYear": "2026",
+      "evidenceLocation": "Official programme page lines 841-847: Nagercoil campus, 'Program Fee for the Year 2026 (Semester Wise)', tuition ₹25,000. A separate note states full-year tuition of ₹50,000 is payable as one admission-time payment.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING", "reviewState": "UNREVIEWED", "stageable": true
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "B.Sc. Psychology (Honours with Research)", "category": "Coimbatore - Ettimadai campus", "component": "Hostel fee", "feeType": "HOSTEL", "period": "YEAR", "amountInr": 52000 },
+      "sourceIds": ["amrita-psychology-hons-programme-fees-2026"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official programme page lines 830-835: Coimbatore hostel fees table labels period Annual and academic year 2026-2027; Hostel Fees ₹52,000. Mess is a distinct component and is recorded separately.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING", "reviewState": "UNREVIEWED", "stageable": true
+    },
+    {
+      "institutionSlug": "amrita-vishwa-vidyapeetham",
+      "field": "structured",
+      "value": { "kind": "fee", "programme": "B.Sc. Psychology (Honours with Research)", "category": "Coimbatore - Ettimadai campus", "component": "Mess fee", "feeType": "HOSTEL", "period": "YEAR", "amountInr": 62500 },
+      "sourceIds": ["amrita-psychology-hons-programme-fees-2026"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official programme page lines 830-835: Coimbatore hostel fees table labels period Annual and academic year 2026-2027; Mess Fees ₹62,500. Hostel is a distinct component and is recorded separately.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING", "reviewState": "UNREVIEWED", "stageable": true
+    },
+    {
+      "institutionSlug": "nit-agartala",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "B.Tech in Computer Science & Engineering", "level": "UG", "durationMonths": 48 },
+      "sourceIds": ["nit-agartala-cse-programmes-page"],
+      "academicYear": null,
+      "evidenceLocation": "Official NIT Agartala CSE page lines 145-153 states the CSE department offers B.Tech in Computer Science & Engineering (4 years); page footer lines 224-228 says last updated 01/10/2026.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING", "reviewState": "UNREVIEWED", "stageable": true
+    },
+    {
+      "institutionSlug": "nit-srinagar",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "B.Tech: Chemical, Civil, Computer Science, Electrical, Electronics & Communication, Information Technology, Mechanical, and Metallurgical & Material Engineering", "level": "UG", "durationMonths": 48 },
+      "sourceIds": ["nit-srinagar-undergraduate-manual"],
+      "academicYear": null,
+      "evidenceLocation": "Official NIT Srinagar UG Manual printed page 3, lines 272-293 states B.Tech is four years/eight semesters and lists the eight branches. It says programmes may change with institutional approvals; human reviewer should confirm current offering.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING", "reviewState": "UNREVIEWED", "stageable": true
+    },
+    {
+      "institutionSlug": "bennett-university",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "B.Tech in Artificial Intelligence", "level": "UG", "durationMonths": 48 },
+      "sourceIds": ["bennett-btech-artificial-intelligence-2027"],
+      "academicYear": "2027",
+      "evidenceLocation": "Official Bennett programme page lines 851-859 describes the four-year B.Tech Artificial Intelligence programme and start date August 2027. Embedded fee and scholarship schedules on this page are labelled 2025 and are not part of this claim.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING", "reviewState": "UNREVIEWED", "stageable": true
+    },
+    {
+      "institutionSlug": "bennett-university",
+      "field": "structured",
+      "value": { "kind": "admission", "programme": "B.Tech in Artificial Intelligence", "route": "Merit-based selection by Class XII best-of-three score with Physics and Mathematics compulsory", "category": "Domestic Indian nationals, August 2027 start", "eligibility": "Passed Class XII from a recognized board with Physics, Mathematics and a non-vocational third subject and minimum 60% marks; alternatively an IB score of at least 24 credits with three Higher Level and three Standard Level subjects.", "applicationUrl": "https://www.bennett.edu.in/admission/" },
+      "sourceIds": ["bennett-btech-artificial-intelligence-2027"],
+      "academicYear": "2027",
+      "evidenceLocation": "Official programme page lines 851-859 dates the start to August 2027; lines 963-974 specify domestic eligibility and selection by Class XII Best-of-3 with Physics and Mathematics compulsory. Application link is the official admissions URL linked in the page navigation. Verify live cycle status before publication.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING", "reviewState": "UNREVIEWED", "stageable": true
+    },
+    {
+      "institutionSlug": "calcutta-university",
+      "field": "structured",
+      "value": { "kind": "programme", "programme": "Four-year B.Tech in Chemical Technology (Ceramic Engineering, Oil Technology, Petrochemical & Petroleum Refinery Engineering, Pharmaceutical and Fine Chemicals)", "level": "UG", "durationMonths": 48 },
+      "sourceIds": ["calcutta-chemical-technology-vacancy-notice-2026"],
+      "academicYear": "2026",
+      "evidenceLocation": "Official University of Calcutta notice lines 0-7 names the four-year B.Tech Chemical Technology programmes and specializations. The notice's lateral-entry application deadline was 7 October 2026 (lines 13-14) and is not staged as current admissions guidance.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING", "reviewState": "UNREVIEWED", "stageable": true
+    }
+  ],
+  "researchDispositions": [
+    {"institutionSlug":"all-india-institute-of-medical-sciences","status":"RESEARCH_ONLY_IDENTITY_AND_SIGNED_ARTIFACT","sourceUrl":"https://www.aiimsexams.ac.in/notification/6a798281f753e1515340be42","note":"The official exam portal identifies an MBBS-2026 course, but the accessible notification page exposes no readable prospectus details. Search returned a temporary signed PDF URL; it was not retained or used. The linked prospectus identifies AIIMS New Delhi, while catalogue-level identity must be confirmed before any campus-specific fact."},
+    {"institutionSlug":"amity-university","status":"RESEARCH_ONLY_CAMPUS_MISMATCH","sourceUrl":"https://www.amity.edu/lucknow/admissions/","note":"Direct page is Amity University Lucknow (page has stale FAQ wording and current-looking but mixed-version marketing); catalogue slug does not identify Lucknow campus. Mauritius and Mumbai pages are distinct entities. No fact staged until catalogue campus identity is resolved."},
+    {"institutionSlug":"amrita-vishwa-vidyapeetham","status":"STAGED_CANDIDATE","sourceUrl":"https://www.amrita.edu/program/b-sc-psychology-hons/","note":"Six concise claims staged: four-year undergraduate programme; 2026 admission eligibility/process; two campus-specific semester tuition amounts; Coimbatore AY2026-27 hostel and mess costs. Admission cycle and each campus/scope must be revalidated by a human. No Nagercoil hostel amount inferred."},
+    {"institutionSlug":"andhra-university","status":"HISTORICAL_CYCLE_NOT_STAGED","sourceUrl":"https://audoa.andhrauniversity.edu.in/documents/AUEET_2026_BROCHURE.pdf","note":"Official 2026-27 self-support B.Tech brochure directly opened. It lists programmes, category eligibility, fee totals and cycle dates; the 2026 admission cycle is closed. Its 'total fee per year' row does not define a tuition-only component, so no amount is imported as tuition. The brochure is not a current-application guide."},
+    {"institutionSlug":"banasthali-vidyapith","status":"NO_DIRECT_PAGE_VALIDATED","sourceUrl":null,"note":"Official programme/admissions page was not directly validated in this source pass; no search excerpt used as claim evidence. Existing research disposition remains; next attempt should use an official university prospectus or admissions page, not a third-party listing."},
+    {"institutionSlug":"bangalore-medical-college","status":"NO_DIRECT_PAGE_VALIDATED","sourceUrl":null,"note":"No direct official college/counselling document was validated in this source pass. Do not infer MBBS admission or fees from the catalogue name; seek an official BMC/NMC/Karnataka counselling source with campus attribution."},
+    {"institutionSlug":"bennett-university","status":"STAGED_CANDIDATE","sourceUrl":"https://www.bennett.edu.in/programs/b-tech-artificial-intelligence/","note":"Two concise 2027 claims staged for B.Tech AI: duration and domestic eligibility/selection. The page embeds a 2025 fee/scholarship table and unrelated high-level placement figures; none were staged. Human reviewer must confirm current 2027 application cycle and source-use basis."},
+    {"institutionSlug":"bj-medical-college","status":"NO_DIRECT_PAGE_VALIDATED","sourceUrl":null,"note":"No direct official programme, counselling or fee source was validated in this pass. Keep missing; seek BJMC/Ahmedabad government or official Gujarat counselling material before staging."},
+    {"institutionSlug":"calcutta-university","status":"STAGED_PROGRAMME_HISTORICAL_ADMISSION_HELD","sourceUrl":"https://s3.ap-south-1.amazonaws.com/caluniv/admission/BTech-ChemTech-Notice.pdf","note":"One four-year B.Tech Chemical Technology programme fact is staged from a directly opened university-linked 2026 notice. Its lateral-entry deadline (7 October 2026) has passed; no admissions claim staged. Confirm constituent UCSTA/campus scope and current programme offering."},
+    {"institutionSlug":"central-university-of-kerala","status":"NO_CORRECT_INSTITUTION_PAGE_VALIDATED","sourceUrl":null,"note":"The official search result opened during this pass belonged to University of Kerala, not Central University of Kerala. It was rejected as an identity mismatch; no source claim staged."},
+    {"institutionSlug":"central-university-of-punjab","status":"DIRECT_PROSPECTUS_REDIRECT_BLOCKED_CYCLE_CLOSED","sourceUrl":"https://www.cup.edu.in/sites/default/files/UG%20Prospectus%202026-27%20Approved.pdf","note":"Official portal states 2026-27 UG admissions closed 11 September 2026; direct prospectus open redirected to www.cup.edu.in and was inaccessible in this path. Search excerpts were not imported. Await an accessible current official prospectus."},
+    {"institutionSlug":"cochin-university","status":"NO_CURRENT_PROGRAMME_SOURCE_VALIDATED","sourceUrl":null,"note":"No directly inspected CUSAT programme/admission source with useful current facts was validated in this pass; no search-result facts staged."},
+    {"institutionSlug":"dibrugarh-university","status":"DYNAMIC_PAGE_NO_FACTS","sourceUrl":"https://www.dibru.ac.in/admission-2026","note":"Official admission page opened but programme body returned a loading spinner; it links to programme index and forms but exposes no readable admission fact here. No source restrictions bypassed and no claim staged."},
+    {"institutionSlug":"dit-university","status":"NO_DIRECT_PAGE_VALIDATED","sourceUrl":null,"note":"No official current admissions/programme source was directly validated in this batch; no claim staged."},
+    {"institutionSlug":"flame-university","status":"NO_DIRECT_PAGE_VALIDATED","sourceUrl":null,"note":"No official current programme/admission source was directly validated in this batch; no claim staged."},
+    {"institutionSlug":"galgotias-university","status":"NO_DIRECT_PAGE_VALIDATED","sourceUrl":null,"note":"No official current programme/admission source was directly validated in this batch; no claim staged."},
+    {"institutionSlug":"gitam-university","status":"RESEARCH_ONLY_MULTI_CAMPUS_SCOPE","sourceUrl":"https://programmes.gitam.edu/ug/","note":"Official UG page directly opened and describes four campuses plus campus-specific programmes, but the catalogue institution entry has no campus qualification. No generic programme, fee, scholarship, accreditation or placement claim staged until the target campus is reconciled."},
+    {"institutionSlug":"gnlu-gandhinagar","status":"NO_DIRECT_PAGE_VALIDATED","sourceUrl":null,"note":"No official current programme/admission source was directly validated in this batch; no claim staged."},
+    {"institutionSlug":"grant-medical-college","status":"AUTHORITY_SOURCE_NOT_INSTITUTION_SPECIFIC","sourceUrl":"https://medical.maharashtra.gov.in/en/","note":"Maharashtra Medical Education Department homepage directly opened but did not provide Grant Medical College programme/admission facts in the inspected content. Avoid attributing the department's general information or other college material to Grant."},
+    {"institutionSlug":"hindustan-university","status":"NO_DIRECT_PAGE_VALIDATED","sourceUrl":null,"note":"No official current programme/admission source was directly validated in this batch; no claim staged."}
+  ]
+}

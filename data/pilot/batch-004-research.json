@@ -1,0 +1,327 @@
+[
+  {
+    "slug": "iim-kozhikode",
+    "url": "https://iimk.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "iim-shillong",
+    "url": "https://www.iimshillong.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "iim-ranchi",
+    "url": "https://iimranchi.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "fms-delhi",
+    "url": "https://www.fms.edu/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "jipmer-puducherry",
+    "url": "https://jipmer.edu.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "king-georges-medical-university",
+    "url": "https://www.kgmu.org/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "jamia-millia-islamia",
+    "url": "https://jmi.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "banaras-hindu-university",
+    "url": "https://www.bhu.ac.in/Site/Home/1_2_7047_Main-Site",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "aligarh-muslim-university",
+    "url": "https://www.amu.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "presidency-university",
+    "url": "https://presiuniv.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "christ-university",
+    "url": "https://christuniversity.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "nmims-mumbai",
+    "url": "https://www.nmims.edu/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "sp-jain-institute",
+    "url": "https://www.spjimr.org/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "nalsar-university-of-law",
+    "url": "https://nalsar.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "nliu-bhopal",
+    "url": "https://nliu.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "iit-mandi",
+    "url": "https://iitmandi.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "iit-ropar",
+    "url": "https://www.iitrpr.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "iit-patna",
+    "url": "https://www.iitp.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "iit-bhubaneswar",
+    "url": "https://www.iitbbs.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "iit-gandhinagar",
+    "url": "https://iitgn.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "iit-jodhpur",
+    "url": "https://www.iitj.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "nit-jamshedpur",
+    "url": "https://www.nitjsr.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "nit-kurukshetra",
+    "url": "https://nitkkr.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "nit-patna",
+    "url": "https://www.nitp.ac.in/",
+    "outcome": "PUBLIC_HTML_IDENTITY_OBSERVED",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  },
+  {
+    "slug": "nit-raipur",
+    "url": "https://www.nitrr.ac.in/",
+    "outcome": "ACCESS_BLOCKED_TIMEOUT_403_502_OR_JS_SHELL",
+    "checkedAt": "2026-11-17",
+    "scope": "Institution-level link only; campus and facts require human review",
+    "permissions": {
+      "linkReference": "minimal factual link only",
+      "automatedBulkRetrieval": "NOT_ESTABLISHED",
+      "documentStorage": "NOT_AUTHORIZED",
+      "bulkRedistribution": "NOT_AUTHORIZED"
+    }
+  }
+]

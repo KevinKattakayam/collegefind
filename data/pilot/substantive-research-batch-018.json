@@ -1,0 +1,80 @@
+{
+  "batch": 18,
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchBatchScope": "TARGETED_FOLLOW_UP_OF_PRIOR_NO_STAGEABLE_DISPOSITIONS",
+  "researchedAt": "2026-11-18T09:52:56Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "method": "Manual read-only inspection of an official Anna University Centre for Academic Courses page; no automated bulk collection or restriction bypass.",
+    "factualUse": "Two current-on-page institutional office contact values only, with publisher, exact URL, retrieval time and locator. No surrounding prose, documents or unrelated programme lists stored.",
+    "reuseConditions": "The consulted contact page did not expose a specific licence or reuse grant in the checked content. Retain this narrow source-attributed fact record only; public accessibility is not evidence of bulk extraction/redistribution permission. Recheck the contact before human approval/public display."
+  },
+  "sources": [
+    {
+      "id": "annauniv-centre-academic-courses-contact",
+      "institutionSlug": "anna-university",
+      "publisher": "Anna University, Centre for Academic Courses",
+      "url": "https://cac.annauniv.edu/uddetails/revision_ud_ug_cands_2023.html",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-18T09:52:56Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official University Departments curriculum page read manually. No specific licence/reuse terms were located on this page. Only the Centre for Academic Courses office phone and email, exact URL and locator are retained. No broad extraction or redistribution permission is asserted.",
+      "evidenceLocations": [
+        "Page lines 186-204, Contact Us: Centre for Academic Courses, Anna University, Chennai; telephone 044-2235-7076 and email dac@annauniv.edu. These are office-level, not college-admissions-office contacts."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "anna-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Centre for Academic Courses, Anna University",
+        "channel": "PHONE",
+        "contact": "044-2235-7076"
+      },
+      "sourceIds": ["annauniv-centre-academic-courses-contact"],
+      "academicYear": null,
+      "evidenceLocation": "Official contact section lines 186-204 names Anna University, Chennai and gives Centre for Academic Courses telephone 044-2235-7076. Office contact; not represented as programme admissions support.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "anna-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Centre for Academic Courses, Anna University",
+        "channel": "EMAIL",
+        "contact": "dac@annauniv.edu"
+      },
+      "sourceIds": ["annauniv-centre-academic-courses-contact"],
+      "academicYear": null,
+      "evidenceLocation": "Official contact section lines 186-204 names Anna University, Chennai and gives Centre for Academic Courses email dac@annauniv.edu. Office contact; not represented as programme admissions support.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchDisposition": [
+    {
+      "institutionSlug": "anna-university",
+      "status": "STAGEABLE_OFFICE_CONTACT_ONLY",
+      "sources": ["https://cac.annauniv.edu/uddetails/revision_ud_ug_cands_2023.html"],
+      "note": "Official Centre for Academic Courses page clearly identifies Anna University, Chennai and the office contact details. Contact values are scoped to that office, not campus-specific admissions. Programmes, admission rules, fees, hostel charges, scholarships, accreditation and placements were not staged from this page; University Department versus affiliated campus distinctions remain required for those fields."
+    }
+  ],
+  "counts": {
+    "institutionsFollowedUp": 1,
+    "previouslyNoStageableInstitutionsRevisited": 1,
+    "claimsEligibleForStaging": 2,
+    "claimsStaged": 2,
+    "claimsReusedOnImmediateRetry": 2,
+    "claimsHeldForConflictOrReuseReview": 0,
+    "institutionsHeld": 0,
+    "genuineVerifiedClaims": 0
+  }
+}

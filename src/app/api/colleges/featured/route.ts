@@ -10,7 +10,7 @@ import { collegeListSelect } from '@/server/colleges';
 export const GET = withErrorHandling(async () => {
   const colleges = await prisma.college.findMany({
     select: collegeListSelect,
-    orderBy: [{ dataStatus: 'desc' }, { name: 'asc' }],
+    orderBy: [{ name: 'asc' }, { id: 'asc' }],
     take: 6,
   });
   return NextResponse.json({ colleges }, { headers: { 'Cache-Control': CACHE_PUBLIC_SHORT } });

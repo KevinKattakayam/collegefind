@@ -1,0 +1,240 @@
+[
+  {
+    "slug": "srm-ap",
+    "claimId": "cmwkz9wiz0002fbtvheoq081m",
+    "sourceId": "cmwkz9wic0000fbtved9ywwru",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-arunachal-pradesh",
+    "claimId": "cmwkz9wjn0006fbtv6nynephl",
+    "sourceId": "cmwkz9wjh0004fbtvx4o5795o",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-goa",
+    "claimId": "cmwkz9wk2000afbtvge6zyzv1",
+    "sourceId": "cmwkz9wjv0008fbtvt1x2qug4",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "bj-medical-college",
+    "claimId": "cmwkz9wkk000efbtvx58sz1cp",
+    "sourceId": "cmwkz9wkd000cfbtvy2p3md3s",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "dhirubhai-ambani-institute",
+    "claimId": "cmwkz9wl0000ifbtvufi751k9",
+    "sourceId": "cmwkz9wku000gfbtvlalb879g",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "gd-goenka-university",
+    "claimId": "cmwkz9wlh000mfbtvrwhtasyt",
+    "sourceId": "cmwkz9wla000kfbtvrffm7v7o",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "manipal-institute-of-technology",
+    "claimId": "cmwkz9wly000qfbtv25bhgjpr",
+    "sourceId": "cmwkz9wlq000ofbtv2zyg6g28",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-mizoram",
+    "claimId": "cmwkz9wma000ufbtv9vlljex9",
+    "sourceId": "cmwkz9wm6000sfbtvy6tojfex",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-nagaland",
+    "claimId": "cmwkz9wmo000yfbtvtldzvcsc",
+    "sourceId": "cmwkz9wmj000wfbtvl6153z2t",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-sikkim",
+    "claimId": "cmwkz9wn20012fbtvcjyaforu",
+    "sourceId": "cmwkz9wmw0010fbtv1bz4u20w",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "cmi-chennai",
+    "claimId": "cmwkz9wnd0016fbtvsze4knm1",
+    "sourceId": "cmwkz9wn80014fbtvuqugc4nu",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "amity-university",
+    "claimId": "cmwkz9wnn001afbtvp2mro3go",
+    "sourceId": "cmwkz9wnj0018fbtvo2h6s409",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-uttarakhand",
+    "claimId": "cmwkz9wny001efbtvfk2rys9b",
+    "sourceId": "cmwkz9wns001cfbtv5qjo8p10",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "upes-dehradun",
+    "claimId": "cmwkz9wo8001ifbtvlz0cy4ms",
+    "sourceId": "cmwkz9wo4001gfbtvmibw5wd2",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "gitam-university",
+    "claimId": "cmwkz9woi001mfbtvsn4ckrsm",
+    "sourceId": "cmwkz9woe001kfbtvpbcbl0oe",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "rajiv-gandhi-university",
+    "claimId": "cmwkz9wov001qfbtvuzfueknw",
+    "sourceId": "cmwkz9won001ofbtvq3nw8b59",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "gauhati-university",
+    "claimId": "cmwkz9wp5001ufbtv908pwbap",
+    "sourceId": "cmwkz9wp1001sfbtvy9sbcczn",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "central-university-of-haryana",
+    "claimId": "cmwkz9wpg001yfbtvj59kewh2",
+    "sourceId": "cmwkz9wpb001wfbtvlkvh6goq",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "op-jindal-university",
+    "claimId": "cmwkz9wpo0022fbtvxixkrfep",
+    "sourceId": "cmwkz9wpk0020fbtvsfy2veay",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nit-srinagar",
+    "claimId": "cmwkz9wpx0026fbtvjr4b963g",
+    "sourceId": "cmwkz9wpu0024fbtvlijsw0bb",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "vjti-mumbai",
+    "claimId": "cmwkz9wq8002afbtvgclhz99y",
+    "sourceId": "cmwkz9wq40028fbtvk9cgosbw",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nagaland-university",
+    "claimId": "cmwkz9wqg002efbtv4t95zof7",
+    "sourceId": "cmwkz9wqd002cfbtvxcryhm13",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "centurion-university",
+    "claimId": "cmwkz9wqo002ifbtvg6jwo7of",
+    "sourceId": "cmwkz9wqk002gfbtvn9m9x2nu",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "chitkara-university",
+    "claimId": "cmwkz9wqx002mfbtv0nku4qlj",
+    "sourceId": "cmwkz9wqt002kfbtv1vmxbuf4",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "nlu-jodhpur",
+    "claimId": "cmwkz9wr7002qfbtvrpo0idn6",
+    "sourceId": "cmwkz9wr2002ofbtvhaghd2kn",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "sikkim-university",
+    "claimId": "cmwkza4yl0002i7tviq4jx29q",
+    "sourceId": "cmwkza4y60000i7tvr99oi6h1",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "madras-medical-college",
+    "claimId": "cmwkza4z90006i7tv5zybdw9b",
+    "sourceId": "cmwkza4z20004i7tvch371dby",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "kalasalingam-university",
+    "claimId": "cmwkza4zm000ai7tv543t0grd",
+    "sourceId": "cmwkza4zg0008i7tvunbji0pj",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "bennett-university",
+    "claimId": "cmwkza4zx000ei7tvhnlai5q3",
+    "sourceId": "cmwkza4zs000ci7tvu1sdvg4d",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "graphic-era-university",
+    "claimId": "cmwkza50e000ii7tvb6zk3gfo",
+    "sourceId": "cmwkza506000gi7tv5rblq4w8",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "dibrugarh-university",
+    "claimId": "cmwkza50t000mi7tv2lcwproq",
+    "sourceId": "cmwkza50m000ki7tvulca9g2r",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iim-bodh-gaya",
+    "claimId": "cmwkza518000qi7tv5otp5fjx",
+    "sourceId": "cmwkza511000oi7tvq5jncgdy",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "gnlu-gandhinagar",
+    "claimId": "cmwkza51m000ui7tvqj8w5iu0",
+    "sourceId": "cmwkza51g000si7tv3ddl8pdl",
+    "status": "STAGED",
+    "field": "website"
+  },
+  {
+    "slug": "iim-sirmaur",
+    "claimId": "cmwkza520000yi7tva8rlq8o4",
+    "sourceId": "cmwkza51u000wi7tvdf002i9k",
+    "status": "STAGED",
+    "field": "website"
+  }
+]

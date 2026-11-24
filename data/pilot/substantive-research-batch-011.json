@@ -1,0 +1,944 @@
+{
+  "batch": 11,
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchedAt": "2026-11-18T05:34:46Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "researchDisposition": [
+    {
+      "institutionSlug": "delhi-technological-university",
+      "outcome": "STAGEABLE",
+      "note": "Official 2025-26 B.Tech tuition notification, exact annual amount and date."
+    },
+    {
+      "institutionSlug": "nliu-bhopal",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official 2026-27 fee schedule and admissions page found; individual fee PDF did not expose readable fee cells in this research session. No value inferred."
+    },
+    {
+      "institutionSlug": "nmims-mumbai",
+      "outcome": "IDENTITY_SCOPE_HELD",
+      "note": "Search surfaced campus-specific and online/continuing-education NMIMS offers. No fact staged against the broad Mumbai catalogue identity."
+    },
+    {
+      "institutionSlug": "king-georges-medical-university",
+      "outcome": "STAGEABLE",
+      "note": "Official footer contact email has a clear institutional publisher; fee table lacks a clearly applicable academic year and fee definition, so no fee staged."
+    },
+    {
+      "institutionSlug": "netaji-subhas-university-of-technology",
+      "outcome": "STAGEABLE",
+      "note": "Official course catalogue lists B.Tech branches; official current admissions page identifies JAC Delhi route for 2026."
+    },
+    {
+      "institutionSlug": "christ-university",
+      "outcome": "IDENTITY_SCOPE_HELD",
+      "note": "Current course material is campus-specific while catalogue identity is university-wide; no campus attribution staged."
+    },
+    {
+      "institutionSlug": "sp-jain-institute",
+      "outcome": "STAGEABLE",
+      "note": "Official 16-Sep-2026 release covers 2027-29 PGDM/BM admission, eligibility and application portal; current 2024-26 placement highlights lack denominator in inspected summary."
+    },
+    {
+      "institutionSlug": "banaras-hindu-university",
+      "outcome": "STAGEABLE",
+      "note": "Official 2026 UG admissions notices and programme catalogue provide course and CUET route facts."
+    },
+    {
+      "institutionSlug": "fms-delhi",
+      "outcome": "STAGEABLE",
+      "note": "Official MBA Full Time page provides eligibility by category; no current admission cycle/exam rule staged."
+    },
+    {
+      "institutionSlug": "aligarh-muslim-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "No source with a clear current programme/admission fact was confirmed in this batch; continue with official AMU admissions publications in a later pass."
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official 2026-27 prospectus and press release found, but specific course facts and reuse of the prospectus compilation need targeted field review; no claim staged from a press-release summary."
+    },
+    {
+      "institutionSlug": "srm-ap",
+      "outcome": "STAGEABLE",
+      "note": "Official 2026-27 admission booklet and school/admission pages provide programme, admission, fee and scholarship evidence."
+    },
+    {
+      "institutionSlug": "nit-arunachal-pradesh",
+      "outcome": "STAGEABLE",
+      "note": "Official July-Dec 2026 UG fee PDF gives category-specific tuition by semester."
+    },
+    {
+      "institutionSlug": "maulana-azad-medical-college",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official page shows MBBS duration and fees but is undated/legacy; 2026 admission notice is a batch form, not sufficient to restate current requirements or fees."
+    },
+    {
+      "institutionSlug": "nit-goa",
+      "outcome": "STAGEABLE",
+      "note": "Official JoSAA/CSAB page lists B.Tech branches and 2026 admission route; no fee total inferred."
+    },
+    {
+      "institutionSlug": "bj-medical-college",
+      "outcome": "CONFLICT_HELD",
+      "note": "Official BJMC pages surfaced inconsistent legacy eligibility/entrance-exam wording; hold until current Gujarat counselling/NEET rules are reconciled."
+    },
+    {
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "outcome": "STAGEABLE",
+      "note": "DAU (formerly DA-IICT) official 2026-27 admission page provides JEE Main route, tuition, hostel rent and scholarship reference; exact catalogue identity alias is supported by official page."
+    },
+    {
+      "institutionSlug": "gd-goenka-university",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Official fee page is accessible, but programme/campus/category-level fee rows require direct row review before importing. No fee guessed from search result."
+    },
+    {
+      "institutionSlug": "manipal-institute-of-technology",
+      "outcome": "STAGEABLE",
+      "note": "MAHE official engineering admissions page explicitly covers MIT Manipal and gives JEE 2027 eligibility; facts kept within the MIT Manipal campus scope."
+    },
+    {
+      "institutionSlug": "grant-medical-college",
+      "outcome": "IDENTITY_CONFLICT",
+      "note": "Search surfaced Government Medical College, GT and Cama Hospitals at gmcmumbai.org, a different institute; excluded from Grant Medical College."
+    },
+    {
+      "institutionSlug": "symbiosis-law-school",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Search did not confirm an official SLS Pune programme/admissions page with sufficiently clear identity and year in this pass; no third-party facts used."
+    },
+    {
+      "institutionSlug": "nit-manipur",
+      "outcome": "STAGEABLE",
+      "note": "Official institution/department material identifies B.Tech branches, duration and JEE route; current 2026 JoSAA notice cross-checked."
+    },
+    {
+      "institutionSlug": "nit-nagaland",
+      "outcome": "STAGEABLE",
+      "note": "Official 2026 JoSAA/CSAB admission page and 2025-26 signed fee schedule provide programme, route, tuition and hostel components."
+    },
+    {
+      "institutionSlug": "siksha-o-anusandhan",
+      "outcome": "STAGEABLE",
+      "note": "Official 2026 admissions website states SAAT/equivalent route and separate NEET/DGHS route for medical programmes."
+    },
+    {
+      "institutionSlug": "banasthali-vidyapith",
+      "outcome": "RESEARCHED_HELD",
+      "note": "Search surfaced an official payment terms PDF but not a current programme/admission fact source; do not treat terms pages as programme evidence."
+    }
+  ],
+  "sources": [
+    {
+      "id": "dtu-btech-fee-2025-26",
+      "institutionSlug": "delhi-technological-university",
+      "publisher": "Delhi Technological University, Academic Council",
+      "url": "https://dtu.ac.in/Web/quick_links/pdf/AC/41_AC.pdf",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": "2025-05-20",
+      "academicYear": "2025-26",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Manually examined official public PDF. Only individually attributable factual values and exact source link are staged. No PDF, copied prose or bulk table reproduction. No explicit bulk redistribution licence identified; human review remains required before public display.",
+      "evidenceLocations": [
+        "Annexure to 41st Academic Council meeting, PDF page 1, B.Tech fee table, Tuition Fee row; AY 2025-26 column is Rs. 1,63,000."
+      ]
+    },
+    {
+      "id": "kgmu-contact-online-fees-page",
+      "institutionSlug": "king-georges-medical-university",
+      "publisher": "King George's Medical University",
+      "url": "https://www.kgmu.org/online_fee.php",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official public HTML. Only an official institutional contact fact is staged with attribution and link. Fee rows lack a clear year and fee definition and are excluded. No bulk page reproduction.",
+      "evidenceLocations": [
+        "Footer, lines 297-300, institutional address, general email and official domain; website update marker line 317 is not treated as publication date."
+      ]
+    },
+    {
+      "id": "nsut-courses-current",
+      "institutionSlug": "netaji-subhas-university-of-technology",
+      "publisher": "Netaji Subhas University of Technology",
+      "url": "https://www.nsut.ac.in/index.php/en/node/124",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official public course page; short factual course names only, no copied descriptions or bulk compilation. No explicit bulk reuse licence identified.",
+      "evidenceLocations": [
+        "Courses Offered, B.Tech undergraduate branches, page lines 171 onward."
+      ]
+    },
+    {
+      "id": "nsut-admissions-2026",
+      "institutionSlug": "netaji-subhas-university-of-technology",
+      "publisher": "Netaji Subhas University of Technology",
+      "url": "https://nsut.ac.in/",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official homepage/admissions navigation; 2026 B.Tech/JAC Delhi admissions link only. No copied page content or bulk reuse.",
+      "evidenceLocations": [
+        "Homepage Admissions section: B.Tech/B.Arch admissions through JAC Delhi; Admission 2026 link."
+      ]
+    },
+    {
+      "id": "spjimr-pgdm-2027-29-release",
+      "institutionSlug": "sp-jain-institute",
+      "publisher": "Bharatiya Vidya Bhavan's S.P. Jain Institute of Management and Research",
+      "url": "https://www.spjimr.org/newsroom/press-release/spjimr-opens-applications-for-pgdm-and-pgdm-bm-programmes-for-2027-29/",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": "2026-09-16",
+      "academicYear": "2027-29",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined first-party press release. Only attributed facts are staged; no press-release prose is republished. Claims remain unreviewed.",
+      "evidenceLocations": [
+        "Press release lines 117-128: two-year full-time residential PGDM/PGDM(BM), intake, 2027-29 application dates and official application portal; lines 149-149: accreditation statement not staged due to absent validity period."
+      ]
+    },
+    {
+      "id": "bhu-ug-admission-2026-registration",
+      "institutionSlug": "banaras-hindu-university",
+      "publisher": "Banaras Hindu University, Central Admission Committee",
+      "url": "https://admission.bhu.ac.in/en/notice/registration-for-undergraduate-admissions-2026/ckgr9qd2xdq1qkmud380paqh",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": "2026-07-09",
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official admission notice; fact summaries and exact URL only. No copied notice or bulk reuse. Cycle is historical and must be labelled as 2026-27.",
+      "evidenceLocations": [
+        "Registration notice, published 9 July 2026: candidates who appeared in CUET-UG 2026 eligible to register; application portal and July 25 deadline."
+      ]
+    },
+    {
+      "id": "bhu-programme-catalogue",
+      "institutionSlug": "banaras-hindu-university",
+      "publisher": "Banaras Hindu University",
+      "url": "https://bhu.ac.in/Site/Programme/",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined individual programme entry returned by the official BHU programme catalogue. No bulk table capture or redistribution. Exact item and source link retained for review.",
+      "evidenceLocations": [
+        "Official programme catalogue entry 147 returned in indexed catalogue: Bachelor of Science in Computer Science (under NEP), Undergraduate, 4 Years; applying-year eligibility is referred to the CUET bulletin and is not inferred here."
+      ]
+    },
+    {
+      "id": "fms-mba-fulltime-eligibility",
+      "institutionSlug": "fms-delhi",
+      "publisher": "Faculty of Management Studies, University of Delhi",
+      "url": "https://www.fms.edu/programmes/mba-full-time",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official programme page. One short eligibility summary only; no page copy or bulk compilation. Admission cycle and test rule are not supplied by this excerpt and are omitted.",
+      "evidenceLocations": [
+        "MBA Full Time page lines 83-100: bachelor's degree minimum marks by category, final-year applicants and CGPA conversion requirements."
+      ]
+    },
+    {
+      "id": "srm-ap-admission-booklet-2026-27",
+      "institutionSlug": "srm-ap",
+      "publisher": "SRM University-AP",
+      "url": "https://www.srmap.edu.in/wp-content/uploads/2026/09/Admission-Booklet-AY-2026-2027-Domestic.pdf",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Manually examined official admission booklet for one academic cycle. Individual amount and scholarship rule are attributed and linked; no PDF or full table is retained. Bulk redistribution of the copyrighted booklet is not attempted.",
+      "evidenceLocations": [
+        "PDF page 15: non-CSE B.Tech annual tuition category A Rs. 25,000, 90% concession; category is conditioned on satisfying admission eligibility and SRMJEEE category cutoff. The value is not a universal B.Tech fee."
+      ]
+    },
+    {
+      "id": "srm-ap-engineering-programmes",
+      "institutionSlug": "srm-ap",
+      "publisher": "SRM University-AP, School of Engineering and Applied Sciences",
+      "url": "https://www.srmap.edu.in/school-of-engineering-and-applied-sciences/",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official school page. One programme fact with exact source link; no table or prose reproduction.",
+      "evidenceLocations": [
+        "Programme table lines 284-288: B.Tech CSE with AI & ML, 4 years; table also describes specialisation/focus areas."
+      ]
+    },
+    {
+      "id": "srm-ap-btech-admission-2026-27",
+      "institutionSlug": "srm-ap",
+      "publisher": "SRM University-AP",
+      "url": "https://www.srmap.edu.in/admission/seas-btech-eligibility/",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official admission requirements page. It says criteria may change and numeric minimum percentage is prescribed from time to time; no unsupported numeric threshold is staged.",
+      "evidenceLocations": [
+        "Admission Instructions lines 318-325: selection based on SRMJEEE(UG)/SRMAPET performance; exact programme-level marks remain subject to current criteria."
+      ]
+    },
+    {
+      "id": "nitap-fee-ug-jul-dec-2026",
+      "institutionSlug": "nit-arunachal-pradesh",
+      "publisher": "National Institute of Technology Arunachal Pradesh, Academic Section",
+      "url": "https://api.nitap.ac.in/nitap/documents/cmnmyic4p000007lxyrcmi2j7/1782658014426-UG_July-Dec__2026_batch_onwards.pdf",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Manually examined official 4-page fee schedule. Only individual tuition rows are staged with category/income scope and source link; no whole table or document retained.",
+      "evidenceLocations": [
+        "PDF page 1, UG fee structure July-Dec 2026 batch onwards, Tuition Fee row and column headings: General/OBC Rs. 62,500; category with parental annual income Rs. 1-5 lakh Rs. 20,833; semester 1 and semesters 2-8 columns match."
+      ]
+    },
+    {
+      "id": "nitgoa-admissions-josaa-2026",
+      "institutionSlug": "nit-goa",
+      "publisher": "National Institute of Technology Goa, UG Admissions (JoSAA/CSAB) Committee",
+      "url": "https://www.nitgoa.ac.in/admissions/josaa.html",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined current official admissions page. Programme names and route only. The exact official page links JoSAA/CSAB material; no historical cutoff values are imported here.",
+      "evidenceLocations": [
+        "Page lines 64-91: B.Tech programme list, JEE Main 2026 admission procedure and 2026 reporting/rules links."
+      ]
+    },
+    {
+      "id": "dau-ug-admission-fees-2026-27",
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "publisher": "Dhirubhai Ambani University (formerly DA-IICT), School of Technology",
+      "url": "https://daiict.ac.in/undergraduate-admissions-all-india-category",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official 2026-27 admission page. The page itself identifies DAU (formerly DA-IICT), confirming catalogue identity continuity. Only individual values are staged; page says fees are submitted for state appellate consideration and subject to revision.",
+      "evidenceLocations": [
+        "2026-27 UG All India Category page: B.Tech selection by JEE Main 2026 and 10+2 subject criteria; Fee Structure lines 173-179: tuition Rs. 1,92,500/semester, hostel rent Rs. 37,800/semester, excluding food; scholarship section lines 215-217."
+      ]
+    },
+    {
+      "id": "dau-ug-scholarships-2025-26",
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "publisher": "Dhirubhai Ambani University (formerly DA-IICT)",
+      "url": "https://www.daiict.ac.in/index.php/btech-merit-and-mcm-scholarships",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": "2025-26",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official scholarship page. Scheme link and stated year are retained. No full scholarship table is copied; all individual eligibility details are deferred to human review.",
+      "evidenceLocations": [
+        "B.Tech scholarships page, heading states effect from 2025-26 batch; merit and merit-cum-means scholarship categories and eligibility table. For current 2026-27 applicants, verify whether unchanged before relying on it."
+      ]
+    },
+    {
+      "id": "nitmanipur-cse-programme",
+      "institutionSlug": "nit-manipur",
+      "publisher": "National Institute of Technology Manipur, Department of Computer Science and Engineering",
+      "url": "https://nitmanipur.ac.in/Deptindex.aspx?ItemID=ca&nDeptID=k&page=a",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": null,
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official department programme page. One current catalogue fact only; page maintenance/publication date is not stated, so claim remains unreviewed and should be rechecked before public approval.",
+      "evidenceLocations": [
+        "Computer Science and Engineering, Programmes Offered table: B.Tech CSE and 4-year programme; same page notes B.Tech admission via JEE score, with exact current rules deferred to annual JoSAA notice."
+      ]
+    },
+    {
+      "id": "nitnagaland-admissions-2026",
+      "institutionSlug": "nit-nagaland",
+      "publisher": "National Institute of Technology Nagaland, B.Tech Admission Committee",
+      "url": "https://www.nitnagaland.ac.in/index.php/academics/admission/btech/btech-csab26",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official admission page for the 2026 cycle. Route/programme facts only; no archived list or applicant data stored.",
+      "evidenceLocations": [
+        "Latest News B.Tech Admission 2026, lines 122-140: physical reporting through CSAB/JoSAA schedule, JoSAA UG link, JEE Main reference and course list (8 semesters)."
+      ]
+    },
+    {
+      "id": "nitnagaland-fee-2025-26",
+      "institutionSlug": "nit-nagaland",
+      "publisher": "National Institute of Technology Nagaland, Dean (Academic)",
+      "url": "https://www.nitnagaland.ac.in/templates/g5_helium/PDF/AcademicSec/Fee_Structure_25-26.pdf",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": "2025-04-28",
+      "academicYear": "2025-26",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Manually examined signed official fee schedule. Individual facts only; no full document/table stored. Exemptions and dining-adjustment terms are part of evidence and must remain visible to reviewers.",
+      "evidenceLocations": [
+        "PDF page 4, B.Tech 1st semester fee table: tuition Rs. 62,500, tuition exempt for SC/ST; hostel semester subtotal Rs. 32,000 consists of establishment, mess advance and seat rent, with dining adjusted monthly; signed 28-Apr-2025."
+      ]
+    },
+    {
+      "id": "soa-saat-2026-routes",
+      "institutionSlug": "siksha-o-anusandhan",
+      "publisher": "Siksha 'O' Anusandhan, official admissions website",
+      "url": "https://www.admission.soa.ac.in/saat-js",
+      "retrievedAt": "2026-11-18T05:34:46Z",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Manually examined official admissions website. Only exact stated exam and counselling route is staged; no generic programme eligibility is inferred.",
+      "evidenceLocations": [
+        "SAAT 2026 information: medical/dental programmes use NEET through DGHS; SAAT/equivalent qualifying exam and counselling instructions for other stated applicants, page lines 60 onward."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "delhi-technological-university",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "B.Tech",
+        "category": "Regular admission; category not further differentiated in the cited tuition row",
+        "component": "Tuition fee",
+        "feeType": "TUITION",
+        "period": "YEAR",
+        "amountInr": 163000
+      },
+      "sourceIds": [
+        "dtu-btech-fee-2025-26"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "Academic Council annexure PDF p.1, B.Tech table, Tuition Fee row, AY2025-26 column.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "netaji-subhas-university-of-technology",
+      "field": "courses",
+      "value": [
+        "B.Tech Electronics and Communication Engineering",
+        "B.Tech Computer Engineering",
+        "B.Tech Computer Science and Engineering (Artificial Intelligence specialisation)",
+        "B.Tech Mathematics and Computing",
+        "B.Tech Electrical Engineering",
+        "B.Tech Instrumentation and Control Engineering",
+        "B.Tech Manufacturing Process and Automation Engineering",
+        "B.Tech Mechanical Engineering",
+        "B.Tech Information Technology",
+        "B.Tech Bio-Technology"
+      ],
+      "sourceIds": [
+        "nsut-courses-current"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Official Courses Offered page, B.Tech undergraduate branch list, lines 171 onward.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "netaji-subhas-university-of-technology",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech and B.Arch undergraduate programmes",
+        "route": "JAC Delhi counselling",
+        "category": "Applicants to NSUT undergraduate programmes",
+        "applicationUrl": "https://jacdelhi.admissions.nic.in/"
+      },
+      "sourceIds": [
+        "nsut-admissions-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official homepage Admissions section links B.Tech/B.Arch admissions through JAC Delhi and labels Admission 2026.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "sp-jain-institute",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "PGDM and PGDM (Business Management)",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "spjimr-pgdm-2027-29-release"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "16-Sep-2026 release lines 123-125 states both are two-year, full-time residential programmes.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "sp-jain-institute",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "PGDM and PGDM (Business Management)",
+        "route": "Single online application followed by programme selection",
+        "category": "Indian applicants",
+        "exam": "CAT 2026 or GMAT",
+        "eligibility": "Bachelor's degree or equivalent from a recognised university; fresh graduates and applicants with up to five years of work experience may apply; final-year students may apply.",
+        "applicationUrl": "https://pgdmadmissions.spjimr.org/"
+      },
+      "sourceIds": [
+        "spjimr-pgdm-2027-29-release"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "16-Sep-2026 release lines 123-128 and eligibility section of same release; application portal and deadline 27-Nov-2026.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "banaras-hindu-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. in Computer Science (under NEP)",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "bhu-programme-catalogue"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Official programme catalogue entry 147, indexed row lists Undergraduate, 4 Years; applying-year eligibility referred to the relevant CUET bulletin.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "banaras-hindu-university",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "BHU undergraduate programmes",
+        "route": "CUET-UG score followed by online BHU/CAP registration",
+        "category": "Applicants who appeared in CUET-UG 2026",
+        "exam": "CUET-UG 2026",
+        "applicationUrl": "https://admission.bhu.ac.in/"
+      },
+      "sourceIds": [
+        "bhu-ug-admission-2026-registration"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "BHU registration notice published 9-Jul-2026; eligibility, portal and last date in notice. This is historical 2026-27 cycle information.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "fms-delhi",
+      "field": "admissions",
+      "value": "MBA Full Time eligibility: bachelor's degree after 12 years of schooling with at least 50% for unreserved candidates; SC/ST require passing marks; OBC Non-Creamy Layer/EWS/PWD/CW require 45% under University rules. Final-year bachelor's candidates may apply subject to completing the degree and submitting final results. Verify the current year's bulletin before applying.",
+      "sourceIds": [
+        "fms-mba-fulltime-eligibility"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Official MBA Full Time page lines 83-100. Current admission cycle and entrance-test conditions are not covered by this claim.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "srm-ap",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech Computer Science and Engineering (AI & ML focus areas)",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "srm-ap-engineering-programmes"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Official School of Engineering programme table lines 284-288, degree, duration and listed focus areas.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "srm-ap",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech programmes",
+        "route": "Entrance examination and university selection",
+        "category": "B.Tech applicants",
+        "exam": "SRMJEEE (UG) or SRMAPET"
+      },
+      "sourceIds": [
+        "srm-ap-btech-admission-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official admission instructions lines 318-322. Numeric subject/marks criteria are not staged because the page says they are prescribed separately and may change.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "srm-ap",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "B.Tech non-CSE programmes including ECE, EEE, Civil and Mechanical",
+        "category": "SRMJEEE fee category A; eligibility and cutoff required; limited seats",
+        "component": "Annual tuition fee",
+        "feeType": "TUITION",
+        "period": "YEAR",
+        "amountInr": 25000
+      },
+      "sourceIds": [
+        "srm-ap-admission-booklet-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official domestic admission booklet PDF p.15: Category A is Rs.25,000 yearly tuition and 90% concession; limited category seats and admission cutoff apply.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "srm-ap",
+      "field": "structured",
+      "value": {
+        "kind": "scholarship",
+        "scheme": "SRM AP B.Tech Equitable Representation Scholarship, non-CSE Category A",
+        "eligibility": "B.Tech ECE, EEE, Civil or Mechanical programme; satisfy basic admission eligibility and SRMJEEE category A cutoff; limited seats.",
+        "url": "https://www.srmap.edu.in/wp-content/uploads/2026/09/Admission-Booklet-AY-2026-2027-Domestic.pdf"
+      },
+      "sourceIds": [
+        "srm-ap-admission-booklet-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official domestic admission booklet PDF p.15, Equitable Representation Scholarship table and notes.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-arunachal-pradesh",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "UG programmes",
+        "category": "General/OBC",
+        "component": "Tuition fee",
+        "feeType": "TUITION",
+        "period": "SEMESTER",
+        "amountInr": 62500
+      },
+      "sourceIds": [
+        "nitap-fee-ug-jul-dec-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official July-Dec 2026 UG fee PDF p.1, tuition row under General/OBC column, semester 1 and semesters 2-8 columns.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-arunachal-pradesh",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "UG programmes",
+        "category": "Parent annual income Rs.1 lakh to Rs.5 lakh",
+        "component": "Tuition fee",
+        "feeType": "TUITION",
+        "period": "SEMESTER",
+        "amountInr": 20833
+      },
+      "sourceIds": [
+        "nitap-fee-ug-jul-dec-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official July-Dec 2026 UG fee PDF p.1, tuition row, Rs.1-5 lakh annual-income column; same value applies to semester 1 and semesters 2-8.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-goa",
+      "field": "courses",
+      "value": [
+        "B.Tech Civil Engineering",
+        "B.Tech Computer Science and Engineering",
+        "B.Tech Electrical and Electronics Engineering",
+        "B.Tech Electronics and Communication Engineering",
+        "B.Tech Mechanical Engineering"
+      ],
+      "sourceIds": [
+        "nitgoa-admissions-josaa-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official admissions page lines 64-74; B.Tech programme list.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-goa",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech programmes",
+        "route": "JoSAA/CSAB/DASA admission process",
+        "category": "Indian undergraduate applicants",
+        "exam": "JEE Main 2026"
+      },
+      "sourceIds": [
+        "nitgoa-admissions-josaa-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official page admission procedure and 2026 physical reporting/rules links, lines 78-87.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech programmes, All India Category",
+        "route": "JEE Main rank-based merit and online application",
+        "category": "All India Category applicants",
+        "exam": "JEE Main 2026",
+        "eligibility": "Passed or appearing in Class 12/equivalent with Mathematics, Physics and one of Chemistry, Biotechnology, Computer Science or Biology.",
+        "applicationUrl": "https://daiict.ac.in/undergraduate-admissions-all-india-category"
+      },
+      "sourceIds": [
+        "dau-ug-admission-fees-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official 2026-27 All India admissions page, eligibility and selection criteria sections.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "B.Tech programmes, All India Category",
+        "category": "All India Category",
+        "component": "Tuition fee",
+        "feeType": "TUITION",
+        "period": "SEMESTER",
+        "amountInr": 192500
+      },
+      "sourceIds": [
+        "dau-ug-admission-fees-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official 2026-27 admissions fee table, tuition Rs.1,92,500 per semester; page says subject to revision and submitted for state appellate consideration.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "B.Tech programmes, All India Category",
+        "category": "All India Category; hostel residents",
+        "component": "Hostel rent (food excluded)",
+        "feeType": "HOSTEL",
+        "period": "SEMESTER",
+        "amountInr": 37800
+      },
+      "sourceIds": [
+        "dau-ug-admission-fees-2026-27"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official 2026-27 admissions fee table: hostel rent Rs.37,800 per semester; food on actuals is stated separately and excluded.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "field": "structured",
+      "value": {
+        "kind": "scholarship",
+        "scheme": "DAU B.Tech merit and merit-cum-means scholarships",
+        "eligibility": "Institute scheme; rank/academic performance and means conditions apply. See official current scheme terms before relying on eligibility.",
+        "url": "https://www.daiict.ac.in/index.php/btech-merit-and-mcm-scholarships"
+      },
+      "sourceIds": [
+        "dau-ug-scholarships-2025-26"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "Official scholarship page, heading states effect from 2025-26 batch; exact category rules are linked and must be rechecked for a later batch.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-nagaland",
+      "field": "courses",
+      "value": [
+        "B.Tech Electrical and Electronics Engineering",
+        "B.Tech Electronics and Communication Engineering",
+        "B.Tech Computer Science and Engineering",
+        "B.Tech Civil Engineering",
+        "B.Tech Mechanical Engineering",
+        "B.Tech Electronics and Instrumentation Engineering"
+      ],
+      "sourceIds": [
+        "nitnagaland-admissions-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official B.Tech CSAB26 page lists B.Tech courses (8 semesters), lines 122-140.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-nagaland",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech programmes",
+        "route": "JoSAA/CSAB central seat allocation and physical reporting",
+        "category": "B.Tech applicants",
+        "exam": "JEE Main"
+      },
+      "sourceIds": [
+        "nitnagaland-admissions-2026"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official 2026 B.Tech admissions page states reporting follows CSAB/JoSAA schedule and references JEE Main/JoSAA/CSAB.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-nagaland",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "B.Tech programmes",
+        "category": "Tuition charge before published SC/ST exemption",
+        "component": "Tuition fee",
+        "feeType": "TUITION",
+        "period": "SEMESTER",
+        "amountInr": 62500
+      },
+      "sourceIds": [
+        "nitnagaland-fee-2025-26"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "Official signed 28-Apr-2025 B.Tech first-semester fee schedule, PDF p.4, tuition row; footnote states SC/ST tuition exemption.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "nit-nagaland",
+      "field": "structured",
+      "value": {
+        "kind": "fee",
+        "programme": "B.Tech programmes",
+        "category": "Hostel residents; 1st semester 2025-26",
+        "component": "Hostel establishment, mess advance and seat rent (dining adjusted monthly)",
+        "feeType": "HOSTEL",
+        "period": "SEMESTER",
+        "amountInr": 32000
+      },
+      "sourceIds": [
+        "nitnagaland-fee-2025-26"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "Official signed fee schedule PDF p.4, hostel semester fees subtotal Rs.32,000; components Rs.6,000 establishment, Rs.21,000 mess advance, Rs.5,000 rent/utilities; dining adjusted monthly.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "siksha-o-anusandhan",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBBS, BDS, MD/MS and MDS",
+        "route": "NEET with DGHS admission process",
+        "category": "Medical/dental applicants",
+        "exam": "NEET"
+      },
+      "sourceIds": [
+        "soa-saat-2026-routes"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official SAAT/admission site states MBBS, BDS, MD/MS and MDS admission is through NEET and to be done by DGHS.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "rejectedOrHeldResearch": [
+    {
+      "institutionSlug": "aligarh-muslim-university",
+      "reason": "No direct official programme/admission fact confirmed in this pass; research again from AMU Controller of Examinations/admission guide."
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "reason": "2026-27 prospectus is a copyrighted compilation. Individual facts may be extracted after manual programme-specific review; no compilation was copied."
+    },
+    {
+      "institutionSlug": "maulana-azad-medical-college",
+      "reason": "Current source for admission-year and numerical MBBS eligibility/fees not confirmed; legacy page values withheld."
+    },
+    {
+      "institutionSlug": "bj-medical-college",
+      "reason": "Official but inconsistent entrance/eligibility statements; human reconciliation with current Gujarat NEET counselling notice required."
+    },
+    {
+      "institutionSlug": "gd-goenka-university",
+      "reason": "Official fee table requires programme/campus/category row-level confirmation before staging."
+    },
+    {
+      "institutionSlug": "grant-medical-college",
+      "reason": "Potential domain result was Government Medical College, GT and Cama Hospitals, not Grant Medical College; excluded pending a correct official domain."
+    },
+    {
+      "institutionSlug": "symbiosis-law-school",
+      "reason": "No authoritative SLS Pune programme page confirmed in search results; no third-party source used."
+    },
+    {
+      "institutionSlug": "banasthali-vidyapith",
+      "reason": "Only official payment terms surfaced; no programme fact inferred from terms."
+    },
+    {
+      "institutionSlug": "king-georges-medical-university",
+      "reason": "General contact is useful but lower priority than programme/admissions/fee facts; retained in research disposition only."
+    },
+    {
+      "institutionSlug": "nit-manipur",
+      "reason": "Programme detail source is undated and page maintenance status is unclear; require current department confirmation before staging."
+    },
+    {
+      "institutionSlug": "nit-nagaland",
+      "reason": "Eight-semester duration corroborates the course list; omit redundant programme claim and retain the precise course/admission/fee facts."
+    },
+    {
+      "institutionSlug": "siksha-o-anusandhan",
+      "reason": "The generic SAAT/equivalent rule applies broadly and has programme-specific exceptions; retain medical route only and research each school separately."
+    }
+  ]
+}

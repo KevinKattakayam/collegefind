@@ -1,0 +1,292 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "sources": [
+    {
+      "id": "mnnit-annual-report-2024-25",
+      "publisher": "Motilal Nehru National Institute of Technology Allahabad, Prayagraj",
+      "url": "https://mnnit.ac.in/images/newstories/2026/notices/Annual_Report_Audit_Report_for_the_year_2024-25_English.pdf",
+      "publicationDate": null,
+      "academicYear": "2024-25",
+      "retrievedAt": "2026-11-18T12:22:50Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official institution-hosted annual report manually read. The report title establishes year 2024-25; an exact publication date was not found. No specific licence for CollegeFind reuse was identified. Store only concise factual values, attribution, URL and page/table locator; do not store the PDF, prose, or table image. This is limited internal research/staging, not permission for bulk republication; reviewer must check public-use terms.",
+      "evidenceLocations": [
+        "Annual Report 2024-25, printed page 7, sections 2.5–2.6; printed page 11, B.Tech and department-wise placement statistics."
+      ],
+      "institutionSlug": "motilal-nehru-national-institute-of-technology"
+    },
+    {
+      "id": "iimcal-mba-admission-policy-2027-29",
+      "publisher": "Indian Institute of Management Calcutta, Admissions Office",
+      "url": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates",
+      "publicationDate": null,
+      "academicYear": "2027-29",
+      "retrievedAt": "2026-11-18T12:22:50Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official public admissions page manually inspected. It identifies the MBA Admission Policy for Batch 2027-29 and the CAT 2026 cycle. Only concise, attributed eligibility/process facts with exact page link and line locators are retained; no substantial prose copied. Page terms do not establish bulk collection/republication permission. Reviewer must confirm cycle remains current and intended public use before approval.",
+      "evidenceLocations": [
+        "Page lines 91–113, 118–137: programme, eligibility, CAT 2026 shortlisting and category-specific minimum percentiles; page 237 says policy applies only to batch 2027-29."
+      ],
+      "institutionSlug": "indian-institute-of-management-calcutta"
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "admissions",
+      "value": "B.Tech admissions use JEE (Main) and JoSAA/CSAB counselling on behalf of the Ministry of Education, as reported for 2024-25.",
+      "sourceIds": [
+        "mnnit-annual-report-2024-25"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Annual Report 2024-25, printed page 7, section 2.6, B.Tech paragraph. This is historical report information, not a statement that the route is unchanged for a later cycle.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "admissions",
+      "value": "Regular M.Tech admissions are based on GATE through CCMT; sponsored M.Tech admissions use an institute-conducted national-level test and interview, as reported for 2024-25.",
+      "sourceIds": [
+        "mnnit-annual-report-2024-25"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Annual Report 2024-25, printed page 7, section 2.6, M.Tech paragraph. QIP is separately mentioned in the source and is not represented as a general admissions route.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "admissions",
+      "value": "MCA admission is through NIMCET, as reported for 2024-25.",
+      "sourceIds": [
+        "mnnit-annual-report-2024-25"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Annual Report 2024-25, printed page 7, section 2.6, MCA paragraph. Historical reporting only.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "admissions",
+      "value": "M.Sc. Mathematics and Scientific Computing admission uses JAM rank and CCMN counselling, as reported for 2024-25.",
+      "sourceIds": [
+        "mnnit-annual-report-2024-25"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Annual Report 2024-25, printed page 7, section 2.6, M.Sc. paragraph. Historical reporting only.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "structured",
+      "value": {
+        "kind": "placement",
+        "cohort": "B.Tech eligible students (all listed departments), 2024-25 report",
+        "metric": "PLACED_COUNT",
+        "denominator": 844,
+        "value": 703,
+        "definition": "Annual Report table labels 844 eligible students and 703 total placed. This is a placed-count outcome, not a salary, median, mean, or guarantee; reporting cohort is the B.Tech students in the 2024-25 report."
+      },
+      "sourceIds": [
+        "mnnit-annual-report-2024-25"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Annual Report 2024-25, printed page 11, B.Tech Courses / Department-wise Placement Statistics, table rows for Total and Computer Science and Engineering; eligible and placed counts shown in separate columns.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "motilal-nehru-national-institute-of-technology",
+      "field": "structured",
+      "value": {
+        "kind": "placement",
+        "cohort": "B.Tech Computer Science and Engineering eligible students, 2024-25 report",
+        "metric": "PLACED_COUNT",
+        "denominator": 308,
+        "value": 298,
+        "definition": "Annual Report department table labels 308 eligible students and 298 total placed for Computer Science and Engineering. This is a placed-count outcome, not a salary, median, mean, or guarantee; reporting cohort is the 2024-25 report."
+      },
+      "sourceIds": [
+        "mnnit-annual-report-2024-25"
+      ],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Annual Report 2024-25, printed page 11, B.Tech Courses / Department-wise Placement Statistics, table rows for Total and Computer Science and Engineering; eligible and placed counts shown in separate columns.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBA Programme (Batch 2027-29)",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "iimcal-mba-admission-policy-2027-29"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Page lines 91–98 identifies the MBA programme for batch 2027-29 and states the two-year duration.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA Programme (Batch 2027-29)",
+        "route": "CAT-based shortlisting followed by Writing Ability Test and Personal Interview",
+        "category": "All domestic applicants",
+        "exam": "CAT 2026",
+        "eligibility": "Bachelor’s degree with at least 50% marks or equivalent CGPA; 45% for SC, ST and PwD. Final-year candidates may apply subject to the stated completion and document deadlines.",
+        "applicationUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates"
+      },
+      "sourceIds": [
+        "iimcal-mba-admission-policy-2027-29"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Page lines 100–113 states minimum bachelor’s degree marks by SC/ST/PwD category and notes final-year applicant conditions; lines 118–122 states CAT 2026, WAT/PI and that thresholds are for shortlisting, not automatic admission.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA Programme (Batch 2027-29)",
+        "route": "CAT-based shortlisting followed by Writing Ability Test and Personal Interview",
+        "category": "OPEN",
+        "exam": "CAT 2026",
+        "eligibility": "Minimum for consideration for PI/WAT shortlisting: VARC 80th, DILR 80th, QA 75th, overall 85th percentile. Raw scores must be non-negative in all sections; actual cut-offs may be higher.",
+        "applicationUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates"
+      },
+      "sourceIds": [
+        "iimcal-mba-admission-policy-2027-29"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Page lines 120–137, Table 1: category-specific minimum section-wise and overall CAT 2026 percentiles for consideration for PI/WAT shortlisting; source warns actual cut-offs may be higher.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA Programme (Batch 2027-29)",
+        "route": "CAT-based shortlisting followed by Writing Ability Test and Personal Interview",
+        "category": "EWS",
+        "exam": "CAT 2026",
+        "eligibility": "Minimum for consideration for PI/WAT shortlisting: VARC 70th, DILR 65th, QA 65th, overall 75th percentile. Raw scores must be non-negative in all sections; actual cut-offs may be higher.",
+        "applicationUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates"
+      },
+      "sourceIds": [
+        "iimcal-mba-admission-policy-2027-29"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Page lines 120–137, Table 1: category-specific minimum section-wise and overall CAT 2026 percentiles for consideration for PI/WAT shortlisting; source warns actual cut-offs may be higher.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA Programme (Batch 2027-29)",
+        "route": "CAT-based shortlisting followed by Writing Ability Test and Personal Interview",
+        "category": "NC-OBC",
+        "exam": "CAT 2026",
+        "eligibility": "Minimum for consideration for PI/WAT shortlisting: VARC 70th, DILR 65th, QA 65th, overall 75th percentile. Raw scores must be non-negative in all sections; actual cut-offs may be higher.",
+        "applicationUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates"
+      },
+      "sourceIds": [
+        "iimcal-mba-admission-policy-2027-29"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Page lines 120–137, Table 1: category-specific minimum section-wise and overall CAT 2026 percentiles for consideration for PI/WAT shortlisting; source warns actual cut-offs may be higher.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA Programme (Batch 2027-29)",
+        "route": "CAT-based shortlisting followed by Writing Ability Test and Personal Interview",
+        "category": "SC",
+        "exam": "CAT 2026",
+        "eligibility": "Minimum for consideration for PI/WAT shortlisting: VARC 65th, DILR 60th, QA 60th, overall 70th percentile. Raw scores must be non-negative in all sections; actual cut-offs may be higher.",
+        "applicationUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates"
+      },
+      "sourceIds": [
+        "iimcal-mba-admission-policy-2027-29"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Page lines 120–137, Table 1: category-specific minimum section-wise and overall CAT 2026 percentiles for consideration for PI/WAT shortlisting; source warns actual cut-offs may be higher.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA Programme (Batch 2027-29)",
+        "route": "CAT-based shortlisting followed by Writing Ability Test and Personal Interview",
+        "category": "ST",
+        "exam": "CAT 2026",
+        "eligibility": "Minimum for consideration for PI/WAT shortlisting: VARC 55th, DILR 55th, QA 55th, overall 65th percentile. Raw scores must be non-negative in all sections; actual cut-offs may be higher.",
+        "applicationUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates"
+      },
+      "sourceIds": [
+        "iimcal-mba-admission-policy-2027-29"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Page lines 120–137, Table 1: category-specific minimum section-wise and overall CAT 2026 percentiles for consideration for PI/WAT shortlisting; source warns actual cut-offs may be higher.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-calcutta",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA Programme (Batch 2027-29)",
+        "route": "CAT-based shortlisting followed by Writing Ability Test and Personal Interview",
+        "category": "PwD",
+        "exam": "CAT 2026",
+        "eligibility": "Minimum for consideration for PI/WAT shortlisting: VARC 45th, DILR 45th, QA 45th, overall 55th percentile. Raw scores must be non-negative in all sections; actual cut-offs may be higher.",
+        "applicationUrl": "https://www.iimcal.ac.in/programs/pgp/admission/admission-policy/admission-procedure-for-domestic-candidates"
+      },
+      "sourceIds": [
+        "iimcal-mba-admission-policy-2027-29"
+      ],
+      "academicYear": "2027-29",
+      "evidenceLocation": "Page lines 120–137, Table 1: category-specific minimum section-wise and overall CAT 2026 percentiles for consideration for PI/WAT shortlisting; source warns actual cut-offs may be higher.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ]
+}

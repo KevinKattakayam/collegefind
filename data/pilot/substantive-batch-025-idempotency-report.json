@@ -1,0 +1,37 @@
+{
+  "status": "STAGED",
+  "facts": 3,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 3,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "aligarh-muslim-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwm9ebzr0004wbtvw67d4w58",
+      "sourceId": "cmwm9ebyy0000wbtvzcwb23zt",
+      "sourceUrl": "https://amucontrollerexams.com/uploads/files/e97cf6112508c8e79149275de5ae1cb3.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "ashoka-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwm9ec060007wbtv0vxnyu8x",
+      "sourceId": "cmwm9ebz50001wbtvcrnk0x9i",
+      "sourceUrl": "https://www.ashoka.edu.in/programme/undergraduate-programme-in-political-science/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "ashoka-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwm9ec0f000awbtv79g2g1t6",
+      "sourceId": "cmwm9ebzb0002wbtvcep9bzkz",
+      "sourceUrl": "https://www.ashoka.edu.in/undergraduate-admissions-timelines/",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

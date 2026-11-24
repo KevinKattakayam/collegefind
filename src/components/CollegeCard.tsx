@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { useId } from 'react';
 import type { College } from '@/types';
 import { formatINR, formatPct } from '@/lib/utils';
 import { useCompare } from '@/context/CompareContext';
@@ -21,8 +22,9 @@ function BookmarkIcon({ filled }: { filled: boolean }) {
 }
 
 export default function CollegeCard({ college, savedIds = [], onToggleSave }: Props) {
+  const nameId = useId();
   const { addToCompare, isInCompare } = useCompare();
-  const { isSaved, pending, toggle } = useSaveCollege(college.id, savedIds.includes(college.id), onToggleSave);
+  const { isSaved, pending, toggle } = useSaveCollege(college.id, savedIds.includes(college.id), onToggleSave, college.slug);
   const href = `/colleges/${college.slug ?? college.id}`;
   const inCompare = isInCompare(college.id);
   const coursesShown = college.courses.slice(0, 3);
@@ -42,8 +44,8 @@ export default function CollegeCard({ college, savedIds = [], onToggleSave }: Pr
         <BookmarkIcon filled={isSaved} />
       </button>
 
-      <Link href={href} className="no-underline flex-1 flex flex-col">
-        <h3 className="text-lg font-bold text-slate-800 hover:text-indigo-700 line-clamp-2 pr-10 mb-2">{college.name}</h3>
+      <Link href={href} aria-labelledby={nameId} className="no-underline flex-1 flex flex-col">
+        <h3 id={nameId} className="text-lg font-bold text-slate-800 hover:text-indigo-700 line-clamp-2 pr-10 mb-2">{college.name}</h3>
         <p className="text-sm text-slate-600 mb-3">
           {college.city}, {college.state}
         </p>

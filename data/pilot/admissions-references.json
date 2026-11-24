@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "vellore-institute-of-technology",
+    "publisher": "Vellore Institute of Technology",
+    "url": "https://viteee.vit.ac.in/",
+    "collectedAt": "2026-11-17T17:19:43Z",
+    "publishedAt": null,
+    "locator": "VIT homepage links VITEEE 2027 Apply Now; target header B.Tech Admissions 2027; group-level portal, not campus-specific eligibility",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED",
+    "field": "admissions"
+  },
+  {
+    "slug": "birla-institute-of-technology-mesra",
+    "publisher": "Birla Institute of Technology Mesra",
+    "url": "https://bitmesra.ac.in/admission/1/department/11",
+    "collectedAt": "2026-11-17T17:19:43Z",
+    "publishedAt": null,
+    "locator": "BIT homepage Admissions link; target Admissions / Admission Notifications / Admission Procedure; campus details require review",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED",
+    "field": "admissions"
+  },
+  {
+    "slug": "amrita-vishwa-vidyapeetham",
+    "publisher": "Amrita Vishwa Vidyapeetham",
+    "url": "https://www.amrita.edu/admissions/",
+    "collectedAt": "2026-11-17T17:19:43Z",
+    "publishedAt": null,
+    "locator": "Homepage Admissions link; admissions landing page lists campuses; university-wide reference only",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED",
+    "field": "admissions"
+  }
+]

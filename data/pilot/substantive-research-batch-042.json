@@ -1,0 +1,567 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 42,
+  "researchedAt": "2026-11-21T17:14:49.691Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b42-1",
+      "institutionSlug": "mica-ahmedabad",
+      "publisher": "MICA",
+      "title": "School of Management programmes",
+      "url": "https://www.mica.ac.in/program/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "School of Management · Programmes · PGDM-C listing"
+      ]
+    },
+    {
+      "id": "b42-2",
+      "institutionSlug": "mica-ahmedabad",
+      "publisher": "MICA",
+      "title": "Contact Us",
+      "url": "https://www.mica.ac.in/contact-us/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Contact Us · Shela postal address block"
+      ]
+    },
+    {
+      "id": "b42-3",
+      "institutionSlug": "nujs-kolkata",
+      "publisher": "West Bengal National University of Juridical Sciences",
+      "title": "Admissions 2026",
+      "url": "https://www.nujs.edu/home/admissions/admission-2026/",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "B.A. LL.B. (Hons.) · 4 June 2026 notice title specifying five years",
+        "B.A. LL.B. (Hons.) · 17 December 2025 West Bengal domicile notice title"
+      ]
+    },
+    {
+      "id": "b42-4",
+      "institutionSlug": "iit-ropar",
+      "publisher": "Indian Institute of Technology Ropar",
+      "title": "B.Tech brochure for 2025–26",
+      "url": "https://www.iitrpr.ac.in/downloads/sites/default/files/B.Tech%20%20brochure%20%20AY%202025-26.pdf",
+      "academicYear": "2025-26",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Programs Offered · Undergraduate Programme · Digital Agriculture row",
+        "How to Get Admission in IIT Ropar · JoSAA selection paragraph"
+      ]
+    },
+    {
+      "id": "b42-5",
+      "institutionSlug": "iit-ropar",
+      "publisher": "Indian Institute of Technology Ropar, Institute Student Mentorship Programme",
+      "title": "ISMP 2026 FAQs",
+      "url": "https://iitrpr.ac.in/ismp/faqs.php",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Medical & Health · campus health centre question"
+      ]
+    },
+    {
+      "id": "b42-6",
+      "institutionSlug": "iit-bhubaneswar",
+      "publisher": "Indian Institute of Technology Bhubaneswar",
+      "title": "B.Tech curriculum",
+      "url": "https://www.iitbbs.ac.in/index.php/home/academics/curriculum-b-tech/",
+      "academicYear": "2025-26",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Curriculum B.Tech · Engineering Physics row and revised curriculum link"
+      ]
+    },
+    {
+      "id": "b42-7",
+      "institutionSlug": "iim-amritsar",
+      "publisher": "Indian Institute of Management Amritsar",
+      "title": "About MBA",
+      "url": "https://www.iimamritsar.ac.in/academics/mba/about-mba",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "About MBA · introductory programme duration paragraph"
+      ]
+    },
+    {
+      "id": "b42-8",
+      "institutionSlug": "iim-amritsar",
+      "publisher": "Indian Institute of Management Amritsar",
+      "title": "Library",
+      "url": "https://www.iimamritsar.ac.in/the-institute/library",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Library · introductory paragraph and E-Resources section"
+      ]
+    },
+    {
+      "id": "b42-9",
+      "institutionSlug": "indian-statistical-institute",
+      "publisher": "Indian Statistical Institute",
+      "title": "Undergraduate Courses",
+      "url": "https://www.isical.ac.in/static/academics/academic_programmes/undergraduate",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Bachelor of Statistics (Honours) · duration and Kolkata-only location paragraphs"
+      ]
+    },
+    {
+      "id": "b42-10",
+      "institutionSlug": "indian-statistical-institute",
+      "publisher": "Indian Statistical Institute",
+      "title": "Hostel Facilities",
+      "url": "https://www.isical.ac.in/static/about/campus_life/hostels-housing",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Hostel Facilities · introduction and named student hostel sections"
+      ]
+    },
+    {
+      "id": "b42-11",
+      "institutionSlug": "christ-university",
+      "publisher": "CHRIST (Deemed to be University)",
+      "title": "Bangalore Central Campus UG Programmes",
+      "url": "https://christuniversity.in/bangalore-central-campus-programmes",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Bangalore Central Campus UG Programmes · School of Sciences · BCA",
+        "University footer · Bengaluru address and general email"
+      ]
+    },
+    {
+      "id": "b42-12",
+      "institutionSlug": "pondicherry-university",
+      "publisher": "Pondicherry University",
+      "title": "Integrated M.Sc. Mathematics",
+      "url": "https://www.pondiuni.edu.in/programs/m-sc-five-year-integrated-course/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T17:14:49.691Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Concise individual facts with direct attribution. No source prose, tables, seat counts, costs or eligibility thresholds reproduced. No blanket reuse licence inferred.",
+      "evidenceLocations": [
+        "Programme overview · five-year integrated Mathematics track"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "mica-ahmedabad",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Post Graduate Diploma in Management (Communications)",
+        "level": "DIPLOMA"
+      },
+      "sourceIds": [
+        "b42-1"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "School of Management · Programmes · PGDM-C listing",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "MICA, Shela, Ahmedabad",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "mica-ahmedabad",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Main campus",
+        "channel": "ADDRESS",
+        "contact": "Shela, Ahmedabad 380058, Gujarat, India"
+      },
+      "sourceIds": [
+        "b42-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Contact Us · Shela postal address block",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "MICA, Shela, Ahmedabad",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "nujs-kolkata",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.A. LL.B. (Hons.)",
+        "level": "UG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "b42-3"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "B.A. LL.B. (Hons.) · 4 June 2026 notice title specifying five years",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "WBNUJS, Kolkata",
+      "publisherPeriod": "Historical Admissions 2026 notices · academic session 2026–27",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nujs-kolkata",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.A. LL.B. (Hons.)",
+        "route": "The university published a CLAT notice specific to applicants with West Bengal domicile.",
+        "category": "West Bengal domicile",
+        "exam": "CLAT 2026",
+        "counselling": "WBNUJS admissions"
+      },
+      "sourceIds": [
+        "b42-3"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "B.A. LL.B. (Hons.) · 17 December 2025 West Bengal domicile notice title",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "WBNUJS, Kolkata",
+      "publisherPeriod": "Historical Admissions 2026 notices · academic session 2026–27",
+      "historical": true
+    },
+    {
+      "institutionSlug": "iit-ropar",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Digital Agriculture",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b42-4"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "Programs Offered · Undergraduate Programme · Digital Agriculture row",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Ropar, Rupnagar",
+      "publisherPeriod": "Historical 2025–26 B.Tech brochure",
+      "historical": true
+    },
+    {
+      "institutionSlug": "iit-ropar",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech",
+        "route": "The brochure describes selection using JEE Advanced rank through JoSAA.",
+        "category": "General institute route",
+        "exam": "JEE Advanced",
+        "counselling": "JoSAA"
+      },
+      "sourceIds": [
+        "b42-4"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "How to Get Admission in IIT Ropar · JoSAA selection paragraph",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Ropar, Rupnagar",
+      "publisherPeriod": "Historical 2025–26 B.Tech brochure",
+      "historical": true
+    },
+    {
+      "institutionSlug": "iit-ropar",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Campus medical centre",
+        "description": "The student mentorship FAQ reports a campus medical centre with a pharmacy."
+      },
+      "sourceIds": [
+        "b42-5"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Medical & Health · campus health centre question",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Ropar main campus, Rupnagar",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "iit-bhubaneswar",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Engineering Physics",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b42-6"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "Curriculum B.Tech · Engineering Physics row and revised curriculum link",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Bhubaneswar, School of Basic Sciences",
+      "publisherPeriod": "Revised curriculum applies from 2025–26 onward. The page does not establish the current intake.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iim-amritsar",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Master of Business Administration",
+        "level": "PG",
+        "durationMonths": 24
+      },
+      "sourceIds": [
+        "b42-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "About MBA · introductory programme duration paragraph",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIM Amritsar, Amritsar",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "iim-amritsar",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Institute library",
+        "description": "The library lists print materials and remote access to electronic books and journals."
+      },
+      "sourceIds": [
+        "b42-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Library · introductory paragraph and E-Resources section",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIM Amritsar, Amritsar",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "indian-statistical-institute",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Statistics (Honours)",
+        "level": "UG",
+        "durationMonths": 36
+      },
+      "sourceIds": [
+        "b42-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Bachelor of Statistics (Honours) · duration and Kolkata-only location paragraphs",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Indian Statistical Institute, Kolkata campus",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "indian-statistical-institute",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Campus hostels",
+        "description": "The Kolkata campus lists student hostels in its residential complex."
+      },
+      "sourceIds": [
+        "b42-10"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Hostel Facilities · introduction and named student hostel sections",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Indian Statistical Institute, Kolkata campus",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "christ-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Computer Applications (BCA)",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b42-11"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Bangalore Central Campus UG Programmes · School of Sciences · BCA",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "CHRIST, Bangalore Central Campus",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "christ-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "University general enquiries",
+        "channel": "EMAIL",
+        "contact": "mail@christuniversity.in"
+      },
+      "sourceIds": [
+        "b42-11"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "University footer · Bengaluru address and general email",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "CHRIST, Bangalore Central Campus",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "pondicherry-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Integrated M.Sc. Mathematics",
+        "level": "PG",
+        "durationMonths": 60
+      },
+      "sourceIds": [
+        "b42-12"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programme overview · five-year integrated Mathematics track",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Pondicherry University, Ramanujan School of Mathematical Sciences",
+      "publisherPeriod": null,
+      "historical": false
+    }
+  ],
+  "holds": [
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "url": "https://www.iimb.ac.in/programmes",
+      "reason": "Direct source returned HTTP 403."
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-lucknow",
+      "url": "https://www.iiml.ac.in/index.php/master-business-administration",
+      "reason": "Direct source timed out."
+    },
+    {
+      "institutionSlug": "iit-dharwad",
+      "url": "https://www.iitdh.ac.in/academics",
+      "reason": "Direct source timed out."
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "url": "https://www.iitbhilai.ac.in/?pid=adm_undergraduate",
+      "reason": "Direct source timed out."
+    },
+    {
+      "institutionSlug": "iiit-delhi",
+      "url": "https://iiitd.ac.in/academics/btech",
+      "reason": "Direct source returned HTTP 502."
+    },
+    {
+      "institutionSlug": "iit-jodhpur",
+      "url": "https://iitj.ac.in/office-of-academics/en/list-of-academic-programs",
+      "reason": "Direct source timed out."
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "url": "https://www.nitjsr.ac.in/Academic/B.Tech_Admission",
+      "reason": "Direct response provided no supporting programme text."
+    },
+    {
+      "institutionSlug": "nit-raipur",
+      "url": "https://nitrr.ac.in/admission_dtls.php?id=2",
+      "reason": "Direct source timed out."
+    },
+    {
+      "institutionSlug": "cochin-university",
+      "url": "https://shiptech.cusat.ac.in/index.php",
+      "reason": "Direct department page timed out."
+    },
+    {
+      "institutionSlug": "ict-mumbai",
+      "url": "https://www.ictmumbai.edu.in/DisplayPage.aspx?ItemID=eaeec&page=caamq",
+      "reason": "Direct source returned HTTP 403."
+    },
+    {
+      "institutionSlug": "jadavpur-university",
+      "url": "https://jadavpuruniversity.in/storage/2023/09/The-institutional-perspective-plan.pdf",
+      "reason": "The extracted programme rules are from 1985 and do not establish present applicability."
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "url": "https://www.osmania.ac.in/academics-departments.php",
+      "reason": "Direct source returned HTTP 502."
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 50,
+  "researchedAt": "2026-11-22T04:29:08.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b50-iitk-facilities",
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "publisher": "Indian Institute of Technology Kanpur, Office of the Dean of Academic Affairs",
+      "title": "Centres and Facilities",
+      "url": "https://www.iitk.ac.in/doaa/centres-and-facilities",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T04:29:08.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "One named institutional facility, with source attribution. No service, capacity, access, hours or collection-size claims are made; no blanket reuse permission inferred.",
+      "evidenceLocations": [
+        "Page lines 187–216: Facilities section names Computer Centre, P. K. Kelkar Library, Office Automation, Central Glass Blowing Section and Central Workshop."
+      ]
+    },
+    {
+      "id": "b50-isb-pgp",
+      "institutionSlug": "indian-school-of-business",
+      "publisher": "Indian School of Business, Admissions",
+      "title": "Post Graduate Programme in Management (PGP)",
+      "url": "https://admission.isb.edu/admissions/pgplp/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T04:29:08.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Concise programme title and stated duration only with attribution; no rankings, placement claims or eligibility requirements copied; no blanket reuse permission inferred.",
+      "evidenceLocations": [
+        "Page lines 10–14 and 21–41 identify the PGP, full-time residential mode, 12-month duration and Hyderabad/Mohali locations."
+      ]
+    },
+    {
+      "id": "b50-isb-admissions",
+      "institutionSlug": "indian-school-of-business",
+      "publisher": "Indian School of Business, Admissions",
+      "title": "Post Graduate Programme in Management (PGP) — Admissions",
+      "url": "https://admission.isb.edu/admissions/pgplp/",
+      "academicYear": "2027",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T04:29:08.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Cycle-specific process description only; no admission eligibility thresholds or ranking claims reused. Page identifies Class of 2027 and a 6 Dec 2026 application deadline; the round information is time-sensitive and expires shortly after that deadline.",
+      "evidenceLocations": [
+        "Page lines 12–15 label the PGP and Round 2 deadline (6 Dec 2026); lines 174–177 say admissions use a unified process for Hyderabad and Mohali, occur in multiple rounds, and applicants may apply once per cycle."
+      ]
+    },
+    {
+      "id": "b50-sjc-ug-admissions",
+      "institutionSlug": "st-johns-college",
+      "publisher": "St. John's College, Agra, Admissions",
+      "title": "Instructions to fill Application Form — Admission Portal Session 2026–27",
+      "url": "https://sjcagra.ac.in/instructions-to-fill-application-form-online/",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T04:29:08.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Cycle-specific application sequence only; no fee amounts, marks thresholds, category conditions, eligibility conclusions or merit rules are copied. Page title includes 2025–26 while its body explicitly identifies the 2026–27 session; preserve that discrepancy and recheck before the next cycle.",
+      "evidenceLocations": [
+        "Page lines 0–4 identify St. John's College Agra and its DBRAU affiliation; lines 113–119 say the page welcomes applicants to the 2026–27 portal session and that Samarth/University web registration through DBRAU is required before college admission applications. Lines 147–148 link the college application portal.",
+        "Page lines 21–45 list B.A. under Our Courses → Arts → Bachelor of Arts; the page also links a 2026–27 UG application form at lines 50–53. The page's title still references 2025–26, so no academic-year applicability is assigned to the course listing."
+      ]
+    },
+    {
+      "id": "b50-nitsri-admissions",
+      "institutionSlug": "nit-srinagar",
+      "publisher": "National Institute of Technology Srinagar, Admissions 2026",
+      "title": "Admissions 2026",
+      "url": "https://erp.nitsri.ac.in/Pages/DisplayPages.aspx?page=caece",
+      "academicYear": "2026",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T04:29:08.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Historical notice-index facts only. The page lists a 2026 MBA GD/PI notice and a separately listed PG entrance examination/merit list; no order, eligibility, current admission availability or outcome is inferred. No list/table content is reproduced.",
+      "evidenceLocations": [
+        "Page lines 228–260: Institute PG 2026 section includes MBA Programme 2026 selection list, separate GD/PI notice for MBA Admission 2026, and PG entrance examination/answer-key notices including one held 27 July 2026."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "P. K. Kelkar Library",
+        "description": "Listed by IIT Kanpur's DOAA under the institute's Facilities directory; this source confirms the institutional listing, not services, access, hours or collections."
+      },
+      "sourceIds": [
+        "b50-iitk-facilities"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Centres and Facilities page, lines 207–216, Facilities list.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Kanpur, institute-level facility directory.",
+      "publisherPeriod": "Official DOAA facilities page checked 22 Nov 2026; no service or access conditions stated in this listing.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "indian-school-of-business",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Post Graduate Programme in Management (PGP)",
+        "level": "PG",
+        "durationMonths": 12
+      },
+      "sourceIds": [
+        "b50-isb-pgp"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "PGP page lines 10–14 and 21–41: programme title, 12-month duration and Hyderabad/Mohali locations.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "The source lists Hyderabad and Mohali as programme locations and says the programme has a unified admissions process across both; individual course delivery by campus is not further specified.",
+      "publisherPeriod": "Official PGP page checked 22 Nov 2026; duration is stated as 12 months and no academic year is stated in the programme block.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "indian-school-of-business",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Post Graduate Programme in Management (PGP), Class of 2027",
+        "route": "Unified admissions process for Hyderabad and Mohali with multiple rounds; the page says an applicant may apply once per admission cycle.",
+        "category": "Class of 2027 application cycle",
+        "exam": "Application Round 2 deadline: 6 December 2026"
+      },
+      "sourceIds": [
+        "b50-isb-admissions"
+      ],
+      "academicYear": "2027",
+      "evidenceLocation": "PGP admissions page lines 12–15 (Round 2 deadline) and 174–177 (unified campuses, multiple rounds, one application per cycle).",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Hyderabad and Mohali campuses; page states a unified PGP admissions process.",
+      "publisherPeriod": "Class of 2027 admission cycle; Round 2 deadline 6 Dec 2026. Recheck after the published deadline; this is process information, not eligibility or admission prediction.",
+      "historical": false,
+      "validUntil": "2026-12-07T00:00:00.000Z"
+    },
+    {
+      "institutionSlug": "st-johns-college",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "Undergraduate applications (BA, BSc, BCom, BCom Vocational, BBA, BCA, BPES and BSc Biotechnology)",
+        "route": "For the 2026–27 session, the college instructions require DBRAU Samarth/University Web-Registration before the college admission application.",
+        "category": "2026–27 UG application sequence"
+      },
+      "sourceIds": [
+        "b50-sjc-ug-admissions"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Instructions page lines 113–119 and 147–148: session banner, mandatory university web-registration instruction and college application link. The broader UG programme list is shown in the same page's course navigation at lines 21–45.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "St. John's College, Agra; undergraduate application process.",
+      "publisherPeriod": "Official page checked 22 Nov 2026. Body says session 2026–27; page title still says 2025–26, so recheck the page before any subsequent admission cycle. Eligibility thresholds and merit conditions are intentionally not reproduced.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nit-srinagar",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBA, admission cycle 2026",
+        "route": "The 2026 index lists separate MBA GD/PI and PG entrance examination/merit-list notices; it does not specify their order or selection criteria.",
+        "category": "Institute PG/MBA notices, 2026",
+        "exam": "PG Entrance Examination listed as held 27 July 2026"
+      },
+      "sourceIds": [
+        "b50-nitsri-admissions"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Official notice index lines 228–260, including the MBA 2026 selection list, MBA GD/PI notice, and PG Entrance Examination notices.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "National Institute of Technology Srinagar; Institute PG admissions, MBA notices.",
+      "publisherPeriod": "Historical 2026 admission notices; the exam date has passed. This is not a current-cycle admissions guide and does not assert sequence, eligibility or a predicted outcome.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "st-johns-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Arts",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b50-sjc-ug-admissions"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Official college page's Our Courses navigation, lines 21–24, labels Bachelor of Arts under Arts; 2026–27 UG form link at lines 50–53 is contextual only.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "St. John's College, Agra; the college's own course navigation.",
+      "publisherPeriod": "Official college page checked 22 Nov 2026; its title references 2025–26 while navigation links 2026–27 forms. This course listing has no explicit academic year; confirm current intake with the college.",
+      "historical": false
+    }
+  ],
+  "researchHolds": [
+    {
+      "institutionSlug": "indian-institute-of-management-lucknow",
+      "status": "RESEARCH_HOLD_IDENTITY_MISMATCH",
+      "reason": "Catalogue identity is IIM Lucknow; no relevant official programme page was directly readable in this batch. Search-index page content not used."
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Direct official B.Tech admissions page returned only a JavaScript-required shell; indexed excerpt not used as factual evidence."
+    },
+    {
+      "institutionSlug": "nit-raipur",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official NIT Raipur pages and FAQ timed out on direct retrieval during this batch. No search-result content used as a claim."
+    },
+    {
+      "institutionSlug": "nit-puducherry",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official programme, admissions and institutional pages returned HTTP 502/timeouts during direct retrieval; no snippets used."
+    },
+    {
+      "institutionSlug": "rajasthan-technical-university",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official RTU pages returned HTTP 403 on direct open in this batch. Search-index content was not used as claim evidence."
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "status": "RESEARCH_HOLD_FRESHNESS",
+      "reason": "Official admissions directorate page's last visible copyright year is 2022; address/process details need current confirmation before public release."
+    },
+    {
+      "institutionSlug": "psg-college-of-technology",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "No readable, directly opened official academic/admissions page was available in this batch; search results alone are not treated as evidence."
+    },
+    {
+      "institutionSlug": "iit-jodhpur",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official academic-programme page direct request timed out; indexed excerpt not used."
+    },
+    {
+      "institutionSlug": "iit-kanpur",
+      "status": "RESEARCH_HOLD_CONFLICT",
+      "reason": "A separate historical candidate in the existing archive conflicts on academic-year/current programme interpretation; this batch relies on the opened, separate DOAA current-list page and gives no cycle/duration claim. Reviewer conflict scope should be checked before release if it matches the same fact."
+    },
+    {
+      "institutionSlug": "seth-gs-medical-college",
+      "status": "RESEARCH_HOLD_SOURCE_AUTHORITY",
+      "reason": "Previously located KEM source carries a disclaimer that its website information is not official; no candidate reused."
+    },
+    {
+      "institutionSlug": "bangalore-medical-college",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "No directly opened current first-party programme/admissions page was established in this batch."
+    },
+    {
+      "institutionSlug": "rvce-bangalore",
+      "status": "RESEARCH_HOLD_FRESHNESS",
+      "reason": "Available official first-year commencement notice does not expose a sufficiently clear current publication/admission period."
+    },
+    {
+      "institutionSlug": "cochin-university",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official CUSAT pages timed out/returned server errors on direct retrieval; no snippets used."
+    },
+    {
+      "institutionSlug": "banasthali-vidyapith",
+      "status": "RESEARCH_HOLD_SCOPE",
+      "reason": "Available official report provides aggregated programme-group and outcome figures requiring scope/denominator review; no low-risk current fact was extracted."
+    },
+    {
+      "institutionSlug": "iiit-sri-city",
+      "status": "RESEARCH_HOLD_ACCESS_RESTRICTION",
+      "reason": "Official site returned HTTP 403; no alternate access or control bypass attempted."
+    },
+    {
+      "institutionSlug": "patna-university",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "No directly retrieved official course/admissions material was usable in this batch."
+    },
+    {
+      "institutionSlug": "mizoram-university",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "Official site returned a server error on direct retrieval; no search-index facts used."
+    },
+    {
+      "institutionSlug": "rajiv-gandhi-university",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS",
+      "reason": "No direct authoritative college-specific page was read in this batch."
+    },
+    {
+      "institutionSlug": "centurion-university",
+      "status": "RESEARCH_HOLD_SCOPE",
+      "reason": "Official source identifies multiple campuses but programme-to-campus applicability is not established for this catalogue campus."
+    },
+    {
+      "institutionSlug": "op-jindal-university",
+      "status": "RESEARCH_HOLD_IDENTITY_MISMATCH",
+      "reason": "Available source for OP Jindal University identifies the Raigarh institution, while the catalogue record is Sonipat; JGU identity is not established by the catalogue record."
+    },
+    {
+      "institutionSlug": "ict-mumbai",
+      "status": "RESEARCH_HOLD_ACCESS_RESTRICTION",
+      "reason": "Official pages returned HTTP 403; no restriction bypass attempted."
+    }
+  ],
+  "candidateHolds": [],
+  "duplicateFindings": [],
+  "reviewerSummary": {
+    "newFactualCandidates": 6,
+    "readyForPersistentOwnerStage": 0,
+    "newlyPublishableFacts": 6,
+    "requiresHumanSourceReview": 0,
+    "ownerDatabaseWrites": 0,
+    "genuineApprovals": 0
+  }
+}

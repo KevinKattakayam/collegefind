@@ -1,0 +1,1246 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 44,
+  "researchedAt": "2026-11-21T12:58:34.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b44-1",
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "publisher": "Indian Institute of Technology Kanpur, Office of the Dean of Academic Affairs",
+      "title": "Academic Programmes",
+      "url": "https://www.iitk.ac.in/doaa/academic-programmes",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only concise programme names are used with attribution. No source prose or tables are reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Programmes section, lines 183–195: page says the Institute presently offers B.Tech programmes including Aerospace Engineering"
+      ]
+    },
+    {
+      "id": "b44-2",
+      "institutionSlug": "nit-sikkim",
+      "publisher": "National Institute of Technology Sikkim, Department of Electrical & Electronics Engineering",
+      "title": "Academics — Department of Electrical & Electronics Engineering",
+      "url": "https://eee.nitsikkim.ac.in/academics.php",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Concise programme and facility names are attributed to the department page; no bulk content or source text is reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Lines 12–14: B.Tech in Electrical and Electronics Engineering, stated as a four-year programme; facilities links include the Robotics Laboratory"
+      ]
+    },
+    {
+      "id": "b44-3",
+      "institutionSlug": "shiv-nadar-university",
+      "publisher": "Shiv Nadar University Delhi NCR",
+      "title": "Programs",
+      "url": "https://snu.edu.in/programs/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only concise programme and degree-duration facts are attributed. No source prose or tables are reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "B.Tech. in Civil Engineering section, lines 176–183: undergraduate degree is described as four years"
+      ]
+    },
+    {
+      "id": "b44-4",
+      "institutionSlug": "sathyabama-institute",
+      "publisher": "Sathyabama Institute of Science and Technology",
+      "title": "Programs Offered — Academic Year 2026–2027",
+      "url": "https://www.sathyabama.ac.in/admissions/programs-offered",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The individual programme title and duration are reported with the stated academic year. No surrounding table or source prose is reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Arts, Science and Humanities Programmes table, lines 111–130: B.Sc. Data Science, three years, Academic Year 2026–2027"
+      ]
+    },
+    {
+      "id": "b44-5",
+      "institutionSlug": "sathyabama-institute",
+      "publisher": "Sathyabama Institute of Science and Technology",
+      "title": "Hostel",
+      "url": "https://www.sathyabama.ac.in/campus-life/hostel-facility",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "A concise description of accommodation and medical-service availability is attributed. No source prose or bulk content is reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Hostel section, lines 48–74; page footer says Last Updated: November 2026"
+      ]
+    },
+    {
+      "id": "b44-6",
+      "institutionSlug": "central-university-of-haryana",
+      "publisher": "Central University of Haryana",
+      "title": "Academic Structure",
+      "url": "https://cucc.cuh.ac.in/academic-structure.aspx",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only the individual programme name and year-unspecified listing are reported; no eligibility or fee facts are copied and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Under Graduate Programmes list, lines 232–244: B.Tech in Computer Science and Engineering"
+      ]
+    },
+    {
+      "id": "b44-7",
+      "institutionSlug": "central-university-of-haryana",
+      "publisher": "Central University of Haryana",
+      "title": "Hostel Facility",
+      "url": "https://cucc.cuh.ac.in/hostel.aspx",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "A concise, attributed summary of listed hostel amenities is used; no source prose is reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "About Hostel Facility, lines 195–205: separate boys' and girls' hostels and listed reading room, gymnasium, Wi-Fi and bus service to academic blocks"
+      ]
+    },
+    {
+      "id": "b44-8",
+      "institutionSlug": "central-university-of-haryana",
+      "publisher": "Central University of Haryana",
+      "title": "Home — Permanent Campus and Vice Chancellor Office contact",
+      "url": "https://www.cuh.ac.in/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The published postal address and office telephone are reproduced as concise factual contact values with attribution; no broader reuse licence is inferred.",
+      "evidenceLocations": [
+        "Permanent Campus and Vice Chancellor Office section, lines 514–518"
+      ]
+    },
+    {
+      "id": "b44-9",
+      "institutionSlug": "sikkim-university",
+      "publisher": "Sikkim University",
+      "title": "Academic Programmes",
+      "url": "https://cus.ac.in/index.php/en/academics-2/academic-programmes",
+      "academicYear": null,
+      "publicationDate": "2026-06-05T00:00:00.000Z",
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "A concise degree/department listing is attributed to the official page. No table is reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Academic Programmes table, School of Human Sciences: Psychology lists BA/B.Sc/MA/M.Sc/Ph.D.; page footer says last updated 05.06.2026"
+      ]
+    },
+    {
+      "id": "b44-10",
+      "institutionSlug": "dibrugarh-university",
+      "publisher": "Dibrugarh University",
+      "title": "Programmes at a Glance",
+      "url": "https://www.dibru.ac.in/programmes-at-a-glance",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The exact institutional address and registrar email are shown with source attribution; no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Footer contact block, lines 42–51"
+      ]
+    },
+    {
+      "id": "b44-11",
+      "institutionSlug": "manipur-university",
+      "publisher": "Manipur University",
+      "title": "Admission 2026–27 notices",
+      "url": "https://www.manipuruniv.ac.in/p/admission-2026-27",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "This is a historical programme-availability fact from a past admission cycle; the programme is not asserted as currently open. No notice text is reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "2026–27 admission notice list: fourth provisional selection list for admission to the Two Year MA English, with last date 2 October 2026"
+      ]
+    },
+    {
+      "id": "b44-12",
+      "institutionSlug": "chitkara-university",
+      "publisher": "Chitkara University",
+      "title": "Admissions for Academic Year 2027",
+      "url": "https://www.chitkara.edu.in/admissions/",
+      "academicYear": "2027",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The specific programme title and stated duration are attributed to the official 2027 admissions page; no eligibility or fees are included and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Chitkara University Institute of Engineering & Technology section: four-year Bachelor of Engineering programmes, including Computer Science & Engineering with specialisations"
+      ]
+    },
+    {
+      "id": "b44-13",
+      "institutionSlug": "chitkara-university",
+      "publisher": "Chitkara University",
+      "title": "Campus Infrastructure",
+      "url": "https://www.chitkara.edu.in/overview/campus-infrastructure/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only a concise facility-category statement is used; the page does not disaggregate campus availability, so the claim remains university-wide and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Campus Infrastructure page: university-wide facility listing includes libraries, laboratories, hostels and sports; campus-specific availability is not disaggregated"
+      ]
+    },
+    {
+      "id": "b44-14",
+      "institutionSlug": "gd-goenka-university",
+      "publisher": "GD Goenka University",
+      "title": "Programmes",
+      "url": "https://www.gdgoenkauniversity.com/programmes",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only the listed individual programme title is attributed; no descriptive marketing copy is reused and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Programmes page, lines 306–310: B.Tech Aerospace Engineering"
+      ]
+    },
+    {
+      "id": "b44-15",
+      "institutionSlug": "gd-goenka-university",
+      "publisher": "GD Goenka University",
+      "title": "Hostel Facilities",
+      "url": "https://www.gdgoenkauniversity.com/facilities/campus/hostel-facilities",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only listed accommodation types are reported with attribution; no marketing language or fees are reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Accommodation Options section: single rooms, twin sharing, triple/quad sharing and bunk beds"
+      ]
+    },
+    {
+      "id": "b44-16",
+      "institutionSlug": "visvesvaraya-technological-university",
+      "publisher": "Visvesvaraya Technological University",
+      "title": "Programmes — PG Centres",
+      "url": "https://vtu.ac.in/en/programmes-pg-centres/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The programme is limited to the named VTU UG/PG Centre in Belagavi. The individual programme title is attributed; intake data and tables are not reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "VTU UG/PG Centre, Jnana Sangama, Belagavi section, lines 521–535: UG programme list includes B.Tech in Robotics & Automation"
+      ]
+    },
+    {
+      "id": "b44-17",
+      "institutionSlug": "calcutta-university",
+      "publisher": "University of Calcutta",
+      "title": "Official Site",
+      "url": "https://caluniv.ac.in/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only the official postal address is displayed with direct attribution; no broader reuse licence is inferred.",
+      "evidenceLocations": [
+        "Address section, lines 442–446"
+      ]
+    },
+    {
+      "id": "b44-18",
+      "institutionSlug": "nit-andhra-pradesh",
+      "publisher": "National Institute of Technology Andhra Pradesh",
+      "title": "B.Tech Admissions through JoSAA / CSAB 2026",
+      "url": "https://nitandhra.ac.in/main/btech.php?search=2026",
+      "academicYear": "2026",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Historical 2026 B.Tech counselling route only; the cycle is closed and is not represented as current. No cutoff or eligibility data is included and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "B.Tech admission page, lines 115–117 identifies JoSAA/CSAB 2026; the official admissions page is specifically for B.Tech"
+      ]
+    },
+    {
+      "id": "b44-19",
+      "institutionSlug": "siksha-o-anusandhan",
+      "publisher": "Siksha 'O' Anusandhan Admission Website",
+      "title": "SAAT 2026 — Admission",
+      "url": "https://www.admission.soa.ac.in/saat",
+      "academicYear": "2026",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Historical 2026 medical/dental route only, with exact programme scope and attribution. No eligibility, threshold or application prediction is included and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "SAAT 2026 page, lines 16–31: MBBS/BDS/MD/MS/MDS admission is through NEET only and handled through DGHS"
+      ]
+    },
+    {
+      "id": "b44-20",
+      "institutionSlug": "iit-indore",
+      "publisher": "Indian Institute of Technology Indore",
+      "title": "All Programs",
+      "url": "https://www.iiti.ac.in/admissions/all_programs",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The programme title and start year are attributed to the official listing; no eligibility or fee facts are included and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "All Programs section, line 166: B.Tech Biomedical Engineering and Data Science from AY 2026–27"
+      ]
+    },
+    {
+      "id": "b44-21",
+      "institutionSlug": "iit-indore",
+      "publisher": "Health Centre, Indian Institute of Technology Indore",
+      "title": "Health Center",
+      "url": "https://healthcenter.iiti.ac.in/",
+      "academicYear": null,
+      "publicationDate": "2026-11-21T00:00:00.000Z",
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only the existence and described service of the institution health centre is reported. Page shows a dated doctors schedule; no individual staff details are copied and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Lines 12–13: IIT Indore Health Centre description, outpatient/emergency/in-patient facilities; lines 26–30 show the page date 21/11/2026"
+      ]
+    },
+    {
+      "id": "b44-22",
+      "institutionSlug": "iiit-gwalior",
+      "publisher": "Atal Bihari Vajpayee Indian Institute of Information Technology and Management Gwalior",
+      "title": "Admission Process for First Semester 2026–27",
+      "url": "https://iiitm.ac.in/public/uploads/media_uploads/1785820353_Instructions-for-IMT-IMG-and-B-Tech-students-2026-F.pdf",
+      "academicYear": "2026-27",
+      "publicationDate": "2026-07-17T00:00:00.000Z",
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Historical 2026–27 programme facts with concise attribution only. No bank details, fee amounts, source prose or tables are reproduced; no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "PDF p.0, lines 2–4 and p.3, lines 67–76: first-semester B.Tech programme list for 2026–27"
+      ]
+    },
+    {
+      "id": "b44-23",
+      "institutionSlug": "iiit-gwalior",
+      "publisher": "Atal Bihari Vajpayee Indian Institute of Information Technology and Management Gwalior",
+      "title": "Admission Process for First Semester 2026–27",
+      "url": "https://iiitm.ac.in/public/uploads/media_uploads/1785820353_Instructions-for-IMT-IMG-and-B-Tech-students-2026-F.pdf",
+      "academicYear": "2026-27",
+      "publicationDate": "2026-07-17T00:00:00.000Z",
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Historical counselling route for the named 2026–27 incoming cohort only. No fee or personal information is reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "PDF p.0, lines 2–7 states the counselling channels and institute reporting dates; p.0 lines 20–23 list JEE score card/admit card"
+      ]
+    },
+    {
+      "id": "b44-24",
+      "institutionSlug": "north-eastern-hill-university",
+      "publisher": "North-Eastern Hill University",
+      "title": "General Courses",
+      "url": "https://nehu.ac.in/General-Courses",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "A concise programme name is attributed with the explicit Shillong campus scope; no table or eligibility rules are copied and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "General Courses page, lines 114–124: Shillong Campus, M.A. programmes include English"
+      ]
+    },
+    {
+      "id": "b44-25",
+      "institutionSlug": "north-eastern-hill-university",
+      "publisher": "North-Eastern Hill University, Central Library",
+      "title": "Library — Overview",
+      "url": "https://www.nehu.ac.in/library/over.html",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "An institution-specific library service is summarized with source attribution; old collection-size figures and historical facility metrics are omitted and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Present Scenario, lines 35–39: Shillong Central Library location and e-ShodhSindhu/DelCON online-resource access description"
+      ]
+    },
+    {
+      "id": "b44-26",
+      "institutionSlug": "nit-sikkim",
+      "publisher": "National Institute of Technology Sikkim, Department of Electrical & Electronics Engineering",
+      "title": "Academics — Department of Electrical & Electronics Engineering",
+      "url": "https://eee.nitsikkim.ac.in/academics.php",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The source-reported admission route is not used; this fact is limited to the department programme listing and a separately attributed facility name. No blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Facilities links, lines 10–14 list a Robotics Laboratory"
+      ]
+    },
+    {
+      "id": "b44-27",
+      "institutionSlug": "sathyabama-institute",
+      "publisher": "Sathyabama Institute of Science and Technology",
+      "title": "Hostel",
+      "url": "https://www.sathyabama.ac.in/campus-life/hostel-facility",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T12:58:34.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "This brief attributed facility summary is limited to the currently updated hostel page; no source prose or blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Hostel page lines 52 and 70–74: boys' and girls' hostels and 24-hour resident medical aid; footer updated November 2026"
+      ]
+    },
+    {
+      "id": "b44-28",
+      "institutionSlug": "shiv-nadar-university",
+      "publisher": "Shiv Nadar University Delhi NCR",
+      "title": "Sports Facilities",
+      "url": "https://snu.edu.in/facilities/sports/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T13:26:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only concise names and availability of sports facilities are attributed. No marketing text, usage metrics or blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Sports facilities section, lines 81–87: Indoor Sports Complex and outdoor sports facilities"
+      ]
+    },
+    {
+      "id": "b44-29",
+      "institutionSlug": "jntu-hyderabad",
+      "publisher": "Jawaharlal Nehru Technological University Hyderabad",
+      "title": "Contact Us",
+      "url": "https://jntuh.ac.in/contact-us",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T13:26:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The university's published postal address is presented as an institutional contact value. No personal contact detail or blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Contact Us page lines 10–12 identifies Jawaharlal Nehru Technological University Hyderabad and its Kukatpally, Hyderabad postal address"
+      ]
+    },
+    {
+      "id": "b44-30",
+      "institutionSlug": "vel-tech-university",
+      "publisher": "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology",
+      "title": "B.Tech Admissions Open 2027",
+      "url": "https://www.veltech.edu.in/btech-admissions/",
+      "academicYear": "2027",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T13:26:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only the listed degree and programme specialization are attributed. High-impact eligibility and fee details on the page are intentionally not included; no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "B.Tech Admissions Open 2027 page lines 189–193 and 213–233: B.Tech Computer Science & Engineering and listed specializations"
+      ]
+    },
+    {
+      "id": "b44-31",
+      "institutionSlug": "iit-jodhpur",
+      "publisher": "Indian Institute of Technology Jodhpur, Office of Academics Affairs",
+      "title": "List of Academic Programs — Academic Year 2026–27",
+      "url": "https://www.iitj.ac.in/office-of-academics/en/list-of-academic-programs",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T13:26:00.000Z",
+      "access": "OFFICIAL_SEARCH_RESULT_ONLY_DIRECT_FETCH_TIMEOUT",
+      "reuseConditions": "Search results identified this first-party page, but direct page retrieval timed out twice. No search excerpt is treated as verified evidence.",
+      "evidenceLocations": [
+        "Direct retrieval attempts on the official page timed out on 2026-11-21; indexed result was not used as proof."
+      ]
+    },
+    {
+      "id": "b44-32",
+      "institutionSlug": "grant-medical-college",
+      "publisher": "Grant Government Medical College & Sir JJ Group of Hospitals, Mumbai",
+      "title": "Courses",
+      "url": "https://gmcjjh.edu.in/courses/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T13:26:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only the degree name and institutional address are reported. Seat/intake values and recognition claims are excluded; no blanket redistribution licence is inferred.",
+      "evidenceLocations": [
+        "Courses page: MBBS appears under UG Course at lines 100–106; page footer shows Last Updated 19 Nov 2026; contact address appears at lines 211–214"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-kanpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. in Aerospace Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b44-1"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Academic Programmes page lines 183–195: institute says it presently offers B.Tech. Aerospace Engineering; no academic year is stated.",
+      "status": "RESEARCH_HOLD_ARCHIVED_SOURCE_CONFLICT",
+      "reviewState": "UNREVIEWED",
+      "stageable": false,
+      "campusScope": "IIT Kanpur academic programmes; institution campus scope",
+      "publisherPeriod": "Overlaps an existing unresolved IIT Kanpur source conflict; no additional programme assertion released.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. Electrical and Electronics Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b44-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department page lines 12–14: names the B.Tech programme and states it is four years; no academic year is stated.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Department of Electrical & Electronics Engineering, NIT Sikkim",
+      "publisherPeriod": "Department page states four-year duration; programme page is undated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Robotics Laboratory",
+        "description": "The Department of Electrical & Electronics Engineering lists a Robotics Laboratory among its department facilities."
+      },
+      "sourceIds": [
+        "b44-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department facilities list, line 11.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Department of Electrical & Electronics Engineering, NIT Sikkim",
+      "publisherPeriod": "Undated departmental facilities listing; current availability should be rechecked.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "shiv-nadar-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. in Civil Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b44-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programs page lines 176–183: undergraduate Civil Engineering B.Tech; the department describes the degree as four years.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Shiv Nadar University Delhi NCR campus; programme page institution-wide",
+      "publisherPeriod": "Current programme page describes a four-year undergraduate degree; no academic year is stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "shiv-nadar-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Indoor Sports Complex and outdoor sports facilities",
+        "description": "The University sports page describes an Indoor Sports Complex and outdoor sports facilities on campus; individual facility metrics are not reproduced here."
+      },
+      "sourceIds": [
+        "b44-28"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Sports section, lines 81–87.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Shiv Nadar University Delhi NCR campus",
+      "publisherPeriod": "Official sports facilities page; publication date not stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "sathyabama-institute",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Sc. - Data Science",
+        "level": "UG",
+        "durationMonths": 36
+      },
+      "sourceIds": [
+        "b44-4"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic Year 2026–2027 Arts, Science and Humanities table, row 16, lines 111–130: B.Sc. Data Science, three years.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Sathyabama Institute of Science and Technology, Chennai",
+      "publisherPeriod": "Academic Year 2026–2027; programme listing, not an eligibility or admission guarantee.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "sathyabama-institute",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Student hostels",
+        "description": "The hostel page describes separate boys' and girls' hostels and states that 24-hour medical aid is available for hostel residents."
+      },
+      "sourceIds": [
+        "b44-5"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Hostel section, lines 48–74; last-updated footer at line 127.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Sathyabama Institute of Science and Technology campus",
+      "publisherPeriod": "Hostel page last updated November 2026.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. in Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b44-6"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Academic Structure page lines 232–244: listed under Undergraduate Programmes; no academic year is stated.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Central University of Haryana, Jant-Pali permanent campus; programme page does not state a separate campus.",
+      "publisherPeriod": "Undated Academic Structure page; current intake not asserted.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Student hostels",
+        "description": "The University hostel page lists reading-room, gymnasium, Wi-Fi and bus services between hostel and academic blocks, and separate boys' and girls' hostels."
+      },
+      "sourceIds": [
+        "b44-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "About Hostel Facility, lines 195–205.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Central University of Haryana, Jant-Pali permanent campus.",
+      "publisherPeriod": "Current hostel information page; no publication date stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Permanent Campus",
+        "channel": "ADDRESS",
+        "contact": "Central University of Haryana, Jant-Pali, Mahendergarh, Haryana 123031"
+      },
+      "sourceIds": [
+        "b44-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Permanent Campus address, lines 514–518.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Permanent campus",
+      "publisherPeriod": "Official homepage contact block; checked 21 November 2026.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "central-university-of-haryana",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Vice Chancellor Office",
+        "channel": "PHONE",
+        "contact": "01285-260201"
+      },
+      "sourceIds": [
+        "b44-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Permanent Campus and Vice Chancellor Office telephone, lines 514–518.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Permanent campus",
+      "publisherPeriod": "Official homepage contact block; checked 21 November 2026.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "sikkim-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.A. in Psychology",
+        "level": "PG"
+      },
+      "sourceIds": [
+        "b44-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Academic Programmes table, School of Human Sciences: Psychology lists BA/B.Sc/MA/M.Sc/Ph.D.; scope is the official university listing and the specific campus is not identified.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Sikkim University-wide academic programmes listing; campus not specified for this programme.",
+      "publisherPeriod": "Page last updated 5 June 2026; no academic year stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "dibrugarh-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "University Address",
+        "channel": "ADDRESS",
+        "contact": "Dibrugarh University, Dibrugarh 786004, Assam, India"
+      },
+      "sourceIds": [
+        "b44-10"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "University contact block, lines 42–49.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Dibrugarh University, Dibrugarh",
+      "publisherPeriod": "Official contact block; no publication date stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "dibrugarh-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Registrar",
+        "channel": "EMAIL",
+        "contact": "registrar@dibru.ac.in"
+      },
+      "sourceIds": [
+        "b44-10"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "University contact block, lines 47–51.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Dibrugarh University, Dibrugarh",
+      "publisherPeriod": "Official contact block; no publication date stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "manipur-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Two-Year M.A. English",
+        "level": "PG"
+      },
+      "sourceIds": [
+        "b44-11"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "The 2026–27 admission notice list includes a fourth provisional selection list for admission to the Two Year MA English; deadline 2 October 2026.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Manipur University Department of English & Cultural Studies; specific campus not stated in this notice.",
+      "publisherPeriod": "Historical 2026–27 admission cycle; listed deadline has passed.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "chitkara-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.E. in Computer Science & Engineering with Specialisations",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b44-12"
+      ],
+      "academicYear": "2027",
+      "evidenceLocation": "Chitkara University Institute of Engineering & Technology section: four-year Bachelor of Engineering programme list includes Computer Science & Engg. with Specialisations.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Chitkara University Institute of Engineering & Technology; the source page does not disaggregate this programme by campus.",
+      "publisherPeriod": "Admissions for Academic Year 2027; current programme page.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "chitkara-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Academic blocks, libraries, laboratories and residential facilities",
+        "description": "The University infrastructure page lists academic blocks with department-specific laboratories and dedicated libraries, as well as residential facilities; campus-specific availability is not disaggregated on the page."
+      },
+      "sourceIds": [
+        "b44-13"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Campus Infrastructure page sections Academic Blocks, Central Library and Residential Facilities; university-wide page does not distinguish locations.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Chitkara University-wide infrastructure page; campus-specific availability is not disaggregated.",
+      "publisherPeriod": "Official infrastructure page; publication date not stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "gd-goenka-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech Aerospace Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b44-14"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programmes page lines 306–310 lists B.Tech Aerospace Engineering.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "GD Goenka University campus, Gurugram",
+      "publisherPeriod": "Current official programme page; academic year and publication date are not stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "gd-goenka-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Student hostel accommodation",
+        "description": "The University hostel page lists single, twin-sharing, triple/quad-sharing and bunk-bed accommodation options."
+      },
+      "sourceIds": [
+        "b44-15"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Hostel Facilities page, Accommodation Options section.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "GD Goenka University campus, Gurugram",
+      "publisherPeriod": "Current hostel facilities page; academic year and publication date are not stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "visvesvaraya-technological-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Robotics & Automation",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b44-16"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "VTU UG/PG Centre, Jnana Sangama, Belagavi section, lines 521–535, UG programme list.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "VTU UG/PG Centre, Jnana Sangama, Belagavi; not a claim about all affiliated colleges.",
+      "publisherPeriod": "Official centre programme listing; academic year is not stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "calcutta-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "University Address",
+        "channel": "ADDRESS",
+        "contact": "University of Calcutta, 87/1 College Street, Kolkata 700073"
+      },
+      "sourceIds": [
+        "b44-17"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Official homepage address block, lines 442–446.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University headquarters, College Street, Kolkata.",
+      "publisherPeriod": "Official homepage contact information; no publication date stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nit-andhra-pradesh",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech",
+        "route": "JoSAA / CSAB counselling",
+        "category": "B.Tech applicants in the 2026 admission cycle",
+        "counselling": "JoSAA / CSAB 2026"
+      },
+      "sourceIds": [
+        "b44-18"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "Official B.Tech admissions page identifies JoSAA / CSAB 2026; no rank threshold or eligibility rule is asserted.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Andhra Pradesh, B.Tech admissions",
+      "publisherPeriod": "Historical 2026 counselling cycle; not a current application route.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "siksha-o-anusandhan",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "MBBS, BDS, MD/MS and MDS",
+        "route": "NEET only; admission process conducted through DGHS",
+        "category": "Medical and dental applicants in the 2026 admission information",
+        "exam": "NEET",
+        "counselling": "DGHS"
+      },
+      "sourceIds": [
+        "b44-19"
+      ],
+      "academicYear": "2026",
+      "evidenceLocation": "SAAT 2026 page lines 16–31: medical/dental programmes use NEET only and the admission process is through DGHS.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Siksha 'O' Anusandhan constituent medical/dental programmes; source does not specify an individual campus.",
+      "publisherPeriod": "Historical 2026 admission information; not a current application instruction.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "iit-indore",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. in Biomedical Engineering and Data Science",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b44-20"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "All Programs section, line 166: B.Tech Biomedical Engineering and Data Science (from AY 2026–27).",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Indore, B.Tech programme listing",
+      "publisherPeriod": "Introduced from Academic Year 2026–2027.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iit-indore",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Health Centre",
+        "description": "The IIT Indore Health Centre page describes outpatient, emergency and in-patient facilities for minor ailments; emergency services are stated as available 24×7."
+      },
+      "sourceIds": [
+        "b44-21"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Health Centre page lines 12–13; page's doctors schedule is dated 21 November 2026.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Indore campus, Khandwa Road, Simrol, Indore",
+      "publisherPeriod": "Health Centre page provides a schedule dated 21 November 2026.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iiit-gwalior",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. in Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b44-22"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Admission process PDF dated 17 July 2026, p.0 lines 2–4 and p.3 lines 67–76: first-semester B.Tech programme list includes CSE.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "ABV-IIITM Gwalior, first-semester B.Tech programme listing",
+      "publisherPeriod": "Historical 2026–27 incoming cohort; not a statement of current intake.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "iiit-gwalior",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "First-semester B.Tech CSE/EEE/MSC and integrated B.Tech IT+M.Tech (IT) / B.Tech IT+MBA programmes",
+        "route": "Seat acceptance through JoSAA, CSAB, DASA or SII counselling, followed by institute reporting",
+        "category": "Incoming students for Academic Year 2026–2027",
+        "exam": "JEE Main",
+        "counselling": "JoSAA / CSAB / DASA / Study in India"
+      },
+      "sourceIds": [
+        "b44-23"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "PDF p.0 lines 2–7 lists counselling channels and institute reporting; p.0 lines 20–23 request JEE score card/admit card.",
+      "status": "RESEARCH_HOLD_DUPLICATE_ARCHIVED_EVIDENCE",
+      "reviewState": "UNREVIEWED",
+      "stageable": false,
+      "campusScope": "ABV-IIITM Gwalior, first-semester 2026–27 programmes",
+      "publisherPeriod": "Historical 2026–27 route overlaps with an archived source claim; retain the archived claim for individual owner review.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "north-eastern-hill-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "M.A. English",
+        "level": "PG"
+      },
+      "sourceIds": [
+        "b44-24"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "General Courses page, lines 114–124, explicitly headed Shillong Campus; English appears in the M.A. programme list.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NEHU Shillong Campus",
+      "publisherPeriod": "Current general courses listing; no academic year is stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "north-eastern-hill-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library and Tura Campus Library",
+        "description": "NEHU's library page describes a Central Library at the Shillong campus and a Campus Library at Tura; the page also describes online-resource access at Shillong. Old collection-size figures are omitted."
+      },
+      "sourceIds": [
+        "b44-25"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Present Scenario, lines 35–46; page distinguishes Shillong Central Library and Tura Campus Library.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Shillong Central Library and Tura Campus Library; campus mapping is preserved in the description.",
+      "publisherPeriod": "Undated library overview page; no historical collection counts are included.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "jntu-hyderabad",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "University Address",
+        "channel": "ADDRESS",
+        "contact": "Jawaharlal Nehru Technological University Hyderabad, Kukatpally, Hyderabad - 500 085, Telangana, India"
+      },
+      "sourceIds": [
+        "b44-29"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Contact Us page lines 10–12.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University-wide institutional postal address.",
+      "publisherPeriod": "Current contact page inspected 2026-11-21.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "vel-tech-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech. Computer Science & Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b44-30"
+      ],
+      "academicYear": "2027",
+      "evidenceLocation": "B.Tech Admissions Open 2027 page lines 189–193 and 213–219.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Vel Tech, Avadi, Chennai.",
+      "publisherPeriod": "B.Tech admissions open 2027.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iit-jodhpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Aerospace Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b44-31"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Official page could not be directly retrieved; no indexed excerpt is used to assert this claim.",
+      "status": "RESEARCH_HOLD_SOURCE_UNAVAILABLE",
+      "reviewState": "UNREVIEWED",
+      "stageable": false,
+      "campusScope": "IIT Jodhpur, Jodhpur campus.",
+      "publisherPeriod": "Direct retrieval timed out twice on 2026-11-21; not published.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "grant-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "MBBS",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b44-32"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses page lines 100–106 lists MBBS under UG Course; no cycle, intake or eligibility is asserted.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Grant Government Medical College, Mumbai.",
+      "publisherPeriod": "Courses page last updated 19 November 2026; page does not specify a current admission cycle.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "grant-medical-college",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "College Address",
+        "channel": "ADDRESS",
+        "contact": "Grant Government Medical College, J.J. Marg, Nagpada, Mumbai, Maharashtra 400008, India"
+      },
+      "sourceIds": [
+        "b44-32"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Courses page contact footer lines 211–214; page last updated 19 November 2026.",
+      "status": "RESEARCHED_READY_FOR_SOURCE_REPORTED_REVIEW",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Grant Government Medical College and Sir JJ Group of Hospitals, Mumbai.",
+      "publisherPeriod": "Institution contact footer; page last updated 19 November 2026.",
+      "historical": false
+    }
+  ],
+  "researchHolds": [
+    {
+      "institutionSlug": "iit-jodhpur",
+      "reason": "Official academic-programme page direct retrieval timed out twice. Search-index excerpts were not used as evidence.",
+      "nextAction": "Retry only when a first-party page/document can be directly inspected."
+    },
+    {
+      "institutionSlug": "iit-kanpur",
+      "reason": "The new programme listing overlaps with the existing IIT Kanpur source conflict held in review-holds.ts. The archived and new source values must be reconciled by a human before this additional programme claim can be released.",
+      "nextAction": "Review the existing IIT Kanpur DoAA Manual versus programme-page conflict; do not route this candidate around the hold."
+    },
+    {
+      "institutionSlug": "iiit-gwalior",
+      "reason": "The historical 2026–27 counselling route duplicates an archived staged admission claim from the same official PDF. Keep the archived item in the owner review workflow rather than publishing a second copy.",
+      "nextAction": "Review the existing archived claim and retain its audit history; do not stage or publish this duplicate candidate."
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "reason": "The official programme page returned HTTP 502 during direct retrieval; the page could not be inspected.",
+      "nextAction": "Retry only from another accessible first-party official programme document; do not use search snippets as evidence."
+    },
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "reason": "The official PGP page returned HTTP 403 during direct retrieval, so its search result was not used as proof.",
+      "nextAction": "Use an accessible official IIMB PDF or another first-party page when available."
+    },
+    {
+      "institutionSlug": "banaras-hindu-university",
+      "reason": "The official programme page rendered template placeholders rather than the programme rows; indexed search excerpts were not used as factual proof.",
+      "nextAction": "Find an accessible official prospectus or programme-specific document with exact programme and duration."
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "reason": "The official programmes page rendered a JavaScript-only shell; a large annual report could not be retrieved by the source viewer.",
+      "nextAction": "Use an accessible official academic page or a smaller official programme document; do not rely on search snippets."
+    },
+    {
+      "institutionSlug": "birla-institute-of-technology-mesra",
+      "reason": "The official programme page required JavaScript and did not expose its factual content to direct inspection.",
+      "nextAction": "Use an accessible official prospectus/programme document; do not use the indexed snippet alone."
+    },
+    {
+      "institutionSlug": "central-university-of-rajasthan",
+      "reason": "The official Academic Programmes page timed out during direct retrieval; its search excerpt was not used as proof.",
+      "nextAction": "Retry only through a distinct accessible official page or downloadable prospectus."
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "reason": "The official academic programmes page timed out during direct retrieval and exposed only programme-category links in its search excerpt.",
+      "nextAction": "Use a directly accessible official UG/PG programme document when available."
+    },
+    {
+      "institutionSlug": "iiit-delhi",
+      "reason": "The official B.Tech programmes page returned HTTP 502 on direct retrieval; its search result was not used as proof.",
+      "nextAction": "Use another accessible first-party official programme document when available."
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 54,
+  "researchedAt": "2026-11-22T16:05:00.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b54-1",
+      "institutionSlug": "iit-jodhpur",
+      "publisher": "Joint Seat Allocation Authority",
+      "title": "JoSAA 2026 participating institute directory",
+      "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Academic year 2026–27, institute code 108, JEE office email."
+      ]
+    },
+    {
+      "id": "b54-2",
+      "institutionSlug": "nit-raipur",
+      "publisher": "Joint Seat Allocation Authority",
+      "title": "JoSAA 2026 participating institute directory",
+      "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Academic year 2026–27, institute code 216, campus address."
+      ]
+    },
+    {
+      "id": "b54-3",
+      "institutionSlug": "nit-puducherry",
+      "publisher": "Joint Seat Allocation Authority",
+      "title": "JoSAA 2026 participating institute directory",
+      "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Academic year 2026–27, institute code 215, campus address."
+      ]
+    },
+    {
+      "id": "b54-4",
+      "institutionSlug": "nit-jamshedpur",
+      "publisher": "Joint Seat Allocation Authority",
+      "title": "JoSAA 2026 participating institute directory",
+      "url": "https://josaa.admissions.nic.in/applicant/seatmatrix/instituteview.aspx",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Academic year 2026–27, institute code 219, institutional UG admissions inbox."
+      ]
+    },
+    {
+      "id": "b54-5",
+      "institutionSlug": "nit-jamshedpur",
+      "publisher": "NIT Jamshedpur",
+      "title": "Notice S-50/2025",
+      "url": "https://nitjsr.ac.in/backend/uploads/admissions/JoSAA_CSAB_DASA_admission25.pdf",
+      "academicYear": "2025-26",
+      "publicationDate": "2025-08-18",
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "PDF page 1, Notice S-50/2025, physical reporting table, row 3."
+      ]
+    },
+    {
+      "id": "b54-6",
+      "institutionSlug": "nit-jamshedpur",
+      "publisher": "NIT Jamshedpur",
+      "title": "Notice S-50/2025",
+      "url": "https://nitjsr.ac.in/backend/uploads/admissions/JoSAA_CSAB_DASA_admission25.pdf",
+      "academicYear": "2025-26",
+      "publicationDate": "2025-08-18",
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "PDF page 1, opening paragraph above the physical reporting table."
+      ]
+    },
+    {
+      "id": "b54-7",
+      "institutionSlug": "cochin-university",
+      "publisher": "Department of Scientific and Industrial Research",
+      "title": "DSIR institution directory, June 2025",
+      "url": "https://www.dsir.gov.in/sites/default/files/2025-07/PFRI%20Directory%20JUNE%202025%20-Signed.pdf",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "PDF page 10, entry 101, institution address."
+      ]
+    },
+    {
+      "id": "b54-8",
+      "institutionSlug": "mizoram-university",
+      "publisher": "Department of Scientific and Industrial Research",
+      "title": "DSIR institution directory, June 2025",
+      "url": "https://www.dsir.gov.in/sites/default/files/2025-07/PFRI%20Directory%20JUNE%202025%20-Signed.pdf",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "PDF page 29, entry 350, institution address."
+      ]
+    },
+    {
+      "id": "b54-9",
+      "institutionSlug": "banasthali-vidyapith",
+      "publisher": "India Science, Technology & Innovation Portal",
+      "title": "Banasthali Vidyapith",
+      "url": "https://www.indiascienceandtechnology.gov.in/allstinstitutions/banasthali-vidyapith-0",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Institution entry, Address field."
+      ]
+    },
+    {
+      "id": "b54-10",
+      "institutionSlug": "iiit-sri-city",
+      "publisher": "IIIT Sri City",
+      "title": "Recruitment section contact",
+      "url": "https://services.iiitk.ac.in/iiits/?q=contactus",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Institute recruitment contact page, postal address. The page uses Chittoor in the institute name and Tirupati District in the address."
+      ]
+    },
+    {
+      "id": "b54-11",
+      "institutionSlug": "rvce-bangalore",
+      "publisher": "University Grants Commission",
+      "title": "Autonomous colleges directory",
+      "url": "https://www.ugc.gov.in/colleges/Autonomous_Colleges_list",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Karnataka row 485, college name and campus address column. No status or accreditation validity inferred."
+      ]
+    },
+    {
+      "id": "b54-12",
+      "institutionSlug": "rajasthan-technical-university",
+      "publisher": "INFLIBNET Centre",
+      "title": "University directory, letter R",
+      "url": "https://www.inflibnet.ac.in/universitydirectory/browse.php?alpha=R",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T16:05:00.000Z",
+      "access": "PUBLIC_OFFICIAL_HTML_READ",
+      "reuseConditions": "No explicit reuse licence established. A single factual detail is summarized with source attribution. No source prose, tables or high-impact figures reproduced.",
+      "evidenceLocations": [
+        "Rajasthan Technical University, Kota entry, street and postal address."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "iit-jodhpur",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "JEE office",
+        "channel": "EMAIL",
+        "contact": "office_jee@iitj.ac.in"
+      },
+      "sourceIds": [
+        "b54-1"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic year 2026–27, institute code 108, JEE office email.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Jodhpur, Rajasthan",
+      "publisherPeriod": "JoSAA 2026–27 directory. Confirm contacts for a later intake with the institute.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nit-raipur",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "NIT Raipur campus",
+        "channel": "ADDRESS",
+        "contact": "G.E. Road, Raipur, Chhattisgarh 492010"
+      },
+      "sourceIds": [
+        "b54-2"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic year 2026–27, institute code 216, campus address.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Raipur, Chhattisgarh",
+      "publisherPeriod": "JoSAA 2026–27 directory. Confirm contacts for a later intake with the institute.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nit-puducherry",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "NIT Puducherry campus",
+        "channel": "ADDRESS",
+        "contact": "Thiruvettakudy, Karaikal, Puducherry 609609"
+      },
+      "sourceIds": [
+        "b54-3"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic year 2026–27, institute code 215, campus address.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Puducherry, Karaikal",
+      "publisherPeriod": "JoSAA 2026–27 directory. Confirm contacts for a later intake with the institute.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Undergraduate admissions",
+        "channel": "EMAIL",
+        "contact": "ugadmission@nitjsr.ac.in"
+      },
+      "sourceIds": [
+        "b54-4"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Academic year 2026–27, institute code 219, institutional UG admissions inbox.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Jamshedpur, Adityapur, Jharkhand",
+      "publisherPeriod": "JoSAA 2026–27 directory. Confirm contacts for a later intake with the institute.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Engineering and Computational Mechanics",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b54-5"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "PDF page 1, Notice S-50/2025, physical reporting table, row 3.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Jamshedpur, Adityapur, Jharkhand",
+      "publisherPeriod": "Physical reporting notice for the 2025 UG batch.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "nit-jamshedpur",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech",
+        "route": "Institute reporting after the applicable JoSAA, CSAB, DASA or Study in India allocation route",
+        "category": "2025 undergraduate intake"
+      },
+      "sourceIds": [
+        "b54-6"
+      ],
+      "academicYear": "2025-26",
+      "evidenceLocation": "PDF page 1, opening paragraph above the physical reporting table.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Jamshedpur, Adityapur, Jharkhand",
+      "publisherPeriod": "Historical physical reporting notice for students already admitted in 2025. Check the current institute notice for your route.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "cochin-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "CUSAT campus address in the 2025 DSIR directory",
+        "channel": "ADDRESS",
+        "contact": "Cochin University P.O., Kochi, Kerala 682022"
+      },
+      "sourceIds": [
+        "b54-7"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "PDF page 10, entry 101, institution address.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Cochin University of Science and Technology, Kochi",
+      "publisherPeriod": "June 2025 directory entry. Campus address only. Confirm current contact information.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "mizoram-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Mizoram University address in the 2025 DSIR directory",
+        "channel": "ADDRESS",
+        "contact": "Tanhril, P.B. No. 190, Aizawl, Mizoram 796012"
+      },
+      "sourceIds": [
+        "b54-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "PDF page 29, entry 350, institution address.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Mizoram University, Tanhril, Aizawl",
+      "publisherPeriod": "June 2025 directory entry. Campus address only. Confirm current contact information.",
+      "historical": true
+    },
+    {
+      "institutionSlug": "banasthali-vidyapith",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Banasthali Vidyapith campus",
+        "channel": "ADDRESS",
+        "contact": "Banasthali Vidyapith, Rajasthan 304022"
+      },
+      "sourceIds": [
+        "b54-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Institution entry, Address field.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Banasthali Vidyapith, Tonk district, Rajasthan",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "iiit-sri-city",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "IIIT Sri City recruitment office",
+        "channel": "ADDRESS",
+        "contact": "630 Gnan Marg, Sri City, Tirupati District, Andhra Pradesh 517646"
+      },
+      "sourceIds": [
+        "b54-10"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Institute recruitment contact page, postal address. The page uses Chittoor in the institute name and Tirupati District in the address.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIIT Sri City, Andhra Pradesh",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "rvce-bangalore",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "RVCE Bengaluru campus",
+        "channel": "ADDRESS",
+        "contact": "R.V. Vidya Niketan Post, 8th Mile, Mysore Road, Bengaluru, Karnataka 560059"
+      },
+      "sourceIds": [
+        "b54-11"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Karnataka row 485, college name and campus address column. No status or accreditation validity inferred.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "R.V. College of Engineering, Bengaluru",
+      "publisherPeriod": null,
+      "historical": false
+    },
+    {
+      "institutionSlug": "rajasthan-technical-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Rajasthan Technical University campus",
+        "channel": "ADDRESS",
+        "contact": "Rawatbhata Road, Kota, Rajasthan 324010"
+      },
+      "sourceIds": [
+        "b54-12"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Rajasthan Technical University, Kota entry, street and postal address.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Rajasthan Technical University, Kota",
+      "publisherPeriod": null,
+      "historical": false
+    }
+  ],
+  "heldFindings": [
+    {
+      "institutionSlug": "rvce-bangalore",
+      "sourceUrl": "https://oldback.rvce.edu.in/?q=node%2F39",
+      "reason": "Institution contact page returned 502 and programme/profile sources returned 403 or timed out. The UGC directory supports only the released address."
+    },
+    {
+      "institutionSlug": "rajasthan-technical-university",
+      "sourceUrl": "https://rtu.ac.in/index/viewdata.php?page=contact-us75",
+      "reason": "The direct contact page and university teaching department report returned 403. INFLIBNET supplies the address. No current programme claim is inferred."
+    },
+    {
+      "institutionSlug": "iit-jodhpur",
+      "sourceUrl": "https://www.indiascienceandtechnology.gov.in/organisations/centres-of-higher-learning/iits/indian-institute-technology-iit-jodhpur?language=en",
+      "reason": "ISTI and JoSAA give different highway numbers and postal codes. Use the attributed JoSAA office inbox only. No campus postal address released."
+    },
+    {
+      "institutionSlug": "cochin-university",
+      "sourceUrl": "https://admissions.cusat.ac.in/Prospectus/Prospectus2026.pdf",
+      "reason": "Current prospectus returned 502 and its alternate host timed out. DSIR supports a historical address only."
+    },
+    {
+      "institutionSlug": "mizoram-university",
+      "sourceUrl": "https://mzu.edu.in/admission-notice-for-2026-27-session/",
+      "reason": "Admission notice and prior prospectus returned 502. DSIR supports a historical address only. The library homepage remains withheld due to unrelated suspicious outbound links."
+    }
+  ]
+}

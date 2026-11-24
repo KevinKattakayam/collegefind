@@ -1,0 +1,213 @@
+{
+  "status": "STAGED",
+  "facts": 25,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 25,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "cmi-chennai",
+      "field": "courses",
+      "evidenceId": "cmwlqtg4t000jgvtvdkbe6hwt",
+      "sourceId": "cmwlqtg360000gvtvj1b5oiql",
+      "sourceUrl": "https://www.cmi.ac.in/admissions/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "cmi-chennai",
+      "field": "structured.programme",
+      "evidenceId": "cmwlqtg52000lgvtvz4vi96gl",
+      "sourceId": "cmwlqtg360000gvtvj1b5oiql",
+      "sourceUrl": "https://www.cmi.ac.in/admissions/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "cmi-chennai",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg56000ngvtvlul6b04j",
+      "sourceId": "cmwlqtg360000gvtvj1b5oiql",
+      "sourceUrl": "https://www.cmi.ac.in/admissions/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-uttarakhand",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg5k000qgvtvwwstb1f5",
+      "sourceId": "cmwlqtg3f0001gvtv7dydblwk",
+      "sourceUrl": "https://nituk.ac.in/admissions",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-uttarakhand",
+      "field": "structured.fee",
+      "evidenceId": "cmwlqtg5p000tgvtvzdnib1s5",
+      "sourceId": "cmwlqtg3g0002gvtvbi9ocfvn",
+      "sourceUrl": "https://nituk.ac.in/uploads/topics/Fees%20structure%20-%20B.Tech%202026-27.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "courses",
+      "evidenceId": "cmwlqtg5w000wgvtvwx82ypbg",
+      "sourceId": "cmwlqtg3j0003gvtvt8t9tq2b",
+      "sourceUrl": "https://eee.nitsikkim.ac.in/academics.php",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "structured.programme",
+      "evidenceId": "cmwlqtg62000ygvtv8c0ktth6",
+      "sourceId": "cmwlqtg3j0003gvtvt8t9tq2b",
+      "sourceUrl": "https://eee.nitsikkim.ac.in/academics.php",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg680011gvtv61vrusl1",
+      "sourceId": "cmwlqtg3k0004gvtvg0i1qt79",
+      "sourceUrl": "https://nitsikkim.ac.in/admissions/btechAdmissions.php",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "structured.fee",
+      "evidenceId": "cmwlqtg6e0014gvtvlu1zezem",
+      "sourceId": "cmwlqtg3n0005gvtvkr4p9ypc",
+      "sourceUrl": "https://nitsikkim.ac.in/documents/Fee%20Structure/2026_April/B.Tech.%20Fee%20structure%20for%20Academic%20Year%202026-27.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-sikkim",
+      "field": "structured.fee",
+      "evidenceId": "cmwlqtg6h0016gvtvfqfn29np",
+      "sourceId": "cmwlqtg3n0005gvtvkr4p9ypc",
+      "sourceUrl": "https://nitsikkim.ac.in/documents/Fee%20Structure/2026_April/B.Tech.%20Fee%20structure%20for%20Academic%20Year%202026-27.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-andhra-pradesh",
+      "field": "courses",
+      "evidenceId": "cmwlqtg6p0019gvtv2etgcqhc",
+      "sourceId": "cmwlqtg3r0006gvtvgthszj8x",
+      "sourceUrl": "https://nitandhra.ac.in/main/Rules/BT%20R24%20Regulations%20NIT%20ANP%20along%20with%20Annexure.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-andhra-pradesh",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg6u001cgvtvkgv0hb2u",
+      "sourceId": "cmwlqtg3t0007gvtv7aohsusi",
+      "sourceUrl": "https://nitandhra.ac.in/main/btech.php?search=2026",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "manipur-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg70001fgvtvqevrmodp",
+      "sourceId": "cmwlqtg3w0008gvtv05ntkinp",
+      "sourceUrl": "https://www.manipuruniv.ac.in/p/admission-2026-27",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "mizoram-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg76001igvtvwt1u1rdm",
+      "sourceId": "cmwlqtg3z0009gvtvd8w439fc",
+      "sourceUrl": "https://mzu.edu.in/admission-notice-for-2026-27-session/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "vjti-mumbai",
+      "field": "courses",
+      "evidenceId": "cmwlqtg7b001lgvtvuiivotoz",
+      "sourceId": "cmwlqtg41000agvtv1j79wkk9",
+      "sourceUrl": "https://vjti.ac.in/undergraduate-admission/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "vjti-mumbai",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg7e001ngvtv9ospe076",
+      "sourceId": "cmwlqtg41000agvtv1j79wkk9",
+      "sourceUrl": "https://vjti.ac.in/undergraduate-admission/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nirma-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg7i001qgvtvfvd0j4ev",
+      "sourceId": "cmwlqtg44000bgvtv1q8qhbkc",
+      "sourceUrl": "https://management.nirmauni.ac.in/admission-aid/undergraduate/bba-honours-admissions/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nirma-university",
+      "field": "structured.fee",
+      "evidenceId": "cmwlqtg7k001sgvtvimjz7e0l",
+      "sourceId": "cmwlqtg44000bgvtv1q8qhbkc",
+      "sourceUrl": "https://management.nirmauni.ac.in/admission-aid/undergraduate/bba-honours-admissions/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nirma-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg7p001vgvtv6ryo0b81",
+      "sourceId": "cmwlqtg46000cgvtv4ali0nkd",
+      "sourceUrl": "https://admissions.nirmauni.ac.in/btech.html",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "upes-dehradun",
+      "field": "structured.programme",
+      "evidenceId": "cmwlqtg7t001ygvtv63tp3zm6",
+      "sourceId": "cmwlqtg47000dgvtvyr056fdu",
+      "sourceUrl": "https://www.upes.ac.in/admissions/bsc",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "upes-dehradun",
+      "field": "structured.scholarship",
+      "evidenceId": "cmwlqtg7x0021gvtvbrhf6qvi",
+      "sourceId": "cmwlqtg49000egvtvphg7ywfj",
+      "sourceUrl": "https://www.upes.ac.in/admissions/scholarships",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "kasturba-medical-college",
+      "field": "structured.programme",
+      "evidenceId": "cmwlqtg820024gvtvkagz2fo7",
+      "sourceId": "cmwlqtg4b000fgvtvecos3dz9",
+      "sourceUrl": "https://www.manipal.edu/academics/programs/mbbs-kmc-manipal",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "kasturba-medical-college",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg840026gvtvmfg5hgko",
+      "sourceId": "cmwlqtg4b000fgvtvecos3dz9",
+      "sourceUrl": "https://www.manipal.edu/academics/programs/mbbs-kmc-manipal",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "rajiv-gandhi-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg880029gvtv2460ls40",
+      "sourceId": "cmwlqtg4c000ggvtve3wxlqbk",
+      "sourceUrl": "https://rgu.ac.in/uploads/notices/Admission%20Bulletin%202026-2027.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iim-amritsar",
+      "field": "structured.admission",
+      "evidenceId": "cmwlqtg8d002cgvtvkukfcrtj",
+      "sourceId": "cmwlqtg4f000hgvtvlvjvc01z",
+      "sourceUrl": "https://www.iimamritsar.ac.in/academics/mba/admission",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

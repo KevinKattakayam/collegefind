@@ -1,0 +1,16 @@
+{
+  "file": "staged-evidence-after-batch-022.json",
+  "sha256": "d6611b23e0a9aeb42285ab126ef035ae0f1e6caf1ace3406d988fc2c747fac4b",
+  "counts": {
+    "colleges": 205,
+    "sources": 247,
+    "claims": 342,
+    "runs": 271,
+    "audits": 342,
+    "decisions": 0,
+    "users": 0,
+    "fixtures": 0
+  },
+  "collegeSlugsSha256": "f309a7a6098a2efa5a00ef3368498b54a562dae71e8ea54507322a784f985059",
+  "collegeIdentitySha256": "7de99f1f2a5aa88676dfbfa2161e56a9ce043a4c6f5d1da82b82957a8e297849"
+}

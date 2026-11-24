@@ -60,7 +60,7 @@ export default function RegisterPage() {
             <div className="relative">
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#94A3B8]">👤</span>
               <input type="text" value={name} onChange={e => setName(e.target.value)}
-                placeholder="Full Name" className="input-field !pl-10" />
+                aria-label="Full name" autoComplete="name" placeholder="Full Name" className="input-field !pl-10" />
             </div>
             {errors.name && <p className="text-xs text-[#DC2626] mt-1">{errors.name}</p>}
           </div>
@@ -68,7 +68,7 @@ export default function RegisterPage() {
             <div className="relative">
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#94A3B8]">✉</span>
               <input type="email" value={email} onChange={e => setEmail(e.target.value)}
-                placeholder="Email address" className="input-field !pl-10" />
+                aria-label="Email address" autoComplete="email" placeholder="Email address" className="input-field !pl-10" />
             </div>
             {errors.email && <p className="text-xs text-[#DC2626] mt-1">{errors.email}</p>}
           </div>
@@ -76,8 +76,8 @@ export default function RegisterPage() {
             <div className="relative">
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#94A3B8]">🔒</span>
               <input type={showPwd ? 'text' : 'password'} value={password} onChange={e => setPassword(e.target.value)}
-                placeholder="Password (8+ characters)" className="input-field !pl-10 !pr-10" />
-              <button type="button" onClick={() => setShowPwd(!showPwd)}
+                aria-label="Password" autoComplete="new-password" placeholder="Password (10+ characters)" className="input-field !pl-10 !pr-10" />
+              <button type="button" aria-label={showPwd ? "Hide password" : "Show password"} onClick={() => setShowPwd(!showPwd)}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-[#94A3B8] text-sm">{showPwd ? '🙈' : '👁'}</button>
             </div>
             {errors.password && <p className="text-xs text-[#DC2626] mt-1">{errors.password}</p>}
@@ -86,11 +86,11 @@ export default function RegisterPage() {
             <div className="relative">
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#94A3B8]">🔒</span>
               <input type="password" value={confirmPwd} onChange={e => setConfirmPwd(e.target.value)}
-                placeholder="Confirm Password" className="input-field !pl-10" />
+                aria-label="Confirm password" autoComplete="new-password" placeholder="Confirm Password" className="input-field !pl-10" />
             </div>
             {errors.confirmPwd && <p className="text-xs text-[#DC2626] mt-1">{errors.confirmPwd}</p>}
           </div>
-          {serverError && <p className="text-sm text-[#DC2626]">{serverError}</p>}
+          {serverError && <p role="alert" className="text-sm text-[#DC2626]">{serverError}</p>}
           <button type="submit" disabled={loading} className="btn-primary w-full !h-[44px]">
             {loading ? <span className="animate-spin">⟳</span> : 'Create Account'}
           </button>

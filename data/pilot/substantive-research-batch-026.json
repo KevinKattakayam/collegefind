@@ -1,0 +1,122 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "batch": 26,
+  "researchedAt": "2026-11-18T15:17:37Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": "Manual inspection of directly accessible official institutional pages/publications. Only concise factual observations with exact page locator and attribution are staged. No page prose, source table or document is stored. Public access is not treated as a blanket bulk-extraction or redistribution permission; human review must check current scope and source-use before publication. All claims remain UNREVIEWED.",
+  "sources": [
+    {
+      "id": "tripura-university-eprospectus-2026-27-bba",
+      "institutionSlug": "tripura-university",
+      "publisher": "Tripura University",
+      "url": "https://tripurauniv.ac.in/site/images/pdf/tripura-university-eprospectus-2026-27.pdf",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-18T15:17:37Z",
+      "access": "PUBLIC_PDF_READ",
+      "reuseConditions": "Official 2026-27 e-Prospectus was publicly accessible and manually inspected. No express factual-extraction/republication licence was established. Stage only a concise programme name with exact PDF locator and link; do not store or redistribute the document/table. Reviewer must confirm the university campus and current programme scope before publication. The 2026-27 admission cycle material is historical/current-year reference only and is not presented as open admissions.",
+      "evidenceLocations": [
+        "PDF pp. 46-47, printed lines 1190-1209: Bachelor of Business Administration (BBA) is listed under Tripura University. The adjacent admission section is specific to 2026-27; no duration is stated in the cited programme entry."
+      ]
+    },
+    {
+      "id": "gtu-school-management-bba-honours",
+      "institutionSlug": "gujarat-technological-university",
+      "publisher": "Gujarat Technological University, School of Management Studies",
+      "url": "https://gsms.gtu.ac.in/bba/",
+      "publicationDate": null,
+      "academicYear": "2024-25",
+      "retrievedAt": "2026-11-18T15:17:37Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official constituent School of Management Studies page was directly opened and manually read. No express factual-extraction/republication or bulk-use licence was found. Store only a concise programme fact with source link/locator, not page prose. Programme page distinguishes the constituent School of Management Studies from other GTU-affiliated colleges; reviewer must preserve this campus/provider scope and confirm current offering before publication.",
+      "evidenceLocations": [
+        "Page lines 33-34 state BBA was established in 2022-23 and BBA Honours introduced in 2024-25. Lines 90-101 describe the four-year/eight-semester BBA Honours structure. Page lines 134-142 identify the School of Management Studies at Gujarat Technological University."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "tripura-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Business Administration (BBA)",
+        "level": "UG"
+      },
+      "sourceIds": ["tripura-university-eprospectus-2026-27-bba"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Tripura University e-Prospectus 2026-27, PDF pp. 46-47, printed lines 1190-1209: lists Bachelor of Business Administration (BBA). The cited entry does not specify duration. The claim does not assert that applications remain open.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "gujarat-technological-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "BBA Honours, School of Management Studies",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": ["gtu-school-management-bba-honours"],
+      "academicYear": "2024-25",
+      "evidenceLocation": "Gujarat Technological University School of Management Studies official BBA page, lines 33-34 says BBA Honours was introduced in 2024-25; lines 90-101 specifies a four-year/eight-semester structure; lines 134-142 identify the constituent School of Management Studies. Historical introduction year is recorded; reviewer must confirm current offering.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchDispositions": [
+    {
+      "institutionSlug": "tripura-university",
+      "status": "STAGED_CANDIDATE",
+      "note": "Directly accessed official 2026-27 e-Prospectus lists BBA. No duration inferred. Admission-cycle details are historical and not presented as current/open; source-use review remains required."
+    },
+    {
+      "institutionSlug": "gujarat-technological-university",
+      "status": "STAGED_CANDIDATE",
+      "note": "Direct official School of Management Studies page supports a four-year BBA Honours programme introduced in 2024-25. Scope is the GTU constituent School, not all affiliated colleges; current-offering and source-use review remain required. No undated fee or admission eligibility claim staged."
+    },
+    {
+      "institutionSlug": "aligarh-muslim-university",
+      "status": "RESEARCH_ONLY_SOURCE_USE_REVIEW",
+      "note": "Batch 025 contains one staged 2026-27 B.Sc. (Hons.) Physics programme fact from the official guide; no further current supported claim staged in this follow-up."
+    },
+    {
+      "institutionSlug": "ashoka-university",
+      "status": "RESEARCH_ONLY_CYCLE_REVALIDATION",
+      "note": "Batch 025 already stages a four-year Political Science programme and 2027 admissions round; revalidate the approaching Round 1 deadline before any student-facing publication."
+    },
+    {
+      "institutionSlug": "nit-manipur",
+      "status": "RESEARCH_ONLY_STALE_PAGE",
+      "note": "Official department page displays 2017 copyright; current linked programme document was not readable in this access path. Do not stage stale facts or use search excerpts."
+    },
+    {
+      "institutionSlug": "king-georges-medical-university",
+      "status": "RESEARCH_ONLY_FEE_COMPONENT_UNCLEAR",
+      "note": "Official fee table amount lacked a directly validated fee-component definition; no amount staged."
+    },
+    {
+      "institutionSlug": "jamia-millia-islamia",
+      "status": "HISTORICAL_CYCLE_NOT_STAGED",
+      "note": "Directly read 2026-27 prospectus material has passed admission dates; await a current-cycle notice."
+    },
+    {
+      "institutionSlug": "lnmiit-jaipur",
+      "status": "BLOCKED_DIRECT_RETRIEVAL",
+      "note": "Direct official URLs previously returned 502; do not bypass or stage search snippets."
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "status": "BLOCKED_DIRECT_RETRIEVAL",
+      "note": "Official admissions page previously timed out through ordinary direct retrieval; no claim staged."
+    },
+    {
+      "institutionSlug": "symbiosis-international-university",
+      "status": "BLOCKED_IDENTITY_AND_RETRIEVAL",
+      "note": "Institute-level identity remains unresolved and direct page previously returned 502; no claim staged."
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import {
   parseProgramName,
   parseRank,
   parseSeatType,
+  rankTypeForJosaa,
 } from '@/server/ingest/josaa';
 import { resetDb, testDb } from './db';
 
@@ -41,6 +42,11 @@ afterAll(async () => {
 });
 
 describe('JoSAA parsing', () => {
+  it('keeps CRL, category and PwD rank definitions distinct', () => {
+    expect(rankTypeForJosaa({ category: 'OPEN', isPwd: false })).toBe('CRL');
+    expect(rankTypeForJosaa({ category: 'OBC_NCL', isPwd: false })).toBe('CATEGORY');
+    expect(rankTypeForJosaa({ category: 'OPEN', isPwd: true })).toBe('PWD_CATEGORY');
+  });
   it('parses seat types, including PwD variants', () => {
     expect(parseSeatType('OPEN')).toEqual({ category: 'OPEN', isPwd: false });
     expect(parseSeatType('OBC-NCL')).toEqual({ category: 'OBC_NCL', isPwd: false });
@@ -88,16 +94,25 @@ describe('JoSAA import', () => {
 
     const after = await db.cutoffRecord.count();
     expect(after).toBe(5);
+    const imported = await db.cutoffRecord.findMany({ orderBy: [{ category: 'asc' }, { isPwd: 'asc' }], select: { counsellingSystem: true, rankType: true, category: true, isPwd: true } });
+    expect(imported.every((row) => row.counsellingSystem === 'JOSAA')).toBe(true);
+    expect(imported).toEqual(expect.arrayContaining([
+      expect.objectContaining({ category: 'OPEN', isPwd: false, rankType: 'CRL' }),
+      expect.objectContaining({ category: 'OBC_NCL', isPwd: false, rankType: 'CATEGORY' }),
+      expect.objectContaining({ category: 'SC', isPwd: true, rankType: 'PWD_CATEGORY' }),
+    ]));
 
     // Re-running the same file must not duplicate rows.
     await importJosaaRows(db, rows, { year: 2025, round: 6, source: SOURCE, institutes: MAPPING });
     expect(await db.cutoffRecord.count()).toBe(5);
+    expect(await db.source.count()).toBe(1);
+    expect(await db.importRun.count()).toBe(1);
 
     const pwd = await db.cutoffRecord.findFirst({ where: { isPwd: true } });
     expect(pwd).toMatchObject({ category: 'SC', isPreparatory: true, closingValue: 124 });
 
     const open = await db.cutoffRecord.findFirst({ where: { category: 'OPEN', seatPool: 'GENDER_NEUTRAL', quota: 'AI' } });
-    expect(open).toMatchObject({ openingValue: 1024, closingValue: 4870, exam: 'JEE_MAIN' });
+    expect(open).toMatchObject({ openingValue: 1024, closingValue: 4870, exam: 'JEE_MAIN', evidenceLocator: 'CSV line 2' });
 
     const withSource = await db.cutoffRecord.findFirst({ include: { source: true } });
     expect(withSource?.source.url).toBe(SOURCE.url);
@@ -110,4 +125,39 @@ describe('JoSAA import', () => {
     expect(await db.cutoffRecord.count()).toBe(0);
     expect(await db.source.count()).toBe(0);
   });
+});
+
+
+describe('atomic import conflicts', () => {
+  it('preserves original values and records a failed run on a changed cutoff', async () => {
+    const { rows } = parseJosaaCsv(CSV);
+    const opts = { year: 2025, round: 6, source: SOURCE, institutes: MAPPING };
+    await importJosaaRows(db, rows, opts);
+    const original = await db.cutoffRecord.findMany({ orderBy: { id: 'asc' } });
+    const changed = rows.map((row) => ({ ...row, closing: { ...row.closing, value: row.closing.value + 1000 } }));
+    await expect(importJosaaRows(db, changed, opts)).rejects.toThrow(/Conflicting cutoff/);
+    expect(await db.cutoffRecord.findMany({ orderBy: { id: 'asc' } })).toEqual(original);
+    expect(await db.importRun.count({ where: { status: 'FAILED' } })).toBe(1);
+  });
+});
+
+it('recovers safely after concurrent attempts of the same import', async () => {
+ const { rows } = parseJosaaCsv(CSV);
+ const opts = {year:2025,round:6,source:SOURCE,institutes:MAPPING};
+ await Promise.allSettled([importJosaaRows(db,rows,opts),importJosaaRows(db,rows,opts)]);
+ await importJosaaRows(db,rows,opts);
+ expect(await db.cutoffRecord.count()).toBe(5);
+ expect(await db.source.count()).toBe(1);
+ expect(await db.importRun.count()).toBe(1);
+});
+
+it('rolls back earlier new programme writes when a later row conflicts', async () => {
+ const {rows} = parseJosaaCsv(CSV);
+ const opts={year:2025,round:6,source:SOURCE,institutes:MAPPING};
+ await importJosaaRows(db,rows,opts);
+ const programmes = await db.program.count();
+ const conflict = {...rows[0],closing:{...rows[0].closing,value:rows[0].closing.value+1}};
+ await expect(importJosaaRows(db,[{...rows[0],program:'New fixture programme'},conflict],opts)).rejects.toThrow(/Conflicting cutoff/);
+ expect(await db.program.count()).toBe(programmes);
+ expect(await db.cutoffRecord.count()).toBe(5);
 });

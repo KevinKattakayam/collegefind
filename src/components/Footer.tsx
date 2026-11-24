@@ -39,7 +39,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-sm mb-4 text-slate-300 uppercase tracking-wider">Tools</h3>
             <div className="flex flex-col gap-2.5">
-              {[['/compare', 'Compare Colleges'], ['/predictor', 'College Predictor'], ['/saved', 'Saved Colleges']].map(([href, label]) => (
+              {[['/compare', 'Compare Colleges'], ['/predictor', 'Admission guidance'], ['/collegefit', 'CollegeFit'], ['/saved', 'Saved Colleges']].map(([href, label]) => (
                 <Link key={href} href={href} className="text-sm text-slate-400 hover:text-indigo-300 transition-colors no-underline">{label}</Link>
               ))}
             </div>

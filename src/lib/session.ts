@@ -1,3 +1,4 @@
+import { prisma } from './prisma';
 import { getServerSession } from 'next-auth';
 import { authOptions } from './auth';
 import { ApiError } from './http';
@@ -10,7 +11,8 @@ export interface SessionUser {
 export async function getSessionUser(): Promise<SessionUser | null> {
   const session = await getServerSession(authOptions);
   if (!session?.user?.id) return null;
-  return { id: session.user.id, role: session.user.role ?? 'USER' };
+  const user = await prisma.user.findFirst({ where: { id: session.user.id, deactivatedAt: null }, select: { id: true, role: true } });
+  return user ? { id: user.id, role: user.role } : null;
 }
 
 export async function requireUser(): Promise<SessionUser> {
@@ -19,10 +21,7 @@ export async function requireUser(): Promise<SessionUser> {
   return user;
 }
 
-/**
- * Role comes from the JWT issued at login. After promoting/demoting a user,
- * they must sign in again for the change to apply (documented in docs/SECURITY.md).
- */
+/** Current role is reloaded from the database for immediate revocation. */
 export async function requireAdmin(): Promise<SessionUser> {
   const user = await requireUser();
   if (user.role !== 'ADMIN') throw new ApiError(403, 'FORBIDDEN', 'Admin access required');

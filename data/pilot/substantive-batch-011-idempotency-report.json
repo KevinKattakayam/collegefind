@@ -1,0 +1,213 @@
+{
+  "status": "STAGED",
+  "facts": 25,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 25,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "delhi-technological-university",
+      "field": "structured.fee",
+      "evidenceId": "cmwlpjruk000iyttvsurt3rx4",
+      "sourceId": "cmwlpjrso0000yttvcoybcocx",
+      "sourceUrl": "https://dtu.ac.in/Web/quick_links/pdf/AC/41_AC.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "netaji-subhas-university-of-technology",
+      "field": "courses",
+      "evidenceId": "cmwlpjruz000lyttvuabboa67",
+      "sourceId": "cmwlpjrsv0001yttv9ut5jn1s",
+      "sourceUrl": "https://www.nsut.ac.in/index.php/en/node/124",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "netaji-subhas-university-of-technology",
+      "field": "structured.admission",
+      "evidenceId": "cmwlpjrvc000oyttvs4sm9ni2",
+      "sourceId": "cmwlpjrsx0002yttvvf4wvmnj",
+      "sourceUrl": "https://nsut.ac.in/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "sp-jain-institute",
+      "field": "structured.programme",
+      "evidenceId": "cmwlpjrvm000ryttv66ct5bhx",
+      "sourceId": "cmwlpjrt10003yttvexle3mak",
+      "sourceUrl": "https://www.spjimr.org/newsroom/press-release/spjimr-opens-applications-for-pgdm-and-pgdm-bm-programmes-for-2027-29/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "sp-jain-institute",
+      "field": "structured.admission",
+      "evidenceId": "cmwlpjrvq000tyttv85ztg0kv",
+      "sourceId": "cmwlpjrt10003yttvexle3mak",
+      "sourceUrl": "https://www.spjimr.org/newsroom/press-release/spjimr-opens-applications-for-pgdm-and-pgdm-bm-programmes-for-2027-29/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "banaras-hindu-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwlpjrw4000wyttvv6klrxja",
+      "sourceId": "cmwlpjrt40004yttvmjeyskwo",
+      "sourceUrl": "https://bhu.ac.in/Site/Programme/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "banaras-hindu-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwlpjrwm000zyttvckd9ylky",
+      "sourceId": "cmwlpjrt70005yttvkx86ou2p",
+      "sourceUrl": "https://admission.bhu.ac.in/en/notice/registration-for-undergraduate-admissions-2026/ckgr9qd2xdq1qkmud380paqh",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "fms-delhi",
+      "field": "admissions",
+      "evidenceId": "cmwlpjrx20012yttvyfnifgmd",
+      "sourceId": "cmwlpjrta0006yttvw4hp9v2s",
+      "sourceUrl": "https://www.fms.edu/programmes/mba-full-time",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "srm-ap",
+      "field": "structured.programme",
+      "evidenceId": "cmwlpjrxe0015yttvq0mc6ffd",
+      "sourceId": "cmwlpjrtd0007yttvnlxv4jgp",
+      "sourceUrl": "https://www.srmap.edu.in/school-of-engineering-and-applied-sciences/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "srm-ap",
+      "field": "structured.admission",
+      "evidenceId": "cmwlpjrxo0018yttvxlruoj99",
+      "sourceId": "cmwlpjrth0008yttv3gn20fem",
+      "sourceUrl": "https://www.srmap.edu.in/admission/seas-btech-eligibility/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "srm-ap",
+      "field": "structured.fee",
+      "evidenceId": "cmwlpjrxv001byttv3wzm9xue",
+      "sourceId": "cmwlpjrtk0009yttv529j03w1",
+      "sourceUrl": "https://www.srmap.edu.in/wp-content/uploads/2026/09/Admission-Booklet-AY-2026-2027-Domestic.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "srm-ap",
+      "field": "structured.scholarship",
+      "evidenceId": "cmwlpjrxz001dyttvzh335uaz",
+      "sourceId": "cmwlpjrtk0009yttv529j03w1",
+      "sourceUrl": "https://www.srmap.edu.in/wp-content/uploads/2026/09/Admission-Booklet-AY-2026-2027-Domestic.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-arunachal-pradesh",
+      "field": "structured.fee",
+      "evidenceId": "cmwlpjrya001gyttvxr46bihc",
+      "sourceId": "cmwlpjrto000ayttv9nglte77",
+      "sourceUrl": "https://api.nitap.ac.in/nitap/documents/cmnmyic4p000007lxyrcmi2j7/1782658014426-UG_July-Dec__2026_batch_onwards.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-arunachal-pradesh",
+      "field": "structured.fee",
+      "evidenceId": "cmwlpjrye001iyttvkndclvo5",
+      "sourceId": "cmwlpjrto000ayttv9nglte77",
+      "sourceUrl": "https://api.nitap.ac.in/nitap/documents/cmnmyic4p000007lxyrcmi2j7/1782658014426-UG_July-Dec__2026_batch_onwards.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-goa",
+      "field": "courses",
+      "evidenceId": "cmwlpjryr001lyttvpxoqaptp",
+      "sourceId": "cmwlpjrtq000byttvaq25wap3",
+      "sourceUrl": "https://www.nitgoa.ac.in/admissions/josaa.html",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-goa",
+      "field": "structured.admission",
+      "evidenceId": "cmwlpjryx001nyttv4n4xv9hq",
+      "sourceId": "cmwlpjrtq000byttvaq25wap3",
+      "sourceUrl": "https://www.nitgoa.ac.in/admissions/josaa.html",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "field": "structured.admission",
+      "evidenceId": "cmwlpjrza001qyttv1wd3j8vc",
+      "sourceId": "cmwlpjrtt000cyttvsekonyy4",
+      "sourceUrl": "https://daiict.ac.in/undergraduate-admissions-all-india-category",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "field": "structured.fee",
+      "evidenceId": "cmwlpjrzh001syttvn05nz1d4",
+      "sourceId": "cmwlpjrtt000cyttvsekonyy4",
+      "sourceUrl": "https://daiict.ac.in/undergraduate-admissions-all-india-category",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "field": "structured.fee",
+      "evidenceId": "cmwlpjrzk001uyttv8nyb0lun",
+      "sourceId": "cmwlpjrtt000cyttvsekonyy4",
+      "sourceUrl": "https://daiict.ac.in/undergraduate-admissions-all-india-category",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "dhirubhai-ambani-institute",
+      "field": "structured.scholarship",
+      "evidenceId": "cmwlpjrzr001xyttvy4htu344",
+      "sourceId": "cmwlpjrtx000dyttvnxvmxcvb",
+      "sourceUrl": "https://www.daiict.ac.in/index.php/btech-merit-and-mcm-scholarships",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-nagaland",
+      "field": "courses",
+      "evidenceId": "cmwlpjrzz0020yttvw949kl2f",
+      "sourceId": "cmwlpjrtz000eyttveke4h05f",
+      "sourceUrl": "https://www.nitnagaland.ac.in/index.php/academics/admission/btech/btech-csab26",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-nagaland",
+      "field": "structured.admission",
+      "evidenceId": "cmwlpjs030022yttv5mqmyqev",
+      "sourceId": "cmwlpjrtz000eyttveke4h05f",
+      "sourceUrl": "https://www.nitnagaland.ac.in/index.php/academics/admission/btech/btech-csab26",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-nagaland",
+      "field": "structured.fee",
+      "evidenceId": "cmwlpjs0b0025yttvlsipoe23",
+      "sourceId": "cmwlpjru2000fyttvturgr0po",
+      "sourceUrl": "https://www.nitnagaland.ac.in/templates/g5_helium/PDF/AcademicSec/Fee_Structure_25-26.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "nit-nagaland",
+      "field": "structured.fee",
+      "evidenceId": "cmwlpjs0e0027yttv7r7bjckr",
+      "sourceId": "cmwlpjru2000fyttvturgr0po",
+      "sourceUrl": "https://www.nitnagaland.ac.in/templates/g5_helium/PDF/AcademicSec/Fee_Structure_25-26.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "siksha-o-anusandhan",
+      "field": "structured.admission",
+      "evidenceId": "cmwlpjs0k002ayttvk5cmmjnl",
+      "sourceId": "cmwlpjru4000gyttvchomm00p",
+      "sourceUrl": "https://www.admission.soa.ac.in/saat-js",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

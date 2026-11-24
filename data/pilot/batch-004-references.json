@@ -1,0 +1,145 @@
+[
+  {
+    "slug": "iim-kozhikode",
+    "publisher": "IIM Kozhikode",
+    "url": "https://iimk.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "iim-shillong",
+    "publisher": "IIM Shillong",
+    "url": "https://www.iimshillong.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "iim-ranchi",
+    "publisher": "IIM Ranchi",
+    "url": "https://iimranchi.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "fms-delhi",
+    "publisher": "FMS Delhi",
+    "url": "https://www.fms.edu/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "banaras-hindu-university",
+    "publisher": "Banaras Hindu University",
+    "url": "https://www.bhu.ac.in/Site/Home/1_2_7047_Main-Site",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "christ-university",
+    "publisher": "Christ University",
+    "url": "https://christuniversity.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "sp-jain-institute",
+    "publisher": "SP Jain Institute",
+    "url": "https://www.spjimr.org/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "nalsar-university-of-law",
+    "publisher": "NALSAR University of Law",
+    "url": "https://nalsar.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "nliu-bhopal",
+    "publisher": "NLIU Bhopal",
+    "url": "https://nliu.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "iit-mandi",
+    "publisher": "IIT Mandi",
+    "url": "https://iitmandi.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "iit-patna",
+    "publisher": "IIT Patna",
+    "url": "https://www.iitp.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "iit-gandhinagar",
+    "publisher": "IIT Gandhinagar",
+    "url": "https://iitgn.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  },
+  {
+    "slug": "nit-patna",
+    "publisher": "NIT Patna",
+    "url": "https://www.nitp.ac.in/",
+    "collectedAt": "2026-11-17T17:25:00Z",
+    "publishedAt": null,
+    "locator": "Public HTML title/header and institution navigation observed; institution-level URL reference only; campus/rights review pending",
+    "access": "PUBLIC_HTML_OBSERVED",
+    "use": "LINK_REFERENCE_ONLY",
+    "reviewState": "UNREVIEWED"
+  }
+]

@@ -1,0 +1,135 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchedAt": "2026-11-17T18:42:55Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "access": "Official institution pages were manually opened through their public HTTPS URLs without authentication, CAPTCHA bypass, or automated crawling.",
+    "reuse": "No explicit provider licence for bulk extraction, source-document storage, or redistribution was established. This batch retains short factual summaries, publisher attribution, exact URLs and page locators only; no documents or substantial prose are stored.",
+    "review": "All candidates are unreviewed. Page retrieval and the page's own last-reviewed date are not human approval of claims."
+  },
+  "sources": [
+    {
+      "id": "iitg-bachelor-programmes-2026",
+      "institutionSlug": "indian-institute-of-technology-guwahati",
+      "publisher": "Indian Institute of Technology Guwahati, Academic Affairs",
+      "url": "https://www.iitg.ac.in/acad/programmes/bachelors.php/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-17T18:42:55Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page; no explicit bulk reuse licence identified. Facts and source link retained for attributed review only; no page text or table is redistributed.",
+      "evidenceLocations": ["Bachelor of Technology heading and discipline table; lines 64-80; four-year B.Tech duration at line 66", "Bachelor of Design and Bachelor of Science sections; lines 81-87"]
+    },
+    {
+      "id": "nitk-btech-admissions-2026-27",
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "publisher": "National Institute of Technology Karnataka, Surathkal",
+      "url": "https://www.nitk.ac.in/btech",
+      "publicationDate": null,
+      "academicYear": "2026-27",
+      "retrievedAt": "2026-11-17T18:42:55Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Public official page; page states last reviewed 18 October 2026 and links first-year instructions for 2026-27. No explicit bulk reuse licence identified. Short attributed facts and source link only; linked documents were not copied.",
+      "evidenceLocations": ["B.Tech programme list; lines 278-309", "JEE Main and JoSAA/CSAB process; lines 311-323; 2026-27 first-year instruction link at lines 343-345", "Official institute contact in page masthead/footer; lines 139 and 348-353"]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "indian-institute-of-technology-guwahati",
+      "field": "courses",
+      "value": [
+        "B.Tech — Biosciences and Bioengineering (4 years)",
+        "B.Tech — Chemical Engineering (4 years)",
+        "B.Tech — Chemical Science and Technology (4 years)",
+        "B.Tech — Civil Engineering (4 years)",
+        "B.Tech — Computer Science and Engineering (4 years)",
+        "B.Tech — Data Science and Artificial Intelligence (4 years)",
+        "B.Tech — Electronics and Communication Engineering (4 years)",
+        "B.Tech — Electronics and Electrical Engineering (4 years)",
+        "B.Tech — Energy Engineering (4 years)",
+        "B.Tech — Engineering Physics (4 years)",
+        "B.Tech — Mathematics and Computing (4 years)",
+        "B.Tech — Mechanical Engineering (4 years)",
+        "B.Des — Design (4 years)",
+        "BS — Biomedical Science and Engineering (4 years)"
+      ],
+      "sourceIds": ["iitg-bachelor-programmes-2026"],
+      "academicYear": null,
+      "evidenceLocation": "Official academic page lines 64-87. The page explicitly states four-year duration for B.Tech, B.Des and BS; B.Tech entries reflect the listed disciplines.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "field": "courses",
+      "value": [
+        "B.Tech — Artificial Intelligence",
+        "B.Tech — Chemical Engineering",
+        "B.Tech — Civil Engineering",
+        "B.Tech — Computational and Data Science",
+        "B.Tech — Computer Science and Engineering",
+        "B.Tech — Electrical and Electronics Engineering",
+        "B.Tech — Electronics and Communication Engineering",
+        "B.Tech — Information Technology",
+        "B.Tech — Mechanical Engineering",
+        "B.Tech — Metallurgical and Materials Engineering",
+        "B.Tech — Mining Engineering"
+      ],
+      "sourceIds": ["nitk-btech-admissions-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "B.Tech programmes listed on current institute admissions page, lines 278-309; page last reviewed 18 October 2026. Programme list scope is the page's current B.Tech admissions section.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "field": "admissions",
+      "value": "For B.Tech admissions, NITK states applicants must qualify JEE Main and participate in JoSAA counselling; remaining seats may be offered through CSAB special rounds. The page also describes DASA admission for the listed international applicant groups. Applicants should follow the current 2026-27 notices and authority rules for eligibility and schedules.",
+      "sourceIds": ["nitk-btech-admissions-2026-27"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "JEE Main, JoSAA and CSAB sections at lines 311-323; DASA description at lines 331-335; linked 2026-27 first-year instructions at lines 343-345. No additional eligibility thresholds inferred.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "field": "phone",
+      "value": "0824 2474000",
+      "sourceIds": ["nitk-btech-admissions-2026-27"],
+      "academicYear": null,
+      "evidenceLocation": "Official institutional contact shown in page masthead and footer, lines 139 and 348-353.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "field": "email",
+      "value": "info@nitk.edu.in",
+      "sourceIds": ["nitk-btech-admissions-2026-27"],
+      "academicYear": null,
+      "evidenceLocation": "Official institutional contact shown in page masthead and footer, lines 139 and 348-353.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "notStagedFindings": [
+    {
+      "institutionSlug": "national-institute-of-technology-karnataka",
+      "field": "fees / hostelFees",
+      "sourceUrl": "https://www.nitk.ac.in/fee-structure",
+      "evidenceLocation": "Page links to Institute Fee Structure 2026-27 and Hostel Fee Structure 2026-2027 at lines 281-285; underlying schedules were not retrieved or parsed in this batch.",
+      "reason": "Only link availability was observed; no fee value or category schedule has been established. The current staging adapter also does not safely represent itemized, programme/category/year fee schedules."
+    },
+    {
+      "institutionSlug": "iiit-hyderabad",
+      "sourceUrl": "https://ugadmissions.iiit.ac.in/jee-process/",
+      "evidenceLocation": "Direct page open returned HTTP 404 on 2026-11-17.",
+      "reason": "No fact staged; the prior indexed result is not accepted as current source evidence."
+    }
+  ]
+}

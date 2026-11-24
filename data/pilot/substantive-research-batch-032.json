@@ -1,0 +1,41 @@
+{
+  "batch": 32,
+  "ownerStagingReady": false,
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "sources": [
+    {
+      "id": "iit-patna-cse-official-collector",
+      "institutionSlug": "iit-patna",
+      "publisher": "Indian Institute of Technology Patna",
+      "url": "https://iitp.ac.in/departments/computer-science-engineering",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-20T14:18:14.294Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "IIT Patna public department page. Read robots before a single exact-page request. Record one independently written programme name and duration with attribution, with no stored page, descriptions, faculty information or bulk reuse.",
+      "evidenceLocations": [
+        "Department of CSE, Programs Offered, Artificial Intelligence and Data Science entry and Duration row"
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "iit-patna",
+      "sourceIds": [
+        "iit-patna-cse-official-collector"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Department of CSE, Programs Offered, Artificial Intelligence and Data Science entry and Duration row",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Artificial Intelligence and Data Science",
+        "durationMonths": 48,
+        "level": "UG"
+      },
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ]
+}

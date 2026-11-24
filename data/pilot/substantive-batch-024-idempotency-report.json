@@ -1,0 +1,93 @@
+{
+  "status": "STAGED",
+  "facts": 10,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 10,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "plaksha-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwm8ey7f0007fjtvzyvt0wcd",
+      "sourceId": "cmwm8ey6a0000fjtvbdw43ghm",
+      "sourceUrl": "https://plaksha.edu.in/programs/undergraduate/faqs",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "plaksha-university",
+      "field": "structured.admission",
+      "evidenceId": "cmwm8ey7u000afjtvlwtn4ux2",
+      "sourceId": "cmwm8ey6h0001fjtv8fnortxp",
+      "sourceUrl": "https://plaksha.edu.in/admissions/undergraduate/domestic",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "plaksha-university",
+      "field": "structured.scholarship",
+      "evidenceId": "cmwm8ey7z000cfjtvkk5t93pw",
+      "sourceId": "cmwm8ey6h0001fjtv8fnortxp",
+      "sourceUrl": "https://plaksha.edu.in/admissions/undergraduate/domestic",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiit-hyderabad",
+      "field": "structured.programme",
+      "evidenceId": "cmwm8ey86000ffjtvbgg0ne2x",
+      "sourceId": "cmwm8ey6n0002fjtvg3w0w2sj",
+      "sourceUrl": "https://www.iiit.ac.in/undergraduate/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iiit-hyderabad",
+      "field": "structured.programme",
+      "evidenceId": "cmwm8ey8c000hfjtvxqa94970",
+      "sourceId": "cmwm8ey6n0002fjtvg3w0w2sj",
+      "sourceUrl": "https://www.iiit.ac.in/undergraduate/",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "iit-gandhinagar",
+      "field": "structured.programme",
+      "evidenceId": "cmwm8ey8p000kfjtv7ukmvvrc",
+      "sourceId": "cmwm8ey6r0003fjtvnlp9ecsy",
+      "sourceUrl": "https://iitgn.ac.in/admissions/btech",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "field": "structured.fee",
+      "evidenceId": "cmwm8ey92000nfjtveiyxj031",
+      "sourceId": "cmwm8ey6v0004fjtvx31sk9at",
+      "sourceUrl": "https://woxsen.edu.in/fsd/b.sc%20%28hons.%29fee.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "field": "structured.fee",
+      "evidenceId": "cmwm8ey9a000pfjtvekwzwuep",
+      "sourceId": "cmwm8ey6v0004fjtvx31sk9at",
+      "sourceUrl": "https://woxsen.edu.in/fsd/b.sc%20%28hons.%29fee.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "field": "structured.fee",
+      "evidenceId": "cmwm8ey9f000rfjtv6rq6mxxv",
+      "sourceId": "cmwm8ey6v0004fjtvx31sk9at",
+      "sourceUrl": "https://woxsen.edu.in/fsd/b.sc%20%28hons.%29fee.pdf",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "gauhati-university",
+      "field": "structured.programme",
+      "evidenceId": "cmwm8ey9p000ufjtv4q7lmfx1",
+      "sourceId": "cmwm8ey6z0005fjtvqzf67vhz",
+      "sourceUrl": "https://admissions.gauhati.ac.in/faq/",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

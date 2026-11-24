@@ -1,0 +1,29 @@
+{
+  "status": "STAGED",
+  "facts": 2,
+  "reviewState": "UNREVIEWED",
+  "staged": 0,
+  "reused": 2,
+  "createdSources": 0,
+  "createdRuns": 0,
+  "repairedRuns": 0,
+  "claimResults": [
+    {
+      "institutionSlug": "indian-institute-of-technology-madras",
+      "field": "courses",
+      "evidenceId": "cmwl1uekt0002cstv7u2o5gy3",
+      "sourceId": "cmwl1ueka0000cstv1smz0s1m",
+      "sourceUrl": "https://www.iitm.ac.in/academics/study-at-iitm/undergraduate-programmes",
+      "status": "REUSED"
+    },
+    {
+      "institutionSlug": "indian-institute-of-technology-madras",
+      "field": "admissions",
+      "evidenceId": "cmwl1uel50004cstv2omo2rsm",
+      "sourceId": "cmwl1ueka0000cstv1smz0s1m",
+      "sourceUrl": "https://www.iitm.ac.in/academics/study-at-iitm/undergraduate-programmes",
+      "status": "REUSED"
+    }
+  ],
+  "databaseChanged": false
+}

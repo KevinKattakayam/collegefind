@@ -1,0 +1,64 @@
+{
+  "scope": "DISPOSABLE_DB_RESTORE_ONLY",
+  "restoredAt": "2026-11-17T18:53:31.342Z",
+  "originalSnapshot": {
+    "sources": 139,
+    "claims": 139,
+    "runs": 139,
+    "audits": 139
+  },
+  "missingHistoricalPayloads": 8,
+  "replayedOriginalEightAsNewAuditedClaims": [
+    {
+      "oldClaimId": "cmwkye74000029stvbzk89seq",
+      "newClaimId": "cmwl1w0ux002anztvyzbn6j05",
+      "slug": "indian-institute-of-technology-bombay"
+    },
+    {
+      "oldClaimId": "cmwkye74w00069stvi576b2pg",
+      "newClaimId": "cmwl1w0vf002enztv559kxy8l",
+      "slug": "indian-institute-of-technology-madras"
+    },
+    {
+      "oldClaimId": "cmwkye75e000a9stvwta1b3ty",
+      "newClaimId": "cmwl1w0w2002inztvebizfani",
+      "slug": "indian-institute-of-technology-delhi"
+    },
+    {
+      "oldClaimId": "cmwkye760000e9stvz0bo6hph",
+      "newClaimId": "cmwl1w0wp002mnztv1ubessno",
+      "slug": "national-institute-of-technology-tiruchirappalli"
+    },
+    {
+      "oldClaimId": "cmwkye76n000i9stvqitghtti",
+      "newClaimId": "cmwl1w0xb002qnztveg32viui",
+      "slug": "vellore-institute-of-technology"
+    },
+    {
+      "oldClaimId": "cmwkye778000m9stvhj044v9x",
+      "newClaimId": "cmwl1w0xx002unztvno4pztkk",
+      "slug": "manipal-academy-of-higher-education"
+    },
+    {
+      "oldClaimId": "cmwkye77x000q9stv6zfg4p64",
+      "newClaimId": "cmwl1w0yg002ynztv9j85uxjo",
+      "slug": "amrita-vishwa-vidyapeetham"
+    },
+    {
+      "oldClaimId": "cmwkye78h000u9stvtvrl2uu0",
+      "newClaimId": "cmwl1w0yv0032nztvyy1pl1cq",
+      "slug": "birla-institute-of-technology-mesra"
+    }
+  ],
+  "preservedCollegeIdsForClaimBearingInstitutions": 125,
+  "testCloneCollegeIdsGeneratedForOtherCatalogueRows": 80,
+  "counts": {
+    "catalogue": 205,
+    "sources": 147,
+    "claims": 147,
+    "runs": 147,
+    "audits": 147,
+    "decisions": 0,
+    "fixtureClaims": 0
+  }
+}

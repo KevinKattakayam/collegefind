@@ -1,0 +1,248 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 52,
+  "researchedAt": "2026-11-22T14:25:00.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b52-osmania-2026-brochure",
+      "institutionSlug": "osmania-university",
+      "publisher": "Osmania University",
+      "title": "Osmania University Brochure 2026",
+      "url": "https://www.osmania.ac.in/OU%20Brochure%202026.pdf",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-22T14:25:00.000Z",
+      "access": "PUBLIC_OFFICIAL_PDF_READ",
+      "reuseConditions": "Official University-hosted brochure; no explicit reuse licence established. Only individually stated degree titles and named facilities are summarized with direct attribution and page locators. No tables, prose, metrics, eligibility, fees, or outcome claims are reproduced; confirm current intake because no applicable admission year is stated.",
+      "evidenceLocations": [
+        "Page 26, College of Engineering, Programs Offered: Bachelor of Engineering in Civil Engineering, Mechanical Engineering, Electrical Engineering, Electronics & Communication Engineering, Bio-Medical Engineering, Computer Science & Engineering, Artificial Intelligence & Machine Learning, and Mining Engineering.",
+        "Page 22, Main Campus: campus description states that the main campus includes a central library and student hostels."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "osmania-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Engineering in Civil Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b52-osmania-2026-brochure"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Page 26, College of Engineering, Programs Offered: Bachelor of Engineering in Civil Engineering.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University College of Engineering, Osmania University, Hyderabad; the brochure lists it as a constituent/campus college. This is not mapped to every university college or affiliated institution.",
+      "publisherPeriod": "2026 University brochure; the programme list does not state an applicable intake year. Confirm the current programme and intake before applying.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Engineering in Mechanical Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b52-osmania-2026-brochure"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Page 26, College of Engineering, Programs Offered: Bachelor of Engineering in Mechanical Engineering.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University College of Engineering, Osmania University, Hyderabad; the brochure lists it as a constituent/campus college. This is not mapped to every university college or affiliated institution.",
+      "publisherPeriod": "2026 University brochure; the programme list does not state an applicable intake year. Confirm the current programme and intake before applying.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Engineering in Electrical Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b52-osmania-2026-brochure"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Page 26, College of Engineering, Programs Offered: Bachelor of Engineering in Electrical Engineering.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University College of Engineering, Osmania University, Hyderabad; the brochure lists it as a constituent/campus college. This is not mapped to every university college or affiliated institution.",
+      "publisherPeriod": "2026 University brochure; the programme list does not state an applicable intake year. Confirm the current programme and intake before applying.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Engineering in Electronics & Communication Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b52-osmania-2026-brochure"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Page 26, College of Engineering, Programs Offered: Bachelor of Engineering in Electronics & Communication Engineering.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University College of Engineering, Osmania University, Hyderabad; the brochure lists it as a constituent/campus college. This is not mapped to every university college or affiliated institution.",
+      "publisherPeriod": "2026 University brochure; the programme list does not state an applicable intake year. Confirm the current programme and intake before applying.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Engineering in Bio-Medical Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b52-osmania-2026-brochure"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Page 26, College of Engineering, Programs Offered: Bachelor of Engineering in Bio-Medical Engineering.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University College of Engineering, Osmania University, Hyderabad; the brochure lists it as a constituent/campus college. This is not mapped to every university college or affiliated institution.",
+      "publisherPeriod": "2026 University brochure; the programme list does not state an applicable intake year. Confirm the current programme and intake before applying.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Engineering in Computer Science & Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b52-osmania-2026-brochure"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Page 26, College of Engineering, Programs Offered: Bachelor of Engineering in Computer Science & Engineering.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University College of Engineering, Osmania University, Hyderabad; the brochure lists it as a constituent/campus college. This is not mapped to every university college or affiliated institution.",
+      "publisherPeriod": "2026 University brochure; the programme list does not state an applicable intake year. Confirm the current programme and intake before applying.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Engineering in Artificial Intelligence & Machine Learning",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b52-osmania-2026-brochure"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Page 26, College of Engineering, Programs Offered: Bachelor of Engineering in Artificial Intelligence & Machine Learning.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University College of Engineering, Osmania University, Hyderabad; the brochure lists it as a constituent/campus college. This is not mapped to every university college or affiliated institution.",
+      "publisherPeriod": "2026 University brochure; the programme list does not state an applicable intake year. Confirm the current programme and intake before applying.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "Bachelor of Engineering in Mining Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b52-osmania-2026-brochure"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Page 26, College of Engineering, Programs Offered: Bachelor of Engineering in Mining Engineering.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "University College of Engineering, Osmania University, Hyderabad; the brochure lists it as a constituent/campus college. This is not mapped to every university college or affiliated institution.",
+      "publisherPeriod": "2026 University brochure; the programme list does not state an applicable intake year. Confirm the current programme and intake before applying.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central library",
+        "description": "The 2026 University brochure lists this facility on the main campus. It does not specify access eligibility, capacity, operating status or fees."
+      },
+      "sourceIds": [
+        "b52-osmania-2026-brochure"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Page 22, Main Campus description: lists a central library among main-campus facilities.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Osmania University main campus, Hyderabad, as described in the brochure; no access conditions or capacity inferred.",
+      "publisherPeriod": "2026 University brochure; no programme year or facility operating period is stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Student hostels",
+        "description": "The 2026 University brochure lists this facility on the main campus. It does not specify access eligibility, capacity, operating status or fees."
+      },
+      "sourceIds": [
+        "b52-osmania-2026-brochure"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Page 22, Main Campus description: lists student hostels among main-campus facilities.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Osmania University main campus, Hyderabad, as described in the brochure; no access conditions or capacity inferred.",
+      "publisherPeriod": "2026 University brochure; no programme year or facility operating period is stated.",
+      "historical": false
+    }
+  ],
+  "researchHolds": [
+    {
+      "institutionSlug": "osmania-university",
+      "field": "contact",
+      "status": "RESEARCH_HOLD_CORROBORATION",
+      "reason": "The brochure lists an admissions email and telephone number, but these contact details were not independently corroborated on a current official contact page; not released."
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "field": "fees/recognition/placements",
+      "status": "RESEARCH_HOLD_HIGH_IMPACT",
+      "reason": "No claims extracted; financial/outcome/accreditation details require separate provenance, year, scope and stronger human review."
+    }
+  ],
+  "reviewerSummary": {
+    "candidateClaims": 10,
+    "sourceReportedEligible": 10,
+    "ownerDatabaseWrites": 0,
+    "genuineApprovals": 0,
+    "humanVerified": false,
+    "note": "Candidate facts are low-risk individual programme titles and named campus facilities only; source-reported, not independently verified."
+  }
+}

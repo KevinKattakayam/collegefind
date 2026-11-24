@@ -1,0 +1,133 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_IMPORTABLE_CANDIDATES",
+  "researchedAt": "2026-11-17T18:49:12Z",
+  "catalogueSeedChecksum": "a9321b82b6f390790e09a647dfaf589b90c5736819aed6b9a5908922bfcc1637",
+  "sourcePolicy": {
+    "access": "Official institutional pages were read by direct public HTTPS navigation; no authentication, CAPTCHA bypass or automated crawling.",
+    "reuse": "No explicit bulk-extraction or redistribution licence was established. Store only short factual summaries, attribution, URLs and line locators; do not store source documents or substantial prose.",
+    "review": "Facts remain UNREVIEWED until an authorized person reviews each claim. Search snippets and failed direct opens are not import evidence."
+  },
+  "sources": [
+    {
+      "id": "iisc-ug-programmes-2026",
+      "institutionSlug": "iisc-bangalore",
+      "publisher": "Indian Institute of Science, Undergraduate Programmes",
+      "url": "https://ug.iisc.ac.in/",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-17T18:49:12Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official page publicly readable; no explicit bulk reuse licence identified. Factual summary and source link only; no copied page text or documents.",
+      "evidenceLocations": ["Undergraduate Studies, BS Research and B.Tech programme descriptions; lines 43-55", "Programme names and four-year durations; lines 62-82"]
+    },
+    {
+      "id": "nitc-ug-programmes-2026",
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "publisher": "National Institute of Technology Calicut, Academic Programmes",
+      "url": "https://nitc.ac.in/ug-programmes",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-17T18:49:12Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official institute page publicly readable; no explicit bulk reuse licence identified. Keep only an attributed course summary and exact URL; do not republish the programme table.",
+      "evidenceLocations": ["Undergraduate programme list; Bachelor of Architecture, B.Tech entries and four-year ITEP; lines 240-286"]
+    },
+    {
+      "id": "nitc-undergraduate-admission-overview",
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "publisher": "National Institute of Technology Calicut, Admission Office",
+      "url": "https://nitc.ac.in/admissions-ug",
+      "publicationDate": null,
+      "academicYear": null,
+      "retrievedAt": "2026-11-17T18:49:12Z",
+      "access": "PUBLIC_HTML_READ",
+      "reuseConditions": "Official admission page publicly readable and links to JoSAA/CSAB authority pages. No explicit bulk reuse licence identified; factual summary and link only.",
+      "evidenceLocations": ["B.Tech/B.Arch admissions overview: JEE Main Paper 1/Paper 2 and centralized JoSAA/CSAB counselling; lines 282-290"]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "iisc-bangalore",
+      "field": "courses",
+      "value": [
+        "BS (Research) — Biology (4 years)",
+        "BS (Research) — Chemistry (4 years)",
+        "BS (Research) — Earth and Environmental Science (4 years)",
+        "BS (Research) — Mathematics (4 years)",
+        "BS (Research) — Physics (4 years)",
+        "B.Tech — Aerospace Engineering (4 years; introduced in academic year 2026)",
+        "B.Tech — Materials Science and Engineering (4 years; introduced in academic year 2026)",
+        "B.Tech — Mathematics and Computing (4 years; started in 2022)",
+        "B.Tech — Mechanics and Computing (4 years; introduced in academic year 2026)"
+      ],
+      "sourceIds": ["iisc-ug-programmes-2026"],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Current IISc undergraduate page identifies the BS (Research) programme as four years and lists five majors (lines 53-54, 62-72); B.Tech duration and four named streams are listed at lines 74-82. The page states three new B.Tech programmes expand from academic year 2026 (line 55).",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "field": "courses",
+      "value": [
+        "B.Arch — Architecture",
+        "B.Tech — Computer Science and Engineering",
+        "B.Tech — Biotechnology",
+        "B.Tech — Chemical Engineering",
+        "B.Tech — Civil Engineering",
+        "B.Tech — Dual Degree (B.Tech.-M.Tech.) in Mathematics and Computing",
+        "B.Tech — Electrical and Electronics Engineering",
+        "B.Tech — Electronics and Communication Engineering",
+        "B.Tech — Energy Engineering",
+        "B.Tech — Engineering Physics",
+        "B.Tech — Materials Science and Engineering",
+        "B.Tech — Mechanical Engineering",
+        "B.Tech — Production Engineering",
+        "ITEP — B.Sc.-B.Ed. (4 years)"
+      ],
+      "sourceIds": ["nitc-ug-programmes-2026"],
+      "academicYear": null,
+      "evidenceLocation": "Official undergraduate programme page, rows and headings at lines 255-286. The source explicitly states a four-year duration for ITEP only; no B.Tech/B.Arch duration is asserted here.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    },
+    {
+      "institutionSlug": "national-institute-of-technology-calicut",
+      "field": "admissions",
+      "value": "NIT Calicut's undergraduate admissions overview says B.Tech and B.Arch admission is based on JEE Main Paper 1 and Paper 2 respectively, with centralized online counselling conducted by JoSAA and CSAB. The page does not state a current admission-year deadline or detailed programme-specific eligibility; students should consult current authority notices.",
+      "sourceIds": ["nitc-undergraduate-admission-overview"],
+      "academicYear": null,
+      "evidenceLocation": "Official undergraduate admission overview lines 282-290. No year, cutoff, category threshold or deadline was inferred.",
+      "status": "RESEARCHED_READY_FOR_UNREVIEWED_STAGING",
+      "reviewState": "UNREVIEWED",
+      "stageable": true
+    }
+  ],
+  "researchAttemptsWithoutSupportedClaim": [
+    {
+      "institutionSlug": "bits-pilani",
+      "sourceUrl": "https://admissions.bits-pilani.ac.in/FD/FD_brochure.html",
+      "publisher": "BITS Pilani Admissions",
+      "result": "Direct open of the official 2026-27 admissions page returned HTTP 502. Search index showed an official brochure result but it was not accepted as retrieved evidence.",
+      "action": "Retry a readable official page or contact the institute; do not use the legacy bitsadmission.com host until current domain ownership/scope is resolved."
+    }
+  ],
+  "notStagedFindings": [
+    {
+      "institutionSlug": "iisc-bangalore",
+      "field": "admissions deadline",
+      "sourceUrl": "https://bs-ug.iisc.ac.in/admissions",
+      "evidenceLocation": "The page names the 2026-27 admission notice and shows an application deadline extended to 07 June 2026 at lines 54-58.",
+      "reason": "The displayed deadline has passed as of collection; current 2027-28 admissions conditions were not established. It is not staged as a current deadline."
+    },
+    {
+      "institutionSlug": "bits-pilani",
+      "field": "admissions / scholarship",
+      "sourceUrl": "https://admissions.bits-pilani.ac.in/FD/scholarship.html",
+      "evidenceLocation": "Search listed a current scholarship page, but direct open returned HTTP 502.",
+      "reason": "No claim staged from search snippets or failed retrieval; retry direct access before any extraction."
+    }
+  ]
+}

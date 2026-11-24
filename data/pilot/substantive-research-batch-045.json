@@ -1,0 +1,581 @@
+{
+  "scope": "RESEARCH_NOTES_WITH_SOURCE_REPORTED_CANDIDATES",
+  "batch": 45,
+  "researchedAt": "2026-11-21T16:08:06.000Z",
+  "ownerStagingReady": false,
+  "sources": [
+    {
+      "id": "b45-1",
+      "institutionSlug": "nit-manipur",
+      "publisher": "National Institute of Technology Manipur",
+      "title": "Programmes Offered",
+      "url": "https://new.nitmanipur.ac.in/facilities/training-placement/academic/programmes",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only the degree name and stated duration are reported with attribution. The page does not state an academic year; no current intake or seat availability is inferred. No bulk content is reproduced and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Programmes Offered, lines 82–94: UG (B.Tech), Duration: 4 Years; academic year is not specified."
+      ]
+    },
+    {
+      "id": "b45-2",
+      "institutionSlug": "nit-manipur",
+      "publisher": "National Institute of Technology Manipur",
+      "title": "Home — ECE Department overview",
+      "url": "https://new.nitmanipur.ac.in/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only the concise existence of simulation software and laboratories is reported for the ECE department. No performance claims or numbers are copied; no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "About NIT Manipur → Departments, lines 294–296: the Electronics and Communication Engineering department section says it has simulation software and laboratories."
+      ]
+    },
+    {
+      "id": "b45-3",
+      "institutionSlug": "nit-manipur",
+      "publisher": "National Institute of Technology Manipur, Training and Placement Office",
+      "title": "Training and Placement Office — Contact",
+      "url": "https://new.nitmanipur.ac.in/facilities/training-placement/contact-us/office",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "A public institutional office email is reproduced as a concise contact fact with attribution. Page footer date uses an ambiguous format and is not normalized; no freshness claim beyond retrieval is made.",
+      "evidenceLocations": [
+        "Office Address, lines 82–93: the Training and Placement Cell lists tnp@nitmanipur.ac.in and phone 0385 2058 567."
+      ]
+    },
+    {
+      "id": "b45-4",
+      "institutionSlug": "iit-bhilai",
+      "publisher": "Indian Institute of Technology Bhilai",
+      "title": "Brochure 2026–27 — Academics at IIT Bhilai",
+      "url": "https://www.iitbhilai.ac.in/index.php/10.1007/10.1109/10.1080/index.php?pid=information_broucher",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Only one programme title from the official institute brochure is reported with attribution. No table, seat count, or surrounding text is reproduced; no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Brochure 2026–27, academic programs table, page 21, lines 504–510: Bachelor of Technology, Computer Science and Engineering department, Computer Science & Engineering discipline."
+      ]
+    },
+    {
+      "id": "b45-5",
+      "institutionSlug": "iit-bhilai",
+      "publisher": "Indian Institute of Technology Bhilai",
+      "title": "Brochure 2026–27 — B.Tech admission route",
+      "url": "https://www.iitbhilai.ac.in/index.php/10.1007/10.1109/10.1080/index.php?pid=information_broucher",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Historical cycle-specific route only, with the 2026–27 brochure scope. No eligibility threshold, cut-off, seat data, or application deadline is copied. No blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Brochure 2026–27, B.Tech section, page 18, lines 451–455: B.Tech admission through JEE (Advanced), with seat allotment through JoSAA."
+      ]
+    },
+    {
+      "id": "b45-6",
+      "institutionSlug": "iit-bhilai",
+      "publisher": "Indian Institute of Technology Bhilai",
+      "title": "Brochure 2026–27 — Central Library",
+      "url": "https://www.iitbhilai.ac.in/index.php/10.1007/10.1109/10.1080/index.php?pid=information_broucher",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "Only a concise summary of the library’s print/electronic-resource scope and services is reported. All collection-size numbers are omitted; no bulk text or table is copied and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Brochure 2026–27, Central Library, printed pages 36–38, lines 902–953: library resources include print/electronic materials, online catalogue, reading facility, and printing/reprographic services."
+      ]
+    },
+    {
+      "id": "b45-7",
+      "institutionSlug": "iit-bhilai",
+      "publisher": "Indian Institute of Technology Bhilai, Office of Academic Affairs",
+      "title": "Brochure 2026–27 — Contact Desk",
+      "url": "https://www.iitbhilai.ac.in/index.php/10.1007/10.1109/10.1080/index.php?pid=information_broucher",
+      "academicYear": "2026-27",
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_DOCUMENT_READ",
+      "reuseConditions": "A public office email is reported as an attributed contact fact; no personal contact information or unrelated numbers are copied. No blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Brochure 2026–27, Contact Desk, printed page 102, lines 2540–2551: Office of Academics lists academics@iitbhilai.ac.in."
+      ]
+    },
+    {
+      "id": "b45-8",
+      "institutionSlug": "iiit-delhi",
+      "publisher": "Indraprastha Institute of Information Technology Delhi, Library and Information Center",
+      "title": "Library Services",
+      "url": "https://libweb.iiitd.ac.in/services",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only the listed types of learning spaces are summarized; no source prose or usage statistics are reproduced and no blanket reuse licence is inferred. The scope is the IIIT-Delhi Library and Information Center in Okhla, New Delhi.",
+      "evidenceLocations": [
+        "Services, lines 13–20: the Library lists individual study carrels, quiet/group/casual study, discussion and workshop/training spaces on specified floors."
+      ]
+    },
+    {
+      "id": "b45-9",
+      "institutionSlug": "birla-institute-of-technology-mesra",
+      "publisher": "Birla Institute of Technology, Mesra, Department of Electronics and Communication Engineering",
+      "title": "Electronics and Communication Engineering — Programmes Offered",
+      "url": "https://bitmesra.ac.in/edudepartment/1/72?trk=public_profile_certification-title",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The B.Tech degree name and duration are reported with main-campus Mesra scope. Intake figures, placement claims and rankings are excluded. No blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Programmes Offered, lines 56–63: B.Tech in Electronics & Communication Engineering is stated as four-year (eight-semester); department contact identifies BIT Mesra, Ranchi, lines 81–87."
+      ]
+    },
+    {
+      "id": "b45-10",
+      "institutionSlug": "birla-institute-of-technology-mesra",
+      "publisher": "Birla Institute of Technology, Mesra",
+      "title": "Institute Facilities",
+      "url": "https://bitmesra.ac.in/display/content/1/361",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only named facilities (central library, Central CAD Facility, Central Instrumentation Facility and course-specific laboratories) are reported. Numeric counts and any campus-specific allocation not stated by the source are omitted. No blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Institute Facilities, lines 152–159: names Central Library, course-specific laboratories, Central CAD Facility and Central Instrumentation Facility; page does not itemize their distribution by campus."
+      ]
+    },
+    {
+      "id": "b45-11",
+      "institutionSlug": "woxsen-university",
+      "publisher": "Woxsen University, School of Technology",
+      "title": "B.Tech Programmes",
+      "url": "https://woxsen.edu.in/academics/programs/b-tech/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "Only the listed programme name is reported. The source contains promotional material; none is reused. It shows conflicting specialisation counts elsewhere on the page, so no total/count or additional derived claim is published. No blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Programmes menu and programme list, lines 427–459: B.Tech Computer Science and Engineering is listed."
+      ]
+    },
+    {
+      "id": "b45-12",
+      "institutionSlug": "woxsen-university",
+      "publisher": "Woxsen University, Vithal Gandhi Centre",
+      "title": "Vithal Gandhi Centre — Library and Self-Learning Facility",
+      "url": "https://woxsen.edu.in/campus-life/vithal-gandhi-centre/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The qualitative existence and resource types of the library/self-learning centre are reported. Conflicting collection-size figures on the page are withheld; no quantities or surrounding prose are copied and no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Vithal Gandhi Centre, lines 452–460 and 476–527: institution describes a library/self-learning centre, digital resources, reading spaces and study facilities; conflicting quantities are excluded."
+      ]
+    },
+    {
+      "id": "b45-13",
+      "institutionSlug": "woxsen-university",
+      "publisher": "Woxsen University",
+      "title": "Campus Housing",
+      "url": "https://woxsen.edu.in/campus-life/lab-housing/",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "A concise description of separate boys’ and girls’ hostel blocks and quadruple-sharing room type is reported. Room-count figures and evaluative promotional language are excluded; no blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Living spaces, lines 452–460: page states separate boys’ and girls’ blocks and quadruple-sharing rooms; no academic year is stated."
+      ]
+    },
+    {
+      "id": "b45-14",
+      "institutionSlug": "woxsen-university",
+      "publisher": "Woxsen University, Admissions Office",
+      "title": "Contact Us",
+      "url": "https://woxsen.edu.in/contact-us",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The public admissions-office email address is reproduced as a concise attributed contact value; no personal information or blanket reuse right is inferred.",
+      "evidenceLocations": [
+        "Contact Us, lines 455–463: Admissions email is listed as admissions@woxsen.edu.in."
+      ]
+    },
+    {
+      "id": "b45-15",
+      "institutionSlug": "woxsen-university",
+      "publisher": "Woxsen University",
+      "title": "Contact Us — Campus address",
+      "url": "https://woxsen.edu.in/contact-us",
+      "academicYear": null,
+      "publicationDate": null,
+      "retrievedAt": "2026-11-21T16:08:06.000Z",
+      "access": "PUBLIC_OFFICIAL_PAGE_READ",
+      "reuseConditions": "The institution-published campus postal address is reported as a concise contact fact. The separate corporate-office address is not substituted for the campus. No blanket reuse licence is inferred.",
+      "evidenceLocations": [
+        "Contact Us, Campus section, lines 490–507: Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502 345, Telangana, India."
+      ]
+    }
+  ],
+  "candidateClaims": [
+    {
+      "institutionSlug": "nit-manipur",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b45-1"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programmes Offered, lines 82–94: UG B.Tech, four years; no academic year is stated.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Manipur academic-programmes page; general UG listing, no current cohort stated.",
+      "publisherPeriod": "NIT Manipur academic-programmes page; general UG listing, no current cohort stated.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nit-manipur",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "ECE simulation software and laboratories",
+        "description": "The Electronics and Communication Engineering department reports simulation software and laboratories."
+      },
+      "sourceIds": [
+        "b45-2"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "About NIT Manipur → Departments, lines 294–296; ECE department section.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "NIT Manipur permanent campus, Langol, Imphal; ECE department scope.",
+      "publisherPeriod": "NIT Manipur permanent campus, Langol, Imphal; ECE department scope.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "nit-manipur",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Training and Placement Cell",
+        "channel": "EMAIL",
+        "contact": "tnp@nitmanipur.ac.in"
+      },
+      "sourceIds": [
+        "b45-3"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Office Address, lines 82–93; public Training and Placement Cell email.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Training and Placement Cell, NIT Manipur campus, Langol, Imphal.",
+      "publisherPeriod": "Training and Placement Cell, NIT Manipur campus, Langol, Imphal.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b45-4"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Brochure 2026–27, printed page 21, lines 504–510; B.Tech table identifies CSE discipline.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Bhilai programme table, 2026–27 brochure scope.",
+      "publisherPeriod": "2026-27",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "field": "structured",
+      "value": {
+        "kind": "admission",
+        "programme": "B.Tech programmes",
+        "route": "JEE (Advanced) examination followed by seat allotment through JoSAA",
+        "category": "Admission session 2026–27",
+        "exam": "JEE (Advanced)",
+        "counselling": "JoSAA"
+      },
+      "sourceIds": [
+        "b45-5"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Brochure 2026–27, printed page 18, lines 451–455.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Bhilai B.Tech admissions route stated for the 2026–27 brochure; historical cycle, not a future admission prediction.",
+      "publisherPeriod": "2026-27",
+      "historical": true
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library",
+        "description": "The institute describes print and electronic resources, an online catalogue, reading facilities, and printing/reprographic services."
+      },
+      "sourceIds": [
+        "b45-6"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Brochure 2026–27, printed pages 36–38, lines 902–953.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Bhilai campus; Central Library, 2026–27 brochure scope.",
+      "publisherPeriod": "2026-27",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iit-bhilai",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Office of Academic Affairs",
+        "channel": "EMAIL",
+        "contact": "academics@iitbhilai.ac.in"
+      },
+      "sourceIds": [
+        "b45-7"
+      ],
+      "academicYear": "2026-27",
+      "evidenceLocation": "Brochure 2026–27, Contact Desk, printed page 102, lines 2540–2551.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIT Bhilai, Office of Academic Affairs, brochure 2026–27.",
+      "publisherPeriod": "2026-27",
+      "historical": false
+    },
+    {
+      "institutionSlug": "iiit-delhi",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Library learning spaces",
+        "description": "The Library lists individual, quiet, group and casual study spaces, discussion rooms, and workshop/training rooms."
+      },
+      "sourceIds": [
+        "b45-8"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Services, lines 13–20; Library and Information Center learning-space listing.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "IIIT-Delhi Library and Information Center, Okhla Phase III, New Delhi.",
+      "publisherPeriod": "IIIT-Delhi Library and Information Center, Okhla Phase III, New Delhi.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "birla-institute-of-technology-mesra",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech in Electronics and Communication Engineering",
+        "level": "UG",
+        "durationMonths": 48
+      },
+      "sourceIds": [
+        "b45-9"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programmes Offered, lines 56–63; department contact identifies BIT Mesra, Ranchi, lines 81–87.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Electronics and Communication Engineering Department, BIT Mesra main campus, Ranchi.",
+      "publisherPeriod": "Electronics and Communication Engineering Department, BIT Mesra main campus, Ranchi.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "birla-institute-of-technology-mesra",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Central Library, CAD and Instrumentation facilities",
+        "description": "The institute facilities page names a Central Library, Central CAD Facility, Central Instrumentation Facility, and course-specific laboratories; it does not itemize campus distribution."
+      },
+      "sourceIds": [
+        "b45-10"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Institute Facilities, lines 152–159; campus-specific allocation not separately stated.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "BIT Mesra institute-level facilities; the source does not disaggregate availability across campuses.",
+      "publisherPeriod": "BIT Mesra institute-level facilities; the source does not disaggregate availability across campuses.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "field": "structured",
+      "value": {
+        "kind": "programme",
+        "programme": "B.Tech Computer Science and Engineering",
+        "level": "UG"
+      },
+      "sourceIds": [
+        "b45-11"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Programme list, lines 427–459; B.Tech CSE listed.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Woxsen University, School of Technology. No admission year or duration stated on the cited listing.",
+      "publisherPeriod": "Woxsen University, School of Technology. No admission year or duration stated on the cited listing.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Vithal Gandhi Centre library and self-learning spaces",
+        "description": "The university describes a library and self-learning centre with print/electronic resources, reading spaces, digital sections, and study facilities; conflicting quantity figures on the page are omitted."
+      },
+      "sourceIds": [
+        "b45-12"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Vithal Gandhi Centre, lines 452–460 and 476–527; qualitative features only.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Woxsen University campus; library and self-learning centre. Collection-size figures withheld due to conflicting values on the page.",
+      "publisherPeriod": "Woxsen University campus; library and self-learning centre. Collection-size figures withheld due to conflicting values on the page.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "field": "structured",
+      "value": {
+        "kind": "facility",
+        "facility": "Student housing",
+        "description": "The university describes separate boys’ and girls’ hostel blocks and quadruple-sharing rooms."
+      },
+      "sourceIds": [
+        "b45-13"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Living spaces, lines 452–460.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Woxsen University; housing page does not state an applicable academic year.",
+      "publisherPeriod": "Woxsen University; housing page does not state an applicable academic year.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "Admissions Office",
+        "channel": "EMAIL",
+        "contact": "admissions@woxsen.edu.in"
+      },
+      "sourceIds": [
+        "b45-14"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Contact Us, lines 455–463; institutional admissions address.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Woxsen University Admissions Office.",
+      "publisherPeriod": "Woxsen University Admissions Office.",
+      "historical": false
+    },
+    {
+      "institutionSlug": "woxsen-university",
+      "field": "structured",
+      "value": {
+        "kind": "contact",
+        "office": "University campus",
+        "channel": "ADDRESS",
+        "contact": "Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502 345, Telangana, India"
+      },
+      "sourceIds": [
+        "b45-15"
+      ],
+      "academicYear": null,
+      "evidenceLocation": "Contact Us, Campus section, lines 490–507; campus address, not corporate office.",
+      "status": "UNREVIEWED",
+      "reviewState": "UNREVIEWED",
+      "stageable": true,
+      "campusScope": "Woxsen University campus, Kamkole/Sadasivpet, Sangareddy District, Telangana.",
+      "publisherPeriod": "Woxsen University campus, Kamkole/Sadasivpet, Sangareddy District, Telangana.",
+      "historical": false
+    }
+  ],
+  "researchHolds": [
+    {
+      "institutionSlug": "indian-institute-of-management-bangalore",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS_403",
+      "reason": "Official IIMB programmes page returned HTTP 403 to this research retrieval; no facts were taken from snippets."
+    },
+    {
+      "institutionSlug": "osmania-university",
+      "status": "RESEARCH_HOLD_SOURCE_TIMEOUT",
+      "reason": "Official academic programmes page timed out; no facts were taken from search results."
+    },
+    {
+      "institutionSlug": "iiit-sri-city",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS_403",
+      "reason": "Official IIIT Sri City admissions and programme pages returned HTTP 403; public search excerpts were not used as factual proof."
+    },
+    {
+      "institutionSlug": "ict-mumbai",
+      "status": "RESEARCH_HOLD_SOURCE_ACCESS_403",
+      "reason": "Official ICT Mumbai programme page returned HTTP 403; no search excerpt facts were used."
+    },
+    {
+      "institutionSlug": "iit-dharwad",
+      "status": "RESEARCH_HOLD_SOURCE_TIMEOUT",
+      "reason": "Official IIT Dharwad pages timed out or cache-missed during direct retrieval; search results were not used as factual proof."
+    },
+    {
+      "institutionSlug": "nit-srinagar",
+      "status": "RESEARCH_HOLD_FRESHNESS",
+      "reason": "Directly accessible department content carried a 2021 copyright and unspecified publication/update date; not reused as current programme availability."
+    },
+    {
+      "institutionSlug": "punjab-technical-university",
+      "status": "RESEARCH_HOLD_CAMPUS_SCOPE",
+      "reason": "2026–27 academic-programme notice table OCR did not unambiguously bind the first program rows to the named main campus versus constituent campuses; no program facts published."
+    }
+  ]
+}

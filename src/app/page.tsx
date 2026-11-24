@@ -42,7 +42,7 @@ const categories: { name: string; icon: string; href: string; color: string }[] 
 const steps = [
   { icon: '🔍', title: 'Search & Filter', desc: 'Filter by state, fees, NAAC grade, courses and college type. Every college shows whether its numbers are verified or demo values.', color: 'from-indigo-50 to-blue-50', accent: '#4F46E5', iconBg: 'from-indigo-500 to-blue-600' },
   { icon: '⚖️', title: 'Compare & Analyze', desc: 'Compare up to 3 colleges side-by-side. See fees, placements and packages side by side. Values we have not verified are labelled.', color: 'from-emerald-50 to-teal-50', accent: '#059669', iconBg: 'from-emerald-500 to-teal-600' },
-  { icon: '🎯', title: 'Predict & Decide', desc: 'Enter your rank, category and home state. We estimate Safe, Target and Reach options from past official closing ranks and show the data behind each one.', color: 'from-amber-50 to-orange-50', accent: '#D97706', iconBg: 'from-amber-500 to-orange-600' },
+  { icon: '🎯', title: 'Explore admission history', desc: 'Check documented requirements and compare your rank with reviewed historical records.', color: 'from-amber-50 to-orange-50', accent: '#D97706', iconBg: 'from-amber-500 to-orange-600' },
 ];
 
 const whyFeatures = [
@@ -125,7 +125,7 @@ export default function HomePage() {
             <span className="hero-text-gradient">Perfect College</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
-            Search colleges across India, compare them side by side, and check your admission chances against official past cutoffs.
+            Search colleges across India, compare them side by side, and explore reviewed historical cutoffs.
           </p>
 
           <SearchAutocomplete className="max-w-2xl mx-auto mb-12" />
@@ -211,7 +211,7 @@ export default function HomePage() {
             <div className="flex items-end justify-between mb-10">
               <div>
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Start exploring</h2>
-                <p className="text-sm text-slate-600 mt-2">Colleges with verified data appear first. Nobody pays to be here.</p>
+                <p className="text-sm text-slate-600 mt-2">Browse the catalogue. Individual facts appear after source review; nobody pays to be here.</p>
               </div>
               <Link href="/colleges" className="text-sm font-bold text-indigo-600 hover:underline no-underline hidden md:block">View All →</Link>
             </div>
@@ -297,14 +297,14 @@ export default function HomePage() {
         <div className="container-main text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-5 tracking-tight">Ready to find your<br /><span className="cta-text-accent">perfect college?</span></h2>
           <p className="text-base text-indigo-200 mb-10 max-w-lg mx-auto leading-relaxed">
-            Shortlist colleges, compare them side by side, and check your chances with sourced cutoff data.
+            Shortlist colleges, compare them side by side, and explore sourced cutoff history.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link href="/colleges" className="cta-btn-primary no-underline">
               Browse All Colleges
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m9 18 6-6-6-6"/></svg>
             </Link>
-            <Link href="/predictor" className="cta-btn-secondary no-underline">Check my chances</Link>
+            <Link href="/predictor" className="cta-btn-secondary no-underline">Explore admission guidance</Link>
           </div>
         </div>
       </section>
